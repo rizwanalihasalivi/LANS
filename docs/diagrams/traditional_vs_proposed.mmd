@@ -1,0 +1,15 @@
+flowchart TD
+    subgraph Traditional
+      Sensor["Sensors\n(pos, yaw)"] --> LQR[LQR Controller]
+      LQR --> Actuator["Steering Actuator\n(servo)"]
+      Actuator --> Vehicle["Vehicle (2-DOF)"]
+      Vehicle --> Sensor
+    end
+
+    subgraph Proposed
+      Sensor2["Sensors\n(pos, yaw)"] --> PPO[PPO Controller\n(MlpPolicy) ]
+      PPO --> Actuator2["Steering Actuator"]
+      Actuator2 --> Vehicle2["Vehicle (2-DOF)"]
+      Vehicle2 --> Sensor2
+      Offline["Offline Transfer Learning\n(pretrain -> freeze -> fine-tune)"] -.-> PPO
+    end

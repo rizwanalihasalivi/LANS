@@ -1,0 +1,7 @@
+numpy
+scipy
+gymnasium
+matplotlib
+pytest
+stable-baselines3[extra]
+mermaid-cli

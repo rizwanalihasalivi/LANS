@@ -630,3 +630,8 @@ Happy Researching
 ---
 
 *Last Updated: June 2026*
+
+
+## Research checkpoint — 24 October 2026
+
+The proposed PPO-dominant LANS revision, discussion decisions, historical package reviews and source uploads are recorded in the [research handoff](docs/research/README.md). Setup and simulator smoke checks are documented in [cloud setup](tools/cloud/README.md). The proposed architecture has not yet been implemented or experimentally validated; existing results belong to the earlier work.

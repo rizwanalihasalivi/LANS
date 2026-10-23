@@ -1,0 +1,23 @@
+#VRML_SIM R2025a utf8
+WorldInfo { basicTimeStep 32 }
+Viewpoint { position 2 -3 2 orientation 0.7 0.4 0.5 1.5 }
+Background { skyColor [0.2 0.3 0.5] }
+DirectionalLight { direction -1 1 -1 }
+Solid {
+  name "floor"
+  translation 0 0 -0.05
+  children [ Shape { geometry Box { size 10 10 0.1 } } ]
+  boundingObject Box { size 10 10 0.1 }
+}
+DEF FALLING_BOX Solid {
+  name "falling box"
+  translation 0 0 1
+  children [ Shape { appearance PBRAppearance { baseColor 1 0 0 } geometry Box { size 0.2 0.2 0.2 } } ]
+  boundingObject Box { size 0.2 0.2 0.2 }
+  physics Physics { mass 1 density -1 }
+}
+Robot {
+  supervisor TRUE
+  controller "smoke"
+  children [ Camera { name "camera" width 64 height 64 } ]
+}

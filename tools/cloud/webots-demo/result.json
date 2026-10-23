@@ -1,0 +1,8 @@
+{
+  "steps": 100,
+  "simulation_seconds": 3.2,
+  "start_z": 1.0,
+  "end_z": 0.09960657819416327,
+  "camera_bytes": 16384,
+  "passed": true
+}

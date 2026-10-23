@@ -1,0 +1,198 @@
+Bilkul bhai. Specification freeze karne se pehle humein har parameter ke liye value, unit, source ya assumption, justification aur sensitivity-test range finalize karni chahiye.
+
+Meri recommendation hai ke hum teen categories alag rakhein:
+
+1. Manuscript-defined values: Original paper mein diye gaye vehicle parameters aur 25 m/s nominal speed.
+2. Published-source values: Standards ya technical literature se supported path geometry aur relevant physical constraints.
+3. Simulation assumptions: Steering limits, actuator lag, sensor noise aur PPO training budget ki woh values jinhein verified vehicle data ya source abhi support nahi karta.
+
+Kisi simulation assumption ko Tesla Model 3 ki verified specification nahi kahenge. Aur nominal value select karne ke baad sensitivity tests se check karenge ke controller ka performance us value par kitna dependent hai.
+
+Bhai, maine aapke original manuscript aur relevant technical sources ko mila kar ek proposed specification sheet banayi hai. Ismein har value ko clearly classify kiya hai: existing manuscript value, published precedent, ya hamari explicit simulation assumption.
+
+Yeh recommended specification v0.1 hai — final freeze se pehle feasibility aur training validation complete karni hogi.
+
+## 1. Steering limits aur actuator dynamics
+
+Proposed simulation assumptions — verified Tesla specifications nahi.
+
+| Parameter                                      | Proposed nominal value | Sensitivity test                  |
+| ---------------------------------------------- | ---------------------- | --------------------------------- |
+| Maximum front-wheel angle \\(\delta\_{\max}\\) | \\(\pm0.50\\) rad      | \\(\pm0.35,\pm0.50,\pm0.60\\) rad |
+| Maximum steering rate \\(\dot\delta\_{\max}\\) | \\(\pm0.35\\) rad/s    | \\(0.20,0.35,0.50\\) rad/s        |
+| Actuator time constant \\(\tau_a\\)            | \\(0.05\\) s           | \\(0.02,0.05,0.10\\) s            |
+| Controller sampling period                     | \\(10\\) ms            | Fixed at 100 Hz                   |
+| Custom plant integration step                  | \\(1\\) ms             | Fixed initially                   |
+
+Steering limits aur \\(0.05\\) s actuator lag ke liye literature precedents available hain, lekin inhein aapke manuscript-defined vehicle ki actual specifications nahi kehna chahiye.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://artefacts-discovery.researcher.life\&sz=32)
+
+artefacts-discovery.researcher.life
+
++1
+
+
+
+First-order actuator model:
+
+\\[ \dot{\delta}\_a= \operatorname{clip}\left( \frac{\delta\_{\mathrm{cmd}}-\delta_a}{\tau_a}, -\dot{\delta}\_{\max},\dot{\delta}\_{\max} \right) \\]
+
+Saath hi actual steering angle ko \\(\pm\delta\_{\max}\\) ke andar constrain karein.
+
+## 2. Nonlinear tire model aur friction
+
+Meri recommendation: Fiala-type nonlinear tire model use karein, jismein original manuscript ke mass, yaw inertia, axle distances aur cornering stiffnesses retain hon.&#x20;
+
+LANS0605_英文IEEE格式_0618_updated_1 (1).docx
+
+
+
+| Parameter                              | Proposed value |
+| -------------------------------------- | -------------- |
+| Nominal friction coefficient \\(\mu\\) | 0.9            |
+| Low-grip test                          | 0.6            |
+| Intermediate-grip test                 | 0.8            |
+| High-grip test                         | 1.0            |
+
+Yeh friction values explicit simulation assumptions hongi. Inhein vehicle ke verified tire-road characteristics nahi kahenge. Literature mein \\(0.6\\)–\\(1.0\\) ka simulation range use hua hai, lekin actual friction environment-dependent hoti hai.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://pure.tue.nl\&sz=32)
+
+pure.tue.nl
+
++1
+
+
+
+## 3. Sensor assumptions
+
+Primary controller comparison mein do phases rakhein: noise-free baseline aur noisy robustness test.
+
+| Signal                              | Nominal noise assumption      | Classification          |
+| ----------------------------------- | ----------------------------- | ----------------------- |
+| Lateral position/error              | \\(\sigma_y=0.03\\) m         | Simulation assumption   |
+| Heading angle/error                 | \\(\sigma\_\psi=0.17^\circ\\) | Simulation assumption   |
+| Yaw rate                            | \\(\sigma_r=0.01\\) rad/s     | Simulation assumption   |
+| Longitudinal speed                  | \\(\sigma_v=0.1\\) m/s        | Simulation assumption   |
+| Sensor sampling                     | 100 Hz                        | Agreed design choice    |
+| Sensor delay in primary test        | 0 ms                          | Isolation assumption    |
+| Additional sensor-delay stress test | 10 ms                         | Proposed test condition |
+
+Noise ko zero-mean Gaussian measurement noise ke taur par inject karein. \\(3\\) cm aur \\(0.17^\circ\\) ki pose-noise values ek recent simulation setup mein bhi use hui hain; yahan yeh sirf modelling precedent hain, actual sensor specifications nahi.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.preprints.org\&sz=32)
+
+Preprints.org
+
+
+
+Robustness tests mein nominal noise ka \\(2\times\\) level bhi test karein. Sensor delay ko PPO computation latency se separately record karein.
+
+## 4. Reference-path geometry — important correction
+
+Aapke original manuscript mein double lane-change ke liye ISO 3888-2 ka reference diya gaya hai. Standard designation correct karna zaroori hai:
+
+- ISO 3888-1:2018 — double lane-change.
+- ISO 3888-2:2025 — obstacle avoidance.
+
+Published ISO 3888-1 edition ko 2024 mein review ke baad current confirm kiya gaya tha; revision process alag se chal raha hai.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.iso.org\&sz=32)
+
+Part 1: Double lane-change
+
++1
+
+
+
+Recommended geometry:
+
+| Parameter              | Proposed specification                         |
+| ---------------------- | ---------------------------------------------- |
+| Total course length    | 125 m                                          |
+| Section lengths        | 15, 30, 25, 25, 15, 15 m                       |
+| Lateral lane offset    | 3.5 m                                          |
+| Track widths           | Vehicle-width-dependent ISO dimensions         |
+| Controller target path | Corridor centreline se generated smooth spline |
+
+Yeh dimensions ISO 3888-1 geometry ke published description se match karte hain.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://cdn.standards.iteh.ai\&sz=32)
+
+cdn.standards.iteh.ai
+
++1
+
+
+
+Agar aap har lane ki width fixed 3.5 m rakhte hain, toh usay ISO-derived modified course kehna zyada accurate hoga, exact ISO-compliant track nahi.
+
+### Speed feasibility
+
+25 m/s \\(=90\\) km/h ko aapka nominal speed baseline rehne dein, lekin severe double-lane-change course par ise automatically feasible assume na karein.
+
+Har path ke liye:
+
+\\[ a_y\approx v_x^2|\kappa| \\]
+
+calculate karein, jahan \\(\kappa\\) path curvature hai. Initial screening ke liye \\(|a_y|\leq0.8\mu g\\) ka margin use kar sakte hain; yeh hamari proposed engineering assumption hogi, ISO requirement nahi.
+
+- Smooth primary path 25 m/s par feasible ho toh use nominal test banayein.
+- ISO-derived double-lane-change ko pehle 22.2 m/s ke aas-paas test karein.
+- 25 m/s par course tabhi test karein jab curvature, friction aur nonlinear plant feasibility check pass ho.
+
+Is tarah physically infeasible path ko controller ki failure ya success ke saath mix nahi kiya jayega.
+
+## 5. PPO training budget
+
+Aapke original manuscript mein teen curriculum stages specified hain: 200,000, 400,000 aur 200,000 environment steps. Additional fine-tuning ka exact budget clearly specified nahi hai.&#x20;
+
+LANS0605_英文IEEE格式_0618_updated_1 (1).docx
+
+
+
+Option 2 mein PPO full steering command generate karega, isliye meri recommendation hai ke full-command policy ko scratch se train karein.
+
+Total training budget
+
+## 1,000,000 environment steps per seed
+
+Yeh proposed budget hai, original manuscript ka fully specified total nahi.
+
+### Training curriculum
+
+1. 200,000 steps: 15 m/s, latency injection ke baghair.
+2. 400,000 steps: 25 m/s, latency injection ke baghair, feasible reference paths par.
+3. 200,000 steps: 25 m/s, latency injection 10% probability ke saath; injected delay uniformly 5–130 ms. Yeh original manuscript ka training setup hai.
+4. 200,000 steps: 15, 20 aur 25 m/s ke mixed feasible scenarios, latency disturbances ke saath final fine-tuning.
+
+Final 200,000-step mixed phase hamari proposed addition hai. Asynchronous PPO mein injected delay ko actual output-availability delay ke taur par simulate karein, sirf numerical feature ke taur par nahi.
+
+Meri additional recommendation:
+
+- Har PPO-based policy ko 5 independent random seeds ke saath train karein.
+- Har policy variant ko same environment-step budget dein.
+- Validation results se convergence check karein.
+- Final held-out test paths, latency traces aur random seeds ko training/tuning ke liye use na karein.
+- PPO weights aur Supervisor thresholds held-out evaluation se pehle freeze kar dein.
+
+Agar 1M steps par convergence establish nahi hoti, toh budget ko sab PPO variants ke liye equally increase karein aur change document karein.
+
+## 6. Final proposed specification summary
+
+| Component              | Recommended decision                                            |
+| ---------------------- | --------------------------------------------------------------- |
+| Vehicle parameters     | Original manuscript-defined set                                 |
+| Nominal speed          | 25 m/s, subject to feasibility                                  |
+| LQR                    | Fixed-rate local loop, predefined speed schedule                |
+| Actuator               | \\(\pm0.50\\) rad, \\(\pm0.35\\) rad/s, \\(\tau_a=0.05\\) s     |
+| Tire model             | Nonlinear Fiala-type model                                      |
+| Sensor noise           | Explicit nominal assumptions plus \\(2\times\\) robustness test |
+| Reference path         | ISO 3888-1-derived double-lane-change geometry                  |
+| PPO                    | Full-command policy trained from scratch                        |
+| Training budget        | 1M steps per seed, 5 seeds                                      |
+| Command-age thresholds | 10/20/50 ms candidates; select on development scenarios         |
+| Final comparisons      | Five baseline controllers plus fixed-weight fusion ablation     |
+
+Bhai, meri final advice: Is sheet ko specification v0.1 samjhein. Sabse pehle path geometry aur nonlinear plant ki feasibility run karein; phir steering/actuator limits aur sensor assumptions ko freeze karein. Uske baad training budget, Supervisor thresholds aur held-out scenarios freeze karke experiments start karein. Is tarah unsupported values ko vehicle facts nahi banaya jayega aur paper ke claims experimental evidence ke mutabiq rahenge.

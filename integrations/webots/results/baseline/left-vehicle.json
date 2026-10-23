@@ -1,0 +1,69 @@
+{
+  "wheelbase_m": 2.6,
+  "track_front_m": 1.6,
+  "track_rear_m": 1.6,
+  "chassis_mass_kg": 1610.0,
+  "chassis_com_m": [
+    1.4,
+    0.0,
+    0.2
+  ],
+  "chassis_inertia_kg_m2": [
+    1000.0,
+    3500.0,
+    4224.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "basic_time_step_ms": 10.0,
+  "wheels": {
+    "wheelFrontLeft": {
+      "mass_kg": 10.0,
+      "radius_m": 0.32,
+      "initial_center_world_m": [
+        2.6,
+        0.8,
+        0.36
+      ]
+    },
+    "wheelFrontRight": {
+      "mass_kg": 10.0,
+      "radius_m": 0.32,
+      "initial_center_world_m": [
+        2.6,
+        -0.8,
+        0.36
+      ]
+    },
+    "wheelRearLeft": {
+      "mass_kg": 10.0,
+      "radius_m": 0.32,
+      "initial_center_world_m": [
+        0.0,
+        0.8,
+        0.36
+      ]
+    },
+    "wheelRearRight": {
+      "mass_kg": 10.0,
+      "radius_m": 0.32,
+      "initial_center_world_m": [
+        0.0,
+        -0.8,
+        0.36
+      ]
+    }
+  },
+  "friction": 0.9,
+  "suspensionFrontSpringConstant": 100000.0,
+  "suspensionRearSpringConstant": 100000.0,
+  "suspensionFrontDampingConstant": 4000.0,
+  "suspensionRearDampingConstant": 4000.0,
+  "wheelsDampingConstant": 5.0,
+  "minSteeringAngle": -0.6,
+  "maxSteeringAngle": 0.6,
+  "total_mass_kg": 1650.0,
+  "world_sha256": "aa202f6f7c7cb4fdd443511f805c56409b14291a4d0828a765d5c81ed81d8981",
+  "config_sha256": "c9f913a3f134dad6aaa3973a9a3e1b99bf0fa45991ef4a991bbe07b34a1e6e6e"
+}

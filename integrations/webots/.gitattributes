@@ -1,0 +1,2 @@
+# Preserve the CSV writer standard CRLF records without Git normalization.
+*.csv -text whitespace=cr-at-eol

@@ -1,0 +1,12 @@
+.runtime/
+__pycache__/
+worlds/.*.wbproj
+
+# Explicitly retain the configuration and the two reviewed validation runs.
+!config.json
+!results/
+results/*
+!results/baseline/
+!results/repeat/
+!results/baseline/**
+!results/repeat/**

@@ -1,0 +1,181 @@
+{
+  "verified": true,
+  "reserved_noise_base": 91000000,
+  "reserved_ids_disjoint": true,
+  "pilot_steps": 800000,
+  "pilot_episodes": 504,
+  "training_diagnostics": [
+    {
+      "phase": "training",
+      "arm": "A",
+      "seed": 101,
+      "steps": 100000,
+      "completed_episode_steps": 96300,
+      "episodes": 121,
+      "execution_fraction": 1.0,
+      "mean_relative_bonus": 0.0,
+      "mu_range": [
+        0.9,
+        0.9
+      ],
+      "stiffness_range": [
+        1.0,
+        1.0
+      ],
+      "delayed_episode_fraction": 0,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 29.3507182598114
+    },
+    {
+      "phase": "training",
+      "arm": "A",
+      "seed": 202,
+      "steps": 100000,
+      "completed_episode_steps": 96209,
+      "episodes": 122,
+      "execution_fraction": 1.0,
+      "mean_relative_bonus": 0.0,
+      "mu_range": [
+        0.9,
+        0.9
+      ],
+      "stiffness_range": [
+        1.0,
+        1.0
+      ],
+      "delayed_episode_fraction": 0,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 28.957204818725586
+    },
+    {
+      "phase": "training",
+      "arm": "B",
+      "seed": 101,
+      "steps": 100000,
+      "completed_episode_steps": 96305,
+      "episodes": 121,
+      "execution_fraction": 0.010445978921135975,
+      "mean_relative_bonus": 0.0,
+      "mu_range": [
+        0.9,
+        0.9
+      ],
+      "stiffness_range": [
+        1.0,
+        1.0
+      ],
+      "delayed_episode_fraction": 0,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 32.736902475357056
+    },
+    {
+      "phase": "training",
+      "arm": "B",
+      "seed": 202,
+      "steps": 100000,
+      "completed_episode_steps": 96382,
+      "episodes": 121,
+      "execution_fraction": 0.014349152331348177,
+      "mean_relative_bonus": 0.0,
+      "mu_range": [
+        0.9,
+        0.9
+      ],
+      "stiffness_range": [
+        1.0,
+        1.0
+      ],
+      "delayed_episode_fraction": 0,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 33.48231387138367
+    },
+    {
+      "phase": "training",
+      "arm": "C",
+      "seed": 101,
+      "steps": 100000,
+      "completed_episode_steps": 96300,
+      "episodes": 121,
+      "execution_fraction": 1.0,
+      "mean_relative_bonus": -0.001190564803828916,
+      "mu_range": [
+        0.9,
+        0.9
+      ],
+      "stiffness_range": [
+        1.0,
+        1.0
+      ],
+      "delayed_episode_fraction": 0,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 41.10416388511658
+    },
+    {
+      "phase": "training",
+      "arm": "C",
+      "seed": 202,
+      "steps": 100000,
+      "completed_episode_steps": 95835,
+      "episodes": 121,
+      "execution_fraction": 1.0,
+      "mean_relative_bonus": -0.001965303364399465,
+      "mu_range": [
+        0.9,
+        0.9
+      ],
+      "stiffness_range": [
+        1.0,
+        1.0
+      ],
+      "delayed_episode_fraction": 0,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 40.51472353935242
+    },
+    {
+      "phase": "training",
+      "arm": "D",
+      "seed": 101,
+      "steps": 100000,
+      "completed_episode_steps": 96000,
+      "episodes": 120,
+      "execution_fraction": 0.0095,
+      "mean_relative_bonus": 9.73590687842349e-06,
+      "mu_range": [
+        0.6055861686938475,
+        0.9
+      ],
+      "stiffness_range": [
+        0.653839318592547,
+        1.0
+      ],
+      "delayed_episode_fraction": 0.375,
+      "path_capped_episode_fraction": 0,
+      "wall_s": 40.77099132537842
+    },
+    {
+      "phase": "training",
+      "arm": "D",
+      "seed": 202,
+      "steps": 100000,
+      "completed_episode_steps": 96000,
+      "episodes": 120,
+      "execution_fraction": 0.006416666666666667,
+      "mean_relative_bonus": 7.4621433737396976e-06,
+      "mu_range": [
+        0.6073361428396776,
+        0.9
+      ],
+      "stiffness_range": [
+        0.6502800055478966,
+        1.0
+      ],
+      "delayed_episode_fraction": 0.39166666666666666,
+      "path_capped_episode_fraction": 0.016666666666666666,
+      "wall_s": 39.203455686569214
+    }
+  ],
+  "selected_for_extension": null,
+  "extension_additional_steps": 0,
+  "full_training_user_approved": false,
+  "reserved_evaluated": false
+}

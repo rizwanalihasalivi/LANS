@@ -1,0 +1,34 @@
+{
+  "arm": "D",
+  "seed": 202,
+  "steps": 100000,
+  "additional_steps": 100000,
+  "initial_policy_sha256": null,
+  "residual_scale_rad": 0.08,
+  "training_mode": {
+    "gate": true,
+    "relative_reward": true,
+    "domain_randomization": true
+  },
+  "source_sha256": {
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "train.py": "e7fd76ad01e1728918be66aa231a034460e3e4e68bdec6761657fe00588352d3",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision3/mapping.py": "bd13d6993713e19aa9d58fbec167e63705ffeef209a20b7af59ab719f47efb72",
+    "revision4/bootstrap.py": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+    "revision4/protocol.json": "3d09be920800dbb2b1f8bdf432ecf14ae5d329567883b934a4e607ead4be3bec",
+    "revision4/reward_model.py": "170c7d554424364b66cd29e5a42d8b3ecf2ae4425ac1b3e8fbbc20bf63056591",
+    "revision4/env4.py": "f20d4fbe1cdb306b106675efa943a286223760b47ea4baca759513ac5de243fe",
+    "revision4/train4.py": "f44493a87dfd50c94b19c11bab07fb0e39f7ccfd0517e6abd3266d0899577f06"
+  },
+  "policy_sha256": "0c8a921088026129dcbcc17675a7f237a9accca2ab51be73dd51f497aff16991",
+  "wall_s": 39.203455686569214,
+  "profile": "gate_relative_v4",
+  "synchronous_training": true
+}

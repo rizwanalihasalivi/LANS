@@ -1,0 +1,30 @@
+{
+  "revision": "LQR-default predictive gate v2; frozen existing policies; no new training",
+  "development_noise_base": 310000,
+  "reserved_test_noise_base": 910000,
+  "development_policy_seeds": [0, 1],
+  "test_policy_seeds": [0, 1, 2, 3, 4],
+  "development_speeds": [15, 25],
+  "test_speeds": [15, 20, 25],
+  "development_paths": ["sine120"],
+  "test_paths": ["sine120", "dlc220"],
+  "paths": {"sine120": [0, 2.5, 120, 0.3], "dlc220": [1, 0, 0, 0]},
+  "scenarios": {
+    "nominal": {"mu": 0.9, "stiffness": 1.0, "noise": 1, "sensor_delay_steps": 0, "service_ms": 0},
+    "tire_mismatch": {"mu": 0.9, "stiffness": 0.65, "noise": 1, "sensor_delay_steps": 0, "service_ms": 0},
+    "low_friction": {"mu": 0.6, "stiffness": 1.0, "noise": 1, "sensor_delay_steps": 0, "service_ms": 0},
+    "sensor_stress": {"mu": 0.9, "stiffness": 1.0, "noise": 2, "sensor_delay_steps": 1, "service_ms": 0},
+    "latency20": {"mu": 0.9, "stiffness": 1.0, "noise": 1, "sensor_delay_steps": 0, "service_ms": 20},
+    "latency100": {"mu": 0.9, "stiffness": 1.0, "noise": 1, "sensor_delay_steps": 0, "service_ms": 100}
+  },
+  "candidates": [
+    {"horizon_steps": 20, "relative_margin": 0.01},
+    {"horizon_steps": 30, "relative_margin": 0.02},
+    {"horizon_steps": 40, "relative_margin": 0.05}
+  ],
+  "methods": ["lqr", "old_fusion", "residual", "gated_residual", "gated_full"],
+  "selection": "Choose lowest development gated-residual mean failure-penalized RMSE subject to survival >= LQR and nominal RMSE <= 1.02*LQR. If none qualifies, select minimum RMSE with explicit development rejection; do not label deployment-ready. Apply same chosen gate to full-command ablation.",
+  "primary_test": "Per-scenario paired gated_residual minus LQR seed-mean penalized RMSE. Report all six regions, sample SD and descriptive 95% t intervals (df=4); no multiplicity-adjusted significance claim. Clear region advantage requires >=5% mean reduction, all five seed differences negative and no survival decrease. Nominal preservation requires <=2% mean RMSE increase and no survival decrease.",
+  "failure": "abs true lateral error >2.5 m or abs heading error >0.6 rad or nonfinite state; fill unexecuted tail with 2.5 m for penalized RMSE",
+  "limitations": "New noise seeds only; reused geometries and trained seeds. Predictor is nominal linear, not oracle mismatch model. Simulator scheduling, no hard-real-time claim. This revision is surrogate-only pending independent native Webots transfer. Specification unchanged; intentional architecture deviation."
+}

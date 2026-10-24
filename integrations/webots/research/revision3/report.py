@@ -11,7 +11,13 @@ sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 
 def main():
     torch.set_num_threads(1)
-    protocol=json.loads((HERE/'protocol.json').read_text());done=json.loads((TEST/'complete.json').read_text());start=json.loads((TEST/'start.json').read_text())
+    protocol=json.loads((HERE/'protocol.json').read_text());pilots=json.loads((HERE/'pilots.json').read_text());selection_path=ROOT/'results/revision3-pilots/selection.json';selection=json.loads(selection_path.read_text());done=json.loads((TEST/'complete.json').read_text());start=json.loads((TEST/'start.json').read_text())
+    assert selection['pilots_protocol_sha256']==sha(HERE/'pilots.json') and selection['development_csv_sha256']==sha(ROOT/'results/revision3-pilots/development.csv')
+    assert start['selection_sha256']==sha(selection_path) and start['selected_candidate']==selection['selected_candidate']
+    for name,digest in selection['source_sha256'].items():assert sha(RESEARCH/name)==digest
+    for name,digest in selection['policy_sha256'].items():
+        folder=ROOT/'results/revision3-pilots'/name;pilot=PPO.load(folder/'policy.zip',device='cpu')
+        assert sha(folder/'policy.zip')==digest and pilot.num_timesteps==100000
     assert sha(TEST/'episodes.csv')==done['episodes_sha256'] and done['source_sha256']==start['source_sha256']
     for n,d in done['source_sha256'].items():assert sha(TEST/'source'/n)==d and sha(RESEARCH/n)==d
     assert start['gate_freeze_sha256']==sha(ROOT/'results/revision2-development/freeze.json')
@@ -19,6 +25,7 @@ def main():
     for seed in protocol['seeds']:
         folder=TRAIN/f'residual-{seed}';m=json.loads((folder/'complete.json').read_text());model=PPO.load(folder/'policy.zip',device='cpu')
         assert model.seed==m['seed']==seed and model.num_timesteps==m['steps']==1000000
+        assert m['candidate']==selection['selected_candidate'] and m['candidate_config']==selection['selected_config'] and m['selection_sha256']==sha(selection_path)
         assert m['residual_scale_rad']==.08 and m['training_profile']=='range_matched_residual_v3'
         assert sha(folder/'policy.zip')==m['policy_sha256']==done['policy_sha256'][str(seed)]['matched']
         for n,d in m['source_sha256'].items():assert sha(folder/'source'/n)==d and sha(RESEARCH/n)==d
@@ -35,6 +42,7 @@ def main():
     assert len(keys)==len(set(keys))==len(expected)==done['episodes']==900 and set(keys)==expected
     indexed={k:r for k,r in zip(keys,rows)}
     for r in rows:
+        assert int(r['noise_seed'])>=pilots['final_test_noise_base']
         assert float(r['max_rate'])<=.3500001 and int(r['steps'])<=int(r['scheduled_steps'])
         if r['survived']=='True':assert r['steps']==r['scheduled_steps']
         if r['method'] not in ['legacy_gated','lqr']:
@@ -66,7 +74,8 @@ def main():
         # Record mapping-log integrity alongside the original native runner provenance.
         (folder/'mapping-verification.json').write_text(json.dumps(dict(packets=len(list(csv.DictReader((folder/'residual-packets.csv').open()))),sha256=sha(folder/'residual-packets.csv'),max_residual_rad=.08),indent=2)+'\n')
     lines=['# Range-matched residual retraining: reserved comparison','',
-           '**5,000,000 new training steps**, five scratch-trained policies (1M each); 900 paired surrogate episodes. Candidate residual range is ±0.08 rad in training and inference; frozen gate settings are unchanged.','',
+           f"Selected pilot configuration: **{selection['selected_candidate']}**, using 800,000 pilot steps and 360 development episodes before full training. See the [complete pilot ranking](../revision3-pilots/report.md).",'',
+           '**5,000,000 full-training steps**, five scratch-trained policies (1M each); 900 paired surrogate episodes. Candidate residual range is ±0.08 rad in training and inference; frozen gate settings are unchanged.','',
            '| Region | Method | Survived / 30 | Mean penalized RMSE (m) | Active fraction | Requests beyond gate cap |','|---|---|---:|---:|---:|---:|']
     for region,method in itertools.product(protocol['scenarios'],protocol['methods']):
         rs=[r for r in rows if r['scenario']==region and r['method']==method]
@@ -90,6 +99,6 @@ def main():
             'Matching the candidate action range does not match the entire deployment distribution: training still applies the residual directly to LQR, while deployment gates, weights and delays it. This is not gate-aware training. Same normalized initial policy variance now means smaller physical exploration variance. The old policy rescaling ablation helps separate decoder effects from retraining; it does not isolate every exploration mechanism.',
             '', 'Fixed end-of-budget checkpoints only, no best-seed selection or test-driven retuning. Training seeds and known paths are reused, with fresh paired noise. Friction/stiffness/sensor/delay stresses are evaluation conditions, not a new training curriculum. All negative outcomes are retained. Five seeds and these scenarios do not establish convergence, stability, safety or broad superiority. Full paired native evaluation of the new policies remains separate.']
     (TEST/'report.md').write_text('\n'.join(lines)+'\n')
-    (TEST/'verification.json').write_text(json.dumps(dict(verified=True,total_training_steps=5000000,training=training,episodes=len(rows),native_smoke_survived=survived,native_mapping_packets=packets,comparisons=comparisons),indent=2)+'\n')
+    (TEST/'verification.json').write_text(json.dumps(dict(verified=True,selected_candidate=selection['selected_candidate'],pilot_training_steps=800000,pilot_development_episodes=360,total_training_steps=5000000,training=training,episodes=len(rows),native_smoke_survived=survived,native_mapping_packets=packets,comparisons=comparisons),indent=2)+'\n')
     print(f'Verified five 1M-step checkpoints, 900 evaluation episodes and five native mapping checks; {survived}/5 native survived')
 if __name__=='__main__':main()

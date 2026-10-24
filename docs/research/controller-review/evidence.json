@@ -1,0 +1,59 @@
+{
+  "reviewed_head": "b221686b2c010eb02a0cef54125bca8cbaa1e4ba",
+  "legacy_zero_action": {
+    "max_abs_state": 0.0,
+    "reference_peak_m": 3.5,
+    "simulated_x_m": 175.0
+  },
+  "legacy_double_lqr": {
+    "single_lqr_rad": -0.0551,
+    "effective_plant_command_rad": -0.1102,
+    "reported_total_rad": -0.0551,
+    "single_lqr_state_error": 0.02671515219139331,
+    "target_speed": 15.0,
+    "actual_dynamics_speed": 25.0,
+    "child_distance_m": 0.15,
+    "parent_distance_m": 0.25
+  },
+  "legacy_controller_speed": {
+    "requested": 15.0,
+    "observation": 25.0
+  },
+  "legacy_lr_assignment": {
+    "attribute": 0.0001,
+    "effective_schedule": 0.0003
+  },
+  "revision2-test": {
+    "rows": 900,
+    "sha256": "ce787f4da610a6b128d7421f87b126889f6e2e1a0e7fa6bb4efda9d6601fbae3"
+  },
+  "revision2-native-test": {
+    "rows": 270,
+    "sha256": "752d3bd140b42fb74d5e5ddb6bcedc675648f695913d30b39bb01f712d1d3f4d"
+  },
+  "revision3-600k": {
+    "rows": 288,
+    "sha256": "fe3ceae96b3997723590cf483f3c54268287bb14b652bfa1b8dad3d65bfa15fe"
+  },
+  "reference_cells_reproduced": 216,
+  "model_101": {
+    "steps": 600000,
+    "optimizer_steps": [
+      30000
+    ],
+    "policy_sha256": "c42f3a0febec6c2a011d50e086bbc3f13f5807a7a5582176486c88b37b95a831"
+  },
+  "model_202": {
+    "steps": 600000,
+    "optimizer_steps": [
+      30000
+    ],
+    "policy_sha256": "72efe7f4315df75234d1c92fe970c486eae5a22b4596e89a91a59668d53ed348"
+  },
+  "diagnostics_scope": "10 runs: seed101, 25m/s, DLC220, nominal/tire_mismatch, existing development noise4100000. Not a policy selection or reserved test.",
+  "reward_lateral_only": {
+    "0.06": 1.0357031841224429,
+    "0.03": 1.0464064722309934,
+    "0.0": 1.05
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "selected_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "development_accepted": true,
+  "rankings": [
+    {
+      "config": {
+        "horizon_steps": 20,
+        "relative_margin": 0.01
+      },
+      "eligible": true,
+      "mean_rmse": 0.11201119571085079,
+      "nominal_ratio": 0.982149970482186
+    },
+    {
+      "config": {
+        "horizon_steps": 30,
+        "relative_margin": 0.02
+      },
+      "eligible": true,
+      "mean_rmse": 0.11223225196832942,
+      "nominal_ratio": 0.9850599171622129
+    },
+    {
+      "config": {
+        "horizon_steps": 40,
+        "relative_margin": 0.05
+      },
+      "eligible": true,
+      "mean_rmse": 0.11265520995006913,
+      "nominal_ratio": 0.9957133438065782
+    }
+  ],
+  "source_sha256": {
+    "revision2/run.py": "6af39e262dc14087cfdd85d18fded8f97f1c4ad23500fbba1c937a775ef5b1a8",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/test_gate.py": "c0e74335d5f0e6683de935113960c201abb022e2d3b481e2705cdf011d62e890",
+    "revision2/protocol.json": "f7453ea904392fa48edfa62252ed688102acd90c89eb6166a2c45ac7d9c4d499",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "geometry.py": "a777050f1ded4f1b95707ecc2d9a869a8e33f0557df9f26d31d6e29916ef9ef4"
+  },
+  "policy_sha256": {
+    "full-0": "e4ef4a8d7d6e62d283fa82aa81c727cad014d78103643e867c4c6bcba986beb7",
+    "residual-0": "42fb2ede2bb39da6443d936607c1d7828c5742020476cab043073bc8de952ac9",
+    "full-1": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074",
+    "residual-1": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a",
+    "full-2": "433a3b09ad27f412c924eb84afc64bc0875408d71c67f71f240eb9c4613aa28a",
+    "residual-2": "dd81b5862f60afac793ce323d7a7dd2a21aa12d3a28b699e0f802d7c3cd331c5",
+    "full-3": "e74215abe4acadb13cf58a6e269710bb0acbaa89a283db7fdccd076659803207",
+    "residual-3": "0975bde69958191dce0159d40db383f974aced30aa26f6c63d26d2c98a59974b",
+    "full-4": "2caa90bab8cfcba1a04e9ff088a76b465583e9e6d5d2ea174d1a16ee92d47d7c",
+    "residual-4": "47cf0fa33d3cad20f69efd21b7ccf12635efc705e1c94733cf47ad955faf2060"
+  },
+  "development_csv_sha256": "4d06cb8535d8e5c7ba8023a015a649e28dfbbb70f2fbbf9fdc6b7ccbba0df4a1",
+  "protocol": {
+    "revision": "LQR-default predictive gate v2; frozen existing policies; no new training",
+    "development_noise_base": 310000,
+    "reserved_test_noise_base": 910000,
+    "development_policy_seeds": [
+      0,
+      1
+    ],
+    "test_policy_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "development_speeds": [
+      15,
+      25
+    ],
+    "test_speeds": [
+      15,
+      20,
+      25
+    ],
+    "development_paths": [
+      "sine120"
+    ],
+    "test_paths": [
+      "sine120",
+      "dlc220"
+    ],
+    "paths": {
+      "sine120": [
+        0,
+        2.5,
+        120,
+        0.3
+      ],
+      "dlc220": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "scenarios": {
+      "nominal": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ms": 0
+      },
+      "tire_mismatch": {
+        "mu": 0.9,
+        "stiffness": 0.65,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ms": 0
+      },
+      "low_friction": {
+        "mu": 0.6,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ms": 0
+      },
+      "sensor_stress": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 2,
+        "sensor_delay_steps": 1,
+        "service_ms": 0
+      },
+      "latency20": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ms": 20
+      },
+      "latency100": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ms": 100
+      }
+    },
+    "candidates": [
+      {
+        "horizon_steps": 20,
+        "relative_margin": 0.01
+      },
+      {
+        "horizon_steps": 30,
+        "relative_margin": 0.02
+      },
+      {
+        "horizon_steps": 40,
+        "relative_margin": 0.05
+      }
+    ],
+    "methods": [
+      "lqr",
+      "old_fusion",
+      "residual",
+      "gated_residual",
+      "gated_full"
+    ],
+    "selection": "Choose lowest development gated-residual mean failure-penalized RMSE subject to survival >= LQR and nominal RMSE <= 1.02*LQR. If none qualifies, select minimum RMSE with explicit development rejection; do not label deployment-ready. Apply same chosen gate to full-command ablation.",
+    "primary_test": "Per-scenario paired gated_residual minus LQR seed-mean penalized RMSE. Report all six regions, sample SD and descriptive 95% t intervals (df=4); no multiplicity-adjusted significance claim. Clear region advantage requires >=5% mean reduction, all five seed differences negative and no survival decrease. Nominal preservation requires <=2% mean RMSE increase and no survival decrease.",
+    "failure": "abs true lateral error >2.5 m or abs heading error >0.6 rad or nonfinite state; fill unexecuted tail with 2.5 m for penalized RMSE",
+    "limitations": "New noise seeds only; reused geometries and trained seeds. Predictor is nominal linear, not oracle mismatch model. Simulator scheduling, no hard-real-time claim. This revision is surrogate-only pending independent native Webots transfer. Specification unchanged; intentional architecture deviation."
+  }
+}

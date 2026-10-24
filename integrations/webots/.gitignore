@@ -28,3 +28,11 @@ results/*
 !results/actuator-parity/
 !results/actuator-parity/**
 **/__pycache__/
+
+# Revision 2 preserves the previous campaign and records its own split.
+!research/revision2/*.json
+!results/revision2-development/
+!results/revision2-development/**
+!results/revision2-test/
+!results/revision2-test/**
+**/__pycache__/

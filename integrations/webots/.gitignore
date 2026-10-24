@@ -36,3 +36,11 @@ results/*
 !results/revision2-test/
 !results/revision2-test/**
 **/__pycache__/
+
+# Frozen-gate native transfer evidence (prior campaigns remain immutable).
+!research/revision2/native/*.json
+!results/revision2-native-smoke/
+!results/revision2-native-smoke/**
+!results/revision2-native-test/
+!results/revision2-native-test/**
+**/__pycache__/

@@ -8,7 +8,7 @@ HERE=Path(__file__).resolve().parent;RESEARCH=HERE.parent;ROOT=RESEARCH.parent
 sys.path[:0]=[str(HERE),str(RESEARCH/'revision2'),str(RESEARCH)]
 from mapping import legacy_units
 spec=importlib.util.spec_from_file_location('unchanged_revision2_runner',RESEARCH/'revision2/run.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)
-PROTOCOL=json.loads((HERE/'protocol.json').read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+PROTOCOL=json.loads((HERE/'protocol.json').read_text());PILOTS=json.loads((HERE/'pilots.json').read_text());PROTOCOL['test_noise_base']=PILOTS['final_test_noise_base'];sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 
 class InferencePolicy:
     def __init__(self,model,scale):self.model=model;self.scale=scale;self.physical=[];self.saturated=[]
@@ -20,16 +20,19 @@ class InferencePolicy:
         return mapped,state
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--training',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--wait-for-training',action='store_true');args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--training',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--wait-for-training',action='store_true');p.add_argument('--selection',type=Path,required=True);args=p.parse_args()
+    selected=json.loads(args.selection.read_text())
+    assert selected['pilots_protocol_sha256']==sha(HERE/'pilots.json')
+    for n,d in selected['source_sha256'].items():assert sha(RESEARCH/n)==d
     torch.set_num_threads(1);torch.set_num_interop_threads(1);old.configure_lqr()
     freeze=json.loads((ROOT/'results/revision2-development/freeze.json').read_text())
     for n,d in freeze['source_sha256'].items():assert sha(RESEARCH/n)==d
-    names=list(freeze['source_sha256'])+['revision3/evaluate.py','revision3/mapping.py','revision3/protocol.json','revision3/train.py','revision3/matched_env.py']
+    names=list(freeze['source_sha256'])+['revision3/evaluate.py','revision3/mapping.py','revision3/protocol.json','revision3/train.py','revision3/matched_env.py','revision3/pilot_env.py','revision3/pilots.json','revision3/pilot_search.py']
     hashes={name:sha(RESEARCH/name) for name in names}
     out=args.output;out.mkdir(parents=True,exist_ok=False);(out/'traces').mkdir()
     for name in hashes:
         target=out/'source'/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((RESEARCH/name).read_bytes())
-    (out/'start.json').write_text(json.dumps(dict(protocol=PROTOCOL,source_sha256=hashes,gate_freeze_sha256=sha(ROOT/'results/revision2-development/freeze.json')),indent=2)+'\n')
+    (out/'start.json').write_text(json.dumps(dict(protocol=PROTOCOL,source_sha256=hashes,selection_sha256=sha(args.selection),selected_candidate=selected['selected_candidate'],gate_freeze_sha256=sha(ROOT/'results/revision2-development/freeze.json')),indent=2)+'\n')
     rows=[];models={}
     with (out/'episodes.csv').open('w',newline='') as f:
         writer=None
@@ -42,6 +45,7 @@ def main():
                     if time.monotonic()>deadline:raise TimeoutError(str(folder))
                     time.sleep(5)
             meta=json.loads((folder/'complete.json').read_text())
+            assert meta['selection_sha256']==sha(args.selection) and meta['candidate']==selected['selected_candidate']
             assert meta['steps']==1000000 and meta['seed']==seed and meta['residual_scale_rad']==.08 and meta['training_profile']=='range_matched_residual_v3'
             assert sha(folder/'policy.zip')==meta['policy_sha256']
             for name,digest in meta['source_sha256'].items():assert sha(RESEARCH/name)==digest and sha(folder/'source'/name)==digest

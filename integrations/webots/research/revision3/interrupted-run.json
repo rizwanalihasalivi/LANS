@@ -1,0 +1,23 @@
+{
+  "reason": "User requested pilot-first selection before full training; no reserved episodes evaluated",
+  "partial_training": {
+    "residual-2": {
+      "steps": 530000,
+      "wall_s": 215.37407279014587
+    },
+    "residual-3": {
+      "steps": 530000,
+      "wall_s": 213.36089825630188
+    },
+    "residual-0": {
+      "steps": 530000,
+      "wall_s": 212.1253743171692
+    },
+    "residual-1": {
+      "steps": 530000,
+      "wall_s": 214.0916359424591
+    }
+  },
+  "completed_policies": 0,
+  "reserved_csv_bytes": 0
+}

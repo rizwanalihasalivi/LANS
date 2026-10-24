@@ -56,3 +56,7 @@ results/*
 !results/revision3-native-smoke/
 !results/revision3-native-smoke/**
 **/__pycache__/
+
+!results/revision3-pilots/
+!results/revision3-pilots/**
+**/__pycache__/

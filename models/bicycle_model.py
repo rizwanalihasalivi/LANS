@@ -5,6 +5,7 @@ State: x = [e_y, ė_y, e_ψ, ė_ψ]ᵀ
 """
 
 import numpy as np
+from scipy.linalg import expm
 
 def get_error_state_model(vx, params):
     """
@@ -66,9 +67,9 @@ def discretize_error_state_model(A, B, dt):
     M = np.zeros((n + 1, n + 1))
     M[:n, :n] = A * dt
     M[:n, n] = B.flatten() * dt
-    M[n, n] = 1.0
+    # Zero lower block is required for the zero-order-hold exponential.
     
-    M_exp = np.linalg.expm(M)
+    M_exp = expm(M)
     A_d = M_exp[:n, :n]
     B_d = M_exp[:n, n:n+1]
     

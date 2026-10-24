@@ -13,7 +13,7 @@ class ObservationBuilder:
     c_t = [τ(t), τ_pred(t)] - Equation (8)
     """
     
-    def __init__(self, lookahead_steps=4, latency_window=10):
+    def __init__(self, lookahead_steps=4, latency_window=10, vx=25.0):
         """
         Args:
             lookahead_steps: number of future lateral error steps (default 4)
@@ -30,7 +30,7 @@ class ObservationBuilder:
         
         # Current values
         self.current_error_state = np.zeros(4)
-        self.current_vx = 25.0
+        self.current_vx = float(vx)
         self.current_latency = 0.0
         
     def update_error_state(self, error_state):

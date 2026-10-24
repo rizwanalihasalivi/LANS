@@ -1,249 +1,112 @@
-"""
-path_tracking_env.py - Path Tracking Environment for LANS Controller
-FIXED: Double lane change now works correctly
-"""
+"""Corrected world-coordinate bicycle plant; action is FULL steering in radians.
 
+This version is incompatible with legacy root checkpoints. Reference geometry
+never moves the vehicle. Controllers own fusion; this class owns physics only.
+"""
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
-import time
-from models.bicycle_model import bicycle_model
+from models.bicycle_model import VEHICLE_PARAMS
+from controllers.lqr_controller import get_lqr_controller
 from scenarios.double_lane_change import double_lane_change
 
-class PathTrackingEnv(gym.Env):
-    def __init__(self, mode="train"):
-        super(PathTrackingEnv, self).__init__()
-        self.mode = mode
-        
-        # Observation space: [o_t; c_t] = 11 dimensions
-        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(11,), dtype=np.float32)
-        self.action_space = spaces.Box(low=-0.5, high=0.5, shape=(1,), dtype=np.float32)
 
-        # Simulation parameters
-        self.dt = 0.01  # 100 Hz
-        self.vx = 25.0  # 90 km/h (default)
-        
-        # Vehicle parameters
-        self.params = {
-            "m": 1650.0,
-            "Iz": 4224.0,
-            "lf": 1.2,
-            "lr": 1.4,
-            "Cf": 80000.0,
-            "Cr": 80000.0
-        }
-        
-        # LQR gain
-        self.K_lqr = np.array([0.52, 0.12, 0.31, 0.04])
-        
-        # Latency tracking
-        self.latency_history = []
-        self.latency_window = 10
-        self.last_latency = 0.0
-        self.pred_latency = 0.0
-        
-        # Position tracking
-        self.x_position = 0.0
-        self.y_actual = 0.0
-        
-        # State: [e_y, e_y_dot, e_ψ, e_ψ_dot]
-        self.state = np.zeros(4, dtype=np.float32)
-        
-        # Step tracking
-        self.t_step = 0
-        self.prev_steering = 0.0
-        
-        # Reference path storage
-        self.y_ref = None
+class PathTrackingEnv(gym.Env):
+    contract = 'world-bicycle-v2'
+
+    def __init__(self, mode='train', vx=25.):
+        super().__init__()
+        self.mode = mode; self.dt = .01; self.params = VEHICLE_PARAMS.copy()
+        self.observation_space = spaces.Box(-np.inf, np.inf, (11,), np.float32)
+        self.action_space = spaces.Box(-.5, .5, (1,), np.float32)
+        self.vx = float(vx); self.y_ref = None; self.done = True
+        self.last_latency = 0.; self.latency_history = []
+
+    @property
+    def target_speed(self):
+        return self.vx
+
+    @target_speed.setter
+    def target_speed(self, value):
+        if not np.isfinite(value) or value <= 0:
+            raise ValueError('speed must be positive')
+        self.vx = float(value)
+        self.K_lqr, self.lqr_control = get_lqr_controller(self.vx, self.params)
+        # Physical paths are stored against distance, never reindexed by new speed.
+
+    @property
+    def car_x(self):
+        return self.x_position
 
     def _generate_reference_path(self):
-        """Generate the reference path based on mode"""
-        # Time array (10 seconds at 100 Hz)
-        t = np.arange(0, 10.01, self.dt)
-        
-        # Convert time to distance (meters)
-        s = self.vx * t
-        
-        if self.mode == "train":
-            # Random path for training
-            path_type = np.random.choice(["DLC", "Snake", "Sine"])
-            if path_type == "DLC":
-                self.y_ref = double_lane_change(s, lane_width=3.5)
-            elif path_type == "Snake":
-                self.y_ref = 2.5 * np.sin(2 * np.pi * 0.4 * t)
-            else:  # Sine
-                self.y_ref = 3.0 * np.sin(2 * np.pi * 0.1 * t)
-        else:
-            # Evaluation: Always use Double Lane Change
-            self.y_ref = double_lane_change(s, lane_width=3.5)
-        
-        return self.y_ref
+        self.path_x = np.linspace(0., 300., 3001)
+        kind = self.np_random.choice(['DLC', 'Sine']) if self.mode == 'train' else 'DLC'
+        self.y_ref = double_lane_change(self.path_x, lane_width=3.5) if kind == 'DLC' else 2.*np.sin(2*np.pi*self.path_x/150.)
+        slope = np.gradient(self.y_ref, self.path_x)
+        self.path_heading = np.arctan(slope)
+        self.path_curvature = np.gradient(slope, self.path_x)/(1+slope*slope)**1.5
 
-    def _get_reference_y(self, x_pos):
-        """Get reference y at current x position"""
-        if self.y_ref is None:
-            return 0.0
-        
-        # Calculate index based on distance traveled
-        distance = x_pos
-        idx = int(distance / (self.vx * self.dt))
-        idx = min(idx, len(self.y_ref) - 1)
-        idx = max(idx, 0)
-        
-        return self.y_ref[idx]
+    def _get_reference_y(self, x):
+        return float(np.interp(x, self.path_x, self.y_ref))
 
-    def _get_reference_heading(self, x_pos):
-        """Calculate reference heading from path derivative"""
-        if self.y_ref is None or len(self.y_ref) < 2:
-            return 0.0
-        
-        distance = x_pos
-        idx = int(distance / (self.vx * self.dt))
-        idx = min(idx, len(self.y_ref) - 2)
-        idx = max(idx, 0)
-        
-        if idx > 0 and idx < len(self.y_ref) - 1:
-            dy = self.y_ref[idx + 1] - self.y_ref[idx - 1]
-            dx = 2 * self.vx * self.dt
-            return np.arctan2(dy, dx) if dx > 0 else 0.0
-        return 0.0
+    get_ref_y = _get_reference_y
+
+    def _get_reference_heading(self, x):
+        return float(np.interp(x, self.path_x, self.path_heading))
+
+    def curvature(self):
+        return float(np.interp(self.x_position, self.path_x, self.path_curvature))
+
+    def _refresh(self):
+        x, y, psi, vy, r = self.physical
+        self.x_position = float(x); self.y_actual = float(y)
+        ep = float(np.arctan2(np.sin(psi-self._get_reference_heading(x)), np.cos(psi-self._get_reference_heading(x))))
+        self.state = np.array([y-self._get_reference_y(x), vy+self.vx*ep, ep, r-self.vx*self.curvature()])
 
     def _get_future_error(self, steps):
-        """Get future lateral error at 'steps' ahead"""
-        future_x = self.x_position + steps * self.vx * self.dt
-        future_idx = int(future_x / (self.vx * self.dt))
-        future_idx = min(future_idx, len(self.y_ref) - 1) if self.y_ref is not None else 0
-        future_idx = max(future_idx, 0)
-        
-        y_ref_future = self.y_ref[future_idx] if self.y_ref is not None else 0
-        current_y = self._get_reference_y(self.x_position) - self.state[0]
-        
-        return y_ref_future - current_y
+        return self.y_actual-self._get_reference_y(self.x_position+steps*self.vx*self.dt)
 
     def _get_observation(self):
-        """Build 11-dim observation"""
-        e_y = self.state[0]
-        e_y_dot = self.state[1]
-        e_ψ = self.state[2]
-        e_ψ_dot = self.state[3]
-        
-        # Preview (4 steps ahead)
-        preview = [
-            self._get_future_error(1),
-            self._get_future_error(2),
-            self._get_future_error(3),
-            self._get_future_error(4)
-        ]
-        
-        o_t = np.array([e_y, e_y_dot, e_ψ, e_ψ_dot, self.vx] + preview, dtype=np.float32)
-        
-        # Context vector
-        τ_current = self.last_latency
-        τ_pred = np.mean(self.latency_history) if self.latency_history else 0.0
-        self.pred_latency = τ_pred
-        c_t = np.array([τ_current, τ_pred], dtype=np.float32)
-        
-        return np.concatenate([o_t, c_t])
-
-    def _compute_adaptive_gain(self, tau):
-        """β(τ) adaptive gain"""
-        tau_th = 5.0
-        tau_scale = 20.0
-        if tau < tau_th:
-            return 1.0
-        return np.exp(-(tau - tau_th) / tau_scale)
+        return np.array([*self.state, self.vx, *[self._get_future_error(i) for i in range(1,5)],
+                         self.last_latency, np.mean(self.latency_history) if self.latency_history else 0.], dtype=np.float32)
 
     def reset(self, *, seed=None, options=None):
         super().reset(seed=seed)
-        
-        # Reset all state variables
-        self.state = np.zeros(4, dtype=np.float32)
-        self.x_position = 0.0
-        self.y_actual = 0.0
-        self.prev_steering = 0.0
-        self.t_step = 0
-        self.latency_history = []
-        self.last_latency = 0.0
-        self.pred_latency = 0.0
-        
-        # Update vehicle dynamics
-        self.A, self.B = bicycle_model(self.vx, self.params)
-        self.B = self.B.flatten()
-        self.A_d = np.eye(4) + self.A * self.dt
-        self.B_d = self.B * self.dt
-        
-        # Generate reference path
+        self.target_speed = self.vx
         self._generate_reference_path()
-        
-        return self._get_observation(), {}
+        options = options or {}
+        self.physical = np.array([0., self._get_reference_y(0.)+options.get('lateral_error',0.),
+                                  self._get_reference_heading(0.)+options.get('heading_error',0.), 0., 0.])
+        self.t_step = 0; self.prev_steering = 0.; self.last_latency = 0.; self.latency_history = []; self.done = False
+        self._refresh()
+        return self._get_observation(), {'contract':self.contract}
+
+    def _derivative(self, z, command):
+        _, _, psi, vy, r = z; p = self.params; v = self.vx
+        front = p['Cf']*(command-(vy+p['lf']*r)/v)
+        rear = p['Cr']*(-(vy-p['lr']*r)/v)
+        return np.array([v*np.cos(psi)-vy*np.sin(psi), v*np.sin(psi)+vy*np.cos(psi), r,
+                         (front+rear)/p['m']-v*r, (p['lf']*front-p['lr']*rear)/p['Iz']])
 
     def step(self, action):
-        t_start = time.perf_counter()
-        
-        # Get references
-        y_ref = self._get_reference_y(self.x_position)
-        ψ_ref = self._get_reference_heading(self.x_position)
-        
-        # PPO residual
-        δ_RL = np.clip(action[0], -0.5, 0.5)
-        
-        # LQR baseline
-        δ_LQR = -np.dot(self.K_lqr, self.state)
-        δ_LQR = np.clip(δ_LQR, -0.5, 0.5)
-        
-        # Adaptive gain
-        β = self._compute_adaptive_gain(self.last_latency)
-        
-        # Total steering
-        δ_total = δ_LQR + β * δ_RL
-        δ_total = np.clip(δ_total, -0.5, 0.5)
-        
-        # Vehicle dynamics update
-        self.state = self.A_d @ self.state + self.B_d * δ_total
-        self.t_step += 1
-        self.x_position += self.vx * self.dt
-        
-        e_y = self.state[0]
-        e_ψ = self.state[2]
-        self.y_actual = y_ref - e_y
-        
-        # Measure latency
-        t_end = time.perf_counter()
-        τ = (t_end - t_start) * 1000
-        
-        self.latency_history.append(τ)
-        if len(self.latency_history) > self.latency_window:
-            self.latency_history.pop(0)
-        self.last_latency = τ
-        
-        # Calculate reward
-        R_tracking = -10.0 * (e_y ** 2) - 5.0 * (e_ψ ** 2)
-        R_control = -0.1 * (δ_RL ** 2) - 0.5 * ((δ_RL - self.prev_steering) ** 2)
-        R_latency = -0.01 * τ - 0.1 * max(0, τ - 5.0) ** 2
-        
-        reward = 1.0 * R_tracking + 0.1 * R_control + 0.05 * R_latency
-        
-        if abs(e_y) < 0.05:
-            reward += 20.0
-        reward += 1.0
-        
-        self.prev_steering = δ_RL
-        
-        # Check termination
-        terminated = bool(abs(e_y) > 2.5 or self.t_step >= len(self.y_ref) - 1 if self.y_ref is not None else False)
-        
-        info = {
-            "error": e_y,
-            "y_phys": self.y_actual,
-            "y_ref": y_ref,
-            "x_phys": self.x_position,
-            "steering": δ_total,
-            "latency": τ,
-            "beta": β,
-            "δ_LQR": δ_LQR,
-            "δ_RL": δ_RL,
-            "heading_error": e_ψ,
-            "pred_latency": self.pred_latency
-        }
-        
-        return self._get_observation(), reward, terminated, False, info
+        if self.done:
+            raise RuntimeError('reset required after termination/truncation')
+        raw = np.asarray(action).reshape(-1)
+        if raw.size != 1 or not np.isfinite(raw).all():
+            raise ValueError('one finite steering command required')
+        command = float(np.clip(raw[0], -.5, .5)); z = self.physical; dt = self.dt
+        a=self._derivative(z,command); b=self._derivative(z+dt*a/2,command)
+        c=self._derivative(z+dt*b/2,command); d=self._derivative(z+dt*c,command)
+        self.physical = z+dt*(a+2*b+2*c+d)/6
+        self.t_step += 1; self._refresh()
+        ey, _, ep, _ = self.state
+        failed = bool(abs(ey)>2.5 or abs(ep)>.6 or not np.isfinite(self.physical).all())
+        truncated = self.t_step >= 1000
+        reward = float(np.exp(-(ey/.5)**2-.2*(ep/.1)**2)+.05-.005*(command/.5)**2
+                       -.001*((command-self.prev_steering)/.5)**2-10*failed)
+        self.prev_steering=command; self.done=failed or truncated
+        info = dict(error=ey, heading_error=ep, x_phys=self.x_position, y_phys=self.y_actual,
+                    y_ref=self._get_reference_y(self.x_position), steering=command, total_steer=command,
+                    command_time_s=(self.t_step-1)*dt, state_time_s=self.t_step*dt,
+                    latency=self.last_latency, failed=failed, contract=self.contract)
+        return self._get_observation(), reward, failed, bool(truncated), info

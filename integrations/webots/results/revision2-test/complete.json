@@ -1,0 +1,18 @@
+{
+  "episodes": 900,
+  "source_sha256": {
+    "revision2/run.py": "6af39e262dc14087cfdd85d18fded8f97f1c4ad23500fbba1c937a775ef5b1a8",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/test_gate.py": "c0e74335d5f0e6683de935113960c201abb022e2d3b481e2705cdf011d62e890",
+    "revision2/protocol.json": "f7453ea904392fa48edfa62252ed688102acd90c89eb6166a2c45ac7d9c4d499",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "geometry.py": "a777050f1ded4f1b95707ecc2d9a869a8e33f0557df9f26d31d6e29916ef9ef4"
+  },
+  "episodes_sha256": "ce787f4da610a6b128d7421f87b126889f6e2e1a0e7fa6bb4efda9d6601fbae3"
+}

@@ -1,0 +1,77 @@
+{
+  "protocol": {
+    "purpose": "User-requested 300k to600k baseline-only learning-curve confirmation; no five-seed full training",
+    "parent_commit": "d880e3fe36d047bc1c974756615dd94b4641bb47",
+    "candidate": "baseline",
+    "seeds": [
+      101,
+      202
+    ],
+    "initial_steps": 300000,
+    "additional_steps": 300000,
+    "total_steps": 600000,
+    "initial_directory": "results/revision3-extended",
+    "continuation": "Restore PPO weights, Adam state and reward-normalization statistics from the exact300k baseline checkpoint. Restart environments with SB3 model.seed+i, explicitly matching the previous continuation's effective reset behavior. Not uninterrupted600k training. Same treatment for both seeds; no new architecture/reward/gate changes.",
+    "development_noise_base": 4100000,
+    "methods": [
+      "lqr",
+      "legacy_gated",
+      "legacy_rescaled_gated",
+      "baseline600"
+    ],
+    "legacy_reference_seed_map": {
+      "101": 0,
+      "202": 1
+    },
+    "episodes": 288,
+    "curve": "Compare baseline endpoints100k,300k,600k on identical development seed/speed/path/scenario cells. Re-run reference methods and require the historical errors/survival to reproduce. Report all regions, paired seed means and raw magnitudes; do not use training reward as the decision score.",
+    "active_regions": [
+      "nominal",
+      "tire_mismatch",
+      "low_friction",
+      "sensor_stress",
+      "latency20"
+    ],
+    "operational_progress_rule": {
+      "minimum_relative_rmse_improvement_vs_300k": 0.01,
+      "minimum_relative_rmse_improvement_vs_old_rescaled": 0.01,
+      "both_seed_means_better_than_300k": true,
+      "minimum_improving_active_regions": 4,
+      "maximum_regional_degradation_vs_300k": 0.01,
+      "maximum_nominal_degradation_vs_lqr": 0.02,
+      "survival": "No region loses survival against300k or LQR. Legacy-gated gap is reported separately as the aspirational reference."
+    },
+    "decision": "Thresholds describe a material improving trend for budget review, not significance or convergence. If the rule is not met, do not claim five-million-step training is justified. Even if met, this task stops with the600k report; full_training_user_approved=false. No post-result threshold changes or additional search.",
+    "limits": "Only two training seeds and repeatedly consulted development geometries/noise; no held-out generalization claim. Old reference policies have1M steps and different model seeds. Final reserved base4910000 remains unused; no native Webots run or larger-network training in this stage."
+  },
+  "source_sha256": {
+    "revision2/run.py": "6af39e262dc14087cfdd85d18fded8f97f1c4ad23500fbba1c937a775ef5b1a8",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/test_gate.py": "c0e74335d5f0e6683de935113960c201abb022e2d3b481e2705cdf011d62e890",
+    "revision2/protocol.json": "f7453ea904392fa48edfa62252ed688102acd90c89eb6166a2c45ac7d9c4d499",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "geometry.py": "a777050f1ded4f1b95707ecc2d9a869a8e33f0557df9f26d31d6e29916ef9ef4",
+    "revision3/train.py": "a34f644ef7db8eaa78a0310f7ef3726d6b92b35756c92bb41938bc7bd4caf0b7",
+    "revision3/matched_env.py": "0e97459ac865e3c404e9eccc185c0cc47a43d3e0c21dd2bd2a80ac104a466980",
+    "revision3/mapping.py": "bd13d6993713e19aa9d58fbec167e63705ffeef209a20b7af59ab719f47efb72",
+    "revision3/protocol.json": "220acc12e3823cb62a0c673cb16a95d9c595ff797fec61a02e6fab44bcfd7806",
+    "revision3/pilots.json": "0e6c706923c83fa9dbe8216638e05c5fc9222f13408fe3dd331680831e1142a8",
+    "revision3/pilot_env.py": "dcbec5215c9acaaa3fe1e84498baf8e3993d64798baf824a679ef62cb87fc1ad",
+    "revision3/pilot_search.py": "595d81ee4688a235600afcc3f5002f1afc5d153a667f21a083425dd8e27684ea",
+    "revision3/evaluate.py": "bd53c911edbc98c48bab435316f9346bf863e2d08718dc916c73330869c55b8e",
+    "revision3/test_range.py": "fdb1725399bc5528154eee15c9ff78c1f1335afc453da9a723d94ebddc14033e",
+    "revision3/extension.json": "9a5a40a92c5c497faa1f7951e2503308aa3e6e41153a47262852b2041dcfda21",
+    "revision3/extend_train.py": "da686bb4fc52810341a6c22ad37e31d6f68787bf3d74b41111a753a384b7e341",
+    "revision3/extended_search.py": "fea95a24b05f52d371ad162c49b4f74065820ec9cf059be5a89d07003a891cc0",
+    "revision3/confirmation.json": "b4cbb1e69b0469f507983afce0388abb82e824ccb9e231ae2b21cd97e25031f9",
+    "revision3/confirm_train.py": "466edfc3beb1e8b42bae55497b16121bda75b3e862bed668a836e7e936eb774a",
+    "revision3/confirm600.py": "9ef641eb7775d14f9d732b20fe27beefb1eff578f0a87187e57cfb4526369be0"
+  },
+  "initial_decision_sha256": "ea12f73f7e64cf63b681e6c85f1cd69bdb8b2c4bcf3955ad589ff95e000702cc"
+}

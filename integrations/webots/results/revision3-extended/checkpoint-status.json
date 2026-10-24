@@ -1,0 +1,10 @@
+{
+  "status": "300k extended checkpoint complete; awaiting user configuration decision",
+  "recommended_by_simplicity": "baseline",
+  "clear_performance_winner": false,
+  "reason": "0.104% aggregate gap and split seed wins; no proven larger-network advantage",
+  "full_training_started_after_extension": false,
+  "full_training_user_approved": false,
+  "reserved_test_rows": 0,
+  "continuation_verified": true
+}

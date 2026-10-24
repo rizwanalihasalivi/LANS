@@ -1,0 +1,28 @@
+{
+  "reason": "User requires close top-two pilot configurations be extended before spending five million steps",
+  "stage1_selection": "results/revision3-pilots/selection.json",
+  "top_two": ["baseline","larger_network"],
+  "training_seeds": [101,202],
+  "initial_steps": 100000,
+  "target_total_steps": 300000,
+  "additional_steps_per_run": 200000,
+  "continuation": "Continue saved PPO policy and optimizer plus VecNormalize reward statistics; restart simulator environments with seed offset1000000. Environment and RNG state are not an exact uninterrupted continuation. Both candidates use identical continuation protocol and equal total budgets.",
+  "close_stage1_relative_gap": 0.01,
+  "development_noise_base": 4100000,
+  "methods": ["lqr","legacy_gated","legacy_rescaled_gated","baseline","larger_network"],
+  "legacy_reference_seed_map": {"101":0,"202":1},
+  "episodes": 360,
+  "reference_note": "Old policies are frozen1M-step models at seeds0/1 mapped to pilot seeds101/202 for paired noise. Different model seeds and training budgets make these descriptive anchors, not equal-budget architecture conclusions.",
+  "active_regions": ["nominal","tire_mismatch","low_friction","sensor_stress","latency20"],
+  "clear_winner_rule": {
+    "minimum_overall_relative_improvement_vs_other": 0.01,
+    "required_better_training_seed_means": 2,
+    "minimum_better_active_regions": 4,
+    "maximum_regional_rmse_degradation_vs_other": 0.01,
+    "maximum_nominal_rmse_degradation_vs_lqr": 0.02,
+    "survival": "No lower survival than LQR or other candidate in any region",
+    "severe_delay": "Same LQR fallback; exclude equality-only region from active-region win count"
+  },
+  "decision": "Operational pilot clarity threshold, not statistical significance. Select and freeze a configuration for full training only if all criteria pass. If neither qualifies, write full_training_authorized=false and do not launch five-seed full training. Do not relax thresholds after seeing extension results.",
+  "held_out": "No reserved final results inspected. Final comparison retains legacy, legacy-rescaled and newly retrained methods with fresh noise4910000 if full training is authorized. Gate and ±.08 candidate range stay frozen."
+}

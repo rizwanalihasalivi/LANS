@@ -1,0 +1,9 @@
+{
+  "status": "analytical correction selected from development equations; final evaluation restarts with fresh reserved noise seeds",
+  "reason": "Origin regulation penalized the nonzero steady yaw rate and lateral velocity required by a curved path. Correct these references instead of comparing PPO against an unnecessarily biased tracking baseline.",
+  "equilibrium_state": "[0, (lr*v - m*lf*v^3/(L*Cr))*kappa, -vy_ref/v, v*kappa]",
+  "control": "delta_equilibrium - K(v)*(estimated_state-equilibrium_state), saturated at +/-0.5 rad; Q/R unchanged",
+  "scope": "all LQR-bearing evaluated methods and newly trained residual policies; standalone full-command policy training does not apply LQR and is unchanged",
+  "development_check": "seed 9000, initial 0.15m/0.01rad, DLC220 at 15/20/25 m/s; four preliminary comparison rows completed concurrently before interruption; those rows are excluded and final evaluation uses noise seed base 20000",
+  "superseded_artifacts": "earlier uncompensated residual training and transfer runs retained as development diagnostics, excluded from final comparisons"
+}

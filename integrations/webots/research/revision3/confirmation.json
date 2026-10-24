@@ -1,0 +1,28 @@
+{
+  "purpose": "User-requested 300k to600k baseline-only learning-curve confirmation; no five-seed full training",
+  "parent_commit": "d880e3fe36d047bc1c974756615dd94b4641bb47",
+  "candidate": "baseline",
+  "seeds": [101,202],
+  "initial_steps":300000,
+  "additional_steps":300000,
+  "total_steps":600000,
+  "initial_directory":"results/revision3-extended",
+  "continuation":"Restore PPO weights, Adam state and reward-normalization statistics from the exact300k baseline checkpoint. Restart environments with SB3 model.seed+i, explicitly matching the previous continuation's effective reset behavior. Not uninterrupted600k training. Same treatment for both seeds; no new architecture/reward/gate changes.",
+  "development_noise_base":4100000,
+  "methods":["lqr","legacy_gated","legacy_rescaled_gated","baseline600"],
+  "legacy_reference_seed_map":{"101":0,"202":1},
+  "episodes":288,
+  "curve":"Compare baseline endpoints100k,300k,600k on identical development seed/speed/path/scenario cells. Re-run reference methods and require the historical errors/survival to reproduce. Report all regions, paired seed means and raw magnitudes; do not use training reward as the decision score.",
+  "active_regions":["nominal","tire_mismatch","low_friction","sensor_stress","latency20"],
+  "operational_progress_rule":{
+    "minimum_relative_rmse_improvement_vs_300k":0.01,
+    "minimum_relative_rmse_improvement_vs_old_rescaled":0.01,
+    "both_seed_means_better_than_300k":true,
+    "minimum_improving_active_regions":4,
+    "maximum_regional_degradation_vs_300k":0.01,
+    "maximum_nominal_degradation_vs_lqr":0.02,
+    "survival":"No region loses survival against300k or LQR. Legacy-gated gap is reported separately as the aspirational reference."
+  },
+  "decision":"Thresholds describe a material improving trend for budget review, not significance or convergence. If the rule is not met, do not claim five-million-step training is justified. Even if met, this task stops with the600k report; full_training_user_approved=false. No post-result threshold changes or additional search.",
+  "limits":"Only two training seeds and repeatedly consulted development geometries/noise; no held-out generalization claim. Old reference policies have1M steps and different model seeds. Final reserved base4910000 remains unused; no native Webots run or larger-network training in this stage."
+}

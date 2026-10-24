@@ -1,0 +1,79 @@
+{
+  "protocol": {
+    "reason": "User requires close top-two pilot configurations be extended before spending five million steps",
+    "stage1_selection": "results/revision3-pilots/selection.json",
+    "top_two": [
+      "baseline",
+      "larger_network"
+    ],
+    "training_seeds": [
+      101,
+      202
+    ],
+    "initial_steps": 100000,
+    "target_total_steps": 300000,
+    "additional_steps_per_run": 200000,
+    "continuation": "Continue saved PPO policy and optimizer plus VecNormalize reward statistics; restart simulator environments with seed offset1000000. Environment and RNG state are not an exact uninterrupted continuation. Both candidates use identical continuation protocol and equal total budgets.",
+    "close_stage1_relative_gap": 0.01,
+    "development_noise_base": 4100000,
+    "methods": [
+      "lqr",
+      "legacy_gated",
+      "legacy_rescaled_gated",
+      "baseline",
+      "larger_network"
+    ],
+    "legacy_reference_seed_map": {
+      "101": 0,
+      "202": 1
+    },
+    "episodes": 360,
+    "reference_note": "Old policies are frozen1M-step models at seeds0/1 mapped to pilot seeds101/202 for paired noise. Different model seeds and training budgets make these descriptive anchors, not equal-budget architecture conclusions.",
+    "active_regions": [
+      "nominal",
+      "tire_mismatch",
+      "low_friction",
+      "sensor_stress",
+      "latency20"
+    ],
+    "clear_winner_rule": {
+      "minimum_overall_relative_improvement_vs_other": 0.01,
+      "required_better_training_seed_means": 2,
+      "minimum_better_active_regions": 4,
+      "maximum_regional_rmse_degradation_vs_other": 0.01,
+      "maximum_nominal_rmse_degradation_vs_lqr": 0.02,
+      "survival": "No lower survival than LQR or other candidate in any region",
+      "severe_delay": "Same LQR fallback; exclude equality-only region from active-region win count"
+    },
+    "decision": "Operational pilot clarity threshold, not statistical significance. Select and freeze a configuration for full training only if all criteria pass. If neither qualifies, write full_training_authorized=false and do not launch five-seed full training. Do not relax thresholds after seeing extension results.",
+    "held_out": "No reserved final results inspected. Final comparison retains legacy, legacy-rescaled and newly retrained methods with fresh noise4910000 if full training is authorized. Gate and \u00b1.08 candidate range stay frozen."
+  },
+  "stage1_selection_sha256": "3ea016d77dac19a47477002bb95bee36c8fc2bc8e733c3cc74afb303b471562d",
+  "stage1_relative_gap": 0.0030956836044529748,
+  "source_sha256": {
+    "revision2/run.py": "6af39e262dc14087cfdd85d18fded8f97f1c4ad23500fbba1c937a775ef5b1a8",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/test_gate.py": "c0e74335d5f0e6683de935113960c201abb022e2d3b481e2705cdf011d62e890",
+    "revision2/protocol.json": "f7453ea904392fa48edfa62252ed688102acd90c89eb6166a2c45ac7d9c4d499",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "geometry.py": "a777050f1ded4f1b95707ecc2d9a869a8e33f0557df9f26d31d6e29916ef9ef4",
+    "revision3/train.py": "a34f644ef7db8eaa78a0310f7ef3726d6b92b35756c92bb41938bc7bd4caf0b7",
+    "revision3/matched_env.py": "0e97459ac865e3c404e9eccc185c0cc47a43d3e0c21dd2bd2a80ac104a466980",
+    "revision3/mapping.py": "bd13d6993713e19aa9d58fbec167e63705ffeef209a20b7af59ab719f47efb72",
+    "revision3/protocol.json": "220acc12e3823cb62a0c673cb16a95d9c595ff797fec61a02e6fab44bcfd7806",
+    "revision3/pilots.json": "0e6c706923c83fa9dbe8216638e05c5fc9222f13408fe3dd331680831e1142a8",
+    "revision3/pilot_env.py": "dcbec5215c9acaaa3fe1e84498baf8e3993d64798baf824a679ef62cb87fc1ad",
+    "revision3/pilot_search.py": "595d81ee4688a235600afcc3f5002f1afc5d153a667f21a083425dd8e27684ea",
+    "revision3/evaluate.py": "bd53c911edbc98c48bab435316f9346bf863e2d08718dc916c73330869c55b8e",
+    "revision3/test_range.py": "fdb1725399bc5528154eee15c9ff78c1f1335afc453da9a723d94ebddc14033e",
+    "revision3/extension.json": "9a5a40a92c5c497faa1f7951e2503308aa3e6e41153a47262852b2041dcfda21",
+    "revision3/extend_train.py": "da686bb4fc52810341a6c22ad37e31d6f68787bf3d74b41111a753a384b7e341",
+    "revision3/extended_search.py": "fea95a24b05f52d371ad162c49b4f74065820ec9cf059be5a89d07003a891cc0"
+  }
+}

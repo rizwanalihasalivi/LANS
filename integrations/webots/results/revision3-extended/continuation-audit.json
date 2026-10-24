@@ -1,0 +1,118 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "candidate": "baseline",
+      "seed": 101,
+      "initial_steps": 100000,
+      "total_steps": 300000,
+      "additional_completed_episode_steps": 198400,
+      "initial_optimizer_step_counters": [
+        5000
+      ],
+      "final_optimizer_step_counters": [
+        15000
+      ],
+      "normalization_count_before": 100000.0001,
+      "normalization_count_after": 300000.0001,
+      "effective_initial_reset_seeds": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "initial_policy_sha256": "40e15397361e668cd3238529c14d09d06ec539e3cf0f03359a7b2bb21911456d",
+      "policy_sha256": "6710b54fc459ca2d5218a67021e7be373215306eb8d858d1b924526c64bc8890"
+    },
+    {
+      "candidate": "baseline",
+      "seed": 202,
+      "initial_steps": 100000,
+      "total_steps": 300000,
+      "additional_completed_episode_steps": 197162,
+      "initial_optimizer_step_counters": [
+        5000
+      ],
+      "final_optimizer_step_counters": [
+        15000
+      ],
+      "normalization_count_before": 100000.0001,
+      "normalization_count_after": 300000.0001,
+      "effective_initial_reset_seeds": [
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209
+      ],
+      "initial_policy_sha256": "a167f16c9d86696b35999b9ae1d7c3d8173326cab510920f2b6190e538bba8a2",
+      "policy_sha256": "a3dc9c3ef3a60db34a1677a2358a79035074454c8adea79750785cc5b98ea0df"
+    },
+    {
+      "candidate": "larger_network",
+      "seed": 101,
+      "initial_steps": 100000,
+      "total_steps": 300000,
+      "additional_completed_episode_steps": 197846,
+      "initial_optimizer_step_counters": [
+        5000
+      ],
+      "final_optimizer_step_counters": [
+        15000
+      ],
+      "normalization_count_before": 100000.0001,
+      "normalization_count_after": 300000.0001,
+      "effective_initial_reset_seeds": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "initial_policy_sha256": "e8e067fc08cd649a10fb0a2e69ad6faacc46f5cf72ee59ff9fc9ed333c5e9657",
+      "policy_sha256": "d8a957485059f87102e438d25204afdef1a0e7c5a1986c4065ab73c976ddbc77"
+    },
+    {
+      "candidate": "larger_network",
+      "seed": 202,
+      "initial_steps": 100000,
+      "total_steps": 300000,
+      "additional_completed_episode_steps": 197254,
+      "initial_optimizer_step_counters": [
+        5000
+      ],
+      "final_optimizer_step_counters": [
+        15000
+      ],
+      "normalization_count_before": 100000.0001,
+      "normalization_count_after": 300000.0001,
+      "effective_initial_reset_seeds": [
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209
+      ],
+      "initial_policy_sha256": "5a84b0cffa176c890a844a8d8fdc77a82aab8c4349c868cc55b2c6ba38353019",
+      "policy_sha256": "42af2035bb1249daa0f06431df97bfd6be0fb00fa90d4b8c0b9979f1cc2b479e"
+    }
+  ],
+  "continuation_note": "PPO weights, Adam state and reward-normalization statistics continue from100k. Environments restart; SB3 load overrides the planned constructor seed offset with model.seed+i. Thus the planned fresh offset is NOT effective. Both candidates get identical seed treatment. This is not uninterrupted300k training, and repeated initial environment streams are a limitation; no weights or gate were retuned in response.",
+  "full_training_started": false,
+  "user_decision_required": true,
+  "development_episodes": 360,
+  "development_survived": 360
+}

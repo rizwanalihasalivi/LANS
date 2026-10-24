@@ -1,0 +1,23 @@
+{
+  "reason": "User requires close top-two pilots be extended before full budget; selected baseline vs larger-network gap ~0.31%",
+  "partial_training": {
+    "residual-2": {
+      "steps": 320000,
+      "wall_s": 128.32074880599976
+    },
+    "residual-3": {
+      "steps": 310000,
+      "wall_s": 126.24511861801147
+    },
+    "residual-0": {
+      "steps": 320000,
+      "wall_s": 126.71909689903259
+    },
+    "residual-1": {
+      "steps": 320000,
+      "wall_s": 127.55659055709839
+    }
+  },
+  "completed_policies": 0,
+  "reserved_csv_bytes": 0
+}

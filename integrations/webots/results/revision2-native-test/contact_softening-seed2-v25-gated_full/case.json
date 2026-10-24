@@ -1,0 +1,23 @@
+{
+  "mu": 0.9,
+  "contact_scale": 0.65,
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "delay_ms": 0,
+  "mode": "gated_full",
+  "speed": 25,
+  "path": "dlc220",
+  "seed": 1932501,
+  "policy_seed": 2,
+  "scenario": "contact_softening",
+  "duration": 10.8,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS-webots/integrations/webots/results/research-training/full-2/policy.zip",
+  "policy_sha256": "433a3b09ad27f412c924eb84afc64bc0875408d71c67f71f240eb9c4613aa28a",
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/contact_softening-seed2-v25-gated_full",
+  "front_slip": 0.0020384615384615385,
+  "rear_slip": 0.001778846153846154
+}

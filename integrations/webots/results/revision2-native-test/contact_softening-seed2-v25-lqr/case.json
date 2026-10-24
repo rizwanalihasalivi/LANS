@@ -1,0 +1,21 @@
+{
+  "mu": 0.9,
+  "contact_scale": 0.65,
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "delay_ms": 0,
+  "mode": "lqr",
+  "speed": 25,
+  "path": "dlc220",
+  "seed": 1932501,
+  "policy_seed": 2,
+  "scenario": "contact_softening",
+  "duration": 10.8,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/contact_softening-seed2-v25-lqr",
+  "front_slip": 0.0020384615384615385,
+  "rear_slip": 0.001778846153846154
+}

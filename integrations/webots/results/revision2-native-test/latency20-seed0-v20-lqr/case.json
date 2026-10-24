@@ -1,0 +1,21 @@
+{
+  "mu": 0.9,
+  "contact_scale": 1.0,
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "delay_ms": 20,
+  "mode": "lqr",
+  "speed": 20,
+  "path": "dlc220",
+  "seed": 1912004,
+  "policy_seed": 0,
+  "scenario": "latency20",
+  "duration": 13.0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/latency20-seed0-v20-lqr",
+  "front_slip": 0.0010600000000000002,
+  "rear_slip": 0.000925
+}

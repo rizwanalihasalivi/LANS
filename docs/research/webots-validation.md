@@ -216,3 +216,36 @@ Since every trajectory survived, failure-penalized and ordinary RMSE coincide he
 Nominal learned authority was active for 12.34% of ticks with mean weight 0.0354, compared with the old fusion's 99.23% activity and mean weight 0.6815. This demonstrates the intended selective-authority behavior. The gated full-command secondary comparator was slightly better than gated residual in the first five region means, so these results do **not** establish residual gating as the superior architecture. All secondary methods and descriptive paired confidence intervals remain visible in the report.
 
 The gate and weights were not retuned after the reserved results. The present result supports nominal accuracy preservation and modest selective improvement, not the stronger publication claim requested. Any further disturbance-aware policy training or predictor revision needs a new development protocol and another untouched test split; native transfer validation is also outstanding for this revision.
+
+## Frozen revision-2 native Webots transfer
+
+The user authorized transfer of the unchanged performance-aware gate after reviewing commit `14ab389`, explicitly prohibiting retuning. Branch `webots/frozen-gate-transfer` adds a separate native controller and harness. It directly imports the existing gate and verifies the original development freeze, source and policy hashes. Neither the original 810-episode campaign, revision-2 900-episode surrogate campaign, trained weights, gate implementation nor specification is changed.
+
+The [native protocol and reproduction guide](../../integrations/webots/research/revision2/native/README.md) document all commands and interfaces. Three separate-seed smoke cases passed before the native protocol/interface freeze commit `65099e1b73385e68b347f42b20ba92dacc902a83`. The reserved grid is 270 native process launches: five policy seeds × three speeds × six conditions × three methods. Gated residual is primary; gated full-command is a predeclared secondary comparator. New native noise streams use base 1910000, paired across methods. No new PPO training is performed.
+
+Native conditions are nominal, contact softening, lower friction, doubled sensor noise plus 10 ms delay, and 20/100 ms minimum worker-output delays. The native mismatch maps to increased force-dependent slip; it is **not** a verified exact 35% tire-stiffness reduction. Native testing uses the known DLC220 course only. Both learned roles use the existing real separate inference process with one job in flight and dropped busy submissions. LQR has no worker. Two Webots instances share cloud CPU capacity, each with private display/configuration directories; actual command ages and wall timing are retained and no real-time guarantee is claimed.
+
+The unchanged 200 ms/1% gate predicts from the common noisy estimate, measured wheel-angle proxy and local curvature, without access to hidden contact parameters. The existing native explicit 1 ms actuator implementation, mass/CG/inertia audit, steering sign, speed conversion and 10 s physical warmup are retained. Native dynamics, actuator integration and initial lateral offset differ from the surrogate; transfer checks those differences rather than claiming equivalent plants.
+
+The analyzer reads all raw CSVs, recomputes scores, checks clocks, angle/rate limits, cost-improvement activation, frozen hashes and complete case coverage. Severe-delay checks separately verify zero learned authority, local LQR command equality and exact full paired physical/control trajectories. Any nonzero field differences remain visible. Statistical reporting keeps all regions and both learned modes, aggregates paired differences at seed level, and retains the original 2% nominal-preservation and 5% clear-advantage criteria without post-test adjustment.
+
+### Native reserved results
+
+The [native results report](../../integrations/webots/results/revision2-native-test/report.md) and [raw-data verification](../../integrations/webots/results/revision2-native-test/verification.json) confirm **270/270 survived**, or 90/90 for each method. Gate/policy/source hashes, vehicle audit, command/rate limits, cost-acceptance rules and complete unique case coverage passed. All 30 severe-delay gated runs have zero learned authority and **exactly equal paired LQR physical/control trajectories** across all checked fields, not merely equal aggregate RMSE.
+
+| Native region | Gated residual RMSE change vs LQR | Better residual seed means / 5 | Gated full-command RMSE change vs LQR | Better full seed means / 5 |
+|---|---:|---:|---:|---:|
+| nominal | -1.29% | 5 | -0.59% | 4 |
+| contact_softening | -0.21% | 5 | +0.20% | 2 |
+| low_friction | -1.31% | 5 | -1.29% | 4 |
+| sensor_stress | -0.97% | 5 | +0.34% | 3 |
+| latency20 | -0.91% | 5 | -0.61% | 4 |
+| latency100 | +0.00% | 0 | +0.00% | 0 |
+
+Negative change favors the hybrid. Gated residual improves all five paired seed means in the first five regions, while severe delay is exact LQR fallback. Nominal preservation passes. **No native region reaches the frozen ≥5% clear-advantage criterion.** Absolute primary mean RMSE reductions are approximately 0.35–1.15 mm; these are small effects and should not be described as a large practical advantage. Descriptive paired confidence intervals remain visible in the report; multiple-comparison significance is not claimed.
+
+Full-command gating is mixed in native transfer, with slight average regressions under contact softening (+0.20%) and sensor stress (+0.34%). Its stronger surrogate means therefore do not establish native architecture superiority. Both modes retain their distinct frozen candidate/action bounds, and actual worker schedules vary under CPU contention; this is not an isolated architecture-only ablation.
+
+The supported native claim is: “On the tested native Webots DLC220 grid, the unchanged performance-gated residual controller reduced mean tracking RMSE relative to paired LQR across nominal, contact-softening, low-friction, sensor-stress and moderate-delay conditions for all five seed means, and reproduced LQR exactly under the severe-delay test.” This is conditional confirmation of modest transfer, not broad controller superiority, unseen-path performance or real-vehicle safety.
+
+The 100 ms condition is an added minimum availability delay; held-output ages have a mean per-run p99 of 190 ms while the next inference is in flight. Zero-added-delay gated runs also show nonzero ages. Simulation age and measured inference duration are separate quantities. No gate or policy changes were made after observing these native results. The original surrogate and native evidence remains unchanged.

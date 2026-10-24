@@ -1,0 +1,7 @@
+{
+  "mass_kg": 1650.0,
+  "nominal_cg_x_m": 1.4000000000000006,
+  "nominal_yaw_inertia": 4224.000000000002,
+  "physics_step_s": 0.001,
+  "controller_period_s": 0.01
+}

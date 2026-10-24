@@ -1,0 +1,23 @@
+{
+  "mu": 0.9,
+  "contact_scale": 0.65,
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "delay_ms": 0,
+  "mode": "gated_residual",
+  "speed": 25,
+  "path": "dlc220",
+  "seed": 1922501,
+  "policy_seed": 1,
+  "scenario": "contact_softening",
+  "duration": 10.8,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS-webots/integrations/webots/results/research-training/residual-1/policy.zip",
+  "policy_sha256": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a",
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/contact_softening-seed1-v25-gated_residual",
+  "front_slip": 0.0020384615384615385,
+  "rear_slip": 0.001778846153846154
+}

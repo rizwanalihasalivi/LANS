@@ -1,4 +1,6 @@
-# Pilot-selected residual training with matched steering units
+# Staged residual pilots with matched steering units
+
+**Current checkpoint:** top-two 300k extended pilots; full training waits for the user’s decision. No completed new1M policies, final reserved evaluation or new-policy native smoke results exist yet. The later full-training/evaluation code is prepared, not evidence of execution.
 
 The user identified an action-range mismatch: earlier residual policies trained with normalized action ×0.50 rad, while the frozen performance gate clips candidate residuals to ±0.08 rad. This revision trains candidates at normalized action ×0.08 rad and uses an explicit decoder in both surrogate and native inference. Existing gate, LQR, policies and held-out results remain unchanged.
 
@@ -17,7 +19,7 @@ The replacement protocol was frozen in commit `bbb010cfcef75a91e535c408c5b5ad4e7
 
 All other training settings, candidate range and gate rules stay fixed. The tracking reward retains the positive-survival form and existing steering/change penalties. Pilot selection uses 360 development episodes: 72 per candidate plus 72 paired LQR episodes, covering three speeds, two known paths and six scenarios. Noise base 4100000 is development-only. Eligible candidates must preserve aggregate survival and remain within 2% of LQR's nominal RMSE; the lowest mean penalized RMSE wins. If none qualifies, the rule explicitly marks the best available choice as unqualified rather than hiding failure.
 
-`selection.json` freezes the complete ranking, selected configuration, source hashes, all pilot model hashes and development data hash. Only the selected configuration is then trained **from scratch**, five seeds 0–4, one million steps each. No pilot is warm-started or promoted to a longer budget. The final fixed checkpoints are compared on fresh noise base **4910000**, not the earlier unused 2910000 plan. There is no post-test tuning.
+`selection.json` freezes the complete ranking, selected configuration, source hashes, all pilot model hashes and development data hash. The planned next stage trains the user-approved configuration **from scratch**, five seeds 0–4, one million steps each. It is paused pending the extended-pilot checkpoint and user decision. No pilot is warm-started or promoted to a longer budget. Future final fixed checkpoints will be compared on fresh noise base **4910000**, not the earlier unused 2910000 plan. There is no post-test tuning.
 
 Short-run ranking is noisy: two pilot seeds and 100k steps cannot guarantee which configuration would win at one million steps. The selected architecture/reward is a development choice, not a proof of global optimality.
 
@@ -43,26 +45,20 @@ export MPLCONFIGDIR="$PWD/integrations/webots/.runtime/mpl"
 # Choose new output directories; existing evidence is never overwritten.
 "$LANS_PYTHON" integrations/webots/research/revision3/pilot_search.py \
   --output "$PWD/integrations/webots/results/range-pilots-local"
-bash integrations/webots/research/revision3/run-training.sh \
-  "$PWD/integrations/webots/results/range-training-local" \
-  "$PWD/integrations/webots/results/range-pilots-local/selection.json"
-"$LANS_PYTHON" integrations/webots/research/revision3/evaluate.py \
-  --training "$PWD/integrations/webots/results/range-training-local" \
-  --selection "$PWD/integrations/webots/results/range-pilots-local/selection.json" \
-  --output "$PWD/integrations/webots/results/range-test-local"
-"$LANS_PYTHON" integrations/webots/research/revision3/native_smoke.py \
-  --training "$PWD/integrations/webots/results/range-training-local" \
-  --output "$PWD/integrations/webots/results/range-native-local"
+"$LANS_PYTHON" integrations/webots/research/revision3/extended_search.py \
+  --initial "$PWD/integrations/webots/results/range-pilots-local" \
+  --output "$PWD/integrations/webots/results/range-extended-local"
 
-# Verify/report canonical committed evidence (fixed canonical paths):
-"$LANS_PYTHON" integrations/webots/research/revision3/report.py
+# Audit canonical committed extended checkpoints (fixed canonical paths):
+"$LANS_PYTHON" integrations/webots/research/revision3/audit_extension.py
+# Full training/evaluation stays paused until the user chooses the configuration.
 ```
 
-The original execution used canonical directories `revision3-pilots`, `revision3-training`, `revision3-test` and `revision3-native-smoke`. Pilot/evaluation orchestration used `/workspace/lans-setup/venv/bin/python`; full training and Webots controllers use the existing pinned private runtime. Four training processes run at most, with one Torch/BLAS thread each. Source snapshots, progress, episode Monitor logs, completed models, normalization artifacts and hashes are retained.
+Completed pilot stages use `revision3-pilots` and `revision3-extended`. Interrupted `revision3-training` and empty `revision3-test` directories were archived under `.runtime`; no `revision3-native-smoke` was run. Pilot/evaluation orchestration used `/workspace/lans-setup/venv/bin/python`; full training and Webots controllers use the existing pinned private runtime. Four training processes run at most, with one Torch/BLAS thread each. Source snapshots, progress, episode Monitor logs, completed models, normalization artifacts and hashes are retained.
 
 ## Evaluation and interpretation
 
-The reserved grid has 900 episodes: five full-training seeds × three speeds × two known paths × six scenarios × five methods:
+The planned, unrun reserved grid has900 episodes: five full-training seeds × three speeds × two known paths × six scenarios × five methods:
 
 - LQR.
 - Legacy residual policy, original ×0.5 decoder, frozen gate clipping.
@@ -72,6 +68,24 @@ The reserved grid has 900 episodes: five full-training seeds × three speeds × 
 
 The primary comparison is retrained gated versus legacy gated. LQR and simple rescaling are predefined secondary references. Raw inference statistics record requested residual magnitude, fraction beyond the gate cap and normalized saturation. All methods use matched noise streams, and all cases remain in the report. Scores penalize unexecuted failed tails at 2.5 m; uncertainty is across five paired seed means, not correlated time samples. Descriptive t intervals are not adjusted for multiple comparisons.
 
-Five native 20 m/s runs, one per newly trained policy seed, verify actual worker decoding and controller execution. Received packet logs retain legacy encoded values and mapped residual radians. These runs are **unpaired interface checks**, not a full native performance comparison. Earlier native improvement results belong to the earlier policies and cannot be transferred to these new weights without new paired tests.
+Five native20m/s interface runs are prepared for future full-trained policies; they have not run. Received packet logs retain legacy encoded values and mapped residual radians. These runs are **unpaired interface checks**, not a full native performance comparison. Earlier native improvement results belong to the earlier policies and cannot be transferred to these new weights without new paired tests.
 
-See the [pilot ranking](../../results/revision3-pilots/report.md) and [reserved results](../../results/revision3-test/report.md). The range fix alone does not establish better control, convergence, stability, real-vehicle safety or broad generalization.
+See the [100k pilot ranking](../../results/revision3-pilots/report.md), [300k extended comparison](../../results/revision3-extended/report.md) and [continuation audit](../../results/revision3-extended/continuation-audit.json). The range fix alone does not establish better control, convergence, stability, real-vehicle safety or broad generalization.
+
+## Close top-two extension and user checkpoint
+
+The initial gap between baseline and larger network was only0.31%. The user required more evidence before full training, so that preliminary full run was also stopped with no completed models or reserved test rows. The last recorded partial counters were320k/310k/320k/320k; `interrupted-selected-run.json` records them, and the files remain locally archived under `.runtime/revision3-interrupted-before-extended-pilots/`.
+
+The two existing100k pilot checkpoints at each of seeds101/202 were continued for **200k additional steps**, reaching **300k total**, with policy, Adam optimizer and VecNormalize reward statistics restored. `extension.json` and the continuation/evaluation code were frozen in commit `8d30230120ad531a5bc073c83d8c9590123d3ddc` before results. The extension adds800k steps, for1.6M cumulative pilot steps across both stages. All360 extended development cells include LQR, old gated policy, old simply rescaled gated policy, baseline and larger network.
+
+An independent audit verified nonzero optimizer counters in the initial checkpoints, larger counters afterward, exactly200k additional normalization samples and the saved100k→300k step counts. **Seeding caveat:** SB3 `PPO.load` overrides constructor seed defaults with `model.seed+i`; the intended fresh constructor offset in the frozen protocol was not effective. Environments restarted from those seeds, while learned parameters and optimizer/normalization continued. Both configurations received the same treatment. This is not an uninterrupted300k trajectory; the audit records the discrepancy rather than rewriting frozen provenance or rerunning to chase results.
+
+The predeclared operational clear-winner rule requires ≥1% mean improvement, better means in both seeds, improvement in at least4/5 active regions with no region >1% worse, nominal within2% of LQR and no regional survival loss. This is a spending criterion, not statistical significance. The user's latest instruction adds a simplicity preference when the gap remains small and explicitly asks to review the300k numbers before authorizing full training. Therefore any numeric `full_training_authorized` field in the original decision artifact denotes only the earlier automatic criterion; **no full training will start before that user decision**. No further configuration search is performed in this stage.
+
+Old comparison policies are1M-step models at seeds0/1 paired with pilot noise for seeds101/202. Their different budgets/model seeds make them descriptive anchors, not an equal-budget proof of retraining benefit. Reserved noise4910000 remains unused.
+
+## 300k checkpoint outcome
+
+All360 extended development episodes survived. Baseline mean RMSE is0.084229m versus0.084317m for the larger network: only0.104% apart, with split seed wins. Neither is a clear performance winner. Baseline is the simplicity recommendation under the user's latest tie-break, not a demonstrated superior policy. The old merely rescaled reference is0.084201m; a distinct benefit from new training is not yet established at this budget. Sensor-stress error remains slightly worse than LQR.
+
+Full training is paused for the user to review these numbers. The full-training launcher now requires a separate `user-selection.json` with an explicitly recorded user-approved selection; numerical pilot eligibility alone cannot start it. Final reserved tests and new-policy native checks have not run.

@@ -1,0 +1,21 @@
+{
+  "reason": "User explicitly requested small training comparisons, then full training of the best development configuration",
+  "pilot_steps": 100000,
+  "pilot_seeds": [101,202],
+  "development_noise_base": 4100000,
+  "final_test_noise_base": 4910000,
+  "full_steps": 1000000,
+  "full_seeds": [0,1,2,3,4],
+  "candidates": {
+    "baseline": {"net_arch":[64,64],"log_std_init":-2.0,"ey_scale":0.5,"heading_scale":0.1},
+    "low_exploration": {"net_arch":[64,64],"log_std_init":-3.0,"ey_scale":0.5,"heading_scale":0.1},
+    "tracking_reward": {"net_arch":[64,64],"log_std_init":-2.0,"ey_scale":0.35,"heading_scale":0.08},
+    "larger_network": {"net_arch":[128,128],"log_std_init":-2.0,"ey_scale":0.5,"heading_scale":0.1}
+  },
+  "fixed": "Candidate correction ±.08 rad, unchanged revision2 gate, LQR, training distribution and all unlisted PPO/reward/actuator settings. Only the named candidate dimensions differ.",
+  "development_grid": "Each candidate: 2 pilot-trained seeds x 3 speeds x 2 known paths x 6 regions =72 gated episodes; 72 paired LQR episodes once; total360. No final reserved noise used.",
+  "selection": "Eligible if aggregate survival >= paired LQR and nominal mean penalized RMSE <=1.02*LQR. Among eligible choose minimum mean penalized RMSE over all72 development cells; exact ties by candidate declaration order. If none eligible choose maximum survival then minimum RMSE, explicitly mark selection not development-qualified. Freeze selected config, source/model/data hashes before full training and final test.",
+  "full_training": "Train only the selected configuration, scratch at five full seeds, fixed1M per seed. Do not extend a pilot or select best checkpoint. Do not retrain other configurations after inspecting final results.",
+  "final_comparison": "900 episodes from revision3/protocol.json with fresh base4910000; new selected policies compared to LQR, old gated residual and old simply rescaled residual; ungated new residual ablation retained.",
+  "limits": "Two short-run seeds give a noisy development ranking, not a guarantee that the same candidate is optimal after full training. Physical exploration variance changes with log_std and action scaling. Gate stays outside standalone training. Native runs are interface checks only."
+}

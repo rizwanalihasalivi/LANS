@@ -249,3 +249,45 @@ Full-command gating is mixed in native transfer, with slight average regressions
 The supported native claim is: “On the tested native Webots DLC220 grid, the unchanged performance-gated residual controller reduced mean tracking RMSE relative to paired LQR across nominal, contact-softening, low-friction, sensor-stress and moderate-delay conditions for all five seed means, and reproduced LQR exactly under the severe-delay test.” This is conditional confirmation of modest transfer, not broad controller superiority, unseen-path performance or real-vehicle safety.
 
 The 100 ms condition is an added minimum availability delay; held-output ages have a mean per-run p99 of 190 ms while the next inference is in flight. Zero-added-delay gated runs also show nonzero ages. Simulation age and measured inference duration are separate quantities. No gate or policy changes were made after observing these native results. The original surrogate and native evidence remains unchanged.
+
+## Revision 3: pilot-selected, range-matched residual training
+
+The user identified that the earlier residual training action is normalized output ×0.50 rad, whereas the frozen gate clips candidate residuals to ±0.08 rad. Revision 3 aligns the candidate range in training and deployment at normalized output ×0.08 rad. It reuses the original environment through an explicit action adapter, preserving old training code, checkpoints, gate and all earlier results. This does **not** eliminate the remaining deployment mismatch: training applies the residual directly, while the gate can reject/weight/delay it.
+
+The user then requested short training comparisons before choosing a full-training configuration. The initial direct full runs were stopped at their last recorded 530k-step progress points for four seeds; no completed policy checkpoint or reserved evaluation episode existed. Partial logs/snapshots are preserved locally and the interruption is recorded in `research/revision3/interrupted-run.json`. These incomplete runs are not used for model selection or represented as final training.
+
+The pilot protocol was frozen at `bbb010cfcef75a91e535c408c5b5ad4e76c13841`: four configurations × two distinct training seeds ×100k steps =800k pilot steps. Candidate range and gate stayed fixed while comparing the baseline, lower initial exploration, sharper tracking reward and a larger network. Each configuration received 72 paired development episodes covering three speeds, two paths and six regions; an additional 72 LQR episodes supplied the common reference. Training reward was not the selection metric.
+
+| Pilot candidate | Survived / 72 | Mean penalized development RMSE (m) | Eligible |
+|---|---:|---:|---|
+| Baseline [64,64], log std −2 | 72 | 0.083973 | Yes |
+| Low exploration, log std −3 | 72 | 0.084256 | Yes |
+| Sharper tracking reward | 72 | 0.084322 | Yes |
+| Larger network [128,128] | 72 | 0.084234 | Yes |
+
+All candidates satisfied the predeclared survival and ≤2% nominal-degradation constraints. The **baseline** had the lowest mean development RMSE and was selected mechanically. The differences are small; two short-run seeds do not establish a statistically superior or globally optimal configuration. The complete [pilot ranking and selection manifest](../../integrations/webots/results/revision3-pilots/report.md) are retained. That preliminary selection was committed at `85ed49dc14aa8ce69d6c9e7d47d6b83ecdce4d87`. The user subsequently required an extended top-two comparison because the gap was only0.31%; the restarted full jobs were stopped before any completed checkpoint or reserved result. The extended checkpoint below supersedes that preliminary selection.
+
+Planned, unrun final testing uses fresh noise base4910000, disjoint from pilot development. It compares LQR, historical gated residual, historical policy merely rescaled to ±0.08, selected retrained gated residual, and retrained ungated residual with the existing age decay. All900 cells are predeclared. This separates retraining from a simple decoder change. The gate is not retuned using these results.
+
+The [revision guide](../../integrations/webots/research/revision3/README.md) provides exact commands, sources, budget and decoding requirements. Four contract tests passed for range endpoints/nonfinite rejection, inherited dynamics/reward parity, matching evaluator/worker units, and gate fallback/range behavior. Native inference uses a new adapter around the unchanged worker/controller, verifying model metadata and converting its historical ×0.5 encoded output exactly once to ×0.08. Five native interface/range checks are prepared but have not run; they would not replace a paired native performance campaign for the new policies.
+
+### 300k extended-pilot checkpoint (awaiting user decision)
+
+The close top two were continued from their **same saved100k checkpoints**, for200k additional steps each, reaching300k at seeds101/202. All four Adam optimizer counters advanced from5000 to15000, and reward-normalization sample counts advanced from100000.0001 to300000.0001. The [continuation and raw-grid audit](../../integrations/webots/results/revision3-extended/continuation-audit.json) verifies this provenance and all360 paired development episodes. All360 survived; each candidate survived72/72.
+
+| Region | Baseline [64,64] RMSE (m) | Larger [128,128] RMSE (m) |
+|---|---:|---:|
+| nominal | 0.062542 | 0.062403 |
+| tire_mismatch | 0.174915 | 0.175226 |
+| low_friction | 0.081674 | 0.081830 |
+| sensor_stress | 0.061249 | 0.061250 |
+| latency20 | 0.062124 | 0.062321 |
+| latency100 | 0.062871 | 0.062871 |
+
+Overall mean RMSE: baseline **0.084229 m**, larger network **0.084317 m**. The baseline advantage is only **0.104%**, approximately0.088mm in aggregate RMSE. Seed101 favors the larger network (0.084526 vs0.084565m); seed202 favors baseline (0.083894 vs0.084108m). Neither meets the frozen clear-winner rule. Both preserve nominal performance and survival. Baseline is slightly better in four active regions; larger is slightly better nominally. Baseline sensor-stress RMSE is still about0.37% worse than LQR, so it does not dominate LQR in every region.
+
+The old gated model reference averages0.082919m, old merely rescaled gated model0.084201m, and LQR0.084428m. The300k new baseline is approximately tied with the old-rescaled reference, so a distinct retraining benefit has **not** been demonstrated at this checkpoint. Old reference models have1M steps and different training seeds; these anchors cannot establish equal-budget superiority or failure.
+
+The user’s latest tie-break favors the simpler baseline when differences remain below1%, while explicitly reserving the full-training decision for their review. Accordingly the recommendation is **baseline for simplicity, not a proven performance winner**. Full training remains paused, no new1M model completed, no final reserved episode ran, and no new-policy native run was executed. No further configuration search is performed after this checkpoint. The complete [extended results](../../integrations/webots/results/revision3-extended/report.md) retain all regional references and criteria.
+
+Continuation caveat: the source intended a fresh constructor seed offset, but SB3 `PPO.load` seeds the vector environment from `model.seed+i`, overriding that default. The audit records this discrepancy. Policy, optimizer and normalization continue; environments restart with the same treatment for both candidates. These are not uninterrupted300k trajectories. Frozen source/protocol snapshots remain unedited; the report includes the observed seeding correction.

@@ -3,8 +3,8 @@ set -euo pipefail
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 python=${LANS_PYTHON:-"$root/../../.runtime/research-venv/bin/python"}
 output=${1:-"$root/../../results/revision3-training"}
-selection=${2:-"$root/../../results/revision3-extended/decision.json"}
-candidate=$("$python" -c 'import json,sys; d=json.load(open(sys.argv[1])); assert d.get("full_training_authorized") is True, "No clear extended-pilot winner: full training blocked"; print(d["selected_candidate"])' "$selection")
+selection=${2:-"$root/../../results/revision3-extended/user-selection.json"}
+candidate=$("$python" -c 'import json,sys; d=json.load(open(sys.argv[1])); assert d.get("full_training_user_approved") is True, "Full training waits for the user-approved extended-pilot decision"; print(d["selected_candidate"])' "$selection")
 mkdir -p "$output"
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 export NUMBA_CACHE_DIR="$root/../../.runtime/numba" MPLCONFIGDIR="$root/../../.runtime/mpl" XDG_CACHE_HOME="$root/../../.runtime/cache"

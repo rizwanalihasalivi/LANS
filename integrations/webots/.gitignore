@@ -80,3 +80,7 @@ results/*
 !results/controller-remediation/**
 !results/revision5-audit/
 !results/revision5-audit/**
+!results/revision5-audit-invalid-config/
+!results/revision5-audit-invalid-config/**
+!results/revision5-robust/
+!results/revision5-robust/**

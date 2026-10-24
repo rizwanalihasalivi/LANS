@@ -44,3 +44,15 @@ results/*
 !results/revision2-native-test/
 !results/revision2-native-test/**
 **/__pycache__/
+
+# Range-matched residual training is separate from all prior evidence.
+!research/revision3/*.json
+!results/revision3-training-smoke/
+!results/revision3-training-smoke/**
+!results/revision3-training/
+!results/revision3-training/**
+!results/revision3-test/
+!results/revision3-test/**
+!results/revision3-native-smoke/
+!results/revision3-native-smoke/**
+**/__pycache__/

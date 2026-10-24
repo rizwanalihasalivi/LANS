@@ -1,0 +1,14 @@
+{
+  "status": "frozen after development reward pilot and before final five-seed training/evaluation",
+  "profile": "positive_survival_v2",
+  "seeds": [0,1,2,3,4],
+  "steps_per_seed_per_role": 1000000,
+  "roles": ["full","residual"],
+  "initial_log_standard_deviation": -2.0,
+  "reward": "exp(-(ey/0.5)^2 - 0.2*(heading_error/0.1)^2) + 0.05 - 0.005*(command/0.5)^2 - 0.001*((command-previous_command)/0.5)^2; minus 10 on failure",
+  "reason": "The v1 negative tracking reward encouraged early termination. A separate seed-9001 100k-step pilot increased the last-100 episode mean length to 789.37/800, without inspecting final evaluation noise seeds.",
+  "matched_budget": "Both policy roles restart from scratch with identical architecture, exploration, optimizer and step budget. Pilot/v1 runs are development compute and excluded from final policy selection.",
+  "environment_and_optimizer": "protocol.json, overridden only by this reward/exploration profile and comparison-protocol.json common LQR setting",
+  "evaluation_scope": "held-out noise seeds on known predefined path geometries; not unseen-path generalization",
+  "no_success_guarantee": "1M steps is a budget, not proof of convergence. Report failed episodes and seed-level outcomes."
+}

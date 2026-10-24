@@ -1,0 +1,7 @@
+{
+  "kind": "synchronous actual CPU inference wall time, not service-age simulation",
+  "samples": 1000,
+  "median_ms": 0.18109300071955658,
+  "p99_ms": 0.3885681279643904,
+  "policy_sha256": "61cd3643df4de01dfec2caa9c141ac5198d13f60c2ddb5d1be661eff0b41cf5a"
+}

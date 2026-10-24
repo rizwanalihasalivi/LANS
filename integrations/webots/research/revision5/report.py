@@ -3,7 +3,7 @@ import argparse,csv,json,hashlib
 from collections import defaultdict
 from pathlib import Path
 import numpy as np
-from bootstrap import RESEARCH
+from bootstrap import RESEARCH,ROOT
 
 
 def main():
@@ -14,8 +14,15 @@ def main():
     rows=list(csv.DictReader((out/'episodes.csv').open()));audit=list(csv.DictReader((out/'predictor-audit.csv').open()))
     assert len(rows)==504==done['episodes'];assert len(audit)==done['audited_states_candidates']
     assert len({tuple(r[k] for k in ['seed','speed','path','scenario','method']) for r in rows})==504
+    old=list(csv.DictReader((ROOT/'results/revision4-pilots/evaluation/episodes.csv').open()))
+    mapping={'lqr':'lqr','legacy':'legacy_gated_reference','A100k':'A_hybrid'}
+    reference={(r['seed'],r['speed'],r['path'],r['scenario'],r['method']):r for r in old}
+    for r in rows:
+        if r['method'] in mapping:
+            q=reference[r['seed'],r['speed'],r['path'],r['scenario'],mapping[r['method']]]
+            assert all(r[k]==q[k] for k in ['penalized_rmse','survived','steps','noise_seed'])
     methods=list(dict.fromkeys(r['method'] for r in rows));regions=list(dict.fromkeys(r['scenario'] for r in rows))
-    text=['# Controller review remediation diagnostics','','Frozen diagnostic protocol: `e058786`. These are development data, not new reserved tests or a training campaign. Historical sources and checkpoints remain unchanged.','',
+    text=['# Controller review remediation diagnostics','','Corrected diagnostic freeze: `b86cfa8` (initial entry point `e058786` omitted the frozen LQR loader; that invalid run is retained separately). These are development data, not new reserved tests or a training campaign. Historical sources and checkpoints remain unchanged.','',
           '## Paired nonlearned controls','','| Method | Survival /72 | Mean penalized RMSE (m) | Change vs LQR |','|---|---:|---:|---:|']
     means={m:np.mean([float(r['penalized_rmse']) for r in rows if r['method']==m]) for m in methods}
     for m in methods:
@@ -52,6 +59,6 @@ def main():
         'Legacy PPO is a 1M-step model; A is 100k and uses different seed mapping. Their budgets are not matched. The same known development grid is reused deliberately for attribution, not claimed as fresh generalization. The 5% research target remains unmet unless separately demonstrated; these diagnostics do not authorize full training.',
         'No gate settings were tuned, no standalone policy was relabeled as residual, no research policy was trained and no native Webots or final reserved campaign was run. Severe-delay equality is fallback, not a learned win. Small corrected-root and execution-interface smoke models elsewhere are not performance evidence.']
     (out/'report.md').write_text('\n'.join(text)+'\n')
-    (out/'verification.json').write_text(json.dumps(dict(verified=True,episodes=len(rows),audited_states_candidates=len(audit),severe_fallback_exact=True,source_hashes_verified=True),indent=2)+'\n')
+    (out/'verification.json').write_text(json.dumps(dict(verified=True,episodes=len(rows),audited_states_candidates=len(audit),severe_fallback_exact=True,source_hashes_verified=True,historical_reference_cells_exact=216),indent=2)+'\n')
 
 if __name__=='__main__':main()

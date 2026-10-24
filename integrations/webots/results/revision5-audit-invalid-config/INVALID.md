@@ -1,0 +1,1 @@
+INVALID: entry point omitted comparison.configure_lqr(), using original aggressive gains. No performance inference is permitted. Preserved for audit trail; corrected run must match all historical LQR rows exactly.

@@ -1,0 +1,31 @@
+{
+  "revision":"Gate-aware and LQR-relative residual learning pilots",
+  "parent_commit":"4b86453b64417defe5e0c6c89cf34e7fae551c93",
+  "arms":{
+    "A":{"gate":false,"relative_reward":false,"domain_randomization":false},
+    "B":{"gate":true,"relative_reward":false,"domain_randomization":false},
+    "C":{"gate":false,"relative_reward":true,"domain_randomization":false},
+    "D":{"gate":true,"relative_reward":true,"domain_randomization":true}
+  },
+  "pilot_seeds":[101,202],
+  "pilot_steps":100000,
+  "extension_total_steps":300000,
+  "residual_scale_rad":0.08,
+  "development_noise_base":6100000,
+  "reserved_noise_base":8100000,
+  "reserved_status":"not used in this pilot revision",
+  "methods":["lqr","standalone_full_reference","legacy_gated_reference","A_hybrid","B_hybrid","C_hybrid","D_hybrid"],
+  "reference_seed_map":{"101":0,"202":1},
+  "speeds":[15,20,25],
+  "paths":["sine120","dlc220"],
+  "scenarios":["nominal","tire_mismatch","low_friction","sensor_stress","latency20","latency100"],
+  "development_episodes":504,
+  "training":"Scratch100k per arm/seed, eight envs, same normalized action and9 observations, [64,64], initial log_std=-2, PPO lr3e-4,n_steps125,batch200,epochs10,gamma.99,GAE.95. A reproduces revision3 range-matched standalone residual baseline. No new full-command policy trained; frozen1M full-command policies are separately labeled descriptive references.",
+  "gate":"Unchanged revision2 Gate with frozen20-step prediction horizon and1% margin, .08 residual cap, persistence/ramp/age rules. B/D use this exact gate at every training transition. Current action has age0 during synchronous training. Policy-gradient log probability is for the sampled normalized residual; gate is a deterministic environment transform. Actor does not receive hidden plant parameters or gate memory; unchanged9-feature observation is partially observable.",
+  "relative_reward":"C/D use unchanged positive survival reward plus clip((J_LQR-J_executed)/(1e-4+J_LQR),-1,1). Both costs start from identical true current plant state and hidden parameters; candidate versus current estimated-LQR command is applied for one10ms tick, followed by identical nominal LQR continuation using true branch state for another90ms. RK4 plant1ms, sum10ms*((ey/.5)^2+.2*(heading/.1)^2) over100ms plus.1*terminal tracking cost. Costs are a privileged training-only simulated counterfactual, not measured future control performance or actor input. No sensor randomness consumed in reward branches. Exactly zero bonus if command equals LQR, including rejected gated outputs. No supervisor/predictor parameter tuning.",
+  "domain_randomization":"D:25% nominal episodes; otherwise friction uniform[.6,.9], axle stiffness scale uniform[.65,1], sensor-noise scale uniform[1,2], sensor-delay0/1 ticks equiprobable. Independent domain RNG; common path/initial-state sampling RNG. Random sine amplitude capped only in randomized D episodes to satisfy v^2*A*(2pi/wavelength)^2<=.8*mu*g; record cap. Randomization parameters hidden from actor/gate/observer; only plant and sensor use them. No inference-service latency in training; sensor latency is distinct.",
+  "promising_100k":"For B/C/D: >=1% overall mean penalized RMSE reduction vs A, both paired seed means better vs A; >=1% LQR reduction in at least2/3 stress-region means (tire_mismatch,low_friction,sensor_stress); both seed means across those stresses better than LQR; no active region >1% worse than LQR; nominal <=2% worse than LQR; no regional survival loss vs A/LQR; severe100ms fallback exactly LQR. If eligible select lowest stress mean, declaration-order tie break, freeze before extending only that arm's same two checkpoints to300k. If none eligible, stop at100k results without extra search.",
+  "full_budget_review":"After a qualifying300k extension require survival/nominal/severe-fallback checks, both seed means better than LQR across stresses, >=5% mean reduction vs LQR in at least2/3 stress regions and no active region >1% worse. Five-seed1M training is not automatically launched in this task; report evidence for review.",
+  "statistics":"Paired seed means over common development cells; two seeds, descriptive changes only, no significance claims or treating time steps as independent. Report every arm/region and failures. Failure uses abs ey>2.5 or abs heading>.6; penalized RMSE fills unexecuted tail with2.5m.",
+  "limits":"D bundles gate,relative reward and randomization (including feasibility screening); no standalone DR causal attribution. Same known geometries and repeated development workflow; final reserved seeds untouched. Old reference models have different seeds and1M budgets. No native validation, stability or real-vehicle safety claim."
+}

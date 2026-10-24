@@ -68,3 +68,10 @@ results/*
 !results/revision3-600k/
 !results/revision3-600k/**
 **/__pycache__/
+
+!research/revision4/*.json
+!results/revision4-smoke/
+!results/revision4-smoke/**
+!results/revision4-pilots/
+!results/revision4-pilots/**
+**/__pycache__/

@@ -1,0 +1,18 @@
+{
+  "episodes": 504,
+  "episodes_sha256": "c05b5c651cb0ffb544bc443f2de71097b458cfc4128d8ed55e8688e09bb9a3f7",
+  "model_sha256": {
+    "A-101": "a38b124db7cd4ac8c4fbb2a99404aa0d6dd63a1a98d539bcbd7bf3417d9ffcc2",
+    "B-101": "8cd184172ac9162ae6d2a74f2f506bc8fd24115d4db977c2004a6e8aa2b7acbe",
+    "C-101": "4976954db0ee225b5476b6dd70b5bd34e1e4504f9f91726642c28b69165eb3fc",
+    "D-101": "2a89d3296ee93dcdbd8b9e249c3d7482cc6f8d40467699663c6141c8bd070fb2",
+    "full-reference-101": "e4ef4a8d7d6e62d283fa82aa81c727cad014d78103643e867c4c6bcba986beb7",
+    "residual-reference-101": "42fb2ede2bb39da6443d936607c1d7828c5742020476cab043073bc8de952ac9",
+    "A-202": "2590f14ee2d58803c4a9c808cc6fc0f19c948316b6342aa9abbc8a12a0e22aa8",
+    "B-202": "02d81bb803271d0013fbe78ebb00297e064a252af115e87a7b1f941262c34eef",
+    "C-202": "9cdeec5f41b6acd9a2e33b9dd7d4d092b5462d2cc3a85867b47e94eacf58305b",
+    "D-202": "0c8a921088026129dcbcc17675a7f237a9accca2ab51be73dd51f497aff16991",
+    "full-reference-202": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074",
+    "residual-reference-202": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a"
+  }
+}

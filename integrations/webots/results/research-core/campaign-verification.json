@@ -1,0 +1,90 @@
+{
+  "verified": true,
+  "final_training_steps": 10000000,
+  "trained_policies": [
+    {
+      "role": "full",
+      "seed": 0,
+      "steps": 1000000,
+      "completed_episode_steps": 996234,
+      "episodes": 1337,
+      "policy_sha256": "e4ef4a8d7d6e62d283fa82aa81c727cad014d78103643e867c4c6bcba986beb7"
+    },
+    {
+      "role": "full",
+      "seed": 1,
+      "steps": 1000000,
+      "completed_episode_steps": 996508,
+      "episodes": 1298,
+      "policy_sha256": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074"
+    },
+    {
+      "role": "full",
+      "seed": 2,
+      "steps": 1000000,
+      "completed_episode_steps": 997100,
+      "episodes": 1310,
+      "policy_sha256": "433a3b09ad27f412c924eb84afc64bc0875408d71c67f71f240eb9c4613aa28a"
+    },
+    {
+      "role": "full",
+      "seed": 3,
+      "steps": 1000000,
+      "completed_episode_steps": 997142,
+      "episodes": 1297,
+      "policy_sha256": "e74215abe4acadb13cf58a6e269710bb0acbaa89a283db7fdccd076659803207"
+    },
+    {
+      "role": "full",
+      "seed": 4,
+      "steps": 1000000,
+      "completed_episode_steps": 996460,
+      "episodes": 1308,
+      "policy_sha256": "2caa90bab8cfcba1a04e9ff088a76b465583e9e6d5d2ea174d1a16ee92d47d7c"
+    },
+    {
+      "role": "residual",
+      "seed": 0,
+      "steps": 1000000,
+      "completed_episode_steps": 996806,
+      "episodes": 1270,
+      "policy_sha256": "42fb2ede2bb39da6443d936607c1d7828c5742020476cab043073bc8de952ac9"
+    },
+    {
+      "role": "residual",
+      "seed": 1,
+      "steps": 1000000,
+      "completed_episode_steps": 996177,
+      "episodes": 1272,
+      "policy_sha256": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a"
+    },
+    {
+      "role": "residual",
+      "seed": 2,
+      "steps": 1000000,
+      "completed_episode_steps": 997245,
+      "episodes": 1425,
+      "policy_sha256": "dd81b5862f60afac793ce323d7a7dd2a21aa12d3a28b699e0f802d7c3cd331c5"
+    },
+    {
+      "role": "residual",
+      "seed": 3,
+      "steps": 1000000,
+      "completed_episode_steps": 996815,
+      "episodes": 1273,
+      "policy_sha256": "0975bde69958191dce0159d40db383f974aced30aa26f6c63d26d2c98a59974b"
+    },
+    {
+      "role": "residual",
+      "seed": 4,
+      "steps": 1000000,
+      "completed_episode_steps": 997665,
+      "episodes": 1274,
+      "policy_sha256": "47cf0fa33d3cad20f69efd21b7ccf12635efc705e1c94733cf47ad955faf2060"
+    }
+  ],
+  "surrogate_evaluation_episodes": 810,
+  "webots_transfer_runs": 45,
+  "corrected_webots_lqr_runs": 9,
+  "note": "Budget and data integrity verification; not a guarantee of convergence, safety or superiority."
+}

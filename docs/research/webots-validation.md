@@ -1,6 +1,6 @@
 # Webots vehicle adapter validation
 
-Date: 24 October 2026 (Asia/Shanghai). Scope: secondary simulator interface validation only, following `specification-v0.1.md`; no claim of research-controller transfer, vehicle calibration or safety validation. Work is isolated on branch `webots/vehicle-validation`, worktree `/workspace/LANS-webots`, based on `de7b4a2`. Only `integrations/webots/` and this document are changed. The primary model, `experiments/phase1/`, PPO training and specification are untouched.
+Initial milestone (commit `5811dc3`), 24 October 2026. Scope: secondary simulator interface validation only, following `specification-v0.1.md`; no claim of research-controller transfer, vehicle calibration or safety validation. Work is isolated on branch `webots/vehicle-validation`, worktree `/workspace/LANS-webots`, based on `de7b4a2`. Only `integrations/webots/` and this document are changed. The primary model, `experiments/phase1/`, legacy PPO training and specification are untouched. The separately authorized five-seed extension is documented below.
 
 ## Reproduce
 
@@ -139,3 +139,49 @@ Before research transfer, explicitly reconcile the articulated mass/CG/inertia a
 - [R2025a Driver library documentation](https://github.com/cyberbotics/webots/blob/c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b/docs/automobile/driver-library.md): steering radians/right-positive and speed km/h.
 - [Driver implementation](https://github.com/cyberbotics/webots/blob/c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b/projects/default/libraries/vehicle/c/driver/src/driver.c): steering sensor mean, wheel-speed estimate, stepping order.
 - [Car](https://github.com/cyberbotics/webots/blob/c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b/projects/vehicles/protos/abstract/Car.proto), [AckermannVehicle](https://github.com/cyberbotics/webots/blob/c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b/projects/vehicles/protos/abstract/AckermannVehicle.proto), and [VehicleWheel](https://github.com/cyberbotics/webots/blob/c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b/projects/vehicles/protos/abstract/VehicleWheel.proto): geometry, joint axes, physical fields and wheel Slot structure.
+
+
+## Extended five-seed campaign (24 October 2026 UTC)
+
+The authorized extension is complete in the same isolated worktree. It adds its own Fiala surrogate, LQR, full-command PPO, residual PPO and supervised fusion under `integrations/webots/research/`; the primary model, phase-1 experiments, existing training pipeline and specification remain unchanged. The private Webots installation is reused without altering shared installations.
+
+The [reproduction guide](../../integrations/webots/research/README.md) gives installation, training and simulator commands. The [generated results report](../../integrations/webots/results/research-core/report.md) contains measured tables; [campaign verification](../../integrations/webots/results/research-core/campaign-verification.json) verifies checkpoint step counts, seeds, hashes, complete evaluation coverage and physical evidence.
+
+Actual final commands (from this worktree, with `OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1` and private writable Numba/Matplotlib cache directories):
+
+```bash
+bash integrations/webots/install-research.sh
+# Actual campaign interpreter: /workspace/lans-setup/venv/bin/python (Python 3.10.22).
+# The separately tested reproducible installation provides the same pinned core packages:
+export LANS_PYTHON="$PWD/integrations/webots/.runtime/research-venv/bin/python"
+bash integrations/webots/research/run-final-training.sh
+"$LANS_PYTHON" integrations/webots/research/evaluate.py --wait-for-training --training "$PWD/integrations/webots/results/research-training" --output "$PWD/integrations/webots/results/research-evaluation"
+"$LANS_PYTHON" integrations/webots/research/run-physical.py --suite development --output "$PWD/integrations/webots/results/physical-validated"
+"$LANS_PYTHON" integrations/webots/research/run-physical.py --suite tracking --output "$PWD/integrations/webots/results/physical-tracking-final"
+"$LANS_PYTHON" integrations/webots/research/run-physical.py --suite transfer --output "$PWD/integrations/webots/results/physical-transfer-final"
+"$LANS_PYTHON" integrations/webots/research/analyze-physical.py
+"$LANS_PYTHON" integrations/webots/research/verify-campaign.py
+"$LANS_PYTHON" integrations/webots/research/report.py
+```
+
+These result directories already contain evidence; use new output paths when rerunning evaluation or Webots. Training retains verified completed checkpoints; provide a fresh first argument for retraining. See the guide for explicit evaluation paths. The development suite preceded the analytical tracking correction; only its nine open-loop and three convergence cases enter the final physical audit. Its older LQR cases are retained as history; the nine corrected cases in `physical-tracking-final` supply the final table.
+
+Ten final policies (two roles, seeds 0–4) each completed 1,000,000 steps: **10 million final training steps**. The 810 paired surrogate episodes cover six methods, five seeds, three speeds, three known paths and three service delays. Survival counts out of 135 are LQR 135, PPO 87, residual 135, fusion 134, no-supervisor 134 and fixed-weight 89. Mean failure-penalized RMSE is respectively 0.0640, 0.8652, 0.0749, 0.0924, 0.0935 and 0.8198 m. LQR is strongest on this comparison; completing training does not establish PPO convergence or superiority.
+
+All 45 native Webots policy-transfer cases survived: 15 full PPO, 15 asynchronous fusion with zero added delay and 15 fusion with 100 ms added minimum delay. Their mean RMSEs are 0.0897, 0.0853 and 0.0769 m. At 100 ms, fusion spends 100% of the run in LQR fallback; this validates rejection of stale output, not useful delayed PPO control. All nine corrected LQR cases survived, including noisy and 10 ms delayed sensor cases at 15/20/25 m/s. Nine straight/small-steering cases and three timestep convergence cases passed the physical audit. Four original adapter tests, five research contract tests, original baseline/repeat analyses, numerical checks and the real-process worker contract passed.
+
+### Parameter, actuator and sensor validation
+
+The research world has composite mass 1,650 kg, wheelbase 2.6 m, CG 1.4 m ahead of the rear axle, nominal yaw inertia 4,224 kg·m² and wheel radius 0.32 m. These are audited from the generated world including wheel contributions. Steering remains positive-left radians with the native Driver sign negated. Research position is transformed to nominal CG, unlike the original rear-origin logs. CSVs include commanded and actual steering, speed, CG position, heading, state/control/observation/availability simulation times and separate worker wall timestamps.
+
+Explicit steering dynamics use ±0.5 rad, 0.35 rad/s and a 0.05 s first-order lag, with 1 ms physics and 10 ms control. Native motor PID is configured in each private test world/controller to avoid adding an unintended second slow actuator. Separate step evidence is retained in `results/actuator-parity`; measured wheel/actuator differences were below 1e-5 rad. Sensor noise enters before a common Kalman estimate, with delayed measurement queues tested for true-state leakage. Encoder/map previews are not delayed or noised by the four-channel sensor stress.
+
+Native force-dependent contact slip is speed-conditioned and separately calibrated front/rear. At 15/20/25 m/s measured effective front stiffness is 83.2/84.4/85.1 kN/rad and rear is 75.9/75.4/75.1 kN/rad, within the declared 15% tolerance around 80 kN/rad. This does not make Webots contact physics equivalent to Fiala tires. The tested quintic 125 m course fails the 0.8 μg acceleration margin; the explicitly different 220 m development course passes at all three speeds. Neither is presented as ISO certification.
+
+### Development history and limits
+
+Development exposed noisy finite-difference feedback, overly aggressive R=4 feedback, overly stiff native contact, extra native servo lag and an Xvfb reset race. A common Kalman estimator, development-selected R=100, calibrated contact materials, explicit actuator parity and an Xvfb readiness/no-reset wrapper addressed these before the final runs. The original negative reward encouraged early termination; the final profile restarts both roles with a bounded positive survival reward and initial log standard deviation −2.
+
+An analytical curvature-equilibrium correction subsequently removed the LQR baseline's erroneous zero lateral-velocity/yaw reference. Full-command training never uses LQR in its action or reward and was unaffected; all final residual policies were retrained with the corrected reference. Four concurrently produced preliminary evaluation rows were excluded and final evaluation used fresh noise seeds starting at 20000. Four full-policy metadata writers had failed after successful model saves; recovery verified each saved model's million-step count, seed and hashes without changing weights. Their wall-time metadata explicitly ends at the last rollout. Source snapshots and protocol hashes preserve these distinctions; partial development models are not final evidence.
+
+Known path geometries are reused; only noise realizations are held out. PPO has curvature previews while LQR uses local curvature. Training is synchronous, with frozen asynchronous deployment; it does not implement every tentative latency-training provision of the specification. Surrogate service delays are simulated scheduling, whereas Webots fusion runs a real separate inference process. CPU-contended wall timing is not a real-time guarantee. Corridor checks use a sampled vehicle footprint in a vertical strip, not continuous swept-volume or ISO geometry. Nonlinear tire equivalence, unseen-path generalization, real-vehicle safety and formal stability remain unvalidated.

@@ -10,3 +10,21 @@ results/*
 !results/repeat/
 !results/baseline/**
 !results/repeat/**
+
+# Final research protocols and audited evidence; private/development runs stay ignored.
+!research/*.json
+!results/research-core/
+!results/research-core/**
+!results/research-training/
+!results/research-training/**
+!results/research-evaluation/
+!results/research-evaluation/**
+!results/physical-validated/
+!results/physical-validated/**
+!results/physical-tracking-final/
+!results/physical-tracking-final/**
+!results/physical-transfer-final/
+!results/physical-transfer-final/**
+!results/actuator-parity/
+!results/actuator-parity/**
+**/__pycache__/

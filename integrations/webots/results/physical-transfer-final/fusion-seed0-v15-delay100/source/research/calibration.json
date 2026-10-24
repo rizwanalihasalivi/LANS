@@ -1,0 +1,14 @@
+{
+  "chassis_mass": 1610,
+  "chassis_cg_x": 1.4024844720496894,
+  "chassis_yaw_inertia": 4129.232728778468,
+  "wheel_mass": 10,
+  "wheel_Izz": 0.2893333333333334,
+  "nominal_total_mass": 1650,
+  "nominal_total_cg_x": 1.4,
+  "nominal_total_yaw_inertia": 4224,
+  "note": "nominal unsteered articulated geometry; not dynamic equivalent to Fiala tire plant",
+  "front_slip_multiplier": 1.06,
+  "rear_slip_multiplier": 0.925,
+  "calibration_rule": "per-axle FDS = multiplier * 4 * nominal speed / 80000; fitted on development open-loop cases, not policy scores"
+}

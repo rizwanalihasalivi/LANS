@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "poll_count": 2,
+  "maximum_measured_poll_wall_s": 7.826799992471933e-05,
+  "packet": {
+    "sequence": 1,
+    "t_observation_s": 0,
+    "angle_rad": -0.061366889625787735,
+    "inference_start_wall_s": 43641.824945169,
+    "inference_end_wall_s": 43641.82688013,
+    "t_available_sim_s": 0.1
+  },
+  "checks": [
+    "one in flight",
+    "drop while busy",
+    "minimum simulated availability",
+    "wall inference timestamps",
+    "subsequent request accepted"
+  ]
+}

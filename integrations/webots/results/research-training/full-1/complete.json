@@ -1,0 +1,25 @@
+{
+  "seed": 1,
+  "role": "full",
+  "steps": 1000000,
+  "wall_s": 452.53089451789856,
+  "wall_time_scope": "through final rollout only; recovered after metadata-writer KeyError, after policy and normalization had been saved",
+  "training_profile": "positive_survival_v2",
+  "final_training_protocol_sha256": "cf2f407f4568a398ea9385cdb237046ee5fb78232d32d288defe95f79398a5a1",
+  "protocol_sha256": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+  "comparison_protocol_sha256": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+  "source_sha256": {
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "environment-v2.py": "b00edf319601577e0a79d1101e3bbb58621a7c812558c408cbe033e5d23bc945",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "final-training-protocol.json": "cf2f407f4568a398ea9385cdb237046ee5fb78232d32d288defe95f79398a5a1",
+    "train-v2.py": "2b1a5584dca95d59634ab2ee919164b8ecd48f2bda0cf2eb5127299db5ffd5b5",
+    "environment.py": "d839fb4ca5871fa58a6ca7bea1f0d48bf325b541d266fb4de3a9b3e645cc5725",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "train.py": "e7fd76ad01e1728918be66aa231a034460e3e4e68bdec6761657fe00588352d3"
+  },
+  "policy_sha256": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074",
+  "metadata_recovery": "verified saved PPO.num_timesteps == 1000000, seed, final progress, source snapshots and normalization presence; weights unchanged",
+  "recovery_tool_sha256": "b23275bbe62444757e3a23860aff1da5bd0f05d190d6622b799044744acec5f0"
+}

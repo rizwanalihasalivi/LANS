@@ -1,0 +1,11 @@
+{
+  "research/core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+  "research/protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+  "research/run-physical.py": "8dedde52a0bfcf0947d4f93e0a3882d87133797440c652d8c8ee96f84eebb155",
+  "controllers/research_validation/research_validation.py": "17c78c503a479db26271571ba21b4fb4d580ce4573958c549c9fca2d473b9c40",
+  "worlds/research_validation.wbt": "5fed76e7042078ceb25f40f7ae8611b5f6e7ececdc4ae12619567a75df3ce8ff",
+  "research/comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+  "research/comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+  "research/worker.py": "461b47929a9c1c00b867c1b1d845fa34ec5328229699d49ab5407a01c31c7935",
+  "run-research-webots.sh": "707ed2f98c08ff0d99d15aa13b9f768d5835b9264bfcfc54c49ab6db0b59079a"
+}

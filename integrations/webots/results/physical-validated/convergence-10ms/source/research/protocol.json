@@ -1,0 +1,111 @@
+{
+  "status": "frozen development research protocol; not final paper specification",
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "training_steps_per_seed_per_policy": 1000000,
+  "policy_roles": [
+    "full",
+    "residual"
+  ],
+  "training_type": "standalone synchronous PPO; frozen-policy asynchronous deployment evaluation",
+  "training_speeds_m_s": [
+    15,
+    20,
+    25
+  ],
+  "training_paths": "random sine: amplitude 0.5-3 m, wavelength 100-180 m, phase uniform [-pi,pi]",
+  "training_episode_seconds": 8,
+  "evaluation_seed_base": 10000,
+  "evaluation_paths": [
+    "dlc220",
+    "sine120",
+    "sine160"
+  ],
+  "evaluation_delays_ms": [
+    0,
+    20,
+    100
+  ],
+  "evaluation_methods": [
+    "lqr",
+    "ppo",
+    "residual",
+    "fusion",
+    "no_supervisor",
+    "fixed_weight"
+  ],
+  "mass_kg": 1650,
+  "yaw_inertia_kg_m2": 4224,
+  "lf_m": 1.2,
+  "lr_m": 1.4,
+  "corner_stiffness_front_N_rad": 80000,
+  "corner_stiffness_rear_N_rad": 80000,
+  "friction": 0.9,
+  "control_period_s": 0.01,
+  "integration_step_s": 0.001,
+  "steering_limit_rad": 0.5,
+  "steering_rate_rad_s": 0.35,
+  "actuator_tau_s": 0.05,
+  "sensor_noise_std": {
+    "lateral_m": 0.03,
+    "heading_rad": 0.0029670597283903604,
+    "yaw_rate_rad_s": 0.01,
+    "speed_m_s": 0.1
+  },
+  "sensor_delay_s": 0.0,
+  "lqr_Q": [
+    4.0,
+    0.1,
+    8.0,
+    0.2
+  ],
+  "lqr_R": 4.0,
+  "nominal_ppo_weight": 0.7,
+  "freshness_full_ms": 10,
+  "freshness_reject_ms": 50,
+  "recovery_persistence_s": 0.1,
+  "recovery_weight_rate_per_s": 1.4,
+  "envelope_reject": {
+    "abs_lateral_m": 1.5,
+    "abs_heading_rad": 0.25
+  },
+  "envelope_return": {
+    "abs_lateral_m": 0.75,
+    "abs_heading_rad": 0.12
+  },
+  "failure": {
+    "abs_lateral_m": 2.5,
+    "abs_heading_rad": 0.6
+  },
+  "worker_policy": "one in-flight job, no backlog; drop requests while busy, reject out-of-order results",
+  "simulated_delay_note": "fixed service time per cell; nonblocking local control; separately record measured wall inference time",
+  "ppo": {
+    "n_envs": 8,
+    "n_steps": 125,
+    "batch_size": 200,
+    "n_epochs": 10,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "net_arch": [
+      64,
+      64
+    ]
+  },
+  "claims": "budget completion and observed evaluation only; no convergence/stability/general-superiority guarantee",
+  "state_estimator": {
+    "type": "linear Kalman with common noisy ey/heading/yaw-rate observations; measured actuator and speed inputs",
+    "process_cov_diagonal": [
+      1e-07,
+      0.0001,
+      1e-08,
+      1e-05
+    ],
+    "note": "10ms forward-Euler observer; no differentiation of white noise; no true lateral velocity supplied"
+  }
+}

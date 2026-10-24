@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/workspace/LANS-webots/integrations/webots/research/train-v2.py", line 34, in <module>
+    if __name__=='__main__':main()
+  File "/workspace/LANS-webots/integrations/webots/research/train-v2.py", line 31, in main
+    'final_training_protocol_sha256':hashes['final-training-protocol.json'],'protocol_sha256':hashes['protocol.json'],'comparison_protocol_sha256':hashes['comparison-protocol.json','final-training-protocol.json'],'source_sha256':hashes,
+KeyError: ('comparison-protocol.json', 'final-training-protocol.json')

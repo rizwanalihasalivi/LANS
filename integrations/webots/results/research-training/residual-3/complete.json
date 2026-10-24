@@ -1,0 +1,25 @@
+{
+  "seed": 3,
+  "role": "residual",
+  "steps": 1000000,
+  "wall_s": 451.04190278053284,
+  "training_profile": "positive_survival_v2",
+  "final_training_protocol_sha256": "cf2f407f4568a398ea9385cdb237046ee5fb78232d32d288defe95f79398a5a1",
+  "tracking_protocol_sha256": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+  "protocol_sha256": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+  "comparison_protocol_sha256": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+  "source_sha256": {
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "environment.py": "d839fb4ca5871fa58a6ca7bea1f0d48bf325b541d266fb4de3a9b3e645cc5725",
+    "environment-v2.py": "b00edf319601577e0a79d1101e3bbb58621a7c812558c408cbe033e5d23bc945",
+    "train.py": "e7fd76ad01e1728918be66aa231a034460e3e4e68bdec6761657fe00588352d3",
+    "train-v2.py": "462a984323216022c711e8575bbf8b65f18173148860f16bbaf6ed0f8bcf3837",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "final-training-protocol.json": "cf2f407f4568a398ea9385cdb237046ee5fb78232d32d288defe95f79398a5a1",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53"
+  },
+  "policy_sha256": "0975bde69958191dce0159d40db383f974aced30aa26f6c63d26d2c98a59974b"
+}

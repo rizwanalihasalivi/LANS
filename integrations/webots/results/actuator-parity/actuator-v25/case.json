@@ -1,0 +1,9 @@
+{
+  "mode": "open",
+  "speed": 25,
+  "angle": 0.03,
+  "noise": 0,
+  "duration": 5,
+  "lateral_slip": 0.00125,
+  "output": "/workspace/LANS-webots/integrations/webots/results/actuator-parity/actuator-v25"
+}

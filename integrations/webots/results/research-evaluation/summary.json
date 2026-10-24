@@ -1,0 +1,86 @@
+{
+  "lqr": {
+    "episodes": 135,
+    "survived": 135,
+    "corridor_clean": 135,
+    "seed_mean_penalized_rmse": [
+      0.06382025375999384,
+      0.06359946634691394,
+      0.06351410093586371,
+      0.06451169427353218,
+      0.06473601351355314
+    ],
+    "mean_penalized_rmse": 0.06403630576597136,
+    "sample_sd_across_seeds": 0.0005535770490780771
+  },
+  "ppo": {
+    "episodes": 135,
+    "survived": 87,
+    "corridor_clean": 87,
+    "seed_mean_penalized_rmse": [
+      0.8206211071969212,
+      0.7926467543643568,
+      0.9836786486194926,
+      0.8283029205640132,
+      0.9008920096526077
+    ],
+    "mean_penalized_rmse": 0.8652282880794783,
+    "sample_sd_across_seeds": 0.07733652328845946
+  },
+  "residual": {
+    "episodes": 135,
+    "survived": 135,
+    "corridor_clean": 135,
+    "seed_mean_penalized_rmse": [
+      0.08066449768216646,
+      0.07165001442616863,
+      0.07189246705447702,
+      0.08011409135678155,
+      0.06994122548312828
+    ],
+    "mean_penalized_rmse": 0.0748524592005444,
+    "sample_sd_across_seeds": 0.005113755638574175
+  },
+  "fusion": {
+    "episodes": 135,
+    "survived": 134,
+    "corridor_clean": 134,
+    "seed_mean_penalized_rmse": [
+      0.07246474707986039,
+      0.08184684302597918,
+      0.1498046209361838,
+      0.08422519823568718,
+      0.07350348430705848
+    ],
+    "mean_penalized_rmse": 0.0923689787169538,
+    "sample_sd_across_seeds": 0.032511439577303396
+  },
+  "no_supervisor": {
+    "episodes": 135,
+    "survived": 134,
+    "corridor_clean": 134,
+    "seed_mean_penalized_rmse": [
+      0.0732968640121764,
+      0.08376833657835613,
+      0.15054598476308215,
+      0.0858460673498619,
+      0.07400722276364483
+    ],
+    "mean_penalized_rmse": 0.09349289509342426,
+    "sample_sd_across_seeds": 0.032386984852271226
+  },
+  "fixed_weight": {
+    "episodes": 135,
+    "survived": 89,
+    "corridor_clean": 89,
+    "seed_mean_penalized_rmse": [
+      0.8068930578117881,
+      0.7670569771696253,
+      0.9005190076769937,
+      0.8097933623303121,
+      0.8148753301913159
+    ],
+    "mean_penalized_rmse": 0.819827547036007,
+    "sample_sd_across_seeds": 0.048960073504527274
+  }
+}

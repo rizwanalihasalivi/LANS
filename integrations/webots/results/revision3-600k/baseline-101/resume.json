@@ -1,0 +1,19 @@
+{
+  "initial_policy_sha256": "6710b54fc459ca2d5218a67021e7be373215306eb8d858d1b924526c64bc8890",
+  "initial_normalization_sha256": "ea4173fa4bc3ef27f37af570d5ff592e3de2912fce69d2f493cd06598fc6bd50",
+  "initial_steps": 300000,
+  "optimizer_steps": [
+    15000
+  ],
+  "normalization_count": 300000.0001,
+  "effective_reset_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+  ]
+}

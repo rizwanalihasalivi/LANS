@@ -291,3 +291,20 @@ The old gated model reference averages0.082919m, old merely rescaled gated model
 The user’s latest tie-break favors the simpler baseline when differences remain below1%, while explicitly reserving the full-training decision for their review. Accordingly the recommendation is **baseline for simplicity, not a proven performance winner**. Full training remains paused, no new1M model completed, no final reserved episode ran, and no new-policy native run was executed. No further configuration search is performed after this checkpoint. The complete [extended results](../../integrations/webots/results/revision3-extended/report.md) retain all regional references and criteria.
 
 Continuation caveat: the source intended a fresh constructor seed offset, but SB3 `PPO.load` seeds the vector environment from `model.seed+i`, overriding that default. The audit records this discrepancy. Policy, optimizer and normalization continue; environments restart with the same treatment for both candidates. These are not uninterrupted300k trajectories. Frozen source/protocol snapshots remain unedited; the report includes the observed seeding correction.
+
+
+## Baseline300k→600k confirmation
+
+At the user's request, only the same two baseline checkpoints were continued for300k additional steps each, reaching600k total. The larger network was not trained again. Protocol/source freeze: `c9978e7dd9b372a6c6e8068968cf1183387ede8e`. No architecture, reward, range or gate setting changed. [Reproduction instructions](../../integrations/webots/research/revision3/confirmation600.md), [complete results](../../integrations/webots/results/revision3-600k/report.md) and the [three-checkpoint curve](../../integrations/webots/results/revision3-600k/learning-curve.png) are retained.
+
+| Checkpoint | Seed101 RMSE (m) | Seed202 RMSE (m) | Mean RMSE (m) | Survived /72 |
+|---|---:|---:|---:|---:|
+| 100k | 0.084147 | 0.083799 | 0.083973 | 72 |
+| 300k | 0.084565 | 0.083894 | 0.084229 | 72 |
+| 600k | 0.084579 | 0.083607 | 0.084093 | 72 |
+
+The600k mean improves only **0.162%** over300k and **0.128%** over the old-rescaled reference (0.084201m). One seed improves while the other slightly regresses; the600k mean remains worse than the100k checkpoint. Legacy-gated remains at0.082919m; the600k model is approximately **1.42% worse** relative to that reference. Different legacy model seeds and1M-step budgets remain a limitation.
+
+All288 confirmation episodes survived. All216 repeated reference cells exactly reproduced prior error and survival values. The audit verifies actual model steps300k→600k, Adam counters15000→30000, normalization sample counts300k→600k and the saved initial/final hashes. Environments restart with SB3 model.seed+i as explicitly specified for this stage; weights, optimizer and normalization continue. It is not uninterrupted600k training.
+
+Nominal preservation, regional-consistency and survival checks pass, but the predeclared ≥1% improvement against300k and old-rescaled, and improvement in both seeds, do not. The resulting recommendation is to **stop the current range-only retraining route at this development checkpoint**, not spend5×1M on the present evidence. The observed curve is broadly flat/mixed, not proof that no different training method could help. Five-seed full training, new final reserved evaluation and native transfer were not run in this stage. Existing models, gate, previous results, specification and shared Webots installation remain unchanged.

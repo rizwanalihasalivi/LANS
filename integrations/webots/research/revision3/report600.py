@@ -101,7 +101,7 @@ def main():
     axes[0].set(xlabel='Total training steps (thousands)',ylabel='Development mean RMSE (m)',title='Measured checkpoint scores');axes[0].legend();axes[0].grid(alpha=.25)
     means=[mean(r['mean_penalized_rmse'] for r in curve if r['region']=='all' and r['steps']==s) for s in [100000,300000,600000]]
     axes[1].plot([100,300,600],means,marker='o',label='Baseline: two-seed mean')
-    for method,label in [('legacy_rescaled_gated','Old rescaled'),('legacy_gated','Legacy gated'),('lqr','LQR')]:axes[1].axhline(score(subset(rows,method)),linestyle='--',label=label)
+    for method,label,color in [('legacy_rescaled_gated','Old rescaled','#d95f02'),('legacy_gated','Legacy gated','#1b9e77'),('lqr','LQR','#777777')]:axes[1].axhline(score(subset(rows,method)),linestyle='--',color=color,label=label)
     axes[1].set(xlabel='Total training steps (thousands)',ylabel='Development mean RMSE (m)',title='Descriptive reference comparison');axes[1].legend(fontsize=8);axes[1].grid(alpha=.25)
     fig.savefig(OUT/'learning-curve.png',dpi=180);plt.close(fig)
     print(json.dumps(dict(relative_change_vs300k=relative,relative_change_vs_old_rescaled=rescaled,checks=checks,material_progress=all(checks.values()))))

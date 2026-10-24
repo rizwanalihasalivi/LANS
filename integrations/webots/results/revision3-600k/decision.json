@@ -1,0 +1,56 @@
+{
+  "verified": true,
+  "model_audits": [
+    {
+      "seed": 101,
+      "total_steps": 600000,
+      "additional_steps": 300000,
+      "optimizer_step_counters": [
+        30000
+      ],
+      "normalization_count": 600000.0001000001,
+      "additional_completed_episode_steps": 294747,
+      "initial_policy_sha256": "6710b54fc459ca2d5218a67021e7be373215306eb8d858d1b924526c64bc8890",
+      "policy_sha256": "c42f3a0febec6c2a011d50e086bbc3f13f5807a7a5582176486c88b37b95a831"
+    },
+    {
+      "seed": 202,
+      "total_steps": 600000,
+      "additional_steps": 300000,
+      "optimizer_step_counters": [
+        30000
+      ],
+      "normalization_count": 600000.0001000001,
+      "additional_completed_episode_steps": 296169,
+      "initial_policy_sha256": "a3dc9c3ef3a60db34a1677a2358a79035074454c8adea79750785cc5b98ea0df",
+      "policy_sha256": "72efe7f4315df75234d1c92fe970c486eae5a22b4596e89a91a59668d53ed348"
+    }
+  ],
+  "episodes": 288,
+  "reference_cells_reproduced_exactly": 216,
+  "baseline_survived": 72,
+  "relative_rmse_change_vs_300k": -0.001619651800668995,
+  "relative_rmse_change_vs_old_rescaled": -0.0012808891114636245,
+  "seed_mean_differences_vs_300k": [
+    1.3844781572847076e-05,
+    -0.0002866886755495679
+  ],
+  "active_region_changes_vs_300k": {
+    "nominal": -0.006468970767785321,
+    "tire_mismatch": 7.454755822698784e-06,
+    "low_friction": -0.0008827185803578398,
+    "sensor_stress": -0.0003884479244452364,
+    "latency20": -0.0051407627160767865
+  },
+  "checks": {
+    "improves_300k_by_1pct": false,
+    "beats_old_rescaled_by_1pct": false,
+    "both_seeds_improve": false,
+    "regional_consistency": true,
+    "nominal_preservation": true,
+    "survival": true
+  },
+  "material_progress": false,
+  "full_training_user_approved": false,
+  "final_reserved_evaluated": false
+}

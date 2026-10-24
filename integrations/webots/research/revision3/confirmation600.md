@@ -34,3 +34,9 @@ All regional values and seed means are reported even if this rule fails. The tas
 Only two training seeds and repeatedly used development paths/noise are tested. The old reference policies have1M steps and different training seeds0/1. They are descriptive anchors, not an equal-budget causal comparison. The learning curve consists of three measured endpoints100k/300k/600k; lines between them are visual guides, not additional observations.
 
 [Results](../../results/revision3-600k/report.md) · [Audited decision](../../results/revision3-600k/decision.json) · [Learning-curve figure](../../results/revision3-600k/learning-curve.png)
+
+## Recorded outcome
+
+All288 development episodes survived, including72/72 new baseline cases. Mean baseline RMSE across the two seeds was0.083973m at100k,0.084229m at300k, and0.084093m at600k. The600k checkpoint improves only0.162% against300k and0.128% against the old-rescaled anchor; one seed improves and the other slightly regresses. The600k mean is still slightly worse than100k. The600k mean remains approximately1.42% worse than legacy-gated (0.082919m).
+
+The frozen material-progress checks fail. This development curve does not justify five-million-step training on the current range-only retraining route. Stop that route at this checkpoint rather than increasing the budget or tuning against these results. This does not prove that all future or different training methods must fail. Full training remains unapproved and new reserved seeds remain unused.

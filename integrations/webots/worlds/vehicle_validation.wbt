@@ -1,0 +1,104 @@
+#VRML_SIM R2025a utf8
+EXTERNPROTO "../.runtime/protos/Car.proto"
+EXTERNPROTO "../.runtime/protos/VehicleWheel.proto"
+WorldInfo {
+  basicTimeStep 10
+  randomSeed 42
+  coordinateSystem "ENU"
+  contactProperties [
+    ContactProperties {
+      material1 "tire"
+      material2 "road"
+      coulombFriction [ 0.9 ]
+      softERP 0.2
+      softCFM 0.00001
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.184 0.413 0.892 2.42
+  position 45 -55 60
+}
+Background { skyColor [ 0.8 0.85 0.9 ] }
+DirectionalLight { direction -1 1 -2 }
+DEF ROAD Solid {
+  translation 50 0 -0.1
+  children [ Shape { appearance PBRAppearance { baseColor 0.3 0.3 0.3 roughness 1 metalness 0 } geometry Box { size 200 100 0.2 } } ]
+  contactMaterial "road"
+  boundingObject Box { size 200 100 0.2 }
+}
+DEF VEHICLE Car {
+  translation 0 0 0.36
+  name "lans-validation-surrogate"
+  controller "vehicle_validation"
+  supervisor TRUE
+  window "<none>"
+  engineSound ""
+  type "propulsion"
+  engineType "electric"
+  wheelbase 2.6
+  trackFront 1.6
+  trackRear 1.6
+  minSteeringAngle -0.6
+  maxSteeringAngle 0.6
+  suspensionFrontSpringConstant 100000
+  suspensionRearSpringConstant 100000
+  suspensionFrontDampingConstant 4000
+  suspensionRearDampingConstant 4000
+  wheelsDampingConstant 5
+  extensionSlot [
+    Pose {
+      translation 1.3 0 0.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 metalness 0 roughness 0.6 } geometry Box { size 3.8 1.5 0.5 } } ]
+    }
+  ]
+  boundingObject Pose { translation 1.3 0 0.35 children [ Box { size 3.8 1.5 0.5 } ] }
+  physics Physics {
+    density -1
+    mass 1610
+    centerOfMass [ 1.4 0 0.2 ]
+    inertiaMatrix [ 1000 3500 4224 0 0 0 ]
+  }
+  wheelFrontLeft VehicleWheel {
+    name "front left wheel"
+    wheelSide TRUE
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 }
+  }
+  wheelFrontRight VehicleWheel {
+    name "front right wheel"
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 }
+  }
+  wheelRearLeft VehicleWheel {
+    name "rear left wheel"
+    wheelSide TRUE
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 }
+  }
+  wheelRearRight VehicleWheel {
+    name "rear right wheel"
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 }
+  }
+}

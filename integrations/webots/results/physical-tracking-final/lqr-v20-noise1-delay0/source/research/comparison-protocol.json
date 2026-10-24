@@ -1,0 +1,20 @@
+{
+  "status": "frozen before held-out evaluation",
+  "training_protocol": "protocol.json",
+  "lqr_R": 100.0,
+  "lqr_Q": [4.0, 0.1, 8.0, 0.2],
+  "development_selection": "R=40,100,400 screened at seeds 9000 with initial offsets (0.15m,0.01rad) and (-0.3m,-0.03rad), speeds 15/20/25. R=100 selected before any held-out evaluation.",
+  "full_policy_note": "Standalone full-command training does not use LQR in its applied action or reward; existing completed 1M-step full policies are retained unchanged.",
+  "residual_policy_note": "Train fresh five-seed 1M-per-seed residual policies with R=100 baseline. Earlier incomplete R=4 development residual run is excluded.",
+  "webots_lateral_force_dependent_slip": "4 * nominal_speed_m_s / 80000 in cylinder U direction; V coefficient zero",
+  "webots_calibration_acceptance": "steady inferred per-axle small-slip stiffness within 15 percent of 80000 at 15/20/25 m/s; does not establish nonlinear Fiala equivalence",
+  "physical_step_s": 0.001,
+  "physical_control_period_s": 0.01,
+  "nominal_composite_mass_kg": 1650,
+  "nominal_composite_cg_from_rear_m": 1.4,
+  "nominal_composite_yaw_inertia_kg_m2": 4224,
+  "course_note": "125 m candidate fails chosen acceleration margin at tested speeds; explicitly different 220m development course passes. No ISO claim.",
+  "evaluation_initial_offset_m": 0.15,
+  "evaluation_initial_heading_offset_rad": 0.01,
+  "inference_evaluation": "surrogate uses deterministic single-worker service-time scheduler; physical fusion uses real separate-process worker plus configured minimum simulated delay. Simulation and wall clocks remain separate."
+}

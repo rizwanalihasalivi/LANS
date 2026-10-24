@@ -1,0 +1,12 @@
+{
+  "mode": "lqr",
+  "speed": 25,
+  "path": "dlc220",
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "duration": 10.8,
+  "lateral_slip": 0.00125,
+  "front_slip": 0.001325,
+  "rear_slip": 0.0011562500000000002,
+  "output": "/workspace/LANS-webots/integrations/webots/results/physical-tracking-final/lqr-v25-noise1-delay0"
+}

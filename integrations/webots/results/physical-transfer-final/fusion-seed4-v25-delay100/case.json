@@ -1,0 +1,15 @@
+{
+  "mode": "fusion",
+  "speed": 25,
+  "path": "dlc220",
+  "noise": 1,
+  "seed": 20004,
+  "delay_ms": 100,
+  "policy": "/workspace/LANS-webots/integrations/webots/results/research-training/full-4/policy.zip",
+  "duration": 10.8,
+  "policy_sha256": "2caa90bab8cfcba1a04e9ff088a76b465583e9e6d5d2ea174d1a16ee92d47d7c",
+  "lateral_slip": 0.00125,
+  "front_slip": 0.001325,
+  "rear_slip": 0.0011562500000000002,
+  "output": "/workspace/LANS-webots/integrations/webots/results/physical-transfer-final/fusion-seed4-v25-delay100"
+}

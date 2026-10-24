@@ -1,0 +1,11 @@
+{
+  "mode": "open",
+  "speed": 15,
+  "angle": 0.0,
+  "noise": 0,
+  "duration": 8,
+  "lateral_slip": 0.00075,
+  "front_slip": 0.000795,
+  "rear_slip": 0.00069375,
+  "output": "/workspace/LANS-webots/integrations/webots/results/physical-validated/open-v15-d0.0"
+}

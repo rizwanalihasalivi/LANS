@@ -1,0 +1,15 @@
+{
+  "mode": "ppo",
+  "speed": 25,
+  "path": "dlc220",
+  "noise": 1,
+  "seed": 20001,
+  "delay_ms": 0,
+  "policy": "/workspace/LANS-webots/integrations/webots/results/research-training/full-1/policy.zip",
+  "duration": 10.8,
+  "policy_sha256": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074",
+  "lateral_slip": 0.00125,
+  "front_slip": 0.001325,
+  "rear_slip": 0.0011562500000000002,
+  "output": "/workspace/LANS-webots/integrations/webots/results/physical-transfer-final/ppo-seed1-v25-delay0"
+}

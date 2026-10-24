@@ -1,0 +1,8 @@
+{
+  "status": "declared before first final held-out-noise evaluation episode",
+  "corridor": "world-y vertical strip y_ref(x) +/-1.75m; non-ISO development geometry",
+  "vehicle_outline": {"width_including_wheels_m": 1.8, "rear_extent_from_cg_m": 2.0, "front_extent_from_cg_m": 1.8},
+  "check": "nine rectangular-footprint sample points (corners, edge/interior samples) each control step",
+  "metrics": "minimum margin, fraction of samples outside corridor; report separately from predeclared 2.5m/0.6rad tracking-termination criteria",
+  "limits": "sampled footprint check, not exact continuous swept-volume collision detection or ISO certification"
+}

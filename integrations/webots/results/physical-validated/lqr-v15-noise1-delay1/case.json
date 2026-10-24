@@ -1,0 +1,12 @@
+{
+  "mode": "lqr",
+  "speed": 15,
+  "path": "dlc220",
+  "noise": 1,
+  "sensor_delay_steps": 1,
+  "duration": 16.666666666666664,
+  "lateral_slip": 0.00075,
+  "front_slip": 0.000795,
+  "rear_slip": 0.00069375,
+  "output": "/workspace/LANS-webots/integrations/webots/results/physical-validated/lqr-v15-noise1-delay1"
+}

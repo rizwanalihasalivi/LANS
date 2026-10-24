@@ -1,0 +1,8 @@
+{
+  "noise_seed_base": 20000,
+  "reason": "Four preliminary comparison rows finished concurrently while an analytical equilibrium-reference correction was being selected from development tests. Exclude those rows and restart all final comparisons using fresh noise seeds.",
+  "surrogate_noise_seed": "20000 + 100*training_seed + nominal_speed",
+  "webots_noise_seed": "20000 + training_seed",
+  "held_out_scope": "noise realizations; path geometries are known development geometries, not unseen paths",
+  "no_policy_selection": "Use the final 1M-step checkpoint for every seed; do not select a best checkpoint or best seed."
+}

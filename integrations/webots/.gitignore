@@ -60,3 +60,7 @@ results/*
 !results/revision3-pilots/
 !results/revision3-pilots/**
 **/__pycache__/
+
+!results/revision3-extended/
+!results/revision3-extended/**
+**/__pycache__/

@@ -7,6 +7,7 @@ from bootstrap import HERE,RESEARCH,ROOT
 sys.path.append(str(RESEARCH/'revision4'))
 from evaluation import episode
 from core import Sensor,GAINS,path_values,reference
+from comparison import configure_lqr
 from plant import advance
 from gating import Gate,predict_cost
 from tracking import tracking_lqr
@@ -61,16 +62,21 @@ def write_csv(path,rows):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+    configure_lqr()
     out=args.output;out.mkdir(parents=True,exist_ok=False)
-    sources={str(p.relative_to(RESEARCH)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [HERE/'audit.py',HERE/'protocol.json',RESEARCH/'revision2/gating.py',RESEARCH/'revision2/plant.py',RESEARCH/'revision4/evaluation.py']}
+    sources={str(p.relative_to(RESEARCH)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [HERE/'audit.py',HERE/'protocol.json',RESEARCH/'revision2/gating.py',RESEARCH/'revision2/plant.py',RESEARCH/'revision4/evaluation.py',RESEARCH/'comparison.py',RESEARCH/'comparison-protocol.json',RESEARCH/'core.py',RESEARCH/'tracking.py']}
     (out/'protocol.json').write_text((HERE/'protocol.json').read_text())
     (out/'sources.json').write_text(json.dumps(sources,indent=2)+'\n')
+    references={tuple(r[k] for k in ('seed','speed','path','scenario')):r for r in csv.DictReader((ROOT/'results/revision4-pilots/evaluation/episodes.csv').open()) if r['method']=='lqr'}
     rows=[];audits=[];hashes={}
     for seed in P['seeds']:
         candidates,model_hashes=models(seed);hashes[str(seed)]=model_hashes
         for speed,path_name,region in itertools.product(P['speeds'],P['paths'],P['scenarios']):
             for name in P['methods']:
                 row=episode(None if name=='lqr' else candidates[name],'lqr' if name=='lqr' else 'gated_residual',seed,speed,path_name,region,CONFIG,P['noise_base'],None)
+                if name=='lqr':
+                    ref=references[(str(seed),str(speed),path_name,region)]
+                    assert row['penalized_rmse']==float(ref['penalized_rmse']) and str(row['survived'])==ref['survived'], 'LQR reference parity failed'
                 row['method']=name;rows.append(row)
             if region.startswith('latency'):continue
             scenario=V2['scenarios'][region];path=tuple(V2['paths'][path_name]);y,h,_=path_values(0,path)

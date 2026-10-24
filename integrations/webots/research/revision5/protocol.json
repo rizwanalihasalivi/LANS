@@ -1,12 +1,41 @@
 {
   "purpose": "Controller review remediation diagnostics, not policy selection or reserved evaluation",
-  "seeds": [101,202],
-  "speeds": [15,20,25],
-  "paths": ["sine120","dlc220"],
-  "scenarios": ["nominal","tire_mismatch","low_friction","sensor_stress","latency20","latency100"],
+  "seeds": [
+    101,
+    202
+  ],
+  "speeds": [
+    15,
+    20,
+    25
+  ],
+  "paths": [
+    "sine120",
+    "dlc220"
+  ],
+  "scenarios": [
+    "nominal",
+    "tire_mismatch",
+    "low_friction",
+    "sensor_stress",
+    "latency20",
+    "latency100"
+  ],
   "noise_base": 6100000,
-  "methods": ["lqr","legacy","A100k","zero","constant_positive","constant_negative","linear_correction"],
-  "fixed_corrections_rad": [0,0.08,-0.08],
+  "methods": [
+    "lqr",
+    "legacy",
+    "A100k",
+    "zero",
+    "constant_positive",
+    "constant_negative",
+    "linear_correction"
+  ],
+  "fixed_corrections_rad": [
+    0,
+    0.08,
+    -0.08
+  ],
   "linear_correction": "clip(-0.04*estimated_lateral_error_m - 0.08*estimated_heading_error_rad, -0.08, 0.08); no hidden state/parameters",
   "audit_sample_every_ticks": 25,
   "audit_horizon_ticks": 20,
@@ -15,5 +44,6 @@
   "realized_cost": "paired cloned true plant, actual hidden mu/stiffness only inside offline plant; same 50ms command hold then nominal true-state tracking LQR continuation; 200ms total, same cost terms as gate with evolving reference curvature",
   "classification": "helpful if J_LQR-J_candidate > max(1e-7,0.01*J_LQR); harmful if opposite exceeds same tolerance; otherwise neutral. Eligible false rejection excludes age/envelope/persistence safety rejection. All reasons separately reported. Test all three gate-allowed ramp weights at each sampled state, not a tuned candidate sign.",
   "training": "No new research policy training in this diagnostic; execution-state interface tested separately. No full campaign or final reserved evaluation.",
-  "decision": "No gate threshold or policy changes based on these results. Report every baseline, failures, seed means, predicted-vs-realized deltas. Observational diagnosis is not proof of optimality or real-world safety."
+  "decision": "No gate threshold or policy changes based on these results. Report every baseline, failures, seed means, predicted-vs-realized deltas. Observational diagnosis is not proof of optimality or real-world safety.",
+  "lqr_configuration": "comparison.configure_lqr() uses frozen comparison-protocol.json; all 72 LQR cells must exactly reproduce revision4 rows"
 }

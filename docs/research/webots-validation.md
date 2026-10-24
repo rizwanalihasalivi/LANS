@@ -185,3 +185,34 @@ Development exposed noisy finite-difference feedback, overly aggressive R=4 feed
 An analytical curvature-equilibrium correction subsequently removed the LQR baseline's erroneous zero lateral-velocity/yaw reference. Full-command training never uses LQR in its action or reward and was unaffected; all final residual policies were retrained with the corrected reference. Four concurrently produced preliminary evaluation rows were excluded and final evaluation used fresh noise seeds starting at 20000. Four full-policy metadata writers had failed after successful model saves; recovery verified each saved model's million-step count, seed and hashes without changing weights. Their wall-time metadata explicitly ends at the last rollout. Source snapshots and protocol hashes preserve these distinctions; partial development models are not final evidence.
 
 Known path geometries are reused; only noise realizations are held out. PPO has curvature previews while LQR uses local curvature. Training is synchronous, with frozen asynchronous deployment; it does not implement every tentative latency-training provision of the specification. Surrogate service delays are simulated scheduling, whereas Webots fusion runs a real separate inference process. CPU-contended wall timing is not a real-time guarantee. Corridor checks use a sampled vehicle footprint in a vertical strip, not continuous swept-volume or ISO geometry. Nonlinear tire equivalence, unseen-path generalization, real-vehicle safety and formal stability remain unvalidated.
+
+## Revision 2: LQR-default performance-aware gating
+
+A separately authorized development revision replaces default PPO authority with an earned contribution. It lives under `integrations/webots/research/revision2/` on branch `webots/performance-gated-revision`. All original campaign evidence and policy checkpoints are unchanged. The specification is also unchanged: this is an intentional experimental architecture deviation, not a silent rewrite of its proposed PPO-dominant requirement.
+
+The [revision guide](../../integrations/webots/research/revision2/README.md) gives exact cost, actuator prediction, gate logic, development/test splits and commands. The gate predicts the **actual fused/ramp-limited command** against LQR, from the common estimated state. It starts at zero weight, rejects stale/invalid/out-of-envelope output, requires three qualifying ticks and restores weight gradually. Residual candidates have an explicit ±0.08 rad correction bound before complete-command saturation. Predicted improvement is necessary for activation but does not guarantee realized benefit under model mismatch.
+
+The three predeclared horizon/margin candidates were tested in 96 development episodes. The development selection rule chose a 200 ms horizon and 1% relative cost margin; all three candidates met development survival/nominal constraints. Source, policy and configuration hashes were frozen in commit `c966bb26a190be288c38efffc0498ac2c11f63ac` **before** running the reserved split. Five existing training seeds are reused without retraining; new noise seeds use base 910000, disjoint from development base 310000 and the original campaign. Path geometries are known, so this is not unseen-path generalization.
+
+The reserved grid contains five methods × five policy seeds × three speeds × two paths × six regions = 900 episodes. Regions are nominal, tire stiffness ×0.65, friction 0.6, doubled sensor noise with 10 ms measurement delay, 20 ms service delay and 100 ms service delay. All methods share each condition's random stream and actuator physics. The primary comparison is gated residual versus LQR; gated full-command, old fusion and ungated residual are reported as secondary comparisons. Region advantage was defined before testing as ≥5% mean penalized RMSE reduction, all five paired seed-mean differences negative and no survival loss. Nominal preservation permits ≤2% increase with no survival loss. All regions are reported, including failures and negative findings; confidence intervals are descriptive and not multiplicity-adjusted.
+
+Six gate/plant contract tests passed, including exact nominal parity with the previous nonlinear plant. The new controller is evaluated in the isolated surrogate only. Native Webots transfer of this new revision remains unvalidated; the previous section's 45 native runs apply only to the previous controller. No new shared installation or primary model changes were made.
+
+### Revision 2 reserved results
+
+The [complete results and verification](../../integrations/webots/results/revision2-test/report.md) cover **900/900 completed episodes**, all survived (180 per method). Gated residual versus paired LQR produced:
+
+| Region | LQR RMSE (m) | Gated residual RMSE (m) | Relative change | Better seed means / 5 |
+|---|---:|---:|---:|---:|
+| Nominal | 0.062320 | 0.060475 | −2.96% | 5 |
+| Tire stiffness ×0.65 | 0.175013 | 0.172810 | −1.26% | 5 |
+| Friction 0.6 | 0.080833 | 0.079308 | −1.89% | 5 |
+| Doubled noise + 10 ms sensor delay | 0.061571 | 0.060332 | −2.01% | 5 |
+| 20 ms service delay | 0.062804 | 0.061098 | −2.72% | 5 |
+| 100 ms service delay | 0.063067 | 0.063067 | 0.00% | 0 (exact equality) |
+
+Since every trajectory survived, failure-penalized and ordinary RMSE coincide here. Nominal preservation passed. **No region met the predeclared ≥5% clear-advantage criterion.** Improvements of roughly 1–3% are consistent across five paired seed means in the first five regions, but their absolute scale is only about 1–2 mm in aggregate RMSE; do not describe them as a large practical advantage. At 100 ms the gate's learned contribution was zero, with exact paired LQR trajectories verified.
+
+Nominal learned authority was active for 12.34% of ticks with mean weight 0.0354, compared with the old fusion's 99.23% activity and mean weight 0.6815. This demonstrates the intended selective-authority behavior. The gated full-command secondary comparator was slightly better than gated residual in the first five region means, so these results do **not** establish residual gating as the superior architecture. All secondary methods and descriptive paired confidence intervals remain visible in the report.
+
+The gate and weights were not retuned after the reserved results. The present result supports nominal accuracy preservation and modest selective improvement, not the stronger publication claim requested. Any further disturbance-aware policy training or predictor revision needs a new development protocol and another untouched test split; native transfer validation is also outstanding for this revision.

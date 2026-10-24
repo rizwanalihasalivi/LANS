@@ -1,0 +1,30 @@
+{
+  "phase": "test",
+  "source_sha256": {
+    "revision2/run.py": "6af39e262dc14087cfdd85d18fded8f97f1c4ad23500fbba1c937a775ef5b1a8",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/test_gate.py": "c0e74335d5f0e6683de935113960c201abb022e2d3b481e2705cdf011d62e890",
+    "revision2/protocol.json": "f7453ea904392fa48edfa62252ed688102acd90c89eb6166a2c45ac7d9c4d499",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "geometry.py": "a777050f1ded4f1b95707ecc2d9a869a8e33f0557df9f26d31d6e29916ef9ef4"
+  },
+  "policy_sha256": {
+    "full-0": "e4ef4a8d7d6e62d283fa82aa81c727cad014d78103643e867c4c6bcba986beb7",
+    "residual-0": "42fb2ede2bb39da6443d936607c1d7828c5742020476cab043073bc8de952ac9",
+    "full-1": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074",
+    "residual-1": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a",
+    "full-2": "433a3b09ad27f412c924eb84afc64bc0875408d71c67f71f240eb9c4613aa28a",
+    "residual-2": "dd81b5862f60afac793ce323d7a7dd2a21aa12d3a28b699e0f802d7c3cd331c5",
+    "full-3": "e74215abe4acadb13cf58a6e269710bb0acbaa89a283db7fdccd076659803207",
+    "residual-3": "0975bde69958191dce0159d40db383f974aced30aa26f6c63d26d2c98a59974b",
+    "full-4": "2caa90bab8cfcba1a04e9ff088a76b465583e9e6d5d2ea174d1a16ee92d47d7c",
+    "residual-4": "47cf0fa33d3cad20f69efd21b7ccf12635efc705e1c94733cf47ad955faf2060"
+  },
+  "freeze_sha256": "acc1ce82f85070202bf1ceb1bff60be04b548e248d2e7481b4268e5a326007fb"
+}

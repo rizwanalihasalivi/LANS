@@ -1,0 +1,115 @@
+{
+  "phase": "reserved",
+  "protocol": {
+    "revision": "Native Webots transfer of frozen revision2, no tuning or retraining",
+    "source_commit": "14ab389ae32c12137dd1dd7e91ddad2bc4bb36c6",
+    "freeze_commit": "c966bb26a190be288c38efffc0498ac2c11f63ac",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "noise_seed_base": 1910000,
+    "speeds": [
+      15,
+      20,
+      25
+    ],
+    "methods": [
+      "lqr",
+      "gated_residual",
+      "gated_full"
+    ],
+    "path": "dlc220",
+    "scenarios": {
+      "nominal": {
+        "mu": 0.9,
+        "contact_scale": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "delay_ms": 0
+      },
+      "contact_softening": {
+        "mu": 0.9,
+        "contact_scale": 0.65,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "delay_ms": 0
+      },
+      "low_friction": {
+        "mu": 0.6,
+        "contact_scale": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "delay_ms": 0
+      },
+      "sensor_stress": {
+        "mu": 0.9,
+        "contact_scale": 1.0,
+        "noise": 2,
+        "sensor_delay_steps": 1,
+        "delay_ms": 0
+      },
+      "latency20": {
+        "mu": 0.9,
+        "contact_scale": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "delay_ms": 20
+      },
+      "latency100": {
+        "mu": 0.9,
+        "contact_scale": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "delay_ms": 100
+      }
+    },
+    "episodes": 270,
+    "parallel_webots_processes": 2,
+    "physics_ms": 1,
+    "control_ms": 10,
+    "warmup_seconds": 10,
+    "duration_seconds": "220/speed + 2, rounded to nearest 10ms tick",
+    "native_mapping": "Existing calibrated native contact. Divide front/rear forceDependentSlip by contact_scale; 0.65 is a contact-softening proxy, NOT verified exact 0.65 tire stiffness. Change both Coulomb friction values for low_friction. Gate and observer always retain nominal parameters.",
+    "worker": "Existing real separate CPU inference process, one in-flight, drop while busy. delay_ms is minimum simulation availability delay, actual ages depend on wall scheduling. Zero added delay is not guaranteed zero age. Both learned roles use identical worker protocol.",
+    "pairing": "Each method shares noise seed, physical randomSeed=42, world, warmup, path, duration and speed for its cell. Noise seed=base+seed*10000+speed*100+scenario_index; roles share the seed. LQR launches no inference worker. Two concurrent Webots processes; no hard-real-time claim.",
+    "primary": "Gated residual vs LQR, per-region mean across three speeds then paired differences across five seeds. Report all six regions, RMSE, penalized RMSE, survival, activation, age, command/rate and wall timing. Gated full is predefined secondary, not replacement primary.",
+    "criteria": "Nominal preservation: <=2% mean penalized RMSE increase with no survival loss. Consistent improvement: all five paired seed means negative with no survival loss. Clear advantage: additionally >=5% mean reduction. Descriptive t(4) 95% intervals, no multiplicity-adjusted significance claim. At 100ms require zero learned authority, command==LQR each tick and exact paired physical/control trajectories; if not exact, report actual maximum differences without relabeling tolerance as exact.",
+    "failure": "abs lateral error >2.5m or abs heading error >0.6rad; infrastructure/nonfinite errors abort and preserve evidence. Unexecuted tail contributes 2.5m to penalized RMSE.",
+    "smoke": "Three nominal 20m/s cases (one per method), seed 880001, distinct from reserved streams; tests interface only, no gate tuning. Retain all smoke evidence.",
+    "limits": "Known DLC220 only, no sine transfer; same trained policy seeds, fresh noise. Native contact is not Fiala, dynamic parameters are approximations. No safety/stability/real-time/publication guarantee. No native test-driven retuning."
+  },
+  "source_sha256": {
+    "research/core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "research/protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "research/comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "research/comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "research/tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "research/tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "research/worker.py": "461b47929a9c1c00b867c1b1d845fa34ec5328229699d49ab5407a01c31c7935",
+    "research/calibration.json": "30494d2249384b9b3d5e20107ca5291bdc325b9b199942f49054b8cdf8adfbd4",
+    "research/revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "research/revision2/native/run.py": "c7d6da23688e5f64bc5f6cb7e72a1076af06bfbbbd0d5d202fa777c74d6f22a2",
+    "research/revision2/native/protocol.json": "0d569e9982fc76268454bf9969b72f95e631be2f92d8fa3c6103898e2ed0277a",
+    "controllers/gated_validation/gated_validation.py": "3a2822cfac779e003d48782cda8aafc6291899c5bb637a72bbb6909b9f73c99a",
+    "worlds/research_validation.wbt": "41a7ea92218f29c909f2405581702603d7a32e403222d59a1a1535d0e86609e9",
+    "run-gated-webots.sh": "f77e1da49a5a60bfc3392fef1bb38b07eb837a2fd39b7592f9ea5fc80073ea2c",
+    "results/revision2-development/freeze.json": "acc1ce82f85070202bf1ceb1bff60be04b548e248d2e7481b4268e5a326007fb"
+  },
+  "freeze_sha256": "acc1ce82f85070202bf1ceb1bff60be04b548e248d2e7481b4268e5a326007fb",
+  "policy_sha256": {
+    "full-0": "e4ef4a8d7d6e62d283fa82aa81c727cad014d78103643e867c4c6bcba986beb7",
+    "residual-0": "42fb2ede2bb39da6443d936607c1d7828c5742020476cab043073bc8de952ac9",
+    "full-1": "bdfcb2a2851a5bbdf8c45c6f25d5a65096dcc472d9dcc35e27d94fcf6b0b4074",
+    "residual-1": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a",
+    "full-2": "433a3b09ad27f412c924eb84afc64bc0875408d71c67f71f240eb9c4613aa28a",
+    "residual-2": "dd81b5862f60afac793ce323d7a7dd2a21aa12d3a28b699e0f802d7c3cd331c5",
+    "full-3": "e74215abe4acadb13cf58a6e269710bb0acbaa89a283db7fdccd076659803207",
+    "residual-3": "0975bde69958191dce0159d40db383f974aced30aa26f6c63d26d2c98a59974b",
+    "full-4": "2caa90bab8cfcba1a04e9ff088a76b465583e9e6d5d2ea174d1a16ee92d47d7c",
+    "residual-4": "47cf0fa33d3cad20f69efd21b7ccf12635efc705e1c94733cf47ad955faf2060"
+  }
+}

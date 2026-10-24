@@ -1,0 +1,32 @@
+{
+  "revision": "Native Webots transfer of frozen revision2, no tuning or retraining",
+  "source_commit": "14ab389ae32c12137dd1dd7e91ddad2bc4bb36c6",
+  "freeze_commit": "c966bb26a190be288c38efffc0498ac2c11f63ac",
+  "seeds": [0,1,2,3,4],
+  "noise_seed_base": 1910000,
+  "speeds": [15,20,25],
+  "methods": ["lqr","gated_residual","gated_full"],
+  "path": "dlc220",
+  "scenarios": {
+    "nominal": {"mu":0.9,"contact_scale":1.0,"noise":1,"sensor_delay_steps":0,"delay_ms":0},
+    "contact_softening": {"mu":0.9,"contact_scale":0.65,"noise":1,"sensor_delay_steps":0,"delay_ms":0},
+    "low_friction": {"mu":0.6,"contact_scale":1.0,"noise":1,"sensor_delay_steps":0,"delay_ms":0},
+    "sensor_stress": {"mu":0.9,"contact_scale":1.0,"noise":2,"sensor_delay_steps":1,"delay_ms":0},
+    "latency20": {"mu":0.9,"contact_scale":1.0,"noise":1,"sensor_delay_steps":0,"delay_ms":20},
+    "latency100": {"mu":0.9,"contact_scale":1.0,"noise":1,"sensor_delay_steps":0,"delay_ms":100}
+  },
+  "episodes":270,
+  "parallel_webots_processes":2,
+  "physics_ms":1,
+  "control_ms":10,
+  "warmup_seconds":10,
+  "duration_seconds":"220/speed + 2, rounded to nearest 10ms tick",
+  "native_mapping":"Existing calibrated native contact. Divide front/rear forceDependentSlip by contact_scale; 0.65 is a contact-softening proxy, NOT verified exact 0.65 tire stiffness. Change both Coulomb friction values for low_friction. Gate and observer always retain nominal parameters.",
+  "worker":"Existing real separate CPU inference process, one in-flight, drop while busy. delay_ms is minimum simulation availability delay, actual ages depend on wall scheduling. Zero added delay is not guaranteed zero age. Both learned roles use identical worker protocol.",
+  "pairing":"Each method shares noise seed, physical randomSeed=42, world, warmup, path, duration and speed for its cell. Noise seed=base+seed*10000+speed*100+scenario_index; roles share the seed. LQR launches no inference worker. Two concurrent Webots processes; no hard-real-time claim.",
+  "primary":"Gated residual vs LQR, per-region mean across three speeds then paired differences across five seeds. Report all six regions, RMSE, penalized RMSE, survival, activation, age, command/rate and wall timing. Gated full is predefined secondary, not replacement primary.",
+  "criteria":"Nominal preservation: <=2% mean penalized RMSE increase with no survival loss. Consistent improvement: all five paired seed means negative with no survival loss. Clear advantage: additionally >=5% mean reduction. Descriptive t(4) 95% intervals, no multiplicity-adjusted significance claim. At 100ms require zero learned authority, command==LQR each tick and exact paired physical/control trajectories; if not exact, report actual maximum differences without relabeling tolerance as exact.",
+  "failure":"abs lateral error >2.5m or abs heading error >0.6rad; infrastructure/nonfinite errors abort and preserve evidence. Unexecuted tail contributes 2.5m to penalized RMSE.",
+  "smoke":"Three nominal 20m/s cases (one per method), seed 880001, distinct from reserved streams; tests interface only, no gate tuning. Retain all smoke evidence.",
+  "limits":"Known DLC220 only, no sine transfer; same trained policy seeds, fresh noise. Native contact is not Fiala, dynamic parameters are approximations. No safety/stability/real-time/publication guarantee. No native test-driven retuning."
+}

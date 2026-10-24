@@ -1,0 +1,26 @@
+{
+  "started_unix_s": 1792827323.0796146,
+  "elapsed_wall_s": 11.402561902999878,
+  "python": "/workspace/LANS-webots/integrations/webots/.runtime/research-venv/bin/python",
+  "source_sha256": {
+    "research/core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "research/protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "research/comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "research/comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "research/tracking.py": "9733e339ce83b14954467529623312b2841c1057cea86a4c5c75708ddcd1c545",
+    "research/tracking-protocol.json": "9a1c6700bd469776b22a5a74aa6616f76e56c9ac8bdd2f52b24f67c879d16e53",
+    "research/worker.py": "461b47929a9c1c00b867c1b1d845fa34ec5328229699d49ab5407a01c31c7935",
+    "research/calibration.json": "30494d2249384b9b3d5e20107ca5291bdc325b9b199942f49054b8cdf8adfbd4",
+    "research/revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "research/revision2/native/run.py": "c7d6da23688e5f64bc5f6cb7e72a1076af06bfbbbd0d5d202fa777c74d6f22a2",
+    "research/revision2/native/protocol.json": "0d569e9982fc76268454bf9969b72f95e631be2f92d8fa3c6103898e2ed0277a",
+    "controllers/gated_validation/gated_validation.py": "3a2822cfac779e003d48782cda8aafc6291899c5bb637a72bbb6909b9f73c99a",
+    "worlds/research_validation.wbt": "41a7ea92218f29c909f2405581702603d7a32e403222d59a1a1535d0e86609e9",
+    "run-gated-webots.sh": "f77e1da49a5a60bfc3392fef1bb38b07eb837a2fd39b7592f9ea5fc80073ea2c",
+    "results/revision2-development/freeze.json": "acc1ce82f85070202bf1ceb1bff60be04b548e248d2e7481b4268e5a326007fb"
+  },
+  "generated_world_sha256": "c62e7e8e2f2b5b5c9db7b7cb4be22a3a6e7b88642b77d6feeccb4ec27814c59a",
+  "config_sha256": "2a8c25c012ee9acc104a7335dee76b8cc6bdcdb73e9a160ca42aceb39a95fe92",
+  "telemetry_sha256": "a58143644ce282d635e60c120f91171965b36f9ef2a5dcc2b17aca38b6aaa0e2",
+  "metrics_sha256": "014a659daca256598ffb36633b4ef44da14450a5bbc0b2abe2078009f1d48847"
+}

@@ -1,0 +1,21 @@
+{
+  "mu": 0.9,
+  "contact_scale": 1.0,
+  "noise": 2,
+  "sensor_delay_steps": 1,
+  "delay_ms": 0,
+  "mode": "lqr",
+  "speed": 20,
+  "path": "dlc220",
+  "seed": 1922003,
+  "policy_seed": 1,
+  "scenario": "sensor_stress",
+  "duration": 13.0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/sensor_stress-seed1-v20-lqr",
+  "front_slip": 0.0010600000000000002,
+  "rear_slip": 0.000925
+}

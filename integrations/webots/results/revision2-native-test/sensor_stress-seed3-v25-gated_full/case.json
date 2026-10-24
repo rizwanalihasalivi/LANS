@@ -1,0 +1,23 @@
+{
+  "mu": 0.9,
+  "contact_scale": 1.0,
+  "noise": 2,
+  "sensor_delay_steps": 1,
+  "delay_ms": 0,
+  "mode": "gated_full",
+  "speed": 25,
+  "path": "dlc220",
+  "seed": 1942503,
+  "policy_seed": 3,
+  "scenario": "sensor_stress",
+  "duration": 10.8,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS-webots/integrations/webots/results/research-training/full-3/policy.zip",
+  "policy_sha256": "e74215abe4acadb13cf58a6e269710bb0acbaa89a283db7fdccd076659803207",
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/sensor_stress-seed3-v25-gated_full",
+  "front_slip": 0.001325,
+  "rear_slip": 0.0011562500000000002
+}

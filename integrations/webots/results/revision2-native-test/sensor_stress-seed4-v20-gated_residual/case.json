@@ -1,0 +1,23 @@
+{
+  "mu": 0.9,
+  "contact_scale": 1.0,
+  "noise": 2,
+  "sensor_delay_steps": 1,
+  "delay_ms": 0,
+  "mode": "gated_residual",
+  "speed": 20,
+  "path": "dlc220",
+  "seed": 1952003,
+  "policy_seed": 4,
+  "scenario": "sensor_stress",
+  "duration": 13.0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS-webots/integrations/webots/results/research-training/residual-4/policy.zip",
+  "policy_sha256": "47cf0fa33d3cad20f69efd21b7ccf12635efc705e1c94733cf47ad955faf2060",
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/sensor_stress-seed4-v20-gated_residual",
+  "front_slip": 0.0010600000000000002,
+  "rear_slip": 0.000925
+}

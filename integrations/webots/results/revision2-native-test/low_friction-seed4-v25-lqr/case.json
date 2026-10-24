@@ -1,0 +1,21 @@
+{
+  "mu": 0.6,
+  "contact_scale": 1.0,
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "delay_ms": 0,
+  "mode": "lqr",
+  "speed": 25,
+  "path": "dlc220",
+  "seed": 1952502,
+  "policy_seed": 4,
+  "scenario": "low_friction",
+  "duration": 10.8,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "output": "/workspace/LANS-webots/integrations/webots/results/revision2-native-test/low_friction-seed4-v25-lqr",
+  "front_slip": 0.001325,
+  "rear_slip": 0.0011562500000000002
+}

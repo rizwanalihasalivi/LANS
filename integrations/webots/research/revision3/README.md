@@ -1,6 +1,6 @@
 # Staged residual pilots with matched steering units
 
-**Current checkpoint:** top-two 300k extended pilots; full training waits for the user’s decision. No completed new1M policies, final reserved evaluation or new-policy native smoke results exist yet. The later full-training/evaluation code is prepared, not evidence of execution.
+**Latest authorized stage:** baseline-only300k→600k confirmation; see [the continuation guide](confirmation600.md). The historical300k comparison below remains unchanged. Five-seed full training is still unapproved. No completed new1M policies, final reserved evaluation or new-policy native smoke results exist yet. The later full-training/evaluation code is prepared, not evidence of execution.
 
 The user identified an action-range mismatch: earlier residual policies trained with normalized action ×0.50 rad, while the frozen performance gate clips candidate residuals to ±0.08 rad. This revision trains candidates at normalized action ×0.08 rad and uses an explicit decoder in both surrogate and native inference. Existing gate, LQR, policies and held-out results remain unchanged.
 

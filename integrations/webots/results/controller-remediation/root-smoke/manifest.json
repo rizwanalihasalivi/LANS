@@ -1,0 +1,11 @@
+{
+  "contract": "world-bicycle-residual-v2",
+  "role": "residual",
+  "action_scale_rad": 0.08,
+  "observation": "error4-speed-preview4-latency2-v2",
+  "observations": 11,
+  "files": {
+    "policy.zip": "61cd3643df4de01dfec2caa9c141ac5198d13f60c2ddb5d1be661eff0b41cf5a",
+    "normalization.pkl": "0407c65932bb7857e98036c89b747e44484ebba3f27828c797ec331088352361"
+  }
+}

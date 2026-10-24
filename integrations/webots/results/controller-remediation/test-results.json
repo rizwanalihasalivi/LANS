@@ -1,0 +1,56 @@
+[
+  {
+    "command": "tests/test_controller_remediation.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_curved_reference_does_not_move_zero_steering_vehicle (__main__.Contracts) ... ok\ntest_effective_learning_rate (__main__.Contracts) ... ok\ntest_missing_policy_fails (__main__.Contracts) ... ok\ntest_residual_fused_exactly_once (__main__.Contracts) ... ok\ntest_speed_seed_and_preview (__main__.Contracts) ... ok\ntest_zoh_integrator (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.027s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision5/test_execution.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_delayed_packet_identity_and_fallback (__main__.Contracts) ... ok\ntest_reward_accounting_state_and_reproducibility (__main__.Contracts) ... ok\ntest_same_gate_fusion_recovery (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.218s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision4/test_contracts.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_A_matches_existing_baseline (__main__.Contracts) ... ok\ntest_counterfactual_is_nonmutating_and_symmetric (__main__.Contracts) ... ok\ntest_randomization_bounds_reproducibility_and_hidden_parameters (__main__.Contracts) ... ok\ntest_training_gate_is_actual_frozen_gate (__main__.Contracts) ... ok\ntest_zero_action_or_rejection_has_zero_relative_bonus (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 1.162s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/test-research.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_curvature_equilibrium_command (__main__.ResearchContracts) ... ok\ntest_delayed_sensor_does_not_leak_new_lateral_position (__main__.ResearchContracts) ... ok\ntest_invalid_outputs_and_recovery (__main__.ResearchContracts) ... ok\ntest_seeded_sensor_repeatability (__main__.ResearchContracts) ... ok\ntest_vehicle_footprint_corridor (__main__.ResearchContracts) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.371s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision2/test_gate.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_accepted_actual_command_improves_prediction (__main__.Contracts) ... ok\ntest_envelope (__main__.Contracts) ... ok\ntest_equal_candidate_never_earns (__main__.Contracts) ... ok\ntest_invalid_packet_immediate_fallback (__main__.Contracts) ... ok\ntest_nominal_plant_parity (__main__.Contracts) ... ok\ntest_sequence_regression (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 1.772s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision3/test_range.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_endpoints_and_invalid (__main__.RangeContracts) ... ok\ntest_evaluation_and_worker_units_agree (__main__.RangeContracts) ... ok\ntest_gate_preserves_range_and_stale_fallback (__main__.RangeContracts) ... ok\ntest_training_dynamics_reward_parity (__main__.RangeContracts) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.162s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/test_adapter.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_full_command_sign_and_speed_units (__main__.AdapterTests) ... ok\ntest_invalid_commands_are_rejected_before_driver_calls (__main__.AdapterTests) ... ok\ntest_invalid_limits (__main__.AdapterTests) ... ok\ntest_saturation_both_directions (__main__.AdapterTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": "tools/cloud/smoke.py",
+    "exit_code": 0,
+    "stdout": "PathTrackingEnv: 100 simulation steps, 128 PPO training steps, save/load/predict PASS\nResidualPathEnv: 100 simulation steps, 128 PPO training steps, save/load/predict PASS\nController and headless plotting PASS\n",
+    "stderr": ""
+  },
+  {
+    "command": "integrations/webots/research/revision5/test_robust_gate.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_earned_actions_improve_all_declared_models (__main__.Contracts) ... ok\ntest_nonmutating_and_equal_branches (__main__.Contracts) ... ok\ntest_stale_invalid_and_zero_fallback (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.206s\n\nOK\n"
+  }
+]

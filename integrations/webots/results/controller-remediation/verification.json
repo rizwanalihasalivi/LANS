@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "root_training_steps": 1000,
+  "execution_training_steps": 1000,
+  "root_episodes": 36,
+  "root_survived": 36,
+  "normalization_prediction_parity": true,
+  "severe_delay_fallback_exact": true,
+  "execution_transition_count": 1000,
+  "test_commands": 9
+}

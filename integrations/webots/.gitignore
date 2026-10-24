@@ -75,3 +75,12 @@ results/*
 !results/revision4-pilots/
 !results/revision4-pilots/**
 **/__pycache__/
+!research/revision5/*.json
+!results/controller-remediation/
+!results/controller-remediation/**
+!results/revision5-audit/
+!results/revision5-audit/**
+!results/revision5-audit-invalid-config/
+!results/revision5-audit-invalid-config/**
+!results/revision5-robust/
+!results/revision5-robust/**

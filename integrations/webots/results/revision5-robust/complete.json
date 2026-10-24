@@ -1,0 +1,31 @@
+{
+  "episodes": 144,
+  "sources": {
+    "robust_gate.py": "6a5613aea9010ecca8fc73dbf5eb93574f71353492c0bbdbd07c1414af2555ed",
+    "robust_run.py": "4a7a638a7bc8cc43d3d9fe2e958fc93a3b0974c7533b312990c7884fcedc9197",
+    "robust-protocol.json": "13ea6deef1d73de9531127251a13df51b7c60b187c972bd89cdc1646c5e9f9f7"
+  },
+  "decisions": {
+    "legacy": {
+      "checks": {
+        "survival": true,
+        "regional": true,
+        "nominal": true,
+        "both_seed_stress": false,
+        "severe_exact": true
+      },
+      "eligible": false
+    },
+    "A100k": {
+      "checks": {
+        "survival": true,
+        "regional": true,
+        "nominal": true,
+        "both_seed_stress": false,
+        "severe_exact": true
+      },
+      "eligible": false
+    }
+  },
+  "reserved_evaluated": false
+}

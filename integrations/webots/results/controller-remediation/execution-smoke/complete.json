@@ -1,0 +1,17 @@
+{
+  "purpose": "interface smoke only",
+  "steps": 1000,
+  "observation_dimensions": 20,
+  "residual_scale_rad": 0.08,
+  "initial_physical_std_rad": 0.010826822658929014,
+  "randomize": true,
+  "sources": {
+    "execution.py": "4ee43c1a27a4747c23e02310a19adf54b6dc3c0c178504e2aa6a8044365b123f",
+    "smoke_train.py": "898de1d06841ff714d2f12c4c81eafb5d60e7eff8b0c209a59d0cdb2f80ebba2",
+    "report.py": "3e19ac6652656df01a436beb64ed928569d397861477b6bac524f41e217dede1",
+    "audit.py": "ec394cf72e5e0c0c2aba391c54d4e47297e51bd2dbbebff3c45419ce9b7461de",
+    "execution_env.py": "36b94668344905a3b8675dfe52549891af0a9dd94de99c40a1993901c49c5c4f",
+    "bootstrap.py": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+    "test_execution.py": "8e44d95c6adfab5eba439f18ac611eb02d757b97fead5d344933153abb7176dc"
+  }
+}

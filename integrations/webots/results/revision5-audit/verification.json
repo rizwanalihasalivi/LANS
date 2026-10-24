@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "episodes": 504,
+  "audited_states_candidates": 15648,
+  "severe_fallback_exact": true,
+  "source_hashes_verified": true,
+  "historical_reference_cells_exact": 216
+}

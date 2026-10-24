@@ -1,0 +1,10 @@
+{
+  "purpose":"Separate predictor-version development comparison after nominal predictor audit",
+  "bank":[[0.9,1.0],[0.9,0.65],[0.6,1.0],[0.6,0.65]],
+  "inputs":"same estimated state/actuator/scheduled speed/local curvature as frozen evaluator; no true episode mu or stiffness",
+  "cost":"nonlinear local parabolic-road bank rollout, 50ms candidate hold then nominal LQR, 200ms total; frozen tracking/effort cost weights",
+  "acceptance":"at least 1% predicted improvement in EVERY bank member and >=1e-7 absolute improvement; choose best worst relative margin among unchanged ramp-limited 0.1/0.25/0.5 choices; unchanged persistence/age/envelope rules",
+  "evaluation":"same72 development cells per legacy and A100k policy, same noise base6100000; compare stored paired frozen-gate/LQR reference rows; 144 new episodes",
+  "promotion":"No survival loss, no regional mean >1% worse than frozen gate, nominal <=2% worse, stress mean improves in both seeds, exact100ms LQR fallback. No automatic deployment or further training.",
+  "limits":"Fixed uncertainty bank is not a state estimator or guarantee; unmodeled geometry, estimation and dynamics remain. Single new design; no post-result tuning or reserved evaluation."
+}

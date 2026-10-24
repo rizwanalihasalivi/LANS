@@ -1,0 +1,22 @@
+{
+  "episodes": 504,
+  "audited_states_candidates": 3078,
+  "model_hashes": {
+    "101": {
+      "legacy": "42fb2ede2bb39da6443d936607c1d7828c5742020476cab043073bc8de952ac9",
+      "A100k": "a38b124db7cd4ac8c4fbb2a99404aa0d6dd63a1a98d539bcbd7bf3417d9ffcc2"
+    },
+    "202": {
+      "legacy": "b9e1b33b44994de6ebeedcbdb2ad2d09d0cabdc3d61ff8765cdf3dab8c027e4a",
+      "A100k": "2590f14ee2d58803c4a9c808cc6fc0f19c948316b6342aa9abbc8a12a0e22aa8"
+    }
+  },
+  "source_hashes": {
+    "revision5/audit.py": "55ffce9f89c27ea47f19e6a121daee368f83cead199724fab999acd170affa61",
+    "revision5/protocol.json": "643cfc5b3693c5cfd7d25857a35c985bbde23f4c51c6b8d0da50f5e2db468bf0",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision4/evaluation.py": "583c1652a99e2935ee1df509862e24659bac75dd1f5f98fe793f8cc02383233b"
+  },
+  "reserved_evaluated": false
+}

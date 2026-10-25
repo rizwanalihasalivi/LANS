@@ -1,0 +1,8 @@
+test_hold20_matches_original_and_no_mutation (__main__.Contracts) ... ok
+test_second_action_irrelevant_for20_and_equal_hold_symmetry (__main__.Contracts) ... ok
+test_severe_delay_equal_lqr (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 12.874s
+
+OK

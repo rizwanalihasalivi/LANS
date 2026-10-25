@@ -1,0 +1,6 @@
+{
+  "source_commit": "2e30f1a17118d99e5fb6a7a8fde177d20f03ab14",
+  "purpose": "Step2 supervised teacher/student only",
+  "actual_future_noise_in_teacher": false,
+  "ppo_finetuning": false
+}

@@ -1,0 +1,125 @@
+{
+  "verified": true,
+  "cases": [
+    {
+      "method": "student",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions_checked": 1080,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 1.3322676295501878e-15,
+      "max_command_difference": 2.2898349882893854e-16
+    },
+    {
+      "method": "student",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions_checked": 1080,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.0408340855860843e-16
+    },
+    {
+      "method": "student",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions_checked": 540,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.734723475976807e-16
+    },
+    {
+      "method": "student",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions_checked": 108,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.0408340855860843e-16
+    },
+    {
+      "method": "previous_ppo",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions_checked": 1080,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 1.3322676295501878e-15,
+      "max_command_difference": 2.2898349882893854e-16
+    },
+    {
+      "method": "previous_ppo",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions_checked": 1080,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 9.992007221626409e-16,
+      "max_command_difference": 1.457167719820518e-16
+    },
+    {
+      "method": "previous_ppo",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions_checked": 540,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 5.273559366969494e-16,
+      "max_command_difference": 1.734723475976807e-16
+    },
+    {
+      "method": "previous_ppo",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions_checked": 108,
+      "teacher_choices_checked": 0,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.0408340855860843e-16
+    },
+    {
+      "method": "teacher",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions_checked": 0,
+      "teacher_choices_checked": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 1.3322676295501878e-15,
+      "max_command_difference": 2.2898349882893854e-16
+    },
+    {
+      "method": "teacher",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions_checked": 0,
+      "teacher_choices_checked": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "teacher",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions_checked": 0,
+      "teacher_choices_checked": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 5.684341886080802e-14,
+      "max_command_difference": 7.979727989493313e-16
+    },
+    {
+      "method": "teacher",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions_checked": 0,
+      "teacher_choices_checked": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.0408340855860843e-16
+    }
+  ]
+}

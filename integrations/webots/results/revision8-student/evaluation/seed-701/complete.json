@@ -1,0 +1,59 @@
+{
+  "episodes": 180,
+  "seed": 701,
+  "previous_ppo_seed": 301,
+  "protocol": {
+    "purpose": "User-authorized Step2: future-noise-independent privileged teacher and sensor-only supervised student; no PPO fine-tuning",
+    "parent_commit": "5021c38ccea9eb697ceb04b344c935dcc3f4cc0f",
+    "candidates_rad": [
+      -0.08,
+      -0.04,
+      0.0,
+      0.04,
+      0.08
+    ],
+    "teacher": "Same actual frozen gate/worker/observer/Fiala20-tick cloned hold-proposal rollout as Step1. Teacher knows current true plant/state, but forecasts future sensor noise from a separate stream ONLY: zero plus antithetic +z/-z Gaussian forecasts. Average three costs. Actual future measurement draws are never passed into teacher selection. This is a three-sample expected-cost approximation, not an oracle/global ceiling.",
+    "teacher_abstention": "Choose smallest expected lateral-cost candidate, ties prefer smaller magnitude. If reduction against zero proposal <=max(1e-7,0.001*cost_zero), choose zero. No future-noise sample or hidden state becomes a student feature.",
+    "lookahead_ticks": 20,
+    "dataset": "Train two noise repetitions x3speeds x2known paths x6regions x3behaviors=216 episodes; dev one repetition with same grid/behaviors=108 episodes. Behaviors are zero, fixed-.04 and uniformly random grid proposals under actual gate. Query teacher every5ticks when worker can accept a request. This broadens history/proposal support without using final evaluation trajectories; no DAgger or teacher rollout data appended after outcomes.",
+    "splits": {
+      "train": {
+        "noise_base": 320000000,
+        "noise_repetitions": 2
+      },
+      "dev": {
+        "noise_base": 420000000,
+        "noise_repetitions": 1
+      },
+      "evaluation": {
+        "noise_base": 520000000,
+        "noise_repetitions": 3
+      }
+    },
+    "seeding": "Actual noise ID=split_base+repetition*10000+speed*100+path_index*10+region_index. Teacher forecast seed=actual_noise_ID+70000000+behavior_index*1000000; forecast arrays independent of actual arrays. Random behavior actions use actual_ID+50000000. Eval teacher behavior_index0. Split episode groups/noise IDs are disjoint. All inputs known geometries/condition families; no unseen-path/domain generalization claim.",
+    "features": "Exactly20 execution-v5 actor channels: estimated ey/heading/eydot/yawrate, noisy speed, actuator and3curvature previews,10 held/pending/gate/history channels and service delay. No truth,mu,stiffness,teacher cost/label or future noise. Standardization mean/std fitted on train rows only; std floor0.001, saved with checkpoint.",
+    "student": {
+      "seeds": [
+        701,
+        802,
+        903
+      ],
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation": "tanh",
+      "classes": 5,
+      "epochs": 20,
+      "batch_size": 256,
+      "lr": 0.001,
+      "loss": "cross entropy on teacher class plus softmax-expected clipped normalized cost regret; regret=(cost-mincost)/max(cost_zero,1e-4), clipped[0,1]",
+      "sampling": "replacement sampling,50% nonzero teacher classes and50% zero classes, with fallback to uniform if one side empty; exactly N train draws/epoch",
+      "selection": "Minimum mean normalized regret on DEV, averaged within episodes then equally across episodes; exact ties earliest epoch. Save every epoch metric, selected model only; no final evaluation-based choice."
+    },
+    "evaluation": "Fresh predefined evaluation noise, three optimization/noise pairs: student701/802/903 with repetitions0/1/2. Each pair covers36 physical conditions (3speeds,2paths,6regions). Five methods=540 episodes. LQR, frozen fixed-.04, expected teacher, supervised student, previous execution-trained PPO301/402/503. Same gate/sensors/worker/physical limits, same noise within each pair. True-state teacher is a privileged reference, never claimed deployable. Previous PPO has100k RL steps and different training data/budget; descriptive comparator, not equal-budget causal baseline.",
+    "episode": "Use revision6 declared paths/scenarios/speeds and ceil((220/speed+2)/.01); initial ey.15m/heading.01rad. Fail abs ey>2.5m/heading>.6rad or nonfinite, fill unexecuted tails2.5m. At100ms stale output must equal LQR. No native/reserved campaign.",
+    "success_rule": "Student mean penalized RMSE >=1% lower than LQR AND fixed-.04; all3paired seed means lower than LQR; no regional survival decrease vs LQR/fixed; nominal <=2% worse than LQR and no active region>1% worse. Teacher numbers reported independently; student must not inherit teacher claims. Report previous PPO difference separately, with unequal-training-budget limitation.",
+    "stop": "Stop after dataset,20-epoch supervised fits and frozen540-episode evaluation/report, regardless of outcome. No added data/epochs/model search, PPO fine-tuning, gate change or deployment promotion based on these results."
+  }
+}

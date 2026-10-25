@@ -104,5 +104,27 @@ class PilotContracts(unittest.TestCase):
         np.random.seed(seed);torch.manual_seed(seed);stock.learn(40)
         for k,v in ours.policy.state_dict().items():np.testing.assert_allclose(v.detach().numpy(),stock.policy.state_dict()[k].detach().numpy(),rtol=1e-5,atol=1e-6)
 
+    def test_selection_and_independent_noise_splits(self):
+        from evaluate10 import select,G
+        rows=[]
+        for pair in range(3):
+            for region in G['scenarios']:
+                for method in ['lqr','fixed_m004','student']+[f'{arm}_{step}' for arm in P['arms'] for step in P['checkpoints']]:
+                    value=.1
+                    if method=='student' or method.endswith('_0'):value=.098
+                    if method.endswith('_25000'):value=.101 if region=='nominal' else .09
+                    if method.endswith('_50000') or method.endswith('_100000'):value=.097
+                    rows.append(dict(pair=pair,speed=15,path='sine120',scenario=region,method=method,penalized_rmse=value,survived='True'))
+        for v in select(rows).values():
+            self.assertEqual(v['steps'],50000);self.assertFalse(v['candidates'][1]['eligible'])
+        sets=[]
+        for base in (320000000,420000000,520000000,720000000,820000000,*P['splits'].values()):
+            ids={base+i*10000+v*100+j*10+k for i in range(3) for v in (15,20,25) for j in range(2) for k in range(6)}
+            for old in sets:self.assertFalse(ids&old)
+            sets.append(ids)
+        env=TrainingEnv(2,7,2903)
+        for episode in range(20):
+            env.reset();self.assertFalse(any(env.noise_id in old for old in sets))
+
 
 if __name__=='__main__':unittest.main()

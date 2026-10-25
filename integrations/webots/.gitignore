@@ -93,3 +93,7 @@ results/*
 !results/full-project-audit/
 !results/full-project-audit/**
 **/__pycache__/
+!research/revision12/*.json
+!results/revision12-ablation/
+!results/revision12-ablation/**
+**/__pycache__/

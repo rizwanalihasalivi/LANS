@@ -1,0 +1,17 @@
+{
+  "python": "3.10.22",
+  "packages": {
+    "numpy": "1.23.5",
+    "scipy": "1.10.1",
+    "numba": "0.57.1",
+    "matplotlib": "3.7.1"
+  },
+  "source_freeze": "3750347",
+  "cpu_quota": "4 CPUs",
+  "worker_processes": 3,
+  "threads_per_process": 1,
+  "active_sources_unchanged": true,
+  "training": false,
+  "reserved": false,
+  "native": false
+}

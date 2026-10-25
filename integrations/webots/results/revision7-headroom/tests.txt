@@ -1,0 +1,11 @@
+test_actual_simulation_matches_recorded_development_baseline (__main__.OracleContracts) ... ok
+test_branch_cost_matches_original_python_cloned_rollout (__main__.OracleContracts) ... ok
+test_bypass_keeps_worker_age_and_physical_command_bounds (__main__.OracleContracts) ... ok
+test_five_action_selection_is_nonmutating_and_minimizes_its_window_only (__main__.OracleContracts) ... ok
+test_observer_and_observed_speed_match_frozen_sensor (__main__.OracleContracts) ... ok
+test_worker_and_gate_match_original_on_release_persistence_and_stale (__main__.OracleContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.505s
+
+OK

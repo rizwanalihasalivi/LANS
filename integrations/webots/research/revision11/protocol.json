@@ -1,0 +1,12 @@
+{
+ "purpose":"Development-only tire-mismatch attribution; no policy/gate tuning or training",
+ "source_commit":"574e9291f872aee9a9c7e8c2d54539a0889a47e7",
+ "speed":25,"path":"dlc220","repetitions":[0,1],"regions":["nominal","tire_mismatch"],"behaviors":["lqr","student"],
+ "noise_base":740000000,"sample_every_ticks":25,"candidates_rad":[-0.08,-0.04,0,0.04,0.08],
+ "branch_horizons_ticks":[20,40,100],
+ "branches":"At common sampled states clone plant+observer, hold each ramp-allowed fused command for5ticks, then common estimated-state nominal LQR continuation. Use paired actual future sensor-noise realization OFFLINE ONLY to measure cost differences. Hidden plant parameters only in plant, never gate.",
+ "metrics":"Gate-compatible tracking/yaw/effort plus terminal cost AND lateral squared cost; report separately. Gate predictor always original20tick nominal linear/local-curvature model; compare its deltas with20tick realized matching-cost deltas. Compare lateral benefit signs across20/40/100ticks, not numerical costs across horizons.",
+ "shadow":"Each candidate maintains its own shadow Gate updated every tick along common LQR/student trajectory, not a counterfactual deployed rollout. Sampled prior ramp state defines three allowed blended proposals. Separate cost rejection from persistence/age/envelope.",
+ "threshold":"Meaningful benefit/harm >max(1e-7,1% of same-branch baseline cost), independently for gate-compatible and lateral costs. Report denominators and neutral cases. Correlated ticks are not independent trials.",
+ "stop":"Only8 behavior trajectories. No authority increase, optimized replacement, final-test access, model selection, full training or native claim. Actual future noise is privileged diagnostic evidence, not teacher input or deployable performance."
+}

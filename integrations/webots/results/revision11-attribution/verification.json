@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "trajectories": 8,
+  "branch_rows": 11238,
+  "sample_groups": 5280,
+  "trajectory_survivors": 8,
+  "failed_branch_rows": 0,
+  "rejected_execution_equals_baseline": true,
+  "actual_future_noise": "offline privileged attribution only",
+  "final_test_used": false
+}

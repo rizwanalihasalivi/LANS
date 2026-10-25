@@ -1,0 +1,38 @@
+{
+  "purpose": "archive inventory, not execution or completeness certification",
+  "archives": [
+    {
+      "archive": "LANS_JSA_Submission_Candidate_Package.zip",
+      "missing": [],
+      "mismatched": [],
+      "external_path_members": [
+        "reproduction/lans_targeted_experiments_atomic.py"
+      ],
+      "crc_error": null,
+      "manifest_files": [],
+      "self_contained_reproduction_verified": false,
+      "status": "incomplete_or_nonportable"
+    },
+    {
+      "archive": "LANS_JSA_Supplementary_Package (2)(4).zip",
+      "missing": [
+        "LANS_JSA_Supplementary/REFERENCE_AUDIT.csv",
+        "LANS_JSA_Supplementary/REFERENCE_AUDIT.md",
+        "LANS_JSA_Supplementary/REVIEWER_EVIDENCE_STATUS.csv",
+        "LANS_JSA_Supplementary/REVISION_STATUS.md",
+        "LANS_JSA_Supplementary/references.json",
+        "LANS_JSA_Supplementary/revision_analysis_source.py",
+        "LANS_JSA_Supplementary/rewrite_complete.py",
+        "LANS_JSA_Supplementary/verify_equations.py"
+      ],
+      "mismatched": [],
+      "external_path_members": [],
+      "crc_error": null,
+      "manifest_files": [
+        "LANS_JSA_Supplementary/FILE_MANIFEST.json"
+      ],
+      "self_contained_reproduction_verified": false,
+      "status": "incomplete_or_nonportable"
+    }
+  ]
+}

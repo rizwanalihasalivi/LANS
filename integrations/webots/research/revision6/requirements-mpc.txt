@@ -1,0 +1,2 @@
+# Install in the pinned Python3.10 research runtime, preserving its NumPy1.23.5/SciPy1.10.1.
+osqp==0.6.3

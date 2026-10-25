@@ -1,0 +1,5 @@
+# Preserve the exact incomplete historical bytes, including trailing whitespace.
+docs/research/historical/jitter_test_results.incomplete.txt -whitespace
+
+# Keep original Monitor/logger CSV line endings in this frozen experimental record.
+integrations/webots/results/revision6-correction/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

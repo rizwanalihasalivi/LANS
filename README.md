@@ -4,6 +4,8 @@ LANS studies whether learned steering corrections can improve a strong LQR track
 
 The [controller review](docs/research/controller-review/README.md) identifies correctness defects in the historical root pipeline and separate limitations in the isolated research experiments. The [remediation record](docs/research/controller-remediation.md) documents corrected interfaces, quarantined comparisons, fresh diagnostics and remaining evidence limits. Historical comparative claims made by retired root scripts should not be cited as validated results.
 
+The subsequent [ARIS audit remediation](docs/research/aris-remediation.md) retires unsupported result generators, fixes plotting, adds raw-data reporting and execution-aware evaluation, and records the remaining original-archive blocker.
+
 ## Current evidence and entry points
 
 - [Specification](docs/research/specification-v0.1.md): research requirements; unchanged by remediation.
@@ -13,6 +15,10 @@ The [controller review](docs/research/controller-review/README.md) identifies co
 - [Range-matched retraining](integrations/webots/results/revision3-600k/report.md): flat/mixed development trend; no full-budget follow-up.
 - [Gate-aware and relative-reward pilots](integrations/webots/results/revision4-pilots/report.md): new arms did not beat the pilot baseline.
 - [Predictor and nonlearned-control diagnostics](integrations/webots/results/revision5-audit/report.md): explicit attribution controls on development data.
+
+## Latest correction-quality pilot
+
+The [matched600k-step pilot](integrations/webots/results/revision6-correction/interpretation.md) trained two arms at three fresh seeds and evaluated648 paired development episodes. Execution-aware training improved direct-trained error by only0.15%, failed the1% progress screen and did not beat simple fixed corrections. Neither model is promoted. The nominal constrained MPC reference is explicitly limited; LQR also beats it. [Protocol and reproduction](integrations/webots/research/revision6/README.md).
 
 ## Corrected root demonstration
 

@@ -1,0 +1,13 @@
+{
+  "steps": 100000,
+  "active_fraction": 1.0,
+  "advantage_mean": 0.013007107190787792,
+  "advantage_std": 0.02303251624107361,
+  "return_mean": 4.116279602050781,
+  "physical_std_rad": 0.009811537340283394,
+  "reward_tracking": 0.9524983744324643,
+  "reward_effort": -3.088034670803496e-05,
+  "reward_change": -8.911149753791815e-07,
+  "reward_survival": 0.04950000000009344,
+  "reward_relative": -0.0033161822598441605
+}

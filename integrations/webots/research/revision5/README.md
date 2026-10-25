@@ -14,3 +14,7 @@ See the [issue-by-issue remediation record](../../../../docs/research/controller
 [Predictor/nonlearned results](../../results/revision5-audit/report.md) · [Separate model-bank results](../../results/revision5-robust/report.md).
 
 Original revision2–4 sources/results remain frozen. The initial diagnostic omitted the selected LQR loader; its output is retained in `revision5-audit-invalid-config` and excluded from conclusions. Corrected freeze `b86cfa8` asserts historical parity. Model-bank design freeze `d29089a` precedes its comparison. No final reserved seed, full research training or native Webots transfer is used in this revision.
+
+## Execution-aware development evaluation
+
+`evaluate_execution.py --policy PATH/policy.zip --seeds 101 --output NEW_DIRECTORY` runs the exact 20-feature training environment and rejects incompatible policy metadata. It evaluates known random-sine development cases at 0/10/20/100 ms, retains paired LQR rows and packet/reward traces, and uses explicit failure-tail scoring. This is not reserved or native evaluation. `test_evaluation.py -v` checks training/evaluation command, reward and packet parity. See the [subsequent ARIS remediation](../../../../docs/research/aris-remediation.md) for captured results and limits.

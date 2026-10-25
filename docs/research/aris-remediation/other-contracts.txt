@@ -1,0 +1,49 @@
+test_A_matches_existing_baseline (__main__.Contracts) ... ok
+test_counterfactual_is_nonmutating_and_symmetric (__main__.Contracts) ... ok
+test_randomization_bounds_reproducibility_and_hidden_parameters (__main__.Contracts) ... ok
+test_training_gate_is_actual_frozen_gate (__main__.Contracts) ... ok
+test_zero_action_or_rejection_has_zero_relative_bonus (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.842s
+
+OK
+test_curvature_equilibrium_command (__main__.ResearchContracts) ... ok
+test_delayed_sensor_does_not_leak_new_lateral_position (__main__.ResearchContracts) ... ok
+test_invalid_outputs_and_recovery (__main__.ResearchContracts) ... ok
+test_seeded_sensor_repeatability (__main__.ResearchContracts) ... ok
+test_vehicle_footprint_corridor (__main__.ResearchContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.682s
+
+OK
+test_accepted_actual_command_improves_prediction (__main__.Contracts) ... ok
+test_envelope (__main__.Contracts) ... ok
+test_equal_candidate_never_earns (__main__.Contracts) ... ok
+test_invalid_packet_immediate_fallback (__main__.Contracts) ... ok
+test_nominal_plant_parity (__main__.Contracts) ... ok
+test_sequence_regression (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.269s
+
+OK
+test_endpoints_and_invalid (__main__.RangeContracts) ... ok
+test_evaluation_and_worker_units_agree (__main__.RangeContracts) ... ok
+test_gate_preserves_range_and_stale_fallback (__main__.RangeContracts) ... ok
+test_training_dynamics_reward_parity (__main__.RangeContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.190s
+
+OK
+test_full_command_sign_and_speed_units (test_adapter.AdapterTests) ... ok
+test_invalid_commands_are_rejected_before_driver_calls (test_adapter.AdapterTests) ... ok
+test_invalid_limits (test_adapter.AdapterTests) ... ok
+test_saturation_both_directions (test_adapter.AdapterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

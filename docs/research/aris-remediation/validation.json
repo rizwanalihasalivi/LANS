@@ -1,0 +1,29 @@
+{
+  "unit_contract_tests_passed": 45,
+  "suite_counts": [
+    7,
+    2,
+    6,
+    5,
+    5,
+    6,
+    4,
+    4,
+    3,
+    3
+  ],
+  "execution_development_episodes": 8,
+  "execution_steps_per_episode": 800,
+  "policy_purpose": "existing 1000-step smoke model; not performance qualified",
+  "delay_ms": [
+    0,
+    10,
+    20,
+    100
+  ],
+  "new_training": false,
+  "final_reserved": false,
+  "native_campaign": false,
+  "historical_missing_files": 8,
+  "original_archives_modified": false
+}

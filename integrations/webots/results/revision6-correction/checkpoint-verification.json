@@ -1,0 +1,71 @@
+{
+  "verified": true,
+  "models": [
+    {
+      "arm": "direct",
+      "seed": 301,
+      "steps": 100000,
+      "ppo_updates": 1000,
+      "optimizer_steps": [
+        5000
+      ],
+      "reward_normalization_samples": 100000.0001,
+      "final_physical_std_rad": 0.009161620400846004
+    },
+    {
+      "arm": "direct",
+      "seed": 402,
+      "steps": 100000,
+      "ppo_updates": 1000,
+      "optimizer_steps": [
+        5000
+      ],
+      "reward_normalization_samples": 100000.0001,
+      "final_physical_std_rad": 0.009747409261763096
+    },
+    {
+      "arm": "direct",
+      "seed": 503,
+      "steps": 100000,
+      "ppo_updates": 1000,
+      "optimizer_steps": [
+        5000
+      ],
+      "reward_normalization_samples": 100000.0001,
+      "final_physical_std_rad": 0.009649498388171196
+    },
+    {
+      "arm": "execution",
+      "seed": 301,
+      "steps": 100000,
+      "ppo_updates": 1000,
+      "optimizer_steps": [
+        5000
+      ],
+      "reward_normalization_samples": 100000.0001,
+      "final_physical_std_rad": 0.00910860300064087
+    },
+    {
+      "arm": "execution",
+      "seed": 402,
+      "steps": 100000,
+      "ppo_updates": 1000,
+      "optimizer_steps": [
+        5000
+      ],
+      "reward_normalization_samples": 100000.0001,
+      "final_physical_std_rad": 0.009939565323293209
+    },
+    {
+      "arm": "execution",
+      "seed": 503,
+      "steps": 100000,
+      "ppo_updates": 1000,
+      "optimizer_steps": [
+        5000
+      ],
+      "reward_normalization_samples": 100000.0001,
+      "final_physical_std_rad": 0.00938557181507349
+    }
+  ]
+}

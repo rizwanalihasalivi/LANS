@@ -1,0 +1,19 @@
+2026-10-25 05:52:21.260634: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-25 05:52:21.274211: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2026-10-25 05:52:21.346560: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2026-10-25 05:52:21.347349: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-10-25 05:52:22.127601: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-ej758k9f because the default path (/home/agent/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Fontconfig error: No writable cache directories
+test_curved_reference_does_not_move_zero_steering_vehicle (__main__.Contracts) ... ok
+test_effective_learning_rate (__main__.Contracts) ... ok
+test_missing_policy_fails (__main__.Contracts) ... ok
+test_residual_fused_exactly_once (__main__.Contracts) ... ok
+test_speed_seed_and_preview (__main__.Contracts) ... ok
+test_zoh_integrator (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.038s
+
+OK

@@ -1,0 +1,6 @@
+seed503 speed15 pathsine120: 36 episodes
+seed503 speed15 pathdlc220: 72 episodes
+seed503 speed20 pathsine120: 108 episodes
+seed503 speed20 pathdlc220: 144 episodes
+seed503 speed25 pathsine120: 180 episodes
+seed503 speed25 pathdlc220: 216 episodes

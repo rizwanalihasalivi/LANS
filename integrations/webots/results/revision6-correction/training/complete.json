@@ -1,0 +1,35 @@
+{
+  "jobs": [
+    {
+      "arm": "execution",
+      "seed": 301,
+      "steps": 100000
+    },
+    {
+      "arm": "direct",
+      "seed": 301,
+      "steps": 100000
+    },
+    {
+      "arm": "direct",
+      "seed": 402,
+      "steps": 100000
+    },
+    {
+      "arm": "execution",
+      "seed": 402,
+      "steps": 100000
+    },
+    {
+      "arm": "direct",
+      "seed": 503,
+      "steps": 100000
+    },
+    {
+      "arm": "execution",
+      "seed": 503,
+      "steps": 100000
+    }
+  ],
+  "total_training_steps": 600000
+}

@@ -1,0 +1,8 @@
+test_deployment_trace_matches_training_execution (__main__.EvaluationContracts) ... ok
+test_fresh_noise_ids_and_method_coverage (__main__.EvaluationContracts) ... ok
+test_mpc_equilibrium_bounds_and_direction (__main__.EvaluationContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.823s
+
+OK

@@ -1,0 +1,7 @@
+test_direct_training_has_same_reset_units_and_reward_accounting (__main__.TrainingContracts) ... ok
+test_execution_arm_is_original_training_environment (__main__.TrainingContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.259s
+
+OK

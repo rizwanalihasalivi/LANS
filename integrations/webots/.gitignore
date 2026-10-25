@@ -84,3 +84,6 @@ results/*
 !results/revision5-audit-invalid-config/**
 !results/revision5-robust/
 !results/revision5-robust/**
+!research/revision10/*.json
+!results/revision10-headroom/
+!results/revision10-headroom/**

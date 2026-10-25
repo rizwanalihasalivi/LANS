@@ -1,0 +1,98 @@
+{
+  "arm": "plain",
+  "pair": 0,
+  "seed": 2701,
+  "student_seed": 701,
+  "steps": 100000,
+  "optimizer_steps": 4994.0,
+  "optimizer_states": 12,
+  "reward_normalizer_count": 100000.0001,
+  "observation_dimensions": 20,
+  "profile": "anchored_credit_ppo_v10",
+  "anchor_coef": 0.0,
+  "mask_busy": false,
+  "source_commit": "058a28456e38f52c9fb0f1e5581f96b7e510849b",
+  "protocol": {
+    "purpose": "User-authorized factorial pilot: fixed student anchor and proposal-aligned execution-aware counterfactual credit",
+    "parent_commit": "df5a0fe5d1538b70453086841d8da63304c4b1a2",
+    "candidates_rad": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "rl_seeds": [
+      2701,
+      2802,
+      2903
+    ],
+    "arms": [
+      "plain",
+      "anchor",
+      "credit",
+      "combined"
+    ],
+    "steps_each": 100000,
+    "checkpoints": [
+      0,
+      25000,
+      50000,
+      100000
+    ],
+    "ppo": {
+      "n_envs": 8,
+      "n_steps": 125,
+      "batch_size": 200,
+      "n_epochs": 10,
+      "learning_rate": 0.0001,
+      "clip_range": 0.1,
+      "target_kl": 0.01,
+      "ent_coef": 0,
+      "vf_coef": 0.5,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation": "tanh"
+    },
+    "initialization": "All four arms exactly copy the same paired Step2 actor and train-only standardizer; matched fresh critic/optimizer and RL seeds. No scratch arm; plain is a fresh-noise replication of unanchored ordinary fine-tuning. Same100k RL transitions per job, unequal optimization compute due anchor/counterfactual overhead disclosed.",
+    "anchor": {
+      "coefficient": 1.0,
+      "arms": [
+        "anchor",
+        "combined"
+      ],
+      "loss": "KL(frozen student || current actor), half current rollout minibatch and half equal-size random existing Step2 TRAIN-observation replay. No labels or DEV/test rows used. Student fixed, no gradients; mean over2B rows. Independent persistent replay RNG seed=RLseed+90000000. No coefficient tuning or adaptation. Anchor is optimization-only, absent at actor inference."
+    },
+    "credit": {
+      "arms": [
+        "credit",
+        "combined"
+      ],
+      "horizon_ticks": 20,
+      "reward": "At an available inference request, clone current plant/observer/worker/gate twice. Submit current proposal once versus a zero proposal; all subsequent proposals zero in both branches. Forecast future sensor innovations as zero, retaining measurement/process covariance and current delayed raw observation. Run actual nonlinear plant and frozen observer/worker/gate for20ticks. Cost=sum lateral_error_squared with2.5m failed-tail penalty. Reward=clip((Jzero-Jproposal)/max(Jzero,1e-4),-1,1) minus10 if actual transition fails. Zero reward for in-flight ignored actions, zero proposal, and command-identical branches. No common tracking/survival-positive/effort bonus and no old relative bonus in credit arms.",
+      "gradient": "Exclude in-flight ignored actions from PPO actor/entropy loss and normalize advantages over eligible actions only; critic uses every tick. Availability from pre-action observed pending flag/channel17 and remaining-time/channel15, tested against worker. Student anchor, when enabled, uses all observed rows.",
+      "limits": "This is privileged training-only MODEL-PREDICTED single-request credit, not observed future outcome or unbiased expected reward. Current true state/parameters only reward-side; no actual future-noise draws; no hidden actor inputs. Zero-innovation forecast can be biased, so closed-loop improvement must be measured. Counterfactual planning does not alter actual physical execution."
+    },
+    "training": "Same uniformly sampled revision6 speeds/paths/six scenarios, initial ey.15m/heading.01rad, full ceil((220/speed+2)/.01) horizon and failure thresholds. Original20 sensor/history inputs, residual grid, gate, baseline, observer and plant unchanged. Reward-only VecNormalize continues across chunks. Plain/anchor retain original reward; credit/combined use new reward/masking. No new teacher labels.",
+    "training_noise": "920000000+pair_index*1000000+slot*10000+episode_index, disjoint from all prior campaigns. Same paired seeds/initial scenario streams; different failures can change streams.",
+    "checkpointing": "All0/25k/50k/100k checkpoints, same model/optimizer/env over25k+25k+50k learn chunks, no normalizer reset, constant LR. Twelve jobs=1200000 additional RL transitions; no outcome-based extension.",
+    "splits": {
+      "dev": 1020000000,
+      "evaluation": 1120000000
+    },
+    "noise_formula": "base+pair_index*10000+speed*100+path_index*10+region_index; shared across methods, disjoint splits. Known task families only, not unseen-domain generalization.",
+    "development": "2052 episodes:3pairs*36conditions*(LQR,fixed-.04,student+four checkpoints for each of four arms). Select per arm/pair lowest mean penalized RMSE among eligible; ties earlier step. Eligibility: no regional survival loss vs student,LQR,fixed; nominal<=1.02student and every other active region<=1.01student; latency100 exact LQR fallback. If none eligible, explicitly unqualified best available, no success claim. Every arm0 must exactly reproduce student. Publish selection before test.",
+    "evaluation": "1188 episodes:3pairs*36conditions*(LQR,fixed-.04,student+four selected arms+four100k endpoints). All selections fixed before fresh-noise test; no choice of new arm/checkpoint on test. Primary mean penalized episode RMSE, failed tails2.5m.",
+    "success_rule": "Each arm assessed separately: selected arm at least1% lower RMSE than frozen student, all3seed means lower, all selections eligible, no regional survival loss vs student/LQR/fixed; nominal<=1.02student, other active regions<=1.01student; at least1% better than LQR AND fixed. Report all arms including failure; no best-arm global superiority inference. Initialization0 retention is not gain. Anchor/credit/interaction attribution only descriptive factorial paired differences on endpoints; no significance claim from3pairs.",
+    "stop": "Stop after12x100k jobs, frozen dev/test and verification. No retries, coefficient/reward tuning, extra teacher data, geometry/gate edits, deployment promotion, native campaign or new MPC superiority claim. Preserve previous results."
+  }
+}

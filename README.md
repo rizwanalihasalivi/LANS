@@ -28,9 +28,13 @@ The [five-action privileged diagnostic](integrations/webots/results/revision7-he
 
 The [teacher/student pilot](integrations/webots/results/revision8-student/interpretation.md) removes actual future-noise knowledge from teacher forecasts and trains three sensor/history-only students. On540 fresh paired episodes the student reduces LQR error by2.158% and the predeclared fixed-correction error by1.351%, passing its bounded pilot screen with108/108 survival. These are known task families, not native/safety/general-superiority evidence. Step2 itself launched no PPO fine-tuning, gate change or model promotion. [Protocol/reproduction](integrations/webots/research/revision8/README.md).
 
-## Current Step3 PPO fine-tuning pilot (revision9)
+## Step3 PPO fine-tuning pilot (revision9)
 
 The [matched fine-tuning pilot](integrations/webots/results/revision9-finetuning/interpretation.md) completed600k additional RL steps with exact supervised-actor transfer and a scratch control. All three finetune seeds selected step0 on independent development episodes. On756 fresh final episodes, the retained student reduces LQR error by2.068%; the100k fine-tuned endpoint has0.323% **higher** error than that student. The incremental PPO improvement screen fails. Retain the supervised research checkpoint; no production promotion or gate change. [Chart](integrations/webots/results/revision9-finetuning/comparison.png), [full report](integrations/webots/results/revision9-finetuning/report.md), [protocol/reproduction](integrations/webots/research/revision9/README.md).
+
+## Current student-anchor and proposal-credit pilot (revision10)
+
+The [four-arm factorial pilot](integrations/webots/results/revision10-anchored-credit/interpretation.md) completed1.2million additional RL steps,2,052 development and1,188 fresh final episodes. Anchors retain98.6–99.2% of student decisions on frozen diagnostic observations, substantially reducing drift. **No arm passes the incremental1% tracking-improvement screen.** Development-selected credit improves student RMSE by only0.007%; selected combined is0.011% worse. The student remains the recommended research reference and is2.031% better than LQR on this new split. No gate change or promotion. [Chart](integrations/webots/results/revision10-anchored-credit/comparison.png), [full report](integrations/webots/results/revision10-anchored-credit/report.md), [reward audit/protocol](integrations/webots/research/revision10/README.md).
 
 ## Corrected root demonstration
 

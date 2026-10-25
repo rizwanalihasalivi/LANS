@@ -1,0 +1,620 @@
+{
+  "verified": true,
+  "saved_models": [
+    {
+      "arm": "plain",
+      "pair": 0,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "plain",
+      "pair": 0,
+      "step": 25000,
+      "optimizer_steps": 1249.0
+    },
+    {
+      "arm": "plain",
+      "pair": 0,
+      "step": 50000,
+      "optimizer_steps": 2494.0
+    },
+    {
+      "arm": "plain",
+      "pair": 0,
+      "step": 100000,
+      "optimizer_steps": 4994.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 0,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "anchor",
+      "pair": 0,
+      "step": 25000,
+      "optimizer_steps": 1225.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 0,
+      "step": 50000,
+      "optimizer_steps": 2475.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 0,
+      "step": 100000,
+      "optimizer_steps": 4953.0
+    },
+    {
+      "arm": "credit",
+      "pair": 0,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "credit",
+      "pair": 0,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "credit",
+      "pair": 0,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "credit",
+      "pair": 0,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    },
+    {
+      "arm": "combined",
+      "pair": 0,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "combined",
+      "pair": 0,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "combined",
+      "pair": 0,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "combined",
+      "pair": 0,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    },
+    {
+      "arm": "plain",
+      "pair": 1,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "plain",
+      "pair": 1,
+      "step": 25000,
+      "optimizer_steps": 1229.0
+    },
+    {
+      "arm": "plain",
+      "pair": 1,
+      "step": 50000,
+      "optimizer_steps": 2479.0
+    },
+    {
+      "arm": "plain",
+      "pair": 1,
+      "step": 100000,
+      "optimizer_steps": 4979.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 1,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "anchor",
+      "pair": 1,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 1,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 1,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    },
+    {
+      "arm": "credit",
+      "pair": 1,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "credit",
+      "pair": 1,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "credit",
+      "pair": 1,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "credit",
+      "pair": 1,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    },
+    {
+      "arm": "combined",
+      "pair": 1,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "combined",
+      "pair": 1,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "combined",
+      "pair": 1,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "combined",
+      "pair": 1,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    },
+    {
+      "arm": "plain",
+      "pair": 2,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "plain",
+      "pair": 2,
+      "step": 25000,
+      "optimizer_steps": 1218.0
+    },
+    {
+      "arm": "plain",
+      "pair": 2,
+      "step": 50000,
+      "optimizer_steps": 2468.0
+    },
+    {
+      "arm": "plain",
+      "pair": 2,
+      "step": 100000,
+      "optimizer_steps": 4968.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 2,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "anchor",
+      "pair": 2,
+      "step": 25000,
+      "optimizer_steps": 1248.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 2,
+      "step": 50000,
+      "optimizer_steps": 2498.0
+    },
+    {
+      "arm": "anchor",
+      "pair": 2,
+      "step": 100000,
+      "optimizer_steps": 4998.0
+    },
+    {
+      "arm": "credit",
+      "pair": 2,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "credit",
+      "pair": 2,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "credit",
+      "pair": 2,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "credit",
+      "pair": 2,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    },
+    {
+      "arm": "combined",
+      "pair": 2,
+      "step": 0,
+      "optimizer_steps": 0
+    },
+    {
+      "arm": "combined",
+      "pair": 2,
+      "step": 25000,
+      "optimizer_steps": 1250.0
+    },
+    {
+      "arm": "combined",
+      "pair": 2,
+      "step": 50000,
+      "optimizer_steps": 2500.0
+    },
+    {
+      "arm": "combined",
+      "pair": 2,
+      "step": 100000,
+      "optimizer_steps": 5000.0
+    }
+  ],
+  "replays": [
+    {
+      "method": "student",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "student",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    },
+    {
+      "method": "student",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.914335439641036e-16,
+      "max_command_difference": 6.487865800153259e-16
+    },
+    {
+      "method": "student",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "plain_selected",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "plain_selected",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    },
+    {
+      "method": "plain_selected",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.914335439641036e-16,
+      "max_command_difference": 6.487865800153259e-16
+    },
+    {
+      "method": "plain_selected",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "plain_100k",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "plain_100k",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.1102230246251565e-16
+    },
+    {
+      "method": "plain_100k",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.842170943040401e-14,
+      "max_command_difference": 7.771561172376096e-16
+    },
+    {
+      "method": "plain_100k",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "anchor_selected",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "anchor_selected",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    },
+    {
+      "method": "anchor_selected",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.914335439641036e-16,
+      "max_command_difference": 6.487865800153259e-16
+    },
+    {
+      "method": "anchor_selected",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "anchor_100k",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "anchor_100k",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.465450562766819e-16,
+      "max_command_difference": 1.3877787807814457e-16
+    },
+    {
+      "method": "anchor_100k",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.914335439641036e-16,
+      "max_command_difference": 6.505213034913027e-16
+    },
+    {
+      "method": "anchor_100k",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "credit_selected",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "credit_selected",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 6.938893903907228e-17
+    },
+    {
+      "method": "credit_selected",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 1.454999315475547e-16,
+      "max_command_difference": 3.0357660829594124e-16
+    },
+    {
+      "method": "credit_selected",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "credit_100k",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "credit_100k",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 6.938893903907228e-17
+    },
+    {
+      "method": "credit_100k",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 1.454999315475547e-16,
+      "max_command_difference": 3.0357660829594124e-16
+    },
+    {
+      "method": "credit_100k",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "combined_selected",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "combined_selected",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    },
+    {
+      "method": "combined_selected",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.914335439641036e-16,
+      "max_command_difference": 9.020562075079397e-17
+    },
+    {
+      "method": "combined_selected",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    },
+    {
+      "method": "combined_100k",
+      "scenario": "nominal",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.8041124150158794e-16
+    },
+    {
+      "method": "combined_100k",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "predictions": 1080,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    },
+    {
+      "method": "combined_100k",
+      "scenario": "latency20",
+      "steps": 1080,
+      "predictions": 540,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 2.914335439641036e-16,
+      "max_command_difference": 9.020562075079397e-17
+    },
+    {
+      "method": "combined_100k",
+      "scenario": "latency100",
+      "steps": 1080,
+      "predictions": 108,
+      "max_observation_difference": 0.0,
+      "max_state_difference": 4.440892098500626e-16,
+      "max_command_difference": 1.231653667943533e-16
+    }
+  ],
+  "step0_real_dev_rows": 24300
+}

@@ -1,0 +1,64 @@
+{
+  "python": "3.10.22",
+  "training_protocol_commit": "058a284",
+  "evaluation_freeze_commit": "e341a75ea9fec405311d3de0c08f07cfaf694e84",
+  "latest_main_checked": "9aff26c",
+  "source_sha256": {
+    "revision10/evaluate10.py": "730baf3074c14cd9eaa07e5dcb2553f193e270beb84bb46363bfd2fbe0e79282",
+    "revision10/test_pilot.py": "1d22fa25a0daf881bb60ce4d77e731959f799b37a603ef3db6c2ee4cc7909474",
+    "revision10/train10.py": "3dbf182617166d84ad9fa9c05bd9139bbb02ea24bc110e72d29c3a95cda3f65f",
+    "revision10/env10.py": "03dbb4556aead1a7fc467647b6c176453ba07b4bec14e38f10de93bc846983c8",
+    "revision10/anchor10.py": "d19b66d0ce0643dbd89fc4d454cb5f682dc3e284d1c91942819ead7b8e0a9dff",
+    "revision10/policy10.py": "bdc93614fca12b3ff97328a87513261b5c315cedad8cce3573902da993bfdece",
+    "revision10/report10.py": "d09bf06cd05761a7a5af32ea94558f60257d7b8637106f070cae4a34032e1804",
+    "revision10/credit10.py": "f458eec5ab5529910dc84e553aedb2e9e96beecd4133f3db5522f007d384809a",
+    "revision10/bootstrap.py": "6dbb372dc6716a595492483dd9450d1b253adb844093940097eb89fa0fd9efbc",
+    "revision10/verify10.py": "cde59288748af50de01b47763fde2b95e3964b1ab4b00841dc0d9d43345b172e",
+    "revision10/LICENSE-SB3.txt": "2d8fbeee75e0acd13e75b30470b3521b12fb55c26c90c2060c6bd525345870a9",
+    "revision10/protocol.json": "902ccd90e8277651a22ff90bd5625a0f53f27583c99ad63815d33492a8d3bf3a",
+    "revision7/kernels.py": "be7cd4a818dbd2febdf97b20a6b5f76dfdd268194d35afd76dfb8cce21994c66",
+    "revision8/teacher.py": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+    "revision5/execution.py": "4ee43c1a27a4747c23e02310a19adf54b6dc3c0c178504e2aa6a8044365b123f",
+    "revision5/execution_env.py": "36b94668344905a3b8675dfe52549891af0a9dd94de99c40a1993901c49c5c4f",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision4/reward_model.py": "170c7d554424364b66cd29e5a42d8b3ecf2ae4425ac1b3e8fbbc20bf63056591",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b"
+  },
+  "preexisting_step2_input_sha256": {
+    "results/revision8-student/data/train.npz": "525e876e37a690cc07090945af2774e7b568b3e64e3fd12d0e9df9c6f4ffd6c5",
+    "results/revision8-student/students/701/student.pt": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48",
+    "results/revision8-student/students/701/normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+    "results/revision8-student/students/701/complete.json": "c9164a65bd68156beeae45862bbd1e396c17133f7edbf3bdaa37e0d81aa24a57",
+    "results/revision8-student/students/802/student.pt": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f",
+    "results/revision8-student/students/802/normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+    "results/revision8-student/students/802/complete.json": "393492c24842b0da3c3273913ba3071c9ad0a28d903cc63a2cf454f84aaa396b",
+    "results/revision8-student/students/903/student.pt": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa",
+    "results/revision8-student/students/903/normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+    "results/revision8-student/students/903/complete.json": "97e22b40a732ed370112ffe8f4205dfb72a2a8ba586b7d76f0cb23d655980609"
+  },
+  "training_replay_uses_step2_train_only": true,
+  "packages": {
+    "numpy": "1.23.5",
+    "scipy": "1.10.1",
+    "torch": "2.0.0+cpu",
+    "stable-baselines3": "2.0.0",
+    "gymnasium": "0.28.1",
+    "numba": "0.57.1"
+  },
+  "supplementary_config_archival": {
+    "verified_equal_training_freeze_git_objects": "058a284",
+    "sha256": {
+      "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+      "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+      "revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b"
+    },
+    "note": "Archival copies added after training; each compared byte-for-byte with frozen git object. No configuration or executable source changed."
+  },
+  "descriptive_diagnostic_commit": "32169ba",
+  "descriptive_diagnostic_sha256": "188d46077a360f018e30dc3fb085d7ad3d90b86049176b4a0f3c1f371b398b43",
+  "selection_commit": "3fbf54aa5bb9fd0c4b90633c3e1a4f976847f428",
+  "selection_published_before_final_evaluation": true
+}

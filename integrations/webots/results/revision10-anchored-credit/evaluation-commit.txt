@@ -1,0 +1,5 @@
+[experiment/anchored-credit-pilot e341a75] research: freeze factorial checkpoint selection, reporting and replay audits
+ 4 files changed, 233 insertions(+)
+ create mode 100644 integrations/webots/research/revision10/README.md
+ create mode 100644 integrations/webots/research/revision10/report10.py
+ create mode 100644 integrations/webots/research/revision10/verify10.py

@@ -1,0 +1,53 @@
+{
+  "verified": true,
+  "jobs": [
+    {
+      "job": "anchor-2701",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "anchor-2802",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "anchor-2903",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "combined-2701",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "combined-2802",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "combined-2903",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "credit-2701",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "credit-2802",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "credit-2903",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "plain-2701",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "plain-2802",
+      "critical_files_unchanged": 14
+    },
+    {
+      "job": "plain-2903",
+      "critical_files_unchanged": 14
+    }
+  ]
+}

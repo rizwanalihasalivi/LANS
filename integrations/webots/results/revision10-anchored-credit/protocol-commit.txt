@@ -1,0 +1,12 @@
+[experiment/anchored-credit-pilot 058a284] research: freeze factorial student anchor and proposal-credit pilot
+ 10 files changed, 702 insertions(+)
+ create mode 100644 integrations/webots/research/revision10/anchor10.py
+ create mode 100644 integrations/webots/research/revision10/bootstrap.py
+ create mode 100644 integrations/webots/research/revision10/credit10.py
+ create mode 100644 integrations/webots/research/revision10/env10.py
+ create mode 100644 integrations/webots/research/revision10/evaluate10.py
+ create mode 100644 integrations/webots/research/revision10/policy10.py
+ create mode 100644 integrations/webots/research/revision10/protocol.json
+ create mode 100644 integrations/webots/research/revision10/reward-audit.md
+ create mode 100644 integrations/webots/research/revision10/test_pilot.py
+ create mode 100644 integrations/webots/research/revision10/train10.py

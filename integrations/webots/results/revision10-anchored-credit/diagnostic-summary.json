@@ -1,0 +1,25 @@
+{
+  "off_policy_diagnostic_only": true,
+  "at100k": {
+    "plain": {
+      "action_agreement": 0.8443347050754458,
+      "mean_student_to_ppo_kl": 0.20939507087071738,
+      "episode_mean_teacher_regret": 0.017552949873793876
+    },
+    "anchor": {
+      "action_agreement": 0.9907956104252401,
+      "mean_student_to_ppo_kl": 0.001233239599969238,
+      "episode_mean_teacher_regret": 0.013277689063432406
+    },
+    "credit": {
+      "action_agreement": 0.9211796982167353,
+      "mean_student_to_ppo_kl": 0.107899509370327,
+      "episode_mean_teacher_regret": 0.0142371358269268
+    },
+    "combined": {
+      "action_agreement": 0.9875034293552812,
+      "mean_student_to_ppo_kl": 0.002624772178630034,
+      "episode_mean_teacher_regret": 0.013464385773371378
+    }
+  }
+}

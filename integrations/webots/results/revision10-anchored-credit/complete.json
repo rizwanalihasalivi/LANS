@@ -1,0 +1,18 @@
+{
+  "completed": true,
+  "additional_rl_steps": 1200000,
+  "development_episodes": 2052,
+  "final_evaluation_episodes": 1188,
+  "contract_tests": 5,
+  "saved_checkpoints": 48,
+  "original_object_replays": 36,
+  "passes_screen": {
+    "plain": false,
+    "anchor": false,
+    "credit": false,
+    "combined": false
+  },
+  "recommended_research_reference": "frozen Step2 student",
+  "promoted": false,
+  "native": false
+}

@@ -1,0 +1,27 @@
+./workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/ppo/ppo.py:148: UserWarning: You have specified a mini-batch size of 200, but because the `RolloutBuffer` is of size `n_steps * n_envs = 125`, after every 0 untruncated mini-batches, there will be a truncated mini-batch of size 125
+We recommend using a `batch_size` that is a factor of `n_steps * n_envs`.
+Info: (n_steps=125 and n_envs=1)
+  warnings.warn(
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpo6eamr07/policy.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpo6eamr07/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpiug3qiiy/policy.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpiug3qiiy/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpd6e8egao/policy.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpd6e8egao/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...
+----------------------------------------------------------------------
+Ran 4 tests in 0.445s
+
+OK

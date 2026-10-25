@@ -24,9 +24,13 @@ The [matched600k-step pilot](integrations/webots/results/revision6-correction/in
 
 The [five-action privileged diagnostic](integrations/webots/results/revision7-headroom/interpretation.md) completed864 paired episodes. With the actual frozen gate, measured error is2.076% lower than LQR and1.266% lower than the best global fixed proposal; all108 gated cases survive. The diagnostic bypass fails90/108 cases. These are finite-policy privileged results, **not an absolute ceiling or a trained-student result**. That Step1 diagnostic launched no training; Step2 is recorded below. [Protocol and reproduction](integrations/webots/research/revision7/README.md).
 
-## Current Step2 supervised pilot (revision8)
+## Step2 supervised pilot (revision8)
 
-The [teacher/student pilot](integrations/webots/results/revision8-student/interpretation.md) removes actual future-noise knowledge from teacher forecasts and trains three sensor/history-only students. On540 fresh paired episodes the student reduces LQR error by2.158% and the predeclared fixed-correction error by1.351%, passing its bounded pilot screen with108/108 survival. These are known task families, not native/safety/general-superiority evidence. No PPO fine-tuning, gate change or model promotion is launched. [Protocol/reproduction](integrations/webots/research/revision8/README.md).
+The [teacher/student pilot](integrations/webots/results/revision8-student/interpretation.md) removes actual future-noise knowledge from teacher forecasts and trains three sensor/history-only students. On540 fresh paired episodes the student reduces LQR error by2.158% and the predeclared fixed-correction error by1.351%, passing its bounded pilot screen with108/108 survival. These are known task families, not native/safety/general-superiority evidence. Step2 itself launched no PPO fine-tuning, gate change or model promotion. [Protocol/reproduction](integrations/webots/research/revision8/README.md).
+
+## Current Step3 PPO fine-tuning pilot (revision9)
+
+The [matched fine-tuning pilot](integrations/webots/results/revision9-finetuning/interpretation.md) completed600k additional RL steps with exact supervised-actor transfer and a scratch control. All three finetune seeds selected step0 on independent development episodes. On756 fresh final episodes, the retained student reduces LQR error by2.068%; the100k fine-tuned endpoint has0.323% **higher** error than that student. The incremental PPO improvement screen fails. Retain the supervised research checkpoint; no production promotion or gate change. [Chart](integrations/webots/results/revision9-finetuning/comparison.png), [full report](integrations/webots/results/revision9-finetuning/report.md), [protocol/reproduction](integrations/webots/research/revision9/README.md).
 
 ## Corrected root demonstration
 

@@ -23,6 +23,8 @@ class TransferContracts(unittest.TestCase):
             with torch.no_grad():
                 np.testing.assert_allclose(logits(warm,x).numpy(),student(x).numpy(),atol=0,rtol=0)
                 self.assertFalse(torch.equal(logits(scratch,x),student(x)))
+            real=torch.from_numpy(np.load(RESEARCH.parent/'results/revision8-student/data/dev.npz')['x'][::6])
+            with torch.no_grad():np.testing.assert_array_equal(logits(warm,real).numpy(),student(real).numpy())
             for a,b in zip(warm.policy.mlp_extractor.value_net.parameters(),scratch.policy.mlp_extractor.value_net.parameters()):self.assertTrue(torch.equal(a,b))
             self.assertTrue(torch.equal(warm.policy.value_net.weight,scratch.policy.value_net.weight))
             self.assertEqual(len(warm.policy.optimizer.state),0);self.assertEqual(len(scratch.policy.optimizer.state),0)
@@ -56,6 +58,25 @@ class TransferContracts(unittest.TestCase):
         for episode in range(30):
             x,ia=a.reset();y,ib=b.reset();np.testing.assert_array_equal(x,y);self.assertEqual(ia,ib)
             self.assertFalse(any(a.noise_id in old for old in sets))
+
+    def test_selection_uses_eligibility_and_keeps_step_zero(self):
+        from evaluate9 import select,G
+        rows=[]
+        for pair in range(3):
+            for region in G['scenarios']:
+                for method in ['lqr','student']+[f'{arm}_{step}' for arm in P['arms'] for step in P['checkpoints']]:
+                    value=.1
+                    if method=='student' or method=='finetune_0':value=.098
+                    # Candidate25k has best global mean, but fails one region guard.
+                    if method.endswith('_25000'):value=.103 if region=='nominal' else .09
+                    if method.endswith('_50000'):value=.099
+                    if method.endswith('_100000'):value=.099
+                    rows.append(dict(pair=pair,speed=15,path='sine120',scenario=region,method=method,penalized_rmse=value,survived='True'))
+        chosen=select(rows)
+        for seed in P['rl_seeds']:
+            self.assertEqual(chosen[f'finetune-{seed}']['steps'],0)
+            self.assertEqual(chosen[f'scratch-{seed}']['steps'],50000)
+            self.assertFalse(chosen[f'finetune-{seed}']['candidates'][1]['eligible'])
 
 
 if __name__=='__main__':unittest.main()

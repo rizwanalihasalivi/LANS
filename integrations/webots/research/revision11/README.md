@@ -1,5 +1,7 @@
 # Tire-mismatch attribution diagnostic
 
+**Timestamp correction:** the archived student behavior below re-submitted held proposals on intermediate ticks and refreshed their observation timestamps. Corrected drivers submit only at actual50ms policy queries, retaining original packet age between queries. The independent shadow candidates remain fresh every tick by design; this is a separate hypothetical shadow process, not the student submission stream. Preserve the old output and rerun into a new directory before relying on revised counts.
+
 [Full report](../../results/revision11-attribution/report.md) · [Raw branches](../../results/revision11-attribution/branches.csv) · [Verification](../../results/revision11-attribution/verification.json).
 
 Protocol/executable frozen at `bc2517c`, before execution. Eight common behavior trajectories: two fresh development noise repetitions, nominal/tire-mismatch, LQR/student,25m/s DLC220. Student proposal query cadence50ms matches revision10; no current model/gate is modified. No final-test data, training or promotion is used.

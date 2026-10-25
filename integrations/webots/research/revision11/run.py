@@ -1,5 +1,5 @@
 """Common-state shadow gate and realized objective attribution, not optimization."""
-import argparse,csv,json,sys,itertools
+import argparse,csv,json,sys,itertools,subprocess
 from pathlib import Path
 HERE=Path(__file__).resolve().parent;R=HERE.parent
 sys.path.insert(0,str(R/'revision8'))
@@ -34,6 +34,7 @@ def branch(state,estimate,cov,previous,tick,command,horizon,actual,speed,path,mu
 
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);a=parser.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+ source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=HERE,text=True).strip()
  configure_lqr();gains=np.array([GAINS[v] for v in (15,20,25)]);allrows=[];episodes=[]
  for rep,region,behavior in itertools.product(P['repetitions'],P['regions'],P['behaviors']):
   case=G['scenarios'][region];path=tuple(float(x) for x in G['paths']['dlc220']);speed=25.;steps=int(np.ceil((220/speed+2)/.01))
@@ -61,7 +62,7 @@ def main():
       allrows.append(dict(repetition=rep,noise_id=noise_id,region=region,behavior=behavior,tick=tick,residual_rad=residual,horizon_ticks=horizon,kind='executed' if weight<0 else 'available',weight=w if weight<0 else weight,reason=reason,baseline_rad=base,command_rad=command,predicted_delta=pred0-pred1,realized_delta=c0-c1,lateral_delta=l0-l1,baseline_realized_cost=c0,baseline_lateral_cost=l0,failed_baseline=f0,failed_candidate=f1))
    if behavior=='student' and tick%5==0:
     action,_=model.predict(features(state,est,max(5.,speed+actual[tick,3]),path,worker,tick,0));proposal=.08*float(action[0])
-   command,w,_,_=execution_step(worker,tick*.01,proposal,0,base,est,state[5],v,k,gain,False)
+   command,w,_,_=execution_step(worker,tick*.01,proposal,0,base,est,state[5],v,k,gain,False,tick%5==0)
    old=state[5];state=advance(state,command,speed,case['mu'],case['stiffness']);assert abs(state[5]-old)<=.003500001
    y,h,_=path_values(state[0],path);errors.append(state[1]-y)
    if abs(errors[-1])>2.5 or abs(state[2]-h)>.6 or not np.isfinite(state).all():failed=True;break
@@ -70,5 +71,5 @@ def main():
  for name,rows in [('branches',allrows),('episodes',episodes)]:
   with (a.output/(name+'.csv')).open('w') as f:
    writer=csv.DictWriter(f,fieldnames=rows[0]);writer.writeheader();writer.writerows(rows)
- (a.output/'complete.json').write_text(json.dumps(dict(trajectories=len(episodes),branch_rows=len(allrows),protocol=P),indent=2)+'\n')
+ (a.output/'complete.json').write_text(json.dumps(dict(trajectories=len(episodes),branch_rows=len(allrows),protocol=P,source_commit=source_commit,submission_semantics='fresh-query-only-v1'),indent=2)+'\n')
 if __name__=='__main__':main()

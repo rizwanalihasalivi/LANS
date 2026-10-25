@@ -1,5 +1,5 @@
 """Fixed small development diagnostic; reuse original gate/observer/plant."""
-import argparse,csv,json,sys,itertools,time
+import argparse,csv,json,sys,itertools,subprocess,time
 from pathlib import Path
 HERE=Path(__file__).resolve().parent;RESEARCH=HERE.parent
 sys.path.insert(0,str(RESEARCH/'revision8'))
@@ -21,7 +21,7 @@ def cost(state,estimate,cov,previous,worker,tick,first,second,horizon,service,sp
   z=state.copy();est=estimate.copy();variance=cov.copy();raw=previous.copy();ex=worker.copy();mv=v;curve=k;value=0.
   for j in range(horizon):
    baseline,gain=lqr(est,mv,curve,gains)
-   u,_,_,_=execution_step(ex,(tick+j)*.01,first if j<20 else second,service,baseline,est,z[5],mv,curve,gain,False)
+   u,_,_,_=execution_step(ex,(tick+j)*.01,first if j<20 else second,service,baseline,est,z[5],mv,curve,gain,False,(tick+j)%5==0)
    z=advance(z,u,speed,mu,stiffness);y,h,_=path_values(z[0],path);ey=z[1]-y;value+=ey*ey
    if abs(ey)>2.5 or abs(z[2]-h)>.6 or not np.isfinite(z).all():value+=(horizon-j-1)*6.25;break
    if j<horizon-1:est,variance,raw,mv,curve=measure(z,speed,path,sign*forecast[j+1],delay,est,variance,raw,False,noise)
@@ -52,7 +52,7 @@ def episode(method,rep,region,model,gains):
  actual=np.random.default_rng(identity).normal(0,scales,(scheduled,4))
  forecasts=np.random.default_rng(identity+P['forecast_offset']).normal(0,scales,(scheduled,41,4))
  y,h,_=path_values(0.,path);state=np.array([0.,y+.15,h+.01,0.,0.,0.]);est=np.zeros(4);cov=np.eye(4)*.01;previous=np.zeros(4);worker=initial_executor()
- errors=[];proposal=0.;calls=0;maxrate=0.;active=0;failed=False;started=time.perf_counter()
+ errors=[];proposal=0.;calls=0;maxrate=0.;active=0;failed=False;submissions=0;max_age=0.;started=time.perf_counter()
  for tick in range(scheduled):
   raw_v=max(5.,previous[3]) if case['sensor_delay_steps'] and tick else max(5.,speed+actual[tick,3])
   est,cov,previous,v,k=measure(state,speed,path,actual[tick],case['sensor_delay_steps'],est,cov,previous,tick==0,float(case['noise']))
@@ -63,16 +63,19 @@ def episode(method,rep,region,model,gains):
    elif method=='fixed_m004':proposal=-.04
    elif method!='lqr':
     proposal=choose(state,est,cov,previous,worker,tick,['hold20','hold40','sequence40'].index(method),case['service_ticks'],speed,path,case['mu'],case['stiffness'],forecasts[tick],case['sensor_delay_steps'],float(case['noise']),v,k,gains);calls+=1
-  u,w,_,_=execution_step(worker,tick*.01,proposal,case['service_ticks'],baseline,est,state[5],v,k,gain,False)
+  u,w,reason,submitted=execution_step(worker,tick*.01,proposal,case['service_ticks'],baseline,est,state[5],v,k,gain,False,tick%5==0)
+  submissions+=int(submitted)
+  if worker[3]>=0:max_age=max(max_age,tick*.01-worker[4])
   if region=='latency100':assert u==baseline and w==0
   old=state[5];state=advance(state,u,speed,case['mu'],case['stiffness']);maxrate=max(maxrate,abs(state[5]-old)/.01);active+=w>0
   y,h,_=path_values(state[0],path);ey=state[1]-y;errors.append(ey)
   if abs(ey)>2.5 or abs(state[2]-h)>.6 or not np.isfinite(state).all():failed=True;break
  assert maxrate<=.3500001
- return dict(repetition=rep,noise_id=identity,scenario=region,method=method,survived=not failed,steps=len(errors),scheduled_steps=scheduled,penalized_rmse=float(np.sqrt((sum(e*e for e in errors)+(scheduled-len(errors))*6.25)/scheduled)),active_fraction=active/len(errors),teacher_calls=calls,wall_s=time.perf_counter()-started)
+ return dict(repetition=rep,noise_id=identity,scenario=region,method=method,survived=not failed,steps=len(errors),scheduled_steps=scheduled,penalized_rmse=float(np.sqrt((sum(e*e for e in errors)+(scheduled-len(errors))*6.25)/scheduled)),active_fraction=active/len(errors),teacher_calls=calls,submissions=submissions,max_packet_age_s=max_age,wall_s=time.perf_counter()-started)
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+ source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=HERE,text=True).strip()
  configure_lqr();gains=np.array([GAINS[v] for v in (15,20,25)]);rows=[]
  for rep in P['repetitions']:
   model=load(RESEARCH.parent/f'results/revision8-student/students/{P["student_seeds"][rep]}')
@@ -81,5 +84,5 @@ def main():
    with (a.output/'episodes.csv').open('w') as f:
     w=csv.DictWriter(f,fieldnames=rows[0]);w.writeheader();w.writerows(rows)
    print(rep,region,method,row['penalized_rmse'],flush=True)
- (a.output/'complete.json').write_text(json.dumps(dict(episodes=len(rows),protocol=P),indent=2)+'\n')
+ (a.output/'complete.json').write_text(json.dumps(dict(episodes=len(rows),protocol=P,source_commit=source_commit,submission_semantics='fresh-query-only-v1'),indent=2)+'\n')
 if __name__=='__main__':main()

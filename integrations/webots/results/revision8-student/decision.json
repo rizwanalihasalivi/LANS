@@ -1,0 +1,77 @@
+{
+  "verified": true,
+  "dataset": {
+    "train": {
+      "episodes": 216,
+      "rows": 48600,
+      "class_counts": [
+        6485,
+        874,
+        32078,
+        957,
+        8206
+      ],
+      "nonzero_label_fraction": 0.3399588477366255,
+      "noise_ids": 72
+    },
+    "dev": {
+      "episodes": 108,
+      "rows": 24300,
+      "class_counts": [
+        3314,
+        540,
+        15851,
+        397,
+        4198
+      ],
+      "nonzero_label_fraction": 0.3476954732510288,
+      "noise_ids": 36
+    }
+  },
+  "students": [
+    {
+      "seed": 701,
+      "selected_epoch": 17,
+      "dev_regret": 0.013348956623680604,
+      "dev_accuracy": 0.8674897119341564,
+      "nonzero_accuracy": 0.7710971712628714,
+      "wall_s": 5.291123470989987
+    },
+    {
+      "seed": 802,
+      "selected_epoch": 19,
+      "dev_regret": 0.01296314074575791,
+      "dev_accuracy": 0.8669958847736625,
+      "nonzero_accuracy": 0.7738193869096934,
+      "wall_s": 4.299118577007903
+    },
+    {
+      "seed": 903,
+      "selected_epoch": 15,
+      "dev_regret": 0.013296547875998188,
+      "dev_accuracy": 0.8715637860082305,
+      "nonzero_accuracy": 0.7652976683631199,
+      "wall_s": 3.897167022994836
+    }
+  ],
+  "evaluation_episodes": 540,
+  "student_reduction_vs_lqr": 0.02158153268272911,
+  "student_reduction_vs_fixed": 0.01350619096709571,
+  "student_reduction_vs_previous_ppo": 0.020623575182542986,
+  "teacher_reduction_vs_lqr": 0.02230530735127978,
+  "checks": {
+    "improves_lqr_by_1pct": true,
+    "improves_fixed_by_1pct": true,
+    "all_seed_means_better_than_lqr": true,
+    "regional_survival": true,
+    "nominal_preserved": true,
+    "no_active_region_over_1pct_worse": true
+  },
+  "student_passes_screen": true,
+  "actual_future_noise_used_in_teacher": false,
+  "student_privileged_inputs": false,
+  "ppo_finetuning": false,
+  "gate_changed": false,
+  "promoted": false,
+  "native": false
+}

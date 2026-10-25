@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "models": [
+    {
+      "seed": 701,
+      "selected_epoch": 17,
+      "selected_tensors_dev_regret": 0.013348956623680604,
+      "inference_input_dimensions": 20,
+      "actual_future_noise_inference": false
+    },
+    {
+      "seed": 802,
+      "selected_epoch": 19,
+      "selected_tensors_dev_regret": 0.01296314074575791,
+      "inference_input_dimensions": 20,
+      "actual_future_noise_inference": false
+    },
+    {
+      "seed": 903,
+      "selected_epoch": 15,
+      "selected_tensors_dev_regret": 0.013296547875998188,
+      "inference_input_dimensions": 20,
+      "actual_future_noise_inference": false
+    }
+  ],
+  "ppo_finetuning": false
+}

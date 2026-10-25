@@ -7,4 +7,4 @@ Start with the [current evidence and entry points](../README.md). The [specifica
 - [Controller remediation](../docs/research/controller-remediation.md) describes corrected root contracts and revision5 diagnostics.
 - [Research handoff](../docs/research/README.md) and [historical reviews](../docs/research/reviews.md) retain their dated scope.
 
-Experiments through revision5 exist. Their small gains, failed pilot/promotion screens and smoke-only execution model are distinguished in the current evidence links. Full training remains paused pending a promising controlled experiment.
+Experiments through revision8 exist; the [Step2 student pilot](../integrations/webots/results/revision8-student/interpretation.md) passes its bounded screen on known task families. Historical failed pilots, the earlier smoke-only interface and the newly trained supervised students are separated in the current evidence links. Full research training and PPO fine-tuning have not started; they need their own frozen validation scope.

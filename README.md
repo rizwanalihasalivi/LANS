@@ -16,13 +16,17 @@ The subsequent [ARIS audit remediation](docs/research/aris-remediation.md) retir
 - [Gate-aware and relative-reward pilots](integrations/webots/results/revision4-pilots/report.md): new arms did not beat the pilot baseline.
 - [Predictor and nonlearned-control diagnostics](integrations/webots/results/revision5-audit/report.md): explicit attribution controls on development data.
 
-## Latest correction-quality pilot
+## Correction-quality PPO pilot (revision6)
 
 The [matched600k-step pilot](integrations/webots/results/revision6-correction/interpretation.md) trained two arms at three fresh seeds and evaluated648 paired development episodes. Execution-aware training improved direct-trained error by only0.15%, failed the1% progress screen and did not beat simple fixed corrections. Neither model is promoted. The nominal constrained MPC reference is explicitly limited; LQR also beats it. [Protocol and reproduction](integrations/webots/research/revision6/README.md).
 
-## Latest Step1 headroom diagnostic
+## Step1 headroom diagnostic (revision7)
 
-The [five-action privileged diagnostic](integrations/webots/results/revision7-headroom/interpretation.md) completed864 paired episodes. With the actual frozen gate, measured error is2.076% lower than LQR and1.266% lower than the best global fixed proposal; all108 gated cases survive. The diagnostic bypass fails90/108 cases. These are finite-policy privileged results, **not an absolute ceiling or a trained-student result**. No gate change or Step2 training is launched. [Protocol and reproduction](integrations/webots/research/revision7/README.md).
+The [five-action privileged diagnostic](integrations/webots/results/revision7-headroom/interpretation.md) completed864 paired episodes. With the actual frozen gate, measured error is2.076% lower than LQR and1.266% lower than the best global fixed proposal; all108 gated cases survive. The diagnostic bypass fails90/108 cases. These are finite-policy privileged results, **not an absolute ceiling or a trained-student result**. That Step1 diagnostic launched no training; Step2 is recorded below. [Protocol and reproduction](integrations/webots/research/revision7/README.md).
+
+## Current Step2 supervised pilot (revision8)
+
+The [teacher/student pilot](integrations/webots/results/revision8-student/interpretation.md) removes actual future-noise knowledge from teacher forecasts and trains three sensor/history-only students. On540 fresh paired episodes the student reduces LQR error by2.158% and the predeclared fixed-correction error by1.351%, passing its bounded pilot screen with108/108 survival. These are known task families, not native/safety/general-superiority evidence. No PPO fine-tuning, gate change or model promotion is launched. [Protocol/reproduction](integrations/webots/research/revision8/README.md).
 
 ## Corrected root demonstration
 

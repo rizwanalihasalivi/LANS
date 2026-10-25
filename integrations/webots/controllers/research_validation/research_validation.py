@@ -1,3 +1,4 @@
+from contextlib import ExitStack
 import csv,json,math,os,sys,traceback,time
 from pathlib import Path
 import numpy as np
@@ -10,6 +11,10 @@ from worker import PolicyWorker
 from tracking import tracking_lqr as lqr
 
 def main(d):
+    with ExitStack() as cleanup:
+        return _main(d,cleanup)
+
+def _main(d,cleanup):
     case=json.loads(Path(os.environ['LANS_CASE_CONFIG']).read_text())
     configure_lqr()
     out=Path(case['output']);out.mkdir(parents=True,exist_ok=True)
@@ -36,7 +41,9 @@ def main(d):
     mode=case['mode'];speed=case['speed'];actuator=0.;steps=round(.01/dt)
     assert math.isclose(steps*dt,.01)
     policy=None;worker=None;packet_meta=None
-    if mode=='fusion':worker=PolicyWorker(case['policy'],case.get('delay_ms',0)/1000)
+    if mode=='fusion':
+        worker=PolicyWorker(case['policy'],case.get('delay_ms',0)/1000)
+        cleanup.callback(worker.close)
     if mode=='ppo':
         import torch
         from stable_baselines3 import PPO
@@ -124,7 +131,6 @@ def main(d):
              'fallback_fraction':sum(r['ppo_weight']==0 for r in records)/len(records) if mode=='fusion' else None}
     assert metrics['max_actuator_rate_rad_s']<=.35000001
     (out/'metrics.json').write_text(json.dumps(metrics,indent=2)+'\n')
-    if worker is not None:worker.close()
 
 if __name__=='__main__':
     d=Driver()

@@ -9,7 +9,22 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def validate_spaces(model):
+    from gymnasium import spaces
+    action = model.action_space
+    if (model.observation_space.shape != (11,) or not isinstance(action, spaces.Box)
+            or action.shape != (1,) or not np.array_equal(action.low, [-1.])
+            or not np.array_equal(action.high, [1.])):
+        raise ValueError('residual policy requires 11 observations and normalized action bounds [-1, 1]')
+
+
 def save_bundle(folder, model, normalized_env):
+    from stable_baselines3.common.vec_env import VecNormalize
+    if not isinstance(normalized_env, VecNormalize):
+        raise ValueError('save the policy with its VecNormalize environment')
+    if any(contract != 'world-bicycle-residual-v2' for contract in normalized_env.get_attr('contract')):
+        raise ValueError('only corrected residual environments can produce a residual bundle')
+    validate_spaces(model)
     folder = Path(folder); folder.mkdir(parents=True, exist_ok=False)
     model.save(folder/'policy.zip'); normalized_env.save(folder/'normalization.pkl')
     manifest = dict(contract='world-bicycle-residual-v2', role='residual', action_scale_rad=.08,
@@ -33,8 +48,7 @@ class PolicyBundle:
         self.normalizer=VecNormalize.load(folder/'normalization.pkl',DummyVecEnv([ResidualPathEnv]))
         self.normalizer.training=False; self.normalizer.norm_reward=False
         self.model=PPO.load(folder/'policy.zip',device='cpu')
-        if self.model.observation_space.shape!=(11,) or self.model.action_space.shape!=(1,):
-            raise ValueError('policy spaces disagree with manifest')
+        validate_spaces(self.model)
 
     def predict(self, observation, deterministic=True):
         obs=np.asarray(observation,dtype=np.float32)

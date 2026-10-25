@@ -1,5 +1,5 @@
 """Equal-budget pilots, predefined development screen, optional single-arm extension."""
-import argparse,concurrent.futures,csv,hashlib,itertools,json,subprocess,sys
+import argparse,concurrent.futures,csv,hashlib,itertools,json,math,subprocess,sys
 from pathlib import Path
 from statistics import mean
 import torch
@@ -15,7 +15,29 @@ def score(rows,method,region=None,seed=None):
     return mean(r['penalized_rmse'] for r in subset)
 def survive(rows,method,region):return sum(r['survived'] for r in rows if r['method']==method and r['scenario']==region)
 
+def validate_screen_grid(rows, methods):
+    """Reject missing/duplicate/unpaired development cells before spending decisions."""
+    expected=set(itertools.product(PROTOCOL['pilot_seeds'],PROTOCOL['speeds'],PROTOCOL['paths'],PROTOCOL['scenarios']))
+    grids={}
+    for method in methods:
+        grid={}
+        for row in rows:
+            if row['method']!=method:continue
+            key=tuple(row[k] for k in ('seed','speed','path','scenario'))
+            if key in grid:raise ValueError(f'duplicate {method} cell: {key}')
+            if not math.isfinite(row['penalized_rmse']) or row['penalized_rmse']<0:
+                raise ValueError('invalid RMSE score')
+            grid[key]=row
+        if set(grid)!=expected:raise ValueError(f'incomplete or unexpected {method} development grid')
+        grids[method]=grid
+    reference=grids['lqr']
+    for method,grid in grids.items():
+        for key,row in grid.items():
+            if row['noise_seed']!=reference[key]['noise_seed']:
+                raise ValueError(f'unpaired noise seed: {method} {key}')
+
 def screening(rows,arm,threshold=.01,require_A=True):
+    validate_screen_grid(rows,["lqr","A_hybrid",arm+"_hybrid"])
     method=arm+'_hybrid';active=['nominal','tire_mismatch','low_friction','sensor_stress','latency20'];stress=['tire_mismatch','low_friction','sensor_stress']
     changes={r:score(rows,method,r)/score(rows,'lqr',r)-1 for r in active}
     seed_stress=[mean(score(rows,method,r,s)-score(rows,'lqr',r,s) for r in stress) for s in PROTOCOL['pilot_seeds']]

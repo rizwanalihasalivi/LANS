@@ -1,0 +1,11 @@
+test_accepted_actual_command_improves_prediction (__main__.Contracts) ... ok
+test_envelope (__main__.Contracts) ... ok
+test_equal_candidate_never_earns (__main__.Contracts) ... ok
+test_invalid_packet_immediate_fallback (__main__.Contracts) ... ok
+test_nominal_plant_parity (__main__.Contracts) ... ok
+test_sequence_regression (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.973s
+
+OK

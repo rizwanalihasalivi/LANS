@@ -1,0 +1,8 @@
+test_default_preserves_every_available_tick (__main__.SubmissionContracts) ... ok
+test_pending_packet_delivers_without_a_new_query (__main__.SubmissionContracts) ... ok
+test_query_cadence_preserves_timestamp_and_matches_original_object (__main__.SubmissionContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.154s
+
+OK

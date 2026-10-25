@@ -90,3 +90,6 @@ results/*
 !research/revision11/*.json
 !results/revision11-attribution/
 !results/revision11-attribution/**
+!results/full-project-audit/
+!results/full-project-audit/**
+**/__pycache__/

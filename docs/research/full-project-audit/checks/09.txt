@@ -1,0 +1,9 @@
+test_duplicate_rejected (__main__.Screening) ... ok
+test_missing_severe_grid_rejected (__main__.Screening) ... ok
+test_recorded_decision_unchanged (__main__.Screening) ... ok
+test_unpaired_noise_rejected (__main__.Screening) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.016s
+
+OK

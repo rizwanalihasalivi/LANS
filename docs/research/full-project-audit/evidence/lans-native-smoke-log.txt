@@ -1,0 +1,3 @@
+lqr True 0.05164093199652341
+gated_residual True 0.05070970984150265
+2/2 native smoke cases completed; no performance selection

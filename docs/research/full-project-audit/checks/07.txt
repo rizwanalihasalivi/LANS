@@ -1,0 +1,9 @@
+test_endpoints_and_invalid (__main__.RangeContracts) ... ok
+test_evaluation_and_worker_units_agree (__main__.RangeContracts) ... ok
+test_gate_preserves_range_and_stale_fallback (__main__.RangeContracts) ... ok
+test_training_dynamics_reward_parity (__main__.RangeContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.166s
+
+OK

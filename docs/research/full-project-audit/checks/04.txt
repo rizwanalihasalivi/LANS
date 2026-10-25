@@ -1,0 +1,10 @@
+test_curvature_equilibrium_command (__main__.ResearchContracts) ... ok
+test_delayed_sensor_does_not_leak_new_lateral_position (__main__.ResearchContracts) ... ok
+test_invalid_outputs_and_recovery (__main__.ResearchContracts) ... ok
+test_seeded_sensor_repeatability (__main__.ResearchContracts) ... ok
+test_vehicle_footprint_corridor (__main__.ResearchContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.567s
+
+OK

@@ -1,0 +1,28 @@
+test_comparison_requires_policy_and_exposes_penalty_inputs (__main__.RootAuditContracts) ... ok
+test_different_noise_ids_are_not_paired (__main__.RootAuditContracts) ... ok
+test_existing_valid_bundle_still_loads (__main__.RootAuditContracts) ... /workspace/lans-setup/venv/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py:4: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if not hasattr(tensorboard, "__version__") or LooseVersion(
+/workspace/lans-setup/venv/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py:6: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ) < LooseVersion("1.15"):
+/workspace/lans-setup/venv/lib/python3.10/site-packages/matplotlib/_fontconfig_pattern.py:88: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+/workspace/lans-setup/venv/lib/python3.10/site-packages/matplotlib/_fontconfig_pattern.py:92: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+Fontconfig error: No writable cache directories
+/workspace/lans-setup/venv/lib/python3.10/site-packages/matplotlib/_mathtext.py:30: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+  ParserElement.enablePackrat()
+In /workspace/lans-setup/venv/lib/python3.10/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+In /workspace/lans-setup/venv/lib/python3.10/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/LANS-webots/integrations/webots/results/controller-remediation/root-smoke/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_full_command_model_cannot_be_packaged_as_residual (__main__.RootAuditContracts) ... ok
+test_horizon_without_raw_score_is_explicit_error (__main__.RootAuditContracts) ... ok
+test_preview_dimension_rejected_at_construction (__main__.RootAuditContracts) ... ok
+test_speed_change_refreshes_observed_error_rates (__main__.RootAuditContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.487s
+
+OK

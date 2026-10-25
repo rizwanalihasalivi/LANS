@@ -1,0 +1,12 @@
+Fontconfig error: No writable cache directories
+test_curved_reference_does_not_move_zero_steering_vehicle (__main__.Contracts) ... ok
+test_effective_learning_rate (__main__.Contracts) ... ok
+test_missing_policy_fails (__main__.Contracts) ... ok
+test_residual_fused_exactly_once (__main__.Contracts) ... ok
+test_speed_seed_and_preview (__main__.Contracts) ... ok
+test_zoh_integrator (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.036s
+
+OK

@@ -1,12 +1,19 @@
 """Run a fresh Webots process with an immutable per-case configuration and generated world."""
 import argparse,hashlib,json,os,subprocess,sys,time
 from pathlib import Path
+from native_process import run_native
 ROOT=Path(__file__).resolve().parents[1]
 
+def create_case_project(destination):
+    # Different output runs may execute the same case name concurrently.
+    project=ROOT/'.runtime/cases'/hashlib.sha256(str(destination.resolve()).encode()).hexdigest()[:20]
+    (project/'worlds').mkdir(parents=True,exist_ok=False)
+    (project/'controllers').symlink_to(ROOT/'controllers',target_is_directory=True)
+    return project
+
 def run(case,name,output):
-    destination=output/name;destination.mkdir(parents=True,exist_ok=False)
-    project=ROOT/'.runtime/cases'/name; (project/'worlds').mkdir(parents=True,exist_ok=True)
-    if not (project/'controllers').exists():(project/'controllers').symlink_to(ROOT/'controllers',target_is_directory=True)
+    destination=Path(output).resolve()/name;destination.mkdir(parents=True,exist_ok=False)
+    project=create_case_project(destination)
     case=dict(case)
     if case.get('policy'):
         policy=Path(case['policy']);metadata=json.loads((policy.parent/'complete.json').read_text())
@@ -25,7 +32,7 @@ def run(case,name,output):
     (destination/'generated-world.wbt').write_text(world)
     case=dict(case,output=str(destination))
     config=destination/'case.json';config.write_text(json.dumps(case,indent=2)+'\n')
-    source_files=['research/core.py','research/protocol.json','research/run-physical.py','controllers/research_validation/research_validation.py','worlds/research_validation.wbt','research/comparison.py','research/comparison-protocol.json','research/worker.py','run-research-webots.sh','research/calibration.json','research/tracking.py','research/tracking-protocol.json']
+    source_files=['research/core.py','research/protocol.json','research/run-physical.py','research/native_process.py','controllers/research_validation/research_validation.py','worlds/research_validation.wbt','research/comparison.py','research/comparison-protocol.json','research/worker.py','run-research-webots.sh','research/calibration.json','research/tracking.py','research/tracking-protocol.json']
     for filename in source_files:
         target=destination/'source'/filename;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/filename).read_bytes())
     (destination/'inputs.json').write_text(json.dumps({p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in source_files},indent=2)+'\n')
@@ -33,7 +40,7 @@ def run(case,name,output):
         PATH=str(Path(environment.get('LANS_PYTHON','/workspace/lans-setup/venv/bin/python')).parent)+':'+environment['PATH'],OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',
         NUMBA_CACHE_DIR=str(ROOT/'.runtime/numba'),MPLCONFIGDIR=str(ROOT/'.runtime/mpl'))
     with (destination/'console.log').open('w') as log:
-        subprocess.run(['bash',str(ROOT/'run-research-webots.sh'),'--stdout','--stderr','--batch','--mode=fast','--no-rendering',str(world_path)],env=environment,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=240)
+        run_native(['bash',str(ROOT/'run-research-webots.sh'),'--stdout','--stderr','--batch','--mode=fast','--no-rendering',str(world_path)],env=environment,stdout=log,timeout=240)
     metrics=json.loads((destination/'metrics.json').read_text())
     print(name,metrics['survived'],metrics['rmse_m'],flush=True)
     return metrics

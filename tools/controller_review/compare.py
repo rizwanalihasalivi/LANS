@@ -10,6 +10,12 @@ from controllers.policy_bundle import PolicyBundle
 
 
 def run(method,seed,speed,delay_ticks,policy=None):
+    if method not in ('lqr', 'residual'):
+        raise ValueError('method must be lqr or residual')
+    if method == 'residual' and policy is None:
+        raise ValueError('residual comparison requires an actual policy')
+    if not isinstance(delay_ticks, (int, np.integer)) or delay_ticks < 0:
+        raise ValueError('delay_ticks must be a nonnegative integer')
     env=PathTrackingEnv(mode='eval',vx=speed)
     obs,_=env.reset(seed=seed,options={'lateral_error':.15,'heading_error':.01})
     pending=None;packet=None;errors=[]; rows=[]
@@ -35,7 +41,7 @@ def run(method,seed,speed,delay_ticks,policy=None):
             break
     # Same fixed 10 s horizon across paired methods, including failure tails.
     return dict(method=method,seed=seed,speed=speed,delay_ms=delay_ticks*10,survived=not terminated,
-                steps=len(errors),penalized_rmse=float(np.sqrt((sum(e*e for e in errors)+(1000-len(errors))*6.25)/1000))),rows
+                steps=len(errors),scheduled_steps=1000,rmse=float(np.sqrt(np.mean(np.square(errors)))),penalized_rmse=float(np.sqrt((sum(e*e for e in errors)+(1000-len(errors))*6.25)/1000))),rows
 
 
 def main():

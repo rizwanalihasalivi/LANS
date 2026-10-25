@@ -5,15 +5,18 @@ HERE=Path(__file__).resolve().parent;ROOT=HERE.parent.parent
 
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--run',type=Path,required=True);a=parser.parse_args();out=a.run
- done=json.loads((out/'complete.json').read_text());p=done['protocol'];rows=list(csv.DictReader((out/'episodes.csv').open()))
+ done=json.loads((out/'complete.json').read_text())
+ if done.get('submission_semantics')!='fresh-query-only-v1':
+  raise ValueError('Historical run uses re-stamped held proposals; preserve it and run corrected diagnostics into a new directory.')
+ p=done['protocol'];rows=list(csv.DictReader((out/'episodes.csv').open()))
  expected=set(itertools.product(map(str,p['repetitions']),p['scenarios'],p['methods']))
  keys=[(r['repetition'],r['scenario'],r['method']) for r in rows]
  assert len(rows)==72==done['episodes'] and len(set(keys))==72 and set(keys)==expected
  for rep in ['0','1']:
   base=next(float(r['penalized_rmse']) for r in rows if r['repetition']==rep and r['scenario']=='latency100' and r['method']=='lqr')
   assert all(float(r['penalized_rmse'])==base and float(r['active_fraction'])==0 for r in rows if r['repetition']==rep and r['scenario']=='latency100')
- text=['# Longer-preview / action-sequence development diagnostic','','Frozen design: `dcf203c`. Seventy-two new closed-loop episodes: one known DLC path at25m/s, six conditions, two paired development noise repetitions, six methods. No training, gate/actuator changes or final-test reuse.','',
-       'All proposal policies are queried at most every50ms when the simulated worker accepts a request; held proposals are submitted between queries. This differs from the original revision8 teacher/student call cadence. The current student is remeasured here, not copied from its final evaluation. Teacher has privileged current state/parameters and known future geometry, but forecasts do not use actual future measurement noise.','',
+ text=['# Longer-preview / action-sequence development diagnostic','',f"Corrected executable freeze: `{done['source_commit']}`. Seventy-two new closed-loop episodes: one known DLC path at25m/s, six conditions, two paired development noise repetitions, six methods. No training, gate/actuator changes or final-test reuse.",'',
+       'All proposal policies are queried at most every50ms when the simulated worker accepts a request; between queries existing packets retain their original observation timestamp. Prediction branches use the same50ms submission cadence. This differs from the original revision8 teacher/student call cadence. The current student is remeasured here, not copied from its final evaluation. Teacher has privileged current state/parameters and known future geometry, but forecasts do not use actual future measurement noise.','',
        '| Method | Survival /12 | Mean penalized RMSE (m) | Reduction vs paired LQR |','|---|---:|---:|---:|']
  means={m:statistics.mean(float(r['penalized_rmse']) for r in rows if r['method']==m) for m in p['methods']}
  for m in p['methods']:

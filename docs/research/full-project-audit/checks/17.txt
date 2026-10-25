@@ -1,0 +1,9 @@
+test_expected_cost_matches_independent_forecasts_not_actual_future (__main__.TeacherContracts) ... ok
+test_features_match_original_actor_history_without_true_hidden_inputs (__main__.TeacherContracts) ... ok
+test_splits_and_teacher_forecast_streams_are_separate (__main__.TeacherContracts) ... ok
+test_student_accepts_observed_vector_only (__main__.TeacherContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 11.436s
+
+OK

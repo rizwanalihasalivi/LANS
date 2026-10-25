@@ -1,0 +1,154 @@
+{
+  "suites": 21,
+  "test_count": 92,
+  "passed": true,
+  "results": [
+    {
+      "path": "tests/test_controller_remediation.py",
+      "exit_code": 0,
+      "tests": 6,
+      "wall_s": 3.148937940597534,
+      "log": "00.txt"
+    },
+    {
+      "path": "tests/test_aris_remediation.py",
+      "exit_code": 0,
+      "tests": 7,
+      "wall_s": 0.16089391708374023,
+      "log": "01.txt"
+    },
+    {
+      "path": "tests/test_full_audit_root.py",
+      "exit_code": 0,
+      "tests": 7,
+      "wall_s": 3.1794416904449463,
+      "log": "02.txt"
+    },
+    {
+      "path": "integrations/webots/test_adapter.py",
+      "exit_code": 0,
+      "tests": 4,
+      "wall_s": 0.03321123123168945,
+      "log": "03.txt"
+    },
+    {
+      "path": "integrations/webots/research/test-research.py",
+      "exit_code": 0,
+      "tests": 5,
+      "wall_s": 0.91874098777771,
+      "log": "04.txt"
+    },
+    {
+      "path": "integrations/webots/research/test-native-boundaries.py",
+      "exit_code": 0,
+      "tests": 7,
+      "wall_s": 0.9779396057128906,
+      "log": "05.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision2/test_gate.py",
+      "exit_code": 0,
+      "tests": 6,
+      "wall_s": 1.319429636001587,
+      "log": "06.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision3/test_range.py",
+      "exit_code": 0,
+      "tests": 4,
+      "wall_s": 1.557941198348999,
+      "log": "07.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision4/test_contracts.py",
+      "exit_code": 0,
+      "tests": 5,
+      "wall_s": 3.577129602432251,
+      "log": "08.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision4/test_screening.py",
+      "exit_code": 0,
+      "tests": 4,
+      "wall_s": 2.0897326469421387,
+      "log": "09.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision5/test_execution.py",
+      "exit_code": 0,
+      "tests": 3,
+      "wall_s": 1.8141398429870605,
+      "log": "10.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision5/test_evaluation.py",
+      "exit_code": 0,
+      "tests": 2,
+      "wall_s": 2.387894868850708,
+      "log": "11.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision5/test_robust_gate.py",
+      "exit_code": 0,
+      "tests": 3,
+      "wall_s": 2.295405387878418,
+      "log": "12.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision6/test_training.py",
+      "exit_code": 0,
+      "tests": 2,
+      "wall_s": 0.5320534706115723,
+      "log": "13.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision6/test_evaluation.py",
+      "exit_code": 0,
+      "tests": 3,
+      "wall_s": 4.948620319366455,
+      "log": "14.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision7/test_oracle.py",
+      "exit_code": 0,
+      "tests": 6,
+      "wall_s": 36.22572898864746,
+      "log": "15.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision7/test_submission.py",
+      "exit_code": 0,
+      "tests": 3,
+      "wall_s": 0.48772644996643066,
+      "log": "16.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision8/test_step2.py",
+      "exit_code": 0,
+      "tests": 4,
+      "wall_s": 12.118985414505005,
+      "log": "17.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision9/test_step3.py",
+      "exit_code": 0,
+      "tests": 6,
+      "wall_s": 4.740044116973877,
+      "log": "18.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision10/test_diagnostic.py",
+      "exit_code": 0,
+      "tests": 3,
+      "wall_s": 4.39595890045166,
+      "log": "19.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision11/test_attribution.py",
+      "exit_code": 0,
+      "tests": 2,
+      "wall_s": 1.7311162948608398,
+      "log": "20.txt"
+    }
+  ]
+}

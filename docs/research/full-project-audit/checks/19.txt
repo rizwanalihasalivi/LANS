@@ -1,0 +1,8 @@
+test_hold20_selection_uses_corrected_cost_and_does_not_mutate (__main__.Contracts) ... ok
+test_second_action_irrelevant_for20_and_equal_hold_symmetry (__main__.Contracts) ... ok
+test_severe_delay_equal_lqr (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.967s
+
+OK

@@ -1,0 +1,12 @@
+test_auxiliary_retirement_is_explicit (__main__.EvidenceContracts) ... ok
+test_incomplete_output_preserves_original_without_guessing (__main__.EvidenceContracts) ... ok
+test_missing_duplicates_and_wrong_penalties_rejected (__main__.EvidenceContracts) ... ok
+test_one_seed_has_no_invented_sd (__main__.EvidenceContracts) ... ok
+test_plot_error_state_is_not_absolute_position (__main__.EvidenceContracts) ... ok
+test_raw_failure_tails_and_seed_statistics (__main__.EvidenceContracts) ... ok
+test_retired_reporting_does_not_generate_results (__main__.EvidenceContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.067s
+
+OK

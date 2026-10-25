@@ -2,8 +2,10 @@
 import argparse,concurrent.futures,hashlib,json,os,subprocess,sys,time
 from pathlib import Path
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1]
+sys.path.insert(0,str(ROOT/'research'))
+from native_process import run_native
 sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
-SOURCES=['research/core.py','research/protocol.json','research/comparison.py','research/comparison-protocol.json','research/tracking.py','research/tracking-protocol.json','research/worker.py','research/calibration.json','research/revision2/gating.py','controllers/gated_validation/gated_validation.py','controllers/range_matched_validation/range_matched_validation.py','worlds/research_validation.wbt','run-gated-webots.sh','research/revision3/native_smoke.py','research/revision3/mapping.py','research/revision3/protocol.json','results/revision2-development/freeze.json']
+SOURCES=['research/core.py','research/protocol.json','research/comparison.py','research/comparison-protocol.json','research/tracking.py','research/tracking-protocol.json','research/native_process.py','research/worker.py','research/calibration.json','research/revision2/gating.py','controllers/gated_validation/gated_validation.py','controllers/range_matched_validation/range_matched_validation.py','worlds/research_validation.wbt','run-gated-webots.sh','research/revision3/native_smoke.py','research/revision3/mapping.py','research/revision3/protocol.json','results/revision2-development/freeze.json']
 def run(case,name,output,source_hashes):
     destination=output/name;destination.mkdir()
     project=ROOT/'.runtime/range-matched-cases'/hashlib.sha256(str(destination).encode()).hexdigest()[:20]
@@ -26,7 +28,7 @@ def run(case,name,output,source_hashes):
                OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',NUMBA_CACHE_DIR=str(ROOT/'.runtime/numba'),MPLCONFIGDIR=str(ROOT/'.runtime/mpl'))
     started=time.time()
     with (destination/'console.log').open('w') as log:
-        subprocess.run(['bash',str(ROOT/'run-gated-webots.sh'),'--stdout','--stderr','--batch','--mode=fast','--no-rendering',str(world_path)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=360)
+        run_native(['bash',str(ROOT/'run-gated-webots.sh'),'--stdout','--stderr','--batch','--mode=fast','--no-rendering',str(world_path)],env=env,stdout=log,timeout=360)
     metrics=json.loads((destination/'metrics.json').read_text())
     assert metrics['case']==case
     provenance=dict(started_unix_s=started,elapsed_wall_s=time.time()-started,python=python,source_sha256=source_hashes,

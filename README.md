@@ -6,6 +6,8 @@ The [controller review](docs/research/controller-review/README.md) identifies co
 
 The subsequent [ARIS audit remediation](docs/research/aris-remediation.md) retires unsupported result generators, fixes plotting, adds raw-data reporting and execution-aware evaluation, and records the remaining original-archive blocker.
 
+The [full project audit and corrections](docs/research/full-project-audit/README.md) records 92 passing contract tests, corrected slow-query timestamps, verified raw metrics and remaining evidence limits behind the roughly 2% student gain.
+
 ## Current evidence and entry points
 
 - [Specification](docs/research/specification-v0.1.md): research requirements; unchanged by remediation.

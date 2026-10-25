@@ -18,8 +18,10 @@ def summarize(path):
                               'penalized_rmse_m') if k in fields), None)
     if metric is None or not {'seed', 'method', 'survived'} <= fields.keys():
         raise ValueError('require seed, method, survived and a failure-penalized RMSE column')
-    conditions = [k for k in ('seed', 'noise_seed', 'speed', 'speed_m_s', 'path',
+    conditions = [k for k in ('seed', 'noise_seed', 'noise_id', 'speed', 'speed_m_s', 'path',
                               'scenario', 'delay_ms', 'service_ticks', 'randomize', 'config_index') if k in fields]
+    if 'scheduled_steps' in fields and ('steps' not in fields or not ({'rmse', 'rmse_m'} & fields.keys())):
+        raise ValueError('scheduled horizon requires executed steps and raw RMSE for penalty validation')
     paired = defaultdict(set)
     groups = defaultdict(list)
     for row in rows:

@@ -1,0 +1,38 @@
+[
+  {
+    "command": "integrations/webots/research/revision7/test_submission.py",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_default_preserves_every_available_tick (__main__.SubmissionContracts) ... ok\ntest_pending_packet_delivers_without_a_new_query (__main__.SubmissionContracts) ... ok\ntest_query_cadence_preserves_timestamp_and_matches_original_object (__main__.SubmissionContracts) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.167s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision10/test_diagnostic.py",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_hold20_selection_uses_corrected_cost_and_does_not_mutate (__main__.Contracts) ... ok\ntest_second_action_irrelevant_for20_and_equal_hold_symmetry (__main__.Contracts) ... ok\ntest_severe_delay_equal_lqr (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 32.941s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision11/test_attribution.py",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_branch_nonmutation_python_parity_and_future_window (__main__.Contracts) ... ok\ntest_identical_control_costs (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 12.443s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision5/test_execution.py",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_delayed_packet_identity_and_fallback (__main__.Contracts) ... ok\ntest_reward_accounting_state_and_reproducibility (__main__.Contracts) ... ok\ntest_same_gate_fusion_recovery (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 4.348s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision5/test_evaluation.py",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_legacy_observation_and_nonfinite_actions_rejected (__main__.EvaluationContracts) ... ok\ntest_training_and_evaluation_transitions_match_at_all_delays (__main__.EvaluationContracts) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 2.134s\n\nOK\n"
+  },
+  {
+    "command": "integrations/webots/research/revision2/test_gate.py",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_accepted_actual_command_improves_prediction (__main__.Contracts) ... ok\ntest_envelope (__main__.Contracts) ... ok\ntest_equal_candidate_never_earns (__main__.Contracts) ... ok\ntest_invalid_packet_immediate_fallback (__main__.Contracts) ... ok\ntest_nominal_plant_parity (__main__.Contracts) ... ok\ntest_sequence_regression (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 1.036s\n\nOK\n"
+  }
+]

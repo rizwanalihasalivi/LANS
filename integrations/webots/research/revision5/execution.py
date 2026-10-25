@@ -35,12 +35,12 @@ class Execution:
             pending[1][2]/.08 if pending else 0.,max(0,pending[0]-t)/.1 if pending else 0.,
             (t-pending[1][1])/.1 if pending else 0.,float(pending is not None),self.last_command/.5],dtype=np.float32)
 
-    def step(self,t,proposed,service_ticks,baseline,estimate,actuator,speed,curvature,gain):
+    def step(self,t,proposed,service_ticks,baseline,estimate,actuator,speed,curvature,gain,submit_request=True):
         if not np.isfinite(proposed):raise ValueError('finite residual required')
         if service_ticks not in (0,1,2,10):raise ValueError('unsupported service-delay ticks')
         if self.pending and self.pending[0]<=t+1e-9:
             self.packet=self.pending[1];self.pending=None
-        submitted=self.pending is None
+        submitted=self.pending is None and submit_request
         if submitted:
             self.sequence+=1;packet=(self.sequence,t,float(np.clip(proposed,-.08,.08)))
             if service_ticks==0:self.packet=packet

@@ -1,0 +1,50 @@
+[
+  {
+    "region": "nominal",
+    "behavior": "lqr",
+    "sampled_candidate_states": 440,
+    "accepted": 58,
+    "harmful_accepted_combined": 24,
+    "harmful_accepted_lateral": 20,
+    "cost_rejected": 374,
+    "helpful_cost_rejected_combined": 21,
+    "helpful_cost_rejected_lateral": 40,
+    "helpful_safety_withheld_lateral": 8
+  },
+  {
+    "region": "nominal",
+    "behavior": "student",
+    "sampled_candidate_states": 440,
+    "accepted": 34,
+    "harmful_accepted_combined": 17,
+    "harmful_accepted_lateral": 13,
+    "cost_rejected": 394,
+    "helpful_cost_rejected_combined": 32,
+    "helpful_cost_rejected_lateral": 61,
+    "helpful_safety_withheld_lateral": 6
+  },
+  {
+    "region": "tire_mismatch",
+    "behavior": "lqr",
+    "sampled_candidate_states": 440,
+    "accepted": 49,
+    "harmful_accepted_combined": 17,
+    "harmful_accepted_lateral": 13,
+    "cost_rejected": 377,
+    "helpful_cost_rejected_combined": 17,
+    "helpful_cost_rejected_lateral": 26,
+    "helpful_safety_withheld_lateral": 7
+  },
+  {
+    "region": "tire_mismatch",
+    "behavior": "student",
+    "sampled_candidate_states": 440,
+    "accepted": 32,
+    "harmful_accepted_combined": 12,
+    "harmful_accepted_lateral": 11,
+    "cost_rejected": 388,
+    "helpful_cost_rejected_combined": 24,
+    "helpful_cost_rejected_lateral": 26,
+    "helpful_safety_withheld_lateral": 13
+  }
+]

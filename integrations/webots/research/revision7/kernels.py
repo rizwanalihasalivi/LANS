@@ -90,12 +90,15 @@ def gate(executor,t,baseline,estimate,actuator,speed,curvature,gain):
 
 
 @njit(cache=True)
-def execution_step(executor,t,proposal,service,baseline,estimate,actuator,speed,curvature,gain,bypass):
+def execution_step(executor,t,proposal,service,baseline,estimate,actuator,speed,curvature,gain,bypass,submit_request=True):
     # 6:pending_ready,7:pending_seq,8:pending_observed,9:pending_residual,
     # 10:sequence,11:last_command. Missing packet/pending has sequence -1.
     if executor[7]>=0 and executor[6]<=t+1e-9:
         executor[3]=executor[7];executor[4]=executor[8];executor[5]=executor[9];executor[7]=-1.
-    submitted=executor[7]<0
+    # Delivery/holding continues between policy queries; only a newly computed
+    # proposal may acquire the current observation timestamp. Default preserves
+    # the every-available-tick interface used by revisions7–9.
+    submitted=executor[7]<0 and submit_request
     if submitted:
         executor[10]+=1
         if service==0:

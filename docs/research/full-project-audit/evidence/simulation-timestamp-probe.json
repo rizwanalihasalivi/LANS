@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "historical_resubmit",
+    "service_ms": 0,
+    "time_s": 0.04,
+    "packet_observed_s": 0.04,
+    "reported_age_s": 0.0,
+    "true_proposal_observed_s": 0.0,
+    "true_proposal_age_s": 0.04,
+    "requests": 5
+  },
+  {
+    "mode": "fresh_query_only",
+    "service_ms": 0,
+    "time_s": 0.04,
+    "packet_observed_s": 0.0,
+    "reported_age_s": 0.04,
+    "true_proposal_observed_s": 0.0,
+    "true_proposal_age_s": 0.04,
+    "requests": 1
+  },
+  {
+    "mode": "historical_resubmit",
+    "service_ms": 20,
+    "time_s": 0.04,
+    "packet_observed_s": 0.02,
+    "reported_age_s": 0.02,
+    "true_proposal_observed_s": 0.0,
+    "true_proposal_age_s": 0.04,
+    "requests": 3
+  },
+  {
+    "mode": "fresh_query_only",
+    "service_ms": 20,
+    "time_s": 0.04,
+    "packet_observed_s": 0.0,
+    "reported_age_s": 0.04,
+    "true_proposal_observed_s": 0.0,
+    "true_proposal_age_s": 0.04,
+    "requests": 1
+  }
+]

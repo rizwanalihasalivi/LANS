@@ -32,6 +32,9 @@ class PathTrackingEnv(gym.Env):
             raise ValueError('speed must be positive')
         self.vx = float(value)
         self.K_lqr, self.lqr_control = get_lqr_controller(self.vx, self.params)
+        # Refresh speed-dependent error rates if changing speed mid-episode.
+        if hasattr(self, 'physical'):
+            self._refresh()
         # Physical paths are stored against distance, never reindexed by new speed.
 
     @property

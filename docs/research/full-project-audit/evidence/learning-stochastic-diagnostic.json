@@ -1,0 +1,29 @@
+[
+  {
+    "student_seed": 701,
+    "observations": 24300,
+    "argmax_teacher_regret": 0.013348956623680604,
+    "sampled_expected_teacher_regret": 0.01588152122041145,
+    "probability_of_non_argmax_action": 0.11707644164562225,
+    "sampled_nonzero_fraction": 0.38641592860221863,
+    "argmax_nonzero_fraction": 0.38814814814814813
+  },
+  {
+    "student_seed": 802,
+    "observations": 24300,
+    "argmax_teacher_regret": 0.01296314074575791,
+    "sampled_expected_teacher_regret": 0.015677793602441988,
+    "probability_of_non_argmax_action": 0.12082285434007645,
+    "sampled_nonzero_fraction": 0.3855192959308624,
+    "argmax_nonzero_fraction": 0.38921810699588477
+  },
+  {
+    "student_seed": 903,
+    "observations": 24300,
+    "argmax_teacher_regret": 0.013296547875998188,
+    "sampled_expected_teacher_regret": 0.01615860443950135,
+    "probability_of_non_argmax_action": 0.12109267711639404,
+    "sampled_nonzero_fraction": 0.37275230884552,
+    "argmax_nonzero_fraction": 0.378559670781893
+  }
+]

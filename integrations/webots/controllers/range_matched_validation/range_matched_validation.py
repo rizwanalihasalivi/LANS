@@ -14,8 +14,12 @@ class RangeWorker(PolicyWorker):
         assert meta['training_profile']=='range_matched_residual_v3' and meta['residual_scale_rad']==.08 and meta['steps']==1000000
         assert hashlib.sha256(path.read_bytes()).hexdigest()==meta['policy_sha256']
         super().__init__(model_path,delay_s)
-        case=json.loads(Path(os.environ['LANS_CASE_CONFIG']).read_text())
-        self.mapping_log=(Path(case['output'])/'residual-packets.csv').open('w',newline='',buffering=1)
+        try:
+            case=json.loads(Path(os.environ['LANS_CASE_CONFIG']).read_text())
+            self.mapping_log=(Path(case['output'])/'residual-packets.csv').open('w',newline='',buffering=1)
+        except BaseException:
+            super().close()
+            raise
         self.writer=csv.writer(self.mapping_log,lineterminator='\n');self.writer.writerow(['sequence','observation_time_s','availability_time_s','legacy_encoded_rad','mapped_residual_rad'])
     def poll(self,t_sim):
         raw=super().poll(t_sim);mapped=map_worker_packet(raw)
@@ -24,7 +28,8 @@ class RangeWorker(PolicyWorker):
             self.writer.writerow([mapped['sequence'],mapped['t_observation_s'],mapped['t_available_sim_s'],raw['angle_rad'],mapped['angle_rad']])
         return mapped
     def close(self):
-        super().close();self.mapping_log.close()
+        try:super().close()
+        finally:self.mapping_log.close()
 
 controller.PolicyWorker=RangeWorker
 if __name__=='__main__':

@@ -1,0 +1,35 @@
+{
+  "checkpoint_metadata_checks": 32,
+  "source_differences": [
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-0/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-1/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-2/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-3/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-4/complete.json",
+      "source": "train-v2.py"
+    }
+  ],
+  "supplement_missing": [
+    "REFERENCE_AUDIT.csv",
+    "REFERENCE_AUDIT.md",
+    "REVIEWER_EVIDENCE_STATUS.csv",
+    "REVISION_STATUS.md",
+    "references.json",
+    "revision_analysis_source.py",
+    "rewrite_complete.py",
+    "verify_equations.py"
+  ]
+}

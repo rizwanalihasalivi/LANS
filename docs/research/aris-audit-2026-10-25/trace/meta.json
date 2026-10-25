@@ -1,0 +1,50 @@
+{
+  "skill": [
+    "ARIS research-review",
+    "ARIS experiment-audit"
+  ],
+  "aris_commit": "23745b69a14880b5716d1773e5d20f5f1e6ab1d6",
+  "reviewed_commit": "966e034a2868ce122855d86417ecbe67ec1b1120",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_effort": "ultra",
+  "reported_reviewer_model": null,
+  "reviewer_identity_source": "requested; tool did not return model identity",
+  "agent_id": "/root/aris_audit_completion",
+  "cwd": "/workspace/LANS",
+  "backend": "codex",
+  "tool": "collaboration.spawn_agent",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "completed",
+  "started_at": "2026-10-24T10:07:06.282687+00:00",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "error",
+      "reason": "usage_limit",
+      "review_completed": false
+    },
+    {
+      "attempt": 2,
+      "status": "error",
+      "resumed_at": "2026-10-24T15:04:55.354563+00:00",
+      "reason": "usage_limit",
+      "review_completed": false
+    },
+    {
+      "attempt": 3,
+      "status": "completed",
+      "agent_id": "/root/aris_audit_completion",
+      "started_at": "2026-10-24T20:34:38.496320+00:00",
+      "user_date": "2026-10-25"
+    }
+  ],
+  "review_completed": true,
+  "review_scope_complete": false,
+  "review_scope_note": "Substantive report and explicit coverage delivered; exhaustive semantic review of every file/binary is not claimed.",
+  "verdict": "FAIL",
+  "current_research_verdict": "WARN",
+  "completed_at": "2026-10-25T05:40:30.062243+00:00",
+  "user_date": "2026-10-25",
+  "review_positive": false
+}

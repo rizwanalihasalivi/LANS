@@ -1,0 +1,1 @@
+Fresh reviewer turn failed: usage limit. No substantive review response or verdict was returned. Retry authorized by user request to continue.

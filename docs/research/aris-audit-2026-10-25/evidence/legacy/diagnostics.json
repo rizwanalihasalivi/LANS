@@ -1,0 +1,75 @@
+{
+  "envs.bicycle_env": "ModuleNotFoundError: No module named 'path_utils'",
+  "envs.lqr_env": "ModuleNotFoundError: No module named 'integrators'",
+  "jitter_json": "Expecting value: line 7 column 15 (char 152)",
+  "missing_claim_inputs": {
+    "/workspace/LANS/results/optimized/victory_config.json": false,
+    "/workspace/LANS/lqr_run_results.npz": false
+  },
+  "model": {
+    "steps": 1000,
+    "seed": 101,
+    "obs_rms_count": 1001.0001,
+    "normalizer_frozen": true
+  },
+  "stored_root": {
+    "episodes": 36,
+    "trace_rows": 36000,
+    "survived": 36,
+    "max_recomputed_rmse_diff": 0.0,
+    "max_geometry_identity_diff": 0.0
+  },
+  "fresh_runs": [
+    {
+      "method": "lqr",
+      "seed": 101,
+      "speed": 25,
+      "delay_ms": 0,
+      "survived": true,
+      "steps": 1000,
+      "penalized_rmse": 0.03705556237141634,
+      "stored_difference": 6.938893903907228e-18
+    },
+    {
+      "method": "residual",
+      "seed": 101,
+      "speed": 25,
+      "delay_ms": 0,
+      "survived": true,
+      "steps": 1000,
+      "penalized_rmse": 0.03980754404652667,
+      "stored_difference": 1.5710953371605996e-11
+    },
+    {
+      "method": "residual",
+      "seed": 101,
+      "speed": 25,
+      "delay_ms": 20,
+      "survived": true,
+      "steps": 1000,
+      "penalized_rmse": 0.03968127065467442,
+      "stored_difference": -9.457302996285222e-12
+    },
+    {
+      "method": "residual",
+      "seed": 101,
+      "speed": 25,
+      "delay_ms": 100,
+      "survived": true,
+      "steps": 1000,
+      "penalized_rmse": 0.03705556237141634,
+      "stored_difference": 6.938893903907228e-18
+    }
+  ],
+  "deployment_parity": {
+    "steps": 1000,
+    "max_obs_diff": 0.0,
+    "max_command_diff": 6.106226635438361e-16
+  },
+  "visualizer_reference": "TypeError: double_lane_change() got an unexpected keyword argument 'vx'",
+  "existing_contract_tests": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "2026-10-24 15:07:49.322412: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT\ntest_curved_reference_does_not_move_zero_steering_vehicle (__main__.Contracts) ... ok\ntest_effective_learning_rate (__main__.Contracts) ... ok\ntest_missing_policy_fails (__main__.Contracts) ... ok\ntest_residual_fused_exactly_once (__main__.Contracts) ... ok\ntest_speed_seed_and_preview (__main__.Contracts) ... ok\ntest_zoh_integrator (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.040s\n\nOK\n"
+  }
+}

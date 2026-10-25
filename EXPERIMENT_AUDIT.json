@@ -1,0 +1,66 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "reviewed_commit": "966e034a2868ce122855d86417ecbe67ec1b1120",
+  "overall_verdict": "FAIL",
+  "integrity_status": "fail",
+  "current_research_verdict": "WARN",
+  "reason_code": "unsupported_repository_wide_result_claims",
+  "summary": "Current checked research comparisons are internally consistent but limited; unsupported executable root tables and incomplete historical artifacts prevent unrestricted repository-wide evidence acceptance.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "agent_id": "/root/aris_audit_completion",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning": "ultra",
+  "reported_reviewer_model": null,
+  "review_completed": true,
+  "exhaustive_semantic_review": false,
+  "report": "EXPERIMENT_AUDIT.md",
+  "raw_response": "docs/research/aris-audit-2026-10-25/reviewer-report.md",
+  "coverage": "docs/research/aris-audit-2026-10-25/coverage.md",
+  "trace_path": "docs/research/aris-audit-2026-10-25/trace",
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS",
+      "scope": "inspected active paths"
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "scope": "inspected active metrics"
+    },
+    "result_existence": {
+      "status": "FAIL",
+      "scope": "repository-wide; checked current comparison numbers pass with provenance caveats"
+    },
+    "dead_code": {
+      "status": "WARN"
+    },
+    "scope": {
+      "status": "WARN"
+    },
+    "eval_type": "simulation_only; separate empirical computer timing"
+  },
+  "counts": {
+    "tracked_paths": 5200,
+    "unique_python_contents": 111,
+    "recorded_episode_rows_checked": 4236,
+    "penalized_scores_recomputed": 3966,
+    "native_metric_pairs": 350,
+    "checkpoint_metadata_records": 32
+  },
+  "claims": [
+    {
+      "claim": "Small conditional gated residual gains",
+      "impact": "supported_with_qualifiers"
+    },
+    {
+      "claim": "General PPO superiority or safety",
+      "impact": "unsupported"
+    },
+    {
+      "claim": "New training recipe ready for full campaign",
+      "impact": "not_established"
+    }
+  ]
+}

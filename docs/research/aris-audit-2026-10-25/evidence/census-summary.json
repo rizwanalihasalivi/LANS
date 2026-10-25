@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "files": 5200,
+    "python_files": 981,
+    "csv_files": 764,
+    "csv_rows": 669885,
+    "json_files": 2057,
+    "logs": 738,
+    "archive_files": 39,
+    "unique_python_contents": 111,
+    "native_metrics_recomputed": 350
+  },
+  "parse_errors": [
+    {
+      "path": "jitter_test_results.json",
+      "error": "Expecting value: line 7 column 15 (char 152)"
+    }
+  ],
+  "native_metric_mismatches": []
+}

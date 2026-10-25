@@ -1,0 +1,12 @@
+test_closed_worker_and_nonfinite_sim_time (__main__.NativeBoundaries) ... ok
+test_held_packet_counted_once_for_inference_timing (__main__.NativeBoundaries) ... ok
+test_invalid_delay_rejected_before_spawn (__main__.NativeBoundaries) ... ok
+test_native_metrics_recomputed_from_raw_evidence (__main__.NativeBoundaries) ... ok
+test_same_case_name_in_distinct_outputs_has_distinct_worlds (__main__.NativeBoundaries) ... ok
+test_startup_errors_clean_up_process_and_queues (__main__.NativeBoundaries) ... ok
+test_timeout_terminates_launcher_descendants (__main__.NativeBoundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.598s
+
+OK

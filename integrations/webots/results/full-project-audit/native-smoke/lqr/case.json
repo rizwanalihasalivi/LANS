@@ -1,0 +1,21 @@
+{
+  "mu": 0.9,
+  "contact_scale": 1.0,
+  "noise": 1,
+  "sensor_delay_steps": 0,
+  "delay_ms": 0,
+  "mode": "lqr",
+  "speed": 20,
+  "path": "dlc220",
+  "seed": 880501,
+  "policy_seed": 0,
+  "scenario": "nominal",
+  "duration": 3.0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "output": "/tmp/lans-native-audit-smoke/lqr",
+  "front_slip": 0.0010600000000000002,
+  "rear_slip": 0.000925
+}

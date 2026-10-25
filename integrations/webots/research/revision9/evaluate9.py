@@ -91,6 +91,24 @@ def metrics(rows):
 
 
 def select(rows):
+    # Selection is also a public raw-data entry point: validate its own paired
+    # development grid instead of relying on a particular caller's assertions.
+    key=lambda r:(int(r['pair']),int(r['speed']),r['path'],r['scenario'],r['method'])
+    expected=set(itertools.product(range(3),G['speeds'],G['paths'],G['scenarios'],DEV_METHODS))
+    keys=[key(r) for r in rows]
+    if len(keys)!=len(set(keys)) or set(keys)!=expected:
+        raise ValueError('complete unique paired development grid required')
+    lookup=dict(zip(keys,rows))
+    for r in rows:
+        score=float(r['penalized_rmse']);active=float(r['active_fraction'])
+        if not np.isfinite([score,active]).all() or score<0 or not 0<=active<=1:
+            raise ValueError('finite nonnegative score and valid active fraction required')
+        if str(r['survived']) not in ('True','False','true','false'):
+            raise ValueError('explicit boolean survival required')
+        expected_noise=P['splits']['dev']+int(r['pair'])*10000+int(r['speed'])*100+list(G['paths']).index(r['path'])*10+list(G['scenarios']).index(r['scenario'])
+        if int(r['noise_id'])!=expected_noise:
+            raise ValueError('development split noise identity mismatch')
+    rows=sorted(rows,key=lambda r:(int(r['pair']),G['speeds'].index(int(r['speed'])),list(G['paths']).index(r['path']),list(G['scenarios']).index(r['scenario']),DEV_METHODS.index(r['method'])))
     selected={}
     for pair in range(3):
         subset=[r for r in rows if int(r['pair'])==pair]
@@ -103,14 +121,21 @@ def select(rows):
                     if a['survived']<b['survived']:reasons.append(f'{region}: survival')
                     limit=1.02 if region=='nominal' else 1.01
                     if region!='latency100' and a['rmse']>limit*b['rmse']:reasons.append(f'{region}: RMSE')
+                    if region=='latency100':
+                        for r in current:
+                            if r['scenario']!=region:continue
+                            base=lookup[key(r)[:-1]+('lqr',)]
+                            if float(r['penalized_rmse'])!=float(base['penalized_rmse']) or float(r['active_fraction'])!=0:
+                                reasons.append('latency100: exact fallback');break
                 candidates.append(dict(steps=step,eligible=not reasons,reasons=reasons,**metrics(current)))
             eligible=[x for x in candidates if x['eligible']]
             chosen=min(eligible or candidates,key=lambda x:(x['rmse'],x['steps']))
             selected[f'{arm}-{P["rl_seeds"][pair]}']=dict(chosen,candidates=candidates)
-        student=[r for r in subset if r['method']=='student'];initial=[r for r in subset if r['method']=='finetune_0']
-        for a,b in zip(student,initial):
-            assert (a['speed'],a['path'],a['scenario'])==(b['speed'],b['path'],b['scenario'])
-            assert abs(float(a['penalized_rmse'])-float(b['penalized_rmse']))<1e-12
+        for r in subset:
+            if r['method']!='student':continue
+            initial=lookup[key(r)[:-1]+('finetune_0',)]
+            if abs(float(r['penalized_rmse'])-float(initial['penalized_rmse']))>=1e-12 or str(r['survived']).lower()!=str(initial['survived']).lower():
+                raise ValueError('finetune step0 must reproduce paired frozen student')
     return selected
 
 

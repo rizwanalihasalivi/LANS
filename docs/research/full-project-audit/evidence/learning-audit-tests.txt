@@ -1,0 +1,37 @@
+test_action_map_reward_and_full_horizon_match_original (__main__.TransferContracts) ... ok
+test_exact_transfer_fresh_critic_optimizer_and_serialization (__main__.TransferContracts) ... /workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/ppo/ppo.py:148: UserWarning: You have specified a mini-batch size of 200, but because the `RolloutBuffer` is of size `n_steps * n_envs = 125`, after every 0 untruncated mini-batches, there will be a truncated mini-batch of size 125
+We recommend using a `batch_size` that is a factor of `n_steps * n_envs`.
+Info: (n_steps=125 and n_envs=1)
+  warnings.warn(
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpg82mrsp0/policy.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpg82mrsp0/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/ppo/ppo.py:148: UserWarning: You have specified a mini-batch size of 200, but because the `RolloutBuffer` is of size `n_steps * n_envs = 125`, after every 0 untruncated mini-batches, there will be a truncated mini-batch of size 125
+We recommend using a `batch_size` that is a factor of `n_steps * n_envs`.
+Info: (n_steps=125 and n_envs=1)
+  warnings.warn(
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpizt7cvk7/policy.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpizt7cvk7/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmp23rno6il/policy.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-setup/venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmp23rno6il/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_recorded_development_selection_is_unchanged (__main__.TransferContracts) ... ok
+test_selection_rejects_unpaired_split_and_stale_fallback (__main__.TransferContracts) ... ok
+test_selection_uses_eligibility_and_keeps_step_zero (__main__.TransferContracts) ... ok
+test_split_noise_disjoint_and_paired_resets (__main__.TransferContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.668s
+
+OK

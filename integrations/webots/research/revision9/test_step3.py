@@ -59,24 +59,57 @@ class TransferContracts(unittest.TestCase):
             x,ia=a.reset();y,ib=b.reset();np.testing.assert_array_equal(x,y);self.assertEqual(ia,ib)
             self.assertFalse(any(a.noise_id in old for old in sets))
 
-    def test_selection_uses_eligibility_and_keeps_step_zero(self):
-        from evaluate9 import select,G
+    def selection_rows(self):
+        from evaluate9 import G,DEV_METHODS
+        import itertools
         rows=[]
-        for pair in range(3):
-            for region in G['scenarios']:
-                for method in ['lqr','student']+[f'{arm}_{step}' for arm in P['arms'] for step in P['checkpoints']]:
-                    value=.1
-                    if method=='student' or method=='finetune_0':value=.098
-                    # Candidate25k has best global mean, but fails one region guard.
-                    if method.endswith('_25000'):value=.103 if region=='nominal' else .09
-                    if method.endswith('_50000'):value=.099
-                    if method.endswith('_100000'):value=.099
-                    rows.append(dict(pair=pair,speed=15,path='sine120',scenario=region,method=method,penalized_rmse=value,survived='True'))
-        chosen=select(rows)
+        for pair,speed,path,region,method in itertools.product(range(3),G['speeds'],G['paths'],G['scenarios'],DEV_METHODS):
+            value=.1
+            if method in ('student','finetune_0'):value=.098
+            if method.endswith('_25000'):value=.103 if region=='nominal' else .09
+            if method.endswith(('_50000','_100000')):value=.099
+            if region=='latency100':value=.1
+            noise=P['splits']['dev']+pair*10000+speed*100+list(G['paths']).index(path)*10+list(G['scenarios']).index(region)
+            rows.append(dict(pair=pair,speed=speed,path=path,scenario=region,method=method,
+                penalized_rmse=value,survived='True',active_fraction=0.,noise_id=noise))
+        return rows
+
+    def test_selection_uses_eligibility_and_keeps_step_zero(self):
+        from evaluate9 import select
+        rows=self.selection_rows();chosen=select(rows)
         for seed in P['rl_seeds']:
             self.assertEqual(chosen[f'finetune-{seed}']['steps'],0)
             self.assertEqual(chosen[f'scratch-{seed}']['steps'],50000)
             self.assertFalse(chosen[f'finetune-{seed}']['candidates'][1]['eligible'])
+        np.random.default_rng(9).shuffle(rows)
+        self.assertEqual(chosen,select(rows))
+
+    def test_recorded_development_selection_is_unchanged(self):
+        import csv
+        from evaluate9 import select
+        folder=RESEARCH.parent/'results/revision9-finetuning/dev'
+        with (folder/'episodes.csv').open() as f:rows=list(csv.DictReader(f))
+        expected=json.loads((folder/'selection.json').read_text())['selected']
+        self.assertEqual(select(rows),expected)
+
+    def test_selection_rejects_unpaired_split_and_stale_fallback(self):
+        from evaluate9 import select
+        rows=self.selection_rows()
+        with self.assertRaises(ValueError):select(rows[:-1])
+        with self.assertRaises(ValueError):select(rows+[rows[0]])
+        bad=copy.deepcopy(rows);bad[0]['noise_id']+=1
+        with self.assertRaises(ValueError):select(bad)
+        # A candidate with a false severe-delay gain was previously eligible.
+        bad=copy.deepcopy(rows)
+        for row in bad:
+            if row['method']=='scratch_50000' and row['scenario']=='latency100':
+                row['penalized_rmse']=.01;row['active_fraction']=.2
+        chosen=select(bad)
+        for seed in P['rl_seeds']:
+            candidate=chosen[f'scratch-{seed}']['candidates'][2]
+            self.assertFalse(candidate['eligible'])
+            self.assertIn('latency100: exact fallback',candidate['reasons'])
+            self.assertEqual(chosen[f'scratch-{seed}']['steps'],100000)
 
 
 if __name__=='__main__':unittest.main()

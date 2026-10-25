@@ -1,5 +1,7 @@
 # Small longer-preview / sequence diagnostic
 
+**Corrected replay is complete:** [current results](../../results/full-project-audit/revision10-corrected/report.md) report 72/72 survival and 0.471% mean gain for 400 ms hold/sequence, versus 0.430% for student on this narrow grid. The archived figures below are superseded.
+
 **Timestamp correction:** the archived run below re-submitted held proposals between50ms policy queries, incorrectly assigning a fresh observation timestamp. Corrected code submits only newly queried proposals and preserves packet age during holding/delivery; prediction branches use the same schedule. The archived numbers remain historical and must be reassessed using a new output directory. Revision7–9 every-available-tick interfaces keep their original default semantics.
 
 [Results](../../results/revision10-headroom/report.md). Protocol/executable freeze `dcf203c` before execution. New development noise base730000000; two repetitions,25m/s DLC220, six conditions, six methods (72 episodes). The current student, LQR/fixed references,200ms/400ms held teachers and400ms two-stage beam teacher share the actual gate, actuator, sensor and service-delay rules. All methods query new proposals at most every50ms; this differs from original revision8 inference cadence. Comparisons apply to this slice only.

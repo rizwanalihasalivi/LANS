@@ -1,0 +1,19 @@
+{
+  "tracked_files": 6421,
+  "python_files": 1293,
+  "unique_python_contents": 165,
+  "active_python_files": 176,
+  "json_files": 2218,
+  "json_errors": [],
+  "broken_relative_links": [],
+  "csv_census": {
+    "counts": {
+      "rows": 1117845,
+      "files": 1339
+    },
+    "csv_errors": [],
+    "bad_penalized_scores": []
+  },
+  "strict_json_errors": [],
+  "python_syntax_errors": []
+}

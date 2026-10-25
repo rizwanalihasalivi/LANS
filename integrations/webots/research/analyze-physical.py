@@ -7,6 +7,17 @@ from geometry import corridor_margin
 
 ROOT=Path(__file__).resolve().parents[1]
 
+def inference_durations(rows):
+    # Holding one packet for many control ticks must not count it as many inferences.
+    seen=set();durations=[]
+    for row in rows:
+        if not row['ppo_available']:continue
+        key=row.get('output_sequence',row['t_observation_s'])
+        if key not in seen:
+            seen.add(key);durations.append(row['inference_wall_s'])
+    return durations
+
+
 def audit(folder):
     metrics=json.loads((folder/'metrics.json').read_text());case=metrics['case']
     for path,digest in json.loads((folder/'inputs.json').read_text()).items():
@@ -16,7 +27,16 @@ def audit(folder):
         for row in csv.DictReader(stream):
             rows.append({k:(v if k=='supervisor_reason' else float(v)) for k,v in row.items()})
     assert len(rows)==metrics['steps'] and len(rows)>0
-    if metrics['survived']:assert len(rows)==round(case['duration']/.01)
+    scheduled=round(case['duration']/.01)
+    assert 0<len(rows)<=scheduled
+    if metrics['survived']:assert len(rows)==scheduled
+    rmse=math.sqrt(mean(row['error_m']**2 for row in rows))
+    maximum=max(abs(row['error_m']) for row in rows)
+    assert math.isclose(rmse,metrics['rmse_m'],rel_tol=1e-12,abs_tol=1e-12),'RMSE disagrees with telemetry'
+    assert math.isclose(maximum,metrics['max_abs_error_m'],rel_tol=1e-12,abs_tol=1e-12),'Maximum error disagrees with telemetry'
+    if 'penalized_rmse_m' in metrics:
+        score=math.sqrt((sum(row['error_m']**2 for row in rows)+(scheduled-len(rows))*6.25)/scheduled)
+        assert math.isclose(score,metrics['penalized_rmse_m'],rel_tol=1e-12,abs_tol=1e-12),'Failure-penalized RMSE disagrees with telemetry'
     previous=0.;previous_time=rows[0]['t_command_s']-.01
     for row in rows:
         assert all(math.isfinite(v) for k,v in row.items() if k!='supervisor_reason')
@@ -35,14 +55,15 @@ def audit(folder):
     path=(1,0.,0.,0.) if case.get('path')=='dlc220' else (0,0.,120.,0.)
     margins=[corridor_margin(r['x_cg_m'],r['y_cg_m'],r['heading_rad'],path) for r in rows]
     ages=[r['command_age_s'] for r in rows if r['ppo_available']]
-    durations=[r['inference_wall_s'] for r in rows if r['ppo_available']]
+    durations=inference_durations(rows)
     return dict(mode=case['mode'],speed=case['speed'],noise=case.get('noise',0),seed=case.get('seed'),delay_ms=case.get('delay_ms',0),
-                survived=metrics['survived'],steps=len(rows),rmse_m=metrics['rmse_m'],max_error_m=metrics['max_abs_error_m'],
+                survived=metrics['survived'],steps=len(rows),rmse_m=rmse,max_error_m=maximum,
                 corridor_min_margin_m=float(min(margins)),corridor_violation_fraction=float(np.mean(np.array(margins)<0)),
                 max_actuator_wheel_mean_error_rad=max(abs(r['actuator_rad']-r['measured_center_angle_rad']) for r in rows),
-                max_measured_wheel_mean_rate_rad_s=max(abs(a['measured_center_angle_rad']-b['measured_center_angle_rad'])/.01 for a,b in zip(rows,rows[1:])),
+                max_measured_wheel_mean_rate_rad_s=max((abs(a['measured_center_angle_rad']-b['measured_center_angle_rad'])/.01 for a,b in zip(rows,rows[1:])),default=0.),
                 age_p99_s=float(np.quantile(ages,.99)) if ages else 0.,
                 inference_p99_wall_s=float(np.quantile(durations,.99)) if durations else 0.,
+                inference_unique_packets=len(durations),
                 fallback_fraction=metrics['fallback_fraction']),rows
 
 def main():

@@ -1,0 +1,7 @@
+test_legacy_observation_and_nonfinite_actions_rejected (__main__.EvaluationContracts) ... ok
+test_training_and_evaluation_transitions_match_at_all_delays (__main__.EvaluationContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.026s
+
+OK

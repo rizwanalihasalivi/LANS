@@ -19,6 +19,8 @@ class ObservationBuilder:
             lookahead_steps: number of future lateral error steps (default 4)
             latency_window: window size for latency moving average (default 10)
         """
+        if lookahead_steps != 4:
+            raise ValueError('the fixed 11-feature contract requires exactly four previews')
         self.lookahead_steps = lookahead_steps
         self.latency_window = latency_window
         

@@ -1,0 +1,9 @@
+test_full_command_sign_and_speed_units (__main__.AdapterTests) ... ok
+test_invalid_commands_are_rejected_before_driver_calls (__main__.AdapterTests) ... ok
+test_invalid_limits (__main__.AdapterTests) ... ok
+test_saturation_both_directions (__main__.AdapterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

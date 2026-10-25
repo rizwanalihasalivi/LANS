@@ -1,5 +1,7 @@
 # LANS research handoff — 24 October 2026
 
+For present status, see the [full project audit and corrections](full-project-audit/README.md). The initial handoff below is historical.
+
 This checkpoint preserves environment work, supplied research materials, reviews and design discussions before new experiments. The updated controller is **proposed, not implemented or validated**. Existing repository code and historical results must not be presented as results of the new design.
 
 - [Design and experimental specification v0.1](specification-v0.1.md)

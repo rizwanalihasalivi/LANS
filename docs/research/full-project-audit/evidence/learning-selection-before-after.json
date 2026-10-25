@@ -1,0 +1,26 @@
+{
+  "1701": {
+    "before_selected_steps": 50000,
+    "before_candidate_eligible": true,
+    "after_selected_steps": 100000,
+    "after_rejection_reasons": [
+      "latency100: exact fallback"
+    ]
+  },
+  "1802": {
+    "before_selected_steps": 50000,
+    "before_candidate_eligible": true,
+    "after_selected_steps": 100000,
+    "after_rejection_reasons": [
+      "latency100: exact fallback"
+    ]
+  },
+  "1903": {
+    "before_selected_steps": 50000,
+    "before_candidate_eligible": true,
+    "after_selected_steps": 100000,
+    "after_rejection_reasons": [
+      "latency100: exact fallback"
+    ]
+  }
+}

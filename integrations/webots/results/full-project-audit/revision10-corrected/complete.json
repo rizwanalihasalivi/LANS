@@ -1,0 +1,51 @@
+{
+  "episodes": 72,
+  "protocol": {
+    "purpose": "Small development-only longer-preview/sequence headroom diagnostic; no training or automatic selection",
+    "speed": 25,
+    "path": "dlc220",
+    "repetitions": [
+      0,
+      1
+    ],
+    "student_seeds": [
+      701,
+      802
+    ],
+    "scenarios": [
+      "nominal",
+      "tire_mismatch",
+      "low_friction",
+      "sensor_stress",
+      "latency20",
+      "latency100"
+    ],
+    "noise_base": 730000000,
+    "forecast_offset": 70000000,
+    "methods": [
+      "lqr",
+      "fixed_m004",
+      "student",
+      "hold20",
+      "hold40",
+      "sequence40"
+    ],
+    "candidates_rad": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "cadence": "All proposal policies compute/submit at most every5 ticks when worker accepts. Between queries only original timestamped packets are held/delivered. Candidate rollout branches use this same global5-tick submission schedule.",
+    "teacher": "3 independent forecast branches zero/+Gaussian/-Gaussian; no actual future measurement noise. Privileged current state/parameters; exact known path.",
+    "search": "hold20: five constant proposals over20 ticks; hold40: five over40 ticks; sequence40: rank first actions by hold40 costs, retain top2, enumerate five second proposals for each after20 ticks. Execute only first proposal then replan. Not exhaustive or an upper bound.",
+    "cost": "Sum lateral squared error, failure fills remaining branch tail with6.25 per tick. Select minimum, abstain zero unless benefit over all-zero branch >max(1e-7,0.001*zero_cost); ties smaller absolute first action.",
+    "report": "All72 episodes and all per-region/two-noise means; >=5% reduction against paired LQR is descriptive screen only. Preserve survival and exact100ms fallback. No significance, unseen-path/native/safety or global-ceiling claim.",
+    "stop": "Stop after this one diagnostic regardless of outcome. No post-result tuning, training, gate change, reserved evaluation or promotion.",
+    "submission_semantics": "fresh-query-only-v1: submit a new packet only on tick%5==0 and worker availability; all intermediate ticks deliver/hold existing packets without refreshing their observation timestamp.",
+    "correction": "Earlier diagnostic output used held proposals re-submitted everytick and is preserved as historical evidence. Corrected results require a new output directory. Revision7\u20139 default kernel submission semantics are unchanged."
+  },
+  "source_commit": "0e4848a38a08c6d1b69b33a675427c068243957a",
+  "submission_semantics": "fresh-query-only-v1"
+}

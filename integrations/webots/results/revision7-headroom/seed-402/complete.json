@@ -1,0 +1,39 @@
+{
+  "episodes": 288,
+  "seed": 402,
+  "protocol": {
+    "purpose": "Step1 only: finite-grid privileged receding-horizon headroom diagnostic; no training",
+    "parent_commit": "e33174535f3ba891dbdf0f574c40ad8970afeec7",
+    "residual_candidates_rad": [
+      -0.08,
+      -0.04,
+      0.0,
+      0.04,
+      0.08
+    ],
+    "lookahead_ticks": 20,
+    "control_period_s": 0.01,
+    "score": "Sum of true squared lateral tracking error after each10ms transition over200ms; no terminal bonus, heading/effort penalty or learned value. Failure in a branch fills unexecuted lookahead tail with2.5m error. Actual full-episode RMSE/failure score remains the decision metric.",
+    "choice": "At each available worker submission, clone physical state, post-measurement estimate/covariance/raw delayed measurement, full gate history, held and pending packet lifecycle, and sensor-noise schedule. Hold each candidate proposal throughout the20-tick branch, resubmitting the same candidate when the worker becomes available. Gate/LQR/sensing/actuator recompute at each branch tick. Choose minimum window cost; exact ties prefer smallest absolute residual, then declared candidate order. Apply only one actual10ms transition and replan at the next submission; pending jobs are never changed.",
+    "privilege": "Oracle knows current physical state, true friction/stiffness and the upcoming common sensor-noise realization. These are evaluation-only optimistic privileges; gate itself still sees only estimated state, measured speed and map curvature. This is NOT a deployable controller, theoretical ceiling, global action-sequence optimization or direct source of noise-free teacher labels. A future teacher must explicitly address future-noise leakage.",
+    "methods": [
+      "lqr",
+      "fixed_m008",
+      "fixed_m004",
+      "fixed_zero",
+      "fixed_p004",
+      "fixed_p008",
+      "oracle_gated",
+      "oracle_bypass"
+    ],
+    "bypass": "Diagnostic only: remove performance/envelope/persistence/weight gate and apply baseline+bounded residual with weight1. Retain identical \u00b1.08 proposal, \u00b1.5 complete command, RK4/Fiala plant, actuator lag/rate limits, one-job worker and age>=50ms stale fallback. This changes multiple supervisor restrictions together; it cannot identify a single gate threshold or justify production deployment.",
+    "grid": "Reuse exact revision6 development conditions/noise for paired baseline parity: three noise seeds301/402/503, speeds15/20/25, sine120/DLC220, six nominal/mismatch/friction/sensor/20ms/100ms regions. These are three noise repetitions, not independent training seeds. No held-out/final/native results or learned checkpoints are used.",
+    "noise": "Generate shared measurement-noise vectors with the original Sensor seed/scales, including20 extra future ticks. Candidate branches use identical future draws and independent cloned observer/plant/gate state; never mutate the actual state/RNG by exploring a candidate.",
+    "methods_count": 8,
+    "episodes": 864,
+    "full_horizon": "ceil((220/speed+2)/.01) ticks; initial ey.15m/heading.01rad; abs ey>2.5m or abs heading error>.6rad fails. Fill unexecuted episode tails with2.5m; retain failed cases.",
+    "analysis": "Report all five fixed candidates, both oracle variants, every region and seed mean; compare oracle_gated against LQR and best GLOBAL fixed candidate (selected descriptively on this development grid). >=1% mean gain versus both, all three noise-seed means better versus LQR, no regional survival loss and no active region>1% worse than LQR is a predeclared promising diagnostic. This spending screen is not significance or proof of learnability. Report bypass/gated gap separately.",
+    "interpretation": "Gated gain demonstrates achievable behavior of this privileged finite policy only. Small/no gain does NOT prove no controller can improve, nor that authority alone is limiting. Bypass-only gain motivates a separate supervisor investigation; it does not authorize opening gates. A student cannot be assumed to match an oracle with privileged current/future information.",
+    "stop": "Finish Step1 report only; no distillation, PPO training, gate deployment changes, horizon/candidate tuning or extra search after observing outcomes. Keep older source/results immutable."
+  }
+}

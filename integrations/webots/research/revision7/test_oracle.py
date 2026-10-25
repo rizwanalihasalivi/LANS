@@ -98,5 +98,17 @@ class OracleContracts(unittest.TestCase):
             self.assertFalse(failed);self.assertEqual(calls,0)
             self.assertAlmostEqual(float(np.sqrt(np.mean(trace[:,6]**2))),float(expected['rmse']),places=10)
 
+    def test_bypass_keeps_worker_age_and_physical_command_bounds(self):
+        for service in (0,2,10):
+            worker=initial_executor();estimate=np.zeros(4);baseline=.49;gain=self.gains[1]
+            for tick in range(30):
+                command,weight,reason,_=execution_step(worker,tick*.01,.08,service,baseline,estimate,0.,20.,0.,gain,True)
+                self.assertLessEqual(abs(command),.5)
+                if worker[3]<0 or tick*.01-worker[4]>=.05:
+                    self.assertEqual(command,baseline);self.assertEqual(weight,0.)
+                else:
+                    self.assertEqual(command,.5);self.assertEqual(weight,1.)
+                if service==10:self.assertEqual(command,baseline)
+
 
 if __name__=='__main__':unittest.main()

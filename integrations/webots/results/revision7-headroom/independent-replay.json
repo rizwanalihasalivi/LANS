@@ -1,0 +1,69 @@
+{
+  "verified": true,
+  "cases": [
+    {
+      "method": "oracle_gated",
+      "scenario": "nominal",
+      "steps": 1080,
+      "failed": false,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.97758476261356e-16
+    },
+    {
+      "method": "oracle_gated",
+      "scenario": "sensor_stress",
+      "steps": 1080,
+      "failed": false,
+      "max_state_difference": 1.3322676295501878e-15,
+      "max_command_difference": 1.5265566588595902e-16
+    },
+    {
+      "method": "oracle_gated",
+      "scenario": "latency20",
+      "steps": 1080,
+      "failed": false,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 2.0122792321330962e-16
+    },
+    {
+      "method": "oracle_gated",
+      "scenario": "latency100",
+      "steps": 1080,
+      "failed": false,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    },
+    {
+      "method": "oracle_bypass",
+      "scenario": "nominal",
+      "steps": 219,
+      "failed": true,
+      "max_state_difference": 0.0,
+      "max_command_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "oracle_bypass",
+      "scenario": "sensor_stress",
+      "steps": 219,
+      "failed": true,
+      "max_state_difference": 2.7755575615628914e-17,
+      "max_command_difference": 1.1102230246251565e-16
+    },
+    {
+      "method": "oracle_bypass",
+      "scenario": "latency20",
+      "steps": 219,
+      "failed": true,
+      "max_state_difference": 2.7755575615628914e-17,
+      "max_command_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "oracle_bypass",
+      "scenario": "latency100",
+      "steps": 1080,
+      "failed": false,
+      "max_state_difference": 8.881784197001252e-16,
+      "max_command_difference": 1.1796119636642288e-16
+    }
+  ]
+}

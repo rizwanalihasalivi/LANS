@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "episodes": 864,
+  "reference_cells_parity": 324,
+  "max_reference_rmse_difference": 6.38378239159465e-16,
+  "oracle_trace_rows_checked": 199179,
+  "selector_choices_checked": 140511,
+  "best_global_fixed": "fixed_m004",
+  "gated_reduction_vs_lqr": 0.020757628731223887,
+  "gated_reduction_vs_best_fixed": 0.012660647645253764,
+  "bypass_reduction_vs_lqr": -20.961784624090527,
+  "checks": {
+    "gain_vs_lqr_at_least_1pct": true,
+    "gain_vs_best_global_fixed_at_least_1pct": true,
+    "all_noise_seed_means_better_than_lqr": true,
+    "regional_survival_preserved": true,
+    "no_active_region_over_1pct_worse": true
+  },
+  "promising_finite_diagnostic": true,
+  "absolute_ceiling": false,
+  "learnability_proven": false,
+  "gate_deployment_changed": false,
+  "step2_started": false,
+  "training": false,
+  "reserved": false,
+  "native": false
+}

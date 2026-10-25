@@ -20,6 +20,10 @@ The subsequent [ARIS audit remediation](docs/research/aris-remediation.md) retir
 
 The [matched600k-step pilot](integrations/webots/results/revision6-correction/interpretation.md) trained two arms at three fresh seeds and evaluated648 paired development episodes. Execution-aware training improved direct-trained error by only0.15%, failed the1% progress screen and did not beat simple fixed corrections. Neither model is promoted. The nominal constrained MPC reference is explicitly limited; LQR also beats it. [Protocol and reproduction](integrations/webots/research/revision6/README.md).
 
+## Latest Step1 headroom diagnostic
+
+The [five-action privileged diagnostic](integrations/webots/results/revision7-headroom/interpretation.md) completed864 paired episodes. With the actual frozen gate, measured error is2.076% lower than LQR and1.266% lower than the best global fixed proposal; all108 gated cases survive. The diagnostic bypass fails90/108 cases. These are finite-policy privileged results, **not an absolute ceiling or a trained-student result**. No gate change or Step2 training is launched. [Protocol and reproduction](integrations/webots/research/revision7/README.md).
+
 ## Corrected root demonstration
 
 The corrected world-coordinate plant is a separate linear-tire demonstration, not the nonlinear Webots research surrogate. Full steering is applied once by `PathTrackingEnv`; `ResidualPathEnv` owns one LQR-plus-residual fusion. Old root checkpoints are incompatible and must not be reused as corrected policies.

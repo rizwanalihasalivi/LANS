@@ -1,0 +1,8 @@
+test_delayed_packet_identity_and_fallback (__main__.Contracts) ... ok
+test_reward_accounting_state_and_reproducibility (__main__.Contracts) ... ok
+test_same_gate_fusion_recovery (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.890s
+
+OK

@@ -1,0 +1,1 @@
+Reviewer turn failed on usage limit after partial artifact collection and diagnostics. No final reviewer verdict was returned. Previous child sessions are no longer available. Saved evidence is retained for completion reviewer.

@@ -1,0 +1,10 @@
+test_A_matches_existing_baseline (__main__.Contracts) ... ok
+test_counterfactual_is_nonmutating_and_symmetric (__main__.Contracts) ... ok
+test_randomization_bounds_reproducibility_and_hidden_parameters (__main__.Contracts) ... ok
+test_training_gate_is_actual_frozen_gate (__main__.Contracts) ... ok
+test_zero_action_or_rejection_has_zero_relative_bonus (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.781s
+
+OK

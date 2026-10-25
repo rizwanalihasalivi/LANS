@@ -9,3 +9,7 @@ This checkpoint preserves environment work, supplied research materials, reviews
 - [Original uploaded materials](../../research-inputs/README.md)
 
 These documents summarize the discussion; they are not a verbatim chat transcript. Source attachments are preserved separately. User authorization for this checkpoint is to publish completed work and discussion to GitHub. New research experiments remain a subsequent phase.
+
+## Subsequent independent audit
+
+[ARIS project audit — 25 October 2026](../../EXPERIMENT_AUDIT.md) reviews commit `966e034`, including later controller repairs and research revisions. Current research receives a qualified WARN; unrestricted repository-wide evidence acceptance receives FAIL for the documented remaining reporting/provenance issues. See the linked coverage ledger for inspected and unverified material.

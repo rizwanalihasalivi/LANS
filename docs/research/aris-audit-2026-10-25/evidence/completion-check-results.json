@@ -1,0 +1,1081 @@
+{
+  "grids": {
+    "research-evaluation": {
+      "rows": 810,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed_m_s",
+        "path",
+        "method",
+        "delay_ms"
+      ],
+      "penalty_recomputed": 810,
+      "methods": {
+        "fixed_weight": {
+          "n": 135,
+          "survived": 89,
+          "mean": 0.819827547036007
+        },
+        "fusion": {
+          "n": 135,
+          "survived": 134,
+          "mean": 0.0923689787169538
+        },
+        "lqr": {
+          "n": 135,
+          "survived": 135,
+          "mean": 0.06403630576597136
+        },
+        "no_supervisor": {
+          "n": 135,
+          "survived": 134,
+          "mean": 0.09349289509342429
+        },
+        "ppo": {
+          "n": 135,
+          "survived": 87,
+          "mean": 0.8652282880794783
+        },
+        "residual": {
+          "n": 135,
+          "survived": 135,
+          "mean": 0.07485245920054438
+        }
+      },
+      "metric": "failure_penalized_rmse_m"
+    },
+    "revision2-development": {
+      "rows": 96,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method",
+        "config_index"
+      ],
+      "penalty_recomputed": 96,
+      "methods": {
+        "gated_residual": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.11229955254308312
+        },
+        "lqr": {
+          "n": 24,
+          "survived": 24,
+          "mean": 0.11305969028475847
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision2-test": {
+      "rows": 900,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method",
+        "config_index"
+      ],
+      "penalty_recomputed": 900,
+      "methods": {
+        "gated_full": {
+          "n": 180,
+          "survived": 180,
+          "mean": 0.08247818448677449
+        },
+        "gated_residual": {
+          "n": 180,
+          "survived": 180,
+          "mean": 0.08284827211972787
+        },
+        "lqr": {
+          "n": 180,
+          "survived": 180,
+          "mean": 0.08426790558555718
+        },
+        "old_fusion": {
+          "n": 180,
+          "survived": 180,
+          "mean": 0.09745338860263633
+        },
+        "residual": {
+          "n": 180,
+          "survived": 180,
+          "mean": 0.097556665824025
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision2-native-test": {
+      "rows": 270,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 0,
+      "methods": {
+        "gated_full": {
+          "n": 90,
+          "survived": 90,
+          "mean": 0.09305956494036244
+        },
+        "gated_residual": {
+          "n": 90,
+          "survived": 90,
+          "mean": 0.09265097012169353
+        },
+        "lqr": {
+          "n": 90,
+          "survived": 90,
+          "mean": 0.09330514697103291
+        }
+      },
+      "metric": "penalized_rmse_m"
+    },
+    "revision3-pilots": {
+      "rows": 360,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 360,
+      "methods": {
+        "baseline": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.083972745886908
+        },
+        "larger_network": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08423350617090687
+        },
+        "low_exploration": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08425632505795388
+        },
+        "lqr": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08442799530881673
+        },
+        "tracking_reward": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08432173938167324
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision3-extended": {
+      "rows": 360,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 360,
+      "methods": {
+        "baseline": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08422918242798329
+        },
+        "larger_network": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.0843168212051283
+        },
+        "legacy_gated": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08291896229283746
+        },
+        "legacy_rescaled_gated": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08420061212824857
+        },
+        "lqr": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08442799530881673
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision3-600k": {
+      "rows": 288,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 288,
+      "methods": {
+        "baseline600": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08409276048099493
+        },
+        "legacy_gated": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08291896229283746
+        },
+        "legacy_rescaled_gated": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08420061212824857
+        },
+        "lqr": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08442799530881673
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision4-pilots": {
+      "rows": 504,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 504,
+      "methods": {
+        "A_hybrid": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.0838205242434599
+        },
+        "B_hybrid": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08420914247566097
+        },
+        "C_hybrid": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08410691309180432
+        },
+        "D_hybrid": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08424913109075441
+        },
+        "legacy_gated_reference": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08270246955112202
+        },
+        "lqr": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08425343619082636
+        },
+        "standalone_full_reference": {
+          "n": 72,
+          "survived": 60,
+          "mean": 0.4626768003164219
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision5-audit": {
+      "rows": 504,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 504,
+      "methods": {
+        "A100k": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.0838205242434599
+        },
+        "constant_negative": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08361399187157416
+        },
+        "constant_positive": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08375708756435178
+        },
+        "legacy": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08270246955112202
+        },
+        "linear_correction": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08425343619082636
+        },
+        "lqr": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08425343619082636
+        },
+        "zero": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08425343619082636
+        }
+      },
+      "metric": "penalized_rmse"
+    },
+    "revision5-robust": {
+      "rows": 144,
+      "keys_unique": true,
+      "keyfields": [
+        "seed",
+        "speed",
+        "path",
+        "scenario",
+        "method"
+      ],
+      "penalty_recomputed": 144,
+      "methods": {
+        "A100k": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08388614379868857
+        },
+        "legacy": {
+          "n": 72,
+          "survived": 72,
+          "mean": 0.08283527147817245
+        }
+      },
+      "metric": "penalized_rmse"
+    }
+  },
+  "errors": [],
+  "v5_reference_exact_rows": 216,
+  "v5_exact_severe_rows": 84,
+  "v3_reference_exact_rows": 216,
+  "predictor": {
+    "A100k": {
+      "n": 2608,
+      "accepted": 451,
+      "false_accept": 77,
+      "false_reject": 117
+    },
+    "constant_negative": {
+      "n": 2608,
+      "accepted": 621,
+      "false_accept": 117,
+      "false_reject": 146
+    },
+    "constant_positive": {
+      "n": 2608,
+      "accepted": 655,
+      "false_accept": 128,
+      "false_reject": 114
+    },
+    "legacy": {
+      "n": 2608,
+      "accepted": 664,
+      "false_accept": 38,
+      "false_reject": 98
+    },
+    "linear_correction": {
+      "n": 2608,
+      "accepted": 0,
+      "false_accept": 0,
+      "false_reject": 0
+    },
+    "zero": {
+      "n": 2608,
+      "accepted": 0,
+      "false_accept": 0,
+      "false_reject": 0
+    }
+  },
+  "reserved_disjoint": {
+    "development": 72,
+    "reserved": 180
+  },
+  "candidate_targeted": {
+    "full": {
+      "n": 42,
+      "keys": [
+        "physical_seed",
+        "path",
+        "profile",
+        "mode",
+        "train_seed",
+        "observer",
+        "steps",
+        "completed",
+        "rmse_m",
+        "penalized_rmse_m",
+        "max_error_m",
+        "fallback_count",
+        "accepted_residual_steps"
+      ],
+      "mean_rmse": 0.20637749470162833
+    },
+    "mpc_matched": {
+      "n": 42,
+      "keys": [
+        "physical_seed",
+        "path",
+        "profile",
+        "mode",
+        "train_seed",
+        "observer",
+        "steps",
+        "completed",
+        "rmse_m",
+        "penalized_rmse_m",
+        "max_error_m",
+        "fallback_count",
+        "accepted_residual_steps"
+      ],
+      "mean_rmse": 0.15245623034937142
+    },
+    "mpc_original": {
+      "n": 42,
+      "keys": [
+        "physical_seed",
+        "path",
+        "profile",
+        "mode",
+        "train_seed",
+        "observer",
+        "steps",
+        "completed",
+        "rmse_m",
+        "penalized_rmse_m",
+        "max_error_m",
+        "fallback_count",
+        "accepted_residual_steps"
+      ],
+      "mean_rmse": 0.22967367898574617
+    },
+    "no_arrival": {
+      "n": 42,
+      "keys": [
+        "physical_seed",
+        "path",
+        "profile",
+        "mode",
+        "train_seed",
+        "observer",
+        "steps",
+        "completed",
+        "rmse_m",
+        "penalized_rmse_m",
+        "max_error_m",
+        "fallback_count",
+        "accepted_residual_steps"
+      ],
+      "mean_rmse": 0.2805558538192067
+    },
+    "no_arrival_no_lead": {
+      "n": 42,
+      "keys": [
+        "physical_seed",
+        "path",
+        "profile",
+        "mode",
+        "train_seed",
+        "observer",
+        "steps",
+        "completed",
+        "rmse_m",
+        "penalized_rmse_m",
+        "max_error_m",
+        "fallback_count",
+        "accepted_residual_steps"
+      ],
+      "mean_rmse": 0.32741553214873376
+    },
+    "no_lead": {
+      "n": 42,
+      "keys": [
+        "physical_seed",
+        "path",
+        "profile",
+        "mode",
+        "train_seed",
+        "observer",
+        "steps",
+        "completed",
+        "rmse_m",
+        "penalized_rmse_m",
+        "max_error_m",
+        "fallback_count",
+        "accepted_residual_steps"
+      ],
+      "mean_rmse": 0.2527150307189764
+    }
+  },
+  "training_metadata": [
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/full-0/complete.json",
+      "steps": 1000000,
+      "seed": 0,
+      "wall_s": 454.0330984592438,
+      "role": "full"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/full-1/complete.json",
+      "steps": 1000000,
+      "seed": 1,
+      "wall_s": 452.53089451789856,
+      "role": "full"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/full-2/complete.json",
+      "steps": 1000000,
+      "seed": 2,
+      "wall_s": 457.4672095775604,
+      "role": "full"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/full-3/complete.json",
+      "steps": 1000000,
+      "seed": 3,
+      "wall_s": 461.21991300582886,
+      "role": "full"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/full-4/complete.json",
+      "steps": 1000000,
+      "seed": 4,
+      "wall_s": 477.0220351219177,
+      "role": "full"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/residual-0/complete.json",
+      "steps": 1000000,
+      "seed": 0,
+      "wall_s": 449.7768430709839,
+      "role": "residual"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/residual-1/complete.json",
+      "steps": 1000000,
+      "seed": 1,
+      "wall_s": 435.2018370628357,
+      "role": "residual"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/residual-2/complete.json",
+      "steps": 1000000,
+      "seed": 2,
+      "wall_s": 452.2246263027191,
+      "role": "residual"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/residual-3/complete.json",
+      "steps": 1000000,
+      "seed": 3,
+      "wall_s": 451.04190278053284,
+      "role": "residual"
+    },
+    {
+      "stage": "research-training",
+      "path": "integrations/webots/results/research-training/residual-4/complete.json",
+      "steps": 1000000,
+      "seed": 4,
+      "wall_s": 385.71767139434814,
+      "role": "residual"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/baseline-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 43.12506318092346,
+      "role": "residual",
+      "candidate": "baseline"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/baseline-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 42.38419008255005,
+      "role": "residual",
+      "candidate": "baseline"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/larger_network-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 42.50320529937744,
+      "role": "residual",
+      "candidate": "larger_network"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/larger_network-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 42.51889252662659,
+      "role": "residual",
+      "candidate": "larger_network"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/low_exploration-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 43.23343229293823,
+      "role": "residual",
+      "candidate": "low_exploration"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/low_exploration-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 42.58474779129028,
+      "role": "residual",
+      "candidate": "low_exploration"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/tracking_reward-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 39.30911946296692,
+      "role": "residual",
+      "candidate": "tracking_reward"
+    },
+    {
+      "stage": "revision3-pilots",
+      "path": "integrations/webots/results/revision3-pilots/tracking_reward-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 39.83746647834778,
+      "role": "residual",
+      "candidate": "tracking_reward"
+    },
+    {
+      "stage": "revision3-extended",
+      "path": "integrations/webots/results/revision3-extended/baseline-101/complete.json",
+      "steps": 300000,
+      "seed": 101,
+      "wall_s": 80.55677652359009,
+      "role": "residual",
+      "candidate": "baseline",
+      "additional_steps": 200000
+    },
+    {
+      "stage": "revision3-extended",
+      "path": "integrations/webots/results/revision3-extended/baseline-202/complete.json",
+      "steps": 300000,
+      "seed": 202,
+      "wall_s": 80.96767163276672,
+      "role": "residual",
+      "candidate": "baseline",
+      "additional_steps": 200000
+    },
+    {
+      "stage": "revision3-extended",
+      "path": "integrations/webots/results/revision3-extended/larger_network-101/complete.json",
+      "steps": 300000,
+      "seed": 101,
+      "wall_s": 88.84366130828857,
+      "role": "residual",
+      "candidate": "larger_network",
+      "additional_steps": 200000
+    },
+    {
+      "stage": "revision3-extended",
+      "path": "integrations/webots/results/revision3-extended/larger_network-202/complete.json",
+      "steps": 300000,
+      "seed": 202,
+      "wall_s": 86.74504899978638,
+      "role": "residual",
+      "candidate": "larger_network",
+      "additional_steps": 200000
+    },
+    {
+      "stage": "revision3-600k",
+      "path": "integrations/webots/results/revision3-600k/baseline-101/complete.json",
+      "steps": 600000,
+      "seed": 101,
+      "wall_s": 121.91341543197632,
+      "role": "residual",
+      "candidate": "baseline",
+      "additional_steps": 300000
+    },
+    {
+      "stage": "revision3-600k",
+      "path": "integrations/webots/results/revision3-600k/baseline-202/complete.json",
+      "steps": 600000,
+      "seed": 202,
+      "wall_s": 122.88896894454956,
+      "role": "residual",
+      "candidate": "baseline",
+      "additional_steps": 300000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/A-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 29.3507182598114,
+      "arm": "A",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/A-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 28.957204818725586,
+      "arm": "A",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/B-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 32.736902475357056,
+      "arm": "B",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/B-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 33.48231387138367,
+      "arm": "B",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/C-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 41.10416388511658,
+      "arm": "C",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/C-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 40.51472353935242,
+      "arm": "C",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/D-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "wall_s": 40.77099132537842,
+      "arm": "D",
+      "additional_steps": 100000
+    },
+    {
+      "stage": "revision4-pilots/training",
+      "path": "integrations/webots/results/revision4-pilots/training/D-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "wall_s": 39.203455686569214,
+      "arm": "D",
+      "additional_steps": 100000
+    }
+  ],
+  "checkpoint_zip_metadata_checks": [
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-0/complete.json",
+      "steps": 1000000,
+      "seed": 0,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-1/complete.json",
+      "steps": 1000000,
+      "seed": 1,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-2/complete.json",
+      "steps": 1000000,
+      "seed": 2,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-3/complete.json",
+      "steps": 1000000,
+      "seed": 3,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-4/complete.json",
+      "steps": 1000000,
+      "seed": 4,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/residual-0/complete.json",
+      "steps": 1000000,
+      "seed": 0,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/residual-1/complete.json",
+      "steps": 1000000,
+      "seed": 1,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/residual-2/complete.json",
+      "steps": 1000000,
+      "seed": 2,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/residual-3/complete.json",
+      "steps": 1000000,
+      "seed": 3,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/residual-4/complete.json",
+      "steps": 1000000,
+      "seed": 4,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/baseline-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/baseline-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/larger_network-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/larger_network-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/low_exploration-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/low_exploration-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/tracking_reward-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-pilots/tracking_reward-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-extended/baseline-101/complete.json",
+      "steps": 300000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-extended/baseline-202/complete.json",
+      "steps": 300000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-extended/larger_network-101/complete.json",
+      "steps": 300000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-extended/larger_network-202/complete.json",
+      "steps": 300000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-600k/baseline-101/complete.json",
+      "steps": 600000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision3-600k/baseline-202/complete.json",
+      "steps": 600000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/A-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/A-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/B-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/B-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/C-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/C-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/D-101/complete.json",
+      "steps": 100000,
+      "seed": 101,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    },
+    {
+      "checkpoint": "integrations/webots/results/revision4-pilots/training/D-202/complete.json",
+      "steps": 100000,
+      "seed": 202,
+      "policy_matches_existing_digest": true,
+      "archived_sources_match_existing_digests": true
+    }
+  ],
+  "historical_sources_different_from_current": [
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-0/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-1/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-2/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-3/complete.json",
+      "source": "train-v2.py"
+    },
+    {
+      "checkpoint": "integrations/webots/results/research-training/full-4/complete.json",
+      "source": "train-v2.py"
+    }
+  ]
+}

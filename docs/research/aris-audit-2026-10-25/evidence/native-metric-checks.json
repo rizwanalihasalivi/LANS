@@ -1,0 +1,2102 @@
+[
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed3-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed4-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed2-v20-delay100/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed1-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed4-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed0-v25-delay100/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed3-v15-delay100/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed0-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed4-v25-delay100/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed3-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed1-v25-delay100/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed4-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed4-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed2-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed2-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed0-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed2-v15-delay100/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed0-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed4-v20-delay100/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed2-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed0-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed1-v20-delay100/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed3-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed4-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed2-v25-delay100/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed1-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed1-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed3-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed1-v15-delay100/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed4-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed1-v20-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed0-v15-delay100/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed1-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed3-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed0-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed2-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed3-v20-delay100/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed2-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed3-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed0-v20-delay100/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed1-v25-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed3-v25-delay100/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/ppo-seed0-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed2-v15-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-transfer-final/fusion-seed4-v15-delay100/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/actuator-parity/actuator-v25/metrics.json",
+    "samples": 500,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/actuator-parity/actuator-v15/metrics.json",
+    "samples": 500,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed3-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed1-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed3-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed2-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed2-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed1-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed3-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed4-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed4-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed2-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed2-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v15-gated_full/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed4-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed2-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed1-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed0-v15-gated_residual/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed3-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed0-v25-gated_residual/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed4-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/nominal-seed4-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/sensor_stress-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed3-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed4-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed1-v25-lqr/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed1-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency100-seed2-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed3-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/latency20-seed0-v15-lqr/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/contact_softening-seed0-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-test/low_friction-seed1-v25-gated_full/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v25-d0.003/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/convergence-10ms/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v25-noise0-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v15-d0.0/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v25-d0.0/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v15-noise1-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/convergence-5ms/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v25-d-0.003/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v20-d-0.003/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v20-noise1-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/convergence-2ms/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v20-d0.003/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v15-d0.003/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v25-noise1-delay1/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v15-noise0-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v15-noise1-delay1/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v25-noise1-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v15-d-0.003/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/open-v20-d0.0/metrics.json",
+    "samples": 800,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v20-noise0-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-validated/lqr-v20-noise1-delay1/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v25-noise0-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v15-noise1-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v20-noise1-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v25-noise1-delay1/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v15-noise0-delay0/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v15-noise1-delay1/metrics.json",
+    "samples": 1667,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v25-noise1-delay0/metrics.json",
+    "samples": 1080,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v20-noise0-delay0/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/physical-tracking-final/lqr-v20-noise1-delay1/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-smoke/nominal-seed0-v20-lqr/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-smoke/nominal-seed0-v20-gated_residual/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  },
+  {
+    "path": "integrations/webots/results/revision2-native-smoke/nominal-seed0-v20-gated_full/metrics.json",
+    "samples": 1300,
+    "mismatches": [],
+    "max_reference_error_identity_gap": 0.0
+  }
+]

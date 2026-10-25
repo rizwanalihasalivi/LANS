@@ -1,0 +1,30 @@
+{
+  "verified": true,
+  "jobs": [
+    {
+      "job": "finetune-1701",
+      "critical_files_unchanged": 11
+    },
+    {
+      "job": "finetune-1802",
+      "critical_files_unchanged": 11
+    },
+    {
+      "job": "finetune-1903",
+      "critical_files_unchanged": 11
+    },
+    {
+      "job": "scratch-1701",
+      "critical_files_unchanged": 11
+    },
+    {
+      "job": "scratch-1802",
+      "critical_files_unchanged": 11
+    },
+    {
+      "job": "scratch-1903",
+      "critical_files_unchanged": 11
+    }
+  ],
+  "gate_sha256": "4ee43c1a27a4747c23e02310a19adf54b6dc3c0c178504e2aa6a8044365b123f"
+}

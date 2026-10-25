@@ -1,0 +1,584 @@
+{
+  "verified": true,
+  "protocol": {
+    "purpose": "Step3: matched bounded categorical PPO, exact supervised actor initialization versus scratch; unchanged execution, physics and reward",
+    "parent_commit": "946621516f6fc2a3b06110d700545c141f73f571",
+    "candidates_rad": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "rl_seeds": [
+      1701,
+      1802,
+      1903
+    ],
+    "arms": [
+      "scratch",
+      "finetune"
+    ],
+    "steps_each": 100000,
+    "checkpoints": [
+      0,
+      25000,
+      50000,
+      100000
+    ],
+    "ppo": {
+      "n_envs": 8,
+      "n_steps": 125,
+      "batch_size": 200,
+      "n_epochs": 10,
+      "learning_rate": 0.0001,
+      "clip_range": 0.1,
+      "target_kl": 0.01,
+      "ent_coef": 0,
+      "vf_coef": 0.5,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation": "tanh"
+    },
+    "initialization": "Both arms use the same fixed train-only Step2 standardizer inside serialized policy, fresh identical critic and fresh optimizer for each paired RL seed. Finetune copies all three actor Linear layers including five logits exactly. Scratch actor is SB3 random orthogonal initialization. Discrete action maps to five physical residuals under the unchanged gate. Step2 data/budget is extra, not an equal-total-compute claim.",
+    "training": "Uniform draws over revision6 three speeds, two paths and six scenario families. Initial ey0.15m and heading0.01rad. Original execution-v5 reward, counterfactual bonus, physics, sensors and gate. No teacher losses, imitation replay, gating edits or hyperparameter search. VecNormalize reward-only, no observation normalization outside policy.",
+    "training_noise": "620000000+pair_index*1000000+worker_slot*10000+episode_index, disjoint from Step2/dev/evaluation. Episode horizon ceil((220/speed+2)/0.01), failure as original. Equal seeds give paired initial scenario streams; failure timing may diverge.",
+    "checkpointing": "Save0 before learn; same optimizer/env/model for consecutive learn chunks25000,25000,50000. Save after completed updates at25k,50k,100k. Constant learning rate. reset_num_timestepsFalse after first chunk. No checkpoint reset of reward normalizer. Stop six100k jobs regardless of outcome.",
+    "splits": {
+      "dev": 720000000,
+      "evaluation": 820000000
+    },
+    "noise_formula": "base+pair_index*10000+speed*100+path_index*10+region_index, shared across methods within pair. No teacher/forecast needed. Known geometries/condition families only; fresh noise is not unseen-domain validation.",
+    "development": "1188 episodes:3pairs*36conditions*11methods: LQR,fixed-.04,frozen student and eight checkpoints (four per arm). Per arm/pair select minimum mean penalized RMSE among eligible checkpoints, exact ties earlier step. Eligibility: no regional survival loss versus LQR; nominal RMSE<=1.02LQR; each other active region<=1.01LQR; latency100 commands exactly LQR. If none eligible, report unqualified best available, no success claim. Save selection manifest before fresh evaluation. Finetune0 must reproduce frozen student.",
+    "evaluation": "756 episodes:3pairs*36conditions*7methods: lqr,fixed_m004,student,scratch_selected,finetune_selected,scratch_100k,finetune_100k. Deterministic categorical actions. All selected and endpoint numbers reported; no final-test selection. Failed unexecuted tails filled with2.5m; primary mean of episode penalized RMSE.",
+    "success_rule": "Selected finetune mean penalized RMSE at least1% lower than frozen student; all three paired seed means lower; all selections eligible; no regional survival decrease versus student,LQR,fixed; nominal<=1.02student; every other active region<=1.01student; also at least1% lower than LQR AND fixed-.04. Initialization benefit versus scratch reported separately. Selecting step0 is retained-student fallback, not a PPO gain.",
+    "stop": "600000 additional RL steps total; no retries with altered hyperparameters, extra data, epochs, teacher anchors or architecture changes after outcomes. No production promotion, native/reserved campaign or broad superiority/safety claim. Preserve all frozen earlier artifacts."
+  },
+  "training": [
+    {
+      "arm": "scratch",
+      "seed": 1701,
+      "wall_s": 91.6567240430013,
+      "checkpoints": [
+        {
+          "steps": 0,
+          "optimizer_steps": 0
+        },
+        {
+          "steps": 25000,
+          "optimizer_steps": 1250.0
+        },
+        {
+          "steps": 50000,
+          "optimizer_steps": 2500.0
+        },
+        {
+          "steps": 100000,
+          "optimizer_steps": 5000.0
+        }
+      ],
+      "regions": {
+        "nominal": 16466,
+        "tire_mismatch": 21401,
+        "low_friction": 21307,
+        "latency100": 16775,
+        "latency20": 14217,
+        "sensor_stress": 9834
+      }
+    },
+    {
+      "arm": "finetune",
+      "seed": 1701,
+      "wall_s": 93.96339469199302,
+      "checkpoints": [
+        {
+          "steps": 0,
+          "optimizer_steps": 0
+        },
+        {
+          "steps": 25000,
+          "optimizer_steps": 1233.0
+        },
+        {
+          "steps": 50000,
+          "optimizer_steps": 2483.0
+        },
+        {
+          "steps": 100000,
+          "optimizer_steps": 4983.0
+        }
+      ],
+      "regions": {
+        "nominal": 16466,
+        "tire_mismatch": 21401,
+        "low_friction": 21307,
+        "latency100": 16775,
+        "latency20": 14217,
+        "sensor_stress": 9834
+      }
+    },
+    {
+      "arm": "scratch",
+      "seed": 1802,
+      "wall_s": 59.539164921006886,
+      "checkpoints": [
+        {
+          "steps": 0,
+          "optimizer_steps": 0
+        },
+        {
+          "steps": 25000,
+          "optimizer_steps": 1250.0
+        },
+        {
+          "steps": 50000,
+          "optimizer_steps": 2500.0
+        },
+        {
+          "steps": 100000,
+          "optimizer_steps": 5000.0
+        }
+      ],
+      "regions": {
+        "latency20": 19155,
+        "sensor_stress": 19959,
+        "latency100": 13079,
+        "tire_mismatch": 16188,
+        "low_friction": 21580,
+        "nominal": 10039
+      }
+    },
+    {
+      "arm": "finetune",
+      "seed": 1802,
+      "wall_s": 56.671216128990636,
+      "checkpoints": [
+        {
+          "steps": 0,
+          "optimizer_steps": 0
+        },
+        {
+          "steps": 25000,
+          "optimizer_steps": 1223.0
+        },
+        {
+          "steps": 50000,
+          "optimizer_steps": 2473.0
+        },
+        {
+          "steps": 100000,
+          "optimizer_steps": 4973.0
+        }
+      ],
+      "regions": {
+        "latency20": 19155,
+        "sensor_stress": 19959,
+        "latency100": 13079,
+        "tire_mismatch": 16188,
+        "low_friction": 21580,
+        "nominal": 10039
+      }
+    },
+    {
+      "arm": "scratch",
+      "seed": 1903,
+      "wall_s": 58.98913488301332,
+      "checkpoints": [
+        {
+          "steps": 0,
+          "optimizer_steps": 0
+        },
+        {
+          "steps": 25000,
+          "optimizer_steps": 1250.0
+        },
+        {
+          "steps": 50000,
+          "optimizer_steps": 2500.0
+        },
+        {
+          "steps": 100000,
+          "optimizer_steps": 5000.0
+        }
+      ],
+      "regions": {
+        "tire_mismatch": 13666,
+        "latency20": 25081,
+        "sensor_stress": 9586,
+        "low_friction": 13446,
+        "nominal": 23842,
+        "latency100": 14379
+      }
+    },
+    {
+      "arm": "finetune",
+      "seed": 1903,
+      "wall_s": 57.68356327699439,
+      "checkpoints": [
+        {
+          "steps": 0,
+          "optimizer_steps": 0
+        },
+        {
+          "steps": 25000,
+          "optimizer_steps": 1248.0
+        },
+        {
+          "steps": 50000,
+          "optimizer_steps": 2498.0
+        },
+        {
+          "steps": 100000,
+          "optimizer_steps": 4998.0
+        }
+      ],
+      "regions": {
+        "tire_mismatch": 13666,
+        "latency20": 25081,
+        "sensor_stress": 9586,
+        "low_friction": 13446,
+        "nominal": 23842,
+        "latency100": 14379
+      }
+    }
+  ],
+  "selected": {
+    "scratch-1701": {
+      "steps": 25000,
+      "eligible": true,
+      "reasons": [],
+      "rmse": 0.08399935851244558,
+      "survived": 36,
+      "n": 36,
+      "candidates": [
+        {
+          "steps": 0,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08419195901455757,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 25000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08399935851244558,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 50000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08415535228035677,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 100000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08415484024333572,
+          "survived": 36,
+          "n": 36
+        }
+      ]
+    },
+    "finetune-1701": {
+      "steps": 0,
+      "eligible": true,
+      "reasons": [],
+      "rmse": 0.0823974057278955,
+      "survived": 36,
+      "n": 36,
+      "candidates": [
+        {
+          "steps": 0,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0823974057278955,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 25000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0824678497353665,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 50000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08284607854734743,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 100000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08290554373461634,
+          "survived": 36,
+          "n": 36
+        }
+      ]
+    },
+    "scratch-1802": {
+      "steps": 0,
+      "eligible": true,
+      "reasons": [],
+      "rmse": 0.08429140319814456,
+      "survived": 36,
+      "n": 36,
+      "candidates": [
+        {
+          "steps": 0,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08429140319814456,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 25000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0844263959762477,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 50000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08439140255788352,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 100000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0844193573548307,
+          "survived": 36,
+          "n": 36
+        }
+      ]
+    },
+    "finetune-1802": {
+      "steps": 0,
+      "eligible": true,
+      "reasons": [],
+      "rmse": 0.08283027545102822,
+      "survived": 36,
+      "n": 36,
+      "candidates": [
+        {
+          "steps": 0,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08283027545102822,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 25000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08290246217179015,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 50000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08295726386445516,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 100000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08306312493403484,
+          "survived": 36,
+          "n": 36
+        }
+      ]
+    },
+    "scratch-1903": {
+      "steps": 0,
+      "eligible": true,
+      "reasons": [],
+      "rmse": 0.0842036802267036,
+      "survived": 36,
+      "n": 36,
+      "candidates": [
+        {
+          "steps": 0,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0842036802267036,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 25000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08428432108328493,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 50000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0842207107846565,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 100000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08421973373828018,
+          "survived": 36,
+          "n": 36
+        }
+      ]
+    },
+    "finetune-1903": {
+      "steps": 0,
+      "eligible": true,
+      "reasons": [],
+      "rmse": 0.0824284893202294,
+      "survived": 36,
+      "n": 36,
+      "candidates": [
+        {
+          "steps": 0,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.0824284893202294,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 25000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08243397608791964,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 50000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08247584046933315,
+          "survived": 36,
+          "n": 36
+        },
+        {
+          "steps": 100000,
+          "eligible": true,
+          "reasons": [],
+          "rmse": 0.08258117220449578,
+          "survived": 36,
+          "n": 36
+        }
+      ]
+    }
+  },
+  "summary": {
+    "lqr": {
+      "rmse": 0.08430676637495614,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.0,
+      "reduction_vs_student": -0.021114374494485277,
+      "seed_sd": 0.00014646692874502646
+    },
+    "fixed_m004": {
+      "rmse": 0.08361676632574479,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.008184397040476687,
+      "reduction_vs_student": -0.012757169029884441,
+      "seed_sd": 0.0001494306610558119
+    },
+    "student": {
+      "rmse": 0.08256348992902308,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.020677776184414354,
+      "reduction_vs_student": 0.0,
+      "seed_sd": 0.00014220157139338397
+    },
+    "scratch_selected": {
+      "rmse": 0.08418932770468765,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.001392992227292611,
+      "reduction_vs_student": -0.01969197010763768,
+      "seed_sd": 0.0002193637281050922
+    },
+    "finetune_selected": {
+      "rmse": 0.08256348992902308,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.020677776184414354,
+      "reduction_vs_student": 0.0,
+      "seed_sd": 0.00014220157139338397
+    },
+    "scratch_100k": {
+      "rmse": 0.0842897791172688,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.00020149340815411865,
+      "reduction_vs_student": -0.020908626679053244,
+      "seed_sd": 0.00014999997510295045
+    },
+    "finetune_100k": {
+      "rmse": 0.08282998523784925,
+      "survived": 108,
+      "n": 108,
+      "reduction_vs_lqr": 0.017516756965139435,
+      "reduction_vs_student": -0.003227762162855141,
+      "seed_sd": 7.919883898651653e-05
+    }
+  },
+  "checks": {
+    "improves_student_by_1pct": false,
+    "improves_lqr_by_1pct": true,
+    "improves_fixed_by_1pct": true,
+    "all_seed_means_better_than_student": false,
+    "all_finetune_selections_eligible": true,
+    "regional_survival": true,
+    "nominal_preserved": true,
+    "other_active_regions_preserved": true
+  },
+  "finetuning_passes_screen": false,
+  "additional_rl_steps": 600000,
+  "dev_episodes": 1188,
+  "evaluation_episodes": 756,
+  "finetune_reduction_vs_scratch": 0.01931168498420066,
+  "gate_changed": false,
+  "promoted": false,
+  "native": false
+}

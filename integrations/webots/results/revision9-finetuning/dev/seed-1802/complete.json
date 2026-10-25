@@ -1,0 +1,68 @@
+{
+  "episodes": 396,
+  "pair": 1,
+  "split": "dev",
+  "protocol": {
+    "purpose": "Step3: matched bounded categorical PPO, exact supervised actor initialization versus scratch; unchanged execution, physics and reward",
+    "parent_commit": "946621516f6fc2a3b06110d700545c141f73f571",
+    "candidates_rad": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "rl_seeds": [
+      1701,
+      1802,
+      1903
+    ],
+    "arms": [
+      "scratch",
+      "finetune"
+    ],
+    "steps_each": 100000,
+    "checkpoints": [
+      0,
+      25000,
+      50000,
+      100000
+    ],
+    "ppo": {
+      "n_envs": 8,
+      "n_steps": 125,
+      "batch_size": 200,
+      "n_epochs": 10,
+      "learning_rate": 0.0001,
+      "clip_range": 0.1,
+      "target_kl": 0.01,
+      "ent_coef": 0,
+      "vf_coef": 0.5,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation": "tanh"
+    },
+    "initialization": "Both arms use the same fixed train-only Step2 standardizer inside serialized policy, fresh identical critic and fresh optimizer for each paired RL seed. Finetune copies all three actor Linear layers including five logits exactly. Scratch actor is SB3 random orthogonal initialization. Discrete action maps to five physical residuals under the unchanged gate. Step2 data/budget is extra, not an equal-total-compute claim.",
+    "training": "Uniform draws over revision6 three speeds, two paths and six scenario families. Initial ey0.15m and heading0.01rad. Original execution-v5 reward, counterfactual bonus, physics, sensors and gate. No teacher losses, imitation replay, gating edits or hyperparameter search. VecNormalize reward-only, no observation normalization outside policy.",
+    "training_noise": "620000000+pair_index*1000000+worker_slot*10000+episode_index, disjoint from Step2/dev/evaluation. Episode horizon ceil((220/speed+2)/0.01), failure as original. Equal seeds give paired initial scenario streams; failure timing may diverge.",
+    "checkpointing": "Save0 before learn; same optimizer/env/model for consecutive learn chunks25000,25000,50000. Save after completed updates at25k,50k,100k. Constant learning rate. reset_num_timestepsFalse after first chunk. No checkpoint reset of reward normalizer. Stop six100k jobs regardless of outcome.",
+    "splits": {
+      "dev": 720000000,
+      "evaluation": 820000000
+    },
+    "noise_formula": "base+pair_index*10000+speed*100+path_index*10+region_index, shared across methods within pair. No teacher/forecast needed. Known geometries/condition families only; fresh noise is not unseen-domain validation.",
+    "development": "1188 episodes:3pairs*36conditions*11methods: LQR,fixed-.04,frozen student and eight checkpoints (four per arm). Per arm/pair select minimum mean penalized RMSE among eligible checkpoints, exact ties earlier step. Eligibility: no regional survival loss versus LQR; nominal RMSE<=1.02LQR; each other active region<=1.01LQR; latency100 commands exactly LQR. If none eligible, report unqualified best available, no success claim. Save selection manifest before fresh evaluation. Finetune0 must reproduce frozen student.",
+    "evaluation": "756 episodes:3pairs*36conditions*7methods: lqr,fixed_m004,student,scratch_selected,finetune_selected,scratch_100k,finetune_100k. Deterministic categorical actions. All selected and endpoint numbers reported; no final-test selection. Failed unexecuted tails filled with2.5m; primary mean of episode penalized RMSE.",
+    "success_rule": "Selected finetune mean penalized RMSE at least1% lower than frozen student; all three paired seed means lower; all selections eligible; no regional survival decrease versus student,LQR,fixed; nominal<=1.02student; every other active region<=1.01student; also at least1% lower than LQR AND fixed-.04. Initialization benefit versus scratch reported separately. Selecting step0 is retained-student fallback, not a PPO gain.",
+    "stop": "600000 additional RL steps total; no retries with altered hyperparameters, extra data, epochs, teacher anchors or architecture changes after outcomes. No production promotion, native/reserved campaign or broad superiority/safety claim. Preserve all frozen earlier artifacts."
+  }
+}

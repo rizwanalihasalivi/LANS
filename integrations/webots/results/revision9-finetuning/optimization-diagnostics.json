@@ -1,0 +1,176 @@
+[
+  {
+    "job": "finetune-1701",
+    "optimizer_steps": 4983.0,
+    "final_diagnostics": {
+      "steps": "100000",
+      "active_fraction": "0.06608",
+      "advantage_mean": "0.00708891823887825",
+      "advantage_std": "0.09735426306724548",
+      "return_mean": "4.971540927886963",
+      "reward_tracking": "0.9632331028988053",
+      "reward_effort": "-8.610133542649075e-06",
+      "reward_change": "-3.012044650552568e-08",
+      "reward_survival": "0.05000000000009424",
+      "reward_relative": "0.0005350660177387863"
+    },
+    "final_ppo": {
+      "train/clip_range": "0.1",
+      "train/loss": "-0.003144568298012018",
+      "train/policy_gradient_loss": "-0.004022488624532698",
+      "train/learning_rate": "0.0001",
+      "train/clip_fraction": "0.05629999969154596",
+      "train/value_loss": "0.005426080096513033",
+      "train/entropy_loss": "-0.5144189232587815",
+      "train/explained_variance": "0.7404921352863312",
+      "train/approx_kl": "0.0015617424",
+      "train/n_updates": "997"
+    },
+    "rollouts": 100
+  },
+  {
+    "job": "finetune-1802",
+    "optimizer_steps": 4973.0,
+    "final_diagnostics": {
+      "steps": "100000",
+      "active_fraction": "0.08903",
+      "advantage_mean": "0.014789976179599762",
+      "advantage_std": "0.06652183085680008",
+      "return_mean": "4.820040225982666",
+      "reward_tracking": "0.9569309809322897",
+      "reward_effort": "-9.267356650389112e-06",
+      "reward_change": "-3.536272735263794e-08",
+      "reward_survival": "0.05000000000009424",
+      "reward_relative": "0.000703041804508925"
+    },
+    "final_ppo": {
+      "train/clip_fraction": "0.0653000003285706",
+      "train/explained_variance": "0.8916650637984276",
+      "train/policy_gradient_loss": "-0.0027727871213530262",
+      "train/entropy_loss": "-0.5180426532030106",
+      "train/approx_kl": "0.0023157753",
+      "train/loss": "-0.00270046922378242",
+      "train/n_updates": "995",
+      "train/clip_range": "0.1",
+      "train/value_loss": "0.002325896311085671",
+      "train/learning_rate": "0.0001"
+    },
+    "rollouts": 100
+  },
+  {
+    "job": "finetune-1903",
+    "optimizer_steps": 4998.0,
+    "final_diagnostics": {
+      "steps": "100000",
+      "active_fraction": "0.07753",
+      "advantage_mean": "0.017011824995279312",
+      "advantage_std": "0.06580996513366699",
+      "return_mean": "4.9165754318237305",
+      "reward_tracking": "0.9669452689710915",
+      "reward_effort": "-9.044275254616104e-06",
+      "reward_change": "-3.241033567226343e-08",
+      "reward_survival": "0.05000000000009424",
+      "reward_relative": "0.0007242405189732519"
+    },
+    "final_ppo": {
+      "train/loss": "-0.006016136147081852",
+      "train/clip_fraction": "0.05140000002458692",
+      "train/learning_rate": "0.0001",
+      "train/value_loss": "0.0021715558541473",
+      "train/approx_kl": "0.0017184647",
+      "train/n_updates": "1000",
+      "train/entropy_loss": "-0.5259261357784272",
+      "train/policy_gradient_loss": "-0.0034213282524564416",
+      "train/clip_range": "0.1",
+      "train/explained_variance": "0.9719681218266487"
+    },
+    "rollouts": 100
+  },
+  {
+    "job": "scratch-1701",
+    "optimizer_steps": 5000.0,
+    "final_diagnostics": {
+      "steps": "100000",
+      "active_fraction": "0.01731",
+      "advantage_mean": "0.0022751870565116405",
+      "advantage_std": "0.09321585297584534",
+      "return_mean": "5.002427577972412",
+      "reward_tracking": "0.9625793209566285",
+      "reward_effort": "-8.455519790766931e-06",
+      "reward_change": "-1.8683254628430983e-08",
+      "reward_survival": "0.05000000000009424",
+      "reward_relative": "8.143658964747277e-05"
+    },
+    "final_ppo": {
+      "train/policy_gradient_loss": "-0.0034283174016673003",
+      "train/approx_kl": "0.0019095313",
+      "train/loss": "-0.006858799606561661",
+      "train/explained_variance": "0.7643288522958755",
+      "train/clip_range": "0.1",
+      "train/entropy_loss": "-1.3666161489486695",
+      "train/value_loss": "0.0047294592997059225",
+      "train/n_updates": "1000",
+      "train/clip_fraction": "0.03649999989196658",
+      "train/learning_rate": "0.0001"
+    },
+    "rollouts": 100
+  },
+  {
+    "job": "scratch-1802",
+    "optimizer_steps": 5000.0,
+    "final_diagnostics": {
+      "steps": "100000",
+      "active_fraction": "0.02306",
+      "advantage_mean": "0.01684584468603134",
+      "advantage_std": "0.07546867430210114",
+      "return_mean": "4.825483322143555",
+      "reward_tracking": "0.9561439833006757",
+      "reward_effort": "-9.004883867605478e-06",
+      "reward_change": "-2.1683820702645342e-08",
+      "reward_survival": "0.05000000000009424",
+      "reward_relative": "9.428889111241014e-05"
+    },
+    "final_ppo": {
+      "train/n_updates": "1000",
+      "train/loss": "-0.00392936123535037",
+      "train/entropy_loss": "-1.5386417746543883",
+      "train/learning_rate": "0.0001",
+      "train/clip_fraction": "0.010499999932944775",
+      "train/approx_kl": "0.0014288785",
+      "train/explained_variance": "0.8665229231119156",
+      "train/policy_gradient_loss": "-0.004190427241664665",
+      "train/clip_range": "0.1",
+      "train/value_loss": "0.002805291982367635"
+    },
+    "rollouts": 100
+  },
+  {
+    "job": "scratch-1903",
+    "optimizer_steps": 5000.0,
+    "final_diagnostics": {
+      "steps": "100000",
+      "active_fraction": "0.02148",
+      "advantage_mean": "0.018069889396429062",
+      "advantage_std": "0.06046612188220024",
+      "return_mean": "4.913473129272461",
+      "reward_tracking": "0.9659223274864994",
+      "reward_effort": "-8.796092012134064e-06",
+      "reward_change": "-2.130376692629623e-08",
+      "reward_survival": "0.05000000000009424",
+      "reward_relative": "9.941796793333145e-05"
+    },
+    "final_ppo": {
+      "train/clip_range": "0.1",
+      "train/entropy_loss": "-1.4616510438919068",
+      "train/clip_fraction": "0.01380000002682209",
+      "train/value_loss": "0.0020445183501578866",
+      "train/approx_kl": "0.0010946762",
+      "train/loss": "-0.008754861541092396",
+      "train/n_updates": "1000",
+      "train/learning_rate": "0.0001",
+      "train/explained_variance": "0.9790204409509897",
+      "train/policy_gradient_loss": "-0.0035547428494543"
+    },
+    "rollouts": 100
+  }
+]

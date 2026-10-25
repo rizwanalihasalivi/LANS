@@ -1,0 +1,16 @@
+{
+  "completed": true,
+  "additional_rl_steps": 600000,
+  "development_episodes": 1188,
+  "final_evaluation_episodes": 756,
+  "contract_tests": 4,
+  "saved_checkpoints": 24,
+  "original_object_replays": 16,
+  "ppo_incremental_success": false,
+  "selected_finetune_steps": [
+    0,
+    0,
+    0
+  ],
+  "promoted": false
+}

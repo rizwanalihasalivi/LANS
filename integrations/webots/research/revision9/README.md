@@ -4,6 +4,8 @@ Exact categorical five-logit initialization preserves the Step2 student, includi
 
 The [protocol](protocol.json) freezes checkpoints0/25k/50k/100k, independent development selection and fresh evaluation. Zero-step retention is explicitly allowed and is not a PPO improvement. Target KL limits each update relative to its rollout policy, not cumulative divergence from the student. No imitation replay, teacher loss or extra tuning follows observed outcomes.
 
+Training freeze: `26814b5`. Evaluation/selection freeze: `56be5ad`. Development selection published before final testing: `4d72232`. [Outcome](../../results/revision9-finetuning/interpretation.md): no incremental PPO gain; all three finetune selections retain step0. The100k endpoint increases fresh-test error by0.323% versus the student.
+
 Use the prepared Python3.10 CPU environment and a new output directory. Set `OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 NUMBA_CACHE_DIR=/workspace/lans-v9-numba MPLCONFIGDIR=/workspace/lans-setup/matplotlib`.
 
 ```bash
@@ -13,6 +15,9 @@ python integrations/webots/research/revision9/evaluate9.py --training /tmp/lans-
 python integrations/webots/research/revision9/evaluate9.py --training /tmp/lans-step3/training --output /tmp/lans-step3/evaluation --split evaluation --selection /tmp/lans-step3/dev/selection.json
 python integrations/webots/research/revision9/report9.py --run /tmp/lans-step3
 python integrations/webots/research/revision9/verify9.py --run /tmp/lans-step3
+python integrations/webots/research/revision9/diagnose9.py --run /tmp/lans-step3
 ```
 
 Training uses at most two single-thread subprocesses; evaluation uses three. All checkpoints, optimizer states, reward normalizers, source snapshots, raw episode rows and representative traces are retained. Final comparison includes selected checkpoints and100k endpoints even when they regress. These are known task families with fresh noise; no native/generalization/MPC superiority claim is supported by this pilot alone.
+
+`diagnose9.py` is explicitly post-training descriptive analysis on the existing Step2 DEV observations. It creates no labels, performs no training, and is never used for checkpoint selection. Its off-policy action agreement/KL/teacher regret do not replace the closed-loop outcome.

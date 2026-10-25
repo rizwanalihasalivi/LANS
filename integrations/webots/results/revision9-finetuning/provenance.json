@@ -1,0 +1,37 @@
+{
+  "python": "3.10.22",
+  "packages": {
+    "numpy": "1.23.5",
+    "scipy": "1.10.1",
+    "torch": "2.0.0+cpu",
+    "stable_baselines3": "2.0.0",
+    "gymnasium": "0.28.1",
+    "numba": "0.57.1"
+  },
+  "training_protocol_commit": "26814b55116fb256cc682434649255b6b94cbb60",
+  "evaluation_freeze_commit": "56be5ad57f31f106a72bd80cf5464300623838b6",
+  "main_checked": "17c35f3c2f76f7524f714cfe7892fd78504f9478",
+  "source_sha256": {
+    "revision9/report9.py": "e5a3aee001ea2b6fc1a5f881f0e80010c5d3671ef7a1dd6276cd41be2ce348bf",
+    "revision9/test_step3.py": "7031a623c0f59783e70ae339f2ad1caaba91105e1583205f3725e2dd3a2ae19f",
+    "revision9/verify9.py": "1008f037aff6b7d9fa696c034927cbd24654379be811da51941aace77c107f9f",
+    "revision9/env9.py": "c1d133980f60e6946f1c97fe03a481060bda51fcc967118ae8f4087ca7715a02",
+    "revision9/evaluate9.py": "1f968b2c9be226f51ec6403c8dc51e7b5a8f30f639002009caaab68e4e03d849",
+    "revision9/train9.py": "bedd233a305fd8d06814c102cf1676a2cea74d6b81a691ad081689566495001c",
+    "revision9/bootstrap.py": "6dbb372dc6716a595492483dd9450d1b253adb844093940097eb89fa0fd9efbc",
+    "revision9/policy9.py": "bdc93614fca12b3ff97328a87513261b5c315cedad8cce3573902da993bfdece",
+    "revision9/protocol.json": "d188b3a84dbca86a28b9ca17566727ba26513927143a7884366908662b6356ea",
+    "revision7/kernels.py": "be7cd4a818dbd2febdf97b20a6b5f76dfdd268194d35afd76dfb8cce21994c66",
+    "revision8/teacher.py": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+    "revision5/execution.py": "4ee43c1a27a4747c23e02310a19adf54b6dc3c0c178504e2aa6a8044365b123f",
+    "revision5/execution_env.py": "36b94668344905a3b8675dfe52549891af0a9dd94de99c40a1993901c49c5c4f",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision4/reward_model.py": "170c7d554424364b66cd29e5a42d8b3ecf2ae4425ac1b3e8fbbc20bf63056591",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b"
+  },
+  "development_selection_commit": "4d72232",
+  "selection_published_before_final_evaluation": true
+}

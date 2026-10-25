@@ -1,0 +1,6 @@
+execution-301 completed 57.07 seconds
+direct-301 completed 58.33 seconds
+direct-402 completed 79.37 seconds
+execution-402 completed 78.56 seconds
+direct-503 completed 56.31 seconds
+execution-503 completed 55.73 seconds

@@ -1,0 +1,87 @@
+{
+  "verified": true,
+  "episodes": 648,
+  "training_steps": 600000,
+  "training_models": [
+    {
+      "arm": "direct",
+      "seed": 301,
+      "steps": 100000,
+      "completed_monitor_steps": 96351,
+      "wall_s": 58.32520539700636,
+      "active_training_fraction": 1.0,
+      "relative_training_reward": -0.0008119967517976619
+    },
+    {
+      "arm": "direct",
+      "seed": 402,
+      "steps": 100000,
+      "completed_monitor_steps": 96551,
+      "wall_s": 79.36621063099301,
+      "active_training_fraction": 1.0,
+      "relative_training_reward": -0.0033161822598441605
+    },
+    {
+      "arm": "direct",
+      "seed": 503,
+      "steps": 100000,
+      "completed_monitor_steps": 96703,
+      "wall_s": 56.31344252600684,
+      "active_training_fraction": 1.0,
+      "relative_training_reward": -0.000630035929598749
+    },
+    {
+      "arm": "execution",
+      "seed": 301,
+      "steps": 100000,
+      "completed_monitor_steps": 96241,
+      "wall_s": 57.071592565989704,
+      "active_training_fraction": 0.0309,
+      "relative_training_reward": 0.00010906223559684334
+    },
+    {
+      "arm": "execution",
+      "seed": 402,
+      "steps": 100000,
+      "completed_monitor_steps": 96609,
+      "wall_s": 78.56388107700332,
+      "active_training_fraction": 0.02434,
+      "relative_training_reward": 7.506005584603564e-05
+    },
+    {
+      "arm": "execution",
+      "seed": 503,
+      "steps": 100000,
+      "completed_monitor_steps": 96457,
+      "wall_s": 55.73495378399093,
+      "active_training_fraction": 0.02303,
+      "relative_training_reward": 8.324793127229838e-05
+    }
+  ],
+  "progress_checks": {
+    "improves_direct_by_1pct": false,
+    "at_least_two_seed_improvements": true,
+    "regional_survival": true,
+    "nominal_preserved": true,
+    "no_active_region_over_1pct_worse": true,
+    "severe_exact": true
+  },
+  "primary_progress": false,
+  "learning_checks": {
+    "beats_lqr_by_1pct": false,
+    "beats_positive_by_1pct": false,
+    "beats_negative_by_1pct": false
+  },
+  "learning_benefit": false,
+  "mpc_advantage_checks": {
+    "improves_mpc_by_1pct": true,
+    "all_seed_improvements": true,
+    "regional_survival": true
+  },
+  "mpc_advantage": true,
+  "mpc_calls": 145692,
+  "mpc_fallbacks": 0,
+  "full_training_launched": false,
+  "final_reserved": false,
+  "native": false
+}

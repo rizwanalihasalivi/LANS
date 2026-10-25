@@ -1,0 +1,128 @@
+{
+  "arm": "execution",
+  "seed": 402,
+  "steps": 100000,
+  "observation_dimensions": 20,
+  "residual_scale_rad": 0.08,
+  "profile": "correction_quality_v6",
+  "wall_s": 78.56388107700332,
+  "source_commit": "1201f8da0efc24ca4290ff39b9d7b8fa79220f34",
+  "normalization": "reward-only; fixed-scaled actor observations",
+  "protocol": {
+    "purpose": "User-authorized bounded correction-quality pilot; no automatic full training",
+    "source_parent": "90576941a2b1e3cb425ab9af4af873470984d951",
+    "arms": [
+      "direct",
+      "execution"
+    ],
+    "seeds": [
+      301,
+      402,
+      503
+    ],
+    "steps_per_arm_seed": 100000,
+    "training": "Scratch, eight envs, 125 rollout steps, batch200, epochs10, lr0.0003,gamma0.99,GAE0.95,[64,64],log_std=-2; fixed-scaled20 observations, reward-only VecNormalize. Same nominal random-sine reset distribution and reward from ExecutionEnv. No domain randomization. Service_ticks=0 for BOTH arms to isolate gate execution, rather than confound training delays. New arm sees actual frozen gate/history; direct arm immediately adds proposed residual with weight1 and exposes its actual execution context. All other code/settings shared. SB3 effective reset seeds model.seed+i, matching both arms.",
+    "treatment": "Only the action execution rule differs during training: direct residual versus frozen performance gate. Both learned policies deploy through the identical frozen gate with20 features at evaluation. Context differences caused by execution are part of this treatment; not an independent observation-dimension ablation.",
+    "reward": "Unchanged ExecutionEnv tracking+effort+change+survival+privileged relative_bonus of ACTUALLY executed command. Both arms receive the same reward definition; true plant parameters only enter physical/reward branches, never actor or deployed gate.",
+    "residual_scale_rad": 0.08,
+    "development_noise_base": 164000000,
+    "noise_formula": "base + seed_index*10000 + speed*100 + path_index*10 + scenario_index; indices in declared order; same across methods",
+    "speeds": [
+      15,
+      20,
+      25
+    ],
+    "paths": {
+      "sine120": [
+        0,
+        2.5,
+        120,
+        0.3
+      ],
+      "dlc220": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "scenarios": {
+      "nominal": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ticks": 0
+      },
+      "tire_mismatch": {
+        "mu": 0.9,
+        "stiffness": 0.65,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ticks": 0
+      },
+      "low_friction": {
+        "mu": 0.6,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ticks": 0
+      },
+      "sensor_stress": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 2,
+        "sensor_delay_steps": 1,
+        "service_ticks": 0
+      },
+      "latency20": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ticks": 2
+      },
+      "latency100": {
+        "mu": 0.9,
+        "stiffness": 1.0,
+        "noise": 1,
+        "sensor_delay_steps": 0,
+        "service_ticks": 10
+      }
+    },
+    "methods": [
+      "lqr",
+      "mpc",
+      "constant_positive",
+      "constant_negative",
+      "direct",
+      "execution"
+    ],
+    "episodes": 648,
+    "evaluation": "Fresh development noise; three training seeds x three speeds x two known paths x six regions x six methods. Initial lateral0.15m/heading0.01rad. ceil((220/speed+2)/0.01) ticks. Same Fiala/RK4/actuator/sensor estimator for all. Actor, gate, LQR and MPC use measured speed. PPO and MPC get the same three curvature previews; LQR remains its unchanged local-curvature design. Single-worker simulated service delays apply to learned/constant candidates; local LQR/MPC command each tick. Report solver/inference wall times, not real-time claims. No reserved noise or native simulator use.",
+    "mpc": {
+      "type": "Nominal linear dynamic bicycle plus first-order actuator, constrained convex QP, OSQP0.6.3",
+      "horizon": 20,
+      "planning_period_s": 0.05,
+      "replan_period_s": 0.01,
+      "Q": [
+        4.0,
+        0.1,
+        8.0,
+        0.2,
+        0.0
+      ],
+      "R": 100.0,
+      "terminal": "discrete Riccati cost at cached observed speed",
+      "speed_cache_resolution_mps": 0.1,
+      "curvature": "linear interpolation/extrapolation-clamp of actor previews at0/10/20m; no additional future map or hidden parameters",
+      "bounds": "full command/actuator \u00b10.5rad; |u-delta_predicted_before_command|<=0.35*0.05rad to respect initial lag derivative limit; actual shared plant rate limit unchanged",
+      "solver": "eps_abs/rel1e-5,max_iter3000,warm start; infeasible/unconverged or >1e-4 constraint violation falls back to same local LQR and is counted. No post-result tuning."
+    },
+    "primary_progress_rule": "Execution mean penalized RMSE >=1% lower than direct, better in >=2/3 paired seed means; no regional survival loss against direct or LQR; nominal <=2% worse than LQR; no active region >1% worse than LQR; exact100ms LQR command/trajectory equality.",
+    "learning_benefit_rule": "Additionally >=1% overall reduction vs LQR and BOTH predeclared constants. Do not count time samples as independent. Report all methods/regions even on failure.",
+    "mpc_advantage_rule": ">=1% mean reduction vs MPC, all three seed means lower and no regional survival loss; separate from primary training-effect decision.",
+    "stop": "Always stop after these100k checkpoints and development report. No extra arm, hyperparameter search, best-checkpoint selection or budget extension based on outcomes. Full training remains a separate decision.",
+    "limits": "Three seeds and known geometries; descriptive paired uncertainty only. MPC is a declared nominal constrained reference, not an exhaustive best-tuned nonlinear MPC benchmark. This experiment tests execution alignment under fixed nominal training, not every possible AI correction method. No safety/stability or physical deployment claim."
+  }
+}

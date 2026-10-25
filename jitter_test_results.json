@@ -1,7 +1,7 @@
-[
-  {
-    "jitter_ms": 0,
-    "rmse": 0.013456999102008241,
-    "max_error": 0.02500250995672452,
-    "mean_latency": 0.5973875999334268,
-    "stable": 
+{
+  "status": "incomplete_historical_output",
+  "usable_as_experimental_evidence": false,
+  "reason": "Original file was truncated at an unfinished stable value; no missing value has been inferred.",
+  "original_bytes": "docs/research/historical/jitter_test_results.incomplete.txt",
+  "replacement_evidence": "integrations/webots/results/revision2-test/report.md"
+}

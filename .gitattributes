@@ -1,0 +1,2 @@
+# Preserve the exact incomplete historical bytes, including trailing whitespace.
+docs/research/historical/jitter_test_results.incomplete.txt -whitespace

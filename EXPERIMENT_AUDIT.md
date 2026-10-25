@@ -1,5 +1,7 @@
 # ARIS project audit — 25 October 2026
 
+**Historical verdict below.** Subsequent [remediation status and validation](docs/research/aris-remediation.md) address the actionable code/reporting findings and document the original-package and research-evidence limits. The original audit verdict is not rewritten as an independent re-review.
+
 **Reviewed source:** `966e034a2868ce122855d86417ecbe67ec1b1120` (PR #8).
 
 **Overall verdict: FAIL for unrestricted repository-wide evidence acceptance. Current isolated research: WARN.** This distinction matters: the reviewer found current research comparisons internally consistent, with small conditional gains; it did not find those results fabricated. The repository-wide failure concerns unsupported executable result tables, malformed historical evidence and incomplete reproduction packages. It is not a finding of intentional misconduct.

@@ -4,6 +4,8 @@ LANS studies whether learned steering corrections can improve a strong LQR track
 
 The [controller review](docs/research/controller-review/README.md) identifies correctness defects in the historical root pipeline and separate limitations in the isolated research experiments. The [remediation record](docs/research/controller-remediation.md) documents corrected interfaces, quarantined comparisons, fresh diagnostics and remaining evidence limits. Historical comparative claims made by retired root scripts should not be cited as validated results.
 
+The subsequent [ARIS audit remediation](docs/research/aris-remediation.md) retires unsupported result generators, fixes plotting, adds raw-data reporting and execution-aware evaluation, and records the remaining original-archive blocker.
+
 ## Current evidence and entry points
 
 - [Specification](docs/research/specification-v0.1.md): research requirements; unchanged by remediation.

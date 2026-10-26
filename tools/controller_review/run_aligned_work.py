@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -47,11 +48,22 @@ def main():
     final=out/'final-update.md';text=final.read_text()
     marker='## Portable aligned-controller package and verified references'
     if marker not in text:
-        text+='\n'+marker+'\n\nThe new Python3.10 kit now includes the actual v3 endpoint actors and the same aligned supervisor, not the old25k diagnostic. Torch-to-NumPy class parity is checked on all24,300 archived DEV observations per actor; this is export parity, not a new performance evaluation. It is a research diagnostic irrespective of selection outcome.\n\nClean Linux smoke uses five3-second cases with seed701; all three actors undergo export/golden checks. See kit-smoke/verification.json. Smoke functionality does not certify strict timing or target Windows/macOS behaviour. Actual target laptop measurements remain pending. Request/response identity and original timestamps are checked at receipt.\n\nRun the extracted kit using RUN_WINDOWS.cmd or `bash RUN_MAC.command`; return laptop-results/Results.zip. No physical readiness is claimed.\n\n'+(out/'verified-references.md').read_text()+'\n'
-        final.write_text(text)
+        text+='\n'+marker+'\n\nThe new Python3.10 kit now includes the actual v3 endpoint actors and the same aligned supervisor, not the old25k diagnostic. Torch-to-NumPy class parity is checked on all24,300 archived DEV observations per actor; this is export parity, not a new performance evaluation. It is a research diagnostic irrespective of selection outcome.\n\nClean Linux smoke uses five3-second cases with seed701; all three actors undergo export/golden checks. See kit-smoke/verification.json. Smoke functionality does not certify strict timing or target Windows/macOS behaviour. Actual target laptop measurements remain pending. Request/response identity and original timestamps are checked at receipt.\n\nRun the extracted kit using RUN_WINDOWS.cmd or `bash RUN_MAC.command`; return laptop-results/Results.zip. No physical readiness is claimed.\n\n### Simulation-to-worker timing boundary\n\nOffline zero-service simulation can deliver a proposal in the same control tick. A separate worker polled once per10ms loop normally delivers on a later tick. The retained original age-gain is steep: the0.25 cap becomes about0.00458 at10ms observation age, even for fast inference. Identical supervisor code therefore does not establish identical effective authority under different delivery timing. Packet age, inference duration, post-inference service delay and loop release lateness must remain separate. This new study does not establish that the residual tracking gains transfer to a real asynchronous deployment. The kit records actual timestamps/authority for this boundary; neither packet freshness nor functional fallback is proof of physical timing safety.\n\n'+(out/'verified-references.md').read_text()+'\n'
+    text=text.replace('reviewer-followup-v2/sleep','v2 sleep').replace('reviewer-followup-v2/absolute','v2 absolute')
+    text=text.replace('reviewer-aligned-v3/absolute_100us','v3 sleep + spin').replace('reviewer-aligned-v3/dedicated_spin','v3 full spin')
+    text=text.replace('| absolute_100us |','| Sleep + 100µs spin |').replace('| dedicated_spin |','| Full spin |')
+    text=text.replace('| oldppo |','| Old PPO |').replace('| ppo |','| New PPO |').replace('| lqr |','| LQR |')
+    pieces=re.split(r'(`[^`]*`)',text)
+    for i,part in enumerate(pieces):
+        if part.startswith('`'):continue
+        part=re.sub(r'(?<=[A-UW-Za-uw-z])(?=\d)',' ',part)
+        part=re.sub(r'(?<=\d)(?=[A-UW-Za-uw-zµ])',' ',part)
+        part=re.sub(r',(?=\S)',', ',part)
+        pieces[i]=part.replace('100 k','100,000').replace('25 k','25,000')
+    text=''.join(pieces);final.write_text(text)
     for suffix in ('docx','pdf'):
         cmd=['pandoc',final,'-o',out/f'final-update.{suffix}']
-        if suffix=='pdf':cmd+=['--pdf-engine=xelatex','-V','mainfont=DejaVu Serif','-V','geometry:margin=22mm']
+        if suffix=='pdf':cmd+=['--pdf-engine=xelatex','-V','mainfont=DejaVu Serif','-V','geometry:margin=22mm','-V','fontsize=10pt','-V','papersize=a4']
         subprocess.run(list(map(str,cmd)),check=True)
     with zipfile.ZipFile(out/'LANS_Aligned_Reports.zip','w',zipfile.ZIP_DEFLATED) as z:
         for n in ('final-update.md','final-update.docx','final-update.pdf','verified-references.md','completion-status.json','summary.json','decision.json','timing-diagnosis.json','episodes.csv'):

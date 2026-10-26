@@ -1,0 +1,26 @@
+{"seed": 701, "case": "nominal", "packets": 263, "deadline_misses": 270, "active_ticks": 224, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "delay1000", "packets": 4, "deadline_misses": 0, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "cpu_stress", "packets": 476, "deadline_misses": 11, "active_ticks": 483, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "worker_crash", "packets": 155, "deadline_misses": 32, "active_ticks": 155, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "nominal", "packets": 477, "deadline_misses": 10, "active_ticks": 479, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "delay1000", "packets": 4, "deadline_misses": 1, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "cpu_stress", "packets": 494, "deadline_misses": 3, "active_ticks": 495, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "worker_crash", "packets": 141, "deadline_misses": 38, "active_ticks": 140, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "nominal", "packets": 377, "deadline_misses": 188, "active_ticks": 310, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "delay1000", "packets": 4, "deadline_misses": 8, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "cpu_stress", "packets": 480, "deadline_misses": 7, "active_ticks": 488, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "worker_crash", "packets": 166, "deadline_misses": 14, "active_ticks": 167, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "nominal", "packets": 477, "deadline_misses": 12, "active_ticks": 485, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "delay1000", "packets": 3, "deadline_misses": 237, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "cpu_stress", "packets": 365, "deadline_misses": 123, "active_ticks": 371, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "worker_crash", "packets": 150, "deadline_misses": 33, "active_ticks": 150, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "nominal", "packets": 305, "deadline_misses": 239, "active_ticks": 256, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "delay1000", "packets": 4, "deadline_misses": 3, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "cpu_stress", "packets": 490, "deadline_misses": 2, "active_ticks": 497, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "worker_crash", "packets": 156, "deadline_misses": 16, "active_ticks": 155, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "nominal", "packets": 477, "deadline_misses": 27, "active_ticks": 470, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "delay1000", "packets": 4, "deadline_misses": 15, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "cpu_stress", "packets": 479, "deadline_misses": 5, "active_ticks": 488, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "worker_crash", "packets": 165, "deadline_misses": 117, "active_ticks": 166, "stale_authority_violations": 0, "survived": true}
+absolute_100us 717 / 6000
+dedicated_spin 694 / 6000

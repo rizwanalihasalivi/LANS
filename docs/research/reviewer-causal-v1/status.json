@@ -14,6 +14,9 @@
     },
     "development-verified": {
       "state": "complete"
+    },
+    "actual-worker-verified": {
+      "state": "complete"
     }
   },
   "external": {
@@ -23,6 +26,16 @@
     "primary_reference_verification": "uploaded five PDFs read; publication metadata / broader search incomplete",
     "published_algorithm_reproduction": "not implemented; no superiority claim",
     "native_ppo": "pending gated transfer and timing assessment",
-    "hard_realtime": "not established; prior10ms deadline tests failed"
+    "hard_realtime": "FAIL: observed10ms deadline misses; no100Hz guarantee"
+  },
+  "confirmation": {
+    "state": "unopened",
+    "reason": [
+      "finetune lacks >=1% improvement vs lqr",
+      "finetune lacks >=1% improvement vs student",
+      "pair0 does not improve student",
+      "pair1 does not improve student",
+      "pair2 does not improve student"
+    ]
   }
 }

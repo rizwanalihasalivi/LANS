@@ -1,0 +1,11 @@
+docs/research/reviewer-aligned-v3/source/tools/controller_review/realtime_kernels.py:79: new blank line at EOF.
+Traceback (most recent call last):
+  File "/workspace/LANS/tools/reviewer_v3/run3.py", line 64, in <module>
+    if __name__=='__main__':main()
+  File "/workspace/LANS/tools/reviewer_v3/run3.py", line 37, in main
+    publish('research: freeze execution-aligned predictive PPO experiment')
+  File "/workspace/LANS/tools/reviewer_v3/run3.py", line 31, in publish
+    subprocess.run(['git','diff','--cached','--check'],cwd=ROOT,check=True)
+  File "/workspace/.lans-python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'diff', '--cached', '--check']' returned non-zero exit status 2.

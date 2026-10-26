@@ -1,0 +1,10 @@
+test_execution_reward_is_actual_rate_not_command_jump (__main__.Contracts) ... ok
+test_filter_recovery_and_immediate_stale_revoke (__main__.Contracts) ... ok
+test_one_second_worker_does_not_delay_local_lqr (__main__.Contracts) ... ok
+test_prediction_mirror_and_longer_horizon (__main__.Contracts) ... ok
+test_training_noise_namespace_and_causal_reset (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 42.118s
+
+OK

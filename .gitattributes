@@ -19,3 +19,6 @@ docs/research/reviewer-causal-v1/** -text -whitespace
 
 # Follow-up evidence is byte-frozen separately from the failed v1 campaign.
 docs/research/reviewer-followup-v2/** -text -whitespace
+
+# New aligned campaign preserves legacy source snapshots and raw evidence bytes.
+docs/research/reviewer-aligned-v3/** -text -whitespace

@@ -1,0 +1,1 @@
+Exploratory 0.5-second smoke runs, excluded from final campaign. The first exposed un-warmed JIT signatures; the second checked the corrected warmup. They are engineering diagnostics from superseded harness revisions, not final protocol runs. Their raw traces preserve the observed stalls.

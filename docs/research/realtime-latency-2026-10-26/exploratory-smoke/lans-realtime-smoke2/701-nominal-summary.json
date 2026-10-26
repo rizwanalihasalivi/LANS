@@ -1,0 +1,88 @@
+{
+  "seed": 701,
+  "case": "nominal",
+  "ticks": 50,
+  "startup_ms": 3431.758662,
+  "worker_model_load_and_warmup_ms": 8.875231,
+  "packets": 49,
+  "simulated_duration_s": 0.5,
+  "wall_duration_s": 0.500980637,
+  "control": {
+    "n": 50,
+    "median_ms": 0.5950725,
+    "p95_ms": 0.8355030999999997,
+    "p99_ms": 1.0091535199999997,
+    "max_ms": 1.094047
+  },
+  "observer": {
+    "n": 50,
+    "median_ms": 0.2939155,
+    "p95_ms": 0.5140414999999999,
+    "p99_ms": 0.6018691899999998,
+    "max_ms": 0.633018
+  },
+  "response": {
+    "n": 50,
+    "median_ms": 0.718764,
+    "p95_ms": 0.9873789,
+    "p99_ms": 1.1087246099999997,
+    "max_ms": 1.186738
+  },
+  "release_lateness": {
+    "n": 50,
+    "median_ms": 0.101351,
+    "p95_ms": 0.24077359999999998,
+    "p99_ms": 0.3311742,
+    "max_ms": 0.336819
+  },
+  "inference": {
+    "n": 49,
+    "median_ms": 0.258979,
+    "p95_ms": 0.49168059999999986,
+    "p99_ms": 0.5171176399999999,
+    "max_ms": 0.519161
+  },
+  "request_to_delivery": {
+    "n": 49,
+    "median_ms": 10.183928,
+    "p95_ms": 10.4490296,
+    "p99_ms": 10.5404012,
+    "max_ms": 10.60901
+  },
+  "request_to_worker": {
+    "n": 49,
+    "median_ms": 0.516211,
+    "p95_ms": 0.7834651999999995,
+    "p99_ms": 0.9577213599999994,
+    "max_ms": 1.039786
+  },
+  "inference_to_delivery": {
+    "n": 49,
+    "median_ms": 9.388268,
+    "p95_ms": 9.7525554,
+    "p99_ms": 9.86718716,
+    "max_ms": 9.945935
+  },
+  "earned_application_age": null,
+  "all_held_packet_ages": {
+    "n": 49,
+    "median_ms": 10.601736,
+    "p95_ms": 10.881238399999999,
+    "p99_ms": 10.98836976,
+    "max_ms": 11.075532
+  },
+  "deadline_misses": 0,
+  "active_ticks": 0,
+  "stale_ticks": 0,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 1,
+  "fallback_violations": 0,
+  "worker_failure_events": [],
+  "post_failure_ticks": 0,
+  "survived": true,
+  "rmse": 0.16204094859479004,
+  "paired_lqr_rmse": 0.16204094859479004,
+  "paired_lqr_max_command_difference": 0.0,
+  "max_actuator_rate": 0.35,
+  "max_command": 0.06794885222887947
+}

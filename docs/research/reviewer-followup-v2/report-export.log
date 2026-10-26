@@ -1,0 +1,15 @@
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+{
+  "episodes": 864,
+  "selected": null,
+  "learning_additional_value_established": false,
+  "observed_strict_timing_pass": {
+    "sleep": false,
+    "absolute": false
+  },
+  "reserved": "unopened",
+  "actual_laptop_validation": false,
+  "physical_vehicle_validation": false,
+  "submission_ready_positive_performance_claim": false
+}

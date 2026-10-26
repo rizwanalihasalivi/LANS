@@ -1,0 +1,62 @@
+{
+  "profile": "causal_query_v2",
+  "export_checks": [
+    {
+      "seed": 701,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "source_model_sha256": "7b4f4c81c0bbfb2850800887dbf55302900ca45ce567af8130c1f28b876f2a32"
+    },
+    {
+      "seed": 802,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 3.814697265625e-06,
+      "source_model_sha256": "1d5918268928c4566325f2ef23348e77a298ad415939e6ad7d44f1c0969234fd"
+    },
+    {
+      "seed": 903,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 5.7220458984375e-06,
+      "source_model_sha256": "5f02de701170a8c4237fe22cd7b2a53aec7acb66b6790464fa2c19b410f672af"
+    }
+  ],
+  "sha256": {
+    "RUN_PYTHON310.cmd": "7d0f66ff26a9e7af98ed5b1e05f2e9aceedd34088820f736f04825d3da6211fa",
+    "golden.npz": "1b609836c6352cf0813f98cf6297fabae00d9552b4870746de3b4ca6c2256a93",
+    "model-701.npz": "4bac24ba71faf1622f196efbf6226d0a9d9f3a7d1df266746f05422b8d6ddefb",
+    "README.md": "592853fc863ed3b9cd5604aee54e7701d21c3263777698a9c1df7527acb23b7a",
+    "model-802.npz": "fd492234d820a502ac9e472f8f64d0e45b1299e5ba5482ceb0b3f67c9686f946",
+    "model-903.npz": "712bc767eef4017b25d23274e8e6e032138576d681b34ff79ee9b3c802cbc519",
+    "precision_wait.py": "50061f8a7abce90498b55b714abcdd4c8707b46654194a8bf528334f33d74f25",
+    "RUN_WINDOWS.cmd": "0242fef241e336cf68f66bc225f3243a9ec15057f402f4a11c196246a7600553",
+    "RUN_MACOS.command": "364df787c5c655d4d7afc82d0120e36c99a098119ee4172fb739eec2602e98b8",
+    "laptop_benchmark.py": "ff657e718c5ec1234969b8db3c066ea8739fcc6aff8db8c42623d80989cbead8"
+  },
+  "model_provenance": {
+    "701": {
+      "profile": "causal_query_v2",
+      "origin": "25k PPO actor exact export, NOT supervised-only student",
+      "ppo_sha256": "dedd3e4eef1111dfab2cde83300826fba16ee340553d796a39b264dbacfe00dd",
+      "steps": 25000,
+      "profile_compatibility": "Existing CPU worker architecture only; provenance identifies PPO"
+    },
+    "802": {
+      "profile": "causal_query_v2",
+      "origin": "25k PPO actor exact export, NOT supervised-only student",
+      "ppo_sha256": "9ef850466e63a79c3029bc9d95358d507424ed282622d461140cec397da2516b",
+      "steps": 25000,
+      "profile_compatibility": "Existing CPU worker architecture only; provenance identifies PPO"
+    },
+    "903": {
+      "profile": "causal_query_v2",
+      "origin": "25k PPO actor exact export, NOT supervised-only student",
+      "ppo_sha256": "e997501a0268683bc84a8cf1187aa22bcece0326466bb8824ef0baf9d27d630e",
+      "steps": 25000,
+      "profile_compatibility": "Existing CPU worker architecture only; provenance identifies PPO"
+    }
+  },
+  "policy_origin": "Exact25k causal PPO actor; not supervised-only student"
+}

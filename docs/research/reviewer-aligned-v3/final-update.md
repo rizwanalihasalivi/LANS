@@ -20,7 +20,7 @@ Three training/noise pairs are small-sample development evidence; control ticks 
 
 ## Observed timing and scheduling diagnosis
 
-Timing is deliberately run after training/development have finished. It uses the old fixed age_filtered diagnostic and old 25,000 PPO actors, not the new controller. Thus it isolates scheduling choices; a positive outcome cannot certify the new controller. Both profiles use the two highest available CPUs, nice 19 workers/stress and original 10 ms deadlines. The dedicated-spin profile burns one CPU and is not the laptop default.
+Timing is deliberately run after training/development have finished. It uses the old fixed age_filtered diagnostic and old 25,000 PPO actors, not the new controller. It probes scheduling choices in an uncontrolled cloud environment; a positive outcome cannot certify the new controller. Both profiles use the two highest available CPUs, nice 19 workers/stress and original 10 ms deadlines. The dedicated-spin profile burns one CPU and is not the laptop default.
 
 | Profile | Missed deadlines | Functional/raw replay | Actual nonzero correction ticks |
 |---|---:|---|---:|

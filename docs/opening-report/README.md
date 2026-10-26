@@ -1,8 +1,10 @@
 # LANS opening report
 
-Latest research evidence: [27October2026 follow-up](../research/reviewer-followup-v2/final-research-update.md).
-The864-episode same-gain comparison did not select a balanced PPO winner;
-reserved confirmation and actual hardware validation are still pending.
+Latest research evidence: [27 October2026 aligned update](../research/reviewer-aligned-v3/final-update.md).
+The new576-episode comparison passes the balanced-versus-LQR screen, but PPO's
+approximately0.33% gain over the student remains below the required1% margin.
+Full promotion, reserved confirmation, strict timing and actual hardware
+validation are still incomplete. The older864-episode follow-up is preserved.
 
 Revised report for Rizwan Ali, uploaded on 26 October 2026 using the author's selected final framework.
 

@@ -1,9 +1,11 @@
 {
   "archive_crc_pass": true,
   "sha256": {
-    "LANS_Aligned_Reports.zip": "3707e3ee72157abcb3c150374703c6cc69d891f0caa74413e32de498a0926379",
+    "LANS_Aligned_Reports.zip": "c33a7254c0809fdefccb130f4a587cdd17c7f7dbc34f38198d6507774a97ba92",
     "LANS_Aligned_Python310_Kit.zip": "e0002892fc87685f1eda0b89133565366007b0339eab00aee76804007e402011",
-    "final-update.docx": "ddff576bff05a83e27721967700d603b45bb23faf0a5d7064798dc5d5d6cc88d"
+    "final-update.docx": "e789ea2d19fcbd9f1aa756aac1fc1a111e78deb7a2d6e9e2966bf26fa4ff41e3"
   },
-  "actual_windows_macos_run": false
+  "actual_windows_macos_run": false,
+  "editable_math_objects": 5,
+  "manual_visual_review": "PDF pages1and4 reviewed: readable tables and five equations, no observed overlap."
 }

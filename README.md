@@ -10,7 +10,16 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
-- **Latest frozen follow-up:** [same-gain attribution and smoothing](docs/research/reviewer-followup-v2/README.md)
+- **Latest aligned study:** [300,000-step training and576-episode comparison](docs/research/reviewer-aligned-v3/README.md)
+  passes the balanced-versus-LQR development screen:1.445% tracking gain,
+  0.27% lower heading error and2.66% higher actuator-rate RMS (within5%).
+  PPO beats the matched student by about0.33%, below the frozen1% margin;
+  full promotion fails and reserved tests remain unopened. Timing still fails.
+  [Verified report](docs/research/reviewer-aligned-v3/final-update.md) and
+  [Python3.10 full-controller kit](docs/research/reviewer-aligned-v3/LANS_Aligned_Python310_Kit.zip)
+  include actual v3 actors, exact NumPy export and replay checks.
+  [One-command reproduction and limits](tools/controller_review/README-aligned.md).
+- **Prior frozen follow-up:** [same-gain attribution and smoothing](docs/research/reviewer-followup-v2/README.md)
   reports864 fresh development episodes. Filtered PPO gains5.79% tracking versus
   LQR, but has27.5% higher actuator-rate RMS and trails the same-gain student.
   Preview filtering gains0.73%; no new variant passes the frozen selection gate.

@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -37,6 +38,14 @@ def main():
     kit=out/'LANS_Aligned_Python310_Kit'
     if not kit.exists():run([sys.executable,HERE/'export_full_laptop.py','--actor-dir',portable,'--profile','aligned','--output',kit],out/'full-kit-export.log')
     manifest=json.loads((kit/'bundle-manifest.json').read_text())
+    # Audit-only updates can strengthen replay without rerunning measured cases.
+    audit_name='tools/controller_review/verify_full_laptop.py'
+    current_audit=hashlib.sha256((ROOT/audit_name).read_bytes()).hexdigest()
+    if manifest['sha256'][audit_name]!=current_audit:
+        shutil.copy2(ROOT/audit_name,kit/audit_name);manifest['sha256'][audit_name]=current_audit
+        (kit/'bundle-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+        with zipfile.ZipFile(kit.with_suffix('.zip'),'w',zipfile.ZIP_DEFLATED) as z:
+            for n in sorted(list(manifest['sha256'])+['bundle-manifest.json']):z.write(kit/n,str(Path(kit.name)/n))
     for n,h in manifest['sha256'].items():assert hashlib.sha256((kit/n).read_bytes()).hexdigest()==h
     smoke=out/'kit-smoke'
     if not (smoke/'summary.json').exists():
@@ -44,6 +53,13 @@ def main():
         run([args.smoke_python,kit/'tools/controller_review/laptop_full_controller.py','--profile','aligned','--models',kit/'actor',
             '--seconds','3','--output',smoke],out/'kit-smoke.log',cwd=kit)
     run([args.smoke_python,kit/'tools/controller_review/verify_full_laptop.py','--run',smoke,'--models',kit/'actor'],out/'kit-verification.log',cwd=kit)
+    measured=json.loads((smoke/'summary.json').read_text())
+    status=json.loads((out/'completion-status.json').read_text());metrics=json.loads((out/'summary.json').read_text())
+    candidate,base=metrics['ppo'],metrics['lqr']
+    status.update(balanced_vs_lqr_development_pass=candidate['rmse_m']<=.99*base['rmse_m'] and candidate['heading_rmse_rad']<=1.05*base['heading_rmse_rad'] and candidate['rate_rms_rad_s']<=1.05*base['rate_rms_rad_s'] and candidate['survived']>=base['survived'],
+        aligned_kit_functional_smoke_pass=measured['functional_pass'],aligned_kit_observed_timing_pass=measured['observed_timing_pass'],
+        supplied_primary_reference_entries_verified=5,environment_disconnect_during_diagnostic_campaign_noted=True)
+    (out/'completion-status.json').write_text(json.dumps(status,indent=2)+'\n')
     publish('tools: verify exact aligned PPO export and portable full-controller kit')
     final=out/'final-update.md';text=final.read_text()
     marker='## Portable aligned-controller package and verified references'
@@ -53,6 +69,13 @@ def main():
     text=text.replace('reviewer-aligned-v3/absolute_100us','v3 sleep + spin').replace('reviewer-aligned-v3/dedicated_spin','v3 full spin')
     text=text.replace('| absolute_100us |','| Sleep + 100µs spin |').replace('| dedicated_spin |','| Full spin |')
     text=text.replace('| oldppo |','| Old PPO |').replace('| ppo |','| New PPO |').replace('| lqr |','| LQR |')
+    text=text.replace('Thus it isolates scheduling choices; a positive outcome cannot certify the new controller.',
+        'It probes scheduling choices in an uncontrolled cloud environment; a positive outcome cannot certify the new controller.')
+    text=text.replace('The existing Python3.10 full-controller kit remains a verified old-controller development diagnostic. No new-controller laptop deployment is claimed.',
+        'The prior laptop kit is retained as historical evidence. The updated aligned-controller diagnostic kit is described below; it is not deployment approval.')
+    if '## Environment continuity and package timing limits' not in text:
+        misses=sum(e['deadline_misses'] for e in measured['episodes']);ticks=sum(e['ticks'] for e in measured['episodes'])
+        text+='\n## Environment continuity and package timing limits\n\nThe cloud connection became unavailable during the v3 diagnostic campaign. Saved processes completed and raw/model/plant audits passed after reconnection. Host pauses and connection loss are uncontrolled conditions; the timer counts must not be interpreted as a controlled uninterrupted causal comparison or as a hardware guarantee. Earlier independent timing failures remain unchanged.\n\n'+f'The updated aligned-controller clean Linux smoke recorded {misses}/{ticks} original10ms deadline misses, with functional_pass={measured["functional_pass"]}. This package test is not a timing pass. The strengthened verifier also independently reproduces the nine physical observation features at each returned packet original observation time. Actual Windows/macOS execution and physical hardware remain unvalidated.\n'
     if '## Exact aligned method and objectives' not in text:
         text+='\n'+(out/'aligned-method.md').read_text()+'\n'
     pieces=re.split(r'(`[^`]*`)',text)

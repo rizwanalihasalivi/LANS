@@ -1,0 +1,13 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "clock": {
+    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 1e-09
+  },
+  "/sys/fs/cgroup/cpu.max": "400000 100000\n",
+  "/sys/fs/cgroup/cpu.stat": "usage_usec 4475427041\nuser_usec 2681255116\nsystem_usec 1794171924\nnice_usec 0\nnr_periods 273927\nnr_throttled 1020\nthrottled_usec 82757667\nnr_bursts 0\nburst_usec 0\n",
+  "/sys/fs/cgroup/memory.max": "34359738368\n"
+}

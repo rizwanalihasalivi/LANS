@@ -1,0 +1,282 @@
+{
+  "episodes": [
+    {
+      "seed": 701,
+      "case": "nominal",
+      "ticks": 50,
+      "startup_ms": 3431.758662,
+      "worker_model_load_and_warmup_ms": 8.875231,
+      "packets": 49,
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.500980637,
+      "control": {
+        "n": 50,
+        "median_ms": 0.5950725,
+        "p95_ms": 0.8355030999999997,
+        "p99_ms": 1.0091535199999997,
+        "max_ms": 1.094047
+      },
+      "observer": {
+        "n": 50,
+        "median_ms": 0.2939155,
+        "p95_ms": 0.5140414999999999,
+        "p99_ms": 0.6018691899999998,
+        "max_ms": 0.633018
+      },
+      "response": {
+        "n": 50,
+        "median_ms": 0.718764,
+        "p95_ms": 0.9873789,
+        "p99_ms": 1.1087246099999997,
+        "max_ms": 1.186738
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.101351,
+        "p95_ms": 0.24077359999999998,
+        "p99_ms": 0.3311742,
+        "max_ms": 0.336819
+      },
+      "inference": {
+        "n": 49,
+        "median_ms": 0.258979,
+        "p95_ms": 0.49168059999999986,
+        "p99_ms": 0.5171176399999999,
+        "max_ms": 0.519161
+      },
+      "request_to_delivery": {
+        "n": 49,
+        "median_ms": 10.183928,
+        "p95_ms": 10.4490296,
+        "p99_ms": 10.5404012,
+        "max_ms": 10.60901
+      },
+      "request_to_worker": {
+        "n": 49,
+        "median_ms": 0.516211,
+        "p95_ms": 0.7834651999999995,
+        "p99_ms": 0.9577213599999994,
+        "max_ms": 1.039786
+      },
+      "inference_to_delivery": {
+        "n": 49,
+        "median_ms": 9.388268,
+        "p95_ms": 9.7525554,
+        "p99_ms": 9.86718716,
+        "max_ms": 9.945935
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 49,
+        "median_ms": 10.601736,
+        "p95_ms": 10.881238399999999,
+        "p99_ms": 10.98836976,
+        "max_ms": 11.075532
+      },
+      "deadline_misses": 0,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.16204094859479004,
+      "paired_lqr_rmse": 0.16204094859479004,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "delay100",
+      "ticks": 50,
+      "startup_ms": 2675.535948,
+      "worker_model_load_and_warmup_ms": 7.5139,
+      "packets": 4,
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.5029267709999999,
+      "control": {
+        "n": 50,
+        "median_ms": 0.2308155,
+        "p95_ms": 0.8762754999999998,
+        "p99_ms": 3.9116736199999895,
+        "max_ms": 6.47999
+      },
+      "observer": {
+        "n": 50,
+        "median_ms": 0.130229,
+        "p95_ms": 0.6354723999999992,
+        "p99_ms": 3.422393899999991,
+        "max_ms": 5.581721
+      },
+      "response": {
+        "n": 50,
+        "median_ms": 0.566168,
+        "p95_ms": 90.21304319999997,
+        "p99_ms": 109.61553953999997,
+        "max_ms": 114.432217
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.1494505,
+        "p95_ms": 90.16055474999996,
+        "p99_ms": 109.32187616999998,
+        "max_ms": 113.962258
+      },
+      "inference": {
+        "n": 4,
+        "median_ms": 0.43587750000000003,
+        "p95_ms": 0.48697114999999996,
+        "p99_ms": 0.49102943,
+        "max_ms": 0.492044
+      },
+      "request_to_delivery": {
+        "n": 4,
+        "median_ms": 110.260029,
+        "p95_ms": 152.73692524999998,
+        "p99_ms": 158.72909945,
+        "max_ms": 160.227143
+      },
+      "request_to_worker": {
+        "n": 4,
+        "median_ms": 0.6917835,
+        "p95_ms": 1.1252997999999999,
+        "p99_ms": 1.1748463599999999,
+        "max_ms": 1.187233
+      },
+      "inference_to_delivery": {
+        "n": 4,
+        "median_ms": 109.2500445,
+        "p95_ms": 151.509411,
+        "p99_ms": 157.4704854,
+        "max_ms": 158.960754
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 39,
+        "median_ms": 161.623047,
+        "p95_ms": 264.5865916,
+        "p99_ms": 264.6998965,
+        "max_ms": 264.726373
+      },
+      "deadline_misses": 12,
+      "active_ticks": 0,
+      "stale_ticks": 39,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 50,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.16204094859479004,
+      "paired_lqr_rmse": 0.16204094859479004,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "worker_crash",
+      "ticks": 50,
+      "startup_ms": 2564.550078,
+      "worker_model_load_and_warmup_ms": 5.061674,
+      "packets": 13,
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.500230286,
+      "control": {
+        "n": 50,
+        "median_ms": 0.223167,
+        "p95_ms": 1.7725317999999983,
+        "p99_ms": 16.120481899999948,
+        "max_ms": 28.901343
+      },
+      "observer": {
+        "n": 50,
+        "median_ms": 0.1406865,
+        "p95_ms": 1.451876799999998,
+        "p99_ms": 5.495936799999987,
+        "max_ms": 8.864775
+      },
+      "response": {
+        "n": 50,
+        "median_ms": 0.342044,
+        "p95_ms": 8.423812049999974,
+        "p99_ms": 26.59725618999998,
+        "max_ms": 30.911397
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.10233149999999999,
+        "p95_ms": 2.3059193499999986,
+        "p99_ms": 16.83936360999998,
+        "max_ms": 21.2797
+      },
+      "inference": {
+        "n": 13,
+        "median_ms": 0.322198,
+        "p95_ms": 3.5693125999999973,
+        "p99_ms": 4.4765889199999975,
+        "max_ms": 4.703408
+      },
+      "request_to_delivery": {
+        "n": 13,
+        "median_ms": 10.162638,
+        "p95_ms": 26.08725179999997,
+        "p99_ms": 35.80156475999998,
+        "max_ms": 38.230143
+      },
+      "request_to_worker": {
+        "n": 13,
+        "median_ms": 0.470813,
+        "p95_ms": 12.978829199999966,
+        "p99_ms": 25.050074639999977,
+        "max_ms": 28.067886
+      },
+      "inference_to_delivery": {
+        "n": 13,
+        "median_ms": 9.357686,
+        "p95_ms": 11.221988599999996,
+        "p99_ms": 12.514992919999997,
+        "max_ms": 12.838244
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 17,
+        "median_ms": 10.603136,
+        "p95_ms": 42.0277096,
+        "p99_ms": 42.385487520000005,
+        "max_ms": 42.474932
+      },
+      "deadline_misses": 3,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 33,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 18,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 32,
+      "survived": true,
+      "rmse": 0.16204094859479004,
+      "paired_lqr_rmse": 0.16204094859479004,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    }
+  ],
+  "functional_pass": true,
+  "timing_pass": false,
+  "limitations": [
+    "software plant advances in fixed 10ms steps; wall pacing and lateness measured, not continuously evolving physical hardware",
+    "cloud scheduler; fixed two-core affinity; stress is two Python busy loops, not exhaustive WCET testing",
+    "causal feature placeholders differ from training; original student native performance is not established",
+    "three seeds, one DLC path and 20m/s only; no claim of broad tracking superiority",
+    "software command application boundary, not physical CAN/actuator acknowledgement"
+  ]
+}

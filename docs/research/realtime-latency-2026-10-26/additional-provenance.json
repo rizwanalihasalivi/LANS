@@ -1,0 +1,19 @@
+{
+  "parent_commit": "6d3fcf0e4c384c7e05d248be229ece4432c0faaf",
+  "additional_hashes": {
+    "integrations/webots/results/revision8-student/students/701/student.pt": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48",
+    "integrations/webots/results/revision8-student/students/701/normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+    "integrations/webots/results/revision8-student/students/701/complete.json": "c9164a65bd68156beeae45862bbd1e396c17133f7edbf3bdaa37e0d81aa24a57",
+    "integrations/webots/results/revision8-student/students/802/student.pt": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f",
+    "integrations/webots/results/revision8-student/students/802/normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+    "integrations/webots/results/revision8-student/students/802/complete.json": "393492c24842b0da3c3273913ba3071c9ad0a28d903cc63a2cf454f84aaa396b",
+    "integrations/webots/results/revision8-student/students/903/student.pt": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa",
+    "integrations/webots/results/revision8-student/students/903/normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+    "integrations/webots/results/revision8-student/students/903/complete.json": "97e22b40a732ed370112ffe8f4205dfb72a2a8ba586b7d76f0cb23d655980609",
+    "integrations/webots/research/revision8/protocol.json": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+    "integrations/webots/research/revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "integrations/webots/research/core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "integrations/webots/research/comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "integrations/webots/research/revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b"
+  }
+}

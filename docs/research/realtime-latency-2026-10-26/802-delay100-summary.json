@@ -1,0 +1,88 @@
+{
+  "seed": 802,
+  "case": "delay100",
+  "ticks": 1300,
+  "startup_ms": 2474.812808,
+  "worker_model_load_and_warmup_ms": 7.363984,
+  "packets": 118,
+  "simulated_duration_s": 13.0,
+  "wall_duration_s": 13.000231901,
+  "control": {
+    "n": 1300,
+    "median_ms": 0.145748,
+    "p95_ms": 0.4841923499999999,
+    "p99_ms": 0.8519878899999997,
+    "max_ms": 2.303866
+  },
+  "observer": {
+    "n": 1300,
+    "median_ms": 0.0856615,
+    "p95_ms": 0.2594096999999999,
+    "p99_ms": 0.4830132899999999,
+    "max_ms": 1.228248
+  },
+  "response": {
+    "n": 1300,
+    "median_ms": 0.253184,
+    "p95_ms": 0.6765054499999998,
+    "p99_ms": 1.1925510199999994,
+    "max_ms": 3.209856
+  },
+  "release_lateness": {
+    "n": 1300,
+    "median_ms": 0.099367,
+    "p95_ms": 0.23140809999999998,
+    "p99_ms": 0.6191809199999999,
+    "max_ms": 3.001679
+  },
+  "inference": {
+    "n": 118,
+    "median_ms": 0.4562625,
+    "p95_ms": 1.0232620499999996,
+    "p99_ms": 1.6937548599999994,
+    "max_ms": 2.443399
+  },
+  "request_to_delivery": {
+    "n": 118,
+    "median_ms": 110.104913,
+    "p95_ms": 110.41454614999999,
+    "p99_ms": 110.87348934,
+    "max_ms": 110.972116
+  },
+  "request_to_worker": {
+    "n": 118,
+    "median_ms": 0.4856565,
+    "p95_ms": 1.06463925,
+    "p99_ms": 1.32153005,
+    "max_ms": 2.360699
+  },
+  "inference_to_delivery": {
+    "n": 118,
+    "median_ms": 109.1431695,
+    "p95_ms": 109.52403795000001,
+    "p99_ms": 109.99948956,
+    "max_ms": 110.235974
+  },
+  "earned_application_age": null,
+  "all_held_packet_ages": {
+    "n": 1289,
+    "median_ms": 160.137575,
+    "p95_ms": 210.1395022,
+    "p99_ms": 210.3292588,
+    "max_ms": 212.003296
+  },
+  "deadline_misses": 0,
+  "active_ticks": 0,
+  "stale_ticks": 1289,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 1300,
+  "fallback_violations": 0,
+  "worker_failure_events": [],
+  "post_failure_ticks": 0,
+  "survived": true,
+  "rmse": 0.047672429313282146,
+  "paired_lqr_rmse": 0.047672429313282146,
+  "paired_lqr_max_command_difference": 0.0,
+  "max_actuator_rate": 0.35,
+  "max_command": 0.05524209872760575
+}

@@ -1,0 +1,93 @@
+{
+  "seed": 701,
+  "case": "worker_crash",
+  "ticks": 50,
+  "startup_ms": 2564.550078,
+  "worker_model_load_and_warmup_ms": 5.061674,
+  "packets": 13,
+  "simulated_duration_s": 0.5,
+  "wall_duration_s": 0.500230286,
+  "control": {
+    "n": 50,
+    "median_ms": 0.223167,
+    "p95_ms": 1.7725317999999983,
+    "p99_ms": 16.120481899999948,
+    "max_ms": 28.901343
+  },
+  "observer": {
+    "n": 50,
+    "median_ms": 0.1406865,
+    "p95_ms": 1.451876799999998,
+    "p99_ms": 5.495936799999987,
+    "max_ms": 8.864775
+  },
+  "response": {
+    "n": 50,
+    "median_ms": 0.342044,
+    "p95_ms": 8.423812049999974,
+    "p99_ms": 26.59725618999998,
+    "max_ms": 30.911397
+  },
+  "release_lateness": {
+    "n": 50,
+    "median_ms": 0.10233149999999999,
+    "p95_ms": 2.3059193499999986,
+    "p99_ms": 16.83936360999998,
+    "max_ms": 21.2797
+  },
+  "inference": {
+    "n": 13,
+    "median_ms": 0.322198,
+    "p95_ms": 3.5693125999999973,
+    "p99_ms": 4.4765889199999975,
+    "max_ms": 4.703408
+  },
+  "request_to_delivery": {
+    "n": 13,
+    "median_ms": 10.162638,
+    "p95_ms": 26.08725179999997,
+    "p99_ms": 35.80156475999998,
+    "max_ms": 38.230143
+  },
+  "request_to_worker": {
+    "n": 13,
+    "median_ms": 0.470813,
+    "p95_ms": 12.978829199999966,
+    "p99_ms": 25.050074639999977,
+    "max_ms": 28.067886
+  },
+  "inference_to_delivery": {
+    "n": 13,
+    "median_ms": 9.357686,
+    "p95_ms": 11.221988599999996,
+    "p99_ms": 12.514992919999997,
+    "max_ms": 12.838244
+  },
+  "earned_application_age": null,
+  "all_held_packet_ages": {
+    "n": 17,
+    "median_ms": 10.603136,
+    "p95_ms": 42.0277096,
+    "p99_ms": 42.385487520000005,
+    "max_ms": 42.474932
+  },
+  "deadline_misses": 3,
+  "active_ticks": 0,
+  "stale_ticks": 0,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 33,
+  "fallback_violations": 0,
+  "worker_failure_events": [
+    {
+      "tick": 18,
+      "error": "[Errno 104] Connection reset by peer"
+    }
+  ],
+  "post_failure_ticks": 32,
+  "survived": true,
+  "rmse": 0.16204094859479004,
+  "paired_lqr_rmse": 0.16204094859479004,
+  "paired_lqr_max_command_difference": 0.0,
+  "max_actuator_rate": 0.35,
+  "max_command": 0.06794885222887947
+}

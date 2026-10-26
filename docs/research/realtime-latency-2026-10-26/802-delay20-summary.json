@@ -1,0 +1,94 @@
+{
+  "seed": 802,
+  "case": "delay20",
+  "ticks": 1300,
+  "startup_ms": 5873.215395,
+  "worker_model_load_and_warmup_ms": 25.711511,
+  "packets": 425,
+  "simulated_duration_s": 13.0,
+  "wall_duration_s": 13.000843618,
+  "control": {
+    "n": 1300,
+    "median_ms": 0.27769849999999996,
+    "p95_ms": 0.8991524999999992,
+    "p99_ms": 2.3718527399999987,
+    "max_ms": 91.991024
+  },
+  "observer": {
+    "n": 1300,
+    "median_ms": 0.098095,
+    "p95_ms": 0.4776147,
+    "p99_ms": 1.13502913,
+    "max_ms": 37.017248
+  },
+  "response": {
+    "n": 1300,
+    "median_ms": 0.435268,
+    "p95_ms": 1.6853241999999984,
+    "p99_ms": 34.672614409999944,
+    "max_ms": 102.8826
+  },
+  "release_lateness": {
+    "n": 1300,
+    "median_ms": 0.11028099999999999,
+    "p95_ms": 0.5621035499999997,
+    "p99_ms": 30.160900509999962,
+    "max_ms": 92.975588
+  },
+  "inference": {
+    "n": 425,
+    "median_ms": 0.341166,
+    "p95_ms": 1.2375429999999985,
+    "p99_ms": 1.8054359999999992,
+    "max_ms": 20.651914
+  },
+  "request_to_delivery": {
+    "n": 425,
+    "median_ms": 30.090735,
+    "p95_ms": 30.699032600000002,
+    "p99_ms": 39.33142275999999,
+    "max_ms": 119.309139
+  },
+  "request_to_worker": {
+    "n": 425,
+    "median_ms": 0.405269,
+    "p95_ms": 1.4824005999999994,
+    "p99_ms": 6.509129399999965,
+    "max_ms": 92.006935
+  },
+  "inference_to_delivery": {
+    "n": 425,
+    "median_ms": 29.357105,
+    "p95_ms": 29.7568522,
+    "p99_ms": 34.06150775999997,
+    "max_ms": 105.97624
+  },
+  "earned_application_age": {
+    "n": 3,
+    "median_ms": 40.498711,
+    "p95_ms": 47.7829582,
+    "p99_ms": 48.43044684,
+    "max_ms": 48.592319
+  },
+  "all_held_packet_ages": {
+    "n": 1292,
+    "median_ms": 40.254787,
+    "p95_ms": 50.5302977,
+    "p99_ms": 132.86607499000002,
+    "max_ms": 150.31567
+  },
+  "deadline_misses": 22,
+  "active_ticks": 3,
+  "stale_ticks": 436,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 444,
+  "fallback_violations": 0,
+  "worker_failure_events": [],
+  "post_failure_ticks": 0,
+  "survived": true,
+  "rmse": 0.04767317532061175,
+  "paired_lqr_rmse": 0.047672429313282146,
+  "paired_lqr_max_command_difference": 0.009419118707462112,
+  "max_actuator_rate": 0.35,
+  "max_command": 0.05524209872760575
+}

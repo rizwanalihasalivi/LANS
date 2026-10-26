@@ -1,0 +1,1678 @@
+{
+  "episodes": [
+    {
+      "seed": 701,
+      "case": "nominal",
+      "ticks": 1300,
+      "startup_ms": 3651.216695,
+      "worker_model_load_and_warmup_ms": 8.870845,
+      "packets": 1292,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000718417,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.5511604999999999,
+        "p95_ms": 1.4018712999999998,
+        "p99_ms": 2.26649741,
+        "max_ms": 23.524914
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.2036865,
+        "p95_ms": 0.7121928499999995,
+        "p99_ms": 1.4970385499999992,
+        "max_ms": 23.264098
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.6891689999999999,
+        "p95_ms": 1.7596193499999984,
+        "p99_ms": 3.6127793599999976,
+        "max_ms": 25.445515
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.11173150000000001,
+        "p95_ms": 0.32878529999999984,
+        "p99_ms": 1.526321009999998,
+        "max_ms": 15.841148
+      },
+      "inference": {
+        "n": 1292,
+        "median_ms": 0.3497905,
+        "p95_ms": 1.1815988000000002,
+        "p99_ms": 1.9975783299999863,
+        "max_ms": 14.867811
+      },
+      "request_to_delivery": {
+        "n": 1292,
+        "median_ms": 10.1049215,
+        "p95_ms": 10.5747706,
+        "p99_ms": 11.925749999999967,
+        "max_ms": 39.275003
+      },
+      "request_to_worker": {
+        "n": 1292,
+        "median_ms": 0.4972035,
+        "p95_ms": 1.2478535500000005,
+        "p99_ms": 2.127197699999994,
+        "max_ms": 23.433136
+      },
+      "inference_to_delivery": {
+        "n": 1292,
+        "median_ms": 9.2923015,
+        "p95_ms": 9.7195798,
+        "p99_ms": 10.859892489999996,
+        "max_ms": 25.404203
+      },
+      "earned_application_age": {
+        "n": 187,
+        "median_ms": 10.566043,
+        "p95_ms": 11.1526412,
+        "p99_ms": 12.183554699999993,
+        "max_ms": 14.254888
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.55155,
+        "p95_ms": 11.666732399999999,
+        "p99_ms": 19.04730201999999,
+        "max_ms": 41.772004
+      },
+      "deadline_misses": 5,
+      "active_ticks": 187,
+      "stale_ticks": 0,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04285904975461519,
+      "paired_lqr_rmse": 0.04658466355452523,
+      "paired_lqr_max_command_difference": 0.02891755958979898,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "delay20",
+      "ticks": 1300,
+      "startup_ms": 2701.984302,
+      "worker_model_load_and_warmup_ms": 10.086635,
+      "packets": 433,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000666514999999,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.28738450000000004,
+        "p95_ms": 0.6737247,
+        "p99_ms": 0.99962673,
+        "max_ms": 1.560807
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.099754,
+        "p95_ms": 0.36292005,
+        "p99_ms": 0.58447938,
+        "max_ms": 1.171001
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.4307285,
+        "p95_ms": 0.9000290499999996,
+        "p99_ms": 1.4599476,
+        "max_ms": 6.728665
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.10649900000000001,
+        "p95_ms": 0.2586111,
+        "p99_ms": 0.7924659799999993,
+        "max_ms": 5.654526
+      },
+      "inference": {
+        "n": 433,
+        "median_ms": 0.29848,
+        "p95_ms": 0.6348385999999999,
+        "p99_ms": 1.0634494,
+        "max_ms": 2.184802
+      },
+      "request_to_delivery": {
+        "n": 433,
+        "median_ms": 30.089803,
+        "p95_ms": 30.3807376,
+        "p99_ms": 30.76040216,
+        "max_ms": 36.038394
+      },
+      "request_to_worker": {
+        "n": 433,
+        "median_ms": 0.407598,
+        "p95_ms": 0.7634753999999997,
+        "p99_ms": 1.1095216400000008,
+        "max_ms": 1.511755
+      },
+      "inference_to_delivery": {
+        "n": 433,
+        "median_ms": 29.378674,
+        "p95_ms": 29.7193804,
+        "p99_ms": 30.187564679999998,
+        "max_ms": 35.156628
+      },
+      "earned_application_age": {
+        "n": 1,
+        "median_ms": 47.243319,
+        "p95_ms": 47.243319,
+        "p99_ms": 47.243319,
+        "max_ms": 47.243319
+      },
+      "all_held_packet_ages": {
+        "n": 1297,
+        "median_ms": 40.264863,
+        "p95_ms": 50.3069732,
+        "p99_ms": 50.6986268,
+        "max_ms": 52.72889
+      },
+      "deadline_misses": 0,
+      "active_ticks": 1,
+      "stale_ticks": 422,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 425,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04658556805883375,
+      "paired_lqr_rmse": 0.04658466355452523,
+      "paired_lqr_max_command_difference": 0.0028883570000008546,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "delay60",
+      "ticks": 1300,
+      "startup_ms": 2649.820538,
+      "worker_model_load_and_warmup_ms": 6.769015,
+      "packets": 175,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000327618,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.154569,
+        "p95_ms": 0.6342876499999998,
+        "p99_ms": 1.4098471999999993,
+        "max_ms": 445.254135
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.0861605,
+        "p95_ms": 0.3702680999999998,
+        "p99_ms": 1.1605319299999999,
+        "max_ms": 424.14343
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.323469,
+        "p95_ms": 48.29464139999979,
+        "p99_ms": 526.2327208799999,
+        "max_ms": 608.180524
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.10943,
+        "p95_ms": 43.00350139999977,
+        "p99_ms": 516.2609705299999,
+        "max_ms": 598.354908
+      },
+      "inference": {
+        "n": 175,
+        "median_ms": 0.534295,
+        "p95_ms": 1.371094899999999,
+        "p99_ms": 2.4608773199999936,
+        "max_ms": 44.111029
+      },
+      "request_to_delivery": {
+        "n": 175,
+        "median_ms": 70.09981,
+        "p95_ms": 70.7391995,
+        "p99_ms": 191.3240696199971,
+        "max_ms": 608.418455
+      },
+      "request_to_worker": {
+        "n": 175,
+        "median_ms": 0.506484,
+        "p95_ms": 1.3710994999999973,
+        "p99_ms": 8.737367839999981,
+        "max_ms": 445.879801
+      },
+      "inference_to_delivery": {
+        "n": 175,
+        "median_ms": 69.022418,
+        "p95_ms": 69.6805717,
+        "p99_ms": 110.0372533999999,
+        "max_ms": 426.896363
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1293,
+        "median_ms": 100.261757,
+        "p95_ms": 683.71128,
+        "p99_ms": 711.7429644,
+        "max_ms": 789.272701
+      },
+      "deadline_misses": 75,
+      "active_ticks": 0,
+      "stale_ticks": 1293,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04658466355452523,
+      "paired_lqr_rmse": 0.04658466355452523,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "delay100",
+      "ticks": 1300,
+      "startup_ms": 2691.395686,
+      "worker_model_load_and_warmup_ms": 7.751465,
+      "packets": 106,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.011272095999999,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.1971595,
+        "p95_ms": 0.85622385,
+        "p99_ms": 5.65300374,
+        "max_ms": 480.673858
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.091208,
+        "p95_ms": 0.4644172999999998,
+        "p99_ms": 1.8142877199999838,
+        "max_ms": 479.324805
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.411659,
+        "p95_ms": 170.73713879999988,
+        "p99_ms": 370.2664240999999,
+        "max_ms": 489.096774
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.11306350000000001,
+        "p95_ms": 160.77333874999988,
+        "p99_ms": 360.2841351299999,
+        "max_ms": 486.358233
+      },
+      "inference": {
+        "n": 106,
+        "median_ms": 0.7510399999999999,
+        "p95_ms": 4.66069725,
+        "p99_ms": 24.79216510000004,
+        "max_ms": 137.129525
+      },
+      "request_to_delivery": {
+        "n": 106,
+        "median_ms": 110.1309905,
+        "p95_ms": 160.98039875,
+        "p99_ms": 506.32164050000006,
+        "max_ms": 593.124412
+      },
+      "request_to_worker": {
+        "n": 106,
+        "median_ms": 0.5924935,
+        "p95_ms": 2.9714679999999998,
+        "p99_ms": 32.803612300000054,
+        "max_ms": 347.19142
+      },
+      "inference_to_delivery": {
+        "n": 106,
+        "median_ms": 108.827378,
+        "p95_ms": 137.210154,
+        "p99_ms": 448.2926689500008,
+        "max_ms": 506.226369
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1289,
+        "median_ms": 170.283272,
+        "p95_ms": 566.570711199999,
+        "p99_ms": 652.7129651999999,
+        "max_ms": 733.053827
+      },
+      "deadline_misses": 173,
+      "active_ticks": 0,
+      "stale_ticks": 1289,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04658466355452523,
+      "paired_lqr_rmse": 0.04658466355452523,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "cpu_stress",
+      "ticks": 1300,
+      "startup_ms": 2135.382988,
+      "worker_model_load_and_warmup_ms": 5.91582,
+      "packets": 1215,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000751503,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.58229,
+        "p95_ms": 1.1697238,
+        "p99_ms": 2.393676039999999,
+        "max_ms": 386.425599
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.224929,
+        "p95_ms": 0.67743965,
+        "p99_ms": 1.3148410799999988,
+        "max_ms": 382.466461
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.872988,
+        "p95_ms": 28.036465599999886,
+        "p99_ms": 277.8621410099999,
+        "max_ms": 401.649157
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.135515,
+        "p95_ms": 22.144238749999943,
+        "p99_ms": 267.8890048899999,
+        "max_ms": 392.318774
+      },
+      "inference": {
+        "n": 1215,
+        "median_ms": 0.256469,
+        "p95_ms": 0.6292128999999997,
+        "p99_ms": 1.0347774999999981,
+        "max_ms": 542.979468
+      },
+      "request_to_delivery": {
+        "n": 1215,
+        "median_ms": 10.178559,
+        "p95_ms": 15.9725403,
+        "p99_ms": 17.924046759999992,
+        "max_ms": 601.958661
+      },
+      "request_to_worker": {
+        "n": 1215,
+        "median_ms": 0.519814,
+        "p95_ms": 2.5399966999999957,
+        "p99_ms": 4.157881499999997,
+        "max_ms": 108.310653
+      },
+      "inference_to_delivery": {
+        "n": 1215,
+        "median_ms": 9.368267,
+        "p95_ms": 15.084332400000001,
+        "p99_ms": 16.401472699999974,
+        "max_ms": 125.453237
+      },
+      "earned_application_age": {
+        "n": 175,
+        "median_ms": 10.604636,
+        "p95_ms": 16.4065487,
+        "p99_ms": 16.9316353,
+        "max_ms": 18.311013
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.643618,
+        "p95_ms": 92.67150059999999,
+        "p99_ms": 606.8160414199999,
+        "max_ms": 624.221924
+      },
+      "deadline_misses": 82,
+      "active_ticks": 175,
+      "stale_ticks": 76,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 77,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04289107721951903,
+      "paired_lqr_rmse": 0.04658466355452523,
+      "paired_lqr_max_command_difference": 0.028924302153087108,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 701,
+      "case": "worker_crash",
+      "ticks": 1300,
+      "startup_ms": 2126.854595,
+      "worker_model_load_and_warmup_ms": 5.656404,
+      "packets": 428,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000693044,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.087104,
+        "p95_ms": 0.7867570999999999,
+        "p99_ms": 3.168406719999998,
+        "max_ms": 46.080445
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.048805,
+        "p95_ms": 0.44685725,
+        "p99_ms": 1.915853029999997,
+        "max_ms": 24.72875
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.26478999999999997,
+        "p95_ms": 1.596527299999999,
+        "p99_ms": 14.496320159999986,
+        "max_ms": 66.874401
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.13186750000000003,
+        "p95_ms": 0.4842910499999996,
+        "p99_ms": 7.896299819999994,
+        "max_ms": 58.52335
+      },
+      "inference": {
+        "n": 428,
+        "median_ms": 0.2819675,
+        "p95_ms": 1.009565849999999,
+        "p99_ms": 2.2923249900000005,
+        "max_ms": 3.961457
+      },
+      "request_to_delivery": {
+        "n": 428,
+        "median_ms": 10.089285,
+        "p95_ms": 10.715247599999998,
+        "p99_ms": 14.082496270000025,
+        "max_ms": 42.514606
+      },
+      "request_to_worker": {
+        "n": 428,
+        "median_ms": 0.40278400000000003,
+        "p95_ms": 1.2072246499999997,
+        "p99_ms": 2.5586235299999998,
+        "max_ms": 30.489194
+      },
+      "inference_to_delivery": {
+        "n": 428,
+        "median_ms": 9.426912999999999,
+        "p95_ms": 9.8542828,
+        "p99_ms": 11.181055440000002,
+        "max_ms": 38.770726
+      },
+      "earned_application_age": {
+        "n": 38,
+        "median_ms": 10.440778,
+        "p95_ms": 12.074964249999999,
+        "p99_ms": 12.472811400000001,
+        "max_ms": 12.630461
+      },
+      "all_held_packet_ages": {
+        "n": 434,
+        "median_ms": 10.4544845,
+        "p95_ms": 11.837477949999997,
+        "p99_ms": 45.52487452000006,
+        "max_ms": 50.211
+      },
+      "deadline_misses": 17,
+      "active_ticks": 38,
+      "stale_ticks": 1,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 867,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 435,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 865,
+      "survived": true,
+      "rmse": 0.04499781709494813,
+      "paired_lqr_rmse": 0.04658466355452523,
+      "paired_lqr_max_command_difference": 0.02892151456142274,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06794885222887947
+    },
+    {
+      "seed": 802,
+      "case": "nominal",
+      "ticks": 1300,
+      "startup_ms": 2904.979239,
+      "worker_model_load_and_warmup_ms": 6.567741,
+      "packets": 653,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 14.756240634,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.3813435,
+        "p95_ms": 3.3732789999999984,
+        "p99_ms": 124.76644679999995,
+        "max_ms": 1439.428187
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.140606,
+        "p95_ms": 1.479403649999998,
+        "p99_ms": 44.00876748999996,
+        "max_ms": 616.979938
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 80.14184800000001,
+        "p95_ms": 3694.7824684999996,
+        "p99_ms": 4061.65536372,
+        "max_ms": 4148.043258
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 70.681814,
+        "p95_ms": 3684.8573948999997,
+        "p99_ms": 4051.67698073,
+        "max_ms": 4138.317787
+      },
+      "inference": {
+        "n": 653,
+        "median_ms": 0.345829,
+        "p95_ms": 3.1457925999999947,
+        "p99_ms": 26.359061120000074,
+        "max_ms": 1666.156906
+      },
+      "request_to_delivery": {
+        "n": 653,
+        "median_ms": 10.102876,
+        "p95_ms": 39.1006874,
+        "p99_ms": 450.4910604000007,
+        "max_ms": 2939.39173
+      },
+      "request_to_worker": {
+        "n": 653,
+        "median_ms": 0.465698,
+        "p95_ms": 3.8960909999999997,
+        "p99_ms": 120.47252588000184,
+        "max_ms": 1270.915115
+      },
+      "inference_to_delivery": {
+        "n": 653,
+        "median_ms": 9.159812,
+        "p95_ms": 14.623148399999979,
+        "p99_ms": 56.49635512000014,
+        "max_ms": 632.349733
+      },
+      "earned_application_age": {
+        "n": 127,
+        "median_ms": 10.286165,
+        "p95_ms": 11.511794299999998,
+        "p99_ms": 12.28753804,
+        "max_ms": 39.456103
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.927837,
+        "p95_ms": 1748.069818,
+        "p99_ms": 2955.6801580799997,
+        "max_ms": 4629.152426
+      },
+      "deadline_misses": 763,
+      "active_ticks": 127,
+      "stale_ticks": 498,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 499,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04446350652780258,
+      "paired_lqr_rmse": 0.047672429313282146,
+      "paired_lqr_max_command_difference": 0.026898349688047732,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.06432310975287912
+    },
+    {
+      "seed": 802,
+      "case": "delay20",
+      "ticks": 1300,
+      "startup_ms": 5873.215395,
+      "worker_model_load_and_warmup_ms": 25.711511,
+      "packets": 425,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000843618,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.27769849999999996,
+        "p95_ms": 0.8991524999999992,
+        "p99_ms": 2.3718527399999987,
+        "max_ms": 91.991024
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.098095,
+        "p95_ms": 0.4776147,
+        "p99_ms": 1.13502913,
+        "max_ms": 37.017248
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.435268,
+        "p95_ms": 1.6853241999999984,
+        "p99_ms": 34.672614409999944,
+        "max_ms": 102.8826
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.11028099999999999,
+        "p95_ms": 0.5621035499999997,
+        "p99_ms": 30.160900509999962,
+        "max_ms": 92.975588
+      },
+      "inference": {
+        "n": 425,
+        "median_ms": 0.341166,
+        "p95_ms": 1.2375429999999985,
+        "p99_ms": 1.8054359999999992,
+        "max_ms": 20.651914
+      },
+      "request_to_delivery": {
+        "n": 425,
+        "median_ms": 30.090735,
+        "p95_ms": 30.699032600000002,
+        "p99_ms": 39.33142275999999,
+        "max_ms": 119.309139
+      },
+      "request_to_worker": {
+        "n": 425,
+        "median_ms": 0.405269,
+        "p95_ms": 1.4824005999999994,
+        "p99_ms": 6.509129399999965,
+        "max_ms": 92.006935
+      },
+      "inference_to_delivery": {
+        "n": 425,
+        "median_ms": 29.357105,
+        "p95_ms": 29.7568522,
+        "p99_ms": 34.06150775999997,
+        "max_ms": 105.97624
+      },
+      "earned_application_age": {
+        "n": 3,
+        "median_ms": 40.498711,
+        "p95_ms": 47.7829582,
+        "p99_ms": 48.43044684,
+        "max_ms": 48.592319
+      },
+      "all_held_packet_ages": {
+        "n": 1292,
+        "median_ms": 40.254787,
+        "p95_ms": 50.5302977,
+        "p99_ms": 132.86607499000002,
+        "max_ms": 150.31567
+      },
+      "deadline_misses": 22,
+      "active_ticks": 3,
+      "stale_ticks": 436,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 444,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04767317532061175,
+      "paired_lqr_rmse": 0.047672429313282146,
+      "paired_lqr_max_command_difference": 0.009419118707462112,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.05524209872760575
+    },
+    {
+      "seed": 802,
+      "case": "delay60",
+      "ticks": 1300,
+      "startup_ms": 2565.396049,
+      "worker_model_load_and_warmup_ms": 8.66221,
+      "packets": 184,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.00024015,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.1923705,
+        "p95_ms": 0.6433675,
+        "p99_ms": 1.4102284900000002,
+        "max_ms": 11.027285
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.096445,
+        "p95_ms": 0.4216123999999999,
+        "p99_ms": 0.9200588999999999,
+        "max_ms": 8.057768
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.3228375,
+        "p95_ms": 0.9886968999999985,
+        "p99_ms": 3.181422609999991,
+        "max_ms": 34.211838
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.104285,
+        "p95_ms": 0.43101829999999997,
+        "p99_ms": 1.840152209999999,
+        "max_ms": 33.717
+      },
+      "inference": {
+        "n": 184,
+        "median_ms": 0.484354,
+        "p95_ms": 1.3806516999999998,
+        "p99_ms": 2.3125132099999983,
+        "max_ms": 4.823021
+      },
+      "request_to_delivery": {
+        "n": 184,
+        "median_ms": 70.10883150000001,
+        "p95_ms": 70.65970615,
+        "p99_ms": 83.1600761699998,
+        "max_ms": 103.811874
+      },
+      "request_to_worker": {
+        "n": 184,
+        "median_ms": 0.492104,
+        "p95_ms": 1.4375563,
+        "p99_ms": 2.6956788599999983,
+        "max_ms": 6.716214
+      },
+      "inference_to_delivery": {
+        "n": 184,
+        "median_ms": 69.0897075,
+        "p95_ms": 69.86267939999999,
+        "p99_ms": 82.2458681499998,
+        "max_ms": 103.153248
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1293,
+        "median_ms": 100.188955,
+        "p95_ms": 130.2365318,
+        "p99_ms": 131.18878015999996,
+        "max_ms": 160.364811
+      },
+      "deadline_misses": 6,
+      "active_ticks": 0,
+      "stale_ticks": 1293,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.047672429313282146,
+      "paired_lqr_rmse": 0.047672429313282146,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.05524209872760575
+    },
+    {
+      "seed": 802,
+      "case": "delay100",
+      "ticks": 1300,
+      "startup_ms": 2474.812808,
+      "worker_model_load_and_warmup_ms": 7.363984,
+      "packets": 118,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000231901,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.145748,
+        "p95_ms": 0.4841923499999999,
+        "p99_ms": 0.8519878899999997,
+        "max_ms": 2.303866
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.0856615,
+        "p95_ms": 0.2594096999999999,
+        "p99_ms": 0.4830132899999999,
+        "max_ms": 1.228248
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.253184,
+        "p95_ms": 0.6765054499999998,
+        "p99_ms": 1.1925510199999994,
+        "max_ms": 3.209856
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.099367,
+        "p95_ms": 0.23140809999999998,
+        "p99_ms": 0.6191809199999999,
+        "max_ms": 3.001679
+      },
+      "inference": {
+        "n": 118,
+        "median_ms": 0.4562625,
+        "p95_ms": 1.0232620499999996,
+        "p99_ms": 1.6937548599999994,
+        "max_ms": 2.443399
+      },
+      "request_to_delivery": {
+        "n": 118,
+        "median_ms": 110.104913,
+        "p95_ms": 110.41454614999999,
+        "p99_ms": 110.87348934,
+        "max_ms": 110.972116
+      },
+      "request_to_worker": {
+        "n": 118,
+        "median_ms": 0.4856565,
+        "p95_ms": 1.06463925,
+        "p99_ms": 1.32153005,
+        "max_ms": 2.360699
+      },
+      "inference_to_delivery": {
+        "n": 118,
+        "median_ms": 109.1431695,
+        "p95_ms": 109.52403795000001,
+        "p99_ms": 109.99948956,
+        "max_ms": 110.235974
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1289,
+        "median_ms": 160.137575,
+        "p95_ms": 210.1395022,
+        "p99_ms": 210.3292588,
+        "max_ms": 212.003296
+      },
+      "deadline_misses": 0,
+      "active_ticks": 0,
+      "stale_ticks": 1289,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.047672429313282146,
+      "paired_lqr_rmse": 0.047672429313282146,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.05524209872760575
+    },
+    {
+      "seed": 802,
+      "case": "cpu_stress",
+      "ticks": 1300,
+      "startup_ms": 2289.395628,
+      "worker_model_load_and_warmup_ms": 7.204888,
+      "packets": 1272,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.004017935,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.543371,
+        "p95_ms": 1.4930595999999996,
+        "p99_ms": 7.560597269999992,
+        "max_ms": 35.224576
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.17048649999999999,
+        "p95_ms": 0.671385949999999,
+        "p99_ms": 2.4033118599999974,
+        "max_ms": 25.464583
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.80434,
+        "p95_ms": 7.796211699999996,
+        "p99_ms": 19.91970859999999,
+        "max_ms": 41.180742
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.0925455,
+        "p95_ms": 5.76993235,
+        "p99_ms": 10.256571899999992,
+        "max_ms": 31.257312
+      },
+      "inference": {
+        "n": 1272,
+        "median_ms": 0.275096,
+        "p95_ms": 0.8001001500000007,
+        "p99_ms": 1.842229009999999,
+        "max_ms": 25.85271
+      },
+      "request_to_delivery": {
+        "n": 1272,
+        "median_ms": 10.086693,
+        "p95_ms": 15.6032632,
+        "p99_ms": 19.727053829999996,
+        "max_ms": 54.254644
+      },
+      "request_to_worker": {
+        "n": 1272,
+        "median_ms": 0.4763625,
+        "p95_ms": 3.4059327,
+        "p99_ms": 6.284933529999982,
+        "max_ms": 28.433712
+      },
+      "inference_to_delivery": {
+        "n": 1272,
+        "median_ms": 9.319937,
+        "p95_ms": 14.8174659,
+        "p99_ms": 16.8578686,
+        "max_ms": 38.531166
+      },
+      "earned_application_age": {
+        "n": 243,
+        "median_ms": 10.588855,
+        "p95_ms": 20.19827199999999,
+        "p99_ms": 41.0461673,
+        "max_ms": 47.184827
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.556875,
+        "p95_ms": 18.0467905,
+        "p99_ms": 36.080475019999966,
+        "max_ms": 80.455933
+      },
+      "deadline_misses": 31,
+      "active_ticks": 243,
+      "stale_ticks": 4,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 5,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04307252119282477,
+      "paired_lqr_rmse": 0.047672429313282146,
+      "paired_lqr_max_command_difference": 0.030101309649364996,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.06432310975287912
+    },
+    {
+      "seed": 802,
+      "case": "worker_crash",
+      "ticks": 1300,
+      "startup_ms": 2477.647374,
+      "worker_model_load_and_warmup_ms": 7.896377,
+      "packets": 424,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000220663,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.110512,
+        "p95_ms": 0.6538956499999999,
+        "p99_ms": 3.6359644199999925,
+        "max_ms": 47.656531
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.08037949999999999,
+        "p95_ms": 0.3562419999999997,
+        "p99_ms": 1.573721239999992,
+        "max_ms": 27.645696
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.255243,
+        "p95_ms": 1.0085282499999995,
+        "p99_ms": 25.60611949999998,
+        "max_ms": 57.318249
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1012655,
+        "p95_ms": 0.41596734999999996,
+        "p99_ms": 18.6299985,
+        "max_ms": 57.224713
+      },
+      "inference": {
+        "n": 424,
+        "median_ms": 0.2882215,
+        "p95_ms": 0.6892054999999992,
+        "p99_ms": 1.4143577499999989,
+        "max_ms": 17.67697
+      },
+      "request_to_delivery": {
+        "n": 424,
+        "median_ms": 10.11392,
+        "p95_ms": 10.3546433,
+        "p99_ms": 13.971082069999941,
+        "max_ms": 64.201489
+      },
+      "request_to_worker": {
+        "n": 424,
+        "median_ms": 0.373659,
+        "p95_ms": 0.7729361499999998,
+        "p99_ms": 1.5138618099999934,
+        "max_ms": 50.354036
+      },
+      "inference_to_delivery": {
+        "n": 424,
+        "median_ms": 9.433364999999998,
+        "p95_ms": 9.69244655,
+        "p99_ms": 10.504622239999996,
+        "max_ms": 26.720365
+      },
+      "earned_application_age": {
+        "n": 47,
+        "median_ms": 10.425152,
+        "p95_ms": 10.7973009,
+        "p99_ms": 11.27669564,
+        "max_ms": 11.586145
+      },
+      "all_held_packet_ages": {
+        "n": 434,
+        "median_ms": 10.4326935,
+        "p95_ms": 11.060163249999997,
+        "p99_ms": 65.4653844,
+        "max_ms": 70.199475
+      },
+      "deadline_misses": 26,
+      "active_ticks": 47,
+      "stale_ticks": 8,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 874,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 435,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 865,
+      "survived": true,
+      "rmse": 0.045106023843416665,
+      "paired_lqr_rmse": 0.047672429313282146,
+      "paired_lqr_max_command_difference": 0.030099131850994415,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.06432310975287912
+    },
+    {
+      "seed": 903,
+      "case": "nominal",
+      "ticks": 1300,
+      "startup_ms": 3189.510858,
+      "worker_model_load_and_warmup_ms": 6.292265,
+      "packets": 1251,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000963173999999,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.5629415,
+        "p95_ms": 1.2971866999999992,
+        "p99_ms": 2.3216941,
+        "max_ms": 206.246852
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.203934,
+        "p95_ms": 0.6912332,
+        "p99_ms": 1.5455344699999984,
+        "max_ms": 200.92128
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.7071605,
+        "p95_ms": 3.675628399999998,
+        "p99_ms": 242.15888944999992,
+        "max_ms": 364.746074
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1036055,
+        "p95_ms": 1.7472014499999997,
+        "p99_ms": 232.1796295399999,
+        "max_ms": 355.02092
+      },
+      "inference": {
+        "n": 1251,
+        "median_ms": 0.39957,
+        "p95_ms": 0.9286835,
+        "p99_ms": 1.588252,
+        "max_ms": 222.136328
+      },
+      "request_to_delivery": {
+        "n": 1251,
+        "median_ms": 10.117333,
+        "p95_ms": 10.522580999999999,
+        "p99_ms": 13.412078999999999,
+        "max_ms": 381.349881
+      },
+      "request_to_worker": {
+        "n": 1251,
+        "median_ms": 0.512959,
+        "p95_ms": 1.1585014999999999,
+        "p99_ms": 2.0485195000000003,
+        "max_ms": 157.611084
+      },
+      "inference_to_delivery": {
+        "n": 1251,
+        "median_ms": 9.168616,
+        "p95_ms": 9.652746,
+        "p99_ms": 11.441843,
+        "max_ms": 98.3252
+      },
+      "earned_application_age": {
+        "n": 203,
+        "median_ms": 10.610376,
+        "p95_ms": 11.1173635,
+        "p99_ms": 12.538406739999992,
+        "max_ms": 12.827269
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.583872,
+        "p95_ms": 12.778662499999996,
+        "p99_ms": 398.09928602,
+        "max_ms": 400.505198
+      },
+      "deadline_misses": 55,
+      "active_ticks": 203,
+      "stale_ticks": 44,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 45,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04273221794998002,
+      "paired_lqr_rmse": 0.04633593832654333,
+      "paired_lqr_max_command_difference": 0.029271213187126874,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.06306172088772619
+    },
+    {
+      "seed": 903,
+      "case": "delay20",
+      "ticks": 1300,
+      "startup_ms": 2594.686707,
+      "worker_model_load_and_warmup_ms": 5.793632,
+      "packets": 433,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.001051374,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.303622,
+        "p95_ms": 0.7041788,
+        "p99_ms": 1.0740513399999998,
+        "max_ms": 3.696287
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.13536199999999998,
+        "p95_ms": 0.3379107499999998,
+        "p99_ms": 0.7085389799999999,
+        "max_ms": 3.280963
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.417382,
+        "p95_ms": 0.8675340499999996,
+        "p99_ms": 1.6492404899999997,
+        "max_ms": 5.509156
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.0998115,
+        "p95_ms": 0.22729985,
+        "p99_ms": 0.5934471999999994,
+        "max_ms": 5.256385
+      },
+      "inference": {
+        "n": 433,
+        "median_ms": 0.349913,
+        "p95_ms": 0.7177649999999997,
+        "p99_ms": 0.9664133200000007,
+        "max_ms": 1.115297
+      },
+      "request_to_delivery": {
+        "n": 433,
+        "median_ms": 30.122126,
+        "p95_ms": 30.3503366,
+        "p99_ms": 30.87963756,
+        "max_ms": 34.169506
+      },
+      "request_to_worker": {
+        "n": 433,
+        "median_ms": 0.435671,
+        "p95_ms": 0.8152124,
+        "p99_ms": 1.178684,
+        "max_ms": 3.634078
+      },
+      "inference_to_delivery": {
+        "n": 433,
+        "median_ms": 29.314344,
+        "p95_ms": 29.6977346,
+        "p99_ms": 30.09784092,
+        "max_ms": 33.186185
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1297,
+        "median_ms": 40.29209,
+        "p95_ms": 50.303519,
+        "p99_ms": 50.715305240000006,
+        "max_ms": 53.492137
+      },
+      "deadline_misses": 0,
+      "active_ticks": 0,
+      "stale_ticks": 425,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 428,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04633593832654333,
+      "paired_lqr_rmse": 0.04633593832654333,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06306172088772619
+    },
+    {
+      "seed": 903,
+      "case": "delay60",
+      "ticks": 1300,
+      "startup_ms": 2898.204583,
+      "worker_model_load_and_warmup_ms": 8.497432,
+      "packets": 183,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000277163,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.1617055,
+        "p95_ms": 0.6793721499999998,
+        "p99_ms": 2.319780429999999,
+        "max_ms": 62.881545
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.0894805,
+        "p95_ms": 0.3668596999999996,
+        "p99_ms": 0.9026342299999994,
+        "max_ms": 61.759213
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.31689999999999996,
+        "p95_ms": 2.1503447999999996,
+        "p99_ms": 34.62230522999998,
+        "max_ms": 117.614731
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.124445,
+        "p95_ms": 1.035018699999996,
+        "p99_ms": 26.87993326999993,
+        "max_ms": 117.392367
+      },
+      "inference": {
+        "n": 183,
+        "median_ms": 0.486172,
+        "p95_ms": 1.6309508000000001,
+        "p99_ms": 3.186841500000009,
+        "max_ms": 4.606661
+      },
+      "request_to_delivery": {
+        "n": 183,
+        "median_ms": 70.12979,
+        "p95_ms": 72.858261,
+        "p99_ms": 81.36419980000004,
+        "max_ms": 169.986854
+      },
+      "request_to_worker": {
+        "n": 183,
+        "median_ms": 0.566728,
+        "p95_ms": 2.3552649000000008,
+        "p99_ms": 3.197458160000005,
+        "max_ms": 4.099453
+      },
+      "inference_to_delivery": {
+        "n": 183,
+        "median_ms": 69.09337,
+        "p95_ms": 69.9549482,
+        "p99_ms": 77.96061244000005,
+        "max_ms": 169.130953
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1293,
+        "median_ms": 100.187708,
+        "p95_ms": 130.301538,
+        "p99_ms": 174.25644312,
+        "max_ms": 237.507689
+      },
+      "deadline_misses": 22,
+      "active_ticks": 0,
+      "stale_ticks": 1293,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04633593832654333,
+      "paired_lqr_rmse": 0.04633593832654333,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06306172088772619
+    },
+    {
+      "seed": 903,
+      "case": "delay100",
+      "ticks": 1300,
+      "startup_ms": 2571.706315,
+      "worker_model_load_and_warmup_ms": 6.228376,
+      "packets": 91,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.003497624,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.220507,
+        "p95_ms": 2.1631913,
+        "p99_ms": 33.167998459999964,
+        "max_ms": 249.340132
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.1089495,
+        "p95_ms": 1.3098507499999998,
+        "p99_ms": 21.42344388999994,
+        "max_ms": 233.133613
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.781784,
+        "p95_ms": 259.6394736499999,
+        "p99_ms": 361.10617423,
+        "max_ms": 422.090209
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.23062349999999998,
+        "p95_ms": 251.43021075,
+        "p99_ms": 355.24599328,
+        "max_ms": 412.245587
+      },
+      "inference": {
+        "n": 91,
+        "median_ms": 0.714995,
+        "p95_ms": 10.2058355,
+        "p99_ms": 31.45582889999957,
+        "max_ms": 99.473175
+      },
+      "request_to_delivery": {
+        "n": 91,
+        "median_ms": 110.505536,
+        "p95_ms": 353.72927300000003,
+        "p99_ms": 487.95850489999987,
+        "max_ms": 505.713884
+      },
+      "request_to_worker": {
+        "n": 91,
+        "median_ms": 1.046219,
+        "p95_ms": 7.9700050000000005,
+        "p99_ms": 49.67383329999879,
+        "max_ms": 240.431131
+      },
+      "inference_to_delivery": {
+        "n": 91,
+        "median_ms": 108.871467,
+        "p95_ms": 301.2959135,
+        "p99_ms": 479.2774303999999,
+        "max_ms": 493.820795
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1289,
+        "median_ms": 197.847481,
+        "p95_ms": 518.4261164,
+        "p99_ms": 635.93569412,
+        "max_ms": 761.984973
+      },
+      "deadline_misses": 419,
+      "active_ticks": 0,
+      "stale_ticks": 1289,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04633593832654333,
+      "paired_lqr_rmse": 0.04633593832654333,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.06306172088772619
+    },
+    {
+      "seed": 903,
+      "case": "cpu_stress",
+      "ticks": 1300,
+      "startup_ms": 2599.284854,
+      "worker_model_load_and_warmup_ms": 13.664134,
+      "packets": 1278,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.002149781,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.648717,
+        "p95_ms": 2.0564194999999983,
+        "p99_ms": 7.927825149999978,
+        "max_ms": 16.773708
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.263854,
+        "p95_ms": 1.1600768,
+        "p99_ms": 2.01389236,
+        "max_ms": 16.535651
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 1.3702085,
+        "p95_ms": 7.875918499999999,
+        "p99_ms": 12.037945939999997,
+        "max_ms": 34.652007
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.30903400000000003,
+        "p95_ms": 6.931807849999999,
+        "p99_ms": 8.48148717,
+        "max_ms": 34.285561
+      },
+      "inference": {
+        "n": 1278,
+        "median_ms": 0.289275,
+        "p95_ms": 1.0632074999999999,
+        "p99_ms": 1.7004496000000002,
+        "max_ms": 6.375192
+      },
+      "request_to_delivery": {
+        "n": 1278,
+        "median_ms": 10.149072,
+        "p95_ms": 16.764123549999994,
+        "p99_ms": 18.516525680000015,
+        "max_ms": 41.413645
+      },
+      "request_to_worker": {
+        "n": 1278,
+        "median_ms": 0.575947,
+        "p95_ms": 2.7774138499999963,
+        "p99_ms": 4.0878298200000005,
+        "max_ms": 16.748043
+      },
+      "inference_to_delivery": {
+        "n": 1278,
+        "median_ms": 9.327192,
+        "p95_ms": 14.9602116,
+        "p99_ms": 16.71870902,
+        "max_ms": 40.783737
+      },
+      "earned_application_age": {
+        "n": 215,
+        "median_ms": 10.627951,
+        "p95_ms": 17.336978399999996,
+        "p99_ms": 28.442521859999975,
+        "max_ms": 31.938905
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.686886,
+        "p95_ms": 17.925890999999993,
+        "p99_ms": 26.95465028,
+        "max_ms": 44.793563
+      },
+      "deadline_misses": 28,
+      "active_ticks": 215,
+      "stale_ticks": 0,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.042435693367099785,
+      "paired_lqr_rmse": 0.04633593832654333,
+      "paired_lqr_max_command_difference": 0.029271213187126874,
+      "max_actuator_rate": 0.35000000000000236,
+      "max_command": 0.06306172088772619
+    },
+    {
+      "seed": 903,
+      "case": "worker_crash",
+      "ticks": 1300,
+      "startup_ms": 2405.659143,
+      "worker_model_load_and_warmup_ms": 11.668295,
+      "packets": 424,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000188063,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.123119,
+        "p95_ms": 0.7475182499999995,
+        "p99_ms": 2.416862529999997,
+        "max_ms": 64.567793
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.071301,
+        "p95_ms": 0.3900617499999997,
+        "p99_ms": 1.8828741199999992,
+        "max_ms": 19.493307
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.29871000000000003,
+        "p95_ms": 1.046051249999998,
+        "p99_ms": 18.40773552,
+        "max_ms": 64.972651
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1176865,
+        "p95_ms": 0.39111434999999933,
+        "p99_ms": 10.108714099999993,
+        "max_ms": 55.611982
+      },
+      "inference": {
+        "n": 424,
+        "median_ms": 0.303835,
+        "p95_ms": 0.6794270999999993,
+        "p99_ms": 1.1601891599999963,
+        "max_ms": 9.550811
+      },
+      "request_to_delivery": {
+        "n": 424,
+        "median_ms": 10.112072999999999,
+        "p95_ms": 10.37655345,
+        "p99_ms": 11.626655019999975,
+        "max_ms": 65.916704
+      },
+      "request_to_worker": {
+        "n": 424,
+        "median_ms": 0.3967035,
+        "p95_ms": 0.8004653999999998,
+        "p99_ms": 1.9381765299999991,
+        "max_ms": 53.85246
+      },
+      "inference_to_delivery": {
+        "n": 424,
+        "median_ms": 9.395977,
+        "p95_ms": 9.68749645,
+        "p99_ms": 9.94467248,
+        "max_ms": 20.700553
+      },
+      "earned_application_age": {
+        "n": 31,
+        "median_ms": 10.430638,
+        "p95_ms": 10.798544,
+        "p99_ms": 12.143106799999998,
+        "max_ms": 12.714989
+      },
+      "all_held_packet_ages": {
+        "n": 434,
+        "median_ms": 10.441811999999999,
+        "p95_ms": 11.198527649999999,
+        "p99_ms": 64.90696539000011,
+        "max_ms": 74.754684
+      },
+      "deadline_misses": 19,
+      "active_ticks": 31,
+      "stale_ticks": 12,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 878,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 435,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 865,
+      "survived": true,
+      "rmse": 0.04477595299712253,
+      "paired_lqr_rmse": 0.04633593832654333,
+      "paired_lqr_max_command_difference": 0.029271213187126874,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.06306172088772619
+    }
+  ],
+  "functional_pass": true,
+  "timing_pass": false,
+  "limitations": [
+    "software plant advances in fixed 10ms steps; wall pacing and lateness measured, not continuously evolving physical hardware",
+    "cloud scheduler; fixed two-core affinity; stress is two Python busy loops, not exhaustive WCET testing",
+    "causal feature placeholders differ from training; original student native performance is not established",
+    "three seeds, one DLC path and 20m/s only; no claim of broad tracking superiority",
+    "software command application boundary, not physical CAN/actuator acknowledgement"
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "kind": "warm synchronous CPU wall-time microbenchmark of retained student and execution kernel",
+  "limitations": [
+    "single deterministic nominal DLC workload at 20 m/s; not a tracking comparison",
+    "excludes sensor/observer, IPC, queueing, scheduler guarantees and physical actuator delay",
+    "simulated service delay does not sleep the CPU and is not measured inference time",
+    "warmup excludes model loading and Numba compilation; max is an observed sample, not WCET",
+    "shared cloud CPU results do not establish native Webots or vehicle hardware deadlines"
+  ],
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "python": "3.10.22",
+  "torch": "2.0.0+cpu",
+  "numpy": "1.23.5",
+  "threads": 1,
+  "affinity_cpus": 5,
+  "source_commit": "957ce1e7245ee1ebd8d0476ab67628bf162db42e",
+  "benchmark_sha256": "c984c8bc729b40a0ed0ee280fc225e59dceca3216389d211980837476f41a3f4",
+  "ticks_per_case": 2000,
+  "warmup_per_case": 200,
+  "models": [
+    {
+      "seed": 701,
+      "sha256": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48"
+    },
+    {
+      "seed": 802,
+      "sha256": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f"
+    },
+    {
+      "seed": 903,
+      "sha256": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa"
+    }
+  ],
+  "groups": [
+    {
+      "simulated_service_ms": 0,
+      "stages": {
+        "observation_ns": {
+          "samples": 6000,
+          "median_ms": 0.002597,
+          "p95_ms": 0.004822750000000002,
+          "p99_ms": 0.08208593000000008,
+          "max_ms": 0.663024,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "lqr_ns": {
+          "samples": 6000,
+          "median_ms": 0.003205,
+          "p95_ms": 0.005113800000000003,
+          "p99_ms": 0.07477620000000004,
+          "max_ms": 0.9243,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "execution_gate_ns": {
+          "samples": 6000,
+          "median_ms": 0.011303,
+          "p95_ms": 0.0761092500000002,
+          "p99_ms": 0.2728034900000001,
+          "max_ms": 1.257684,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "total_ns": {
+          "samples": 6000,
+          "median_ms": 0.1352795,
+          "p95_ms": 0.6029193000000002,
+          "p99_ms": 1.0959980200000012,
+          "max_ms": 43.913128,
+          "above_10ms": 2,
+          "above_50ms": 0
+        },
+        "policy_called_ns": {
+          "samples": 6000,
+          "median_ms": 0.11001,
+          "p95_ms": 0.5321543,
+          "p99_ms": 1.000656940000001,
+          "max_ms": 43.872312,
+          "above_10ms": 2,
+          "above_50ms": 0
+        }
+      }
+    },
+    {
+      "simulated_service_ms": 20,
+      "stages": {
+        "observation_ns": {
+          "samples": 6000,
+          "median_ms": 0.0022175,
+          "p95_ms": 0.0046221000000000005,
+          "p99_ms": 0.05964323000000011,
+          "max_ms": 0.957821,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "lqr_ns": {
+          "samples": 6000,
+          "median_ms": 0.0027345,
+          "p95_ms": 0.0050301,
+          "p99_ms": 0.06934521000000043,
+          "max_ms": 1.091383,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "execution_gate_ns": {
+          "samples": 6000,
+          "median_ms": 0.010152,
+          "p95_ms": 0.06729130000000005,
+          "p99_ms": 0.24513516000000057,
+          "max_ms": 1.094035,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "total_ns": {
+          "samples": 6000,
+          "median_ms": 0.0812145,
+          "p95_ms": 0.47910880000000006,
+          "p99_ms": 0.8518602800000014,
+          "max_ms": 2.889642,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "policy_called_ns": {
+          "samples": 3000,
+          "median_ms": 0.13970100000000002,
+          "p95_ms": 0.5704745499999995,
+          "p99_ms": 0.9527781099999998,
+          "max_ms": 2.75693,
+          "above_10ms": 0,
+          "above_50ms": 0
+        }
+      }
+    },
+    {
+      "simulated_service_ms": 100,
+      "stages": {
+        "observation_ns": {
+          "samples": 6000,
+          "median_ms": 0.0015105000000000001,
+          "p95_ms": 0.003866600000000002,
+          "p99_ms": 0.05603872000000058,
+          "max_ms": 0.631429,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "lqr_ns": {
+          "samples": 6000,
+          "median_ms": 0.0019134999999999998,
+          "p95_ms": 0.004283150000000001,
+          "p99_ms": 0.05374757000000058,
+          "max_ms": 0.892128,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "execution_gate_ns": {
+          "samples": 6000,
+          "median_ms": 0.001522,
+          "p95_ms": 0.00535105,
+          "p99_ms": 0.06504106000000008,
+          "max_ms": 0.905793,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "total_ns": {
+          "samples": 6000,
+          "median_ms": 0.005807,
+          "p95_ms": 0.24065825000000013,
+          "p99_ms": 0.5522991100000005,
+          "max_ms": 3.313445,
+          "above_10ms": 0,
+          "above_50ms": 0
+        },
+        "policy_called_ns": {
+          "samples": 600,
+          "median_ms": 0.20881650000000002,
+          "p95_ms": 0.6295289499999994,
+          "p99_ms": 1.0255128499999993,
+          "max_ms": 1.574482,
+          "above_10ms": 0,
+          "above_50ms": 0
+        }
+      }
+    }
+  ]
+}

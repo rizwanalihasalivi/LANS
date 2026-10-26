@@ -5,6 +5,9 @@
     },
     "causal-contract-tests": {
       "state": "complete"
+    },
+    "bounded-causal-training": {
+      "state": "complete"
     }
   },
   "external": {

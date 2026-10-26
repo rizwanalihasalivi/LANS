@@ -1,0 +1,27 @@
+Fontconfig error: No writable cache directories
+Matplotlib is building the font cache; this may take a moment.
+{"steps": 1000, "accepted": 0, "failures": 0}
+{"steps": 2000, "accepted": 9, "failures": 0}
+{"steps": 3000, "accepted": 10, "failures": 0}
+{"steps": 4000, "accepted": 18, "failures": 0}
+{"steps": 5000, "accepted": 18, "failures": 0}
+{"steps": 6000, "accepted": 18, "failures": 0}
+{"steps": 7000, "accepted": 18, "failures": 0}
+{"steps": 8000, "accepted": 26, "failures": 0}
+{"steps": 9000, "accepted": 32, "failures": 0}
+{"steps": 10000, "accepted": 39, "failures": 0}
+{"steps": 11000, "accepted": 39, "failures": 0}
+{"steps": 12000, "accepted": 39, "failures": 0}
+{"steps": 13000, "accepted": 46, "failures": 0}
+{"steps": 14000, "accepted": 46, "failures": 0}
+{"steps": 15000, "accepted": 51, "failures": 0}
+{"steps": 16000, "accepted": 57, "failures": 0}
+{"steps": 17000, "accepted": 57, "failures": 0}
+{"steps": 18000, "accepted": 57, "failures": 0}
+{"steps": 19000, "accepted": 57, "failures": 0}
+{"steps": 20000, "accepted": 57, "failures": 0}
+{"steps": 21000, "accepted": 59, "failures": 0}
+{"steps": 22000, "accepted": 62, "failures": 0}
+{"steps": 23000, "accepted": 62, "failures": 0}
+{"steps": 24000, "accepted": 62, "failures": 0}
+{"steps": 25000, "accepted": 62, "failures": 0}

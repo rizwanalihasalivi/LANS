@@ -16,3 +16,6 @@ docs/research/reviewer-pilot-2026-10-26/** -text -whitespace
 
 # Hash-frozen campaign evidence, including raw CSV and copied source bytes.
 docs/research/reviewer-causal-v1/** -text -whitespace
+
+# Follow-up evidence is byte-frozen separately from the failed v1 campaign.
+docs/research/reviewer-followup-v2/** -text -whitespace

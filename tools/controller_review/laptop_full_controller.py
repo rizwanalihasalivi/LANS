@@ -41,6 +41,15 @@ def controller(profile):
     return FilteredController(profile)
 
 
+def validate_response(message,pending,received):
+    try:
+        if pending!=(message['seq'],message['observed_ns']):raise RuntimeError('request/response identity mismatch')
+        stamps=[message[k] for k in ('observed_ns','entered_ns','inferred_ns','sent_ns')]+[received]
+        if any(not isinstance(v,int) or v<0 for v in stamps) or stamps!=sorted(stamps):raise RuntimeError('invalid response timestamps')
+        if not math.isfinite(message['residual']) or abs(message['residual'])>.080000001:raise RuntimeError('invalid response residual')
+    except (KeyError,TypeError,ValueError) as error:raise RuntimeError('malformed worker response') from error
+
+
 def load_portable(folder):
     spec=importlib.util.spec_from_file_location('portable_actor',ROOT/'tools/laptop/laptop_benchmark.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
@@ -118,9 +127,7 @@ def episode(ctx,case,seed,profile,seconds,models,out):
                             tag,message=parent.recv()
                             if tag!='output':raise RuntimeError(message)
                             received=time.perf_counter_ns()
-                            if pending!=(message['seq'],message['observed_ns']):raise RuntimeError('request/response identity mismatch')
-                            stamps=[message[k] for k in ('observed_ns','entered_ns','inferred_ns','sent_ns')]+[received]
-                            if stamps!=sorted(stamps) or not math.isfinite(message['residual']):raise RuntimeError('invalid response timestamps/residual')
+                            validate_response(message,pending,received)
                             message['received_ns']=received;packet=message;packets.append(message);busy=False;pending=None
                         if not worker.is_alive():raise RuntimeError('worker exited')
                     except (EOFError,OSError,RuntimeError) as error:

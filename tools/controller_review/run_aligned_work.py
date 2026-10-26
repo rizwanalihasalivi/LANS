@@ -29,6 +29,7 @@ def main():
     export=out/'export'
     if not export.exists():run([sys.executable,HERE/'export_aligned_actors.py','--run',out,'--output',export],out/'actor-export.log')
     for seed in (701,802,903):assert (export/str(seed)/'parity.json').exists(),'Partial export preserved; inspect before retry'
+    run([sys.executable,HERE/'verify_aligned_training.py','--run',out],out/'training-verification.log')
     portable=out/'portable-actor'
     if not portable.exists():run([sys.executable,ROOT/'tools/laptop/export_bundle.py','--model-root',export,'--output',portable],out/'portable-export.log')
     assert (portable/'manifest.json').exists(),'Partial portable export preserved; inspect before retry'

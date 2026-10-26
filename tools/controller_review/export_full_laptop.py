@@ -8,6 +8,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[2]
 FILES='''tools/controller_review/laptop_full_controller.py
+tools/controller_review/verify_full_laptop.py
 tools/controller_review/realtime_kernels.py
 tools/laptop/laptop_benchmark.py
 tools/laptop/precision_wait.py
@@ -47,6 +48,8 @@ Windows: double-click RUN_WINDOWS.cmd. Or in PowerShell: `py -3.10 -m venv .venv
 macOS: in Terminal, run `bash RUN_MAC.command` with Python3.10 installed. Apple Silicon installation of older dependency wheels may require an appropriate Python distribution; do not silently substitute dependency versions.
 
 Five cases run13seconds each, after untimed JIT/model warmup. Close unrelated applications and use power supply. Do not adjust system-wide priorities. Output folder must be new; use `--output laptop-results-2` for another run. Send laptop-results/Results.zip after completion. It contains timing/plant CSVs and summary; no device identifiers are requested.
+
+To independently replay raw outputs, run the same virtual-environment Python with `tools/controller_review/verify_full_laptop.py --run laptop-results --models actor`. This verifies original deadlines, actor outputs, fallback and plant/observer/LQR replay; it does not convert timing failures into passes.
 
 Scope: causal noisy observer, scheduled LQR, fixed age_filtered residual supervisor, NumPy PPO actor in a separate process, real IPC and original timestamps, physical steering saturation/rate dynamics in a FIXED-STEP SOFTWARE PLANT. Tests nominal,20ms/1000ms post-inference worker service delays, CPU contention and worker crash. Injected service delays are distinct from measured inference time. This is a development diagnostic, not a selected research winner or native Webots validation.
 

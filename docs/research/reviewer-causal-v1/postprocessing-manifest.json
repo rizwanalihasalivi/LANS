@@ -1,0 +1,12 @@
+{
+  "tools/controller_review/run_reviewer_work.py": "706efdc3ca40dfb761fe79794a7f434ec2622753e95e2a036d334242edd095d5",
+  "tools/laptop/export_bundle.py": "9314541996f1d3c7fab776f26fa4e987cbd7c2bd946473d846169411f677c755",
+  "tools/laptop/verify_export.py": "7f4069a0e7a12ded482b67301a385fa27ef6d8b8702e732e5b4ff6560fe93ffc",
+  "tools/controller_review/summarize_campaign_uncertainty.py": "99d23258b2f4562e93eec996e783ddf193fea3d09146f7e2cec226e65d5f4d00",
+  "tools/controller_review/audit_campaign_linearization.py": "04ad3d396de09167de754ee5267b0055dd2e8fcf76ed51cbbe74edf248850d2a",
+  "tools/controller_review/benchmark_campaign_actors.py": "2f760b1cf74fdc56076deee6f44b7d1ecff69e80539deceb820f0ee9475004b6",
+  "tools/controller_review/replay_campaign_proposals.py": "abc0c5d0921f918c35f2f91e6228c13088598d7acc2ef6f9f5a3ca44824da15b",
+  "tools/controller_review/realtime_campaign_partition.py": "e0e31b9097d9a239b28804d3bdfe9eed99a0a60c3457973ac0c800156788e091",
+  "tools/controller_review/templates/opening-report-research-update.md": "6fdf5705a99847b30e4d0a76636b5243a6ec7d810cd082c6bef8df505d951573",
+  "tools/controller_review/templates/opening-report-revised-core.md": "9eeb8ad27f31474a096c06b8778fd9cdb23e6b1a85ad0188b0c6679851482993"
+}

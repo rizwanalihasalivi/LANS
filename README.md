@@ -10,6 +10,15 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
+- [Reviewer-response causal residual campaign](tools/reviewer_campaign/README.md):
+  one-command staged PPO training, mirrored comparisons, real-worker timing and
+  native interface checks, with verified milestones pushed to the research branch.
+  [Live evidence and status](docs/research/reviewer-causal-v1/status.json) distinguish
+  completed tests from failed criteria and pending physical/reference work.
+- [Archived90-episode diagnostic](docs/research/reviewer-pilot-2026-10-26/README.md):
+  historical checkpoints only; their old input interface prevents a deployable
+  causal-policy claim. Do not mix their numerical gains with the new campaign.
+
 - [Specification](docs/research/specification-v0.1.md): research requirements; unchanged by remediation.
 - [Cloud setup](tools/cloud/README.md): dependency and environment instructions.
 - [Webots validation history](docs/research/webots-validation.md): simulation configuration, units, results and native-transfer limitations.

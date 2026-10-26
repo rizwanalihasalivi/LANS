@@ -1,6 +1,13 @@
 # One-command reviewer-response campaign
 
-From the repository root, using the prepared Python3.10 CPU environment:
+For the complete campaign, independent actor/reward replay, partition diagnosis,
+portable kit and formatted reports, run from the repository root:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /workspace/lans-venv/bin/python tools/controller_review/run_reviewer_work.py --publish
+```
+
+The core campaign alone, using the prepared Python3.10 CPU environment:
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /workspace/lans-venv/bin/python tools/reviewer_campaign/run.py --publish

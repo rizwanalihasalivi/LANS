@@ -13,3 +13,6 @@ docs/research/native-causal-2026-10-26/**/realtime_kernels.py whitespace=blank-a
 
 # Preserve executed reviewer diagnostic snapshots and raw CSV bytes.
 docs/research/reviewer-pilot-2026-10-26/** -text -whitespace
+
+# Hash-frozen campaign evidence, including raw CSV and copied source bytes.
+docs/research/reviewer-causal-v1/** -text -whitespace

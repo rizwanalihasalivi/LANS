@@ -1,0 +1,12 @@
+test_boundary_rejects_and_resets (__main__.Contracts) ... ok
+test_mirrored_plant_and_noise (__main__.Contracts) ... ok
+test_one_second_queue_keeps_local_control_active (__main__.Contracts) ... ok
+test_out_of_order_and_invalid (__main__.Contracts) ... ok
+test_pending_result_and_forecast_never_enter_observation (__main__.Contracts) ... ok
+test_predictive_recovery_and_immediate_age_revocation (__main__.Contracts) ... ok
+test_predictor_left_right_symmetry (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.427s
+
+OK

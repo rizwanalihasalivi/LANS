@@ -1,0 +1,7 @@
+{
+  "profile": "causal_query_v2",
+  "origin": "25k PPO actor exact export, NOT supervised-only student",
+  "ppo_sha256": "e997501a0268683bc84a8cf1187aa22bcece0326466bb8824ef0baf9d27d630e",
+  "steps": 25000,
+  "profile_compatibility": "Existing CPU worker architecture only; provenance identifies PPO"
+}

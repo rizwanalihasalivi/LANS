@@ -206,3 +206,9 @@ execution and physical sensing-to-actuation latency are separate measurements.
 No hard-real-time, global convergence or real-vehicle safety theorem follows
 from clipping the residual or observing simulation survival.
 
+
+## Environment continuity and package timing limits
+
+The cloud connection became unavailable during the v3 diagnostic campaign. Saved processes completed and raw/model/plant audits passed after reconnection. Host pauses and connection loss are uncontrolled conditions; the timer counts must not be interpreted as a controlled uninterrupted causal comparison or as a hardware guarantee. Earlier independent timing failures remain unchanged.
+
+The updated aligned-controller clean Linux smoke recorded 8/1500 original 10 ms deadline misses, with functional_pass=True. This package test is not a timing pass. The strengthened verifier also independently reproduces the nine physical observation features at each returned packet original observation time. Actual Windows/macOS execution and physical hardware remain unvalidated.

@@ -1,0 +1,10 @@
+test_empty_or_unproven_device_cannot_pass (__main__.EvidenceChecks.test_empty_or_unproven_device_cannot_pass) ... ok
+test_simulation_cannot_be_presented_as_hardware (__main__.EvidenceChecks.test_simulation_cannot_be_presented_as_hardware) ... ok
+test_negative_clock_uncertainty_is_rejected (__main__.SyntheticArithmeticChecks.test_negative_clock_uncertainty_is_rejected) ... ok
+test_stale_learned_authority_rejects_trace (__main__.SyntheticArithmeticChecks.test_stale_learned_authority_rejects_trace) ... ok
+test_valid_arithmetic_is_not_vehicle_certification (__main__.SyntheticArithmeticChecks.test_valid_arithmetic_is_not_vehicle_certification) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.132s
+
+OK

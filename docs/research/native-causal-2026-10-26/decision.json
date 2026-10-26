@@ -1,0 +1,17 @@
+{
+  "observer_parity_tests_pass": true,
+  "optimized_software_functional_pass": true,
+  "optimized_software_strict_timing_pass": false,
+  "software_deadline_misses": 1760,
+  "software_ticks": 23400,
+  "original_native_survivors": 4,
+  "aligned_native_survivors": 6,
+  "native_contract_checks_pass": true,
+  "native_wall_timing_pass": false,
+  "final_comparison_eligible": false,
+  "reserved_noise_opened": false,
+  "windows_export_parity_pass": true,
+  "windows_laptop_execution": "pending user run",
+  "physical_vehicle_testing": "not available: user has a Windows laptop, not an attached instrumented vehicle",
+  "deployment_promoted": false
+}

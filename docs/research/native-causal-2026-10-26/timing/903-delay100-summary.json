@@ -1,0 +1,141 @@
+{
+  "seed": 903,
+  "case": "delay100",
+  "ticks": 1300,
+  "startup_ms": 10079.182598,
+  "cyclic_gc_disabled_during_window": true,
+  "preparation_gc_ms": 355.613827,
+  "signatures_before": {
+    "measure": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+    ],
+    "lqr": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+    ],
+    "advance": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+    ],
+    "features": [
+      "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+    ]
+  },
+  "signatures_after": {
+    "measure": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+    ],
+    "lqr": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+    ],
+    "advance": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+    ],
+    "features": [
+      "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+    ]
+  },
+  "worker_model_load_and_warmup_ms": 25.345632,
+  "packets": 117,
+  "simulated_duration_s": 13.0,
+  "wall_duration_s": 13.000263545,
+  "control": {
+    "n": 1300,
+    "median_ms": 0.1816085,
+    "p95_ms": 1.3929281499999997,
+    "p99_ms": 2.39893132,
+    "max_ms": 17.667589
+  },
+  "observer": {
+    "n": 1300,
+    "median_ms": 0.0807985,
+    "p95_ms": 0.7036076499999997,
+    "p99_ms": 1.3672754199999992,
+    "max_ms": 11.491527
+  },
+  "response": {
+    "n": 1300,
+    "median_ms": 0.402205,
+    "p95_ms": 1.8635833499999994,
+    "p99_ms": 3.831648029999998,
+    "max_ms": 31.935505
+  },
+  "release_lateness": {
+    "n": 1300,
+    "median_ms": 0.1192105,
+    "p95_ms": 0.8158127999999998,
+    "p99_ms": 2.5222221699999894,
+    "max_ms": 21.978793
+  },
+  "inference": {
+    "n": 117,
+    "median_ms": 1.009334,
+    "p95_ms": 3.9874707999999903,
+    "p99_ms": 6.6819216400000006,
+    "max_ms": 13.210064
+  },
+  "request_to_delivery": {
+    "n": 117,
+    "median_ms": 110.162794,
+    "p95_ms": 111.7372418,
+    "p99_ms": 120.34199152000001,
+    "max_ms": 155.754643
+  },
+  "request_to_worker": {
+    "n": 117,
+    "median_ms": 1.218641,
+    "p95_ms": 3.0505587999999975,
+    "p99_ms": 4.288622680000001,
+    "max_ms": 4.471685
+  },
+  "inference_to_delivery": {
+    "n": 117,
+    "median_ms": 108.096115,
+    "p95_ms": 109.71607979999999,
+    "p99_ms": 112.39263504,
+    "max_ms": 150.872128
+  },
+  "earned_application_age": null,
+  "all_held_packet_ages": {
+    "n": 1288,
+    "median_ms": 160.239242,
+    "p95_ms": 210.24879635000002,
+    "p99_ms": 219.95738243,
+    "max_ms": 261.699374
+  },
+  "deadline_misses": 5,
+  "late_authority_violations": 0,
+  "late_release_ticks": 4,
+  "control_over_budget_ticks": 2,
+  "control_cpu": {
+    "n": 1300,
+    "median_ms": 0.1823395,
+    "p95_ms": 1.4031766999999993,
+    "p99_ms": 2.40233914,
+    "max_ms": 17.673316
+  },
+  "cgroup_delta": {
+    "usage_usec": 1518988,
+    "user_usec": 1518989,
+    "system_usec": 0,
+    "nice_usec": 0,
+    "nr_periods": 133,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "voluntary_switches": 1296,
+  "involuntary_switches": 0,
+  "active_ticks": 0,
+  "stale_ticks": 1288,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 1300,
+  "fallback_violations": 0,
+  "worker_failure_events": [],
+  "post_failure_ticks": 0,
+  "survived": true,
+  "rmse": 0.04719115942348904,
+  "paired_lqr_rmse": 0.04719115942348904,
+  "paired_lqr_max_command_difference": 0.0,
+  "max_actuator_rate": 0.35,
+  "max_command": 0.049965760416357335
+}

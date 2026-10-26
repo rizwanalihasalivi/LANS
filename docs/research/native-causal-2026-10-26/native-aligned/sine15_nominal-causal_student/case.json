@@ -1,0 +1,22 @@
+{
+  "speed": 15,
+  "path": "sine120",
+  "path_parameters": [
+    0,
+    2.5,
+    120.0,
+    0.3
+  ],
+  "delay_ms": 0,
+  "seed": 985000015,
+  "mode": "causal_student",
+  "output": "/workspace/lans-native-v3/native-aligned/sine15_nominal-causal_student",
+  "duration": 16.666666666666664,
+  "noise": 1.0,
+  "sensor_delay_steps": 0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS/docs/research/causal-interface-2026-10-26/models/701"
+}

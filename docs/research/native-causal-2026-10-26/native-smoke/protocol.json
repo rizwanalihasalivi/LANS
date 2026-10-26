@@ -1,0 +1,36 @@
+{
+  "kind": "development native interface only, not frozen final comparison",
+  "smoke": true,
+  "source_hashes": {
+    "integrations/webots/controllers/causal_validation/causal_validation.py": "5113a8a84b137efe7731a1200d0e4267df62546d927253e4f7e3e5cb5d265d82",
+    "integrations/webots/research/causal_runtime.py": "dd3d4a8a52ba4e142a7a27a985c26baa23b61acff2c8aa2ae5c446720ac96c08",
+    "tools/controller_review/realtime_kernels.py": "af016e0c6d75fed0f51aedcaaa5dae0c0b590dfea7b346d324915cc0edc96292",
+    "tools/controller_review/causal_student.py": "5da481f7a18f3b03156372431a90197b7313ae572b85e9d2700e083e57798539",
+    "tools/controller_review/native_causal.py": "55b934722660d237f9d3db231a21b8db5c3899c0b16b5bfc4a7c676aa34072ae"
+  },
+  "model_hashes": {
+    "student.pt": "5c860f96eae16736b6f1e879b272ef248be29db78e2d51b1d8708584248a523f",
+    "normalization.npz": "89dba0a76a93d998f8fffb8d68bfc969a851211ab59a7669526cb1c130182c7a",
+    "complete.json": "a248d78af5f10e1a2a335979b27512401ea3a243e624873933aca6cba0ad2ad1"
+  },
+  "definitions": [
+    [
+      "dlc20_nominal",
+      20,
+      "dlc220",
+      [
+        1,
+        0.0,
+        0.0,
+        0.0
+      ],
+      0
+    ]
+  ],
+  "methods": [
+    "lqr",
+    "causal_student"
+  ],
+  "mode": "realtime",
+  "criterion": "all cases survive, finite/bounded telemetry, no stale/late learned authority or worker error; wall timing assessed separately and never claimed from simulation time"
+}

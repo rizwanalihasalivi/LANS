@@ -1,0 +1,10 @@
+{
+  "eligible": false,
+  "reasons": [
+    "10ms software timing criterion failed",
+    "raw software deadline misses",
+    "native wall-clock timing criterion failed",
+    "raw native deadline misses"
+  ],
+  "reserved_noise_opened": false
+}

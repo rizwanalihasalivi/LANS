@@ -1,0 +1,17 @@
+{
+  "policy": 0,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "rtprio_limit": [
+    0,
+    0
+  ],
+  "cpu_max": "400000 100000",
+  "fifo_probe": "unavailable",
+  "fifo_error": "[Errno 1] Operation not permitted"
+}

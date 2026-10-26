@@ -1,0 +1,6 @@
+nominal: 0 monitor deadlines missed
+delay20: 0 monitor deadlines missed
+delay100: 0 monitor deadlines missed
+cpu_stress: 0 monitor deadlines missed
+worker_crash: 0 monitor deadlines missed
+Saved /workspace/lans-native-v3/laptop-kit-linux-smoke/summary.json

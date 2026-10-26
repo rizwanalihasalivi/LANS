@@ -1,0 +1,20 @@
+[
+  {
+    "seed": 701,
+    "rows": 512,
+    "max_logit_error": 2.86102294921875e-06,
+    "action_parity": true
+  },
+  {
+    "seed": 802,
+    "rows": 512,
+    "max_logit_error": 2.86102294921875e-06,
+    "action_parity": true
+  },
+  {
+    "seed": 903,
+    "rows": 512,
+    "max_logit_error": 2.86102294921875e-06,
+    "action_parity": true
+  }
+]

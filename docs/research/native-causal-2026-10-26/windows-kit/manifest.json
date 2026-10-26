@@ -1,0 +1,36 @@
+{
+  "profile": "causal_query_v2",
+  "export_checks": [
+    {
+      "seed": 701,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "source_model_sha256": "5c860f96eae16736b6f1e879b272ef248be29db78e2d51b1d8708584248a523f"
+    },
+    {
+      "seed": 802,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "source_model_sha256": "b4d0574263bdd67d081c0ba59797a551b8c7a9518e4a64bc5c7041d64c947779"
+    },
+    {
+      "seed": 903,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "source_model_sha256": "80ded21346ded22323e71a70d60486729c4e3d753d8647a068a3eabdfbc4fa87"
+    }
+  ],
+  "sha256": {
+    "golden.npz": "37a14951d3624bbe962f1b8ccaa7a637d83a2c876f39e614157a58afa7f75344",
+    "model-701.npz": "f9ec55680a4033aefb39b8b5274e6f97fe45e0f0a9f7536da005402ca5d80c8d",
+    "README.md": "882f72b6d48c43ed1b82b75a83810609e61bcea09958aef752daaec1af5851c5",
+    "model-802.npz": "6fe5c05bc557add96533f50cad075dd217239bd7e91b4ef758d1f08513abd07f",
+    "EXPORT_VERIFICATION.json": "9b94ecf28c981d8db125e7774bd3513da36b6b325629ee6b18c1358ffdace40d",
+    "model-903.npz": "6f6a8c3a2b31b70eebdfcbd9722c8d1be0b113ad021417b5b194664f592d46c1",
+    "RUN_WINDOWS.cmd": "91ac0db08abfc866b188f77fa3f286d688ccfb27e732ac95deddc9cf4340ca95",
+    "laptop_benchmark.py": "a7e7d98e4b1f51532de84c5250bb93f0a390e7c2f33219c5ae82bf525e1d80b1"
+  }
+}

@@ -1,0 +1,7 @@
+test_observer_trajectory_parity (__main__.AlgebraParity) ... ok
+test_spd_solve_and_invalid_covariance (__main__.AlgebraParity) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 13.216s
+
+OK

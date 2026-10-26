@@ -1,0 +1,29 @@
+{
+  "scope": "2000 randomized-order warm pairs on one fixed input; not native or deadline evidence",
+  "methods": {
+    "original": {
+      "wall_ns": {
+        "median_ms": 0.006235,
+        "p99_ms": 0.2235254999999999,
+        "max_ms": 1.013051
+      },
+      "cpu_ns": {
+        "median_ms": 0.006651,
+        "p99_ms": 0.23591975999999998,
+        "max_ms": 1.014758
+      }
+    },
+    "small_algebra": {
+      "wall_ns": {
+        "median_ms": 0.0047045,
+        "p99_ms": 0.13273419,
+        "max_ms": 0.707283
+      },
+      "cpu_ns": {
+        "median_ms": 0.005107,
+        "p99_ms": 0.1336932,
+        "max_ms": 0.71012
+      }
+    }
+  }
+}

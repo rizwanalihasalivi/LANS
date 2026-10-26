@@ -1,0 +1,16 @@
+{
+  "stages": {
+    "protocol-frozen": {
+      "state": "complete"
+    }
+  },
+  "external": {
+    "physical_vehicle": "unavailable: fresh physical measurements required",
+    "laptop_rerun": "pending user target-machine results",
+    "formal_safety": "not established; limited assumptions only",
+    "primary_reference_verification": "uploaded five PDFs read; publication metadata / broader search incomplete",
+    "published_algorithm_reproduction": "not implemented; no superiority claim",
+    "native_ppo": "pending gated transfer and timing assessment",
+    "hard_realtime": "not established; prior10ms deadline tests failed"
+  }
+}

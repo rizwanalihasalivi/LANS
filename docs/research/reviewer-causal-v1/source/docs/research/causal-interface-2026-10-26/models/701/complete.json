@@ -1,0 +1,21 @@
+{
+  "profile": "causal_query_v2",
+  "seed": 701,
+  "selected_epoch": 17,
+  "epochs_executed": 20,
+  "best_dev_regret": 0.013562207602547904,
+  "train_rows": 48600,
+  "dev_rows": 24300,
+  "normalization_fit": "projected TRAIN only",
+  "removed_channels": [
+    14,
+    15,
+    16,
+    17,
+    19
+  ],
+  "source_hashes": {
+    "train.npz": "525e876e37a690cc07090945af2774e7b568b3e64e3fd12d0e9df9c6f4ffd6c5",
+    "dev.npz": "7e2282bb12b92f647e12e511454be95b10056991191ed76f4b2babcdff52838c"
+  }
+}

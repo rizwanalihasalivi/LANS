@@ -33,3 +33,7 @@ Development eligibility: False. All failed criteria are retained in decision.jso
 ## References
 
 Primary uploaded literature includes Wabersich and Zeilinger predictive safety filtering; Tearle et al. learning-based racing safety filtering; Cano Cordoba et al. delayed-observation shielding; Kalaria et al. delay-aware robust driving/racing; and Tabrizian et al. delay-aware merging. Exact publication metadata and a broader runtime-assurance review must be verified before submission.
+
+## Development figure
+
+![Development metrics; error bars are seed-block SD, not independent-tick uncertainty.](development-comparison.png)

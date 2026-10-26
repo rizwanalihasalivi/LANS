@@ -27,7 +27,7 @@
   },
   "external": {
     "physical_vehicle": "unavailable: fresh physical measurements required",
-    "laptop_rerun": "pending user target-machine results",
+    "laptop_rerun": "New causal PPO Windows3.10/macOS actor kit available; actual target runs pending",
     "formal_safety": "not established; limited assumptions only",
     "primary_reference_verification": "uploaded five PDFs read; publication metadata / broader search incomplete",
     "published_algorithm_reproduction": "not implemented; no superiority claim",
@@ -47,5 +47,11 @@
       "pair1 does not improve student",
       "pair2 does not improve student"
     ]
+  },
+  "resource_partition_diagnosis": {
+    "functional_pass": true,
+    "observed_timing_pass": false,
+    "original_contested_core_failures_retained": true,
+    "guaranteed_realtime": false
   }
 }

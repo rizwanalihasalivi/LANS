@@ -180,8 +180,21 @@ pending until the user runs the kit. No device/product IDs are collected.
     results+=f'Resource-partition diagnostic functional pass:{partition["functional_pass"]}; observed timing pass:{partition["timing_pass"]}. '
     results+='Partitioned generated load does not exclude host OS activity, replace original failures or establish WCET.\n\n'
     results+='See the frozen protocol, raw traces, independent audits and completion-matrix.md. Reserved confirmation remains unopened when development fails.\n'
+    gain=summary['latency_gain'];base=summary['lqr']
+    gain_text=(f'The manuscript-inspired latency-gain comparator reduces lateral RMSE by {gain["gain_vs_lqr_pct"]:.3f}%, '
+        f'but increases heading RMSE by {100*(gain["heading_rmse_rad"]/base["heading_rmse_rad"]-1):.3f}% '
+        f'and steering-rate RMS by {100*(gain["steering_rate_rms_rad_s"]/base["steering_rate_rms_rad_s"]-1):.3f}%. '
+        'This exceeds the predefined5% smoothness tradeoff limit. Fixed authority loses one episode under20ms service. '
+        'The simple gain is a promising descriptive tracking result, not a selected balanced winner. '
+        'Same-gain student/constant controls and separate native/timing validation would be needed to attribute its benefit to additional PPO learning. '
+        'The proposed predictive supervisor did not retain that tracking gain; no post-result gate tuning or reserved-test opening was performed.\n')
+    results+='\n'+gain_text
     core=(ROOT/'tools/controller_review/templates/opening-report-revised-core.md').read_text()
     (run/'opening-report-revised-draft.md').write_text(core.replace('{{CURRENT_RESULTS}}',results))
+    (run/'interpretation.md').write_text('# Campaign interpretation\n\n'+results+'\nSee deadline-diagnosis.json for observed scheduling/processing decomposition; no causal OS/WCET guarantee is inferred.\n')
+    draft=run/'revised-manuscript-draft.md'
+    text=draft.read_text().partition('\n## Additional interpretation')[0]
+    draft.write_text(text+'\n## Additional interpretation\n\n'+gain_text)
     try:
         import matplotlib
         matplotlib.use('Agg')
@@ -224,9 +237,9 @@ pending until the user runs the kit. No device/product IDs are collected.
         file=run/source
         if not file.exists():continue
         if shutil.which('pandoc'):
-            call(['pandoc',str(file),'--resource-path',str(run),'-o',str(file.with_suffix('.docx'))])
+            call(['pandoc',str(file),'--from=markdown+tex_math_single_backslash','--resource-path',str(run),'-o',str(file.with_suffix('.docx'))])
             if shutil.which('xelatex'):
-                call(['pandoc',str(file),'--resource-path',str(run),'--pdf-engine=xelatex','-V','mainfont=DejaVu Serif',
+                call(['pandoc',str(file),'--from=markdown+tex_math_single_backslash','--resource-path',str(run),'--pdf-engine=xelatex','-V','mainfont=DejaVu Serif',
                       '-V','geometry:margin=22mm','-V','fontsize=10pt','-o',str(file.with_suffix('.pdf'))],
                      run/(file.stem+'-pdf.log'))
     if (run/'docx-unavailable.txt').exists():
@@ -237,7 +250,7 @@ pending until the user runs the kit. No device/product IDs are collected.
             for extension in ('.md','.docx','.pdf'):
                 file=run/(stem+extension)
                 if file.exists():z.write(file,file.name)
-        for file in (run/'status.json',run/'completion-matrix.md',run/'development/README.md',run/'matched-actor-timing/summary.json'):
+        for file in (run/'status.json',run/'completion-matrix.md',run/'interpretation.md',run/'development/README.md',run/'matched-actor-timing/summary.json'):
             if file.exists():z.write(file,str(file.relative_to(run)))
     publish('research: publish matched actor timing portable PPO kit and corrected report drafts')
     print('Completed reproducible software campaign and report package; unresolved external/theoretical items remain in status.json.',flush=True)

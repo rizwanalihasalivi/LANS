@@ -1,0 +1,9 @@
+{
+  "total_ticks": 23400,
+  "misses": 1743,
+  "release_late_at_least_10ms": 1642,
+  "control_at_least_10ms": 139,
+  "overlap": 67,
+  "max_release_lateness_ms": 4138.317787,
+  "interpretation": "Overlapping descriptive counts; historical logs lack thread CPU time and per-episode cgroup deltas. Scheduling/GC/JIT causes cannot be uniquely inferred."
+}

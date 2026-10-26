@@ -1,0 +1,10 @@
+{
+  "causal_profile_contracts_pass": true,
+  "train_only_normalization_and_dev_selection_verified": true,
+  "functional_validation_pass": true,
+  "strict_10ms_timing_pass": false,
+  "promote_to_native_or_vehicle": false,
+  "final_reserved_comparison_opened": false,
+  "reason": "Cloud timing criterion failed; no native/hardware validation. Preserve all misses; new checkpoints remain experimental candidates.",
+  "contract_tests_passed": 4
+}

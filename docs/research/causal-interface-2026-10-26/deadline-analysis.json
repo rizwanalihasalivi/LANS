@@ -1,0 +1,12 @@
+{
+  "ticks": 23400,
+  "deadline_misses": 1358,
+  "late_release_ticks": 1192,
+  "control_over_10ms_ticks": 161,
+  "control_cpu_over_10ms_ticks": 111,
+  "overlap_late_and_slow": 63,
+  "thread_cpu_p99_ms": 3.9901266899999954,
+  "wall_control_p99_ms": 7.790881179999991,
+  "max_release_lateness_ms": 780.217301,
+  "post_warmup_signature_changes": 0
+}

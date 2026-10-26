@@ -1,0 +1,9 @@
+test_deadline_overrun_revokes_fresh_learned_action (__main__.CausalContracts) ... ok
+test_future_packet_is_not_accepted_as_ready (__main__.CausalContracts) ... ok
+test_oracle_channels_cannot_enter_predict (__main__.CausalContracts) ... ok
+test_ready_delivery_training_equals_observable_runtime_context (__main__.CausalContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.433s
+
+OK

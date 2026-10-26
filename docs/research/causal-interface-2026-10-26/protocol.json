@@ -1,0 +1,11 @@
+{
+  "purpose": "User-authorized causal input correction and deadline diagnosis; separate bounded engineering revision, not rev12 gate promotion or final reserved comparison",
+  "parent_commit": "8e54de9",
+  "training": "3 seeds x20 supervised epochs, existing v8 train/dev only; no new labels, PPO or evaluation-based checkpoint selection",
+  "profile": "causal_query_v2; ready packets delivered before queries, pending proposal/completion/age/busy/service channels removed (14,15,16,17,19); fit new TRAIN-only normalization",
+  "timing": "retain original 10ms scheduled deadline count; reject learned authority on any deadline overrun; collect wall and thread CPU stage time, context switches and cgroup counters; do not remove/relabel historical misses",
+  "validation": "3seeds x6cases x13s, nominal/20/60/100ms worker delay/stress/crash; fresh development noise982000000; no broad superiority or final reserved claim",
+  "acceptance": "Functional: all survive, no stale/late/worker-failure authority, physical bounds, severe delay exact paired LQR. Timing: zero10ms misses; report failure if not met. No retries to select better timing.",
+  "stop": "One fixed retraining and fresh validation campaign; preserve old results and models. Native/vehicle promotion requires separate validation and available hardware.",
+  "source_sha256": "5da481f7a18f3b03156372431a90197b7313ae572b85e9d2700e083e57798539"
+}

@@ -1,0 +1,1 @@
+Exploratory half-second causal-profile smoke from before the bounded GC preparation change. It is excluded from the frozen 18-episode validation. Its original runtime hash differs intentionally; preserve these diagnostics rather than mixing their misses into the final counts.

@@ -1,0 +1,9 @@
+{
+  "submitted_queries": {
+    "ppo": 202800,
+    "student": 162240
+  },
+  "disagreements": 0,
+  "causal_removed_channels_verified": true,
+  "all_frozen_input_hashes_verified": true
+}

@@ -2,6 +2,9 @@
   "stages": {
     "protocol-frozen": {
       "state": "complete"
+    },
+    "causal-contract-tests": {
+      "state": "complete"
     }
   },
   "external": {

@@ -1,0 +1,94 @@
+{
+  "seed": 903,
+  "case": "nominal",
+  "ticks": 1300,
+  "startup_ms": 3189.510858,
+  "worker_model_load_and_warmup_ms": 6.292265,
+  "packets": 1251,
+  "simulated_duration_s": 13.0,
+  "wall_duration_s": 13.000963173999999,
+  "control": {
+    "n": 1300,
+    "median_ms": 0.5629415,
+    "p95_ms": 1.2971866999999992,
+    "p99_ms": 2.3216941,
+    "max_ms": 206.246852
+  },
+  "observer": {
+    "n": 1300,
+    "median_ms": 0.203934,
+    "p95_ms": 0.6912332,
+    "p99_ms": 1.5455344699999984,
+    "max_ms": 200.92128
+  },
+  "response": {
+    "n": 1300,
+    "median_ms": 0.7071605,
+    "p95_ms": 3.675628399999998,
+    "p99_ms": 242.15888944999992,
+    "max_ms": 364.746074
+  },
+  "release_lateness": {
+    "n": 1300,
+    "median_ms": 0.1036055,
+    "p95_ms": 1.7472014499999997,
+    "p99_ms": 232.1796295399999,
+    "max_ms": 355.02092
+  },
+  "inference": {
+    "n": 1251,
+    "median_ms": 0.39957,
+    "p95_ms": 0.9286835,
+    "p99_ms": 1.588252,
+    "max_ms": 222.136328
+  },
+  "request_to_delivery": {
+    "n": 1251,
+    "median_ms": 10.117333,
+    "p95_ms": 10.522580999999999,
+    "p99_ms": 13.412078999999999,
+    "max_ms": 381.349881
+  },
+  "request_to_worker": {
+    "n": 1251,
+    "median_ms": 0.512959,
+    "p95_ms": 1.1585014999999999,
+    "p99_ms": 2.0485195000000003,
+    "max_ms": 157.611084
+  },
+  "inference_to_delivery": {
+    "n": 1251,
+    "median_ms": 9.168616,
+    "p95_ms": 9.652746,
+    "p99_ms": 11.441843,
+    "max_ms": 98.3252
+  },
+  "earned_application_age": {
+    "n": 203,
+    "median_ms": 10.610376,
+    "p95_ms": 11.1173635,
+    "p99_ms": 12.538406739999992,
+    "max_ms": 12.827269
+  },
+  "all_held_packet_ages": {
+    "n": 1299,
+    "median_ms": 10.583872,
+    "p95_ms": 12.778662499999996,
+    "p99_ms": 398.09928602,
+    "max_ms": 400.505198
+  },
+  "deadline_misses": 55,
+  "active_ticks": 203,
+  "stale_ticks": 44,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 45,
+  "fallback_violations": 0,
+  "worker_failure_events": [],
+  "post_failure_ticks": 0,
+  "survived": true,
+  "rmse": 0.04273221794998002,
+  "paired_lqr_rmse": 0.04633593832654333,
+  "paired_lqr_max_command_difference": 0.029271213187126874,
+  "max_actuator_rate": 0.3500000000000031,
+  "max_command": 0.06306172088772619
+}

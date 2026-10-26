@@ -1,0 +1,99 @@
+{
+  "seed": 903,
+  "case": "worker_crash",
+  "ticks": 1300,
+  "startup_ms": 2405.659143,
+  "worker_model_load_and_warmup_ms": 11.668295,
+  "packets": 424,
+  "simulated_duration_s": 13.0,
+  "wall_duration_s": 13.000188063,
+  "control": {
+    "n": 1300,
+    "median_ms": 0.123119,
+    "p95_ms": 0.7475182499999995,
+    "p99_ms": 2.416862529999997,
+    "max_ms": 64.567793
+  },
+  "observer": {
+    "n": 1300,
+    "median_ms": 0.071301,
+    "p95_ms": 0.3900617499999997,
+    "p99_ms": 1.8828741199999992,
+    "max_ms": 19.493307
+  },
+  "response": {
+    "n": 1300,
+    "median_ms": 0.29871000000000003,
+    "p95_ms": 1.046051249999998,
+    "p99_ms": 18.40773552,
+    "max_ms": 64.972651
+  },
+  "release_lateness": {
+    "n": 1300,
+    "median_ms": 0.1176865,
+    "p95_ms": 0.39111434999999933,
+    "p99_ms": 10.108714099999993,
+    "max_ms": 55.611982
+  },
+  "inference": {
+    "n": 424,
+    "median_ms": 0.303835,
+    "p95_ms": 0.6794270999999993,
+    "p99_ms": 1.1601891599999963,
+    "max_ms": 9.550811
+  },
+  "request_to_delivery": {
+    "n": 424,
+    "median_ms": 10.112072999999999,
+    "p95_ms": 10.37655345,
+    "p99_ms": 11.626655019999975,
+    "max_ms": 65.916704
+  },
+  "request_to_worker": {
+    "n": 424,
+    "median_ms": 0.3967035,
+    "p95_ms": 0.8004653999999998,
+    "p99_ms": 1.9381765299999991,
+    "max_ms": 53.85246
+  },
+  "inference_to_delivery": {
+    "n": 424,
+    "median_ms": 9.395977,
+    "p95_ms": 9.68749645,
+    "p99_ms": 9.94467248,
+    "max_ms": 20.700553
+  },
+  "earned_application_age": {
+    "n": 31,
+    "median_ms": 10.430638,
+    "p95_ms": 10.798544,
+    "p99_ms": 12.143106799999998,
+    "max_ms": 12.714989
+  },
+  "all_held_packet_ages": {
+    "n": 434,
+    "median_ms": 10.441811999999999,
+    "p95_ms": 11.198527649999999,
+    "p99_ms": 64.90696539000011,
+    "max_ms": 74.754684
+  },
+  "deadline_misses": 19,
+  "active_ticks": 31,
+  "stale_ticks": 12,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 878,
+  "fallback_violations": 0,
+  "worker_failure_events": [
+    {
+      "tick": 435,
+      "error": "[Errno 104] Connection reset by peer"
+    }
+  ],
+  "post_failure_ticks": 865,
+  "survived": true,
+  "rmse": 0.04477595299712253,
+  "paired_lqr_rmse": 0.04633593832654333,
+  "paired_lqr_max_command_difference": 0.029271213187126874,
+  "max_actuator_rate": 0.3500000000000031,
+  "max_command": 0.06306172088772619
+}

@@ -1,0 +1,10 @@
+{
+  "raw_timestamp_and_model_replay_checks_pass": true,
+  "plant_observer_lqr_replay_pass": true,
+  "verifier_sha256": "9610eeee7b225458e41c316e682ba0092c477667569f2ac92025ca4f1fe4f29b",
+  "ticks": 23400,
+  "packets": 10385,
+  "stale_ticks": 9672,
+  "deadline_misses": 1743,
+  "active_ticks": 1270
+}

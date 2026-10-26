@@ -20,6 +20,9 @@
     },
     "native-interface-verified": {
       "state": "complete"
+    },
+    "reviewer-response-report": {
+      "state": "complete"
     }
   },
   "external": {

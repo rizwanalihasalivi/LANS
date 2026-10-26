@@ -1,0 +1,9 @@
+{
+  "ticks": 1500,
+  "packets": 796,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}

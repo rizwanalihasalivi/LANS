@@ -1,0 +1,6 @@
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 2 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 1 controller deadlines missed; fallback violations 0
+worker_crash 5 controller deadlines missed; fallback violations 0
+Saved /workspace/LANS/docs/research/reviewer-aligned-v3/kit-smoke/Results.zip

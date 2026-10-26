@@ -1,0 +1,66 @@
+{
+  "profile": "causal_query_v2",
+  "export_checks": [
+    {
+      "seed": 701,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "source_model_sha256": "a66745e5877b2aa9bed043156a25aa3eedd259c56face825b566efc064ae94c5"
+    },
+    {
+      "seed": 802,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 3.814697265625e-06,
+      "source_model_sha256": "0a69fefa604f876a86d7437ee0bbea2115248acdbd66cbbfee8fa173ec19ea93"
+    },
+    {
+      "seed": 903,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 3.814697265625e-06,
+      "source_model_sha256": "5a8772a3ed4ae67baf7aabc68155929fd7aa6fd67e5a71e6aa42b22a48e8f878"
+    }
+  ],
+  "sha256": {
+    "RUN_PYTHON310.cmd": "7d0f66ff26a9e7af98ed5b1e05f2e9aceedd34088820f736f04825d3da6211fa",
+    "golden.npz": "f7ee10bfc6a6454cfd6ef317cbb260e4eb669bed3fb6f5561e23a0929153e4cb",
+    "model-701.npz": "a2c0cc04ade1720f06e0a5e19925bd45a95662d2c5dd2b9b5aa4b0278b8b458d",
+    "README.md": "eba03a6e1c21ab62112abec596d8c90fa84dc774f5a3aa6b9a3c37f9576bc4e0",
+    "model-802.npz": "fa040b0bcaebd801ab9aa589c00897e1257a3af76e1944fd3957da6c38293889",
+    "model-903.npz": "a4070ab78e5bcb7f10ee8f091ed863de41e1a288ddd35de846eb10551713f523",
+    "precision_wait.py": "50061f8a7abce90498b55b714abcdd4c8707b46654194a8bf528334f33d74f25",
+    "RUN_WINDOWS.cmd": "0242fef241e336cf68f66bc225f3243a9ec15057f402f4a11c196246a7600553",
+    "laptop_benchmark.py": "ff657e718c5ec1234969b8db3c066ea8739fcc6aff8db8c42623d80989cbead8"
+  },
+  "model_provenance": {
+    "701": {
+      "profile": "causal_query_v2",
+      "origin": "execution-aligned PPO endpoint; historical worker file name only, NOT a supervised-only model",
+      "source_ppo_sha256": "56bb90e204f34f9ba1a78ef0925845799140cd95247cd7fe71764c42cb1cf3a7",
+      "steps": 100000,
+      "futile": false,
+      "development_eligible": false,
+      "purpose": "research diagnostic, not deployment approval"
+    },
+    "802": {
+      "profile": "causal_query_v2",
+      "origin": "execution-aligned PPO endpoint; historical worker file name only, NOT a supervised-only model",
+      "source_ppo_sha256": "f40032d48c268f2c7d51bcd0de1dfdf665e19d9653edd7f1c20a996d45426aa1",
+      "steps": 100000,
+      "futile": false,
+      "development_eligible": false,
+      "purpose": "research diagnostic, not deployment approval"
+    },
+    "903": {
+      "profile": "causal_query_v2",
+      "origin": "execution-aligned PPO endpoint; historical worker file name only, NOT a supervised-only model",
+      "source_ppo_sha256": "16dd1bb44510933f8ff326bb137079a1dd38d906203298c5b910a817f25b1bc8",
+      "steps": 100000,
+      "futile": false,
+      "development_eligible": false,
+      "purpose": "research diagnostic, not deployment approval"
+    }
+  }
+}

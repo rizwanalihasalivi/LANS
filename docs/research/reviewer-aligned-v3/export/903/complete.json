@@ -1,0 +1,9 @@
+{
+  "profile": "causal_query_v2",
+  "origin": "execution-aligned PPO endpoint; historical worker file name only, NOT a supervised-only model",
+  "source_ppo_sha256": "16dd1bb44510933f8ff326bb137079a1dd38d906203298c5b910a817f25b1bc8",
+  "steps": 100000,
+  "futile": false,
+  "development_eligible": false,
+  "purpose": "research diagnostic, not deployment approval"
+}

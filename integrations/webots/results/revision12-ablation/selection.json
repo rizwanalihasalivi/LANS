@@ -1,0 +1,232 @@
+{
+  "protocol": {
+    "purpose": "User-authorized isolated predictor/objective ablation, nonlearned controls and conditional small learning follow-up; no unconditional full training",
+    "parent_commit": "6512f31",
+    "variants": {
+      "legacy": 0,
+      "preview": 1,
+      "lateral": 2
+    },
+    "proposers": [
+      "fixed_m004",
+      "fixed_p004",
+      "student"
+    ],
+    "methods": [
+      "lqr",
+      "legacy_fixed_m004",
+      "legacy_fixed_p004",
+      "legacy_student",
+      "preview_fixed_m004",
+      "preview_fixed_p004",
+      "preview_student",
+      "lateral_fixed_m004",
+      "lateral_fixed_p004",
+      "lateral_student"
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "repetitions": [
+      0,
+      1,
+      2
+    ],
+    "speeds": [
+      15,
+      20,
+      25
+    ],
+    "paths": [
+      "sine120",
+      "dlc220"
+    ],
+    "scenarios": [
+      "nominal",
+      "tire_mismatch",
+      "low_friction",
+      "sensor_stress",
+      "latency20",
+      "latency100"
+    ],
+    "development_noise_base": 910000000,
+    "noise_formula": "base + repetition*10000 + speed*100 + path_index*10 + scenario_index; all methods share each cell's stream",
+    "development_episodes": 1080,
+    "physical_contract": "Unchanged revision6 path/scenario definitions, Fiala plant, RK4, actuator/sensor/estimator and local LQR. Initial ey0.15m,heading0.01rad;10mscontrol;ceil((220/speed+2)/.01) ticks; finite-state episode failure abs ey>2.5m or abs headingerror>.6rad. Fill unexecuted error tails with2.5m. Nonfinite command/plant state is a run-integrity failure: preserve partial evidence, abort completion/selection, do not fabricate finite realized RMSE or silently omit the case. Primary metric is equally weighted mean episode penalized RMSE.",
+    "reference": "Call original execution_step/predict_cost verbatim. Original revision8/9 every-available-worker policy query cadence; not the slower50ms-query revision10/11 diagnostic. Pure LQR executes baseline directly.",
+    "preview_only": "Keep nominal linear dynamics,200ms horizon,50ms candidate hold,original combined cost and all gate/actuator rules. Vary predicted curvature using linear interpolation/clamping of existing0/10/20m actor previews, distance=measured_speed*time. Anchor first curvature to the existing local curvature input; other two come from float32 actor preview channels. Update equilibrium/feedforward continuation and yaw-reference cost along preview. No hidden stiffness/friction, future true states, exact future map queries or future measurement noise enters the predictor.",
+    "lateral_only": "Keep original constant-curvature nominal linear predictor and timing. Remove heading/yaw/steering effort from scalar objective, retaining .01*(ey/.5)^2 stage and .1*(ey/.5)^2 terminal costs. Keep1% relative improvement margin and1e-7floor. This is an objective ablation, not a safety filter guarantee.",
+    "unchanged": "Residual\u00b1.08rad,fullcommand\u00b1.5rad,physicalrate.35rad/s,actuatorlag.05s; freshness reject age>=50ms,original .1/.25/.5 blend limits,freshness scaling,.05/tick weight ramp,3tick persistence,validity/envelope/sequence checks. Same20student features,weights,train-onlystandardization. One in-flight worker,actual observation timestamps,simulated0/20/100ms service. All variants use same observations.",
+    "nonlearned_controls": "Predeclared constant residuals\u2212.04 and+.04 under EACH identical gate. Neither sign nor magnitude is selected or tuned from this run. Report both; require learned advantage over both to attribute extra benefit to the frozen student.",
+    "gate_progress": {
+      "overall_gain_vs_legacy_student_percent": 1.0,
+      "all_three_seed_means_better": true,
+      "minimum_stress_regions_with_one_percent_gain": 2,
+      "stress_regions": [
+        "tire_mismatch",
+        "low_friction",
+        "sensor_stress"
+      ],
+      "maximum_active_region_regression_vs_legacy_student_percent": 1.0,
+      "nominal_not_worse_than_lqr": true,
+      "cellwise_survival_not_worse_than": [
+        "lqr",
+        "legacy_student"
+      ],
+      "exact_severe_fallback": true
+    },
+    "learning_benefit": "At least1% overall mean penalizedRMSE reduction versus BOTH same-gate fixed corrections, and no cellwise survival loss against either. Report separately from gate_progress. A gate change benefiting only constants does not justify PPO training.",
+    "five_percent_target": "At least5% lower RMSE versus LQR in at least two predeclared stress regions, each with lower error in all three paired seed means, and all gate_progress preservation checks. Overall5% is a separate reported quantity. This target is not a requirement to report smaller honest gains.",
+    "selection": "Eligible only if BOTH gate_progress and learning_benefit pass. If only one passes, select it. If both pass and their overall means differ by<=1% of the lower mean, preferpreview to retain the original combined objective; otherwise select lower mean. No arm/threshold/weight/horizon changes after outcomes.",
+    "conditional_teacher": "Only after a selected gate: independent DEV noise920000000, first two pairs,full36conditions,selected-gate student,fixed\u00b1.04,and future-noise-independent five-action200ms teacher=288episodes. Teacher clones selected gate in every branch with original worker cadence; zero/antithetic3 forecasts independent of actual noise. Teacher retains privileged current state/parameters, never deployable. Require>=1% gain over selected-gate student overall and each pair, no regional survival loss and<=1% active-regional regression before spending on retraining.",
+    "conditional_pilots": "Only after teacher headroom passes: two100k categorical PPO fine-tuning jobs initialized exactly from existingstudent701/802,with selected gate in actual execution and reward branches. Retain revision9 hyperparameters/reward/20features/normalizer semantics; checkpoints0and100k only. Trainingnoise930000000+pair*1000000+slot*10000+episode. No architecture/reward/gate search. DEV940000000 compares endpoints vs same-gate frozenstudent,bothconstants,LQR,current-gate student. Retain endpoint only if>=1% overall improvement versus same-gate student,each pairbetter,no survival loss,nominal and every active region<=1% worse,and>=1% better than both constants. Otherwise retain frozenstudent; this is not PPO success.",
+    "conditional_reserved": "Only if a gate passes initial screen and independent teacher confirmation, freeze selected gate and retained policies before opening noise950000000. Two paired policies,same36known physicalconditions; LQR,currentgate student,selectedgate fixed\u00b1.04,selectedgate frozenstudent,retainedpolicy=432episodes. Report all,even regressions; no post-test selection or retuning. Fresh noise is not unseen-road validation. If initial screen/teacher fails, do not open reserved split.",
+    "stop": "Complete this finite decision tree only. Failed initial screen=>stop retraining path and leave reserved data unused. Failed teacher confirmation=>stop training and reserved evaluation. At most2x100k additionalRL steps, no300kextensions/5x1M/fulltraining/nativepromotion. Any new hypothesis requires a separate predeclared revision.",
+    "limitations": "Three student/noise pairs and two known geometries; descriptive screening,not statistical proof. Ideal map localization/currentactuator are inherited simulation assumptions. Changing gate changes student history distribution; frozen weights isolate gate changes. Preview-only does not estimate actual tireparameters or fix modelmismatch by assumption. No formal stability/safety,hard realtime,native or SOTAclaim. Literature positioning is distinct from reproduced published algorithm comparisons."
+  },
+  "source_commit": "c49ddc065caf9c93eb4867b91446a8037a11ffc7",
+  "summary": {
+    "lqr": {
+      "mean_penalized_rmse": 0.08424021490387629,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 6.575486056434325e-05,
+      "reduction_vs_lqr_percent": 0.0
+    },
+    "legacy_fixed_m004": {
+      "mean_penalized_rmse": 0.08355875863192698,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 3.914658526974774e-05,
+      "reduction_vs_lqr_percent": 0.808944128082878
+    },
+    "legacy_fixed_p004": {
+      "mean_penalized_rmse": 0.08392361406301323,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 4.876282497713947e-05,
+      "reduction_vs_lqr_percent": 0.37583099856086655
+    },
+    "legacy_student": {
+      "mean_penalized_rmse": 0.08259318128521938,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 5.8249302781922396e-05,
+      "reduction_vs_lqr_percent": 1.9551631255170565
+    },
+    "preview_fixed_m004": {
+      "mean_penalized_rmse": 0.08331619764090398,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 8.041525591633389e-06,
+      "reduction_vs_lqr_percent": 1.0968837912233242
+    },
+    "preview_fixed_p004": {
+      "mean_penalized_rmse": 0.08366838202532537,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 8.588308440115905e-05,
+      "reduction_vs_lqr_percent": 0.6788122266822572
+    },
+    "preview_student": {
+      "mean_penalized_rmse": 0.08211425327831207,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 6.828111310012752e-05,
+      "reduction_vs_lqr_percent": 2.5236896985484703
+    },
+    "lateral_fixed_m004": {
+      "mean_penalized_rmse": 0.07845763568890096,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 9.412179615997776e-05,
+      "reduction_vs_lqr_percent": 6.864392762499049
+    },
+    "lateral_fixed_p004": {
+      "mean_penalized_rmse": 0.0765555371359868,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 4.633311228719943e-05,
+      "reduction_vs_lqr_percent": 9.12233875074775
+    },
+    "lateral_student": {
+      "mean_penalized_rmse": 0.08042609854034796,
+      "survived": 108,
+      "episodes": 108,
+      "paired_seed_mean_sd": 0.0004623099772044316,
+      "reduction_vs_lqr_percent": 4.527666943728104
+    }
+  },
+  "assessments": {
+    "preview": {
+      "gate_progress_checks": {
+        "overall_gain_vs_legacy_student": false,
+        "all_three_seed_means_better": true,
+        "minimum_stress_regions_with_one_percent_gain": false,
+        "active_regions_preserved": true,
+        "nominal_not_worse_than_lqr": true,
+        "cellwise_survival_lqr": true,
+        "cellwise_survival_legacy_student": true,
+        "exact_severe_fallback": true
+      },
+      "gate_progress_pass": false,
+      "learning_benefit_checks": {
+        "one_percent_gain_vs_fixed_m004": true,
+        "cellwise_survival_vs_fixed_m004": true,
+        "one_percent_gain_vs_fixed_p004": true,
+        "cellwise_survival_vs_fixed_p004": true
+      },
+      "learning_benefit_pass": true,
+      "eligible": false,
+      "mean_penalized_rmse": 0.08211425327831207,
+      "reduction_vs_legacy_student_percent": 0.5798638573484949,
+      "qualifying_one_percent_stress_regions": [],
+      "five_percent_qualifying_stress_regions": [],
+      "five_percent_regional_target": false,
+      "overall_five_percent_reduction": false,
+      "overall_reduction_vs_lqr_percent": 2.5236896985484703
+    },
+    "lateral": {
+      "gate_progress_checks": {
+        "overall_gain_vs_legacy_student": true,
+        "all_three_seed_means_better": true,
+        "minimum_stress_regions_with_one_percent_gain": true,
+        "active_regions_preserved": true,
+        "nominal_not_worse_than_lqr": true,
+        "cellwise_survival_lqr": true,
+        "cellwise_survival_legacy_student": true,
+        "exact_severe_fallback": true
+      },
+      "gate_progress_pass": true,
+      "learning_benefit_checks": {
+        "one_percent_gain_vs_fixed_m004": false,
+        "cellwise_survival_vs_fixed_m004": true,
+        "one_percent_gain_vs_fixed_p004": false,
+        "cellwise_survival_vs_fixed_p004": true
+      },
+      "learning_benefit_pass": false,
+      "eligible": false,
+      "mean_penalized_rmse": 0.08042609854034796,
+      "reduction_vs_legacy_student_percent": 2.6238034558661916,
+      "qualifying_one_percent_stress_regions": [
+        "tire_mismatch",
+        "low_friction",
+        "sensor_stress"
+      ],
+      "five_percent_qualifying_stress_regions": [],
+      "five_percent_regional_target": false,
+      "overall_five_percent_reduction": false,
+      "overall_reduction_vs_lqr_percent": 4.527666943728104
+    }
+  },
+  "eligible_variants": [],
+  "selected_gate": null,
+  "selection_reason": "No variant passes both gate progress and learned-benefit screens.",
+  "next_action": "stop_retraining_path",
+  "additional_rl_steps_run": 0,
+  "training_authorized_now": false,
+  "reserved_opened": false,
+  "interpretation": "Development spending screen only; no automatic full training, deployment or statistical superiority."
+}

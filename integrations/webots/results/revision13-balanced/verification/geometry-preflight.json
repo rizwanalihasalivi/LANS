@@ -1,0 +1,54 @@
+{
+  "purpose": "Deterministic declared-path geometry screen, no closed-loop results or parameter selection; not a safety/feasibility certificate",
+  "samples_per_geometry": 10001,
+  "rows": [
+    {
+      "geometry": "sine120",
+      "length_m": 220,
+      "max_abs_curvature": 0.00685389187955262,
+      "lateral_demand_at25_mps2": 4.2836824247203875,
+      "preliminary_mu06_limit_mps2": 4.7088,
+      "within_preliminary_envelope": true
+    },
+    {
+      "geometry": "dlc220",
+      "length_m": 220,
+      "max_abs_curvature": 0.005593474141664782,
+      "lateral_demand_at25_mps2": 3.4959213385404886,
+      "preliminary_mu06_limit_mps2": 4.7088,
+      "within_preliminary_envelope": true
+    },
+    {
+      "geometry": "sine150",
+      "length_m": 220,
+      "max_abs_curvature": 0.0035091926640527004,
+      "lateral_demand_at25_mps2": 2.193245415032938,
+      "preliminary_mu06_limit_mps2": 4.7088,
+      "within_preliminary_envelope": true
+    },
+    {
+      "geometry": "dlc264",
+      "length_m": 264,
+      "max_abs_curvature": 0.0038884918205691014,
+      "lateral_demand_at25_mps2": 2.4303073878556885,
+      "preliminary_mu06_limit_mps2": 4.7088,
+      "within_preliminary_envelope": true
+    },
+    {
+      "geometry": "sine180",
+      "length_m": 240,
+      "max_abs_curvature": 0.002802480235705347,
+      "lateral_demand_at25_mps2": 1.751550147315842,
+      "preliminary_mu06_limit_mps2": 4.7088,
+      "within_preliminary_envelope": true
+    },
+    {
+      "geometry": "dlc286",
+      "length_m": 286,
+      "max_abs_curvature": 0.003314461745942497,
+      "lateral_demand_at25_mps2": 2.0715385912140607,
+      "preliminary_mu06_limit_mps2": 4.7088,
+      "within_preliminary_envelope": true
+    }
+  ]
+}

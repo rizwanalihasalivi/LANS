@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "episodes": 1080,
+  "unique_paired_grid": true,
+  "physical_bounds": true,
+  "failure_penalties": true,
+  "severe_trajectory_and_score_exact": true,
+  "archived_source_digests": true,
+  "archived_protocol_matches": true,
+  "submission_semantics": "every-available-worker-v1",
+  "source_commit": "c49ddc065caf9c93eb4867b91446a8037a11ffc7",
+  "additional_rl_steps_run": 0,
+  "reserved_opened": false
+}

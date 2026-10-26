@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "test_count": 32,
+  "suites": [
+    {
+      "path": "integrations/webots/research/revision13/test_contracts13.py",
+      "exit_code": 0,
+      "tests": 6,
+      "log": "0.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision13/test_report13.py",
+      "exit_code": 0,
+      "tests": 9,
+      "log": "1.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision13/test_run13.py",
+      "exit_code": 0,
+      "tests": 6,
+      "log": "2.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision13/test_native13.py",
+      "exit_code": 0,
+      "tests": 8,
+      "log": "3.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision7/test_submission.py",
+      "exit_code": 0,
+      "tests": 3,
+      "log": "4.txt"
+    }
+  ]
+}

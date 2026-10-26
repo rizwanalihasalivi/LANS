@@ -1,0 +1,14 @@
+test_all_candidate_screen_requirements (__main__.EvidenceContracts) ... ok
+test_archive_hashes_protocol_and_selection_bytes (__main__.EvidenceContracts) ... ok
+test_complete_grids_and_predeclared_tie_preference (__main__.EvidenceContracts) ... ok
+test_failed_cases_remain_with_both_tail_penalties (__main__.EvidenceContracts) ... ok
+test_metric_penalties_bounds_and_severe_trace_guard (__main__.EvidenceContracts) ... ok
+test_mirror_swaps_fixed_signs_not_student (__main__.EvidenceContracts) ... ok
+test_missing_duplicate_noise_and_horizon_fail_closed (__main__.EvidenceContracts) ... ok
+test_phase_and_selected_candidate_provenance (__main__.EvidenceContracts) ... ok
+test_reserved_failure_does_not_reselect_and_reports_are_phase_specific (__main__.EvidenceContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 7.227s
+
+OK

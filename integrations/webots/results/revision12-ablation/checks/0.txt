@@ -1,0 +1,10 @@
+test_flat_previews_recover_original_combined_cost (__main__.GateAblationContracts) ... ok
+test_lateral_objective_matches_independent_same_dynamics_rollout (__main__.GateAblationContracts) ... ok
+test_preview_uses_only_declared_points_and_local_anchor (__main__.GateAblationContracts) ... ok
+test_reference_execution_and_plant_trajectory_parity (__main__.GateAblationContracts) ... ok
+test_stale_missing_envelope_and_recovery_bounds (__main__.GateAblationContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.433s
+
+OK

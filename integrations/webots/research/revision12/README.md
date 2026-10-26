@@ -1,5 +1,7 @@
 # Isolated predictor and objective development ablation
 
+**Completed outcome:** [interpretation and trade-offs](../../results/revision12-ablation/interpretation.md), [all raw comparisons](../../results/revision12-ablation/report.md). All 1,080 episodes survive. The lateral-objective student reduces LQR error by 4.528%, but same-gate fixed corrections achieve 6.864% and 9.122%. No learned variant passes both frozen screens; teacher confirmation, retraining and reserved evaluation were not triggered. Representative trace diagnostics also show heading/steering trade-offs. The 9.122% result is nonlearned development evidence.
+
 This revision follows the full-project audit and the user's request to test a more discriminating gate before spending on further training. The [protocol](protocol.json) is committed before research outcomes. All previous models, protocols, source snapshots and results are preserved.
 
 Three gate variants share the same plant, sensors, LQR, action bounds, age rejection, worker lifecycle, persistence and weight ramp:

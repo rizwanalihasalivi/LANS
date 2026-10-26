@@ -1,0 +1,1730 @@
+{
+  "aggregate_equal_region_mean": {
+    "all_six_regions": {
+      "lateral_fixed_m004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.12758570042721262,
+          "actuator_total_variation_rad": 1.0480622979034504,
+          "command_rms_rad": 0.028836492094569764,
+          "heading_rmse_rad": 0.02812773236976578,
+          "lateral_rmse_m": 0.09307734346048858
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.314811061968923,
+          "actuator_total_variation_rad": 18.033897444739665,
+          "command_rms_rad": 5.009407101123475,
+          "heading_rmse_rad": 2.573471161897367,
+          "lateral_rmse_m": -7.636233726694163
+        }
+      },
+      "lateral_fixed_p004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.1284759008033738,
+          "actuator_total_variation_rad": 1.0610072487123425,
+          "command_rms_rad": 0.029299486234961175,
+          "heading_rmse_rad": 0.028732500519263144,
+          "lateral_rmse_m": 0.09369211004767368
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 14.105439534393582,
+          "actuator_total_variation_rad": 19.491771656282708,
+          "command_rms_rad": 6.695421475352847,
+          "heading_rmse_rad": 4.778880667598617,
+          "lateral_rmse_m": -7.026180245789804
+        }
+      },
+      "lateral_student": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.15348928251559205,
+          "actuator_total_variation_rad": 1.3178383360212973,
+          "command_rms_rad": 0.028427600200704974,
+          "heading_rmse_rad": 0.027025970856534867,
+          "lateral_rmse_m": 0.09778662718497293
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 36.32099044057002,
+          "actuator_total_variation_rad": 48.41636352518972,
+          "command_rms_rad": 3.520408536305575,
+          "heading_rmse_rad": -1.44432527185121,
+          "lateral_rmse_m": -2.963053712402086
+        }
+      },
+      "legacy_fixed_m004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11667520852149388,
+          "actuator_total_variation_rad": 0.9447591981447127,
+          "command_rms_rad": 0.027535910035146632,
+          "heading_rmse_rad": 0.02731982172784347,
+          "lateral_rmse_m": 0.1001367679006566
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.6246943423841937,
+          "actuator_total_variation_rad": 6.39979181281487,
+          "command_rms_rad": 0.27327794579881104,
+          "heading_rmse_rad": -0.3727385730787902,
+          "lateral_rmse_m": -0.6309303437873282
+        }
+      },
+      "legacy_fixed_p004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11622566033451814,
+          "actuator_total_variation_rad": 0.9425641420092177,
+          "command_rms_rad": 0.027539705219466956,
+          "heading_rmse_rad": 0.027457008485334736,
+          "lateral_rmse_m": 0.10103060856105923
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.2254296309013775,
+          "actuator_total_variation_rad": 6.152582242066318,
+          "command_rms_rad": 0.2870982833769631,
+          "heading_rmse_rad": 0.12754071457719007,
+          "lateral_rmse_m": 0.2560576897511657
+        }
+      },
+      "legacy_student": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.12816777048642178,
+          "actuator_total_variation_rad": 1.0813778113244423,
+          "command_rms_rad": 0.02776677769170209,
+          "heading_rmse_rad": 0.027382465653840688,
+          "lateral_rmse_m": 0.10041665562206098
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.831774628914605,
+          "actuator_total_variation_rad": 21.785926214707363,
+          "command_rms_rad": 1.113993094306065,
+          "heading_rmse_rad": -0.14429481329493177,
+          "lateral_rmse_m": -0.3531883807978531
+        }
+      },
+      "lqr": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11259401946797522,
+          "actuator_total_variation_rad": 0.8879333145752688,
+          "command_rms_rad": 0.02746086554588427,
+          "heading_rmse_rad": 0.027422034226930108,
+          "lateral_rmse_m": 0.10077257263965532
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        }
+      },
+      "preview_fixed_m004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.1159059123486127,
+          "actuator_total_variation_rad": 0.9448999379863462,
+          "command_rms_rad": 0.02733143161865434,
+          "heading_rmse_rad": 0.02716842278437356,
+          "lateral_rmse_m": 0.09939485081191307
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 2.941446531784453,
+          "actuator_total_variation_rad": 6.415642084375062,
+          "command_rms_rad": -0.4713395760001071,
+          "heading_rmse_rad": -0.9248454744742673,
+          "lateral_rmse_m": -1.3671595272939374
+        }
+      },
+      "preview_fixed_p004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11565540418521858,
+          "actuator_total_variation_rad": 0.9366006997121349,
+          "command_rms_rad": 0.02753688902737596,
+          "heading_rmse_rad": 0.027427982304755225,
+          "lateral_rmse_m": 0.100826393228151
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 2.718958548339323,
+          "actuator_total_variation_rad": 5.480972989525168,
+          "command_rms_rad": 0.27684299085426467,
+          "heading_rmse_rad": 0.021690870107926585,
+          "lateral_rmse_m": 0.053407973108043905
+        }
+      },
+      "preview_student": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.12734217912687243,
+          "actuator_total_variation_rad": 1.0763030548212191,
+          "command_rms_rad": 0.027534022312014548,
+          "heading_rmse_rad": 0.02714419564156034,
+          "lateral_rmse_m": 0.09919613555355078
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.09852843746464,
+          "actuator_total_variation_rad": 21.2144017071884,
+          "command_rms_rad": 0.2664037155276189,
+          "heading_rmse_rad": -1.0131946560584248,
+          "lateral_rmse_m": -1.5643513356968675
+        }
+      }
+    },
+    "five_active_regions": {
+      "lateral_fixed_m004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.132088185548677,
+          "actuator_total_variation_rad": 1.09392609150363,
+          "command_rms_rad": 0.02965730441095122,
+          "heading_rmse_rad": 0.028848600532264446,
+          "lateral_rmse_m": 0.09609305971895885
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 15.767139300953549,
+          "actuator_total_variation_rad": 21.308593158957123,
+          "command_rms_rad": 5.894163001056496,
+          "heading_rmse_rad": 3.0242302194862125,
+          "lateral_rmse_m": -8.767216068197747
+        }
+      },
+      "lateral_fixed_p004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.13315642600007035,
+          "actuator_total_variation_rad": 1.1094600324743005,
+          "command_rms_rad": 0.03021289737942091,
+          "heading_rmse_rad": 0.029574322311661277,
+          "lateral_rmse_m": 0.09683077962358097
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 16.703386101753125,
+          "actuator_total_variation_rad": 23.03119630372368,
+          "command_rms_rad": 7.877959355240516,
+          "heading_rmse_rad": 5.615930554906456,
+          "lateral_rmse_m": -8.066809182857392
+        }
+      },
+      "lateral_student": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.16317248405473228,
+          "actuator_total_variation_rad": 1.417657337245046,
+          "command_rms_rad": 0.029166634138313476,
+          "heading_rmse_rad": 0.027526486716387345,
+          "lateral_rmse_m": 0.10174420018834004
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 43.01060774799945,
+          "actuator_total_variation_rad": 57.20807694264518,
+          "command_rms_rad": 4.142179168996307,
+          "heading_rmse_rad": -1.6973075892871448,
+          "lateral_rmse_m": -3.401903745755397
+        }
+      },
+      "legacy_fixed_m004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11899559526181447,
+          "actuator_total_variation_rad": 0.9699623717931447,
+          "command_rms_rad": 0.02809660593964346,
+          "heading_rmse_rad": 0.027879107761957667,
+          "lateral_rmse_m": 0.10456436904716049
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 4.2922922716485346,
+          "actuator_total_variation_rad": 7.561901716429853,
+          "command_rms_rad": 0.32154399205659434,
+          "heading_rmse_rad": -0.43802599126151476,
+          "lateral_rmse_m": -0.724375765061902
+        }
+      },
+      "legacy_fixed_p004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11845613743744361,
+          "actuator_total_variation_rad": 0.9673283044305508,
+          "command_rms_rad": 0.028101160160827855,
+          "heading_rmse_rad": 0.028043731870947185,
+          "lateral_rmse_m": 0.10563697783964363
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.8194907955625856,
+          "actuator_total_variation_rad": 7.269802452572849,
+          "command_rms_rad": 0.33780526225704044,
+          "heading_rmse_rad": 0.1498802430546009,
+          "lateral_rmse_m": 0.29398171563612685
+        }
+      },
+      "legacy_student": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.13278666961972793,
+          "actuator_total_variation_rad": 1.1339047076088202,
+          "command_rms_rad": 0.02837364712751001,
+          "heading_rmse_rad": 0.02795428047315433,
+          "lateral_rmse_m": 0.10490023431284574
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 16.37931746372385,
+          "actuator_total_variation_rad": 25.741936246602613,
+          "command_rms_rad": 1.3107453132364721,
+          "heading_rmse_rad": -0.16956892361671416,
+          "lateral_rmse_m": -0.4054981759407106
+        }
+      },
+      "lqr": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11409816839759208,
+          "actuator_total_variation_rad": 0.9017713115098122,
+          "command_rms_rad": 0.02800655255252863,
+          "heading_rmse_rad": 0.02800176276086163,
+          "lateral_rmse_m": 0.10532733473395892
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        }
+      },
+      "preview_fixed_m004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11807243985435707,
+          "actuator_total_variation_rad": 0.970131259603105,
+          "command_rms_rad": 0.02785123183985271,
+          "heading_rmse_rad": 0.027697429029793774,
+          "lateral_rmse_m": 0.10367406854066825
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.4832035540798945,
+          "actuator_total_variation_rad": 7.5806301687330935,
+          "command_rms_rad": -0.5545870466727609,
+          "heading_rmse_rad": -1.0868377597042844,
+          "lateral_rmse_m": -1.5696459019556186
+        }
+      },
+      "preview_fixed_p004": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.11777183005828411,
+          "actuator_total_variation_rad": 0.9601721736740515,
+          "command_rms_rad": 0.028097780730318656,
+          "heading_rmse_rad": 0.02800890045425177,
+          "lateral_rmse_m": 0.10539191944015373
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.2197376279438528,
+          "actuator_total_variation_rad": 6.476238644857779,
+          "command_rms_rad": 0.32573869139702616,
+          "heading_rmse_rad": 0.025490157355800847,
+          "lateral_rmse_m": 0.06131808647580339
+        }
+      },
+      "preview_student": {
+        "mean_metrics": {
+          "actuator_rate_rms_rad_s": 0.1317959599882687,
+          "actuator_total_variation_rad": 1.1278149998049527,
+          "command_rms_rad": 0.028094340671884967,
+          "heading_rmse_rad": 0.02766835645841791,
+          "lateral_rmse_m": 0.10343561023063348
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 15.511021639721712,
+          "actuator_total_variation_rad": 25.06663113031191,
+          "command_rms_rad": 0.3134556428952884,
+          "heading_rmse_rad": -1.1906618354388998,
+          "lateral_rmse_m": -1.7960432665496073
+        }
+      }
+    }
+  },
+  "by_region": {
+    "latency100": {
+      "lateral_fixed_m004": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "lateral_fixed_p004": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "lateral_student": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_m004": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_p004": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "legacy_student": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "lqr": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_m004": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_p004": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_student": {
+        "actuator_rms_rad": 0.023802789422091946,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4050868355784687,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1050732748198909,
+          "actuator_total_variation_rad": 0.8187433299025523,
+          "command_rms_rad": 0.024732430512662485,
+          "heading_rmse_rad": 0.024523391557272484,
+          "lateral_rmse_m": 0.07799876216813724
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      }
+    },
+    "latency20": {
+      "lateral_fixed_m004": {
+        "actuator_rms_rad": 0.023787443922321645,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4008982073788752,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11252567696392726,
+          "actuator_total_variation_rad": 0.9136741926782106,
+          "command_rms_rad": 0.024811792628915485,
+          "heading_rmse_rad": 0.024450286204047694,
+          "lateral_rmse_m": 0.07151752537161167
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 6.411379175872067,
+          "actuator_total_variation_rad": 13.525243119708396,
+          "command_rms_rad": 0.02056660665386012,
+          "heading_rmse_rad": -0.14081453395744514,
+          "lateral_rmse_m": -9.16643926907148
+        },
+        "samples": 1080
+      },
+      "lateral_fixed_p004": {
+        "actuator_rms_rad": 0.024700813243583048,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4409955330583692,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11621740366923212,
+          "actuator_total_variation_rad": 0.9512448007959691,
+          "command_rms_rad": 0.025726039607135574,
+          "heading_rmse_rad": 0.025150116558399337,
+          "lateral_rmse_m": 0.07115080044951086
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 9.902508852681958,
+          "actuator_total_variation_rad": 18.193441537594524,
+          "command_rms_rad": 3.7060520589797363,
+          "heading_rmse_rad": 2.717413323448903,
+          "lateral_rmse_m": -9.632212243039772
+        },
+        "samples": 1080
+      },
+      "lateral_student": {
+        "actuator_rms_rad": 0.023645048304356875,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.351809959013623,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1388926319328407,
+          "actuator_total_variation_rad": 1.1594546951595077,
+          "command_rms_rad": 0.02516799465879521,
+          "heading_rmse_rad": 0.02359353464603732,
+          "lateral_rmse_m": 0.07301342243401117
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 31.345635237354273,
+          "actuator_total_variation_rad": 44.06379999465378,
+          "command_rms_rad": 1.4564777231078185,
+          "heading_rmse_rad": -3.6399356491743085,
+          "lateral_rmse_m": -7.266518152413015
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_m004": {
+        "actuator_rms_rad": 0.02361910329519523,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3900490071507827,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10876648667866091,
+          "actuator_total_variation_rad": 0.8603583050902633,
+          "command_rms_rad": 0.02461084749177994,
+          "heading_rmse_rad": 0.02426093193885936,
+          "lateral_rmse_m": 0.07755196183206918
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 2.8564516816969476,
+          "actuator_total_variation_rad": 6.900672622841486,
+          "command_rms_rad": -0.7894775031669687,
+          "heading_rmse_rad": -0.9141700083443838,
+          "lateral_rmse_m": -1.502173092917225
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_p004": {
+        "actuator_rms_rad": 0.023841661299703002,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4040211491083545,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10689169835411937,
+          "actuator_total_variation_rad": 0.8342402934473067,
+          "command_rms_rad": 0.024797971607079874,
+          "heading_rmse_rad": 0.024504791819575034,
+          "lateral_rmse_m": 0.07893302258988424
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 1.0835335650501765,
+          "actuator_total_variation_rad": 3.6554746678913785,
+          "command_rms_rad": -0.03514828891034716,
+          "heading_rmse_rad": 0.0817957996992913,
+          "lateral_rmse_m": 0.2518957953205003
+        },
+        "samples": 1080
+      },
+      "legacy_student": {
+        "actuator_rms_rad": 0.023535045441959983,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3881759016021824,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1183785864949165,
+          "actuator_total_variation_rad": 0.975141400395707,
+          "command_rms_rad": 0.024690781159582672,
+          "heading_rmse_rad": 0.02422824007979891,
+          "lateral_rmse_m": 0.07742474150331638
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 11.9462596777137,
+          "actuator_total_variation_rad": 21.162626068616987,
+          "command_rms_rad": -0.4672512592131306,
+          "heading_rmse_rad": -1.0476891986681003,
+          "lateral_rmse_m": -1.6637541235517528
+        },
+        "samples": 1080
+      },
+      "lqr": {
+        "actuator_rms_rad": 0.023863450847332168,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4028736573815288,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10574590596927586,
+          "actuator_total_variation_rad": 0.8048202915670246,
+          "command_rms_rad": 0.0248066907344083,
+          "heading_rmse_rad": 0.02448476431080253,
+          "lateral_rmse_m": 0.0787346932082342
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_m004": {
+        "actuator_rms_rad": 0.02346092102508733,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3812344024597567,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10695282672574921,
+          "actuator_total_variation_rad": 0.8573571461969286,
+          "command_rms_rad": 0.024433510456973614,
+          "heading_rmse_rad": 0.02410708806473922,
+          "lateral_rmse_m": 0.07676086776160675
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 1.1413404097403212,
+          "actuator_total_variation_rad": 6.527774607622305,
+          "command_rms_rad": -1.5043533272137144,
+          "heading_rmse_rad": -1.5424949216140904,
+          "lateral_rmse_m": -2.5069322889303303
+        },
+        "samples": 1080
+      },
+      "preview_fixed_p004": {
+        "actuator_rms_rad": 0.02386918902866357,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4030670882569392,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1069596679259521,
+          "actuator_total_variation_rad": 0.8309275750898002,
+          "command_rms_rad": 0.024825168373263182,
+          "heading_rmse_rad": 0.024488140316453456,
+          "lateral_rmse_m": 0.07876706203435925
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 1.1478098802509606,
+          "actuator_total_variation_rad": 3.2438649716377554,
+          "command_rms_rad": 0.07448651274251095,
+          "heading_rmse_rad": 0.013788189292207598,
+          "lateral_rmse_m": 0.041111262146453775
+        },
+        "samples": 1080
+      },
+      "preview_student": {
+        "actuator_rms_rad": 0.023526712210813185,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3816059540428156,
+        "max_actuator_rate_rad_s": 0.35000000000000725,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11911037972679545,
+          "actuator_total_variation_rad": 0.9866103008916162,
+          "command_rms_rad": 0.024660134269408062,
+          "heading_rmse_rad": 0.024113572863204594,
+          "lateral_rmse_m": 0.07668639484467737
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 12.638289525272594,
+          "actuator_total_variation_rad": 22.58765232802933,
+          "command_rms_rad": -0.5907940989362093,
+          "heading_rmse_rad": -1.5160098863364113,
+          "lateral_rmse_m": -2.601519457425938
+        },
+        "samples": 1080
+      }
+    },
+    "low_friction": {
+      "lateral_fixed_m004": {
+        "actuator_rms_rad": 0.02875816707024787,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.67395341192457,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.13705232383407467,
+          "actuator_total_variation_rad": 1.128709030377812,
+          "command_rms_rad": 0.029952503705341974,
+          "heading_rmse_rad": 0.029215998563076655,
+          "lateral_rmse_m": 0.08650145145630651
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 17.4537257452978,
+          "actuator_total_variation_rad": 21.287986312305552,
+          "command_rms_rad": 6.464130680420155,
+          "heading_rmse_rad": 3.133485495766286,
+          "lateral_rmse_m": -13.670805517798279
+        },
+        "samples": 1080
+      },
+      "lateral_fixed_p004": {
+        "actuator_rms_rad": 0.02956231254417321,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.748342486214647,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.13269572798084317,
+          "actuator_total_variation_rad": 1.1034518726563816,
+          "command_rms_rad": 0.030484095920494666,
+          "heading_rmse_rad": 0.030514332836949164,
+          "lateral_rmse_m": 0.08913194377880213
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.720126779489284,
+          "actuator_total_variation_rad": 18.573921201141165,
+          "command_rms_rad": 8.353638937207952,
+          "heading_rmse_rad": 7.716650391328428,
+          "lateral_rmse_m": -11.045551496397621
+        },
+        "samples": 1080
+      },
+      "lateral_student": {
+        "actuator_rms_rad": 0.026823264063967647,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.576710235296688,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.16259298251342633,
+          "actuator_total_variation_rad": 1.396773385700049,
+          "command_rms_rad": 0.02873176361218913,
+          "heading_rmse_rad": 0.027518784955821718,
+          "lateral_rmse_m": 0.09596299488763896
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 39.3420486569958,
+          "actuator_total_variation_rad": 50.09344899940522,
+          "command_rms_rad": 2.125093313701676,
+          "heading_rmse_rad": -2.8577372436905835,
+          "lateral_rmse_m": -4.22810358350898
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_m004": {
+        "actuator_rms_rad": 0.027161069910979403,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.6124186257431554,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.12121609228759739,
+          "actuator_total_variation_rad": 0.9928252868223951,
+          "command_rms_rad": 0.028166089635571854,
+          "heading_rmse_rad": 0.028142013939700262,
+          "lateral_rmse_m": 0.09913859481550727
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.882088688265073,
+          "actuator_total_variation_rad": 6.6862907602663,
+          "command_rms_rad": 0.11444376127867084,
+          "heading_rmse_rad": -0.6577173733921526,
+          "lateral_rmse_m": -1.0588274713146606
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_p004": {
+        "actuator_rms_rad": 0.027304529544672804,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.625779254837769,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11960013412377486,
+          "actuator_total_variation_rad": 0.9841403701360976,
+          "command_rms_rad": 0.028123316170586273,
+          "heading_rmse_rad": 0.028375200907539016,
+          "lateral_rmse_m": 0.10058295385470285
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 2.4972139070153165,
+          "actuator_total_variation_rad": 5.753033359270243,
+          "command_rms_rad": -0.03759160146356022,
+          "heading_rmse_rad": 0.16544068890982366,
+          "lateral_rmse_m": 0.3826553049578907
+        },
+        "samples": 1080
+      },
+      "legacy_student": {
+        "actuator_rms_rad": 0.026940837049546595,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.6055777862072413,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.13408664766938294,
+          "actuator_total_variation_rad": 1.152592921331956,
+          "command_rms_rad": 0.028174862067904354,
+          "heading_rmse_rad": 0.028022618766197962,
+          "lateral_rmse_m": 0.09876043435882567
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 14.912143777532094,
+          "actuator_total_variation_rad": 23.85448393141396,
+          "command_rms_rad": 0.14562477343778024,
+          "heading_rmse_rad": -1.0791864656800376,
+          "lateral_rmse_m": -1.436234868077635
+        },
+        "samples": 1080
+      },
+      "lqr": {
+        "actuator_rms_rad": 0.027346449519207804,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.6230939969475646,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1166862293762201,
+          "actuator_total_variation_rad": 0.9306024979848282,
+          "command_rms_rad": 0.02813389215119994,
+          "heading_rmse_rad": 0.028328334316089797,
+          "lateral_rmse_m": 0.10019953501841176
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_m004": {
+        "actuator_rms_rad": 0.02689147415170397,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.5980305085160287,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.121136972039104,
+          "actuator_total_variation_rad": 0.9965866298076145,
+          "command_rms_rad": 0.027848817917661823,
+          "heading_rmse_rad": 0.027890893920923983,
+          "lateral_rmse_m": 0.09793085948428773
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.8142827021462766,
+          "actuator_total_variation_rad": 7.090474393274415,
+          "command_rms_rad": -1.0132769117264018,
+          "heading_rmse_rad": -1.544179725799688,
+          "lateral_rmse_m": -2.2641577465475904
+        },
+        "samples": 1080
+      },
+      "preview_fixed_p004": {
+        "actuator_rms_rad": 0.027354129192675387,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.6234380677066145,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1185335676145941,
+          "actuator_total_variation_rad": 0.9697497964407654,
+          "command_rms_rad": 0.028160511288737693,
+          "heading_rmse_rad": 0.028334339483695053,
+          "lateral_rmse_m": 0.10027379087140013
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 1.583167309672695,
+          "actuator_total_variation_rad": 4.206661656368715,
+          "command_rms_rad": 0.09461590808230724,
+          "heading_rmse_rad": 0.021198449362569427,
+          "lateral_rmse_m": 0.07410798161360255
+        },
+        "samples": 1080
+      },
+      "preview_student": {
+        "actuator_rms_rad": 0.026712691772704966,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.5914086668302232,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1315212830965727,
+          "actuator_total_variation_rad": 1.1238548286339665,
+          "command_rms_rad": 0.028064556510653434,
+          "heading_rmse_rad": 0.027775320980960867,
+          "lateral_rmse_m": 0.0975163080499102
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 12.713628505829423,
+          "actuator_total_variation_rad": 20.766367065166524,
+          "command_rms_rad": -0.24644880336455177,
+          "heading_rmse_rad": -1.9521562014849225,
+          "lateral_rmse_m": -2.677883652861779
+        },
+        "samples": 1080
+      }
+    },
+    "nominal": {
+      "lateral_fixed_m004": {
+        "actuator_rms_rad": 0.02464062285109853,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4255633904255987,
+        "max_actuator_rate_rad_s": 0.35000000000000725,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.12041902334396098,
+          "actuator_total_variation_rad": 0.9849062875927963,
+          "command_rms_rad": 0.025597271576599624,
+          "heading_rmse_rad": 0.024880774858820103,
+          "lateral_rmse_m": 0.06901942219067729
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.661788377051387,
+          "actuator_total_variation_rad": 21.7405602451189,
+          "command_rms_rad": 3.70752253358535,
+          "heading_rmse_rad": 1.1041247872794813,
+          "lateral_rmse_m": -12.769150978373812
+        },
+        "samples": 1080
+      },
+      "lateral_fixed_p004": {
+        "actuator_rms_rad": 0.025281270426051203,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.457798299721066,
+        "max_actuator_rate_rad_s": 0.3500000000000074,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1231364499094293,
+          "actuator_total_variation_rad": 0.9984380956744543,
+          "command_rms_rad": 0.026207414636672952,
+          "heading_rmse_rad": 0.025443380160107734,
+          "lateral_rmse_m": 0.0688179586221826
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 16.226728322895312,
+          "actuator_total_variation_rad": 23.413176125170597,
+          "command_rms_rad": 6.179521354315565,
+          "heading_rmse_rad": 3.3902962152245975,
+          "lateral_rmse_m": -13.023772613399508
+        },
+        "samples": 1080
+      },
+      "lateral_student": {
+        "actuator_rms_rad": 0.023592891925409778,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.339857096379262,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.16687923781602534,
+          "actuator_total_variation_rad": 1.4327904501676796,
+          "command_rms_rad": 0.025414853331463545,
+          "heading_rmse_rad": 0.023384917838029116,
+          "lateral_rmse_m": 0.07151641740266201
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 57.51491821179877,
+          "actuator_total_variation_rad": 77.1018363011872,
+          "command_rms_rad": 2.968453753876754,
+          "heading_rmse_rad": -4.974356118244527,
+          "lateral_rmse_m": -9.613299981206469
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_m004": {
+        "actuator_rms_rad": 0.02378142415805172,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4014022185313113,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10965084501719558,
+          "actuator_total_variation_rad": 0.8575503098899974,
+          "command_rms_rad": 0.024607025429727553,
+          "heading_rmse_rad": 0.024459082858124474,
+          "lateral_rmse_m": 0.07840355133122283
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.4978593549136905,
+          "actuator_total_variation_rad": 5.9985670510275035,
+          "command_rms_rad": -0.30446656780049874,
+          "heading_rmse_rad": -0.6094392356277178,
+          "lateral_rmse_m": -0.9089306769506034
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_p004": {
+        "actuator_rms_rad": 0.023853744444248728,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4116800004728216,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10916370108535557,
+          "actuator_total_variation_rad": 0.8688852234053005,
+          "command_rms_rad": 0.02464896591585943,
+          "heading_rmse_rad": 0.024638463992805844,
+          "lateral_rmse_m": 0.07950987134445872
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.03805118713103,
+          "actuator_total_variation_rad": 7.399633060115152,
+          "command_rms_rad": -0.1345443986515371,
+          "heading_rmse_rad": 0.11948390797282826,
+          "lateral_rmse_m": 0.48930232734161194
+        },
+        "samples": 1080
+      },
+      "legacy_student": {
+        "actuator_rms_rad": 0.023576209189120984,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3972792459309102,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.12029552956750691,
+          "actuator_total_variation_rad": 1.0159537276166346,
+          "command_rms_rad": 0.02451935144319809,
+          "heading_rmse_rad": 0.024387123411277963,
+          "lateral_rmse_m": 0.07828103421203743
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.545224373329878,
+          "actuator_total_variation_rad": 25.57821748245548,
+          "command_rms_rad": -0.6596783295855113,
+          "heading_rmse_rad": -0.9018496181369406,
+          "lateral_rmse_m": -1.0637750959128556
+        },
+        "samples": 1080
+      },
+      "lqr": {
+        "actuator_rms_rad": 0.023924154384817462,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4099952830064528,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10594503664194845,
+          "actuator_total_variation_rad": 0.8090206629653534,
+          "command_rms_rad": 0.024682174398978657,
+          "heading_rmse_rad": 0.02460906012605185,
+          "lateral_rmse_m": 0.07912272202413857
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_m004": {
+        "actuator_rms_rad": 0.023551072590832414,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.390733847582446,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10709476357270525,
+          "actuator_total_variation_rad": 0.8574427873863052,
+          "command_rms_rad": 0.024333330369433522,
+          "heading_rmse_rad": 0.024272884659242662,
+          "lateral_rmse_m": 0.07757460850307223
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 1.0852107538009692,
+          "actuator_total_variation_rad": 5.985276598927314,
+          "command_rms_rad": -1.4133439943588177,
+          "heading_rmse_rad": -1.3660638199396558,
+          "lateral_rmse_m": -1.9565979044477877
+        },
+        "samples": 1080
+      },
+      "preview_fixed_p004": {
+        "actuator_rms_rad": 0.023917055646527467,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4107935560281855,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1083679134801348,
+          "actuator_total_variation_rad": 0.8596137348774973,
+          "command_rms_rad": 0.024701510374799274,
+          "heading_rmse_rad": 0.02462299261861093,
+          "lateral_rmse_m": 0.07928634915466153
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 2.286918684425676,
+          "actuator_total_variation_rad": 6.253619249563047,
+          "command_rms_rad": 0.07833983954597112,
+          "heading_rmse_rad": 0.056615297324302816,
+          "lateral_rmse_m": 0.20680169531204218
+        },
+        "samples": 1080
+      },
+      "preview_student": {
+        "actuator_rms_rad": 0.02352926704972116,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3894412835816239,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11975608071645043,
+          "actuator_total_variation_rad": 1.0109329812781045,
+          "command_rms_rad": 0.024464874015803367,
+          "heading_rmse_rad": 0.024250325161635566,
+          "lateral_rmse_m": 0.07750049423020859
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 13.036046342763319,
+          "actuator_total_variation_rad": 24.957621919404318,
+          "command_rms_rad": -0.8803940028244917,
+          "heading_rmse_rad": -1.4577353323482645,
+          "lateral_rmse_m": -2.050267928642646
+        },
+        "samples": 1080
+      }
+    },
+    "sensor_stress": {
+      "lateral_fixed_m004": {
+        "actuator_rms_rad": 0.02569255438023216,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3949713299008848,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.13701488004900383,
+          "actuator_total_variation_rad": 1.1171706769592469,
+          "command_rms_rad": 0.02688486938436446,
+          "heading_rmse_rad": 0.024346842677694464,
+          "lateral_rmse_m": 0.06401821321860748
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 26.90494927342271,
+          "actuator_total_variation_rad": 31.08442833601053,
+          "command_rms_rad": 10.088952334953527,
+          "heading_rmse_rad": 2.512801601379655,
+          "lateral_rmse_m": -8.982902338512266
+        },
+        "samples": 1080
+      },
+      "lateral_fixed_p004": {
+        "actuator_rms_rad": 0.02546178484607488,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.4091123065770919,
+        "max_actuator_rate_rad_s": 0.35000000000000714,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.13364430016336157,
+          "actuator_total_variation_rad": 1.1117275991141373,
+          "command_rms_rad": 0.026539837578505747,
+          "heading_rmse_rad": 0.024593649280142002,
+          "lateral_rmse_m": 0.062093611455954434
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 23.783074705810293,
+          "actuator_total_variation_rad": 30.445758916529698,
+          "command_rms_rad": 8.676105968241643,
+          "heading_rmse_rad": 3.5519850637098394,
+          "lateral_rmse_m": -11.719180934615746
+        },
+        "samples": 1080
+      },
+      "lateral_student": {
+        "actuator_rms_rad": 0.025201861055282188,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3659397259674888,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1641045595894783,
+          "actuator_total_variation_rad": 1.4012340949340836,
+          "command_rms_rad": 0.027044520370165054,
+          "heading_rmse_rad": 0.023840145601921766,
+          "lateral_rmse_m": 0.06833371110145368
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 51.99575989696699,
+          "actuator_total_variation_rad": 64.41531637699967,
+          "command_rms_rad": 10.742695878013153,
+          "heading_rmse_rad": 0.37934481241073126,
+          "lateral_rmse_m": -2.847396948511949
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_m004": {
+        "actuator_rms_rad": 0.023645738459497516,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3563197711714634,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11277340097067244,
+          "actuator_total_variation_rad": 0.9038434387696291,
+          "command_rms_rad": 0.02463597895199111,
+          "heading_rmse_rad": 0.023672245716838104,
+          "lateral_rmse_m": 0.0698196831061075
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 4.452178657208528,
+          "actuator_total_variation_rad": 6.053446371196491,
+          "command_rms_rad": 0.880129778424088,
+          "heading_rmse_rad": -0.32760055362003326,
+          "lateral_rmse_m": -0.7347347502095758
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_p004": {
+        "actuator_rms_rad": 0.023777527129969805,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3618385897748746,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11599076185222237,
+          "actuator_total_variation_rad": 0.9493874264946737,
+          "command_rms_rad": 0.024658769900213696,
+          "heading_rmse_rad": 0.023768567272287943,
+          "lateral_rmse_m": 0.07003784479618914
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 7.432139806839566,
+          "actuator_total_variation_rad": 11.397399375163086,
+          "command_rms_rad": 0.9734548222126271,
+          "heading_rmse_rad": 0.07796301922105009,
+          "lateral_rmse_m": -0.4245660832967624
+        },
+        "samples": 1080
+      },
+      "legacy_student": {
+        "actuator_rms_rad": 0.02383277642592778,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3553677088999678,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1296787510670897,
+          "actuator_total_variation_rad": 1.087758549055615,
+          "command_rms_rad": 0.02510825235657707,
+          "heading_rmse_rad": 0.02365562909551649,
+          "lateral_rmse_m": 0.06906641560381921
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 20.11013198073064,
+          "actuator_total_variation_rad": 27.633324532528004,
+          "command_rms_rad": 2.814008778660826,
+          "heading_rmse_rad": -0.39756512468897,
+          "lateral_rmse_m": -1.8056834439333591
+        },
+        "samples": 1080
+      },
+      "lqr": {
+        "actuator_rms_rad": 0.023626148573202985,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3607776864056662,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.10796653781705456,
+          "actuator_total_variation_rad": 0.8522527741400281,
+          "command_rms_rad": 0.024421042088369885,
+          "heading_rmse_rad": 0.023750051015449757,
+          "lateral_rmse_m": 0.07033646959025772
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_m004": {
+        "actuator_rms_rad": 0.023269019335505264,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3383066309552547,
+        "max_actuator_rate_rad_s": 0.35000000000000714,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11206175676402585,
+          "actuator_total_variation_rad": 0.9013031907524823,
+          "command_rms_rad": 0.024135638841218606,
+          "heading_rmse_rad": 0.02335785711144186,
+          "lateral_rmse_m": 0.06823460949623755
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.793044613425045,
+          "actuator_total_variation_rad": 5.755383625702937,
+          "command_rms_rad": -1.168677594176859,
+          "heading_rmse_rad": -1.6513392066095811,
+          "lateral_rmse_m": -2.988293421982169
+        },
+        "samples": 1080
+      },
+      "preview_fixed_p004": {
+        "actuator_rms_rad": 0.023777952238120393,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3617728811650809,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.11597760770429683,
+          "actuator_total_variation_rad": 0.9495171316100146,
+          "command_rms_rad": 0.0246590276290079,
+          "heading_rmse_rad": 0.023767420440700137,
+          "lateral_rmse_m": 0.07002884504979397
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 7.419956265353922,
+          "actuator_total_variation_rad": 11.412618465000811,
+          "command_rms_rad": 0.9745101776445164,
+          "heading_rmse_rad": 0.07313426501307507,
+          "lateral_rmse_m": -0.4373613606935445
+        },
+        "samples": 1080
+      },
+      "preview_student": {
+        "actuator_rms_rad": 0.023466997896778526,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 1.3297911741470876,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.131567036021638,
+          "actuator_total_variation_rad": 1.1206263335598818,
+          "command_rms_rad": 0.024554212558187273,
+          "heading_rmse_rad": 0.023209234352827974,
+          "lateral_rmse_m": 0.06688424880647414
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 21.859085862856542,
+          "actuator_total_variation_rad": 31.489901536625453,
+          "command_rms_rad": 0.5453103489011513,
+          "heading_rmse_rad": -2.277117898694092,
+          "lateral_rmse_m": -4.908151921605319
+        },
+        "samples": 1080
+      }
+    },
+    "tire_mismatch": {
+      "lateral_fixed_m004": {
+        "actuator_rms_rad": 0.03985974786825336,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.369128937158136,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1534290235524181,
+          "actuator_total_variation_rad": 1.3251702699100838,
+          "command_rms_rad": 0.04104008475953455,
+          "heading_rmse_rad": 0.0413491003576833,
+          "lateral_rmse_m": 0.1894086863575913
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 14.373688840836651,
+          "actuator_total_variation_rad": 19.152808556608726,
+          "command_rms_rad": 8.031599437315883,
+          "heading_rmse_rad": 6.469402730078189,
+          "lateral_rmse_m": -4.4564277979378675
+        },
+        "samples": 1080
+      },
+      "lateral_fixed_p004": {
+        "actuator_rms_rad": 0.041019581603429806,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.4161706265177045,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.16008824827748563,
+          "actuator_total_variation_rad": 1.3824377941305608,
+          "command_rms_rad": 0.04210709915429561,
+          "heading_rmse_rad": 0.042170132722708156,
+          "lateral_rmse_m": 0.19295958381145484
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 19.337808920541598,
+          "actuator_total_variation_rad": 24.30202334424234,
+          "command_rms_rad": 10.840347819880991,
+          "heading_rmse_rad": 8.58347110811042,
+          "lateral_rmse_m": -2.6652458105140275
+        },
+        "samples": 1080
+      },
+      "lateral_student": {
+        "actuator_rms_rad": 0.038216026876861216,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.2514405517025313,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1833930084218907,
+          "actuator_total_variation_rad": 1.6980340602639108,
+          "command_rms_rad": 0.03947403871895443,
+          "heading_rmse_rad": 0.039295050540126795,
+          "lateral_rmse_m": 0.19989445511593446
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 36.71034589921749,
+          "actuator_total_variation_rad": 52.67889108239281,
+          "command_rms_rad": 3.9092283567580877,
+          "heading_rmse_rad": 1.1804495155874895,
+          "lateral_rmse_m": 0.8329167602386445
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_m004": {
+        "actuator_rms_rad": 0.03762188374926775,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.2265864341562294,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.14257115135494608,
+          "actuator_total_variation_rad": 1.2352345183934386,
+          "command_rms_rad": 0.03846308818914684,
+          "heading_rmse_rad": 0.038861264356266134,
+          "lateral_rmse_m": 0.1979080541508956
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 6.279686367028536,
+          "actuator_total_variation_rad": 11.066227061247623,
+          "command_rms_rad": 1.2480593234328818,
+          "heading_rmse_rad": 0.06349762283313076,
+          "lateral_rmse_m": -0.16908503637975691
+        },
+        "samples": 1080
+      },
+      "legacy_fixed_p004": {
+        "actuator_rms_rad": 0.03744951832766432,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.2306183958151284,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.14063439177174583,
+          "actuator_total_variation_rad": 1.1999882086693754,
+          "command_rms_rad": 0.03827677721039999,
+          "heading_rmse_rad": 0.0389316353625281,
+          "lateral_rmse_m": 0.1991211966129832
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 4.835928642449305,
+          "actuator_total_variation_rad": 7.897051831287771,
+          "command_rms_rad": 0.7576248337214819,
+          "heading_rmse_rad": 0.24469525328734143,
+          "lateral_rmse_m": 0.44286136717128777
+        },
+        "samples": 1080
+      },
+      "legacy_student": {
+        "actuator_rms_rad": 0.03829230934843795,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.2619108095432634,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.16149383329974362,
+          "actuator_total_variation_rad": 1.438076939644189,
+          "command_rms_rad": 0.03937498861028786,
+          "heading_rmse_rad": 0.03947779101298032,
+          "lateral_rmse_m": 0.20096854588622998
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 20.38560248823089,
+          "actuator_total_variation_rad": 29.30482230839997,
+          "command_rms_rad": 3.6484944492531035,
+          "heading_rmse_rad": 1.6509862100022143,
+          "lateral_rmse_m": 1.374721209848473
+        },
+        "samples": 1080
+      },
+      "lqr": {
+        "actuator_rms_rad": 0.03721536499042613,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.225173501878624,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.1341471321834615,
+          "actuator_total_variation_rad": 1.1121603308918262,
+          "command_rms_rad": 0.03798896338968636,
+          "heading_rmse_rad": 0.03883660403591421,
+          "lateral_rmse_m": 0.19824325382875235
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 0.0,
+          "actuator_total_variation_rad": 0.0,
+          "command_rms_rad": 0.0,
+          "heading_rmse_rad": 0.0,
+          "lateral_rmse_m": 0.0
+        },
+        "samples": 1080
+      },
+      "preview_fixed_m004": {
+        "actuator_rms_rad": 0.03765971177575257,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.226423544338062,
+        "max_actuator_rate_rad_s": 0.35,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.143115880170201,
+          "actuator_total_variation_rad": 1.237966543872194,
+          "command_rms_rad": 0.03850486161397598,
+          "heading_rmse_rad": 0.03885842139262114,
+          "lateral_rmse_m": 0.19786939745813695
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 6.6857545448483435,
+          "actuator_total_variation_rad": 11.311877387272528,
+          "command_rms_rad": 1.3580213258192808,
+          "heading_rmse_rad": 0.05617730295561785,
+          "lateral_rmse_m": -0.18858466222430037
+        },
+        "samples": 1080
+      },
+      "preview_fixed_p004": {
+        "actuator_rms_rad": 0.0373283817367813,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.224887330996584,
+        "max_actuator_rate_rad_s": 0.3500000000000071,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.13902039356644272,
+          "actuator_total_variation_rad": 1.1910526303521798,
+          "command_rms_rad": 0.03814268598578524,
+          "heading_rmse_rad": 0.038831609411799285,
+          "lateral_rmse_m": 0.19860355009055383
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 3.632773435899095,
+          "actuator_total_variation_rad": 7.093608472538393,
+          "command_rms_rad": 0.4046506732021449,
+          "heading_rmse_rad": -0.012860609826514935,
+          "lateral_rmse_m": 0.181744525900851
+        },
+        "samples": 1080
+      },
+      "preview_student": {
+        "actuator_rms_rad": 0.03775222966237499,
+        "duration_s": 10.8,
+        "heading_rmse_deg": 2.234153177052649,
+        "max_actuator_rate_rad_s": 0.3500000000000105,
+        "metrics": {
+          "actuator_rate_rms_rad_s": 0.15702502037988705,
+          "actuator_total_variation_rad": 1.3970505546611944,
+          "command_rms_rad": 0.038727926005372684,
+          "heading_rmse_rad": 0.038993328933460546,
+          "lateral_rmse_m": 0.19859060522189714
+        },
+        "percent_change_vs_lqr": {
+          "actuator_rate_rms_rad_s": 17.054325220413524,
+          "actuator_total_variation_rad": 25.615931071819343,
+          "command_rms_rad": 1.9452034215994063,
+          "heading_rmse_rad": 0.40354943856935055,
+          "lateral_rmse_m": 0.17521473565240697
+        },
+        "samples": 1080
+      }
+    }
+  },
+  "definitions": {
+    "actuator_rate_rms_rad_s": "sqrt(mean(((actuator_i-actuator_previous)/dt_i)^2)); initial actuator 0 and time 0 included",
+    "actuator_total_variation_rad": "sum(abs(actuator_i-actuator_previous)); initial actuator 0 included",
+    "aggregate": "Equal-region arithmetic mean of each episode metric; not pooled time-sample RMS",
+    "command_rms_rad": "sqrt(mean(command^2)) over interval commands",
+    "heading_rmse_rad": "sqrt(mean((heading - frozen_core.path_values(x,dlc220)[1])^2)); no wrapping, same as runner failure condition",
+    "lateral_rmse_m": "sqrt(mean((true y - reference y)^2)) over post-step rows",
+    "percent_change_vs_lqr": "100*(method_metric/LQR_metric-1); negative means lower"
+  },
+  "input_sha256": {
+    "integrations/webots/results/revision12-ablation/pair-0/episodes.csv": "6e5d0f74fd5f6d5db28b849ae8625d5f8a97054ad2439435a045c5df95e69c4d",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-lateral_fixed_m004.csv.gz": "81c47832bfedb16bd0a65b24e5c1b0e106fb75c6a34463eb0e5009e83defe249",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-lateral_fixed_p004.csv.gz": "ae81f5a18b770b3f7dcc6ec822a85a2a4caaec3c7e14bd30b52757ae36ff6fa7",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-lateral_student.csv.gz": "074cbe97466ad9aa4e54e7fc3d69d9a2075f852ca28da88c01b91842927b4e7e",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-legacy_fixed_m004.csv.gz": "86af590ed473a04443e694c034c15fbef4e7e93535b15904f604323e3ef8c233",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-legacy_fixed_p004.csv.gz": "4b5710c3335275f6f78fd9849069f1245fc272ff682676cde9413973512cb4ab",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-legacy_student.csv.gz": "697200fae5fad662585e54f969c1aab2d76c777d9dda575212e6424bcf3495fe",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-lqr.csv.gz": "f76455a5991148a952976c6fb744cd0a7ce61c775e2c80fd2de265d7ec9356eb",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-preview_fixed_m004.csv.gz": "e548ec3027a2c0f2c998055c343307e3287e782b471b5e7d3e258a0592bd774c",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-preview_fixed_p004.csv.gz": "6580fee2858af473612db796afd70e4afde453f5dd7682d1c8514e0dddeffb1c",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency100-preview_student.csv.gz": "c45a90c0f835538c8ba5bec5dd5bacff823376d74573e85f2971e203b50fbb0c",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-lateral_fixed_m004.csv.gz": "f3714810f4c90a3af0b14bbb9b7bd8025148b03aa507ba0c5e94b4df3847eafe",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-lateral_fixed_p004.csv.gz": "ae921c94da32e061414bcf501870a336da70102f461d5e1c129c01cca44a2c9a",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-lateral_student.csv.gz": "3065e9d851d17d83481b764e0b23579f1c5141146a0923c15a1714012b79b2bf",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-legacy_fixed_m004.csv.gz": "772e6a0016111bede2da59a820f1a1ef0aaddc226417284acecd8a1f57fd794e",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-legacy_fixed_p004.csv.gz": "02e612ece8a17c5908cce7e9371ad58635cb5e6fbd1599ed62da71ce45a73638",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-legacy_student.csv.gz": "763b56a58bd6f5c6548d6197e38eee553de10465894e64a42d4baca0cbcfd0d3",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-lqr.csv.gz": "c8a9811f50e1a6566aa8d0bab4f1d71807f4bfd300b9bdd096247d7a87ca65de",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-preview_fixed_m004.csv.gz": "3acc1d212fd9aedaaf09f44727230397431d93d590511508fe8641d3f8397651",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-preview_fixed_p004.csv.gz": "6ed7019e11c7c154adb86e85c1455a04b7ddefaaf3b60bfa42682468c7fe0c35",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/latency20-preview_student.csv.gz": "2fa53130ec59dd808d7c04332a94e3cfcd2a204eccd8522bac1b160df74956ca",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-lateral_fixed_m004.csv.gz": "57a250c6fa65c4d5b9b2f765ee045528be8868059597142c68805cef423282c2",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-lateral_fixed_p004.csv.gz": "2591a1fdb31ac33fd6605f4d965cf071b0125fa9bb1437d58e05db78b44d5f19",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-lateral_student.csv.gz": "9ce53c17fda9ef13a2a7ae502aa75e5f494be028fb2003c692c534cb4b414ad6",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-legacy_fixed_m004.csv.gz": "1f04a135ee361534f1f9fc8d27fb03e6007bda63659ac0548e509a64620e2eb2",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-legacy_fixed_p004.csv.gz": "1a0c3bcac03b68d485f322cef11ad95860edc727137f270c9bcd401ce257aea9",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-legacy_student.csv.gz": "569741d2a5a1b49c263df64e788e1e09dae53e225a21b64910184690c0d1ef94",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-lqr.csv.gz": "91614ad429fa042e3cb7304e797056b37a2135a387e2bdb37bd7771ce4bed096",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-preview_fixed_m004.csv.gz": "52e08982c80d8252e65681fa5a0ad9c5287c8517bcd6e0e406ec40c0f3947982",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-preview_fixed_p004.csv.gz": "658e7f5dd277ca14ee0c53bfb5a95808a3cdb16adc099efa8d12403e0acc4780",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/low_friction-preview_student.csv.gz": "149f73b94ec66627dd5d64ef2b36dd4d1d7000d51048d3b75954d86fd550efe1",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-lateral_fixed_m004.csv.gz": "01ddb2a32595dc0fe43a443b9ab5df35f59b758293cecb57cab7e44311665bd8",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-lateral_fixed_p004.csv.gz": "6779e66ca9b4335ccf6502c080411f93d391ca07d5b725a018b084aabd6e47bb",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-lateral_student.csv.gz": "6be2944cfd358af3adc7833d846d3bd7b2da64a7b37873b678ab81738adae3b4",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-legacy_fixed_m004.csv.gz": "3e72d78cb0758004a3145c67ff3d26ef326b63d6101f4cb47bdb1142ee462c26",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-legacy_fixed_p004.csv.gz": "53c69034a20582482a813cc8531a3688df835eaa6fa3b6f3f68d963f331d3db2",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-legacy_student.csv.gz": "d205929f85680f83808cb676991d0b09b5d38656df73820df48afce6bad2d84c",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-lqr.csv.gz": "6eb68c820e99472d5d1fbc01c96a3b4e3c15d7c1ea1d486d9f15449741e3b685",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-preview_fixed_m004.csv.gz": "a2f37ac2b12b870e547c141e55ed72c99e80337e4c9a27754e0002226bcc9e5e",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-preview_fixed_p004.csv.gz": "22c9c6581a6b6599ae288ed8b7635b1633012a9c29503b115e7d948a9c70e5e0",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/nominal-preview_student.csv.gz": "ecfceaf6610084c7e5d0c1b9b1b2c839363d300a79314d9131b03a68e8d10769",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-lateral_fixed_m004.csv.gz": "1f897bb3993d20318f5990200910476efa898ad5c876e438f9a6afcedcee3372",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-lateral_fixed_p004.csv.gz": "d41719eb7446fcfaa459e6d10ade96c75cdf4f6e5431702a4f6a2eb6bb057929",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-lateral_student.csv.gz": "cb31cc23a00050960ecf2d618d701ae4b39ce1f484d5c2ae962b3114a0784fef",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-legacy_fixed_m004.csv.gz": "be37a6a96c866c25bc621ba5c94b3ba45d042fec84e2f3e9ad2ce2e5628aaf29",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-legacy_fixed_p004.csv.gz": "5f49a2841cf27bb56ab0fde4872ad211f5936fcb15a1a640f354de263e25dc8a",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-legacy_student.csv.gz": "e97fbc709bb7008ec7cef1cd0e73a2391fd91ba02dbb074ec1d6f1ce8419837f",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-lqr.csv.gz": "d527189774f14955ba62b9281abd84f21012d2c36712222b79cd92eb2f72701f",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-preview_fixed_m004.csv.gz": "8b1fa3a6e2472dea5157ddb0ad04f0686cdedca086a3a783f36dcb83197cabf5",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-preview_fixed_p004.csv.gz": "0f73a8f181de3de6ce5604c4a954ce2eab7dd9d665e81916d9039dfbb623f4cd",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/sensor_stress-preview_student.csv.gz": "b8effc7de16e685c61b728f58eebdc5128dee1377c52d9f41a3cf4ad8e225e33",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-lateral_fixed_m004.csv.gz": "bfd48617798597e730d734a13150ad16a9ad818d2fcc0ad48e318b57464b5a92",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-lateral_fixed_p004.csv.gz": "bba6e6d2fd6fa0b8c8def7d1745ae5db325772a9512e2215004b8cf857262748",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-lateral_student.csv.gz": "ee43b6b2f61eee1f65c93cb718ab2f52f9eadca962c23361a5dac5463489483e",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-legacy_fixed_m004.csv.gz": "acdcc5e70116663e1a28761d7be2b9dec15ac22cb833d9c3c4908c1f9b093f96",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-legacy_fixed_p004.csv.gz": "cd41fc0ac1dd9859fb7b46bff33edb251508c93c0734576a8b16c375801aae07",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-legacy_student.csv.gz": "9a16c3d42b39983eac5bfad2f368a7299e7ed8ad1711f091b35c1ccbdb7639d8",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-lqr.csv.gz": "dcc6201a0874eccf8a2c2eded3faca948f01812b708abf111f12ac3fa496e1b7",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-preview_fixed_m004.csv.gz": "69b35069ed76f12ee58627dda85ceb0b8c4bbca3146ada8187c52c5e14e27bb3",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-preview_fixed_p004.csv.gz": "e185fcffe469a29467f1d1afab781f9e42473bc9be8388abb237745df88c5ece",
+    "integrations/webots/results/revision12-ablation/pair-0/traces/tire_mismatch-preview_student.csv.gz": "19ba852799daf94ecebc3b9b44a8cd99cebfdf19eb925e73dee88516394e1591",
+    "integrations/webots/results/revision12-ablation/source/core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "integrations/webots/results/revision12-ablation/source/revision12/protocol.json": "9fc5b343fa8d448258bc8dfd0130739a8cbcabb48c2a69f6af22a2205caa8081",
+    "integrations/webots/results/revision12-ablation/source/revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b"
+  },
+  "label": "posthoc diagnostic of existing development traces only",
+  "limitations": [
+    "One pair, speed and path per region; no generalization to all 108 development cells.",
+    "Descriptive posthoc diagnostics, not selection criteria or formal stability/safety evidence.",
+    "Time samples are not independent replicate experiments; no inferential confidence intervals."
+  ],
+  "methods": [
+    "lqr",
+    "legacy_fixed_m004",
+    "legacy_fixed_p004",
+    "legacy_student",
+    "preview_fixed_m004",
+    "preview_fixed_p004",
+    "preview_student",
+    "lateral_fixed_m004",
+    "lateral_fixed_p004",
+    "lateral_student"
+  ],
+  "regions": [
+    "nominal",
+    "tire_mismatch",
+    "low_friction",
+    "sensor_stress",
+    "latency20",
+    "latency100"
+  ],
+  "scope": {
+    "all_108_paired_cells_analyzed": false,
+    "control_period_s": 0.01,
+    "initial_actuator_rad": 0.0,
+    "method_count": 10,
+    "new_runs_training_tuning_or_reserved_access": false,
+    "path": "dlc220",
+    "region_count": 6,
+    "repetition": 0,
+    "speed_m_s": 25,
+    "student_seed": 701,
+    "trace_count": 60,
+    "trajectories_per_region_method": 1
+  },
+  "source_evaluation": "AST extraction of exact frozen core reference/path_values bodies; decorator stripped only to avoid numba caches; no simulator import or execution",
+  "validation": {
+    "all_60_traces_complete": true,
+    "all_episode_checks_passed": true,
+    "all_severe_latency_metrics_exactly_equal_lqr": true,
+    "maximum_absolute_residual_vs_recorded": {
+      "lateral_rmse": 9.71445146547012e-17,
+      "max_actuator": 0.0,
+      "max_command": 0.0,
+      "max_rate": 7.438494264988549e-15,
+      "reference_y": 9.325873406851315e-15
+    }
+  }
+}

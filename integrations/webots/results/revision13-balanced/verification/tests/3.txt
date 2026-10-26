@@ -1,0 +1,13 @@
+test_cannot_replace_selected_method_or_load_a_learned_candidate (__main__.NativeContracts) ... ok
+test_claimed_passing_proofs_require_phase_protocol_eligibility_and_hash_link (__main__.NativeContracts) ... ok
+test_full_grid_mirrors_noise_not_constant_sign (__main__.NativeContracts) ... ok
+test_native_pass_permits_teacher_only_and_uses_measured_smoothness (__main__.NativeContracts) ... ok
+test_native_tradeoff_survival_bounds_and_fallback_fail_closed (__main__.NativeContracts) ... ok
+test_raw_metrics_include_initial_increment_and_failure_tail (__main__.NativeContracts) ... ok
+test_requires_passing_both_stages_and_matching_evidence (__main__.NativeContracts) ... ok
+test_world_generation_is_private_and_preserves_declared_contact (__main__.NativeContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.019s
+
+OK

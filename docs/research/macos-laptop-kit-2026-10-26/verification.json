@@ -1,0 +1,8 @@
+{
+  "launcher_bash_syntax_pass": true,
+  "portable_linux_smoke_completed": true,
+  "macos_execution_verified": false,
+  "ram_4gb_measured": false,
+  "scope": "NumPy model/IPC kit only; no Webots, full control pipeline or vehicle I/O",
+  "zip_bytes": 125591
+}

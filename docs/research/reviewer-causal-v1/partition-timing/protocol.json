@@ -1,0 +1,38 @@
+{
+  "kind": "Resource partition diagnostic; same10ms deadlines, no rebasing or code tuning",
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "cases": {
+    "nominal": 0.0,
+    "delay1000": 1.0,
+    "cpu_stress": 0.0
+  },
+  "seconds": 5.0,
+  "period_ms": 10,
+  "stale_age_ms": 50,
+  "cpus": [
+    0,
+    1
+  ],
+  "noise_base": 1096000000,
+  "model_root": "/workspace/LANS/docs/research/reviewer-causal-v1/export",
+  "source_hashes": {
+    "tools/controller_review/realtime_campaign_partition.py": "e0e31b9097d9a239b28804d3bdfe9eed99a0a60c3457973ac0c800156788e091",
+    "tools/controller_review/realtime_optimized.py": "5c06fc0aa7f1f5392a9a7f032bbcbda17632be258fb499f8a2cd712d58d6630e",
+    "tools/reviewer_campaign/supervisor.py": "a745d28aac873aba8365ade9c87f647be9ac17a33d14951c5054f097854b526d",
+    "tools/reviewer_campaign/runtime_adapter.py": "7ff097bb95574baf84bb641e59f08a21f6dec8cfa3bd032052901e76ac73a3c0",
+    "tools/controller_review/realtime_kernels.py": "af016e0c6d75fed0f51aedcaaa5dae0c0b590dfea7b346d324915cc0edc96292",
+    "tools/controller_review/causal_student.py": "5da481f7a18f3b03156372431a90197b7313ae572b85e9d2700e083e57798539"
+  },
+  "model_hashes": {
+    "701": "7b4f4c81c0bbfb2850800887dbf55302900ca45ce567af8130c1f28b876f2a32",
+    "802": "1d5918268928c4566325f2ef23348e77a298ad415939e6ad7d44f1c0969234fd",
+    "903": "5f02de701170a8c4237fe22cd7b2a53aec7acb66b6790464fa2c19b410f672af"
+  },
+  "manipulation": "Local controller on first CPU; PPO worker and BOTH generated stress processes on second CPU, including child imports. Host OS tasks are NOT excluded.",
+  "criteria": "Raw contracts must pass; any deadline miss fails observed strict timing. Original contested-core evidence remains authoritative for that condition.",
+  "limits": "Three seeds x three5s windows; different physical noise namespace, not a paired causal speedup comparison or WCET proof."
+}

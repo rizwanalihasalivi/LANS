@@ -1,0 +1,9 @@
+{"seed": 701, "case": "nominal", "packets": 486, "deadline_misses": 9, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "delay1000", "packets": 4, "deadline_misses": 2, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 701, "case": "cpu_stress", "packets": 204, "deadline_misses": 178, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "nominal", "packets": 464, "deadline_misses": 14, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "delay1000", "packets": 4, "deadline_misses": 3, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 802, "case": "cpu_stress", "packets": 45, "deadline_misses": 424, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "nominal", "packets": 488, "deadline_misses": 8, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "delay1000", "packets": 4, "deadline_misses": 0, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}
+{"seed": 903, "case": "cpu_stress", "packets": 471, "deadline_misses": 2, "active_ticks": 0, "stale_authority_violations": 0, "survived": true}

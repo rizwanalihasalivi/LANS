@@ -1,0 +1,3831 @@
+{
+  "independent_checker_sha256": "56be7921e6b75fd4558c5cdba7650bf5079588bf16471d84c263425af3887219",
+  "source_commit": "583ee07e1ec8f8ce61eb457796e301f8dd9750ac",
+  "protocol_sha256": "9699816828734e6107f126845d1b869b94981aae6aad5983a9eabd5571c52a83",
+  "implementation": "stdlib-only; no imports of project reporter/controller code",
+  "limitation": "All episodes: sums/counts/RMS/TV-energy consistency. Direct TV and physical-state hash reconstruction only for the predeclared saved trace subset.",
+  "phases": {
+    "confirmation": {
+      "phase": "confirmation",
+      "verified": true,
+      "episodes": 2160,
+      "survived": 2160,
+      "severe_nonbaseline_pairs": 288,
+      "mirror_pairs": 648,
+      "mirror_max_abs_difference": 0.0,
+      "traces_recomputed": 120,
+      "trace_ticks_recomputed": 134880,
+      "summary": {
+        "lqr": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06914494629598841,
+          "penalized_heading_rmse": 0.014997570555201031,
+          "command_rms": 0.01675636296469595,
+          "actuator_rate_rms": 0.061022464112984405,
+          "actuator_total_variation": 0.5067497225225422,
+          "yaw_error_rms": 0.03331082008478376,
+          "reduction_vs_lqr_percent": 0.0
+        },
+        "legacy_student": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06781289228617184,
+          "penalized_heading_rmse": 0.014819631055954428,
+          "command_rms": 0.017507276148427082,
+          "actuator_rate_rms": 0.08924046607921605,
+          "actuator_total_variation": 0.8322205448682009,
+          "yaw_error_rms": 0.03421640791989818,
+          "reduction_vs_lqr_percent": 1.9264661861395638
+        },
+        "lateral_fixed_m004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06427074164246538,
+          "penalized_heading_rmse": 0.015122484642519862,
+          "command_rms": 0.0178093302967484,
+          "actuator_rate_rms": 0.08332180659992455,
+          "actuator_total_variation": 0.7541621378677971,
+          "yaw_error_rms": 0.03647973709046359,
+          "reduction_vs_lqr_percent": 7.049256546759109
+        },
+        "lateral_fixed_p004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06427074164246538,
+          "penalized_heading_rmse": 0.015122484642519862,
+          "command_rms": 0.0178093302967484,
+          "actuator_rate_rms": 0.08332180659992455,
+          "actuator_total_variation": 0.7541621378677971,
+          "yaw_error_rms": 0.03647973709046359,
+          "reduction_vs_lqr_percent": 7.049256546759109
+        },
+        "lateral_student": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06629174667896827,
+          "penalized_heading_rmse": 0.014889708922552066,
+          "command_rms": 0.019621706827836278,
+          "actuator_rate_rms": 0.12358883009949437,
+          "actuator_total_variation": 1.231005566835079,
+          "yaw_error_rms": 0.03807463599780467,
+          "reduction_vs_lqr_percent": 4.1264036923341685
+        }
+      },
+      "regions": {
+        "nominal": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05362521569187037,
+            "penalized_heading_rmse": 0.013254687937889404,
+            "command_rms": 0.015841359501637054,
+            "actuator_rate_rms": 0.059322288338775536,
+            "actuator_total_variation": 0.47995563864044527,
+            "yaw_error_rms": 0.03113590694456129,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05198137639056429,
+            "penalized_heading_rmse": 0.013002891529631851,
+            "command_rms": 0.01680348140569068,
+            "actuator_rate_rms": 0.09529486570810103,
+            "actuator_total_variation": 0.885448820426058,
+            "yaw_error_rms": 0.03229002441719379,
+            "reduction_vs_lqr_percent": 3.065422264688966
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05012077394573212,
+            "penalized_heading_rmse": 0.013273319952118404,
+            "command_rms": 0.017138859462973565,
+            "actuator_rate_rms": 0.08900149657231611,
+            "actuator_total_variation": 0.8033803952673602,
+            "yaw_error_rms": 0.03487776246441024,
+            "reduction_vs_lqr_percent": 6.535063217786796
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05012077394573212,
+            "penalized_heading_rmse": 0.013273319952118404,
+            "command_rms": 0.017138859462973565,
+            "actuator_rate_rms": 0.08900149657231611,
+            "actuator_total_variation": 0.8033803952673602,
+            "yaw_error_rms": 0.03487776246441024,
+            "reduction_vs_lqr_percent": 6.535063217786796
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05053345242045157,
+            "penalized_heading_rmse": 0.013020395321141083,
+            "command_rms": 0.01948168426784029,
+            "actuator_rate_rms": 0.14125313188203123,
+            "actuator_total_variation": 1.4165187627436702,
+            "yaw_error_rms": 0.03678299761842638,
+            "reduction_vs_lqr_percent": 5.765502723912618
+          }
+        },
+        "tire_mismatch": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13653603839048445,
+            "penalized_heading_rmse": 0.0222481461698034,
+            "command_rms": 0.020398627821293216,
+            "actuator_rate_rms": 0.06418768015432313,
+            "actuator_total_variation": 0.5458476942955811,
+            "yaw_error_rms": 0.041139510360243464,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13442554526185171,
+            "penalized_heading_rmse": 0.02205481494166801,
+            "command_rms": 0.020883333879836073,
+            "actuator_rate_rms": 0.09080127775682241,
+            "actuator_total_variation": 0.86468467538051,
+            "yaw_error_rms": 0.041162128161303164,
+            "reduction_vs_lqr_percent": 1.5457407095677222
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.12162516551620789,
+            "penalized_heading_rmse": 0.022621818084802636,
+            "command_rms": 0.021622157000331512,
+            "actuator_rate_rms": 0.08970194364183409,
+            "actuator_total_variation": 0.8320266413889205,
+            "yaw_error_rms": 0.044491190985186814,
+            "reduction_vs_lqr_percent": 10.920833100219596
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.12162516551620789,
+            "penalized_heading_rmse": 0.022621818084802636,
+            "command_rms": 0.021622157000331512,
+            "actuator_rate_rms": 0.08970194364183409,
+            "actuator_total_variation": 0.8320266413889205,
+            "yaw_error_rms": 0.044491190985186814,
+            "reduction_vs_lqr_percent": 10.920833100219596
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.1301558192965625,
+            "penalized_heading_rmse": 0.021831537584720125,
+            "command_rms": 0.022364173924696716,
+            "actuator_rate_rms": 0.12436940231969501,
+            "actuator_total_variation": 1.221192747898832,
+            "yaw_error_rms": 0.04285452456819272,
+            "reduction_vs_lqr_percent": 4.672919449790191
+          }
+        },
+        "low_friction": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06462976912577995,
+            "penalized_heading_rmse": 0.01480486947021092,
+            "command_rms": 0.01668025354093814,
+            "actuator_rate_rms": 0.06062423104180111,
+            "actuator_total_variation": 0.49778702348848713,
+            "yaw_error_rms": 0.03333790566251064,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06329940061272125,
+            "penalized_heading_rmse": 0.014580950242992703,
+            "command_rms": 0.017426422479010932,
+            "actuator_rate_rms": 0.09178567019398733,
+            "actuator_total_variation": 0.8632544217763669,
+            "yaw_error_rms": 0.03411656588781677,
+            "reduction_vs_lqr_percent": 2.0584454053511725
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05925408143942764,
+            "penalized_heading_rmse": 0.01489768079974487,
+            "command_rms": 0.017992357839348216,
+            "actuator_rate_rms": 0.08933024389405517,
+            "actuator_total_variation": 0.810705510171505,
+            "yaw_error_rms": 0.037034349698429336,
+            "reduction_vs_lqr_percent": 8.317665000304043
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05925408143942764,
+            "penalized_heading_rmse": 0.01489768079974487,
+            "command_rms": 0.017992357839348216,
+            "actuator_rate_rms": 0.08933024389405517,
+            "actuator_total_variation": 0.810705510171505,
+            "yaw_error_rms": 0.037034349698429336,
+            "reduction_vs_lqr_percent": 8.317665000304043
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06178991174268226,
+            "penalized_heading_rmse": 0.014624392852367517,
+            "command_rms": 0.01996422796941141,
+            "actuator_rate_rms": 0.1359130627454058,
+            "actuator_total_variation": 1.3734946137573876,
+            "yaw_error_rms": 0.03831689091145549,
+            "reduction_vs_lqr_percent": 4.3940391889237045
+          }
+        },
+        "sensor_stress": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05286228868345564,
+            "penalized_heading_rmse": 0.013179361052414912,
+            "command_rms": 0.015965654520119575,
+            "actuator_rate_rms": 0.06327311909827818,
+            "actuator_total_variation": 0.5511774960482659,
+            "yaw_error_rms": 0.03202382740369883,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05160788673844057,
+            "penalized_heading_rmse": 0.013021105321465437,
+            "command_rms": 0.017413787575911242,
+            "actuator_rate_rms": 0.1075033184936681,
+            "actuator_total_variation": 1.052907416738321,
+            "yaw_error_rms": 0.03426925332903231,
+            "reduction_vs_lqr_percent": 2.3729618528750107
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050456241119379616,
+            "penalized_heading_rmse": 0.013468054224872105,
+            "command_rms": 0.017767398927279226,
+            "actuator_rate_rms": 0.096032753384734,
+            "actuator_total_variation": 0.8996661880524969,
+            "yaw_error_rms": 0.03783666172212773,
+            "reduction_vs_lqr_percent": 4.551538769885022
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050456241119379616,
+            "penalized_heading_rmse": 0.013468054224872105,
+            "command_rms": 0.017767398927279226,
+            "actuator_rate_rms": 0.096032753384734,
+            "actuator_total_variation": 0.8996661880524969,
+            "yaw_error_rms": 0.03783666172212773,
+            "reduction_vs_lqr_percent": 4.551538769885022
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0510444924628567,
+            "penalized_heading_rmse": 0.013574643213768098,
+            "command_rms": 0.021398445557428945,
+            "actuator_rate_rms": 0.15620614244179956,
+            "actuator_total_variation": 1.63568371468692,
+            "yaw_error_rms": 0.04302488827920076,
+            "reduction_vs_lqr_percent": 3.438739157670745
+          }
+        },
+        "latency20": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05350726664749751,
+            "penalized_heading_rmse": 0.013280289094272157,
+            "command_rms": 0.01588153884411943,
+            "actuator_rate_rms": 0.0594601177755866,
+            "actuator_total_variation": 0.4841395313317738,
+            "yaw_error_rms": 0.03129370181881631,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05185404547661071,
+            "penalized_heading_rmse": 0.013039954693353173,
+            "command_rms": 0.016745887990045297,
+            "actuator_rate_rms": 0.09079031605357551,
+            "actuator_total_variation": 0.8454369835572489,
+            "yaw_error_rms": 0.03252640740517103,
+            "reduction_vs_lqr_percent": 3.089713368799263
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050459088597202474,
+            "penalized_heading_rmse": 0.013255965186965774,
+            "command_rms": 0.016564464990489587,
+            "actuator_rate_rms": 0.07659705383746605,
+            "actuator_total_variation": 0.6976031409957996,
+            "yaw_error_rms": 0.033704389353755394,
+            "reduction_vs_lqr_percent": 5.696755303118439
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050459088597202474,
+            "penalized_heading_rmse": 0.013255965186965774,
+            "command_rms": 0.016564464990489587,
+            "actuator_rate_rms": 0.07659705383746605,
+            "actuator_total_variation": 0.6976031409957996,
+            "yaw_error_rms": 0.033704389353755394,
+            "reduction_vs_lqr_percent": 5.696755303118439
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050517704914414034,
+            "penalized_heading_rmse": 0.01306921495670018,
+            "command_rms": 0.018750965687572025,
+            "actuator_rate_rms": 0.1245238929388927,
+            "actuator_total_variation": 1.2575526105929642,
+            "yaw_error_rms": 0.036534446290680624,
+            "reduction_vs_lqr_percent": 5.587206972799641
+          }
+        },
+        "latency100": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05370909923684252,
+            "penalized_heading_rmse": 0.013218069606615392,
+            "command_rms": 0.015770743560068277,
+            "actuator_rate_rms": 0.0592673482691419,
+            "actuator_total_variation": 0.4815909513307003,
+            "yaw_error_rms": 0.030934068318872052,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05370909923684252,
+            "penalized_heading_rmse": 0.013218069606615392,
+            "command_rms": 0.015770743560068277,
+            "actuator_rate_rms": 0.0592673482691419,
+            "actuator_total_variation": 0.4815909513307003,
+            "yaw_error_rms": 0.030934068318872052,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05370909923684252,
+            "penalized_heading_rmse": 0.013218069606615392,
+            "command_rms": 0.015770743560068277,
+            "actuator_rate_rms": 0.0592673482691419,
+            "actuator_total_variation": 0.4815909513307003,
+            "yaw_error_rms": 0.030934068318872052,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05370909923684252,
+            "penalized_heading_rmse": 0.013218069606615392,
+            "command_rms": 0.015770743560068277,
+            "actuator_rate_rms": 0.0592673482691419,
+            "actuator_total_variation": 0.4815909513307003,
+            "yaw_error_rms": 0.030934068318872052,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05370909923684252,
+            "penalized_heading_rmse": 0.013218069606615392,
+            "command_rms": 0.015770743560068277,
+            "actuator_rate_rms": 0.0592673482691419,
+            "actuator_total_variation": 0.4815909513307003,
+            "yaw_error_rms": 0.030934068318872052,
+            "reduction_vs_lqr_percent": 0.0
+          }
+        }
+      },
+      "pairs": {
+        "0": {
+          "lqr": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06915333402163522,
+            "penalized_heading_rmse": 0.014988579110266555,
+            "command_rms": 0.016749961018277967,
+            "actuator_rate_rms": 0.06093128596530512,
+            "actuator_total_variation": 0.5067626931898845,
+            "yaw_error_rms": 0.03328349032078769,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06786438884983716,
+            "penalized_heading_rmse": 0.014813854171138384,
+            "command_rms": 0.0175002974441993,
+            "actuator_rate_rms": 0.08896563578639478,
+            "actuator_total_variation": 0.8291262437823392,
+            "yaw_error_rms": 0.03418267930209537,
+            "reduction_vs_lqr_percent": 1.8638944745524522
+          },
+          "lateral_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06426469445208552,
+            "penalized_heading_rmse": 0.015118427945608652,
+            "command_rms": 0.017802925683216026,
+            "actuator_rate_rms": 0.08312458392332599,
+            "actuator_total_variation": 0.7531578932030515,
+            "yaw_error_rms": 0.0364526266791987,
+            "reduction_vs_lqr_percent": 7.069275312192824
+          },
+          "lateral_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06426469445208552,
+            "penalized_heading_rmse": 0.015118427945608652,
+            "command_rms": 0.017802925683216026,
+            "actuator_rate_rms": 0.08312458392332599,
+            "actuator_total_variation": 0.7531578932030515,
+            "yaw_error_rms": 0.0364526266791987,
+            "reduction_vs_lqr_percent": 7.069275312192824
+          },
+          "lateral_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06647615506638335,
+            "penalized_heading_rmse": 0.014838734445166443,
+            "command_rms": 0.019486430238897817,
+            "actuator_rate_rms": 0.1238298464547562,
+            "actuator_total_variation": 1.2436883419749551,
+            "yaw_error_rms": 0.03755890274120427,
+            "reduction_vs_lqr_percent": 3.871366425246092
+          }
+        },
+        "1": {
+          "lqr": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06919839007244173,
+            "penalized_heading_rmse": 0.01501297169525933,
+            "command_rms": 0.016736855488090167,
+            "actuator_rate_rms": 0.06101414942949616,
+            "actuator_total_variation": 0.5071650726159999,
+            "yaw_error_rms": 0.03333872485777769,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0678504501227314,
+            "penalized_heading_rmse": 0.014835376155442262,
+            "command_rms": 0.017470720543947566,
+            "actuator_rate_rms": 0.08884405948389151,
+            "actuator_total_variation": 0.8267522465338301,
+            "yaw_error_rms": 0.03425945451965172,
+            "reduction_vs_lqr_percent": 1.9479354191610732
+          },
+          "lateral_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06434768629967194,
+            "penalized_heading_rmse": 0.015141216716084045,
+            "command_rms": 0.017785502251415328,
+            "actuator_rate_rms": 0.08340929446462951,
+            "actuator_total_variation": 0.7561393690958288,
+            "yaw_error_rms": 0.03650061619274721,
+            "reduction_vs_lqr_percent": 7.009850616021174
+          },
+          "lateral_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06434768629967194,
+            "penalized_heading_rmse": 0.015141216716084045,
+            "command_rms": 0.017785502251415328,
+            "actuator_rate_rms": 0.08340929446462951,
+            "actuator_total_variation": 0.7561393690958288,
+            "yaw_error_rms": 0.03650061619274721,
+            "reduction_vs_lqr_percent": 7.009850616021174
+          },
+          "lateral_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06650272062218363,
+            "penalized_heading_rmse": 0.014849725110760773,
+            "command_rms": 0.019240012238896556,
+            "actuator_rate_rms": 0.12039640764152922,
+            "actuator_total_variation": 1.1884698300119287,
+            "yaw_error_rms": 0.037292497142321426,
+            "reduction_vs_lqr_percent": 3.8955667139598082
+          }
+        },
+        "2": {
+          "lqr": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06908311479388826,
+            "penalized_heading_rmse": 0.014991160860077207,
+            "command_rms": 0.016782272387719715,
+            "actuator_rate_rms": 0.061121956944151935,
+            "actuator_total_variation": 0.5063214017617423,
+            "yaw_error_rms": 0.033310245075785914,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06772383788594696,
+            "penalized_heading_rmse": 0.014809662841282637,
+            "command_rms": 0.017550810457134386,
+            "actuator_rate_rms": 0.08991170296736184,
+            "actuator_total_variation": 0.8407831442884334,
+            "yaw_error_rms": 0.03420708993794746,
+            "reduction_vs_lqr_percent": 1.9675964408911617
+          },
+          "lateral_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06419984417563868,
+            "penalized_heading_rmse": 0.015107809265866893,
+            "command_rms": 0.017839562955613834,
+            "actuator_rate_rms": 0.08343154141181817,
+            "actuator_total_variation": 0.7531891513045109,
+            "yaw_error_rms": 0.03648596839944488,
+            "reduction_vs_lqr_percent": 7.06868911863483
+          },
+          "lateral_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06419984417563868,
+            "penalized_heading_rmse": 0.015107809265866893,
+            "command_rms": 0.017839562955613834,
+            "actuator_rate_rms": 0.08343154141181817,
+            "actuator_total_variation": 0.7531891513045109,
+            "yaw_error_rms": 0.03648596839944488,
+            "reduction_vs_lqr_percent": 7.06868911863483
+          },
+          "lateral_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06589636434833782,
+            "penalized_heading_rmse": 0.01498066721172898,
+            "command_rms": 0.02013867800571446,
+            "actuator_rate_rms": 0.12654023620219768,
+            "actuator_total_variation": 1.260858528518353,
+            "yaw_error_rms": 0.039372508109888314,
+            "reduction_vs_lqr_percent": 4.612922354555405
+          }
+        }
+      },
+      "geometry_orientation": {
+        "sine120_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10285000190138949,
+            "penalized_heading_rmse": 0.02179820864870903,
+            "command_rms": 0.022507079740507665,
+            "actuator_rate_rms": 0.05987991842851324,
+            "actuator_total_variation": 0.4645380470452338,
+            "yaw_error_rms": 0.03544151631014698,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10162230500635651,
+            "penalized_heading_rmse": 0.021649873607133534,
+            "command_rms": 0.022927128080094436,
+            "actuator_rate_rms": 0.08044336932802995,
+            "actuator_total_variation": 0.6681989791511124,
+            "yaw_error_rms": 0.03642525677631646,
+            "reduction_vs_lqr_percent": 1.1936770756796555
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0961268197645385,
+            "penalized_heading_rmse": 0.021749563026207817,
+            "command_rms": 0.023082882540664866,
+            "actuator_rate_rms": 0.07945303635965877,
+            "actuator_total_variation": 0.6751090064126919,
+            "yaw_error_rms": 0.037548479287463125,
+            "reduction_vs_lqr_percent": 6.536880906717957
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0926381539423784,
+            "penalized_heading_rmse": 0.021601457534797832,
+            "command_rms": 0.023122369952839443,
+            "actuator_rate_rms": 0.08133418482369689,
+            "actuator_total_variation": 0.7004966520384112,
+            "yaw_error_rms": 0.03780776231601299,
+            "reduction_vs_lqr_percent": 9.928874837359757
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10052568863396995,
+            "penalized_heading_rmse": 0.021628323789652713,
+            "command_rms": 0.023815388906343892,
+            "actuator_rate_rms": 0.10022052380082622,
+            "actuator_total_variation": 0.8629545350387785,
+            "yaw_error_rms": 0.038800841114597535,
+            "reduction_vs_lqr_percent": 2.259905906125348
+          }
+        },
+        "sine120_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10285000190138949,
+            "penalized_heading_rmse": 0.02179820864870903,
+            "command_rms": 0.022507079740507665,
+            "actuator_rate_rms": 0.05987991842851324,
+            "actuator_total_variation": 0.4645380470452338,
+            "yaw_error_rms": 0.03544151631014698,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10162061562607007,
+            "penalized_heading_rmse": 0.021651985549745886,
+            "command_rms": 0.022930206649848774,
+            "actuator_rate_rms": 0.08062956971307181,
+            "actuator_total_variation": 0.6694717231542372,
+            "yaw_error_rms": 0.03642556174926346,
+            "reduction_vs_lqr_percent": 1.1953196427727186
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0926381539423784,
+            "penalized_heading_rmse": 0.021601457534797832,
+            "command_rms": 0.023122369952839443,
+            "actuator_rate_rms": 0.08133418482369689,
+            "actuator_total_variation": 0.7004966520384112,
+            "yaw_error_rms": 0.03780776231601299,
+            "reduction_vs_lqr_percent": 9.928874837359757
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0961268197645385,
+            "penalized_heading_rmse": 0.021749563026207817,
+            "command_rms": 0.023082882540664866,
+            "actuator_rate_rms": 0.07945303635965877,
+            "actuator_total_variation": 0.6751090064126919,
+            "yaw_error_rms": 0.037548479287463125,
+            "reduction_vs_lqr_percent": 6.536880906717957
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.100434414240413,
+            "penalized_heading_rmse": 0.021613481642541094,
+            "command_rms": 0.023804096623322835,
+            "actuator_rate_rms": 0.10083682486944338,
+            "actuator_total_variation": 0.872465516163586,
+            "yaw_error_rms": 0.03865298208504627,
+            "reduction_vs_lqr_percent": 2.3486510610787437
+          }
+        },
+        "dlc220_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06600577349071286,
+            "penalized_heading_rmse": 0.016209118304368112,
+            "command_rms": 0.018712331659298167,
+            "actuator_rate_rms": 0.07474462434693895,
+            "actuator_total_variation": 0.650520575670585,
+            "yaw_error_rms": 0.04463072152154263,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06388887627087904,
+            "penalized_heading_rmse": 0.01585577420835726,
+            "command_rms": 0.019446570013874617,
+            "actuator_rate_rms": 0.10496602807422865,
+            "actuator_total_variation": 1.0088457472098062,
+            "yaw_error_rms": 0.045096467759127075,
+            "reduction_vs_lqr_percent": 3.207139478687693
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06115642264104651,
+            "penalized_heading_rmse": 0.016518461604500274,
+            "command_rms": 0.020055260673704535,
+            "actuator_rate_rms": 0.09650151249276193,
+            "actuator_total_variation": 0.8853080132073387,
+            "yaw_error_rms": 0.04883037726487676,
+            "reduction_vs_lqr_percent": 7.34685860525317
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.060800175261455765,
+            "penalized_heading_rmse": 0.01668948016019237,
+            "command_rms": 0.020156266847250096,
+            "actuator_rate_rms": 0.09637703712054833,
+            "actuator_total_variation": 0.8852902441804794,
+            "yaw_error_rms": 0.049573222775395866,
+            "reduction_vs_lqr_percent": 7.8865801489161225
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.061426063910109734,
+            "penalized_heading_rmse": 0.01577216303041532,
+            "command_rms": 0.02170069563394413,
+            "actuator_rate_rms": 0.14249382224233256,
+            "actuator_total_variation": 1.4281062951779622,
+            "yaw_error_rms": 0.04906232558359174,
+            "reduction_vs_lqr_percent": 6.938346963311481
+          }
+        },
+        "dlc220_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06600577349071286,
+            "penalized_heading_rmse": 0.016209118304368112,
+            "command_rms": 0.018712331659298167,
+            "actuator_rate_rms": 0.07474462434693895,
+            "actuator_total_variation": 0.650520575670585,
+            "yaw_error_rms": 0.04463072152154263,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0638865529026077,
+            "penalized_heading_rmse": 0.015851953160756653,
+            "command_rms": 0.01944113143550237,
+            "actuator_rate_rms": 0.104866330207499,
+            "actuator_total_variation": 1.0060849846993916,
+            "yaw_error_rms": 0.04507937164158929,
+            "reduction_vs_lqr_percent": 3.2106594257293897
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.060800175261455765,
+            "penalized_heading_rmse": 0.01668948016019237,
+            "command_rms": 0.020156266847250096,
+            "actuator_rate_rms": 0.09637703712054833,
+            "actuator_total_variation": 0.8852902441804794,
+            "yaw_error_rms": 0.049573222775395866,
+            "reduction_vs_lqr_percent": 7.8865801489161225
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06115642264104651,
+            "penalized_heading_rmse": 0.016518461604500274,
+            "command_rms": 0.020055260673704535,
+            "actuator_rate_rms": 0.09650151249276193,
+            "actuator_total_variation": 0.8853080132073387,
+            "yaw_error_rms": 0.04883037726487676,
+            "reduction_vs_lqr_percent": 7.34685860525317
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06155079265952829,
+            "penalized_heading_rmse": 0.015835060954400366,
+            "command_rms": 0.02170851177305416,
+            "actuator_rate_rms": 0.14174584395856435,
+            "actuator_total_variation": 1.4182336013743424,
+            "yaw_error_rms": 0.04919841833554366,
+            "reduction_vs_lqr_percent": 6.7493805398877615
+          }
+        },
+        "sine150_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05964373636150378,
+            "penalized_heading_rmse": 0.011658425674426749,
+            "command_rms": 0.014122526316276042,
+            "actuator_rate_rms": 0.056587438412997265,
+            "actuator_total_variation": 0.3983134713725935,
+            "yaw_error_rms": 0.02578511604662333,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.059175829663323166,
+            "penalized_heading_rmse": 0.011652871795127777,
+            "command_rms": 0.014806878827571621,
+            "actuator_rate_rms": 0.08137318032660641,
+            "actuator_total_variation": 0.6735547154563287,
+            "yaw_error_rms": 0.026897231111155852,
+            "reduction_vs_lqr_percent": 0.7845026598343963
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05781606400327826,
+            "penalized_heading_rmse": 0.011743471963405153,
+            "command_rms": 0.014822097501429318,
+            "actuator_rate_rms": 0.07530175017140302,
+            "actuator_total_variation": 0.5976308553894326,
+            "yaw_error_rms": 0.027418819125403435,
+            "reduction_vs_lqr_percent": 3.064315667864781
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05642566909483598,
+            "penalized_heading_rmse": 0.011799047562267271,
+            "command_rms": 0.01524491907428162,
+            "actuator_rate_rms": 0.08347558173360967,
+            "actuator_total_variation": 0.7044126760109205,
+            "yaw_error_rms": 0.02879801407961856,
+            "reduction_vs_lqr_percent": 5.395482347321323
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05836578232281923,
+            "penalized_heading_rmse": 0.011779239898322483,
+            "command_rms": 0.016793424579445004,
+            "actuator_rate_rms": 0.11806223536213602,
+            "actuator_total_variation": 1.0880856181906877,
+            "yaw_error_rms": 0.02993650594341446,
+            "reduction_vs_lqr_percent": 2.142645844550728
+          }
+        },
+        "sine150_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05964373636150378,
+            "penalized_heading_rmse": 0.011658425674426749,
+            "command_rms": 0.014122526316276042,
+            "actuator_rate_rms": 0.056587438412997265,
+            "actuator_total_variation": 0.3983134713725935,
+            "yaw_error_rms": 0.02578511604662333,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05916569953269737,
+            "penalized_heading_rmse": 0.011652549842317443,
+            "command_rms": 0.014815930078554255,
+            "actuator_rate_rms": 0.08161117577126366,
+            "actuator_total_variation": 0.6761903404626524,
+            "yaw_error_rms": 0.02690153248459614,
+            "reduction_vs_lqr_percent": 0.8014870596117718
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05642566909483598,
+            "penalized_heading_rmse": 0.011799047562267271,
+            "command_rms": 0.01524491907428162,
+            "actuator_rate_rms": 0.08347558173360967,
+            "actuator_total_variation": 0.7044126760109205,
+            "yaw_error_rms": 0.02879801407961856,
+            "reduction_vs_lqr_percent": 5.395482347321323
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05781606400327826,
+            "penalized_heading_rmse": 0.011743471963405153,
+            "command_rms": 0.014822097501429318,
+            "actuator_rate_rms": 0.07530175017140302,
+            "actuator_total_variation": 0.5976308553894326,
+            "yaw_error_rms": 0.027418819125403435,
+            "reduction_vs_lqr_percent": 3.064315667864781
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05836124655962882,
+            "penalized_heading_rmse": 0.011931693810336512,
+            "command_rms": 0.017004094855511978,
+            "actuator_rate_rms": 0.11753647391663986,
+            "actuator_total_variation": 1.0799818213531236,
+            "yaw_error_rms": 0.03087377732495059,
+            "reduction_vs_lqr_percent": 2.150250604861037
+          }
+        },
+        "dlc264_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0480802734303475,
+            "penalized_heading_rmse": 0.010324529593300229,
+            "command_rms": 0.011683514142701926,
+            "actuator_rate_rms": 0.05287787526348818,
+            "actuator_total_variation": 0.5136267960017568,
+            "yaw_error_rms": 0.027385926460822118,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.046576750574326926,
+            "penalized_heading_rmse": 0.01012077209792469,
+            "command_rms": 0.012844430477993262,
+            "actuator_rate_rms": 0.09004095548555088,
+            "actuator_total_variation": 0.9761429762802718,
+            "yaw_error_rms": 0.028446568703820584,
+            "reduction_vs_lqr_percent": 3.127109620536339
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04483570589094725,
+            "penalized_heading_rmse": 0.010426623042211088,
+            "command_rms": 0.013025338180749984,
+            "actuator_rate_rms": 0.07731936921290128,
+            "actuator_total_variation": 0.7938940144444645,
+            "yaw_error_rms": 0.030846510896059578,
+            "reduction_vs_lqr_percent": 6.74823021566332
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04436692254124238,
+            "penalized_heading_rmse": 0.010451772246577095,
+            "command_rms": 0.012965507603067314,
+            "actuator_rate_rms": 0.07681198088481656,
+            "actuator_total_variation": 0.7911556412586377,
+            "yaw_error_rms": 0.031014710978878462,
+            "reduction_vs_lqr_percent": 7.72323163778289
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04476961252031689,
+            "penalized_heading_rmse": 0.010268241907165345,
+            "command_rms": 0.016045245957074527,
+            "actuator_rate_rms": 0.13355447491373562,
+            "actuator_total_variation": 1.542454534402152,
+            "yaw_error_rms": 0.03397024189637061,
+            "reduction_vs_lqr_percent": 6.885694847028423
+          }
+        },
+        "dlc264_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0480802734303475,
+            "penalized_heading_rmse": 0.010324529593300229,
+            "command_rms": 0.011683514142701926,
+            "actuator_rate_rms": 0.05287787526348818,
+            "actuator_total_variation": 0.5136267960017568,
+            "yaw_error_rms": 0.027385926460822118,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "legacy_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.046566508713113956,
+            "penalized_heading_rmse": 0.010121268186272174,
+            "command_rms": 0.012845933623977337,
+            "actuator_rate_rms": 0.08999311972747803,
+            "actuator_total_variation": 0.9792748925318066,
+            "yaw_error_rms": 0.02845927313331662,
+            "reduction_vs_lqr_percent": 3.1484112074081527
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04436692254124238,
+            "penalized_heading_rmse": 0.010451772246577095,
+            "command_rms": 0.012965507603067314,
+            "actuator_rate_rms": 0.07681198088481656,
+            "actuator_total_variation": 0.7911556412586377,
+            "yaw_error_rms": 0.031014710978878462,
+            "reduction_vs_lqr_percent": 7.72323163778289
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04483570589094725,
+            "penalized_heading_rmse": 0.010426623042211088,
+            "command_rms": 0.013025338180749984,
+            "actuator_rate_rms": 0.07731936921290128,
+            "actuator_total_variation": 0.7938940144444645,
+            "yaw_error_rms": 0.030846510896059578,
+            "reduction_vs_lqr_percent": 6.74823021566332
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.044900372584960234,
+            "penalized_heading_rmse": 0.010289466347582689,
+            "command_rms": 0.016102196293993704,
+            "actuator_rate_rms": 0.13426044173227691,
+            "actuator_total_variation": 1.55576261298,
+            "yaw_error_rms": 0.03410199569892247,
+            "reduction_vs_lqr_percent": 6.613732864880428
+          }
+        }
+      },
+      "original_positive_fixed_p_gain_percent": 9.130541228138089,
+      "replication_checks": {
+        "at_least_five_percent": true,
+        "all_three_pair_means_lower": true,
+        "cellwise_survival": true,
+        "exact_severe_fallback": true
+      },
+      "replication_pass": true,
+      "independent_report_agreement": true
+    },
+    "development": {
+      "phase": "development",
+      "verified": true,
+      "episodes": 5616,
+      "survived": 5616,
+      "severe_nonbaseline_pairs": 864,
+      "mirror_pairs": 1944,
+      "mirror_max_abs_difference": 0.0,
+      "traces_recomputed": 312,
+      "trace_ticks_recomputed": 350688,
+      "summary": {
+        "lqr": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06907929484796695,
+          "penalized_heading_rmse": 0.015009017824124955,
+          "command_rms": 0.01674013571117935,
+          "actuator_rate_rms": 0.060898366176249025,
+          "actuator_total_variation": 0.5056143356108005,
+          "yaw_error_rms": 0.033340748465190626,
+          "reduction_vs_lqr_percent": 0.0
+        },
+        "lateral_fixed_m004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06423193102042815,
+          "penalized_heading_rmse": 0.015143822983834375,
+          "command_rms": 0.01780406191223956,
+          "actuator_rate_rms": 0.08346899909158058,
+          "actuator_total_variation": 0.7554266345534697,
+          "yaw_error_rms": 0.036585953540279596,
+          "reduction_vs_lqr_percent": 7.017100910203422
+        },
+        "lateral_fixed_p004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06423193102042815,
+          "penalized_heading_rmse": 0.015143822983834375,
+          "command_rms": 0.01780406191223956,
+          "actuator_rate_rms": 0.08346899909158058,
+          "actuator_total_variation": 0.7554266345534697,
+          "yaw_error_rms": 0.036585953540279596,
+          "reduction_vs_lqr_percent": 7.017100910203422
+        },
+        "lateral_student": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06623959564449143,
+          "penalized_heading_rmse": 0.014893918865419286,
+          "command_rms": 0.019623693517324476,
+          "actuator_rate_rms": 0.12361384758564178,
+          "actuator_total_variation": 1.2332557533894966,
+          "yaw_error_rms": 0.03802115327208059,
+          "reduction_vs_lqr_percent": 4.110781978486122
+        },
+        "balanced_light_fixed_m004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.0700430615082331,
+          "penalized_heading_rmse": 0.015201616107015507,
+          "command_rms": 0.016842684041576877,
+          "actuator_rate_rms": 0.06131431551651377,
+          "actuator_total_variation": 0.5113567136291705,
+          "yaw_error_rms": 0.03394231801673954,
+          "reduction_vs_lqr_percent": -1.3951599569556272
+        },
+        "balanced_light_fixed_p004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.0700430615082331,
+          "penalized_heading_rmse": 0.015201616107015507,
+          "command_rms": 0.016842684041576877,
+          "actuator_rate_rms": 0.06131431551651377,
+          "actuator_total_variation": 0.5113567136291705,
+          "yaw_error_rms": 0.03394231801673954,
+          "reduction_vs_lqr_percent": -1.3951599569556272
+        },
+        "balanced_light_student": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06912162880937196,
+          "penalized_heading_rmse": 0.015016843569777965,
+          "command_rms": 0.016746285471512194,
+          "actuator_rate_rms": 0.06101548029440848,
+          "actuator_total_variation": 0.5070302640584424,
+          "yaw_error_rms": 0.03336409403810926,
+          "reduction_vs_lqr_percent": -0.061283140625834065
+        },
+        "balanced_medium_fixed_m004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.07219096890058341,
+          "penalized_heading_rmse": 0.015441289917374213,
+          "command_rms": 0.01692323902610629,
+          "actuator_rate_rms": 0.06126143746042814,
+          "actuator_total_variation": 0.5096526384762003,
+          "yaw_error_rms": 0.03435789285613429,
+          "reduction_vs_lqr_percent": -4.50449597012359
+        },
+        "balanced_medium_fixed_p004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.07219096890058341,
+          "penalized_heading_rmse": 0.015441289917374213,
+          "command_rms": 0.01692323902610629,
+          "actuator_rate_rms": 0.06126143746042814,
+          "actuator_total_variation": 0.5096526384762003,
+          "yaw_error_rms": 0.03435789285613429,
+          "reduction_vs_lqr_percent": -4.50449597012359
+        },
+        "balanced_medium_student": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.0691182266431077,
+          "penalized_heading_rmse": 0.015014967150221627,
+          "command_rms": 0.01674561192346366,
+          "actuator_rate_rms": 0.060973953137075175,
+          "actuator_total_variation": 0.5064287575212125,
+          "yaw_error_rms": 0.03335494738788568,
+          "reduction_vs_lqr_percent": -0.05635812471223023
+        },
+        "balanced_strong_fixed_m004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.07560223144337,
+          "penalized_heading_rmse": 0.015618192397797822,
+          "command_rms": 0.01691682912226337,
+          "actuator_rate_rms": 0.060619462315218545,
+          "actuator_total_variation": 0.5054298730305431,
+          "yaw_error_rms": 0.03439734321507104,
+          "reduction_vs_lqr_percent": -9.442679763537033
+        },
+        "balanced_strong_fixed_p004": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.07560223144337,
+          "penalized_heading_rmse": 0.015618192397797822,
+          "command_rms": 0.01691682912226337,
+          "actuator_rate_rms": 0.060619462315218545,
+          "actuator_total_variation": 0.5054298730305431,
+          "yaw_error_rms": 0.03439734321507104,
+          "reduction_vs_lqr_percent": -9.442679763537033
+        },
+        "balanced_strong_student": {
+          "episodes": 432,
+          "survived": 432,
+          "penalized_rmse": 0.06908901543985595,
+          "penalized_heading_rmse": 0.015017825816232951,
+          "command_rms": 0.016756688381241627,
+          "actuator_rate_rms": 0.06103744914740229,
+          "actuator_total_variation": 0.5067644273718988,
+          "yaw_error_rms": 0.033391503700042034,
+          "reduction_vs_lqr_percent": -0.014071643189739191
+        }
+      },
+      "regions": {
+        "nominal": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053578847510283786,
+            "penalized_heading_rmse": 0.013253978953205313,
+            "command_rms": 0.015840982570044067,
+            "actuator_rate_rms": 0.05936280861649338,
+            "actuator_total_variation": 0.48198487438010695,
+            "yaw_error_rms": 0.031139996488420814,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05007770646551499,
+            "penalized_heading_rmse": 0.013270804220216066,
+            "command_rms": 0.017155560458091662,
+            "actuator_rate_rms": 0.08927886269606705,
+            "actuator_total_variation": 0.8071823487769678,
+            "yaw_error_rms": 0.034940853119631014,
+            "reduction_vs_lqr_percent": 6.534558333112328
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05007770646551499,
+            "penalized_heading_rmse": 0.013270804220216066,
+            "command_rms": 0.017155560458091662,
+            "actuator_rate_rms": 0.08927886269606705,
+            "actuator_total_variation": 0.8071823487769678,
+            "yaw_error_rms": 0.034940853119631014,
+            "reduction_vs_lqr_percent": 6.534558333112328
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05058785636114828,
+            "penalized_heading_rmse": 0.013033681870234725,
+            "command_rms": 0.019501051722119727,
+            "actuator_rate_rms": 0.14181268836180633,
+            "actuator_total_variation": 1.4446763930221729,
+            "yaw_error_rms": 0.03690529324296988,
+            "reduction_vs_lqr_percent": 5.582410387908077
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.054587038636058086,
+            "penalized_heading_rmse": 0.013466640142963867,
+            "command_rms": 0.01593656758880077,
+            "actuator_rate_rms": 0.05964707579218023,
+            "actuator_total_variation": 0.48687809899648093,
+            "yaw_error_rms": 0.03183312346869538,
+            "reduction_vs_lqr_percent": -1.8816961779194452
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.054587038636058086,
+            "penalized_heading_rmse": 0.013466640142963867,
+            "command_rms": 0.01593656758880077,
+            "actuator_rate_rms": 0.05964707579218023,
+            "actuator_total_variation": 0.48687809899648093,
+            "yaw_error_rms": 0.03183312346869538,
+            "reduction_vs_lqr_percent": -1.8816961779194452
+          },
+          "balanced_light_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0535793446629281,
+            "penalized_heading_rmse": 0.013255232573700046,
+            "command_rms": 0.015840652604997434,
+            "actuator_rate_rms": 0.05939689852764396,
+            "actuator_total_variation": 0.48230950713523957,
+            "yaw_error_rms": 0.031143792091732268,
+            "reduction_vs_lqr_percent": -0.0009278897688425047
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05722035446666788,
+            "penalized_heading_rmse": 0.013757231236084435,
+            "command_rms": 0.016018412634175458,
+            "actuator_rate_rms": 0.05958409936558662,
+            "actuator_total_variation": 0.485229156153237,
+            "yaw_error_rms": 0.032330417289340156,
+            "reduction_vs_lqr_percent": -6.796538420661524
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05722035446666788,
+            "penalized_heading_rmse": 0.013757231236084435,
+            "command_rms": 0.016018412634175458,
+            "actuator_rate_rms": 0.05958409936558662,
+            "actuator_total_variation": 0.485229156153237,
+            "yaw_error_rms": 0.032330417289340156,
+            "reduction_vs_lqr_percent": -6.796538420661524
+          },
+          "balanced_medium_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05358285227908431,
+            "penalized_heading_rmse": 0.013254908482000482,
+            "command_rms": 0.015841826184058477,
+            "actuator_rate_rms": 0.05937489085717143,
+            "actuator_total_variation": 0.48205440907895775,
+            "yaw_error_rms": 0.031142930154800456,
+            "reduction_vs_lqr_percent": -0.007474533303009068
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0604573455968508,
+            "penalized_heading_rmse": 0.013906939402166703,
+            "command_rms": 0.016008492524427563,
+            "actuator_rate_rms": 0.058795700767844204,
+            "actuator_total_variation": 0.48023595978432415,
+            "yaw_error_rms": 0.032269134465635514,
+            "reduction_vs_lqr_percent": -12.838085188836468
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0604573455968508,
+            "penalized_heading_rmse": 0.013906939402166703,
+            "command_rms": 0.016008492524427563,
+            "actuator_rate_rms": 0.058795700767844204,
+            "actuator_total_variation": 0.48023595978432415,
+            "yaw_error_rms": 0.032269134465635514,
+            "reduction_vs_lqr_percent": -12.838085188836468
+          },
+          "balanced_strong_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05358285658404824,
+            "penalized_heading_rmse": 0.013254873720881778,
+            "command_rms": 0.015841828984023247,
+            "actuator_rate_rms": 0.059373782053550234,
+            "actuator_total_variation": 0.48203985726290466,
+            "yaw_error_rms": 0.03114287035385303,
+            "reduction_vs_lqr_percent": -0.007482568122951783
+          }
+        },
+        "tire_mismatch": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13665854576855496,
+            "penalized_heading_rmse": 0.02229112958889741,
+            "command_rms": 0.02037938363457268,
+            "actuator_rate_rms": 0.06413165855537951,
+            "actuator_total_variation": 0.5451444532777762,
+            "yaw_error_rms": 0.04122748746579666,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.1216765620854085,
+            "penalized_heading_rmse": 0.02264080008487402,
+            "command_rms": 0.02155374460555055,
+            "actuator_rate_rms": 0.08980413621642307,
+            "actuator_total_variation": 0.8322134279337422,
+            "yaw_error_rms": 0.04446148099147239,
+            "reduction_vs_lqr_percent": 10.963078524573177
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.1216765620854085,
+            "penalized_heading_rmse": 0.02264080008487402,
+            "command_rms": 0.02155374460555055,
+            "actuator_rate_rms": 0.08980413621642307,
+            "actuator_total_variation": 0.8322134279337422,
+            "yaw_error_rms": 0.04446148099147239,
+            "reduction_vs_lqr_percent": 10.963078524573177
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13018886527871718,
+            "penalized_heading_rmse": 0.021820426036826563,
+            "command_rms": 0.022252628900263246,
+            "actuator_rate_rms": 0.12483697110368593,
+            "actuator_total_variation": 1.2279656909392882,
+            "yaw_error_rms": 0.04270535737454692,
+            "reduction_vs_lqr_percent": 4.734193865047298
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13825333865683442,
+            "penalized_heading_rmse": 0.02253705029926755,
+            "command_rms": 0.020549822874223276,
+            "actuator_rate_rms": 0.06507130145529859,
+            "actuator_total_variation": 0.5562725118317831,
+            "yaw_error_rms": 0.041863157060047784,
+            "reduction_vs_lqr_percent": -1.1669909695807945
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13825333865683442,
+            "penalized_heading_rmse": 0.02253705029926755,
+            "command_rms": 0.020549822874223276,
+            "actuator_rate_rms": 0.06507130145529859,
+            "actuator_total_variation": 0.5562725118317831,
+            "yaw_error_rms": 0.041863157060047784,
+            "reduction_vs_lqr_percent": -1.1669909695807945
+          },
+          "balanced_light_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.1368788410157893,
+            "penalized_heading_rmse": 0.02232326684183716,
+            "command_rms": 0.02040854434877743,
+            "actuator_rate_rms": 0.06457223019979619,
+            "actuator_total_variation": 0.5503049916861449,
+            "yaw_error_rms": 0.041298035772152034,
+            "reduction_vs_lqr_percent": -0.1612012230888249
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.14145531644509832,
+            "penalized_heading_rmse": 0.022852588061371325,
+            "command_rms": 0.020755825860151747,
+            "actuator_rate_rms": 0.06569994882086706,
+            "actuator_total_variation": 0.5617583840768209,
+            "yaw_error_rms": 0.04262361571225344,
+            "reduction_vs_lqr_percent": -3.510040773203582
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.14145531644509832,
+            "penalized_heading_rmse": 0.022852588061371325,
+            "command_rms": 0.020755825860151747,
+            "actuator_rate_rms": 0.06569994882086706,
+            "actuator_total_variation": 0.5617583840768209,
+            "yaw_error_rms": 0.04262361571225344,
+            "reduction_vs_lqr_percent": -3.510040773203582
+          },
+          "balanced_medium_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13685168806073722,
+            "penalized_heading_rmse": 0.022318573441976332,
+            "command_rms": 0.02040432532362331,
+            "actuator_rate_rms": 0.06447613318898132,
+            "actuator_total_variation": 0.5493773415215606,
+            "yaw_error_rms": 0.0412878076224489,
+            "reduction_vs_lqr_percent": -0.14133202654547095
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.1491265305200342,
+            "penalized_heading_rmse": 0.02327424245419392,
+            "command_rms": 0.02076956227402178,
+            "actuator_rate_rms": 0.06501319037807447,
+            "actuator_total_variation": 0.5563410355361065,
+            "yaw_error_rms": 0.04303657152992938,
+            "reduction_vs_lqr_percent": -9.123457798676583
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.1491265305200342,
+            "penalized_heading_rmse": 0.02327424245419392,
+            "command_rms": 0.02076956227402178,
+            "actuator_rate_rms": 0.06501319037807447,
+            "actuator_total_variation": 0.5563410355361065,
+            "yaw_error_rms": 0.04303657152992938,
+            "reduction_vs_lqr_percent": -9.123457798676583
+          },
+          "balanced_strong_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.13672463602995608,
+            "penalized_heading_rmse": 0.02233017610455785,
+            "command_rms": 0.020453567259213476,
+            "actuator_rate_rms": 0.06474183707176043,
+            "actuator_total_variation": 0.5508235486231796,
+            "yaw_error_rms": 0.041437564469058566,
+            "reduction_vs_lqr_percent": -0.04836160155914371
+          }
+        },
+        "low_friction": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06424970929247172,
+            "penalized_heading_rmse": 0.01476514185449211,
+            "command_rms": 0.01657672136878415,
+            "actuator_rate_rms": 0.06020204676944923,
+            "actuator_total_variation": 0.49399954351240866,
+            "yaw_error_rms": 0.03309634033952216,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.058937621683952876,
+            "penalized_heading_rmse": 0.014878108997347888,
+            "command_rms": 0.017884486530331405,
+            "actuator_rate_rms": 0.0892538942264808,
+            "actuator_total_variation": 0.8111152115710519,
+            "yaw_error_rms": 0.03688447347009324,
+            "reduction_vs_lqr_percent": 8.267878044922561
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.058937621683952876,
+            "penalized_heading_rmse": 0.014878108997347888,
+            "command_rms": 0.017884486530331405,
+            "actuator_rate_rms": 0.0892538942264808,
+            "actuator_total_variation": 0.8111152115710519,
+            "yaw_error_rms": 0.03688447347009324,
+            "reduction_vs_lqr_percent": 8.267878044922561
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0615193788998973,
+            "penalized_heading_rmse": 0.01456298908193079,
+            "command_rms": 0.019803260646494805,
+            "actuator_rate_rms": 0.13594747668322524,
+            "actuator_total_variation": 1.3747038707814878,
+            "yaw_error_rms": 0.037856898207886874,
+            "reduction_vs_lqr_percent": 4.249560694735055
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06546091362549473,
+            "penalized_heading_rmse": 0.015009827074832128,
+            "command_rms": 0.016710479728087216,
+            "actuator_rate_rms": 0.060894963145705194,
+            "actuator_total_variation": 0.502498702820117,
+            "yaw_error_rms": 0.03381989097451915,
+            "reduction_vs_lqr_percent": -1.8851514603894781
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06546091362549473,
+            "penalized_heading_rmse": 0.015009827074832128,
+            "command_rms": 0.016710479728087216,
+            "actuator_rate_rms": 0.060894963145705194,
+            "actuator_total_variation": 0.502498702820117,
+            "yaw_error_rms": 0.03381989097451915,
+            "reduction_vs_lqr_percent": -1.8851514603894781
+          },
+          "balanced_light_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0642675424416137,
+            "penalized_heading_rmse": 0.014770191389083457,
+            "command_rms": 0.016580594195527983,
+            "actuator_rate_rms": 0.0602833563754086,
+            "actuator_total_variation": 0.49480894808802234,
+            "yaw_error_rms": 0.03311264807093352,
+            "reduction_vs_lqr_percent": -0.02775599973661169
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06845388812897582,
+            "penalized_heading_rmse": 0.015364594508884728,
+            "command_rms": 0.01683669896435693,
+            "actuator_rate_rms": 0.06078101613398728,
+            "actuator_total_variation": 0.5000642064273424,
+            "yaw_error_rms": 0.03443072465896555,
+            "reduction_vs_lqr_percent": -6.5434986131473805
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06845388812897582,
+            "penalized_heading_rmse": 0.015364594508884728,
+            "command_rms": 0.01683669896435693,
+            "actuator_rate_rms": 0.06078101613398728,
+            "actuator_total_variation": 0.5000642064273424,
+            "yaw_error_rms": 0.03443072465896555,
+            "reduction_vs_lqr_percent": -6.5434986131473805
+          },
+          "balanced_medium_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06427220218450702,
+            "penalized_heading_rmse": 0.014769181197275223,
+            "command_rms": 0.01658100026368627,
+            "actuator_rate_rms": 0.06025389721178899,
+            "actuator_total_variation": 0.49426246696115467,
+            "yaw_error_rms": 0.033107962468542924,
+            "reduction_vs_lqr_percent": -0.03500855067362085
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.07195883278841911,
+            "penalized_heading_rmse": 0.015571456413823468,
+            "command_rms": 0.016837260677137336,
+            "actuator_rate_rms": 0.06018335760697882,
+            "actuator_total_variation": 0.49756918777970277,
+            "yaw_error_rms": 0.03459502558638442,
+            "reduction_vs_lqr_percent": -11.998690081000385
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.07195883278841911,
+            "penalized_heading_rmse": 0.015571456413823468,
+            "command_rms": 0.016837260677137336,
+            "actuator_rate_rms": 0.06018335760697882,
+            "actuator_total_variation": 0.49756918777970277,
+            "yaw_error_rms": 0.03459502558638442,
+            "reduction_vs_lqr_percent": -11.998690081000385
+          },
+          "balanced_strong_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.06427331011542904,
+            "penalized_heading_rmse": 0.014769457923119221,
+            "command_rms": 0.01658168071808184,
+            "actuator_rate_rms": 0.06025492806118518,
+            "actuator_total_variation": 0.49430613951150754,
+            "yaw_error_rms": 0.033109619565291945,
+            "reduction_vs_lqr_percent": -0.03673296458026609
+          }
+        },
+        "sensor_stress": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05269727852317003,
+            "penalized_heading_rmse": 0.013198747164518972,
+            "command_rms": 0.01598173854294518,
+            "actuator_rate_rms": 0.06315015274796663,
+            "actuator_total_variation": 0.5521300116934588,
+            "yaw_error_rms": 0.032339850382379354,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05044818949185784,
+            "penalized_heading_rmse": 0.013550964822966012,
+            "command_rms": 0.017889231954525235,
+            "actuator_rate_rms": 0.09680964151493274,
+            "actuator_total_variation": 0.9088763951472563,
+            "yaw_error_rms": 0.038593791527392486,
+            "reduction_vs_lqr_percent": 4.26794152248926
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05044818949185784,
+            "penalized_heading_rmse": 0.013550964822966012,
+            "command_rms": 0.017889231954525235,
+            "actuator_rate_rms": 0.09680964151493274,
+            "actuator_total_variation": 0.9088763951472563,
+            "yaw_error_rms": 0.038593791527392486,
+            "reduction_vs_lqr_percent": 4.26794152248926
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050715930460795575,
+            "penalized_heading_rmse": 0.01359765760382265,
+            "command_rms": 0.02166757313844961,
+            "actuator_rate_rms": 0.1561126315347193,
+            "actuator_total_variation": 1.6357910099475257,
+            "yaw_error_rms": 0.04310223156632579,
+            "reduction_vs_lqr_percent": 3.759867905708436
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05373682862831529,
+            "penalized_heading_rmse": 0.013453960177081677,
+            "command_rms": 0.01610623776437822,
+            "actuator_rate_rms": 0.06348771201527587,
+            "actuator_total_variation": 0.5570627462128779,
+            "yaw_error_rms": 0.0332596861829426,
+            "reduction_vs_lqr_percent": -1.9726827158411897
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05373682862831529,
+            "penalized_heading_rmse": 0.013453960177081677,
+            "command_rms": 0.01610623776437822,
+            "actuator_rate_rms": 0.06348771201527587,
+            "actuator_total_variation": 0.5570627462128779,
+            "yaw_error_rms": 0.0332596861829426,
+            "reduction_vs_lqr_percent": -1.9726827158411897
+          },
+          "balanced_light_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.052713369903370534,
+            "penalized_heading_rmse": 0.013203889513670665,
+            "command_rms": 0.015986581327963503,
+            "actuator_rate_rms": 0.06325239774177446,
+            "actuator_total_variation": 0.5535258900500578,
+            "yaw_error_rms": 0.03237495576243784,
+            "reduction_vs_lqr_percent": -0.030535505155993015
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05600140365408598,
+            "penalized_heading_rmse": 0.0137290503434763,
+            "command_rms": 0.016148715046722502,
+            "actuator_rate_rms": 0.06297521943813064,
+            "actuator_total_variation": 0.5500150273624138,
+            "yaw_error_rms": 0.03361719447969783,
+            "reduction_vs_lqr_percent": -6.2700109446129915
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05600140365408598,
+            "penalized_heading_rmse": 0.0137290503434763,
+            "command_rms": 0.016148715046722502,
+            "actuator_rate_rms": 0.06297521943813064,
+            "actuator_total_variation": 0.5500150273624138,
+            "yaw_error_rms": 0.03361719447969783,
+            "reduction_vs_lqr_percent": -6.2700109446129915
+          },
+          "balanced_medium_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.052707144146915824,
+            "penalized_heading_rmse": 0.013201155181340046,
+            "command_rms": 0.01598402236606581,
+            "actuator_rate_rms": 0.06318180269185242,
+            "actuator_total_variation": 0.552377020589496,
+            "yaw_error_rms": 0.03234845099062926,
+            "reduction_vs_lqr_percent": -0.01872131544982114
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0591042919400403,
+            "penalized_heading_rmse": 0.013867510629853735,
+            "command_rms": 0.016112905748980763,
+            "actuator_rate_rms": 0.06182776844885734,
+            "actuator_total_variation": 0.5403522540677801,
+            "yaw_error_rms": 0.033393546982428586,
+            "reduction_vs_lqr_percent": -12.158148573181492
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.0591042919400403,
+            "penalized_heading_rmse": 0.013867510629853735,
+            "command_rms": 0.016112905748980763,
+            "actuator_rate_rms": 0.06182776844885734,
+            "actuator_total_variation": 0.5403522540677801,
+            "yaw_error_rms": 0.033393546982428586,
+            "reduction_vs_lqr_percent": -12.158148573181492
+          },
+          "balanced_strong_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05270660639504706,
+            "penalized_heading_rmse": 0.013201010859848792,
+            "command_rms": 0.01598385882896703,
+            "actuator_rate_rms": 0.0631822286279472,
+            "actuator_total_variation": 0.5523811390380825,
+            "yaw_error_rms": 0.03234663752385211,
+            "reduction_vs_lqr_percent": -0.017700860724589873
+          }
+        },
+        "latency20": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05379227273999329,
+            "penalized_heading_rmse": 0.013270390287866156,
+            "command_rms": 0.015782914015608916,
+            "actuator_rate_rms": 0.05907438587104151,
+            "actuator_total_variation": 0.479683468382525,
+            "yaw_error_rms": 0.031104562552720687,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05075239114250679,
+            "penalized_heading_rmse": 0.013247540681832487,
+            "command_rms": 0.016462273789817402,
+            "actuator_rate_rms": 0.07619831539841598,
+            "actuator_total_variation": 0.6924287614732723,
+            "yaw_error_rms": 0.03349886857078437,
+            "reduction_vs_lqr_percent": 5.651149212787243
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05075239114250679,
+            "penalized_heading_rmse": 0.013247540681832487,
+            "command_rms": 0.016462273789817402,
+            "actuator_rate_rms": 0.07619831539841598,
+            "actuator_total_variation": 0.6924287614732723,
+            "yaw_error_rms": 0.03349886857078437,
+            "reduction_vs_lqr_percent": 5.651149212787243
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.050926427613062375,
+            "penalized_heading_rmse": 0.013074039503931215,
+            "command_rms": 0.018638572561498378,
+            "actuator_rate_rms": 0.12350417333325009,
+            "actuator_total_variation": 1.2356538932279757,
+            "yaw_error_rms": 0.036420885678449984,
+            "reduction_vs_lqr_percent": 5.327614880269271
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.054721134249368086,
+            "penalized_heading_rmse": 0.013467499852178053,
+            "command_rms": 0.015873922158850685,
+            "actuator_rate_rms": 0.059315696193458924,
+            "actuator_total_variation": 0.48468455949523587,
+            "yaw_error_rms": 0.031741796851928246,
+            "reduction_vs_lqr_percent": -1.7267563946674613
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.054721134249368086,
+            "penalized_heading_rmse": 0.013467499852178053,
+            "command_rms": 0.015873922158850685,
+            "actuator_rate_rms": 0.059315696193458924,
+            "actuator_total_variation": 0.48468455949523587,
+            "yaw_error_rms": 0.031741796851928246,
+            "reduction_vs_lqr_percent": -1.7267563946674613
+          },
+          "balanced_light_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053791559579202244,
+            "penalized_heading_rmse": 0.013273762004606691,
+            "command_rms": 0.0157822662166857,
+            "actuator_rate_rms": 0.059118854424663816,
+            "actuator_total_variation": 0.48048858497266167,
+            "yaw_error_rms": 0.031118878969095834,
+            "reduction_vs_lqr_percent": 0.0013257680977596387
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05651573545534458,
+            "penalized_heading_rmse": 0.01366955625865872,
+            "command_rms": 0.015900707516110002,
+            "actuator_rate_rms": 0.059059196506833396,
+            "actuator_total_variation": 0.48010539441886013,
+            "yaw_error_rms": 0.03200915143424467,
+            "reduction_vs_lqr_percent": -5.062925540467922
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05651573545534458,
+            "penalized_heading_rmse": 0.01366955625865872,
+            "command_rms": 0.015900707516110002,
+            "actuator_rate_rms": 0.059059196506833396,
+            "actuator_total_variation": 0.48010539441886013,
+            "yaw_error_rms": 0.03200915143424467,
+            "reduction_vs_lqr_percent": -5.062925540467922
+          },
+          "balanced_medium_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053796357934073925,
+            "penalized_heading_rmse": 0.013271265502967913,
+            "command_rms": 0.015783423268227,
+            "actuator_rate_rms": 0.05908785037549306,
+            "actuator_total_variation": 0.4797576445575784,
+            "yaw_error_rms": 0.031106279528588427,
+            "reduction_vs_lqr_percent": -0.00759438832484971
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05946727256154765,
+            "penalized_heading_rmse": 0.013814286390979329,
+            "command_rms": 0.01589367937389168,
+            "actuator_rate_rms": 0.058427612192392626,
+            "actuator_total_variation": 0.4773371385968169,
+            "yaw_error_rms": 0.03195352716374425,
+            "reduction_vs_lqr_percent": -10.549842073014194
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.05946727256154765,
+            "penalized_heading_rmse": 0.013814286390979329,
+            "command_rms": 0.01589367937389168,
+            "actuator_rate_rms": 0.058427612192392626,
+            "actuator_total_variation": 0.4773371385968169,
+            "yaw_error_rms": 0.03195352716374425,
+            "reduction_vs_lqr_percent": -10.549842073014194
+          },
+          "balanced_strong_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053747568261327344,
+            "penalized_heading_rmse": 0.013276717193220293,
+            "command_rms": 0.015800120362043066,
+            "actuator_rate_rms": 0.05920277457280682,
+            "actuator_total_variation": 0.48029221737719063,
+            "yaw_error_rms": 0.031176076725892447,
+            "reduction_vs_lqr_percent": 0.08310576294484617
+          }
+        },
+        "latency100": {
+          "lqr": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_light_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_medium_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "balanced_strong_student": {
+            "episodes": 72,
+            "survived": 72,
+            "penalized_rmse": 0.053499115253327914,
+            "penalized_heading_rmse": 0.013274719095769773,
+            "command_rms": 0.015879074135121102,
+            "actuator_rate_rms": 0.05946914449716386,
+            "actuator_total_variation": 0.4807436624185278,
+            "yaw_error_rms": 0.031136253562304095,
+            "reduction_vs_lqr_percent": 0.0
+          }
+        }
+      },
+      "pairs": {
+        "0": {
+          "lqr": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06913393072616605,
+            "penalized_heading_rmse": 0.015001017268673663,
+            "command_rms": 0.01675559919633239,
+            "actuator_rate_rms": 0.061173306231145176,
+            "actuator_total_variation": 0.5074986339050465,
+            "yaw_error_rms": 0.033305010380294514,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06424662858217699,
+            "penalized_heading_rmse": 0.015136074853144967,
+            "command_rms": 0.017832817907236516,
+            "actuator_rate_rms": 0.0837844452826212,
+            "actuator_total_variation": 0.7590537811180014,
+            "yaw_error_rms": 0.03659528218543208,
+            "reduction_vs_lqr_percent": 7.069324849106695
+          },
+          "lateral_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06424662858217699,
+            "penalized_heading_rmse": 0.015136074853144967,
+            "command_rms": 0.017832817907236516,
+            "actuator_rate_rms": 0.0837844452826212,
+            "actuator_total_variation": 0.7590537811180014,
+            "yaw_error_rms": 0.03659528218543208,
+            "reduction_vs_lqr_percent": 7.069324849106695
+          },
+          "lateral_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06630924321098126,
+            "penalized_heading_rmse": 0.014838410649015045,
+            "command_rms": 0.019480843801247837,
+            "actuator_rate_rms": 0.12455830200007946,
+            "actuator_total_variation": 1.2496421904239687,
+            "yaw_error_rms": 0.03762872873357229,
+            "reduction_vs_lqr_percent": 4.085819344444841
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07009054580065836,
+            "penalized_heading_rmse": 0.015191239546691247,
+            "command_rms": 0.01685501365750338,
+            "actuator_rate_rms": 0.061562082875365104,
+            "actuator_total_variation": 0.513251141856423,
+            "yaw_error_rms": 0.03389665142563542,
+            "reduction_vs_lqr_percent": -1.3837128374508012
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07009054580065836,
+            "penalized_heading_rmse": 0.015191239546691247,
+            "command_rms": 0.01685501365750338,
+            "actuator_rate_rms": 0.061562082875365104,
+            "actuator_total_variation": 0.513251141856423,
+            "yaw_error_rms": 0.03389665142563542,
+            "reduction_vs_lqr_percent": -1.3837128374508012
+          },
+          "balanced_light_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06920437530687967,
+            "penalized_heading_rmse": 0.015012600276983543,
+            "command_rms": 0.016766376316111452,
+            "actuator_rate_rms": 0.06133093849498269,
+            "actuator_total_variation": 0.5093128585691434,
+            "yaw_error_rms": 0.03334161279788306,
+            "reduction_vs_lqr_percent": -0.1018958129151537
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0722750123146395,
+            "penalized_heading_rmse": 0.0154324351122088,
+            "command_rms": 0.016932593012220474,
+            "actuator_rate_rms": 0.06147074718727078,
+            "actuator_total_variation": 0.5109861826906852,
+            "yaw_error_rms": 0.034298140967808186,
+            "reduction_vs_lqr_percent": -4.543473162136569
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0722750123146395,
+            "penalized_heading_rmse": 0.0154324351122088,
+            "command_rms": 0.016932593012220474,
+            "actuator_rate_rms": 0.06147074718727078,
+            "actuator_total_variation": 0.5109861826906852,
+            "yaw_error_rms": 0.034298140967808186,
+            "reduction_vs_lqr_percent": -4.543473162136569
+          },
+          "balanced_medium_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06919354508822859,
+            "penalized_heading_rmse": 0.01500977407513675,
+            "command_rms": 0.016764118924743825,
+            "actuator_rate_rms": 0.061271907453961126,
+            "actuator_total_variation": 0.5085679182816096,
+            "yaw_error_rms": 0.03332654364049569,
+            "reduction_vs_lqr_percent": -0.08623025110297
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07565370163629762,
+            "penalized_heading_rmse": 0.01560957575113357,
+            "command_rms": 0.016926840438437833,
+            "actuator_rate_rms": 0.060826705873288325,
+            "actuator_total_variation": 0.5064699792303331,
+            "yaw_error_rms": 0.03434330218902199,
+            "reduction_vs_lqr_percent": -9.430638243261269
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07565370163629762,
+            "penalized_heading_rmse": 0.01560957575113357,
+            "command_rms": 0.016926840438437833,
+            "actuator_rate_rms": 0.060826705873288325,
+            "actuator_total_variation": 0.5064699792303331,
+            "yaw_error_rms": 0.03434330218902199,
+            "reduction_vs_lqr_percent": -9.430638243261269
+          },
+          "balanced_strong_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06919385808698848,
+            "penalized_heading_rmse": 0.015009796505076231,
+            "command_rms": 0.016764166775007347,
+            "actuator_rate_rms": 0.06127178392101543,
+            "actuator_total_variation": 0.5085708890193038,
+            "yaw_error_rms": 0.033326209071257246,
+            "reduction_vs_lqr_percent": -0.08668299370939714
+          }
+        },
+        "1": {
+          "lqr": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06881376811119413,
+            "penalized_heading_rmse": 0.014981651689092462,
+            "command_rms": 0.01672938877536162,
+            "actuator_rate_rms": 0.06073980281184293,
+            "actuator_total_variation": 0.5035655954061055,
+            "yaw_error_rms": 0.03327256068047459,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06400576953995074,
+            "penalized_heading_rmse": 0.01511263104690337,
+            "command_rms": 0.0177633852389692,
+            "actuator_rate_rms": 0.0830824228132046,
+            "actuator_total_variation": 0.7506304306302807,
+            "yaw_error_rms": 0.0364347046218991,
+            "reduction_vs_lqr_percent": 6.986971798251607
+          },
+          "lateral_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06400576953995074,
+            "penalized_heading_rmse": 0.01511263104690337,
+            "command_rms": 0.0177633852389692,
+            "actuator_rate_rms": 0.0830824228132046,
+            "actuator_total_variation": 0.7506304306302807,
+            "yaw_error_rms": 0.0364347046218991,
+            "reduction_vs_lqr_percent": 6.986971798251607
+          },
+          "lateral_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06619077330758044,
+            "penalized_heading_rmse": 0.014808801728686918,
+            "command_rms": 0.01921209756521213,
+            "actuator_rate_rms": 0.12059582456559631,
+            "actuator_total_variation": 1.1924189996360324,
+            "yaw_error_rms": 0.03710058639014544,
+            "reduction_vs_lqr_percent": 3.8117296517976906
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0697804924132553,
+            "penalized_heading_rmse": 0.015179734314165964,
+            "command_rms": 0.01683275263187598,
+            "actuator_rate_rms": 0.06116239770241608,
+            "actuator_total_variation": 0.5093103309941617,
+            "yaw_error_rms": 0.03389275103008073,
+            "reduction_vs_lqr_percent": -1.4048413981618824
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0697804924132553,
+            "penalized_heading_rmse": 0.015179734314165964,
+            "command_rms": 0.01683275263187598,
+            "actuator_rate_rms": 0.06116239770241608,
+            "actuator_total_variation": 0.5093103309941617,
+            "yaw_error_rms": 0.03389275103008073,
+            "reduction_vs_lqr_percent": -1.4048413981618824
+          },
+          "balanced_light_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.068834016025372,
+            "penalized_heading_rmse": 0.014986297295772796,
+            "command_rms": 0.01673148748710193,
+            "actuator_rate_rms": 0.06081750341689688,
+            "actuator_total_variation": 0.5046977367454857,
+            "yaw_error_rms": 0.03328515762638536,
+            "reduction_vs_lqr_percent": -0.029424219503781934
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07188389821993667,
+            "penalized_heading_rmse": 0.015415462950881947,
+            "command_rms": 0.016913177345563832,
+            "actuator_rate_rms": 0.06112448611324144,
+            "actuator_total_variation": 0.5078961776287723,
+            "yaw_error_rms": 0.034305252615381455,
+            "reduction_vs_lqr_percent": -4.461505586762238
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07188389821993667,
+            "penalized_heading_rmse": 0.015415462950881947,
+            "command_rms": 0.016913177345563832,
+            "actuator_rate_rms": 0.06112448611324144,
+            "actuator_total_variation": 0.5078961776287723,
+            "yaw_error_rms": 0.034305252615381455,
+            "reduction_vs_lqr_percent": -4.461505586762238
+          },
+          "balanced_medium_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06883709802785788,
+            "penalized_heading_rmse": 0.014985140777702596,
+            "command_rms": 0.016732065744801888,
+            "actuator_rate_rms": 0.06079008708959315,
+            "actuator_total_variation": 0.5041857899135986,
+            "yaw_error_rms": 0.03327957826673263,
+            "reduction_vs_lqr_percent": -0.033902978000055484
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0753400305576528,
+            "penalized_heading_rmse": 0.01559214734216856,
+            "command_rms": 0.016913658072408667,
+            "actuator_rate_rms": 0.06050954242087295,
+            "actuator_total_variation": 0.5040627487884555,
+            "yaw_error_rms": 0.03434784006880182,
+            "reduction_vs_lqr_percent": -9.483948671308152
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0753400305576528,
+            "penalized_heading_rmse": 0.01559214734216856,
+            "command_rms": 0.016913658072408667,
+            "actuator_rate_rms": 0.06050954242087295,
+            "actuator_total_variation": 0.5040627487884555,
+            "yaw_error_rms": 0.03434784006880182,
+            "reduction_vs_lqr_percent": -9.483948671308152
+          },
+          "balanced_strong_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06883707586047294,
+            "penalized_heading_rmse": 0.014985184484990248,
+            "command_rms": 0.016732375422697683,
+            "actuator_rate_rms": 0.06078957760504519,
+            "actuator_total_variation": 0.5041731060205618,
+            "yaw_error_rms": 0.03328024769603928,
+            "reduction_vs_lqr_percent": -0.03387076441032644
+          }
+        },
+        "2": {
+          "lqr": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06929018570654066,
+            "penalized_heading_rmse": 0.015044384514608742,
+            "command_rms": 0.016735419161844036,
+            "actuator_rate_rms": 0.06078198948575894,
+            "actuator_total_variation": 0.5057787775212497,
+            "yaw_error_rms": 0.033444674334802776,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06444339493915673,
+            "penalized_heading_rmse": 0.015182763051454785,
+            "command_rms": 0.017815982590512962,
+            "actuator_rate_rms": 0.08354012917891593,
+            "actuator_total_variation": 0.756595691912127,
+            "yaw_error_rms": 0.03672787381350762,
+            "reduction_vs_lqr_percent": 6.994916694134979
+          },
+          "lateral_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06444339493915673,
+            "penalized_heading_rmse": 0.015182763051454785,
+            "command_rms": 0.017815982590512962,
+            "actuator_rate_rms": 0.08354012917891593,
+            "actuator_total_variation": 0.756595691912127,
+            "yaw_error_rms": 0.03672787381350762,
+            "reduction_vs_lqr_percent": 6.994916694134979
+          },
+          "lateral_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06621877041491259,
+            "penalized_heading_rmse": 0.015034544218555898,
+            "command_rms": 0.020178139185513463,
+            "actuator_rate_rms": 0.1256874161912496,
+            "actuator_total_variation": 1.2577060701084881,
+            "yaw_error_rms": 0.03933414469252403,
+            "reduction_vs_lqr_percent": 4.432684456405134
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0702581463107856,
+            "penalized_heading_rmse": 0.015233874460189312,
+            "command_rms": 0.01684028583535127,
+            "actuator_rate_rms": 0.06121846597176016,
+            "actuator_total_variation": 0.5115086680369266,
+            "yaw_error_rms": 0.034037551594502474,
+            "reduction_vs_lqr_percent": -1.3969663876273408
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.0702581463107856,
+            "penalized_heading_rmse": 0.015233874460189312,
+            "command_rms": 0.01684028583535127,
+            "actuator_rate_rms": 0.06121846597176016,
+            "actuator_total_variation": 0.5115086680369266,
+            "yaw_error_rms": 0.034037551594502474,
+            "reduction_vs_lqr_percent": -1.3969663876273408
+          },
+          "balanced_light_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06932649509586422,
+            "penalized_heading_rmse": 0.015051633136577557,
+            "command_rms": 0.016740992611323197,
+            "actuator_rate_rms": 0.06089799897134588,
+            "actuator_total_variation": 0.507080196860698,
+            "yaw_error_rms": 0.033465511690059374,
+            "reduction_vs_lqr_percent": -0.052401922369393894
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07241399616717407,
+            "penalized_heading_rmse": 0.015475971689031892,
+            "command_rms": 0.016923946720534568,
+            "actuator_rate_rms": 0.0611890790807722,
+            "actuator_total_variation": 0.5100755551091436,
+            "yaw_error_rms": 0.034470284985213234,
+            "reduction_vs_lqr_percent": -4.5083014697975266
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07241399616717407,
+            "penalized_heading_rmse": 0.015475971689031892,
+            "command_rms": 0.016923946720534568,
+            "actuator_rate_rms": 0.0611890790807722,
+            "actuator_total_variation": 0.5100755551091436,
+            "yaw_error_rms": 0.034470284985213234,
+            "reduction_vs_lqr_percent": -4.5083014697975266
+          },
+          "balanced_medium_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06932403681323664,
+            "penalized_heading_rmse": 0.015049986597825539,
+            "command_rms": 0.016740651100845275,
+            "actuator_rate_rms": 0.06085986486767127,
+            "actuator_total_variation": 0.5065325643684293,
+            "yaw_error_rms": 0.03345872025642871,
+            "reduction_vs_lqr_percent": -0.0488541145485355
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07581296213615957,
+            "penalized_heading_rmse": 0.015652854100091332,
+            "command_rms": 0.01690998885594361,
+            "actuator_rate_rms": 0.06052213865149439,
+            "actuator_total_variation": 0.5057568910728405,
+            "yaw_error_rms": 0.03450088738738931,
+            "reduction_vs_lqr_percent": -9.413708973510793
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.07581296213615957,
+            "penalized_heading_rmse": 0.015652854100091332,
+            "command_rms": 0.01690998885594361,
+            "actuator_rate_rms": 0.06052213865149439,
+            "actuator_total_variation": 0.5057568910728405,
+            "yaw_error_rms": 0.03450088738738931,
+            "reduction_vs_lqr_percent": -9.413708973510793
+          },
+          "balanced_strong_student": {
+            "episodes": 144,
+            "survived": 144,
+            "penalized_rmse": 0.06923611237210642,
+            "penalized_heading_rmse": 0.015058496458632371,
+            "command_rms": 0.016773522946019852,
+            "actuator_rate_rms": 0.061050985916146244,
+            "actuator_total_variation": 0.5075492870758307,
+            "yaw_error_rms": 0.03356805433282957,
+            "reduction_vs_lqr_percent": 0.07803895152375118
+          }
+        }
+      },
+      "geometry_orientation": {
+        "sine120_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10289871195004008,
+            "penalized_heading_rmse": 0.021811660542337602,
+            "command_rms": 0.022474362767680618,
+            "actuator_rate_rms": 0.05996649757412387,
+            "actuator_total_variation": 0.4627124568010965,
+            "yaw_error_rms": 0.03544560001451561,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.09621198326701551,
+            "penalized_heading_rmse": 0.0217809924709584,
+            "command_rms": 0.02300460972822251,
+            "actuator_rate_rms": 0.07941174256996819,
+            "actuator_total_variation": 0.6721431916749417,
+            "yaw_error_rms": 0.037477292936092164,
+            "reduction_vs_lqr_percent": 6.498359946693155
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.09265277158958672,
+            "penalized_heading_rmse": 0.021617713577691176,
+            "command_rms": 0.02309956331561627,
+            "actuator_rate_rms": 0.08170952786089088,
+            "actuator_total_variation": 0.7019868817230263,
+            "yaw_error_rms": 0.037881649561421114,
+            "reduction_vs_lqr_percent": 9.957306720640025
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10046036204189455,
+            "penalized_heading_rmse": 0.021640548917706556,
+            "command_rms": 0.02375195512844914,
+            "actuator_rate_rms": 0.1001863356069882,
+            "actuator_total_variation": 0.8650250212173921,
+            "yaw_error_rms": 0.03875852674772363,
+            "reduction_vs_lqr_percent": 2.369660282365249
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10324265467580064,
+            "penalized_heading_rmse": 0.021864797396377093,
+            "command_rms": 0.022482519650303595,
+            "actuator_rate_rms": 0.060319348038447525,
+            "actuator_total_variation": 0.4676638906572791,
+            "yaw_error_rms": 0.0355338815858349,
+            "reduction_vs_lqr_percent": -0.3342536745528424
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.1031910979793549,
+            "penalized_heading_rmse": 0.021865421260181924,
+            "command_rms": 0.02247600903260422,
+            "actuator_rate_rms": 0.06025591578046526,
+            "actuator_total_variation": 0.46703109738406823,
+            "yaw_error_rms": 0.03551684949742177,
+            "reduction_vs_lqr_percent": -0.2841493579208043
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10292565853622301,
+            "penalized_heading_rmse": 0.02181487145606885,
+            "command_rms": 0.022474654884930376,
+            "actuator_rate_rms": 0.060009376358989584,
+            "actuator_total_variation": 0.4633648827603959,
+            "yaw_error_rms": 0.03544510671277495,
+            "reduction_vs_lqr_percent": -0.026187486385653713
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10569821499397598,
+            "penalized_heading_rmse": 0.022097518959649447,
+            "command_rms": 0.022512664781826282,
+            "actuator_rate_rms": 0.06028448220906263,
+            "actuator_total_variation": 0.4667376829445576,
+            "yaw_error_rms": 0.035689246203689504,
+            "reduction_vs_lqr_percent": -2.720639540459091
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.1054207781504813,
+            "penalized_heading_rmse": 0.0220568476492998,
+            "command_rms": 0.022512096221399987,
+            "actuator_rate_rms": 0.06032007204917346,
+            "actuator_total_variation": 0.4684309596408693,
+            "yaw_error_rms": 0.03564135618573133,
+            "reduction_vs_lqr_percent": -2.451018241769387
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10292565853622301,
+            "penalized_heading_rmse": 0.02181487145606885,
+            "command_rms": 0.022474654884930376,
+            "actuator_rate_rms": 0.060009376358989584,
+            "actuator_total_variation": 0.4633648827603959,
+            "yaw_error_rms": 0.03544510671277495,
+            "reduction_vs_lqr_percent": -0.026187486385653713
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.11171740676831117,
+            "penalized_heading_rmse": 0.02238933311408254,
+            "command_rms": 0.022637696545530918,
+            "actuator_rate_rms": 0.06071631544284065,
+            "actuator_total_variation": 0.4703765860697796,
+            "yaw_error_rms": 0.03625406316005266,
+            "reduction_vs_lqr_percent": -8.570267451503955
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.11070870522500478,
+            "penalized_heading_rmse": 0.022146193415963227,
+            "command_rms": 0.022457642773253825,
+            "actuator_rate_rms": 0.059239789092507066,
+            "actuator_total_variation": 0.457841241345563,
+            "yaw_error_rms": 0.0350134610099078,
+            "reduction_vs_lqr_percent": -7.589981572127602
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10292565853622301,
+            "penalized_heading_rmse": 0.02181487145606885,
+            "command_rms": 0.022474654884930376,
+            "actuator_rate_rms": 0.060009376358989584,
+            "actuator_total_variation": 0.4633648827603959,
+            "yaw_error_rms": 0.03544510671277495,
+            "reduction_vs_lqr_percent": -0.026187486385653713
+          }
+        },
+        "sine120_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10289871195004008,
+            "penalized_heading_rmse": 0.021811660542337602,
+            "command_rms": 0.022474362767680618,
+            "actuator_rate_rms": 0.05996649757412387,
+            "actuator_total_variation": 0.4627124568010965,
+            "yaw_error_rms": 0.03544560001451561,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.09265277158958672,
+            "penalized_heading_rmse": 0.021617713577691176,
+            "command_rms": 0.02309956331561627,
+            "actuator_rate_rms": 0.08170952786089088,
+            "actuator_total_variation": 0.7019868817230263,
+            "yaw_error_rms": 0.037881649561421114,
+            "reduction_vs_lqr_percent": 9.957306720640025
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.09621198326701551,
+            "penalized_heading_rmse": 0.0217809924709584,
+            "command_rms": 0.02300460972822251,
+            "actuator_rate_rms": 0.07941174256996819,
+            "actuator_total_variation": 0.6721431916749417,
+            "yaw_error_rms": 0.037477292936092164,
+            "reduction_vs_lqr_percent": 6.498359946693155
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10048069056421688,
+            "penalized_heading_rmse": 0.021619882181602417,
+            "command_rms": 0.023702107892293205,
+            "actuator_rate_rms": 0.09913212358379928,
+            "actuator_total_variation": 0.8522913594343997,
+            "yaw_error_rms": 0.038597715250352396,
+            "reduction_vs_lqr_percent": 2.3499044254287726
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.1031910979793549,
+            "penalized_heading_rmse": 0.021865421260181924,
+            "command_rms": 0.02247600903260422,
+            "actuator_rate_rms": 0.06025591578046526,
+            "actuator_total_variation": 0.46703109738406823,
+            "yaw_error_rms": 0.03551684949742177,
+            "reduction_vs_lqr_percent": -0.2841493579208043
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10324265467580064,
+            "penalized_heading_rmse": 0.021864797396377093,
+            "command_rms": 0.022482519650303595,
+            "actuator_rate_rms": 0.060319348038447525,
+            "actuator_total_variation": 0.4676638906572791,
+            "yaw_error_rms": 0.0355338815858349,
+            "reduction_vs_lqr_percent": -0.3342536745528424
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10293181041296978,
+            "penalized_heading_rmse": 0.021815236926454054,
+            "command_rms": 0.02247569439321342,
+            "actuator_rate_rms": 0.06004275144762662,
+            "actuator_total_variation": 0.46373741251400924,
+            "yaw_error_rms": 0.035447003758330396,
+            "reduction_vs_lqr_percent": -0.03216606146223544
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.1054207781504813,
+            "penalized_heading_rmse": 0.0220568476492998,
+            "command_rms": 0.022512096221399987,
+            "actuator_rate_rms": 0.06032007204917346,
+            "actuator_total_variation": 0.4684309596408693,
+            "yaw_error_rms": 0.03564135618573133,
+            "reduction_vs_lqr_percent": -2.451018241769387
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10569821499397598,
+            "penalized_heading_rmse": 0.022097518959649447,
+            "command_rms": 0.022512664781826282,
+            "actuator_rate_rms": 0.06028448220906263,
+            "actuator_total_variation": 0.4667376829445576,
+            "yaw_error_rms": 0.035689246203689504,
+            "reduction_vs_lqr_percent": -2.720639540459091
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10293053517538832,
+            "penalized_heading_rmse": 0.02181508568169754,
+            "command_rms": 0.022475624427883582,
+            "actuator_rate_rms": 0.06003707005859533,
+            "actuator_total_variation": 0.4637079165993476,
+            "yaw_error_rms": 0.03544696336133628,
+            "reduction_vs_lqr_percent": -0.03092674800797557
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.11070870522500478,
+            "penalized_heading_rmse": 0.022146193415963227,
+            "command_rms": 0.022457642773253825,
+            "actuator_rate_rms": 0.059239789092507066,
+            "actuator_total_variation": 0.457841241345563,
+            "yaw_error_rms": 0.0350134610099078,
+            "reduction_vs_lqr_percent": -7.589981572127602
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.11171740676831117,
+            "penalized_heading_rmse": 0.02238933311408254,
+            "command_rms": 0.022637696545530918,
+            "actuator_rate_rms": 0.06071631544284065,
+            "actuator_total_variation": 0.4703765860697796,
+            "yaw_error_rms": 0.03625406316005266,
+            "reduction_vs_lqr_percent": -8.570267451503955
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.10293106223152544,
+            "penalized_heading_rmse": 0.021815147265447667,
+            "command_rms": 0.022475650789286625,
+            "actuator_rate_rms": 0.06003955255756609,
+            "actuator_total_variation": 0.46373393870796636,
+            "yaw_error_rms": 0.03544696844567269,
+            "reduction_vs_lqr_percent": -0.0314389566907991
+          }
+        },
+        "dlc220_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06586632243097416,
+            "penalized_heading_rmse": 0.016222119240498507,
+            "command_rms": 0.018642038994793643,
+            "actuator_rate_rms": 0.07392853880532596,
+            "actuator_total_variation": 0.6448834027474931,
+            "yaw_error_rms": 0.04459207552010563,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06097822318682316,
+            "penalized_heading_rmse": 0.016513418893637923,
+            "command_rms": 0.01994510020971161,
+            "actuator_rate_rms": 0.09593096781666084,
+            "actuator_total_variation": 0.8804992429558438,
+            "yaw_error_rms": 0.048685820957949946,
+            "reduction_vs_lqr_percent": 7.421242091166668
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06066416978865493,
+            "penalized_heading_rmse": 0.01671630820714843,
+            "command_rms": 0.020084595307700057,
+            "actuator_rate_rms": 0.09553280394983663,
+            "actuator_total_variation": 0.8791108865264545,
+            "yaw_error_rms": 0.04963223629677471,
+            "reduction_vs_lqr_percent": 7.898046300931593
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06065973679038736,
+            "penalized_heading_rmse": 0.01563027710099542,
+            "command_rms": 0.02136004388765587,
+            "actuator_rate_rms": 0.14003965224851242,
+            "actuator_total_variation": 1.404757550945063,
+            "yaw_error_rms": 0.04822545143680201,
+            "reduction_vs_lqr_percent": 7.9047765966335
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06875328438809519,
+            "penalized_heading_rmse": 0.016774175103591273,
+            "command_rms": 0.01897235680496898,
+            "actuator_rate_rms": 0.0749349387916194,
+            "actuator_total_variation": 0.6570129380017071,
+            "yaw_error_rms": 0.04627887446754305,
+            "reduction_vs_lqr_percent": -4.383062315565711
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06781032108758378,
+            "penalized_heading_rmse": 0.016616271728196682,
+            "command_rms": 0.01885360592877852,
+            "actuator_rate_rms": 0.07444658885019872,
+            "actuator_total_variation": 0.6544194432278387,
+            "yaw_error_rms": 0.045857703802480505,
+            "reduction_vs_lqr_percent": -2.9514303894025096
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06587583039031943,
+            "penalized_heading_rmse": 0.016225373991880558,
+            "command_rms": 0.018641199973110027,
+            "actuator_rate_rms": 0.07396563184978686,
+            "actuator_total_variation": 0.6452341318074114,
+            "yaw_error_rms": 0.04459667508564068,
+            "reduction_vs_lqr_percent": -0.014435236391441286
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.07298686520408279,
+            "penalized_heading_rmse": 0.017289445462754564,
+            "command_rms": 0.019197957471996294,
+            "actuator_rate_rms": 0.07509262141911613,
+            "actuator_total_variation": 0.6566519311049357,
+            "yaw_error_rms": 0.04742555412632082,
+            "reduction_vs_lqr_percent": -10.810597146319711
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.07173689954078948,
+            "penalized_heading_rmse": 0.017140501094432735,
+            "command_rms": 0.019147144164306074,
+            "actuator_rate_rms": 0.07485626287840809,
+            "actuator_total_variation": 0.6553641595061903,
+            "yaw_error_rms": 0.047226201104358205,
+            "reduction_vs_lqr_percent": -8.91286607957731
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06587726118703054,
+            "penalized_heading_rmse": 0.01622426406273899,
+            "command_rms": 0.018643418558296727,
+            "actuator_rate_rms": 0.07394659761598579,
+            "actuator_total_variation": 0.6449769092252252,
+            "yaw_error_rms": 0.0445965998415555,
+            "reduction_vs_lqr_percent": -0.01660750995751137
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0763075942947313,
+            "penalized_heading_rmse": 0.017580472267613993,
+            "command_rms": 0.019261191832972622,
+            "actuator_rate_rms": 0.07513697305074213,
+            "actuator_total_variation": 0.658362354423185,
+            "yaw_error_rms": 0.04787581515061164,
+            "reduction_vs_lqr_percent": -15.852216244043781
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.07583816362271158,
+            "penalized_heading_rmse": 0.0175140764590573,
+            "command_rms": 0.019215244362821085,
+            "actuator_rate_rms": 0.07391887278853898,
+            "actuator_total_variation": 0.6517208878135864,
+            "yaw_error_rms": 0.04785412285459131,
+            "reduction_vs_lqr_percent": -15.13951413059016
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06587732423390669,
+            "penalized_heading_rmse": 0.016224307143591788,
+            "command_rms": 0.018643916881197212,
+            "actuator_rate_rms": 0.07394643838126923,
+            "actuator_total_variation": 0.6449834194977817,
+            "yaw_error_rms": 0.04459752483371092,
+            "reduction_vs_lqr_percent": -0.016703229399284147
+          }
+        },
+        "dlc220_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06586632243097416,
+            "penalized_heading_rmse": 0.016222119240498507,
+            "command_rms": 0.018642038994793643,
+            "actuator_rate_rms": 0.07392853880532596,
+            "actuator_total_variation": 0.6448834027474931,
+            "yaw_error_rms": 0.04459207552010563,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06066416978865493,
+            "penalized_heading_rmse": 0.01671630820714843,
+            "command_rms": 0.020084595307700057,
+            "actuator_rate_rms": 0.09553280394983663,
+            "actuator_total_variation": 0.8791108865264545,
+            "yaw_error_rms": 0.04963223629677471,
+            "reduction_vs_lqr_percent": 7.898046300931593
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06097822318682316,
+            "penalized_heading_rmse": 0.016513418893637923,
+            "command_rms": 0.01994510020971161,
+            "actuator_rate_rms": 0.09593096781666084,
+            "actuator_total_variation": 0.8804992429558438,
+            "yaw_error_rms": 0.048685820957949946,
+            "reduction_vs_lqr_percent": 7.421242091166668
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06174439704721261,
+            "penalized_heading_rmse": 0.01601083389276566,
+            "command_rms": 0.022129408353582663,
+            "actuator_rate_rms": 0.14002102172178166,
+            "actuator_total_variation": 1.4012338051822721,
+            "yaw_error_rms": 0.049850669773681626,
+            "reduction_vs_lqr_percent": 6.2580165881907295
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06781032108758378,
+            "penalized_heading_rmse": 0.016616271728196682,
+            "command_rms": 0.01885360592877852,
+            "actuator_rate_rms": 0.07444658885019872,
+            "actuator_total_variation": 0.6544194432278387,
+            "yaw_error_rms": 0.045857703802480505,
+            "reduction_vs_lqr_percent": -2.9514303894025096
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06875328438809519,
+            "penalized_heading_rmse": 0.016774175103591273,
+            "command_rms": 0.01897235680496898,
+            "actuator_rate_rms": 0.0749349387916194,
+            "actuator_total_variation": 0.6570129380017071,
+            "yaw_error_rms": 0.04627887446754305,
+            "reduction_vs_lqr_percent": -4.383062315565711
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06589038990579714,
+            "penalized_heading_rmse": 0.016226336077303803,
+            "command_rms": 0.018640144438325217,
+            "actuator_rate_rms": 0.07398438507959901,
+            "actuator_total_variation": 0.6456235885509156,
+            "yaw_error_rms": 0.04459646602487665,
+            "reduction_vs_lqr_percent": -0.036539879462971214
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.07173689954078948,
+            "penalized_heading_rmse": 0.017140501094432735,
+            "command_rms": 0.019147144164306074,
+            "actuator_rate_rms": 0.07485626287840809,
+            "actuator_total_variation": 0.6553641595061903,
+            "yaw_error_rms": 0.047226201104358205,
+            "reduction_vs_lqr_percent": -8.91286607957731
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.07298686520408279,
+            "penalized_heading_rmse": 0.017289445462754564,
+            "command_rms": 0.019197957471996294,
+            "actuator_rate_rms": 0.07509262141911613,
+            "actuator_total_variation": 0.6566519311049357,
+            "yaw_error_rms": 0.04742555412632082,
+            "reduction_vs_lqr_percent": -10.810597146319711
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06588898491383759,
+            "penalized_heading_rmse": 0.016224716136327054,
+            "command_rms": 0.01864356819955489,
+            "actuator_rate_rms": 0.07396059961680759,
+            "actuator_total_variation": 0.6450675951841892,
+            "yaw_error_rms": 0.0445962147481099,
+            "reduction_vs_lqr_percent": -0.034406783356044635
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.07583816362271158,
+            "penalized_heading_rmse": 0.0175140764590573,
+            "command_rms": 0.019215244362821085,
+            "actuator_rate_rms": 0.07391887278853898,
+            "actuator_total_variation": 0.6517208878135864,
+            "yaw_error_rms": 0.04785412285459131,
+            "reduction_vs_lqr_percent": -15.13951413059016
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0763075942947313,
+            "penalized_heading_rmse": 0.017580472267613993,
+            "command_rms": 0.019261191832972622,
+            "actuator_rate_rms": 0.07513697305074213,
+            "actuator_total_variation": 0.658362354423185,
+            "yaw_error_rms": 0.04787581515061164,
+            "reduction_vs_lqr_percent": -15.852216244043781
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06588841813050098,
+            "penalized_heading_rmse": 0.016224824661226003,
+            "command_rms": 0.0186439965409577,
+            "actuator_rate_rms": 0.0739604272058661,
+            "actuator_total_variation": 0.645084237257916,
+            "yaw_error_rms": 0.04459733407962295,
+            "reduction_vs_lqr_percent": -0.033546277841711714
+          }
+        },
+        "sine150_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05969198078958829,
+            "penalized_heading_rmse": 0.011674187938361613,
+            "command_rms": 0.014133038190741314,
+            "actuator_rate_rms": 0.05637861563713026,
+            "actuator_total_variation": 0.39601178234137635,
+            "yaw_error_rms": 0.025844614371327165,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.057780331693440656,
+            "penalized_heading_rmse": 0.011750021920198332,
+            "command_rms": 0.014857089435640455,
+            "actuator_rate_rms": 0.07549777663790679,
+            "actuator_total_variation": 0.6002655074443546,
+            "yaw_error_rms": 0.027572296266642773,
+            "reduction_vs_lqr_percent": 3.20252246760937
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.056519684781597274,
+            "penalized_heading_rmse": 0.01182051188094927,
+            "command_rms": 0.015269583053190372,
+            "actuator_rate_rms": 0.08234032644915194,
+            "actuator_total_variation": 0.6911779115540128,
+            "yaw_error_rms": 0.029135657684770642,
+            "reduction_vs_lqr_percent": 5.314442519797136
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05844630939276879,
+            "penalized_heading_rmse": 0.011780753805239361,
+            "command_rms": 0.01675387242920779,
+            "actuator_rate_rms": 0.1179940883228845,
+            "actuator_total_variation": 1.0761489910606294,
+            "yaw_error_rms": 0.029937611718625926,
+            "reduction_vs_lqr_percent": 2.086832067460509
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05978587659330519,
+            "penalized_heading_rmse": 0.011692652857036608,
+            "command_rms": 0.014140045229081058,
+            "actuator_rate_rms": 0.056434627079539376,
+            "actuator_total_variation": 0.3971832537329756,
+            "yaw_error_rms": 0.02590279262525848,
+            "reduction_vs_lqr_percent": -0.15730053262579258
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.059739083815937156,
+            "penalized_heading_rmse": 0.01168667426592683,
+            "command_rms": 0.01413894689514557,
+            "actuator_rate_rms": 0.05639147453180217,
+            "actuator_total_variation": 0.3962161165357521,
+            "yaw_error_rms": 0.02591615465483529,
+            "reduction_vs_lqr_percent": -0.07891014123806439
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.059713560012929,
+            "penalized_heading_rmse": 0.011677987890831734,
+            "command_rms": 0.014136129725677111,
+            "actuator_rate_rms": 0.05647100302835582,
+            "actuator_total_variation": 0.39724181521538876,
+            "yaw_error_rms": 0.025862541840602042,
+            "reduction_vs_lqr_percent": -0.03615095873057417
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06023769834318155,
+            "penalized_heading_rmse": 0.011732961719905588,
+            "command_rms": 0.014133812564600536,
+            "actuator_rate_rms": 0.056281131511943305,
+            "actuator_total_variation": 0.39372897326376655,
+            "yaw_error_rms": 0.0259121923667678,
+            "reduction_vs_lqr_percent": -0.9142225578288254
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05996834157382471,
+            "penalized_heading_rmse": 0.011703723008420455,
+            "command_rms": 0.014134256213232697,
+            "actuator_rate_rms": 0.05628993917715538,
+            "actuator_total_variation": 0.394012126303658,
+            "yaw_error_rms": 0.025890170055998713,
+            "reduction_vs_lqr_percent": -0.46297807608459696
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.059700621485439226,
+            "penalized_heading_rmse": 0.011675618637271415,
+            "command_rms": 0.014133674175699064,
+            "actuator_rate_rms": 0.056413333265870405,
+            "actuator_total_variation": 0.39657609577298175,
+            "yaw_error_rms": 0.02584734203985973,
+            "reduction_vs_lqr_percent": -0.01447547180817299
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06211347648888326,
+            "penalized_heading_rmse": 0.011811871747905843,
+            "command_rms": 0.014135967207467017,
+            "actuator_rate_rms": 0.05612607221793148,
+            "actuator_total_variation": 0.3905452580176658,
+            "yaw_error_rms": 0.025885620084420632,
+            "reduction_vs_lqr_percent": -4.056651609251571
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06195986891543802,
+            "penalized_heading_rmse": 0.011721504237303103,
+            "command_rms": 0.013946236678459442,
+            "actuator_rate_rms": 0.05490463435238259,
+            "actuator_total_variation": 0.38613981285314325,
+            "yaw_error_rms": 0.025171569777251084,
+            "reduction_vs_lqr_percent": -3.7993179248715814
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05969922830648735,
+            "penalized_heading_rmse": 0.011675391639885221,
+            "command_rms": 0.014133603970181765,
+            "actuator_rate_rms": 0.05640845097779899,
+            "actuator_total_variation": 0.3965112872727519,
+            "yaw_error_rms": 0.025846500565227224,
+            "reduction_vs_lqr_percent": -0.012141525215270121
+          }
+        },
+        "sine150_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05969198078958829,
+            "penalized_heading_rmse": 0.011674187938361613,
+            "command_rms": 0.014133038190741314,
+            "actuator_rate_rms": 0.05637861563713026,
+            "actuator_total_variation": 0.39601178234137635,
+            "yaw_error_rms": 0.025844614371327165,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.056519684781597274,
+            "penalized_heading_rmse": 0.01182051188094927,
+            "command_rms": 0.015269583053190372,
+            "actuator_rate_rms": 0.08234032644915194,
+            "actuator_total_variation": 0.6911779115540128,
+            "yaw_error_rms": 0.029135657684770642,
+            "reduction_vs_lqr_percent": 5.314442519797136
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.057780331693440656,
+            "penalized_heading_rmse": 0.011750021920198332,
+            "command_rms": 0.014857089435640455,
+            "actuator_rate_rms": 0.07549777663790679,
+            "actuator_total_variation": 0.6002655074443546,
+            "yaw_error_rms": 0.027572296266642773,
+            "reduction_vs_lqr_percent": 3.20252246760937
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05839115073479699,
+            "penalized_heading_rmse": 0.011791521405442429,
+            "command_rms": 0.016845806023030287,
+            "actuator_rate_rms": 0.11885710790071426,
+            "actuator_total_variation": 1.094480252608334,
+            "yaw_error_rms": 0.030094938353158924,
+            "reduction_vs_lqr_percent": 2.1792375417674092
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.059739083815937156,
+            "penalized_heading_rmse": 0.01168667426592683,
+            "command_rms": 0.01413894689514557,
+            "actuator_rate_rms": 0.05639147453180217,
+            "actuator_total_variation": 0.3962161165357521,
+            "yaw_error_rms": 0.02591615465483529,
+            "reduction_vs_lqr_percent": -0.07891014123806439
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05978587659330519,
+            "penalized_heading_rmse": 0.011692652857036608,
+            "command_rms": 0.014140045229081058,
+            "actuator_rate_rms": 0.056434627079539376,
+            "actuator_total_variation": 0.3971832537329756,
+            "yaw_error_rms": 0.02590279262525848,
+            "reduction_vs_lqr_percent": -0.15730053262579258
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.059711763600355565,
+            "penalized_heading_rmse": 0.011677739465440266,
+            "command_rms": 0.014136039062269012,
+            "actuator_rate_rms": 0.05646684645600718,
+            "actuator_total_variation": 0.39714711926791985,
+            "yaw_error_rms": 0.025861450481760143,
+            "reduction_vs_lqr_percent": -0.033141488195886915
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05996834157382471,
+            "penalized_heading_rmse": 0.011703723008420455,
+            "command_rms": 0.014134256213232697,
+            "actuator_rate_rms": 0.05628993917715538,
+            "actuator_total_variation": 0.394012126303658,
+            "yaw_error_rms": 0.025890170055998713,
+            "reduction_vs_lqr_percent": -0.46297807608459696
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06023769834318155,
+            "penalized_heading_rmse": 0.011732961719905588,
+            "command_rms": 0.014133812564600536,
+            "actuator_rate_rms": 0.056281131511943305,
+            "actuator_total_variation": 0.39372897326376655,
+            "yaw_error_rms": 0.0259121923667678,
+            "reduction_vs_lqr_percent": -0.9142225578288254
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05969665735493687,
+            "penalized_heading_rmse": 0.011674909364364732,
+            "command_rms": 0.014133271334123001,
+            "actuator_rate_rms": 0.05640077185876201,
+            "actuator_total_variation": 0.3963800885949767,
+            "yaw_error_rms": 0.025845594708386366,
+            "reduction_vs_lqr_percent": -0.00783449516454926
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06195986891543802,
+            "penalized_heading_rmse": 0.011721504237303103,
+            "command_rms": 0.013946236678459442,
+            "actuator_rate_rms": 0.05490463435238259,
+            "actuator_total_variation": 0.38613981285314325,
+            "yaw_error_rms": 0.025171569777251084,
+            "reduction_vs_lqr_percent": -3.7993179248715814
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.06211347648888326,
+            "penalized_heading_rmse": 0.011811871747905843,
+            "command_rms": 0.014135967207467017,
+            "actuator_rate_rms": 0.05612607221793148,
+            "actuator_total_variation": 0.3905452580176658,
+            "yaw_error_rms": 0.025885620084420632,
+            "reduction_vs_lqr_percent": -4.056651609251571
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05946148327943696,
+            "penalized_heading_rmse": 0.011697615822292685,
+            "command_rms": 0.014220829313418228,
+            "actuator_rate_rms": 0.05691461584502406,
+            "actuator_total_variation": 0.3991077244210312,
+            "yaw_error_rms": 0.0261368542262054,
+            "reduction_vs_lqr_percent": 0.38614485078627414
+          }
+        },
+        "dlc264_left": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04786016422126527,
+            "penalized_heading_rmse": 0.010328103575302101,
+            "command_rms": 0.011711102891501821,
+            "actuator_rate_rms": 0.053319812688415985,
+            "actuator_total_variation": 0.5188497005532362,
+            "yaw_error_rms": 0.027480703954814115,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.044751375089254364,
+            "penalized_heading_rmse": 0.010421369604896383,
+            "command_rms": 0.013020441794064338,
+            "actuator_rate_rms": 0.07843445669268394,
+            "actuator_total_variation": 0.8041565140145026,
+            "yaw_error_rms": 0.030697313353438564,
+            "reduction_vs_lqr_percent": 6.495567206243735
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.044296908767052605,
+            "penalized_heading_rmse": 0.010530247315195071,
+            "command_rms": 0.01315151245377087,
+            "actuator_rate_rms": 0.07889439075554544,
+            "actuator_total_variation": 0.8140729405346212,
+            "yaw_error_rms": 0.031605361265146875,
+            "reduction_vs_lqr_percent": 7.445138378002958
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04480496239855323,
+            "penalized_heading_rmse": 0.01034937967161457,
+            "command_rms": 0.0162976122355243,
+            "actuator_rate_rms": 0.13685178539815204,
+            "actuator_total_variation": 1.593564813606184,
+            "yaw_error_rms": 0.03451383179903139,
+            "reduction_vs_lqr_percent": 6.383600792900223
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04897524123287274,
+            "penalized_heading_rmse": 0.010559172246434519,
+            "command_rms": 0.011835781985306259,
+            "actuator_rate_rms": 0.053956166585439544,
+            "actuator_total_variation": 0.5259766589469266,
+            "yaw_error_rms": 0.02820815917818675,
+            "reduction_vs_lqr_percent": -2.3298645747479974
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.048846932292915125,
+            "penalized_heading_rmse": 0.010553763998379135,
+            "command_rms": 0.01184220680642682,
+            "actuator_rate_rms": 0.053775464474598196,
+            "actuator_total_variation": 0.525350310546816,
+            "yaw_error_rms": 0.028324128322355605,
+            "reduction_vs_lqr_percent": -2.061773267404332
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04796949532898523,
+            "penalized_heading_rmse": 0.010350710024077973,
+            "command_rms": 0.011735803251126529,
+            "actuator_rate_rms": 0.05360989109693639,
+            "actuator_total_variation": 0.5219974799547861,
+            "yaw_error_rms": 0.027561613812465646,
+            "reduction_vs_lqr_percent": -0.22843863889498994
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0509025265469171,
+            "penalized_heading_rmse": 0.01076250716197229,
+            "command_rms": 0.011869307539408984,
+            "actuator_rate_rms": 0.053555991751147836,
+            "actuator_total_variation": 0.5211933026247986,
+            "yaw_error_rms": 0.02845068182528317,
+            "reduction_vs_lqr_percent": -6.356773686748118
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05057642685141439,
+            "penalized_heading_rmse": 0.010746814282558836,
+            "command_rms": 0.011878673252079471,
+            "actuator_rate_rms": 0.053410998687418304,
+            "actuator_total_variation": 0.5211019724208268,
+            "yaw_error_rms": 0.02862774098092478,
+            "reduction_vs_lqr_percent": -5.675414354182751
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04796750286577683,
+            "penalized_heading_rmse": 0.010346183765602781,
+            "command_rms": 0.011731463816027335,
+            "actuator_rate_rms": 0.05352590786697161,
+            "actuator_total_variation": 0.5206933889407762,
+            "yaw_error_rms": 0.027534401684678023,
+            "reduction_vs_lqr_percent": -0.2242755457656065
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0530330885622155,
+            "penalized_heading_rmse": 0.010914232545952337,
+            "command_rms": 0.011898460057177816,
+            "actuator_rate_rms": 0.05330431582805663,
+            "actuator_total_variation": 0.5177565603458806,
+            "yaw_error_rms": 0.02864484963209448,
+            "reduction_vs_lqr_percent": -10.808413270449657
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.053139547669664375,
+            "penalized_heading_rmse": 0.010867855394504225,
+            "command_rms": 0.011782193520424237,
+            "actuator_rate_rms": 0.05160872574874888,
+            "actuator_total_variation": 0.5106962833755405,
+            "yaw_error_rms": 0.028479244051638715,
+            "reduction_vs_lqr_percent": -11.030851093597738
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04797005923801717,
+            "penalized_heading_rmse": 0.010346466733984917,
+            "command_rms": 0.011731795836109416,
+            "actuator_rate_rms": 0.0535259301532149,
+            "actuator_total_variation": 0.520674117655576,
+            "yaw_error_rms": 0.027535014281571214,
+            "reduction_vs_lqr_percent": -0.22961688188916085
+          }
+        },
+        "dlc264_right": {
+          "lqr": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04786016422126527,
+            "penalized_heading_rmse": 0.010328103575302101,
+            "command_rms": 0.011711102891501821,
+            "actuator_rate_rms": 0.053319812688415985,
+            "actuator_total_variation": 0.5188497005532362,
+            "yaw_error_rms": 0.027480703954814115,
+            "reduction_vs_lqr_percent": 0.0
+          },
+          "lateral_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.044296908767052605,
+            "penalized_heading_rmse": 0.010530247315195071,
+            "command_rms": 0.01315151245377087,
+            "actuator_rate_rms": 0.07889439075554544,
+            "actuator_total_variation": 0.8140729405346212,
+            "yaw_error_rms": 0.031605361265146875,
+            "reduction_vs_lqr_percent": 7.445138378002958
+          },
+          "lateral_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.044751375089254364,
+            "penalized_heading_rmse": 0.010421369604896383,
+            "command_rms": 0.013020441794064338,
+            "actuator_rate_rms": 0.07843445669268394,
+            "actuator_total_variation": 0.8041565140145026,
+            "yaw_error_rms": 0.030697313353438564,
+            "reduction_vs_lqr_percent": 6.495567206243735
+          },
+          "lateral_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04492915618610106,
+            "penalized_heading_rmse": 0.010328153947987886,
+            "command_rms": 0.01614874218885257,
+            "actuator_rate_rms": 0.13582866590230194,
+            "actuator_total_variation": 1.578544233061697,
+            "yaw_error_rms": 0.03419048109726882,
+            "reduction_vs_lqr_percent": 6.124107768652198
+          },
+          "balanced_light_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.048846932292915125,
+            "penalized_heading_rmse": 0.010553763998379135,
+            "command_rms": 0.01184220680642682,
+            "actuator_rate_rms": 0.053775464474598196,
+            "actuator_total_variation": 0.525350310546816,
+            "yaw_error_rms": 0.028324128322355605,
+            "reduction_vs_lqr_percent": -2.061773267404332
+          },
+          "balanced_light_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04897524123287274,
+            "penalized_heading_rmse": 0.010559172246434519,
+            "command_rms": 0.011835781985306259,
+            "actuator_rate_rms": 0.053956166585439544,
+            "actuator_total_variation": 0.5259766589469266,
+            "yaw_error_rms": 0.02820815917818675,
+            "reduction_vs_lqr_percent": -2.3298645747479974
+          },
+          "balanced_light_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04795452228739655,
+            "penalized_heading_rmse": 0.010346492726166485,
+            "command_rms": 0.011730618043445848,
+            "actuator_rate_rms": 0.05357395703796639,
+            "actuator_total_variation": 0.5218956823967121,
+            "yaw_error_rms": 0.027541894588423595,
+            "reduction_vs_lqr_percent": -0.19715366143553403
+          },
+          "balanced_medium_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.05057642685141439,
+            "penalized_heading_rmse": 0.010746814282558836,
+            "command_rms": 0.011878673252079471,
+            "actuator_rate_rms": 0.053410998687418304,
+            "actuator_total_variation": 0.5211019724208268,
+            "yaw_error_rms": 0.02862774098092478,
+            "reduction_vs_lqr_percent": -5.675414354182751
+          },
+          "balanced_medium_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0509025265469171,
+            "penalized_heading_rmse": 0.01076250716197229,
+            "command_rms": 0.011869307539408984,
+            "actuator_rate_rms": 0.053555991751147836,
+            "actuator_total_variation": 0.5211933026247986,
+            "yaw_error_rms": 0.02845068182528317,
+            "reduction_vs_lqr_percent": -6.356773686748118
+          },
+          "balanced_medium_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04795859162622923,
+            "penalized_heading_rmse": 0.01034408809770166,
+            "command_rms": 0.011729219991194318,
+            "actuator_rate_rms": 0.053497968454619106,
+            "actuator_total_variation": 0.5206631830918078,
+            "yaw_error_rms": 0.027527356006384677,
+            "reduction_vs_lqr_percent": -0.2056562207118917
+          },
+          "balanced_strong_fixed_m004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.053139547669664375,
+            "penalized_heading_rmse": 0.010867855394504225,
+            "command_rms": 0.011782193520424237,
+            "actuator_rate_rms": 0.05160872574874888,
+            "actuator_total_variation": 0.5106962833755405,
+            "yaw_error_rms": 0.028479244051638715,
+            "reduction_vs_lqr_percent": -11.030851093597738
+          },
+          "balanced_strong_fixed_p004": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.0530330885622155,
+            "penalized_heading_rmse": 0.010914232545952337,
+            "command_rms": 0.011898460057177816,
+            "actuator_rate_rms": 0.05330431582805663,
+            "actuator_total_variation": 0.5177565603458806,
+            "yaw_error_rms": 0.02864484963209448,
+            "reduction_vs_lqr_percent": -10.808413270449657
+          },
+          "balanced_strong_student": {
+            "episodes": 54,
+            "survived": 54,
+            "penalized_rmse": 0.04795888956274994,
+            "penalized_heading_rmse": 0.01034398180736648,
+            "command_rms": 0.011729058833851693,
+            "actuator_rate_rms": 0.05349480169948936,
+            "actuator_total_variation": 0.5206558114017713,
+            "yaw_error_rms": 0.027526726455550914,
+            "reduction_vs_lqr_percent": -0.2062787353345641
+          }
+        }
+      },
+      "assessments": {
+        "balanced_light_fixed_m004": {
+          "eligible": false,
+          "checks": {
+            "overall_lateral_gain": false,
+            "retain_lateral_gain": false,
+            "all_three_pair_means_better": false,
+            "each_geometry_orientation_better": false,
+            "nominal_tracking_preserved": false,
+            "active_region_tracking_preserved": false,
+            "overall_heading_preserved": true,
+            "active_region_heading_preserved": true,
+            "overall_motion_preserved": true,
+            "active_region_motion_preserved": true,
+            "rate_and_tv_reduced_vs_lateral": true,
+            "cellwise_survival_preserved": true,
+            "exact_severe_fallback": true
+          },
+          "mean_penalized_rmse": 0.0700430615082331,
+          "reduction_vs_lqr_percent": -1.3951599569556272,
+          "same_sign_lateral_gain_percent": 7.017100910203422,
+          "rate_reduction_vs_same_sign_lateral_percent": 26.542409536694112,
+          "tv_reduction_vs_same_sign_lateral_percent": 32.30888477589464
+        },
+        "balanced_light_fixed_p004": {
+          "eligible": false,
+          "checks": {
+            "overall_lateral_gain": false,
+            "retain_lateral_gain": false,
+            "all_three_pair_means_better": false,
+            "each_geometry_orientation_better": false,
+            "nominal_tracking_preserved": false,
+            "active_region_tracking_preserved": false,
+            "overall_heading_preserved": true,
+            "active_region_heading_preserved": true,
+            "overall_motion_preserved": true,
+            "active_region_motion_preserved": true,
+            "rate_and_tv_reduced_vs_lateral": true,
+            "cellwise_survival_preserved": true,
+            "exact_severe_fallback": true
+          },
+          "mean_penalized_rmse": 0.0700430615082331,
+          "reduction_vs_lqr_percent": -1.3951599569556272,
+          "same_sign_lateral_gain_percent": 7.017100910203422,
+          "rate_reduction_vs_same_sign_lateral_percent": 26.542409536694112,
+          "tv_reduction_vs_same_sign_lateral_percent": 32.30888477589464
+        },
+        "balanced_medium_fixed_m004": {
+          "eligible": false,
+          "checks": {
+            "overall_lateral_gain": false,
+            "retain_lateral_gain": false,
+            "all_three_pair_means_better": false,
+            "each_geometry_orientation_better": false,
+            "nominal_tracking_preserved": false,
+            "active_region_tracking_preserved": false,
+            "overall_heading_preserved": false,
+            "active_region_heading_preserved": true,
+            "overall_motion_preserved": true,
+            "active_region_motion_preserved": true,
+            "rate_and_tv_reduced_vs_lateral": true,
+            "cellwise_survival_preserved": true,
+            "exact_severe_fallback": true
+          },
+          "mean_penalized_rmse": 0.07219096890058341,
+          "reduction_vs_lqr_percent": -4.50449597012359,
+          "same_sign_lateral_gain_percent": 7.017100910203422,
+          "rate_reduction_vs_same_sign_lateral_percent": 26.6057600700192,
+          "tv_reduction_vs_same_sign_lateral_percent": 32.53446262489085
+        },
+        "balanced_medium_fixed_p004": {
+          "eligible": false,
+          "checks": {
+            "overall_lateral_gain": false,
+            "retain_lateral_gain": false,
+            "all_three_pair_means_better": false,
+            "each_geometry_orientation_better": false,
+            "nominal_tracking_preserved": false,
+            "active_region_tracking_preserved": false,
+            "overall_heading_preserved": false,
+            "active_region_heading_preserved": true,
+            "overall_motion_preserved": true,
+            "active_region_motion_preserved": true,
+            "rate_and_tv_reduced_vs_lateral": true,
+            "cellwise_survival_preserved": true,
+            "exact_severe_fallback": true
+          },
+          "mean_penalized_rmse": 0.07219096890058341,
+          "reduction_vs_lqr_percent": -4.50449597012359,
+          "same_sign_lateral_gain_percent": 7.017100910203422,
+          "rate_reduction_vs_same_sign_lateral_percent": 26.6057600700192,
+          "tv_reduction_vs_same_sign_lateral_percent": 32.53446262489085
+        },
+        "balanced_strong_fixed_m004": {
+          "eligible": false,
+          "checks": {
+            "overall_lateral_gain": false,
+            "retain_lateral_gain": false,
+            "all_three_pair_means_better": false,
+            "each_geometry_orientation_better": false,
+            "nominal_tracking_preserved": false,
+            "active_region_tracking_preserved": false,
+            "overall_heading_preserved": false,
+            "active_region_heading_preserved": false,
+            "overall_motion_preserved": true,
+            "active_region_motion_preserved": true,
+            "rate_and_tv_reduced_vs_lateral": true,
+            "cellwise_survival_preserved": true,
+            "exact_severe_fallback": true
+          },
+          "mean_penalized_rmse": 0.07560223144337,
+          "reduction_vs_lqr_percent": -9.442679763537033,
+          "same_sign_lateral_gain_percent": 7.017100910203422,
+          "rate_reduction_vs_same_sign_lateral_percent": 27.37487812845577,
+          "tv_reduction_vs_same_sign_lateral_percent": 33.09345343253602
+        },
+        "balanced_strong_fixed_p004": {
+          "eligible": false,
+          "checks": {
+            "overall_lateral_gain": false,
+            "retain_lateral_gain": false,
+            "all_three_pair_means_better": false,
+            "each_geometry_orientation_better": false,
+            "nominal_tracking_preserved": false,
+            "active_region_tracking_preserved": false,
+            "overall_heading_preserved": false,
+            "active_region_heading_preserved": false,
+            "overall_motion_preserved": true,
+            "active_region_motion_preserved": true,
+            "rate_and_tv_reduced_vs_lateral": true,
+            "cellwise_survival_preserved": true,
+            "exact_severe_fallback": true
+          },
+          "mean_penalized_rmse": 0.07560223144337,
+          "reduction_vs_lqr_percent": -9.442679763537033,
+          "same_sign_lateral_gain_percent": 7.017100910203422,
+          "rate_reduction_vs_same_sign_lateral_percent": 27.37487812845577,
+          "tv_reduction_vs_same_sign_lateral_percent": 33.09345343253602
+        }
+      },
+      "eligible_candidates": [],
+      "selected_candidate": null,
+      "independent_report_agreement": true
+    }
+  }
+}

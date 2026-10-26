@@ -1,0 +1,11 @@
+test_balanced_cost_matches_independent_components_including_initial_rate (__main__.BalancedGateContracts) ... ok
+test_balanced_gate_age_envelope_and_motion_bounds (__main__.BalancedGateContracts) ... ok
+test_legacy_and_lateral_execution_delegate_exactly (__main__.BalancedGateContracts) ... ok
+test_mirror_estimator_plant_and_features (__main__.BalancedGateContracts) ... ok
+test_original_geometry_and_scaled_reflection (__main__.BalancedGateContracts) ... ok
+test_original_sensor_and_feature_parity (__main__.BalancedGateContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.372s
+
+OK

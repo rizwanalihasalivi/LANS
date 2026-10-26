@@ -1,0 +1,41 @@
+{
+  "utc_timestamp": "2026-10-26T08:26:04.484223+00:00",
+  "method": "Standard urllib HTTPS through configured network route; no proxy override or access bypass",
+  "results": [
+    {
+      "id": "R1",
+      "url": "https://arxiv.org/abs/1812.03201",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "R2",
+      "url": "https://arxiv.org/abs/1812.05506",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "R3",
+      "url": "https://arxiv.org/abs/2010.02966",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "R4",
+      "url": "https://arxiv.org/search/?query=Delay-aware+robust+control+for+safe+autonomous+driving&searchtype=title",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "R4_metadata",
+      "url": "https://api.crossref.org/works?query.title=Delay-aware+robust+control+for+safe+autonomous+driving&rows=3",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "R1_DOI",
+      "url": "https://doi.org/10.1109/ICRA.2019.8794127",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "R2_DOI",
+      "url": "https://doi.org/10.1016/j.automatica.2021.109597",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ]
+}

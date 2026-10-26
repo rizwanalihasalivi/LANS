@@ -1,0 +1,11 @@
+test_eligibility_requires_boolean_true (__main__.ReservedFreezeContracts) ... ok
+test_every_student_checkpoint_normalization_and_completion_is_frozen (__main__.ReservedFreezeContracts) ... ok
+test_invalid_stage_protocol_candidate_identity_and_freeze_are_rejected (__main__.ReservedFreezeContracts) ... ok
+test_newly_committed_source_drift_does_not_replace_development_freeze (__main__.ReservedFreezeContracts) ... ok
+test_uncommitted_selection_is_rejected_even_when_semantically_identical (__main__.ReservedFreezeContracts) ... ok
+test_valid_selection_checks_every_frozen_source_and_model (__main__.ReservedFreezeContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.019s
+
+OK

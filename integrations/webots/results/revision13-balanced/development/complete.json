@@ -1,0 +1,268 @@
+{
+  "phase": "development",
+  "episodes": 5616,
+  "protocol": {
+    "purpose": "Independent replication, mirrored-path stress and bounded balanced-objective development; conditional fresh confirmation, native transfer and learning headroom",
+    "parent_commit": "d2425c2cfa20c79a156de87887f647c63c66ed83",
+    "repetitions": [
+      0,
+      1,
+      2
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "speeds": [
+      15,
+      20,
+      25
+    ],
+    "scenarios": [
+      "nominal",
+      "tire_mismatch",
+      "low_friction",
+      "sensor_stress",
+      "latency20",
+      "latency100"
+    ],
+    "signs": [
+      1,
+      -1
+    ],
+    "geometry": {
+      "sine120": {
+        "parameters": [
+          0,
+          2.5,
+          120,
+          0.3,
+          1
+        ],
+        "length_m": 220,
+        "family": "original"
+      },
+      "dlc220": {
+        "parameters": [
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "length_m": 220,
+        "family": "original"
+      },
+      "sine150": {
+        "parameters": [
+          0,
+          2.0,
+          150,
+          0.6,
+          1
+        ],
+        "length_m": 220,
+        "family": "development_new"
+      },
+      "dlc264": {
+        "parameters": [
+          1,
+          0,
+          0,
+          0,
+          1.2
+        ],
+        "length_m": 264,
+        "family": "development_new"
+      },
+      "sine180": {
+        "parameters": [
+          0,
+          2.3,
+          180,
+          1.0,
+          1
+        ],
+        "length_m": 240,
+        "family": "reserved_new"
+      },
+      "dlc286": {
+        "parameters": [
+          1,
+          0,
+          0,
+          0,
+          1.3
+        ],
+        "length_m": 286,
+        "family": "reserved_new"
+      }
+    },
+    "development_geometries": [
+      "sine120",
+      "dlc220",
+      "sine150",
+      "dlc264"
+    ],
+    "reserved_geometries": [
+      "sine120",
+      "dlc220",
+      "sine180",
+      "dlc286"
+    ],
+    "variants": {
+      "legacy": 0,
+      "lateral": 1,
+      "balanced_light": 2,
+      "balanced_medium": 3,
+      "balanced_strong": 4
+    },
+    "balanced_weights": {
+      "balanced_light": [
+        0.05,
+        0.01
+      ],
+      "balanced_medium": [
+        0.1,
+        0.03
+      ],
+      "balanced_strong": [
+        0.2,
+        0.1
+      ]
+    },
+    "proposers": [
+      "fixed_m004",
+      "fixed_p004",
+      "student"
+    ],
+    "phases": {
+      "confirmation": {
+        "noise_base": 1110000000,
+        "episodes": 2160,
+        "methods": [
+          "lqr",
+          "legacy_student",
+          "lateral_fixed_m004",
+          "lateral_fixed_p004",
+          "lateral_student"
+        ]
+      },
+      "development": {
+        "noise_base": 1210000000,
+        "episodes": 5616,
+        "methods": [
+          "lqr",
+          "lateral_fixed_m004",
+          "lateral_fixed_p004",
+          "lateral_student",
+          "balanced_light_fixed_m004",
+          "balanced_light_fixed_p004",
+          "balanced_light_student",
+          "balanced_medium_fixed_m004",
+          "balanced_medium_fixed_p004",
+          "balanced_medium_student",
+          "balanced_strong_fixed_m004",
+          "balanced_strong_fixed_p004",
+          "balanced_strong_student"
+        ]
+      },
+      "reserved": {
+        "noise_base": 1310000000,
+        "episodes": 3024,
+        "methods": "LQR,legacy_student,lateral_fixed_m004,lateral_fixed_p004,selected_gate_fixed_m004,selected_gate_fixed_p004,selected_gate_student"
+      }
+    },
+    "noise": "base+repetition*100000+speed*1000+canonical_geometry_index*100+scenario_index. Opposite orientations share this underlying draw ID: multiply lateral/heading/yaw noise by sign; speed noise unchanged. Mirror initial ey=.15*sign and headingerror=.01*sign too. Mirror cells are correlated symmetry pairs, not extra independent seeds. All methods within each cell have identical draws.",
+    "physical": "Unchanged revision6 case definitions, Fiala/RK4plant,limits,sensor/estimator and measured-speedLQR. Path y=sign*reference(x/x_scale); derivatives scale consistently. Horizon ceil((declared_length/speed+2)/.01). Same every-available-worker cadence,oneinflight,real observation timestamps. Residual\u00b1.08rad,command\u00b1.5rad,rate.35rad/s,lag.05s,50msagecutoff,originalblends/ramp/persistence/envelope. No truephysics/future-noise inputs enter deployedgates. Finite trajectory fails abs ey>2.5m or headingerror>.6rad; unexecuted lateral/heading tails filled2.5m/.6rad. Nonfinite state or bound violation aborts integrity/completion, never silently drops a case.",
+    "objectives": "Legacy and lateral-only delegate original implementations. Balanced uses SAMEconstant-curvature nominal20tickmodel/50ms candidatehold. Stage .01*((ey/.5)^2+h*(heading/.1)^2+r*(clippedpredictedactuatorrate/.35)^2),terminal .1*((ey/.5)^2+h*(heading/.1)^2). Coefficients fixed above. Rate cost includes first actuator increment. No change to authority,horizon,model or thresholds; no combined geometry change.",
+    "metrics": "Everyepisode: raw and failure-penalized lateral/headingRMSE; commandRMS,actualactuatorrateRMS,actuatorTV including initialdelta0; yaw-referenceRMSE,survival,angle/rate maxima,activity,age/submissions,state+commandSHA256. Save sufficient sums/counts for all aggregate arithmetic. Representative fullstate/control traces:pair0,25m/s,allroads,nominal/tire_mismatch/latency100. These traces validate arithmetic but are not full telemetry for everyepisode. Primarymeans equal weight each episode; metrics from prematurely terminated trajectories markedexecuted-only except declaredpenalizederrors; survival guardprevents rewardingearlyfailure.",
+    "replication": "Report exact-match R12subset originalpositive sine120+DLC220 separately:108cells,freshdraws,unchangedcontroller,horizon,initialstate. Predeclaredconfirmation target fixed+ lateral improvement>=5%LQR,all3pairmeanslower,survivalnotworse,severefallbackexact. Also report originalmirrored,newpositive,newmirrored andall8roads. Do not compare all8road mean directly to old9.122% as exact replication.",
+    "selection_candidates": [
+      "balanced_light_fixed_m004",
+      "balanced_light_fixed_p004",
+      "balanced_medium_fixed_m004",
+      "balanced_medium_fixed_p004",
+      "balanced_strong_fixed_m004",
+      "balanced_strong_fixed_p004"
+    ],
+    "selection_rules": {
+      "overall_lateral_gain_vs_lqr_percent": 3.0,
+      "retain_fraction_of_same_sign_lateral_gain": 0.5,
+      "all_three_pair_means_better_than_lqr": true,
+      "every_geometry_orientation_mean_better_than_lqr": true,
+      "nominal_lateral_not_worse_than_lqr": true,
+      "max_active_region_lateral_ratio_lqr": 1.01,
+      "max_overall_heading_ratio_lqr": 1.02,
+      "max_active_region_heading_ratio_lqr": 1.05,
+      "max_overall_actuator_rate_and_tv_ratio_lqr": 1.1,
+      "max_active_region_actuator_rate_and_tv_ratio_lqr": 1.15,
+      "minimum_rate_and_tv_reduction_vs_same_sign_lateral_percent": 10.0,
+      "cellwise_survival_not_worse_than_lqr": true,
+      "exact_severe_fallback": true
+    },
+    "selection": "Use development ONLY; confirmation results never selectcandidate/changecriteria. Selectminimum mean penalizedlateralRMSE among eligible6nonlearnedcandidates. Among candidates within0.1% of minimum mean preferlighterprofile thenfixed_p004. Mirror-symmetric globalfixedsignmeans shouldtie within floatingtolerance; theirrankingisnotindependentlearningevidence. Student comparisons undereachgate are reported butnotpromotedinthisstage. Save andcommitselection before reserved access. Thresholds areengineering spendingbudgets,not certifiedcomfort/safety limits.",
+    "reserved_confirmation": "Selectedgate only,all7methods;3pairs3speeds8roads6regions=3024. Two newbasegeometries sine180/DLC286 were excludedfrom gate development. Reapplyselectedcandidatepreservationandgainrules withoutreselection. Require rawoverallheading/rate/TV budgets aswellaslateral. If anyrequiredcheckfails,reportfailure andstopnative/learningpromotion;do notswitchtoanothergate. Alwaysreportstudentandbothfixedsigns. Oldmodels/testsimmutable.",
+    "native": "Onlyafterdevelopmentselectionandreservedconfirmationpass.48privateWebotscases=2newnoisereps*2speeds20/25*2DLC220signs*3regionsnominal/contact_mismatch/latency100*2methodsLQR/selectedfixedbalanced. Noisebase1430000000. Calibratedprivateworld,10swarmup;nativeinitialtrackingoffsetapproximately0 differsfromsurrogate\u00b1.15. Knownconstantproposal usesexplicit simulatedavailability0/100ms;noactualpolicyworkerorendtoendtimingclaim. ContactsofteningisforceDependentSlip/.65proxy,notexactFiala. Logallheading/steeringmetricsandfullphysicaltelemetry. Requirepairedsurvival/bounds/fallback;nativegainandsecondarymetricsreportedwithoutretuning. Nativeconfirmationpassrequires>=1%overalllateral reduction,nominalnotworse,heading<=1.05LQR,rate/TV<=1.15LQR,allpairedsurvivorsandseverecommand/physicalequality;otherwiselearningnottriggered.",
+    "teacher_headroom": "Onlyafterbalancedcandidatepassesreservedandnative. FreshDEVbase1410000000,first2pairs,20/25m/s,development sine150andDLC220eachsign,all6regions=96cells;LQR,bothselectedgateconstants,frozenstudent,finiteprivilegedteacher=480episodes. Five residuals\u00b1.08,\u00b1.04,0;20tickfuture-noise-independent zero/antithetic3forecast expectedlateralcost. Everybranch usesselectedgate/worker/observer/actuator. Teacher knowscurrenttruth/parameters onlyfordiagnostic;noactualfuturenoise. Require>=1%overalllateraladvantageoverBOTHsamegateconstantsandeachpairlower,plusheading/rate/TVpreservationbudgetsandsurvival/fallback beforepilots. Teacher improvementisnotstudentresult/globalceiling.",
+    "pilots": "Conditionalatmost2x100k categoricalPPO jobs,existingstudent701/802initialization,selectedgate inactualexecutionandrewardbranches. Restricted surrogate evidence;theknownpendingproposal/completiontime20featurecontractisNOTclaimednative-ready.Latestrealworker causal-inputlimitsremainopen. Useunchangedrevision9PPOhyperparameters,fixedtrain-onlynormalizationandtrackingreward,butrelativecounterfactualreferencebecomesselectednonlearnedcontrollerwithitsownclonedgatehistory;recordthisobjectivechangeexplicitlybeforetraining. Freshtrainbase1510000000+pair*1000000+slot*10000+episode. Checkpoints0/100konly. PilotDEV1610000000 usespredeclaredteacher96cellgrid andbothconstants,LQR,initialstudent,endpoint. EndpointmustimproveinitialstudentandBOTHconstants>=1%,eachpairlower,andmeetbalancedmetrics/survival/fallbackbudgets. Otherwise retainbaselineandstop. No retries/extraepochs/300kextensions/fulltraining. Ifpass,freezeandconfirmfresh1710000000samegridwithoutreselection;noautomaticnativeAIclaim.",
+    "stop": "No post-result weight/horizon/model/path/threshold changes. Ifnoeligiblebalancedcandidate,finishconfirmation+developmentreportandstopreserved/native/learningstages. Allstagesstayfiniteandconditional;no5x1M. Missingprimarypaperaccessisreportedseparatelyfromexperimentalcompletion. NeitheroldR12reservedseedsnoroldresearchresultsusedforselection.",
+    "limits": "Analyticroadshape/scalevariations,idealmaplocalization,knownspeedfamilies,smallnoise-paircount;mirrorcopiescorrelated. Full-gridsecondarymetricsareengineering evidence,notphysicalcomfort/safety proof. Supervisedstudentremainsfrozenandmaybedistribution-shiftedundermirroring/newgate. SharedWebotsinstallation,primaryspecification,phase1 andhistoricalartifactsunchanged. Exactpaper-levelnoveltyanddirectpublishedmethodreproductionremainseparatework."
+  },
+  "source_commit": "583ee07e1ec8f8ce61eb457796e301f8dd9750ac",
+  "sources": {
+    "revision13/protocol.json": "9699816828734e6107f126845d1b869b94981aae6aad5983a9eabd5571c52a83",
+    "revision13/common13.py": "3dacbbc9c17a65787ec880e41c544f11cfcd01af1b9e040720372e42416f9097",
+    "revision13/dynamics13.py": "1cf3491a65bed7e918a96e3a16ddfe3ddfdb4d56f6013de7cb0d66d6514f75d1",
+    "revision13/gate13.py": "ace86cc983f47f94209580b00787a1c95594f5142c64f0311306074642753903",
+    "revision13/run13.py": "2ca405fa48e9f728c6882fe6cdc61d375d5b3417fd172da574dd74c86f1c0dbe",
+    "revision13/report13.py": "87f176ae094cca0829d04c4e3d32df9af677b845ab5dd57e9b9e1d0e013083d1",
+    "revision13/test_contracts13.py": "2b7755185a83c8e5ed1019661f477aad4c76d8ba3a9c9c1cf7ac20837e320951",
+    "revision13/test_report13.py": "bb9e3645d61f349ba15458b07a5f081a3c82f2105a6e383ef72a9b24134b65f9",
+    "revision13/test_run13.py": "585dd52ed0b699c38e93f4704fc7baa778ea7a213966fd276c64c6315f878803",
+    "revision12/gate12.py": "075e456915fc944e0bd830fbb21e876ef24a46994a0acd45381346192ba62717",
+    "revision8/bootstrap.py": "ecc8910ba6fdb105ca78c654afc6b92c8dcb5927bd30bb13bd6a431aa61c87dd",
+    "revision8/student.py": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+    "revision8/protocol.json": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+    "revision7/kernels.py": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf",
+    "revision7/bootstrap.py": "8c0266c5fd205818e975a5c4097ee9f61b565ab47776e293c6d910d8f1b8d3db",
+    "revision5/bootstrap.py": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f"
+  },
+  "students": {
+    "701": {
+      "student.pt": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48",
+      "normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "complete.json": "c9164a65bd68156beeae45862bbd1e396c17133f7edbf3bdaa37e0d81aa24a57"
+    },
+    "802": {
+      "student.pt": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f",
+      "normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "complete.json": "393492c24842b0da3c3273913ba3071c9ad0a28d903cc63a2cf454f84aaa396b"
+    },
+    "903": {
+      "student.pt": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa",
+      "normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "complete.json": "97e22b40a732ed370112ffe8f4205dfb72a2a8ba586b7d76f0cb23d655980609"
+    }
+  },
+  "submission_semantics": "every-available-worker-v1",
+  "training_steps": 0,
+  "reserved_opened": false,
+  "selection": null,
+  "selection_sha256": null,
+  "wall_s": 208.78536343574524,
+  "runtime": {
+    "python": "3.10.22",
+    "numpy": "1.23.5",
+    "torch": "2.0.0+cpu",
+    "numba": "0.57.1"
+  }
+}

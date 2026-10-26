@@ -1,6 +1,6 @@
 # Webots vehicle adapter validation
 
-For the latest corrections and evidence, see the [full project audit](full-project-audit/README.md): 92 passing tests, corrected development diagnostics and two private native interface smoke cases. The milestone and campaign records below retain their historical scope and results.
+For the latest corrections and evidence, see the [full project audit](full-project-audit/README.md): 92 passing tests, corrected development diagnostics and two private native interface smoke cases. The subsequent [mirrored/balanced surrogate study](../../integrations/webots/results/revision13-balanced/interpretation.md) replicates the original nonlearned gain at 9.131% but finds no eligible balanced candidate. Its conditional native transfer did not run; it supplies no new Webots performance claim. The milestone and campaign records below retain their historical scope and results.
 
 Initial milestone (commit `5811dc3`), 24 October 2026. Scope: secondary simulator interface validation only, following `specification-v0.1.md`; no claim of research-controller transfer, vehicle calibration or safety validation. Work is isolated on branch `webots/vehicle-validation`, worktree `/workspace/LANS-webots`, based on `de7b4a2`. Only `integrations/webots/` and this document are changed. The primary model, `experiments/phase1/`, legacy PPO training and specification are untouched. The separately authorized five-seed extension is documented below.
 

@@ -1,0 +1,21 @@
+{
+  "revision": "Range-matched residual PPO, candidate action scale only",
+  "parent_commit": "e2bfeaa372980475ada21704c725d7f2c3cbeb50",
+  "seeds": [0,1,2,3,4],
+  "training_steps_per_seed": 1000000,
+  "training_start": "scratch, no warm start or best-checkpoint selection",
+  "residual_scale_rad": 0.08,
+  "legacy_scale_rad": 0.5,
+  "unchanged": "Survival-v2 reward, normalized [-1,1] action space, state observations/Kalman estimator, corrected R100 LQR, random sine training distribution, Fiala plant, actuator, 8 environments, PPO hyperparameters [64,64], lr3e-4, 125 rollout steps, batch200, epochs10, gamma.99, GAE.95, initial log_std=-2, fixed one-million-step budget.",
+  "gate": "Unchanged revision2/gating.py and development freeze (20 steps, .01 margin). Training is standalone residual, not gate-in-the-loop. .08 is the candidate correction cap before fusion; effective authority still varies. Same normalized exploration now has smaller physical steering variance.",
+  "test_noise_base": 2910000,
+  "speeds": [15,20,25],
+  "paths": ["sine120","dlc220"],
+  "scenarios": ["nominal","tire_mismatch","low_friction","sensor_stress","latency20","latency100"],
+  "methods": ["lqr","legacy_gated","legacy_rescaled_gated","matched_gated","matched_ungated"],
+  "episodes": 900,
+  "evaluation": "Reuse unchanged revision2 episode physics/scenarios and gate, with fresh paired noise; RangeMappedPolicy supplies action*.16 to existing .5-rad boundary. legacy_gated retains historical .5 then gate clipping; legacy_rescaled_gated uses old weights with new .08 scaling to distinguish retraining from merely rescaling. matched_ungated removes performance gate but retains the inherited age decay.",
+  "primary": "matched_gated minus legacy_gated seed-mean penalized RMSE per region; also report LQR and legacy_rescaled_gated comparisons. All six regions and all five methods, survival and activation. Aggregate speeds/paths within each of five seeds. Descriptive t(4) 95% intervals, no multiplicity-adjusted significance claims. Nominal preservation vs LQR <=2% increase/no survival loss. Improvement requires all five paired means negative and no survival loss; clear advantage additionally >=5% mean reduction. Severe-delay gated traces must equal LQR.",
+  "native_smoke": "One 20m/s DLC220 run for each new policy seed, noise base3910000, nominal contact, zero added delay, existing real worker with explicit .08 output adapter and frozen gate. Interface/range check only, not a paired native improvement campaign.",
+  "limits": "No gate-aware reward attribution or mismatch/latency training curriculum added. Same path geometries and five training seeds, fresh test noise. Native performance campaign remains separate; do not claim improved driving solely from smaller action range. Preserve all old models/evidence; no post-test tuning."
+}

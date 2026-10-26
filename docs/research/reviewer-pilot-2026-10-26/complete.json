@@ -1,0 +1,11 @@
+{
+  "episodes": 90,
+  "limitations": [
+    "Historical 20-feature interface contains pending/forecast information.",
+    "Not validation of corrected causal PPO; zeroing channels would be a distribution shift.",
+    "Simulated service delays; not OS deadlines, native Webots, or hardware.",
+    "Known paths; development noise only; no reserved evaluation accessed.",
+    "No checkpoint, gate, threshold, or training selection from this pilot."
+  ],
+  "no_training": true
+}

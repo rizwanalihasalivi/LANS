@@ -1,0 +1,7 @@
+{
+  "episodes": 90,
+  "exact_severe_delay_pairs": 24,
+  "raw_metrics_recomputed": true,
+  "source_and_model_hashes_verified": true,
+  "scope": "Historical simulated-service diagnostic only; no causal deployment or real-time claim"
+}

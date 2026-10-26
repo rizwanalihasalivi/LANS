@@ -1,0 +1,6 @@
+{
+  "stage": "before first rollout",
+  "cause": "New development noise mutated shared protocol before archived checkpoint metadata validation.",
+  "resolution": "Validate against unchanged training protocol; override noise only during episode evaluation.",
+  "episodes_executed": 0
+}

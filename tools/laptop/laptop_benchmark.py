@@ -128,15 +128,17 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=BASE/'laptop-results')
     p.add_argument('--seconds',type=float,default=10.);p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
     p.add_argument('--cases',nargs='+',choices=['nominal','delay20','delay100','cpu_stress','worker_crash'],
-        default=['nominal','delay20','delay100','cpu_stress','worker_crash']);p.add_argument('--verify-only',action='store_true');a=p.parse_args()
+        default=['nominal','delay20','delay100','cpu_stress','worker_crash']);p.add_argument('--verify-only',action='store_true');p.add_argument('--allow-legacy-windows',action='store_true',help='explicitly retain Python<3.11 Windows timer baseline');a=p.parse_args()
     if not .3<=a.seconds<=60:p.error('seconds must be between .3 and60')
+    if sys.platform=='win32' and sys.version_info<(3,11) and not a.allow_legacy_windows:
+        p.error('Use 64-bit Python 3.11+ and RUN_WINDOWS.cmd; Python3.10 Windows sleep is a separate legacy timing baseline. Keep prior results.')
     observations,checks=golden_check()
     if a.verify_only:print(json.dumps(checks,indent=2));return
     a.output.mkdir(parents=True,exist_ok=False)
     results=[run_case(mp.get_context('spawn'),a.seed,c,a.seconds,observations,a.output) for c in a.cases]
     report=dict(trace_kind='laptop_cpu_ipc_recorded_observations',physical_acknowledgements=False,
         vehicle_readiness_certified=False,benchmark_completed=all(not r['unexpected_worker_failure'] for r in results),os=platform.platform(),cpu=platform.processor() or os.environ.get('PROCESSOR_IDENTIFIER','unknown'),
-        python=platform.python_version(),numpy=np.__version__,seed=a.seed,model_checks=checks,cases=results,
+        python=platform.python_version(),python_implementation=platform.python_implementation(),runner_version='2-modern-windows-guard',numpy=np.__version__,seed=a.seed,model_checks=checks,cases=results,
         limitations=['Recorded inputs, not live vehicle sensors; model is NumPy export of trained causal student with verified action parity.',
             'No observer, LQR, predictive gate, plant, CAN or actuator executes here. Monitor deadlines are not full controller deadlines.',
             'Injected worker sleep is separated from actual inference time. Windows scheduling is not a hard-real-time guarantee.',

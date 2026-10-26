@@ -31,11 +31,14 @@ integrations/webots/research/revision9/bootstrap.py'''.splitlines()
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--actor-dir',type=Path,default=ROOT/'docs/research/reviewer-causal-v1/laptop-kit')
+    p.add_argument('--profile',choices=['age_filtered','aligned'],default='age_filtered');args=p.parse_args()
     out=args.output;out.mkdir(parents=True,exist_ok=False)
-    for name in FILES:
+    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile=='aligned' else [])
+    for name in files:
         target=out/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/name,target)
-    shutil.copytree(ROOT/'docs/research/reviewer-causal-v1/laptop-kit',out/'actor')
+    shutil.copytree(args.actor_dir,out/'actor')
     (out/'requirements.txt').write_text('numpy==1.23.5\nscipy==1.10.1\nnumba==0.57.1\ngymnasium==0.28.1\n')
     (out/'RUN_WINDOWS.cmd').write_text('@echo off\ncd /d "%~dp0"\npy -3.10 -m venv .venv\nif errorlevel 1 exit /b 1\n.venv\\Scripts\\python.exe -m pip install -r requirements.txt\nif errorlevel 1 exit /b 1\n.venv\\Scripts\\python.exe tools\\controller_review\\laptop_full_controller.py --output laptop-results\npause\n')
     (out/'RUN_MAC.command').write_text('#!/bin/bash\nset -e\ncd "$(dirname "$0")"\npython3.10 -m venv .venv\n.venv/bin/python -m pip install -r requirements.txt\n.venv/bin/python tools/controller_review/laptop_full_controller.py --output laptop-results\n')
@@ -55,6 +58,10 @@ Scope: causal noisy observer, scheduled LQR, fixed age_filtered residual supervi
 
 Any missed original10ms deadline fails observed strict timing; deadline misses revoke assistance, and stale/failed workers use fresh-state LQR. Functional success does not imply timing success. Fixed-step plant survival cannot establish continuous-time safety during host stalls, hard real-time guarantees, sensor/CAN/actuator timing, or real-vehicle readiness. Actual Windows/macOS results must be collected on your laptop; cloud smoke checks cannot replace them.
 ''')
+    for filename in ('RUN_WINDOWS.cmd','RUN_MAC.command','README.md'):
+        file=out/filename
+        file.write_text(file.read_text().replace('--output laptop-results',f'--profile {args.profile} --output laptop-results')
+                        .replace('fixed age_filtered residual supervisor',f'fixed {args.profile} residual supervisor'))
     hashes={str(f.relative_to(out)).replace('\\','/'):hashlib.sha256(f.read_bytes()).hexdigest() for f in out.rglob('*') if f.is_file()}
     (out/'bundle-manifest.json').write_text(json.dumps(dict(sha256=hashes,scope='software-in-loop only; actual target execution pending'),indent=2)+'\n')
     archive=out.with_suffix('.zip')

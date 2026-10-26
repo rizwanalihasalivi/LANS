@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from laptop_full_controller import CausalEnv,FilteredController,load_portable,advance,path_values,np,CASES
+from laptop_full_controller import CausalEnv,controller,load_portable,advance,path_values,np,CASES
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
             residual=[-.08,-.04,0.,.04,.08][actor.logits(actor.load(e['seed']),x[None,:]).argmax(1)[0]]
             assert abs(residual-float(r['residual']))<1e-12
         env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',e['noise_id']));env.reset()
-        env.estimate=np.zeros(4);env.cov=np.eye(4)*.01;env.previous=np.zeros(4);env.ctrl=FilteredController(e['profile'])
+        env.estimate=np.zeros(4);env.cov=np.eye(4)*.01;env.previous=np.zeros(4);env.ctrl=controller(e['profile'])
         misses=0;active=0
         for i,r in enumerate(ticks):
             assert int(r['tick'])==i and int(r['release_ns'])<=int(r['apply_ns'])

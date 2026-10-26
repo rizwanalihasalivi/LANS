@@ -33,6 +33,14 @@ environment.measure=measure_fast
 CASES={'nominal':0.,'delay20':.02,'delay1000':1.,'cpu_stress':0.,'worker_crash':0.}
 
 
+def controller(profile):
+    if profile=='aligned':
+        sys.path.insert(0,str(ROOT/'tools/reviewer_v3'))
+        from aligned import AlignedController
+        return AlignedController()
+    return FilteredController(profile)
+
+
 def load_portable(folder):
     spec=importlib.util.spec_from_file_location('portable_actor',ROOT/'tools/laptop/laptop_benchmark.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
@@ -83,11 +91,11 @@ def episode(ctx,case,seed,profile,seconds,models,out):
     env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',1256000000+seed));env.reset()
     # Warm every parent numerical path outside the measured window.
     for _ in range(40):env.step(2)
-    c=FilteredController(profile)
+    c=controller(profile)
     c.packet=(1,0.,.04);c.previews=env.obs[6:9].astype(float)*.02
     for i in range(5):c.choose(i*.001,env.baseline,env.estimate,env.state[5],env.measured_speed,env.curvature,env.gain)
     env.reset();env.tick=0;env.estimate=np.zeros(4);env.cov=np.eye(4)*.01;env.previous=np.zeros(4)
-    ctrl=FilteredController(profile);env.ctrl=ctrl
+    ctrl=controller(profile);env.ctrl=ctrl
     parent,child=ctx.Pipe();worker=ctx.Process(target=actor,args=(child,str(models),seed,CASES[case]))
     worker.start();child.close()
     if not parent.poll(120):shutdown(worker);raise RuntimeError('actor startup timeout; first-run compilation is outside measured window')
@@ -95,7 +103,7 @@ def episode(ctx,case,seed,profile,seconds,models,out):
     if status!='ready':shutdown(worker);raise RuntimeError(backend)
     stop=ctx.Event();stress=None
     if case=='cpu_stress':stress=ctx.Process(target=burn,args=(stop,));stress.start()
-    n=round(seconds/.01);packet=None;busy=False;dead=False;seq=0;rows=[];packets=[];errors=[]
+    n=round(seconds/.01);packet=None;pending=None;busy=False;dead=False;seq=0;rows=[];packets=[];errors=[]
     enabled=gc.isenabled();gc.collect();gc.disable()
     try:
         with DeadlineWaiter('auto') as waiter:
@@ -109,7 +117,11 @@ def episode(ctx,case,seed,profile,seconds,models,out):
                         if parent.poll():
                             tag,message=parent.recv()
                             if tag!='output':raise RuntimeError(message)
-                            message['received_ns']=time.perf_counter_ns();packet=message;packets.append(message);busy=False
+                            received=time.perf_counter_ns()
+                            if pending!=(message['seq'],message['observed_ns']):raise RuntimeError('request/response identity mismatch')
+                            stamps=[message[k] for k in ('observed_ns','entered_ns','inferred_ns','sent_ns')]+[received]
+                            if stamps!=sorted(stamps) or not math.isfinite(message['residual']):raise RuntimeError('invalid response timestamps/residual')
+                            message['received_ns']=received;packet=message;packets.append(message);busy=False;pending=None
                         if not worker.is_alive():raise RuntimeError('worker exited')
                     except (EOFError,OSError,RuntimeError) as error:
                         errors.append(str(error));dead=True;packet=None;busy=False
@@ -120,7 +132,7 @@ def episode(ctx,case,seed,profile,seconds,models,out):
                 ctrl.previews=env.obs[6:9].astype(float)*.02
                 obs=observation(env.state,env.estimate,env.measured_speed,ctrl.previews,ctrl,(release-origin)/1e9)
                 if not busy and not dead:
-                    try:seq+=1;parent.send((seq,release,obs));busy=True
+                    try:seq+=1;parent.send((seq,release,obs));busy=True;pending=(seq,release)
                     except (OSError,EOFError):dead=True;packet=None;ctrl.packet=None
                 command,reason=ctrl.choose((time.perf_counter_ns()-origin)/1e9,baseline,env.estimate,
                     env.state[5],env.measured_speed,env.curvature,env.gain)
@@ -163,7 +175,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--models',type=Path,default=ROOT/'actor')
     p.add_argument('--output',type=Path,required=True);p.add_argument('--seconds',type=float,default=13.)
     p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
-    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered'],default='age_filtered')
+    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned'],default='age_filtered')
     args=p.parse_args()
     if not .5<=args.seconds<=30:p.error('seconds must be0.5..30')
     args.output.mkdir(parents=True,exist_ok=False)

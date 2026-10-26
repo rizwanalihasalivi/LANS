@@ -1,0 +1,9 @@
+test_legacy_mode_is_explicit_and_does_not_change_deadline (__main__.TimerContracts) ... ok
+test_unsupported_highres_never_silently_falls_back (__main__.TimerContracts) ... ok
+test_wait_error_still_releases_handle (__main__.TimerContracts) ... ok
+test_windows_uses_negative_relative_100ns_and_closes_once (__main__.TimerContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

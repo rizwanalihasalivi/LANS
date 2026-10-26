@@ -29,7 +29,7 @@ def main():
         checks.append(dict(seed=seed,rows=len(x),action_disagreements=different,max_logit_error=float(np.max(np.abs(actual-expected))),
             source_model_sha256=hashlib.sha256((folder/'student.pt').read_bytes()).hexdigest()))
     np.savez_compressed(a.output/'golden.npz',**golden)
-    for name in ('laptop_benchmark.py','RUN_WINDOWS.cmd','README.md'):shutil.copy2(Path(__file__).parent/name,a.output/name)
+    for name in ('laptop_benchmark.py','precision_wait.py','RUN_WINDOWS.cmd','RUN_PYTHON310.cmd','README.md'):shutil.copy2(Path(__file__).parent/name,a.output/name)
     sha={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in a.output.iterdir() if p.is_file()}
     manifest=dict(profile='causal_query_v2',export_checks=checks,sha256=sha)
     (a.output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

@@ -1,0 +1,16 @@
+{
+  "user_requirement": "Keep Python3.10; no upgrade",
+  "timer": "per-process Windows high-resolution waitable timer, no system-wide timeBeginPeriod and no busy spin",
+  "applied_to": [
+    "monitor tick wait",
+    "injected worker availability delay"
+  ],
+  "schedule_period_ms": 10,
+  "model_or_threshold_changed": false,
+  "mocked_timer_contract_tests_passed": 4,
+  "python310_linux_smoke_completed": true,
+  "actual_windows_api_execution_verified": false,
+  "new_windows_deadline_result": "pending user run",
+  "baseline": "Keep the supplied Python3.10 coarse-sleep result; --timer legacy provides an explicitly labelled repeat",
+  "zip_sha256": "c28282e3967b2cd46ab5d5ddbded7004290f5881ca6ccdc28f17555e2ad792d4"
+}

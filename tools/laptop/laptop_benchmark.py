@@ -3,6 +3,7 @@ import argparse,csv,hashlib,json,multiprocessing as mp,os,platform,sys,time
 from pathlib import Path
 for key in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS'):os.environ[key]='1'
 import numpy as np
+from precision_wait import DeadlineWaiter
 
 BASE=Path(__file__).resolve().parent
 CANDIDATES=np.array([-.08,-.04,0.,.04,.08],dtype=np.float32)
@@ -18,15 +19,17 @@ def load(seed):
         return {key:archive[key].copy() for key in archive.files}
 
 
-def worker(conn,seed,delay):
+def worker(conn,seed,delay,timer_mode):
+    waiter=None
     try:
-        model=load(seed);logits(model,np.zeros((1,20),np.float32));conn.send(('ready',None))
+        waiter=DeadlineWaiter(timer_mode)
+        model=load(seed);logits(model,np.zeros((1,20),np.float32));conn.send(('ready',dict(timer_backend=waiter.backend)))
         while True:
             request=conn.recv()
             if request is None:return
             sequence,observed,x=request;start=time.perf_counter_ns()
             index=int(logits(model,x[None,:]).argmax(1)[0]);end=time.perf_counter_ns()
-            if delay:time.sleep(delay)
+            if delay:waiter.wait_until_ns(time.perf_counter_ns()+round(delay*1e9))
             conn.send(('output',dict(sequence=sequence,observed_ns=observed,
                 infer_start_ns=start,infer_end_ns=end,sent_ns=time.perf_counter_ns(),
                 residual_rad=float(CANDIDATES[index]))))
@@ -34,7 +37,9 @@ def worker(conn,seed,delay):
     except Exception as error:
         try:conn.send(('error',repr(error)))
         except (EOFError,BrokenPipeError):pass
-    finally:conn.close()
+    finally:
+        conn.close()
+        if waiter is not None:waiter.close()
 
 
 def burn(stop):
@@ -69,20 +74,21 @@ def golden_check():
     return x,checks
 
 
-def run_case(ctx,seed,case,seconds,observations,out):
+def run_case(ctx,seed,case,seconds,observations,out,timer_mode,waiter):
     delay={'nominal':0.,'delay20':.02,'delay100':.1,'cpu_stress':0.,'worker_crash':0.}[case]
-    parent,child=ctx.Pipe();p=ctx.Process(target=worker,args=(child,seed,delay));p.start();child.close()
+    parent,child=ctx.Pipe();p=ctx.Process(target=worker,args=(child,seed,delay,timer_mode));p.start();child.close()
     if not parent.poll(30):close_process(p);raise RuntimeError('worker startup timeout')
     status,message=parent.recv()
     if status!='ready':close_process(p);raise RuntimeError(message)
+    worker_timer_backend=message['timer_backend']
     stop=ctx.Event();stress=None
     if case=='cpu_stress':stress=ctx.Process(target=burn,args=(stop,));stress.start()
     rows=[];packets=[];busy=False;dead=False;sequence=0;packet=None;pending=None;injected=False;failure=None
     steps=round(seconds/.01);origin=time.perf_counter_ns()+20_000_000
     try:
         for tick in range(steps):
-            target=origin+tick*10_000_000;remaining=(target-time.perf_counter_ns())/1e9
-            if remaining>0:time.sleep(remaining)
+            target=origin+tick*10_000_000
+            waiter.wait_until_ns(target)
             release=time.perf_counter_ns()
             if case=='worker_crash' and tick>=steps//3 and not injected:p.terminate();injected=True
             if not dead:
@@ -114,7 +120,7 @@ def run_case(ctx,seed,case,seconds,observations,out):
         if records:
             with (out/f'{case}-{suffix}.csv').open('w',newline='') as f:
                 w=csv.DictWriter(f,fieldnames=records[0]);w.writeheader();w.writerows(records)
-    result=dict(case=case,ticks=len(rows),delivered_packets=len(packets),worker_failure=failure,unexpected_worker_failure=dead and case!='worker_crash',
+    result=dict(case=case,monitor_timer_backend=waiter.backend,worker_timer_backend=worker_timer_backend,ticks=len(rows),delivered_packets=len(packets),worker_failure=failure,unexpected_worker_failure=dead and case!='worker_crash',
         monitor_deadline_misses=sum(r['deadline_miss'] for r in rows),
         inference=percentile([(p['infer_end_ns']-p['infer_start_ns'])/1e6 for p in packets]),
         observation_to_receive=percentile([(p['received_ns']-p['observed_ns'])/1e6 for p in packets]),
@@ -128,17 +134,17 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=BASE/'laptop-results')
     p.add_argument('--seconds',type=float,default=10.);p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
     p.add_argument('--cases',nargs='+',choices=['nominal','delay20','delay100','cpu_stress','worker_crash'],
-        default=['nominal','delay20','delay100','cpu_stress','worker_crash']);p.add_argument('--verify-only',action='store_true');p.add_argument('--allow-legacy-windows',action='store_true',help='explicitly retain Python<3.11 Windows timer baseline');a=p.parse_args()
+        default=['nominal','delay20','delay100','cpu_stress','worker_crash']);p.add_argument('--verify-only',action='store_true');p.add_argument('--timer',choices=['auto','legacy'],default='auto',help='auto uses native high-resolution Windows waits even on Python3.10');p.add_argument('--allow-legacy-windows',action='store_true',help=argparse.SUPPRESS);a=p.parse_args()
     if not .3<=a.seconds<=60:p.error('seconds must be between .3 and60')
-    if sys.platform=='win32' and sys.version_info<(3,11) and not a.allow_legacy_windows:
-        p.error('Use 64-bit Python 3.11+ and RUN_WINDOWS.cmd; Python3.10 Windows sleep is a separate legacy timing baseline. Keep prior results.')
+    if a.allow_legacy_windows:a.timer='legacy'
     observations,checks=golden_check()
     if a.verify_only:print(json.dumps(checks,indent=2));return
     a.output.mkdir(parents=True,exist_ok=False)
-    results=[run_case(mp.get_context('spawn'),a.seed,c,a.seconds,observations,a.output) for c in a.cases]
+    with DeadlineWaiter(a.timer) as waiter:
+        results=[run_case(mp.get_context('spawn'),a.seed,c,a.seconds,observations,a.output,a.timer,waiter) for c in a.cases]
     report=dict(trace_kind='laptop_cpu_ipc_recorded_observations',physical_acknowledgements=False,
         vehicle_readiness_certified=False,benchmark_completed=all(not r['unexpected_worker_failure'] for r in results),os=platform.platform(),cpu=platform.processor() or os.environ.get('PROCESSOR_IDENTIFIER','unknown'),
-        python=platform.python_version(),python_implementation=platform.python_implementation(),runner_version='2-modern-windows-guard',numpy=np.__version__,seed=a.seed,model_checks=checks,cases=results,
+        python=platform.python_version(),python_implementation=platform.python_implementation(),runner_version='3-python310-native-windows-timer',requested_timer_mode=a.timer,numpy=np.__version__,seed=a.seed,model_checks=checks,cases=results,
         limitations=['Recorded inputs, not live vehicle sensors; model is NumPy export of trained causal student with verified action parity.',
             'No observer, LQR, predictive gate, plant, CAN or actuator executes here. Monitor deadlines are not full controller deadlines.',
             'Injected worker sleep is separated from actual inference time. Windows scheduling is not a hard-real-time guarantee.',

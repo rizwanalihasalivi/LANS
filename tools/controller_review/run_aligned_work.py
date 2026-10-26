@@ -53,12 +53,14 @@ def main():
     text=text.replace('reviewer-aligned-v3/absolute_100us','v3 sleep + spin').replace('reviewer-aligned-v3/dedicated_spin','v3 full spin')
     text=text.replace('| absolute_100us |','| Sleep + 100µs spin |').replace('| dedicated_spin |','| Full spin |')
     text=text.replace('| oldppo |','| Old PPO |').replace('| ppo |','| New PPO |').replace('| lqr |','| LQR |')
+    if '## Exact aligned method and objectives' not in text:
+        text+='\n'+(out/'aligned-method.md').read_text()+'\n'
     pieces=re.split(r'(`[^`]*`)',text)
     for i,part in enumerate(pieces):
         if part.startswith('`'):continue
         part=re.sub(r'(?<=[A-UW-Za-uw-z])(?=\d)',' ',part)
         part=re.sub(r'(?<=\d)(?=[A-UW-Za-uw-zµ])',' ',part)
-        part=re.sub(r',(?=\S)',', ',part)
+        part=re.sub(r',(?=[^\s\d])',', ',part)
         pieces[i]=part.replace('100 k','100,000').replace('25 k','25,000')
     text=''.join(pieces);final.write_text(text)
     for suffix in ('docx','pdf'):
@@ -66,7 +68,7 @@ def main():
         if suffix=='pdf':cmd+=['--pdf-engine=xelatex','-V','mainfont=DejaVu Serif','-V','geometry:margin=22mm','-V','fontsize=10pt','-V','papersize=a4']
         subprocess.run(list(map(str,cmd)),check=True)
     with zipfile.ZipFile(out/'LANS_Aligned_Reports.zip','w',zipfile.ZIP_DEFLATED) as z:
-        for n in ('final-update.md','final-update.docx','final-update.pdf','verified-references.md','completion-status.json','summary.json','decision.json','timing-diagnosis.json','episodes.csv'):
+        for n in ('final-update.md','final-update.docx','final-update.pdf','verified-references.md','aligned-method.md','completion-status.json','summary.json','decision.json','timing-diagnosis.json','training-verification.json','episodes.csv'):
             z.write(out/n,n)
     qa={}
     for n in ('LANS_Aligned_Reports.zip','LANS_Aligned_Python310_Kit.zip','final-update.docx'):

@@ -1,5 +1,9 @@
 # LANS opening report
 
+Latest research evidence: [27October2026 follow-up](../research/reviewer-followup-v2/final-research-update.md).
+The864-episode same-gain comparison did not select a balanced PPO winner;
+reserved confirmation and actual hardware validation are still pending.
+
 Revised report for Rizwan Ali, uploaded on 26 October 2026 using the author's selected final framework.
 
 - [Editable Word report](Rizwan_Ali_LANS_Opening_Report_Final.docx)

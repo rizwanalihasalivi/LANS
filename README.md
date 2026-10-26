@@ -10,6 +10,14 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
+- **Latest frozen follow-up:** [same-gain attribution and smoothing](docs/research/reviewer-followup-v2/README.md)
+  reports864 fresh development episodes. Filtered PPO gains5.79% tracking versus
+  LQR, but has27.5% higher actuator-rate RMS and trails the same-gain student.
+  Preview filtering gains0.73%; no new variant passes the frozen selection gate.
+  [Detailed update](docs/research/reviewer-followup-v2/final-research-update.md)
+  separates timing failures, nominal published-filter specialization, laptop kit
+  and physical evidence still required. Resume software stages with
+  `python tools/controller_review/run_followup_work.py --publish`.
 - [Reviewer-response causal residual campaign](tools/reviewer_campaign/README.md):
   one-command staged PPO training, mirrored comparisons, real-worker timing and
   native interface checks, with verified milestones pushed to the research branch.

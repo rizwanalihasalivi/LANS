@@ -14,7 +14,7 @@
     "tools/reviewer_campaign/environment.py": "791062fad41931d5f8b9f290ace4c79b8519978e21e48411f48c007020317d14",
     "tools/reviewer_campaign/protocol.json": "48ba28b24e34527e3ecfa1578845d1e5a72fc59ad5dfdb1901dd01a0e1ec1938",
     "tools/reviewer_campaign/common.py": "b9fd4968216e65b641d913767ec56a07ca5487df0796b028b63bfe818f7d4b00",
-    "tools/controller_review/verify_full_laptop.py": "72cff04a596adcfecbbfe5a28fc03be9960b73d9fa1ff5506648a1cc22c71014",
+    "tools/controller_review/verify_full_laptop.py": "39f7b05f90eec6e24ef2db12dd3ad17ca643d971901f02f40f225cfd72c23a23",
     "tools/controller_review/realtime_kernels.py": "af016e0c6d75fed0f51aedcaaa5dae0c0b590dfea7b346d324915cc0edc96292",
     "tools/controller_review/laptop_full_controller.py": "f9d13111e158d7b05e7f4f514935c663b59d89677e00bba4f903af278258dc14",
     "tools/laptop/precision_wait.py": "50061f8a7abce90498b55b714abcdd4c8707b46654194a8bf528334f33d74f25",

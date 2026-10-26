@@ -17,6 +17,7 @@ def main():
         name=e['case'];ticks=list(csv.DictReader((args.run/f'{name}-ticks.csv').open()))
         file=args.run/f'{name}-packets.csv';packets=list(csv.DictReader(file.open())) if file.exists() else []
         issued={int(r['release_ns']):r for r in ticks};packet_map={int(r['seq']):r for r in packets}
+        queries_by_observed={int(r['observed_ns']):r for r in packets}
         assert len(packet_map)==len(packets)==e['actor_packets']
         for r in packets:
             times=[int(r[k]) for k in ('observed_ns','entered_ns','inferred_ns','sent_ns','received_ns')]
@@ -35,6 +36,9 @@ def main():
             miss=int(r['apply_ns'])>int(r['target_ns'])+10000000;assert miss==(r['deadline_miss']=='True');misses+=miss
             env._sense();command=float(r['command']);weight=float(r['weight']);baseline=float(r['baseline'])
             assert abs(env.baseline-baseline)<1e-12
+            if int(r['release_ns']) in queries_by_observed:
+                query=np.array(json.loads(queries_by_observed[int(r['release_ns'])]['observation_json']),np.float32)
+                np.testing.assert_array_equal(query[:9],env.obs[:9])
             assert abs(command-max(-.5,min(.5,baseline+weight*float(r['filtered_residual']))))<1e-12
             seq=int(r['packet_seq'])
             if seq>=0:
@@ -51,7 +55,7 @@ def main():
                         (env.state[5],float(r['actuator'])),((env.state[5]-old)/.01,float(r['actuator_rate']))):assert abs(a-b)<1e-12
         assert misses==e['deadline_misses'] and active==e['nonzero_correction_ticks'];count+=len(ticks);packets_count+=len(packets)
     result=dict(ticks=count,packets=packets_count,original_deadlines_verified=True,actor_and_removed_channels_verified=True,
-                plant_observer_lqr_replay_verified=True,fallback_verified=True,target_platform_validation=False)
+                plant_observer_lqr_replay_verified=True,query_physical_features_replayed=True,fallback_verified=True,target_platform_validation=False)
     (args.run/'verification.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 
 

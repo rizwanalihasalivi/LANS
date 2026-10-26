@@ -1,0 +1,9 @@
+{
+  "archive_crc_pass": true,
+  "sha256": {
+    "LANS_Aligned_Reports.zip": "c61272ac2dd3abacae897d0a71df23416be3e3ea338eef295d82aca889eb3c40",
+    "LANS_Aligned_Python310_Kit.zip": "c3a290c96797960270319c1c512f54825752d3bab2f9da2b6cb954d339192b90",
+    "final-update.docx": "fa986ed8641661600d7a0c55813345db500f7634e35b43df4dc4e469c7927556"
+  },
+  "actual_windows_macos_run": false
+}

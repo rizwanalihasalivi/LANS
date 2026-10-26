@@ -1,0 +1,11 @@
+{
+  "archives_crc_pass": true,
+  "visual_review": "PDF pages1and2 inspected: readable tables, no overlapping method labels; repeated table headers preserved",
+  "sha256": {
+    "LANS_Full_Controller_Kit.zip": "c250cb87e6a2de71d7af20b012330272c9cbc16f3892d872c623c35bf94371e7",
+    "LANS_Followup_Reports.zip": "8d04c293be2e3395c93314e59f3e1c4a67c77494d57bf7d4b3c9e427e8be24cd",
+    "final-research-update.pdf": "77aa199dfb8694319f7e024c18434e375755d36bdd21232080afd71f0e63ec37",
+    "final-research-update.docx": "193096e6c7582265736f5e0963a271d33f00922f54d948b77f2abd575eae8a37"
+  },
+  "actual_windows_or_macos_execution": false
+}

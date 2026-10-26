@@ -1,5 +1,7 @@
 # Literature positioning for the current LANS controller
 
+**Superseding source review, 26 October 2026:** [five uploaded primary papers](primary-papers/README.md) now have version-specific, page-supported comparisons, including important prior overlap in filter-aware training and input-rate smoothing. [The report supplement](../opening-report/verified-related-work.md) uses the latest revision13 results. The source-access statements and experimental snapshot below are historical; the broader novelty search and matched published-method benchmark remain open.
+
 Date: 25 October 2026. Reference implementation: audit commit `e78b691b3e8efee3fd8f18804721a5dc66a4ad9a`. The predictor/objective ablation is a new development experiment; it does not inherit an improvement or novelty claim from this document.
 
 **The defensible contribution is presently an application and experimental-method contribution:** a baseline-preserving, age-aware, performance-gated residual controller, with explicit execution semantics and an auditable comparison of learned versus nonlearned proposals. Residual learning, delay-aware control and predictive filtering each have substantial prior work. Their combination is not, by itself, evidence of a first-of-its-kind algorithm.

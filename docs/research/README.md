@@ -2,7 +2,7 @@
 
 For present status, see the [full project audit and corrections](full-project-audit/README.md). The initial handoff below is historical.
 
-The latest [mirrored confirmation and balanced-control study](../../integrations/webots/results/revision13-balanced/interpretation.md) verifies the original nonlearned gain at 9.131% with fresh noise and records full-grid heading/steering metrics across 7,776 surviving episodes. None of three balanced objectives preserves tracking, so reserved/native/learning stages remain untriggered. [Primary-source literature verification](literature-primary-check.md) remains proxy-blocked.
+The latest [mirrored confirmation and balanced-control study](../../integrations/webots/results/revision13-balanced/interpretation.md) verifies the original nonlearned gain at 9.131% with fresh noise and records full-grid heading/steering metrics across 7,776 surviving episodes. None of three balanced objectives preserves tracking, so reserved/native/learning stages remain untriggered. [Five uploaded primary papers](primary-papers/README.md) now have verified method/result comparisons and an [opening-report supplement](../opening-report/verified-related-work.md); broader literature coverage and published-method reproduction remain open.
 
 The preceding [predictor/objective ablation](../../integrations/webots/results/revision12-ablation/interpretation.md) distinguishes a 4.528% student tracking gain from larger 6.864%/9.122% nonlearned gains, records heading/steering trade-offs, and stops further training under its frozen criteria.
 

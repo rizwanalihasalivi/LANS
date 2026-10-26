@@ -1,6 +1,8 @@
 # Primary-source literature verification: revision13 follow-up
 
-Date: 26 October 2026. This follow-up accompanies the balanced-gate investigation and extends the [qualified literature positioning](literature-positioning.md). **Primary-paper verification remains incomplete because the configured network route rejects the source requests.** This document records the attempted checks, additional bibliographic leads available locally, and the exact comparisons still needed. It is not a completed full-text review or a reproduced published-controller benchmark.
+**Later update, 26 October 2026:** the user supplied five PDFs, now reviewed in the [verified primary-paper comparison](primary-papers/README.md). This resolves local full-text access for Kalaria, Tearle, Wabersich–Zeilinger, Cano Córdoba and Tabrizian v5. The earlier proxy failures below remain an accurate historical record; they no longer block review of these uploads. Johannink and Ramstedt were not supplied, broader coverage/final publisher metadata remain incomplete, and no published controller has been reproduced. [Opening-report supplement](../opening-report/verified-related-work.md).
+
+**Earlier access attempt, 26 October 2026.** This follow-up accompanied the balanced-gate investigation and extended the [qualified literature positioning](literature-positioning.md). At that point, primary-paper verification remained incomplete because the configured network route rejected the source requests. The remaining sections preserve that earlier attempt, its bibliographic leads and its then-open checks; use the later comparison above for present source status.
 
 ## Access attempts and local evidence
 

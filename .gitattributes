@@ -10,3 +10,6 @@ docs/research/native-causal-2026-10-26/** -text whitespace=blank-at-eol,blank-at
 # The executed observer source and its snapshots are hash-frozen, including EOF.
 tools/controller_review/realtime_kernels.py whitespace=blank-at-eol,space-before-tab,-blank-at-eof
 docs/research/native-causal-2026-10-26/**/realtime_kernels.py whitespace=blank-at-eol,space-before-tab,-blank-at-eof
+
+# Preserve executed reviewer diagnostic snapshots and raw CSV bytes.
+docs/research/reviewer-pilot-2026-10-26/** -text -whitespace

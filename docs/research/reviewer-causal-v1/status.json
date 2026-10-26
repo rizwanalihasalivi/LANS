@@ -11,6 +11,9 @@
     },
     "ppo-worker-export": {
       "state": "complete"
+    },
+    "development-verified": {
+      "state": "complete"
     }
   },
   "external": {

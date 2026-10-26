@@ -1,0 +1,153 @@
+{
+  "grid": "development",
+  "pair": 2,
+  "episodes": 288,
+  "protocol": {
+    "id": "reviewer-causal-residual-v1",
+    "scope": "LQR baseline plus bounded PPO residual; no full-command switching",
+    "seeds": [
+      2701,
+      2802,
+      2903
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "arms": [
+      "scratch",
+      "finetune"
+    ],
+    "steps_each": 25000,
+    "checkpoint_steps": [
+      0,
+      25000
+    ],
+    "ppo": {
+      "n_envs": 4,
+      "n_steps": 250,
+      "batch_size": 200,
+      "n_epochs": 5,
+      "learning_rate": 0.0001,
+      "clip_range": 0.1,
+      "target_kl": 0.01,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "ent_coef": 0.0,
+      "vf_coef": 0.5
+    },
+    "candidates_rad": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "causal_contract": "20 channels with 14/15/16/17/19 always zero. Deliver available packet BEFORE observation. Held residual/age is observable. No pending residual, future completion time or service oracle. Queries only submitted when idle. Busy-tick sampled actions are ignored by executor. Original observation timestamps persist.",
+    "normalization": "Frozen causal student TRAIN-only normalization, same per paired scratch/finetune. Existing supervised DEV selected student initialization is extra pretraining, not equal total budget.",
+    "training_noise_base": 1056000000,
+    "development_noise_base": 1066000000,
+    "confirmation_noise_base": 1166000000,
+    "training": "Uniform 15/20/25 m/s, sine120/DLC220, left/right mirror, nominal/tire/delay20/delay100; shared initial scenario streams by seed, no extra tuning. Plant continues every 10ms while queued action unavailable.",
+    "development": {
+      "speeds": [
+        15,
+        25
+      ],
+      "paths": [
+        "sine120",
+        "dlc220"
+      ],
+      "mirrors": [
+        -1,
+        1
+      ],
+      "scenarios": [
+        "nominal",
+        "tire",
+        "delay20",
+        "delay100"
+      ],
+      "methods": [
+        "lqr",
+        "fixed_negative",
+        "fixed_positive",
+        "student",
+        "scratch",
+        "finetune",
+        "fixed_authority",
+        "latency_gain",
+        "no_recovery"
+      ]
+    },
+    "smoke": {
+      "speeds": [
+        20
+      ],
+      "paths": [
+        "dlc220"
+      ],
+      "mirrors": [
+        -1,
+        1
+      ],
+      "scenarios": [
+        "nominal",
+        "delay100"
+      ],
+      "methods": [
+        "lqr",
+        "fixed_negative",
+        "fixed_positive",
+        "student",
+        "scratch",
+        "finetune",
+        "fixed_authority",
+        "latency_gain",
+        "no_recovery"
+      ]
+    },
+    "supervisor": {
+      "age_cutoff_s": 0.05,
+      "relative_improvement": 0.01,
+      "weight_candidates": [
+        0.1,
+        0.25,
+        0.5
+      ],
+      "weight_ramp_per_tick": 0.05,
+      "consecutive_good_ticks": 3,
+      "prediction_steps": 20,
+      "candidate_hold_steps": 5,
+      "steering_delta_stage_weight": 0.01,
+      "ey_envelope_m": 1.5,
+      "heading_envelope_rad": 0.25
+    },
+    "fusion": "clip(baseline + weight * clip(residual,-0.08,0.08),-0.5,0.5); actual actuator rate 0.35rad/s, lag0.05s shared all methods",
+    "latency_gain_comparator": "Documented manuscript-inspired reconstruction, not exact original reproduction: gain0.5 for age<=5ms, else0.5*exp(-0.8*(age_ms-5)); identical50ms stale cutoff. Uses measured simulated packet age, not unknown completion forecasts.",
+    "reward": "-(ey/0.5)^2 -0.2*(heading_error/0.1)^2 -0.005*(command/0.5)^2 -0.001*((command-last_command)/0.005)^2 -10*failure; no penalty for exogenous computation delay. Reward-only VecNormalize. No privileged teacher bonus.",
+    "acceptance": "Development finetune >=1% lower mean penalized lateral RMSE than LQR, same-supervisor student and BOTH fixed corrections; all3 seed gains positive vs student; no survival loss; nominal no more than2% worse than LQR; overall headingRMSE and steeringRateRMS <=1.05 LQR; exact delay100 baseline. All checks must pass. Smoke never selects or unlocks confirmation.",
+    "confirmation": "Only after full development passes, evaluate the frozen25000-step endpoint on new noise and held-out sine145 path parameters, all3 seeds, 15/25m/s, both mirrors, same4 scenarios and methods. Separate manifest before opening. Native/timing remain separate.",
+    "stop": "Exactly6x25000 additional PPO steps. No extensions or altered seeds/gate/cost after results. Failure leaves confirmation unopened. Physical testing unavailable; no formal safety, guaranteed100Hz, energy or GPU-speedup claim. Published-algorithm reproduction requires verified implementation and remains explicitly pending.",
+    "real_worker": {
+      "seconds_each": 5,
+      "seeds": [
+        701,
+        802,
+        903
+      ],
+      "cases": [
+        "nominal",
+        "delay20",
+        "delay60",
+        "delay100",
+        "delay1000",
+        "cpu_stress",
+        "worker_crash"
+      ],
+      "noise_base": 1086000000,
+      "criterion": "All raw contract checks pass; deadlines assessed separately, any miss fails strict observed timing. Finite tests cannot establish WCET."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "eligible": false,
+  "reasons": [
+    "finetune lacks >=1% improvement vs lqr",
+    "finetune lacks >=1% improvement vs student",
+    "pair0 does not improve student",
+    "pair1 does not improve student",
+    "pair2 does not improve student"
+  ],
+  "grid": "development",
+  "episodes": 864,
+  "exact_severe_delay_pairs": 192,
+  "raw_metrics_verified": true,
+  "local_deadlines": "NOT evaluated by simulated-service episodes",
+  "formal_safety": "NOT established",
+  "physical_validation": "NOT performed"
+}

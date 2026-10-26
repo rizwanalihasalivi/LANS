@@ -1,0 +1,83 @@
+{
+  "lqr": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09057786968373058,
+    "gain_vs_lqr_pct": 0.0,
+    "heading_rmse_rad": 0.020024360815663122,
+    "steering_rate_rms_rad_s": 0.06916939044531015,
+    "total_steering_movement_rad": 0.561215380553358
+  },
+  "fixed_negative": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09321283806467084,
+    "gain_vs_lqr_pct": -2.90906420093644,
+    "heading_rmse_rad": 0.020279082892424027,
+    "steering_rate_rms_rad_s": 0.0694898554090942,
+    "total_steering_movement_rad": 0.5669060567566228
+  },
+  "fixed_positive": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09321283806467084,
+    "gain_vs_lqr_pct": -2.90906420093644,
+    "heading_rmse_rad": 0.020279082892424027,
+    "steering_rate_rms_rad_s": 0.0694898554090942,
+    "total_steering_movement_rad": 0.5669060567566228
+  },
+  "student": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09059921854173415,
+    "gain_vs_lqr_pct": -0.02356961813974962,
+    "heading_rmse_rad": 0.020027033581731822,
+    "steering_rate_rms_rad_s": 0.06921341360606348,
+    "total_steering_movement_rad": 0.5617263676419814
+  },
+  "scratch": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09244068643913703,
+    "gain_vs_lqr_pct": -2.0565914852168845,
+    "heading_rmse_rad": 0.02021821308481577,
+    "steering_rate_rms_rad_s": 0.06955064134067072,
+    "total_steering_movement_rad": 0.5677697040342633
+  },
+  "finetune": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09061767268138485,
+    "gain_vs_lqr_pct": -0.04394340228275377,
+    "heading_rmse_rad": 0.020029133252687917,
+    "steering_rate_rms_rad_s": 0.06924276260043209,
+    "total_steering_movement_rad": 0.5619777975812319
+  },
+  "fixed_authority": {
+    "episodes": 96,
+    "survived": 95,
+    "rmse_m": 0.09965766468107118,
+    "gain_vs_lqr_pct": -10.024297357670685,
+    "heading_rmse_rad": 0.022048954177958307,
+    "steering_rate_rms_rad_s": 0.14771682713803513,
+    "total_steering_movement_rad": 1.4269602188932897
+  },
+  "latency_gain": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.08546883890255859,
+    "gain_vs_lqr_pct": 5.640484589680809,
+    "heading_rmse_rad": 0.0203103534941471,
+    "steering_rate_rms_rad_s": 0.12048754579234784,
+    "total_steering_movement_rad": 1.1260323042717593
+  },
+  "no_recovery": {
+    "episodes": 96,
+    "survived": 96,
+    "rmse_m": 0.09063719858257649,
+    "gain_vs_lqr_pct": -0.06550043520903019,
+    "heading_rmse_rad": 0.02003222014115628,
+    "steering_rate_rms_rad_s": 0.06926540764085812,
+    "total_steering_movement_rad": 0.5621232647851936
+  }
+}

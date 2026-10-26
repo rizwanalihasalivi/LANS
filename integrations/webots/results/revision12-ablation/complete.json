@@ -1,0 +1,142 @@
+{
+  "episodes": 1080,
+  "protocol": {
+    "purpose": "User-authorized isolated predictor/objective ablation, nonlearned controls and conditional small learning follow-up; no unconditional full training",
+    "parent_commit": "6512f31",
+    "variants": {
+      "legacy": 0,
+      "preview": 1,
+      "lateral": 2
+    },
+    "proposers": [
+      "fixed_m004",
+      "fixed_p004",
+      "student"
+    ],
+    "methods": [
+      "lqr",
+      "legacy_fixed_m004",
+      "legacy_fixed_p004",
+      "legacy_student",
+      "preview_fixed_m004",
+      "preview_fixed_p004",
+      "preview_student",
+      "lateral_fixed_m004",
+      "lateral_fixed_p004",
+      "lateral_student"
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "repetitions": [
+      0,
+      1,
+      2
+    ],
+    "speeds": [
+      15,
+      20,
+      25
+    ],
+    "paths": [
+      "sine120",
+      "dlc220"
+    ],
+    "scenarios": [
+      "nominal",
+      "tire_mismatch",
+      "low_friction",
+      "sensor_stress",
+      "latency20",
+      "latency100"
+    ],
+    "development_noise_base": 910000000,
+    "noise_formula": "base + repetition*10000 + speed*100 + path_index*10 + scenario_index; all methods share each cell's stream",
+    "development_episodes": 1080,
+    "physical_contract": "Unchanged revision6 path/scenario definitions, Fiala plant, RK4, actuator/sensor/estimator and local LQR. Initial ey0.15m,heading0.01rad;10mscontrol;ceil((220/speed+2)/.01) ticks; finite-state episode failure abs ey>2.5m or abs headingerror>.6rad. Fill unexecuted error tails with2.5m. Nonfinite command/plant state is a run-integrity failure: preserve partial evidence, abort completion/selection, do not fabricate finite realized RMSE or silently omit the case. Primary metric is equally weighted mean episode penalized RMSE.",
+    "reference": "Call original execution_step/predict_cost verbatim. Original revision8/9 every-available-worker policy query cadence; not the slower50ms-query revision10/11 diagnostic. Pure LQR executes baseline directly.",
+    "preview_only": "Keep nominal linear dynamics,200ms horizon,50ms candidate hold,original combined cost and all gate/actuator rules. Vary predicted curvature using linear interpolation/clamping of existing0/10/20m actor previews, distance=measured_speed*time. Anchor first curvature to the existing local curvature input; other two come from float32 actor preview channels. Update equilibrium/feedforward continuation and yaw-reference cost along preview. No hidden stiffness/friction, future true states, exact future map queries or future measurement noise enters the predictor.",
+    "lateral_only": "Keep original constant-curvature nominal linear predictor and timing. Remove heading/yaw/steering effort from scalar objective, retaining .01*(ey/.5)^2 stage and .1*(ey/.5)^2 terminal costs. Keep1% relative improvement margin and1e-7floor. This is an objective ablation, not a safety filter guarantee.",
+    "unchanged": "Residual\u00b1.08rad,fullcommand\u00b1.5rad,physicalrate.35rad/s,actuatorlag.05s; freshness reject age>=50ms,original .1/.25/.5 blend limits,freshness scaling,.05/tick weight ramp,3tick persistence,validity/envelope/sequence checks. Same20student features,weights,train-onlystandardization. One in-flight worker,actual observation timestamps,simulated0/20/100ms service. All variants use same observations.",
+    "nonlearned_controls": "Predeclared constant residuals\u2212.04 and+.04 under EACH identical gate. Neither sign nor magnitude is selected or tuned from this run. Report both; require learned advantage over both to attribute extra benefit to the frozen student.",
+    "gate_progress": {
+      "overall_gain_vs_legacy_student_percent": 1.0,
+      "all_three_seed_means_better": true,
+      "minimum_stress_regions_with_one_percent_gain": 2,
+      "stress_regions": [
+        "tire_mismatch",
+        "low_friction",
+        "sensor_stress"
+      ],
+      "maximum_active_region_regression_vs_legacy_student_percent": 1.0,
+      "nominal_not_worse_than_lqr": true,
+      "cellwise_survival_not_worse_than": [
+        "lqr",
+        "legacy_student"
+      ],
+      "exact_severe_fallback": true
+    },
+    "learning_benefit": "At least1% overall mean penalizedRMSE reduction versus BOTH same-gate fixed corrections, and no cellwise survival loss against either. Report separately from gate_progress. A gate change benefiting only constants does not justify PPO training.",
+    "five_percent_target": "At least5% lower RMSE versus LQR in at least two predeclared stress regions, each with lower error in all three paired seed means, and all gate_progress preservation checks. Overall5% is a separate reported quantity. This target is not a requirement to report smaller honest gains.",
+    "selection": "Eligible only if BOTH gate_progress and learning_benefit pass. If only one passes, select it. If both pass and their overall means differ by<=1% of the lower mean, preferpreview to retain the original combined objective; otherwise select lower mean. No arm/threshold/weight/horizon changes after outcomes.",
+    "conditional_teacher": "Only after a selected gate: independent DEV noise920000000, first two pairs,full36conditions,selected-gate student,fixed\u00b1.04,and future-noise-independent five-action200ms teacher=288episodes. Teacher clones selected gate in every branch with original worker cadence; zero/antithetic3 forecasts independent of actual noise. Teacher retains privileged current state/parameters, never deployable. Require>=1% gain over selected-gate student overall and each pair, no regional survival loss and<=1% active-regional regression before spending on retraining.",
+    "conditional_pilots": "Only after teacher headroom passes: two100k categorical PPO fine-tuning jobs initialized exactly from existingstudent701/802,with selected gate in actual execution and reward branches. Retain revision9 hyperparameters/reward/20features/normalizer semantics; checkpoints0and100k only. Trainingnoise930000000+pair*1000000+slot*10000+episode. No architecture/reward/gate search. DEV940000000 compares endpoints vs same-gate frozenstudent,bothconstants,LQR,current-gate student. Retain endpoint only if>=1% overall improvement versus same-gate student,each pairbetter,no survival loss,nominal and every active region<=1% worse,and>=1% better than both constants. Otherwise retain frozenstudent; this is not PPO success.",
+    "conditional_reserved": "Only if a gate passes initial screen and independent teacher confirmation, freeze selected gate and retained policies before opening noise950000000. Two paired policies,same36known physicalconditions; LQR,currentgate student,selectedgate fixed\u00b1.04,selectedgate frozenstudent,retainedpolicy=432episodes. Report all,even regressions; no post-test selection or retuning. Fresh noise is not unseen-road validation. If initial screen/teacher fails, do not open reserved split.",
+    "stop": "Complete this finite decision tree only. Failed initial screen=>stop retraining path and leave reserved data unused. Failed teacher confirmation=>stop training and reserved evaluation. At most2x100k additionalRL steps, no300kextensions/5x1M/fulltraining/nativepromotion. Any new hypothesis requires a separate predeclared revision.",
+    "limitations": "Three student/noise pairs and two known geometries; descriptive screening,not statistical proof. Ideal map localization/currentactuator are inherited simulation assumptions. Changing gate changes student history distribution; frozen weights isolate gate changes. Preview-only does not estimate actual tireparameters or fix modelmismatch by assumption. No formal stability/safety,hard realtime,native or SOTAclaim. Literature positioning is distinct from reproduced published algorithm comparisons."
+  },
+  "source_commit": "c49ddc065caf9c93eb4867b91446a8037a11ffc7",
+  "sources": {
+    "revision12/protocol.json": "9fc5b343fa8d448258bc8dfd0130739a8cbcabb48c2a69f6af22a2205caa8081",
+    "revision12/run12.py": "d6ce2a42d3eb0adefe3d67be3f9fa4f90597878f1478c002f1d24de53f4e455c",
+    "revision12/gate12.py": "075e456915fc944e0bd830fbb21e876ef24a46994a0acd45381346192ba62717",
+    "revision12/report12.py": "116cd66870d3ffb30ea422dae9d5ee4506fee91077afdad612ac3cbc1180489d",
+    "revision12/test_gate12.py": "0ad20d963e6985c45222e19330ae5e5109551aec53835270633977de58c017f0",
+    "revision12/test_report12.py": "331823a4bb04a69e201de092c748e9aeeb2d756a12f48d4d3d11daee98b2613b",
+    "revision8/bootstrap.py": "ecc8910ba6fdb105ca78c654afc6b92c8dcb5927bd30bb13bd6a431aa61c87dd",
+    "revision8/student.py": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+    "revision8/teacher.py": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+    "revision8/protocol.json": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+    "revision7/kernels.py": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf",
+    "revision7/bootstrap.py": "8c0266c5fd205818e975a5c4097ee9f61b565ab47776e293c6d910d8f1b8d3db",
+    "revision5/execution.py": "2cf3aafc01667df32db303c5e87aa3261ee21b9ff572a119c94cc125f2587506",
+    "revision5/bootstrap.py": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+    "revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "revision2/plant.py": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+    "revision6/protocol.json": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b",
+    "core.py": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+    "comparison.py": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+    "comparison-protocol.json": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+    "protocol.json": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c"
+  },
+  "students": {
+    "701": {
+      "student.pt": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48",
+      "normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "complete.json": "c9164a65bd68156beeae45862bbd1e396c17133f7edbf3bdaa37e0d81aa24a57"
+    },
+    "802": {
+      "student.pt": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f",
+      "normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "complete.json": "393492c24842b0da3c3273913ba3071c9ad0a28d903cc63a2cf454f84aaa396b"
+    },
+    "903": {
+      "student.pt": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa",
+      "normalization.npz": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "complete.json": "97e22b40a732ed370112ffe8f4205dfb72a2a8ba586b7d76f0cb23d655980609"
+    }
+  },
+  "submission_semantics": "every-available-worker-v1",
+  "split": "development",
+  "training_steps": 0,
+  "reserved_split_opened": false,
+  "wall_s": 39.695732831954956,
+  "runtime": {
+    "python": "3.10.22",
+    "numpy": "1.23.5",
+    "torch": "2.0.0+cpu",
+    "numba": "0.57.1"
+  }
+}

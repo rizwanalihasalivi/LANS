@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "test_count": 17,
+  "suites": [
+    {
+      "path": "integrations/webots/research/revision12/test_gate12.py",
+      "exit_code": 0,
+      "tests": 5,
+      "log": "0.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision12/test_report12.py",
+      "exit_code": 0,
+      "tests": 9,
+      "log": "1.txt"
+    },
+    {
+      "path": "integrations/webots/research/revision7/test_submission.py",
+      "exit_code": 0,
+      "tests": 3,
+      "log": "2.txt"
+    }
+  ]
+}

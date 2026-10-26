@@ -65,17 +65,19 @@ The current successful student is a **supervised classifier over five residual a
 
 The [full audit](full-project-audit/README.md) further establishes that the later 50 ms-query diagnostics had a timestamp defect. Corrected replays preserve the originals and supersede their interpretation. They identify predictor/objective disagreements but do not demonstrate 5–10% headroom. The two native audit smoke cases use the legacy model; they are not native validation of the current supervised student.
 
-## How the proposed predictor/objective ablation fits
+## How the predictor/objective ablation fits
 
-The next experiment can investigate an unresolved mechanism rather than merely increasing training budget: whether nominal/local-geometry prediction or the decision objective causes harmful approvals and missed useful corrections in tire mismatch.
+The revision12 experiment investigates an unresolved mechanism: whether changing local-geometry prediction or the decision objective improves whole-episode tracking, including tire mismatch. Its completed outcome is summarized below; attribution to individual removed objective terms remains unresolved.
 
-The proposed development design has three gate arms: the legacy gate, a preview-only predictor change, and a lateral-objective-only change. Each is compared with fixed −0.04 rad, fixed +0.04 rad and the frozen student as proposal sources, with a shared LQR reference. No hidden plant parameters enter the gate. These are proposed ablation arms, not completed results or direct reproductions of R1–R4.
+The development design has three gate arms: the legacy gate, a preview-only predictor change, and a lateral-objective-only change. Each is compared with fixed −0.04 rad, fixed +0.04 rad and the frozen student as proposal sources, with a shared LQR reference. No hidden plant parameters enter the gate. These are controlled ablation arms, not direct reproductions of R1–R4.
 
 A defensible ablation changes the predictor and objective separately while holding the proposal source, packet timing, candidate fusion limits, gate recovery, actuator, sensors and LQR baseline fixed. It compares whole closed-loop episodes, not only minima from privileged shadow branches. Survival, nominal tracking and exact stale fallback remain declared checks; comparisons retain simple nonlearned proposals. A privileged teacher or true-parameter predictor, if used diagnostically, must remain explicitly nondeployable.
 
 Even if that experiment succeeds, changing a model or a cost is not automatically a new algorithmic contribution. Its contribution would be evidence that a particular mechanism explains and improves selective learned assistance under the stated execution conditions. A stronger methodological claim requires a clear new rule or analysis and direct comparison with relevant existing methods. The protocol and success criteria must precede outcomes, and existing reserved results must not select the new design.
 
 ## Defensible paper wording and remaining work
+
+**Subsequent development outcome (26 October 2026):** the frozen [revision12 ablation](../../integrations/webots/results/revision12-ablation/interpretation.md) is complete. The lateral-objective gate improves the unchanged supervised student by 4.528% versus LQR, but fixed −0.04/+0.04 corrections under that gate improve by 6.864%/9.122%. Representative traces reveal additional heading/steering trade-offs. This strengthens the need to separate supervisory objective effects from learned proposal benefit; it does not establish a new learning advantage or a published-method comparison. Neither learned gate variant passes the frozen follow-up criteria, so no new teacher/training/reserved stage was opened. Primary-source verification remains blocked as described above.
 
 A supportable current claim is:
 
@@ -88,6 +90,6 @@ Before claiming a literature gap is closed:
 - Retrieve and verify the four primary sources, resolve the Kalaria identity and duplicate manuscript citations, and search for more recent directly overlapping performance/age-aware residual controllers.
 - Record each close method's actual assumptions, safety/performance objective, timing semantics, learning role and evaluated domains from its full text. Replace the qualified family-level table with a verified paper-level matrix.
 - Reproduce at least the closest feasible published method under matched sensors, actuator limits, information, timing, failures and budgets, or explicitly explain why a reproduction is unavailable. A bibliography table cannot replace this benchmark.
-- Complete the frozen predictor/objective development comparison and evaluate a selected design only on appropriately reserved new data. Establish the current student's native transfer separately if the paper claims simulator transfer.
+- The frozen predictor/objective development comparison is complete, but no learned variant qualified for reserved evaluation. A future design needs a new predeclared comparison and untouched confirmation data. Establish the current student's native transfer separately if the paper claims simulator transfer.
 
 This document completes a source-access-limited positioning record. The blocked primary-source review and missing direct literature benchmark remain open, and must not be reported as completed experimental validation.

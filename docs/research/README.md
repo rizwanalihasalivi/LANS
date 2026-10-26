@@ -2,6 +2,8 @@
 
 For present status, see the [full project audit and corrections](full-project-audit/README.md). The initial handoff below is historical.
 
+The latest [predictor/objective ablation](../../integrations/webots/results/revision12-ablation/interpretation.md) distinguishes a 4.528% student tracking gain from larger 6.864%/9.122% nonlearned gains, records heading/steering trade-offs, and stops further training under its frozen criteria.
+
 This checkpoint preserves environment work, supplied research materials, reviews and design discussions before new experiments. The updated controller is **proposed, not implemented or validated**. Existing repository code and historical results must not be presented as results of the new design.
 
 - [Design and experimental specification v0.1](specification-v0.1.md)

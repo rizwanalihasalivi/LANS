@@ -1,0 +1,5462 @@
+{
+  "audit": "independent stdlib arithmetic; project code not imported or invoked",
+  "source_commit": "c49ddc065caf9c93eb4867b91446a8037a11ffc7",
+  "run": "/workspace/LANS-webots/integrations/webots/results/revision12-ablation",
+  "verified": true,
+  "failed_checks": [],
+  "checks": {
+    "manifest_commit_equals_expected": true,
+    "protocol_manifest_and_current_match_archive": true,
+    "1080_rows_manifest_matches_protocol": true,
+    "complete_unique_balanced_grid": true,
+    "pair_shards_match_aggregate_exactly": true,
+    "all_shard_completion_records_match": true,
+    "all_seeds_and_noise_ids_match_frozen_formula": true,
+    "all_survival_values_boolean": true,
+    "all_numeric_episode_metrics_finite": true,
+    "physical_bounds": true,
+    "valid_steps_and_survival": true,
+    "penalty_formula_from_episode_rmse": true,
+    "hash_strings_valid": true,
+    "all_162_severe_comparisons_exact_logged_hash_and_scores": true,
+    "manifest_is_development_zero_training_unopened_reserved": true,
+    "all_21_source_digests_match_manifest_git_commit_and_current": true,
+    "all_9_frozen_student_artifact_digests_match": true,
+    "all_60_trace_lengths_and_metrics_match_raw_episode_rows": true,
+    "severe_archived_trace_observable_state_and_command_exact": true,
+    "existing_selection_agrees_with_independent_arithmetic": true
+  },
+  "counts": {
+    "episodes": 1080,
+    "methods": 10,
+    "pairs": 3,
+    "speeds": 3,
+    "paths": 2,
+    "regions": 6,
+    "episodes_per_method": 108,
+    "episodes_per_method_region": 18,
+    "episodes_per_method_seed": 36,
+    "episodes_per_method_region_seed": 6,
+    "survived": 1080,
+    "severe_cells": 18,
+    "severe_candidate_lqr_comparisons": 162,
+    "stored_trace_episodes": 60
+  },
+  "overall": {
+    "lqr": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08424021490387627,
+      "mean_rmse": 0.08424021490387627,
+      "mean_active_fraction": 0.0,
+      "gain_vs_lqr_percent": 0.0,
+      "paired_seed_mean_sample_sd": 6.575486056433535e-05
+    },
+    "legacy_fixed_m004": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08355875863192698,
+      "mean_rmse": 0.08355875863192698,
+      "mean_active_fraction": 0.06203292113024056,
+      "gain_vs_lqr_percent": 0.8089441280828648,
+      "paired_seed_mean_sample_sd": 3.914658526974774e-05
+    },
+    "legacy_fixed_p004": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08392361406301323,
+      "mean_rmse": 0.08392361406301321,
+      "mean_active_fraction": 0.060191414550265006,
+      "gain_vs_lqr_percent": 0.3758309985608522,
+      "paired_seed_mean_sample_sd": 4.8762824977132755e-05
+    },
+    "legacy_student": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08259318128521939,
+      "mean_rmse": 0.08259318128521936,
+      "mean_active_fraction": 0.10728482073449191,
+      "gain_vs_lqr_percent": 1.9551631255170199,
+      "paired_seed_mean_sample_sd": 5.8249302781927166e-05
+    },
+    "preview_fixed_m004": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08331619764090398,
+      "mean_rmse": 0.08331619764090398,
+      "mean_active_fraction": 0.07296611356740998,
+      "gain_vs_lqr_percent": 1.096883791223303,
+      "paired_seed_mean_sample_sd": 8.041525591633389e-06
+    },
+    "preview_fixed_p004": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08366838202532537,
+      "mean_rmse": 0.08366838202532535,
+      "mean_active_fraction": 0.06739799104123462,
+      "gain_vs_lqr_percent": 0.6788122266822402,
+      "paired_seed_mean_sample_sd": 8.588308440115905e-05
+    },
+    "preview_student": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08211425327831207,
+      "mean_rmse": 0.08211425327831207,
+      "mean_active_fraction": 0.11506879045210268,
+      "gain_vs_lqr_percent": 2.5236896985484565,
+      "paired_seed_mean_sample_sd": 6.828111310012527e-05
+    },
+    "lateral_fixed_m004": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.07845763568890096,
+      "mean_rmse": 0.07845763568890095,
+      "mean_active_fraction": 0.17942169717370232,
+      "gain_vs_lqr_percent": 6.86439276249903,
+      "paired_seed_mean_sample_sd": 9.412179615997776e-05
+    },
+    "lateral_fixed_p004": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.0765555371359868,
+      "mean_rmse": 0.07655553713598681,
+      "mean_active_fraction": 0.19166384125833902,
+      "gain_vs_lqr_percent": 9.122338750747737,
+      "paired_seed_mean_sample_sd": 4.633311228719519e-05
+    },
+    "lateral_student": {
+      "episodes": 108,
+      "survived": 108,
+      "mean_penalized_rmse": 0.08042609854034798,
+      "mean_rmse": 0.08042609854034798,
+      "mean_active_fraction": 0.16496121984846462,
+      "gain_vs_lqr_percent": 4.527666943728075,
+      "paired_seed_mean_sample_sd": 0.0004623099772044316
+    }
+  },
+  "by_region": {
+    "nominal": {
+      "lqr": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06266488278233645,
+        "mean_rmse": 0.06266488278233645,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": -3.5376712195571915
+      },
+      "legacy_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06175970462279804,
+        "mean_rmse": 0.061759704622798055,
+        "mean_active_fraction": 0.0803067197576629,
+        "gain_vs_lqr_percent": 1.4444743520585588,
+        "gain_vs_legacy_student_percent": -2.042096114071972
+      },
+      "legacy_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.062158330161439776,
+        "mean_rmse": 0.062158330161439776,
+        "mean_active_fraction": 0.08108941412097448,
+        "gain_vs_lqr_percent": 0.8083516610988672,
+        "gain_vs_legacy_student_percent": -2.7007227343908173
+      },
+      "legacy_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06052375144642012,
+        "mean_rmse": 0.06052375144642011,
+        "mean_active_fraction": 0.1363316970983771,
+        "gain_vs_lqr_percent": 3.416796203630435,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.061364802735051266,
+        "mean_rmse": 0.061364802735051266,
+        "mean_active_fraction": 0.09639238629007342,
+        "gain_vs_lqr_percent": 2.074654877758173,
+        "gain_vs_legacy_student_percent": -1.389621873283428
+      },
+      "preview_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06192171551320136,
+        "mean_rmse": 0.06192171551320136,
+        "mean_active_fraction": 0.08972527479309456,
+        "gain_vs_lqr_percent": 1.1859389759276324,
+        "gain_vs_legacy_student_percent": -2.309777621796656
+      },
+      "preview_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06002961957149834,
+        "mean_rmse": 0.060029619571498355,
+        "mean_active_fraction": 0.14587420217760816,
+        "gain_vs_lqr_percent": 4.205326961181071,
+        "gain_vs_legacy_student_percent": 0.8164263832178612
+      },
+      "lateral_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.057549807557037966,
+        "mean_rmse": 0.05754980755703798,
+        "mean_active_fraction": 0.20034267030734404,
+        "gain_vs_lqr_percent": 8.16258644106215,
+        "gain_vs_legacy_student_percent": 4.913680692801893
+      },
+      "lateral_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.056821954683789984,
+        "mean_rmse": 0.05682195468379002,
+        "mean_active_fraction": 0.2033537281147759,
+        "gain_vs_lqr_percent": 9.32408685553854,
+        "gain_vs_legacy_student_percent": 6.1162711731562505
+      },
+      "lateral_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.05856213536051988,
+        "mean_rmse": 0.05856213536051989,
+        "mean_active_fraction": 0.20443690131869163,
+        "gain_vs_lqr_percent": 6.547123747230604,
+        "gain_vs_legacy_student_percent": 3.2410682401879836
+      }
+    },
+    "tire_mismatch": {
+      "lqr": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.17492710402750222,
+        "mean_rmse": 0.1749271040275022,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": -1.34073139832018
+      },
+      "legacy_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.17393560208626674,
+        "mean_rmse": 0.1739356020862667,
+        "mean_active_fraction": 0.04894703110659919,
+        "gain_vs_lqr_percent": 0.5668086410894901,
+        "gain_vs_legacy_student_percent": -0.7663233758112111
+      },
+      "legacy_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.17451238596500573,
+        "mean_rmse": 0.17451238596500573,
+        "mean_active_fraction": 0.04260795988950358,
+        "gain_vs_lqr_percent": 0.2370805055066173,
+        "gain_vs_legacy_student_percent": -1.1004722800369393
+      },
+      "legacy_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.17261282962321486,
+        "mean_rmse": 0.17261282962321486,
+        "mean_active_fraction": 0.10674932439912778,
+        "gain_vs_lqr_percent": 1.322993607624983,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.17370997768217447,
+        "mean_rmse": 0.17370997768217447,
+        "mean_active_fraction": 0.056906538445397344,
+        "gain_vs_lqr_percent": 0.6957905992294903,
+        "gain_vs_legacy_student_percent": -0.6356121160602599
+      },
+      "preview_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.1739927463805716,
+        "mean_rmse": 0.1739927463805716,
+        "mean_active_fraction": 0.04623310095815594,
+        "gain_vs_lqr_percent": 0.534141151038387,
+        "gain_vs_legacy_student_percent": -0.7994288491584726
+      },
+      "preview_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.17182626704796997,
+        "mean_rmse": 0.17182626704796997,
+        "mean_active_fraction": 0.11082079927794118,
+        "gain_vs_lqr_percent": 1.7726452380099653,
+        "gain_vs_legacy_student_percent": 0.45568025097661247
+      },
+      "lateral_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.16026772449158622,
+        "mean_rmse": 0.16026772449158624,
+        "mean_active_fraction": 0.23847269577423547,
+        "gain_vs_lqr_percent": 8.380279098207241,
+        "gain_vs_legacy_student_percent": 7.151904733023589
+      },
+      "lateral_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.15447106642299321,
+        "mean_rmse": 0.15447106642299324,
+        "mean_active_fraction": 0.2769698216102269,
+        "gain_vs_lqr_percent": 11.694035477368269,
+        "gain_vs_legacy_student_percent": 10.510089684423868
+      },
+      "lateral_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.16735148969784056,
+        "mean_rmse": 0.16735148969784058,
+        "mean_active_fraction": 0.16172181850429534,
+        "gain_vs_lqr_percent": 4.330726431319998,
+        "gain_vs_legacy_student_percent": 3.048058442039876
+      }
+    },
+    "low_friction": {
+      "lqr": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.08100467730216884,
+        "mean_rmse": 0.08100467730216881,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": -2.202003271072924
+      },
+      "legacy_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.08024616878361275,
+        "mean_rmse": 0.08024616878361274,
+        "mean_active_fraction": 0.07023845373375467,
+        "gain_vs_lqr_percent": 0.9363761992738454,
+        "gain_vs_legacy_student_percent": -1.2450080372615204
+      },
+      "legacy_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.08067932490802474,
+        "mean_rmse": 0.08067932490802471,
+        "mean_active_fraction": 0.06770947045158869,
+        "gain_vs_lqr_percent": 0.4016464295394411,
+        "gain_vs_legacy_student_percent": -1.7915125740168771
+      },
+      "legacy_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.0792593830938109,
+        "mean_rmse": 0.07925938309381088,
+        "mean_active_fraction": 0.12333839642327946,
+        "gain_vs_lqr_percent": 2.154559793933291,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.07998772724978459,
+        "mean_rmse": 0.07998772724978459,
+        "mean_active_fraction": 0.08220140824636592,
+        "gain_vs_lqr_percent": 1.2554213981876132,
+        "gain_vs_legacy_student_percent": -0.9189374526314703
+      },
+      "preview_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.08040666685419971,
+        "mean_rmse": 0.08040666685419971,
+        "mean_active_fraction": 0.07634823842448984,
+        "gain_vs_lqr_percent": 0.7382418742789297,
+        "gain_vs_legacy_student_percent": -1.4475052865739424
+      },
+      "preview_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.07884410324838226,
+        "mean_rmse": 0.07884410324838224,
+        "mean_active_fraction": 0.13229775222543336,
+        "gain_vs_lqr_percent": 2.667221357758235,
+        "gain_vs_legacy_student_percent": 0.5239503882299029
+      },
+      "lateral_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.07360932150817284,
+        "mean_rmse": 0.07360932150817284,
+        "mean_active_fraction": 0.2078867199019835,
+        "gain_vs_lqr_percent": 9.12954170091854,
+        "gain_vs_legacy_student_percent": 7.128571236733809
+      },
+      "lateral_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.07140494561889674,
+        "mean_rmse": 0.07140494561889674,
+        "mean_active_fraction": 0.22068641827190116,
+        "gain_vs_lqr_percent": 11.850836276357933,
+        "gain_vs_legacy_student_percent": 9.909788807739906
+      },
+      "lateral_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.0773301832658002,
+        "mean_rmse": 0.07733018326580024,
+        "mean_active_fraction": 0.18913644146764189,
+        "gain_vs_lqr_percent": 4.5361504529692915,
+        "gain_vs_legacy_student_percent": 2.43403336325154
+      }
+    },
+    "sensor_stress": {
+      "lqr": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.060942728355904544,
+        "mean_rmse": 0.060942728355904544,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": -2.500932596474108
+      },
+      "legacy_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.060484684134279175,
+        "mean_rmse": 0.060484684134279175,
+        "mean_active_fraction": 0.08291711268382601,
+        "gain_vs_lqr_percent": 0.7515978263237539,
+        "gain_vs_legacy_student_percent": -1.7305378151174327
+      },
+      "legacy_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.060836298855811016,
+        "mean_rmse": 0.060836298855811016,
+        "mean_active_fraction": 0.08097360632336971,
+        "gain_vs_lqr_percent": 0.17463855486085345,
+        "gain_vs_legacy_student_percent": -2.3219264490687284
+      },
+      "legacy_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.05945577938868518,
+        "mean_rmse": 0.059455779388685195,
+        "mean_active_fraction": 0.14238714412862918,
+        "gain_vs_lqr_percent": 2.4399120409175055,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.0602222544238156,
+        "mean_rmse": 0.0602222544238156,
+        "mean_active_fraction": 0.09622146938133741,
+        "gain_vs_lqr_percent": 1.1822147638047822,
+        "gain_vs_legacy_student_percent": -1.2891514382810028
+      },
+      "preview_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06072957191766412,
+        "mean_rmse": 0.060729571917664114,
+        "mean_active_fraction": 0.09097346627540588,
+        "gain_vs_lqr_percent": 0.34976517131886853,
+        "gain_vs_legacy_student_percent": -2.1424200339746124
+      },
+      "preview_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.058912294527570755,
+        "mean_rmse": 0.058912294527570755,
+        "mean_active_fraction": 0.1519168953483757,
+        "gain_vs_lqr_percent": 3.3317081186061905,
+        "gain_vs_legacy_student_percent": 0.9140992964896787
+      },
+      "lateral_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.05766670425564449,
+        "mean_rmse": 0.05766670425564448,
+        "mean_active_fraction": 0.19466537889003396,
+        "gain_vs_lqr_percent": 5.375578331721752,
+        "gain_vs_legacy_student_percent": 3.0090853259946724
+      },
+      "lateral_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.056015617059868544,
+        "mean_rmse": 0.05601561705986856,
+        "mean_active_fraction": 0.1996627232008489,
+        "gain_vs_lqr_percent": 8.084822306053889,
+        "gain_vs_legacy_student_percent": 5.786085665998892
+      },
+      "lateral_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.05794082506857331,
+        "mean_rmse": 0.05794082506857331,
+        "mean_active_fraction": 0.21881102839261207,
+        "gain_vs_lqr_percent": 4.9257776412637275,
+        "gain_vs_legacy_student_percent": 2.548035423449817
+      }
+    },
+    "latency20": {
+      "lqr": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06294562177118315,
+        "mean_rmse": 0.06294562177118315,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": -3.6123690219552635
+      },
+      "legacy_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06197011698044272,
+        "mean_rmse": 0.0619701169804427,
+        "mean_active_fraction": 0.08978820949960056,
+        "gain_vs_lqr_percent": 1.5497579709142295,
+        "gain_vs_legacy_student_percent": -2.0066280741844458
+      },
+      "legacy_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06239906930363559,
+        "mean_rmse": 0.062399069303635604,
+        "mean_active_fraction": 0.08876803651615356,
+        "gain_vs_lqr_percent": 0.8682930633910692,
+        "gain_vs_legacy_student_percent": -2.712710008922469
+      },
+      "legacy_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.060751068975022755,
+        "mean_rmse": 0.06075106897502274,
+        "mean_active_fraction": 0.13490236235753797,
+        "gain_vs_lqr_percent": 3.486426433498311,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06165614857043549,
+        "mean_rmse": 0.06165614857043548,
+        "mean_active_fraction": 0.10607487904128576,
+        "gain_vs_lqr_percent": 2.048551057983176,
+        "gain_vs_legacy_student_percent": -1.4898167401545663
+      },
+      "preview_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06200331630215287,
+        "mean_rmse": 0.06200331630215286,
+        "mean_active_fraction": 0.10110786579626145,
+        "gain_vs_lqr_percent": 1.4970151100511917,
+        "gain_vs_legacy_student_percent": -2.061276201814593
+      },
+      "preview_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06011696009028858,
+        "mean_rmse": 0.06011696009028858,
+        "mean_active_fraction": 0.14950309368325765,
+        "gain_vs_lqr_percent": 4.4938179992520935,
+        "gain_vs_legacy_student_percent": 1.0437822666048628
+      },
+      "lateral_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.05869598113680173,
+        "mean_rmse": 0.05869598113680173,
+        "mean_active_fraction": 0.235162718168617,
+        "gain_vs_lqr_percent": 6.751288675532521,
+        "gain_vs_legacy_student_percent": 3.3828011142749683
+      },
+      "lateral_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.05766336384620982,
+        "mean_rmse": 0.05766336384620985,
+        "mean_active_fraction": 0.24931035635228127,
+        "gain_vs_lqr_percent": 8.39177972405315,
+        "gain_vs_legacy_student_percent": 5.0825527532403045
+      },
+      "lateral_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.058415682665191385,
+        "mean_rmse": 0.05841568266519137,
+        "mean_active_fraction": 0.21566112940754678,
+        "gain_vs_lqr_percent": 7.196591245787961,
+        "gain_vs_legacy_student_percent": 3.8441896566322864
+      }
+    },
+    "latency100": {
+      "lqr": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "legacy_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "legacy_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "legacy_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "preview_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "lateral_fixed_m004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "lateral_fixed_p004": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      },
+      "lateral_student": {
+        "episodes": 18,
+        "survived": 18,
+        "mean_penalized_rmse": 0.06295627518416248,
+        "mean_rmse": 0.06295627518416246,
+        "mean_active_fraction": 0.0,
+        "gain_vs_lqr_percent": 0.0,
+        "gain_vs_legacy_student_percent": 0.0
+      }
+    }
+  },
+  "by_seed": {
+    "701": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08426693230177232,
+        "mean_rmse": 0.0842669323017723,
+        "mean_active_fraction": 0.0
+      },
+      "legacy_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08360395080952582,
+        "mean_rmse": 0.0836039508095258,
+        "mean_active_fraction": 0.06271724548727481
+      },
+      "legacy_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08397078317804334,
+        "mean_rmse": 0.08397078317804335,
+        "mean_active_fraction": 0.06073142470271378
+      },
+      "legacy_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08266000510086405,
+        "mean_rmse": 0.08266000510086405,
+        "mean_active_fraction": 0.10788162073188401
+      },
+      "preview_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08331915400037275,
+        "mean_rmse": 0.08331915400037275,
+        "mean_active_fraction": 0.07396227046138731
+      },
+      "preview_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08374712690506209,
+        "mean_rmse": 0.08374712690506209,
+        "mean_active_fraction": 0.06791200306947158
+      },
+      "preview_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.0821908379913885,
+        "mean_rmse": 0.08219083799138849,
+        "mean_active_fraction": 0.1158424127140384
+      },
+      "lateral_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.0783515910376341,
+        "mean_rmse": 0.0783515910376341,
+        "mean_active_fraction": 0.17804087188260354
+      },
+      "lateral_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.07660900905561077,
+        "mean_rmse": 0.07660900905561079,
+        "mean_active_fraction": 0.18985273766709146
+      },
+      "lateral_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08073521840345066,
+        "mean_rmse": 0.08073521840345069,
+        "mean_active_fraction": 0.16018320125148758
+      }
+    },
+    "802": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.084165306735596,
+        "mean_rmse": 0.08416530673559597,
+        "mean_active_fraction": 0.0
+      },
+      "legacy_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08353532263171065,
+        "mean_rmse": 0.08353532263171064,
+        "mean_active_fraction": 0.061649343445650845
+      },
+      "legacy_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08387340021635618,
+        "mean_rmse": 0.08387340021635616,
+        "mean_active_fraction": 0.05832448633730044
+      },
+      "legacy_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08255314257412578,
+        "mean_rmse": 0.08255314257412578,
+        "mean_active_fraction": 0.10595313154842916
+      },
+      "preview_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08330709639827732,
+        "mean_rmse": 0.08330709639827732,
+        "mean_active_fraction": 0.07282016270060328
+      },
+      "preview_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08357680482396254,
+        "mean_rmse": 0.08357680482396251,
+        "mean_active_fraction": 0.06554239413275939
+      },
+      "preview_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.0820597314209053,
+        "mean_rmse": 0.08205973142090528,
+        "mean_active_fraction": 0.1140273471896314
+      },
+      "lateral_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.07853126896952557,
+        "mean_rmse": 0.07853126896952557,
+        "mean_active_fraction": 0.1818532907853377
+      },
+      "lateral_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.07653032520144157,
+        "mean_rmse": 0.07653032520144157,
+        "mean_active_fraction": 0.1925099726018709
+      },
+      "lateral_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08064845265430208,
+        "mean_rmse": 0.08064845265430208,
+        "mean_active_fraction": 0.15821963859839616
+      }
+    },
+    "903": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08428840567426053,
+        "mean_rmse": 0.08428840567426053,
+        "mean_active_fraction": 0.0
+      },
+      "legacy_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08353700245454448,
+        "mean_rmse": 0.08353700245454448,
+        "mean_active_fraction": 0.061732174457795996
+      },
+      "legacy_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08392665879464017,
+        "mean_rmse": 0.08392665879464016,
+        "mean_active_fraction": 0.061518332610780796
+      },
+      "legacy_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.0825663961806683,
+        "mean_rmse": 0.08256639618066829,
+        "mean_active_fraction": 0.10801970992316257
+      },
+      "preview_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08332234252406186,
+        "mean_rmse": 0.08332234252406186,
+        "mean_active_fraction": 0.07211590754023935
+      },
+      "preview_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08368121434695146,
+        "mean_rmse": 0.08368121434695144,
+        "mean_active_fraction": 0.06873957592147288
+      },
+      "preview_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.08209219042264242,
+        "mean_rmse": 0.08209219042264242,
+        "mean_active_fraction": 0.11533661145263825
+      },
+      "lateral_fixed_m004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.0784900470595432,
+        "mean_rmse": 0.0784900470595432,
+        "mean_active_fraction": 0.17837092885316574
+      },
+      "lateral_fixed_p004": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.07652727715090807,
+        "mean_rmse": 0.07652727715090807,
+        "mean_active_fraction": 0.1926288135060547
+      },
+      "lateral_student": {
+        "episodes": 36,
+        "survived": 36,
+        "mean_penalized_rmse": 0.07989462456329116,
+        "mean_rmse": 0.07989462456329116,
+        "mean_active_fraction": 0.17648081969551008
+      }
+    }
+  },
+  "by_region_seed": {
+    "nominal": {
+      "701": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06253958270071822,
+          "mean_rmse": 0.06253958270071822,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -3.619391741622444
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06163281173289603,
+          "mean_rmse": 0.06163281173289603,
+          "mean_active_fraction": 0.08023838537135877,
+          "gain_vs_lqr_percent": 1.4499152835117513,
+          "gain_vs_legacy_student_percent": -2.116998344078747
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06200149017373466,
+          "mean_rmse": 0.062001490173734665,
+          "mean_active_fraction": 0.08258857772605023,
+          "gain_vs_lqr_percent": 0.8604031299002869,
+          "gain_vs_legacy_student_percent": -2.727847251893885
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06035509536348393,
+          "mean_rmse": 0.06035509536348391,
+          "mean_active_fraction": 0.14211317850390034,
+          "gain_vs_lqr_percent": 3.49296756214077,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06122339075992698,
+          "mean_rmse": 0.06122339075992695,
+          "mean_active_fraction": 0.09734881656147404,
+          "gain_vs_lqr_percent": 2.104574229556096,
+          "gain_vs_legacy_student_percent": -1.4386447262054807
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06178156351653944,
+          "mean_rmse": 0.06178156351653944,
+          "mean_active_fraction": 0.09104910641803264,
+          "gain_vs_lqr_percent": 1.21206306701191,
+          "gain_vs_legacy_student_percent": -2.3634593640598496
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05990862139563607,
+          "mean_rmse": 0.05990862139563605,
+          "mean_active_fraction": 0.15111421305482495,
+          "gain_vs_lqr_percent": 4.206873777320445,
+          "gain_vs_legacy_student_percent": 0.7397452777748176
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.057371319197685094,
+          "mean_rmse": 0.05737131919768509,
+          "mean_active_fraction": 0.19597576211253476,
+          "gain_vs_lqr_percent": 8.263987829541064,
+          "gain_vs_legacy_student_percent": 4.943702180949712
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05645509454943601,
+          "mean_rmse": 0.056455094549436036,
+          "mean_active_fraction": 0.2007668751150055,
+          "gain_vs_lqr_percent": 9.729019428222587,
+          "gain_vs_legacy_student_percent": 6.461759012326076
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.057853195738602765,
+          "mean_rmse": 0.057853195738602765,
+          "mean_active_fraction": 0.2046851925911114,
+          "gain_vs_lqr_percent": 7.493473348778247,
+          "gain_vs_legacy_student_percent": 4.1452997627021615
+        }
+      },
+      "802": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0625007438098916,
+          "mean_rmse": 0.06250074380989158,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -3.572741327209776
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06166894464631071,
+          "mean_rmse": 0.06166894464631074,
+          "mean_active_fraction": 0.07561218952790638,
+          "gain_vs_lqr_percent": 1.3308628231865018,
+          "gain_vs_legacy_student_percent": -2.1943302179308195
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.061934215174578235,
+          "mean_rmse": 0.06193421517457823,
+          "mean_active_fraction": 0.08201798244339736,
+          "gain_vs_lqr_percent": 0.9064350290559265,
+          "gain_vs_legacy_student_percent": -2.6339217192664623
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060344780884419746,
+          "mean_rmse": 0.06034478088441972,
+          "mean_active_fraction": 0.13248483351762694,
+          "gain_vs_lqr_percent": 3.4494996284038444,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.061258395334194436,
+          "mean_rmse": 0.061258395334194464,
+          "mean_active_fraction": 0.09157563216701388,
+          "gain_vs_lqr_percent": 1.9877339051772067,
+          "gain_vs_legacy_student_percent": -1.5139908313273425
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06171329159238123,
+          "mean_rmse": 0.06171329159238123,
+          "mean_active_fraction": 0.09268252474861154,
+          "gain_vs_lqr_percent": 1.2599085538974655,
+          "gain_vs_legacy_student_percent": -2.267819499722165
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.059846356911765146,
+          "mean_rmse": 0.05984635691176519,
+          "mean_active_fraction": 0.14397715613572443,
+          "gain_vs_lqr_percent": 4.246968494007517,
+          "gain_vs_legacy_student_percent": 0.8259603653367267
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.057558249835352605,
+          "mean_rmse": 0.05755824983535263,
+          "mean_active_fraction": 0.1943040921730184,
+          "gain_vs_lqr_percent": 7.907896247719173,
+          "gain_vs_legacy_student_percent": 4.617683597864531
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05680982903353233,
+          "mean_rmse": 0.05680982903353233,
+          "mean_active_fraction": 0.21150996011623888,
+          "gain_vs_lqr_percent": 9.10535527972165,
+          "gain_vs_legacy_student_percent": 5.857924743579767
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.058723875921240544,
+          "mean_rmse": 0.058723875921240544,
+          "mean_active_fraction": 0.19202681828306703,
+          "gain_vs_lqr_percent": 6.042916705342171,
+          "gain_vs_legacy_student_percent": 2.6860731606330175
+        }
+      },
+      "903": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06295432183639954,
+          "mean_rmse": 0.06295432183639955,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -3.4218770961891645
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06197735748918739,
+          "mean_rmse": 0.061977357489187375,
+          "mean_active_fraction": 0.08506958437372354,
+          "gain_vs_lqr_percent": 1.5518622371169455,
+          "gain_vs_legacy_student_percent": -1.8169120406159052
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06253928513600646,
+          "mean_rmse": 0.06253928513600643,
+          "mean_active_fraction": 0.07866168219347584,
+          "gain_vs_lqr_percent": 0.6592664145785689,
+          "gain_vs_legacy_student_percent": -2.7400513951672636
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0608713780913567,
+          "mean_rmse": 0.0608713780913567,
+          "mean_active_fraction": 0.13439707927360398,
+          "gain_vs_lqr_percent": 3.3086588565846595,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06161262211103239,
+          "mean_rmse": 0.061612622111032384,
+          "mean_active_fraction": 0.10025271014173233,
+          "gain_vs_lqr_percent": 2.1312273506080293,
+          "gain_vs_legacy_student_percent": -1.2177217650029597
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06227029143068339,
+          "mean_rmse": 0.062270291430683404,
+          "mean_active_fraction": 0.08544419321263952,
+          "gain_vs_lqr_percent": 1.086550352323311,
+          "gain_vs_legacy_student_percent": -2.2981463262211395
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060333880407093816,
+          "mean_rmse": 0.06033388040709383,
+          "mean_active_fraction": 0.14253123734227513,
+          "gain_vs_lqr_percent": 4.162448824586674,
+          "gain_vs_legacy_student_percent": 0.8830056113666354
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05771985363807621,
+          "mean_rmse": 0.057719853638076225,
+          "mean_active_fraction": 0.21074815663647897,
+          "gain_vs_lqr_percent": 8.314708260897845,
+          "gain_vs_legacy_student_percent": 5.177350262303293
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05720094046840163,
+          "mean_rmse": 0.05720094046840168,
+          "mean_active_fraction": 0.19778434911308337,
+          "gain_vs_lqr_percent": 9.138977595452971,
+          "gain_vs_legacy_student_percent": 6.0298250804284725
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05910933442171636,
+          "mean_rmse": 0.05910933442171636,
+          "mean_active_fraction": 0.21659869308189647,
+          "gain_vs_lqr_percent": 6.10758293080372,
+          "gain_vs_legacy_student_percent": 2.8946998160544877
+        }
+      }
+    },
+    "tire_mismatch": {
+      "701": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17417253516521916,
+          "mean_rmse": 0.17417253516521922,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -1.252861261602358
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1731924610554271,
+          "mean_rmse": 0.1731924610554271,
+          "mean_active_fraction": 0.052705792174898354,
+          "gain_vs_lqr_percent": 0.5627030167887082,
+          "gain_vs_legacy_student_percent": -0.6831083566984363
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17369832139227517,
+          "mean_rmse": 0.17369832139227526,
+          "mean_active_fraction": 0.041698035036867274,
+          "gain_vs_lqr_percent": 0.27226667654240144,
+          "gain_vs_legacy_student_percent": -0.9771834613413046
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17201739584940479,
+          "mean_rmse": 0.1720173958494048,
+          "mean_active_fraction": 0.10564188871627384,
+          "gain_vs_lqr_percent": 1.2373588716326722,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17299261708517058,
+          "mean_rmse": 0.17299261708517066,
+          "mean_active_fraction": 0.06058413958233994,
+          "gain_vs_lqr_percent": 0.6774421001160239,
+          "gain_vs_legacy_student_percent": -0.566931751844195
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17330270874463918,
+          "mean_rmse": 0.17330270874463918,
+          "mean_active_fraction": 0.043488983115057896,
+          "gain_vs_lqr_percent": 0.4994050409583032,
+          "gain_vs_legacy_student_percent": -0.7471993683473989
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17107207131063307,
+          "mean_rmse": 0.17107207131063315,
+          "mean_active_fraction": 0.11022248541744643,
+          "gain_vs_lqr_percent": 1.780110653866874,
+          "gain_vs_legacy_student_percent": 0.5495517090604707
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1592877089039275,
+          "mean_rmse": 0.15928770890392752,
+          "mean_active_fraction": 0.23833039232609318,
+          "gain_vs_lqr_percent": 8.546023773020243,
+          "gain_vs_legacy_student_percent": 7.400232332677383
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.15394252634981262,
+          "mean_rmse": 0.15394252634981265,
+          "mean_active_fraction": 0.2693695235311912,
+          "gain_vs_lqr_percent": 11.614924704527303,
+          "gain_vs_legacy_student_percent": 10.507582335112247
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.168083614604567,
+          "mean_rmse": 0.1680836146045671,
+          "mean_active_fraction": 0.16019655897880253,
+          "gain_vs_lqr_percent": 3.4959131500705567,
+          "gain_vs_legacy_student_percent": 2.2868508300646955
+        }
+      },
+      "802": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1749952016964017,
+          "mean_rmse": 0.17499520169640168,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -1.3532657308234777
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17399887358935365,
+          "mean_rmse": 0.1739988735893536,
+          "mean_active_fraction": 0.04870475762397378,
+          "gain_vs_lqr_percent": 0.5693459577117893,
+          "gain_vs_legacy_student_percent": -0.776215009376146
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1747177267908547,
+          "mean_rmse": 0.17471772679085462,
+          "mean_active_fraction": 0.04208475968623939,
+          "gain_vs_lqr_percent": 0.15856143646063398,
+          "gain_vs_legacy_student_percent": -1.1925585367809204
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17265867106952262,
+          "mean_rmse": 0.17265867106952262,
+          "mean_active_fraction": 0.1055793656083598,
+          "gain_vs_lqr_percent": 1.3351969678189892,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17371546982204247,
+          "mean_rmse": 0.17371546982204245,
+          "mean_active_fraction": 0.05726160750755832,
+          "gain_vs_lqr_percent": 0.7312954080760629,
+          "gain_vs_legacy_student_percent": -0.6120739525988358
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17405960465469797,
+          "mean_rmse": 0.17405960465469794,
+          "mean_active_fraction": 0.045125335331794046,
+          "gain_vs_lqr_percent": 0.53464154024457,
+          "gain_vs_legacy_student_percent": -0.8113890698320311
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17191400088156458,
+          "mean_rmse": 0.17191400088156453,
+          "mean_active_fraction": 0.11010589619967744,
+          "gain_vs_lqr_percent": 1.7607344572696801,
+          "gain_vs_legacy_student_percent": 0.4312961424672338
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1605202134471728,
+          "mean_rmse": 0.1605202134471728,
+          "mean_active_fraction": 0.24003983391355918,
+          "gain_vs_lqr_percent": 8.271648656025148,
+          "gain_vs_legacy_student_percent": 7.03032031183778
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.15462721756988385,
+          "mean_rmse": 0.15462721756988387,
+          "mean_active_fraction": 0.2782479358829089,
+          "gain_vs_lqr_percent": 11.6391672051981,
+          "gain_vs_legacy_student_percent": 10.443410335515813
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.16792307578006915,
+          "mean_rmse": 0.16792307578006913,
+          "mean_active_fraction": 0.1543555135126821,
+          "gain_vs_lqr_percent": 4.041325617945769,
+          "gain_vs_legacy_student_percent": 2.742749761780941
+        }
+      },
+      "903": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17561357522088575,
+          "mean_rmse": 0.17561357522088575,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -1.4155226304620545
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17461547161401947,
+          "mean_rmse": 0.17461547161401947,
+          "mean_active_fraction": 0.04543054352092544,
+          "gain_vs_lqr_percent": 0.5683521935083155,
+          "gain_vs_legacy_student_percent": -0.8391252830339013
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17512110971188735,
+          "mean_rmse": 0.17512110971188735,
+          "mean_active_fraction": 0.044041084945404076,
+          "gain_vs_lqr_percent": 0.28042564954273963,
+          "gain_vs_legacy_student_percent": -1.1311274923884171
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17316242195071715,
+          "mean_rmse": 0.17316242195071715,
+          "mean_active_fraction": 0.10902671887274967,
+          "gain_vs_lqr_percent": 1.3957652573757735,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1744218461393103,
+          "mean_rmse": 0.1744218461393103,
+          "mean_active_fraction": 0.05287386824629376,
+          "gain_vs_lqr_percent": 0.6786087465484906,
+          "gain_vs_legacy_student_percent": -0.7273080235338751
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1746159257423777,
+          "mean_rmse": 0.1746159257423777,
+          "mean_active_fraction": 0.05008498442761591,
+          "gain_vs_lqr_percent": 0.5680935982615342,
+          "gain_vs_legacy_student_percent": -0.839387538754922
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.17249272895171228,
+          "mean_rmse": 0.17249272895171228,
+          "mean_active_fraction": 0.11213401621669968,
+          "gain_vs_lqr_percent": 1.7771099217404402,
+          "gain_vs_legacy_student_percent": 0.38674268438880816
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.1609952511236584,
+          "mean_rmse": 0.16099525112365842,
+          "mean_active_fraction": 0.23704786108305406,
+          "gain_vs_lqr_percent": 8.324142412589977,
+          "gain_vs_legacy_student_percent": 7.0264499017700235
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.15484345534928315,
+          "mean_rmse": 0.15484345534928315,
+          "mean_active_fraction": 0.2832920054165805,
+          "gain_vs_lqr_percent": 11.82717215652495,
+          "gain_vs_legacy_student_percent": 10.579065824482214
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.16604777870888549,
+          "mean_rmse": 0.16604777870888554,
+          "mean_active_fraction": 0.17061338302140142,
+          "gain_vs_lqr_percent": 5.447071218707585,
+          "gain_vs_legacy_student_percent": 4.1086531140437215
+        }
+      }
+    },
+    "low_friction": {
+      "701": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08102564127428645,
+          "mean_rmse": 0.08102564127428642,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -2.0970119401270044
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08018363578377523,
+          "mean_rmse": 0.08018363578377519,
+          "mean_active_fraction": 0.07279139186407733,
+          "gain_vs_lqr_percent": 1.039183988264753,
+          "gain_vs_legacy_student_percent": -1.0360361395484519
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08081318295087696,
+          "mean_rmse": 0.08081318295087693,
+          "mean_active_fraction": 0.0669478169893087,
+          "gain_vs_lqr_percent": 0.26221122112478257,
+          "gain_vs_legacy_student_percent": -1.8293021183868825
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07936142276308979,
+          "mean_rmse": 0.07936142276308979,
+          "mean_active_fraction": 0.12733528080708645,
+          "gain_vs_lqr_percent": 2.0539405613131563,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0798992670456347,
+          "mean_rmse": 0.07989926704563467,
+          "mean_active_fraction": 0.08240548186658965,
+          "gain_vs_lqr_percent": 1.390145404513084,
+          "gain_vs_legacy_student_percent": -0.6777150204961544
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08064727635689618,
+          "mean_rmse": 0.08064727635689618,
+          "mean_active_fraction": 0.0734720733915895,
+          "gain_vs_lqr_percent": 0.46696935863726563,
+          "gain_vs_legacy_student_percent": -1.620250178282381
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07895909491887014,
+          "mean_rmse": 0.07895909491887008,
+          "mean_active_fraction": 0.13552172044223634,
+          "gain_vs_lqr_percent": 2.550484418161748,
+          "gain_vs_legacy_student_percent": 0.5069564408146741
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07341551492057546,
+          "mean_rmse": 0.07341551492057545,
+          "mean_active_fraction": 0.20127435766407972,
+          "gain_vs_lqr_percent": 9.392244521643873,
+          "gain_vs_legacy_student_percent": 7.492189070581664
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0713468436715237,
+          "mean_rmse": 0.07134684367152372,
+          "mean_active_fraction": 0.22384910624712662,
+          "gain_vs_lqr_percent": 11.945351435107147,
+          "gain_vs_legacy_student_percent": 10.098834940864473
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07731317563672,
+          "mean_rmse": 0.07731317563672005,
+          "mean_active_fraction": 0.1885759557490211,
+          "gain_vs_lqr_percent": 4.581840487999457,
+          "gain_vs_legacy_student_percent": 2.580910289983375
+        }
+      },
+      "802": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08121372721554025,
+          "mean_rmse": 0.08121372721554025,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -1.7847093919197998
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08072295679562466,
+          "mean_rmse": 0.08072295679562466,
+          "mean_active_fraction": 0.06815093106734778,
+          "gain_vs_lqr_percent": 0.6042949101610509,
+          "gain_vs_legacy_student_percent": -1.1696295737422113
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08095302672177888,
+          "mean_rmse": 0.08095302672177886,
+          "mean_active_fraction": 0.06461977689932098,
+          "gain_vs_lqr_percent": 0.32100545400344915,
+          "gain_vs_legacy_student_percent": -1.4579749234301762
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07978971271886091,
+          "mean_rmse": 0.07978971271886089,
+          "mean_active_fraction": 0.11235739319372594,
+          "gain_vs_lqr_percent": 1.7534160116799227,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0805329379559674,
+          "mean_rmse": 0.0805329379559674,
+          "mean_active_fraction": 0.08077760658694472,
+          "gain_vs_lqr_percent": 0.8382687051981298,
+          "gain_vs_legacy_student_percent": -0.9314800264104744
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08054519620224304,
+          "mean_rmse": 0.08054519620224303,
+          "mean_active_fraction": 0.07353878512046878,
+          "gain_vs_lqr_percent": 0.8231748944645002,
+          "gain_vs_legacy_student_percent": -0.9468432178018658
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07934110816277,
+          "mean_rmse": 0.07934110816276997,
+          "mean_active_fraction": 0.1216889570803788,
+          "gain_vs_lqr_percent": 2.305791295356195,
+          "gain_vs_legacy_student_percent": 0.5622335772426866
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07414205291987486,
+          "mean_rmse": 0.07414205291987483,
+          "mean_active_fraction": 0.21352776880521332,
+          "gain_vs_lqr_percent": 8.707486453487423,
+          "gain_vs_legacy_student_percent": 7.0781803901031575
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07182052573536492,
+          "mean_rmse": 0.0718205257353649,
+          "mean_active_fraction": 0.21978555855780413,
+          "gain_vs_lqr_percent": 11.566026830964045,
+          "gain_vs_legacy_student_percent": 9.987737406168424
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07816229368696763,
+          "mean_rmse": 0.07816229368696768,
+          "mean_active_fraction": 0.17248078446988666,
+          "gain_vs_lqr_percent": 3.7572878787771367,
+          "gain_vs_legacy_student_percent": 2.0396351565113364
+        }
+      },
+      "903": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08077466341667983,
+          "mean_rmse": 0.08077466341667981,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -2.7314398874092443
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07983191377143838,
+          "mean_rmse": 0.07983191377143836,
+          "mean_active_fraction": 0.06977303826983891,
+          "gain_vs_lqr_percent": 1.1671353433913214,
+          "gain_vs_legacy_student_percent": -1.5324249437084811
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08027176505141838,
+          "mean_rmse": 0.08027176505141835,
+          "mean_active_fraction": 0.0715608174661364,
+          "gain_vs_lqr_percent": 0.6225941947504298,
+          "gain_vs_legacy_student_percent": -2.091839906486707
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.078627013799482,
+          "mean_rmse": 0.07862701379948196,
+          "mean_active_fraction": 0.13032251526902597,
+          "gain_vs_lqr_percent": 2.658815928602602,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07953097674775167,
+          "mean_rmse": 0.07953097674775166,
+          "mean_active_fraction": 0.0834211362855634,
+          "gain_vs_lqr_percent": 1.5396989802514456,
+          "gain_vs_legacy_student_percent": -1.1496849550651773
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.08002752800345991,
+          "mean_rmse": 0.08002752800345993,
+          "mean_active_fraction": 0.08203385676141124,
+          "gain_vs_lqr_percent": 0.9249625830884372,
+          "gain_vs_legacy_student_percent": -1.7812125073827185
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07823210666350668,
+          "mean_rmse": 0.07823210666350668,
+          "mean_active_fraction": 0.13968257915368493,
+          "gain_vs_lqr_percent": 3.147715689085888,
+          "gain_vs_legacy_student_percent": 0.5022537635505747
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07327039668406825,
+          "mean_rmse": 0.07327039668406825,
+          "mean_active_fraction": 0.2088580332366575,
+          "gain_vs_lqr_percent": 9.290372024084423,
+          "gain_vs_legacy_student_percent": 6.81269306382973
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0710474674498016,
+          "mean_rmse": 0.07104746744980157,
+          "mean_active_fraction": 0.21842459001077277,
+          "gain_vs_lqr_percent": 12.042385019545096,
+          "gain_vs_legacy_student_percent": 9.6398756399551
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.07651508047371296,
+          "mean_rmse": 0.07651508047371297,
+          "mean_active_fraction": 0.20635258418401792,
+          "gain_vs_lqr_percent": 5.2734146609731,
+          "gain_vs_legacy_student_percent": 2.686014925042162
+        }
+      }
+    },
+    "sensor_stress": {
+      "701": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06103589918353234,
+          "mean_rmse": 0.06103589918353234,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -2.2848558638690757
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06082441376285874,
+          "mean_rmse": 0.06082441376285874,
+          "mean_active_fraction": 0.08220138308520632,
+          "gain_vs_lqr_percent": 0.34649349563552734,
+          "gain_vs_legacy_student_percent": -1.9304454912805953
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06108255157309076,
+          "mean_rmse": 0.06108255157309073,
+          "mean_active_fraction": 0.08364664246637853,
+          "gain_vs_lqr_percent": -0.07643434467662989,
+          "gain_vs_legacy_student_percent": -2.36303662315206
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05967246927029454,
+          "mean_rmse": 0.05967246927029454,
+          "mean_active_fraction": 0.14479136081615585,
+          "gain_vs_lqr_percent": 2.23381637933771,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060413815139032385,
+          "mean_rmse": 0.060413815139032385,
+          "mean_active_fraction": 0.09648678811246297,
+          "gain_vs_lqr_percent": 1.019210092456202,
+          "gain_vs_legacy_student_percent": -1.2423582898502428
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060944493969456004,
+          "mean_rmse": 0.06094449396945601,
+          "mean_active_fraction": 0.09397406273731009,
+          "gain_vs_lqr_percent": 0.14975647987340077,
+          "gain_vs_legacy_student_percent": -2.131677664283764
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.059151814759241576,
+          "mean_rmse": 0.05915181475924156,
+          "mean_active_fraction": 0.15575765758529206,
+          "gain_vs_lqr_percent": 3.0868463469759035,
+          "gain_vs_legacy_student_percent": 0.872520472874335
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0575375637029631,
+          "mean_rmse": 0.05753756370296307,
+          "mean_active_fraction": 0.19622118596223773,
+          "gain_vs_lqr_percent": 5.731603085013783,
+          "gain_vs_legacy_student_percent": 3.577706090326346
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.056581475682656986,
+          "mean_rmse": 0.056581475682657,
+          "mean_active_fraction": 0.19487203841283027,
+          "gain_vs_lqr_percent": 7.298038630480552,
+          "gain_vs_legacy_student_percent": 5.179932430207442
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05865982275971082,
+          "mean_rmse": 0.05865982275971082,
+          "mean_active_fraction": 0.21049598342439776,
+          "gain_vs_lqr_percent": 3.892916227344758,
+          "gain_vs_legacy_student_percent": 1.69700788817168
+        }
+      },
+      "802": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06114107734566795,
+          "mean_rmse": 0.061141077345667955,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -2.895455601469462
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06056086987046977,
+          "mean_rmse": 0.06056086987046977,
+          "mean_active_fraction": 0.08519887902761329,
+          "gain_vs_lqr_percent": 0.9489650827019461,
+          "gain_vs_legacy_student_percent": -1.9190136561244329
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06089743238132864,
+          "mean_rmse": 0.06089743238132866,
+          "mean_active_fraction": 0.07759804449366538,
+          "gain_vs_lqr_percent": 0.39849635452420445,
+          "gain_vs_legacy_student_percent": -2.485420961926535
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.059420580810174074,
+          "mean_rmse": 0.0594205808101741,
+          "mean_active_fraction": 0.14657748080013627,
+          "gain_vs_lqr_percent": 2.8139781145282297,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060351630696158474,
+          "mean_rmse": 0.060351630696158474,
+          "mean_active_fraction": 0.09872297050561397,
+          "gain_vs_lqr_percent": 1.2911886472759515,
+          "gain_vs_legacy_student_percent": -1.5668811601804211
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06075162121253191,
+          "mean_rmse": 0.06075162121253189,
+          "mean_active_fraction": 0.0863260595744099,
+          "gain_vs_lqr_percent": 0.6369795071392123,
+          "gain_vs_legacy_student_percent": -2.2400326355105746
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.058848017823960985,
+          "mean_rmse": 0.05884801782396099,
+          "mean_active_fraction": 0.15474436736584307,
+          "gain_vs_lqr_percent": 3.7504401643806387,
+          "gain_vs_legacy_student_percent": 0.9635768927304965
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05793139974155504,
+          "mean_rmse": 0.05793139974155504,
+          "mean_active_fraction": 0.20324190859833732,
+          "gain_vs_lqr_percent": 5.249625527477433,
+          "gain_vs_legacy_student_percent": 2.506170502399488
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05599819521441279,
+          "mean_rmse": 0.05599819521441277,
+          "mean_active_fraction": 0.19746864444774861,
+          "gain_vs_lqr_percent": 8.411500671110682,
+          "gain_vs_legacy_student_percent": 5.759596336990536
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0577399269817405,
+          "mean_rmse": 0.0577399269817405,
+          "mean_active_fraction": 0.22034372185391982,
+          "gain_vs_lqr_percent": 5.562791026233744,
+          "gain_vs_legacy_student_percent": 2.828403569131408
+        }
+      },
+      "903": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06065120853851333,
+          "mean_rmse": 0.060651208538513336,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -2.3229641340242635
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060068768769509,
+          "mean_rmse": 0.06006876876950901,
+          "mean_active_fraction": 0.08135107593865842,
+          "gain_vs_lqr_percent": 0.9603102444932851,
+          "gain_vs_legacy_student_percent": -1.3403462269760384
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06052891261301366,
+          "mean_rmse": 0.060528912613013665,
+          "mean_active_fraction": 0.08167613201006522,
+          "gain_vs_lqr_percent": 0.20163806863306583,
+          "gain_vs_legacy_student_percent": -2.1166420853763124
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05927428808558693,
+          "mean_rmse": 0.059274288085586935,
+          "mean_active_fraction": 0.13579259076959535,
+          "gain_vs_lqr_percent": 2.270227561998309,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05990131743625594,
+          "mean_rmse": 0.05990131743625594,
+          "mean_active_fraction": 0.09345464952593525,
+          "gain_vs_lqr_percent": 1.2363992743544658,
+          "gain_vs_legacy_student_percent": -1.057843747973207
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06049260057100447,
+          "mean_rmse": 0.06049260057100445,
+          "mean_active_fraction": 0.09262027651449767,
+          "gain_vs_lqr_percent": 0.26150833813664287,
+          "gain_vs_legacy_student_percent": -2.0553810509852233
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05873705099950969,
+          "mean_rmse": 0.05873705099950973,
+          "mean_active_fraction": 0.14524866109399204,
+          "gain_vs_lqr_percent": 3.1560088992920163,
+          "gain_vs_legacy_student_percent": 0.9063577200649205
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05753114932241533,
+          "mean_rmse": 0.05753114932241532,
+          "mean_active_fraction": 0.1845330421095268,
+          "gain_vs_lqr_percent": 5.144265532840577,
+          "gain_vs_legacy_student_percent": 2.940800842103172
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05546718028253587,
+          "mean_rmse": 0.055467180282535895,
+          "mean_active_fraction": 0.20664748674196784,
+          "gain_vs_lqr_percent": 8.547279404474883,
+          "gain_vs_legacy_student_percent": 6.422865505451414
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0574227254642686,
+          "mean_rmse": 0.0574227254642686,
+          "mean_active_fraction": 0.22559337989951866,
+          "gain_vs_lqr_percent": 5.323031728534569,
+          "gain_vs_legacy_student_percent": 3.123719712406896
+        }
+      }
+    },
+    "latency20": {
+      "701": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06302713626391397,
+          "mean_rmse": 0.06302713626391394,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -3.7435086547337417
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.061989583299234076,
+          "mean_rmse": 0.06198958329923405,
+          "mean_active_fraction": 0.08836652042810811,
+          "gain_vs_lqr_percent": 1.646200392693304,
+          "gain_vs_legacy_student_percent": -2.0356826078657027
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06242835375531875,
+          "mean_rmse": 0.06242835375531878,
+          "mean_active_fraction": 0.08950747599767796,
+          "gain_vs_lqr_percent": 0.9500392118212929,
+          "gain_vs_legacy_student_percent": -2.7579046427945544
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06075284813594753,
+          "mean_rmse": 0.0607528481359475,
+          "mean_active_fraction": 0.12740801554788758,
+          "gain_vs_lqr_percent": 3.6084268821024956,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0615850347495081,
+          "mean_rmse": 0.06158503474950807,
+          "mean_active_fraction": 0.10694839664545723,
+          "gain_vs_lqr_percent": 2.2880644749070487,
+          "gain_vs_legacy_student_percent": -1.3697902881826594
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06200591961987798,
+          "mean_rmse": 0.062005919619877975,
+          "mean_active_fraction": 0.10548779275483934,
+          "gain_vs_lqr_percent": 1.620280889424901,
+          "gain_vs_legacy_student_percent": -2.0625724099822227
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06025262634098641,
+          "mean_rmse": 0.06025262634098641,
+          "mean_active_fraction": 0.1424383997844306,
+          "gain_vs_lqr_percent": 4.402087874197294,
+          "gain_vs_legacy_student_percent": 0.8233717600231125
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.0586966402776898,
+          "mean_rmse": 0.05869664027768978,
+          "mean_active_fraction": 0.2364435332306758,
+          "gain_vs_lqr_percent": 6.870843644380497,
+          "gain_vs_legacy_student_percent": 3.3845456161273626
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05752731485727155,
+          "mean_rmse": 0.057527314857271576,
+          "mean_active_fraction": 0.2502588826963952,
+          "gain_vs_lqr_percent": 8.726116610491363,
+          "gain_vs_legacy_student_percent": 5.3092708862935245
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05870070245813965,
+          "mean_rmse": 0.05870070245813963,
+          "mean_active_fraction": 0.19714551676559275,
+          "gain_vs_lqr_percent": 6.864398515043129,
+          "gain_vs_legacy_student_percent": 3.377859212815441
+        }
+      },
+      "802": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06304459413744962,
+          "mean_rmse": 0.06304459413744962,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -3.337201518026323
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062163794679880285,
+          "mean_rmse": 0.06216379467988028,
+          "mean_active_fraction": 0.09222930342706387,
+          "gain_vs_lqr_percent": 1.397105445153656,
+          "gain_vs_legacy_student_percent": -1.8934718487485709
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06264150402097178,
+          "mean_rmse": 0.06264150402097178,
+          "mean_active_fraction": 0.08362635450117954,
+          "gain_vs_lqr_percent": 0.6393730057156374,
+          "gain_vs_legacy_student_percent": -2.676491346658093
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06100861375315259,
+          "mean_rmse": 0.061008613753152606,
+          "mean_active_fraction": 0.13871971617072595,
+          "gain_vs_lqr_percent": 3.2294289655639417,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06188764837267641,
+          "mean_rmse": 0.0618876483726764,
+          "mean_active_fraction": 0.10858315943648877,
+          "gain_vs_lqr_percent": 1.8351228691405963,
+          "gain_vs_legacy_student_percent": -1.4408369006391188
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06229461907329628,
+          "mean_rmse": 0.062294619073296274,
+          "mean_active_fraction": 0.09558166002127211,
+          "gain_vs_lqr_percent": 1.1895945630457105,
+          "gain_vs_legacy_student_percent": -2.107907787164293
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060312408536746236,
+          "mean_rmse": 0.06031240853674622,
+          "mean_active_fraction": 0.15364770635616468,
+          "gain_vs_lqr_percent": 4.333734934904456,
+          "gain_vs_legacy_student_percent": 1.1411588849130019
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05893920166457334,
+          "mean_rmse": 0.05893920166457334,
+          "mean_active_fraction": 0.2400061412218981,
+          "gain_vs_lqr_percent": 6.5118865924106295,
+          "gain_vs_legacy_student_percent": 3.3919998525983863
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05782968744683073,
+          "mean_rmse": 0.05782968744683074,
+          "mean_active_fraction": 0.24804773660652482,
+          "gain_vs_lqr_percent": 8.27177454620354,
+          "gain_vs_legacy_student_percent": 5.210618813900836
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05924504734716988,
+          "mean_rmse": 0.05924504734716988,
+          "mean_active_fraction": 0.21011099347082152,
+          "gain_vs_lqr_percent": 6.02676064817862,
+          "gain_vs_legacy_student_percent": 2.890684277991126
+        }
+      },
+      "903": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06276513491218587,
+          "mean_rmse": 0.06276513491218588,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": -3.7581820046123604
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.061756972962213795,
+          "mean_rmse": 0.061756972962213774,
+          "mean_active_fraction": 0.08876880464362968,
+          "gain_vs_lqr_percent": 1.6062451731882421,
+          "gain_vs_legacy_student_percent": -2.0915712143754033
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06212735013461623,
+          "mean_rmse": 0.06212735013461624,
+          "mean_active_fraction": 0.09317027904960318,
+          "gain_vs_lqr_percent": 1.0161449958833912,
+          "gain_vs_legacy_student_percent": -2.7038484303529104
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.060491745035968124,
+          "mean_rmse": 0.0604917450359681,
+          "mean_active_fraction": 0.13857935535400043,
+          "gain_vs_lqr_percent": 3.622058455539726,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06149576258912196,
+          "mean_rmse": 0.06149576258912196,
+          "mean_active_fraction": 0.10269308104191127,
+          "gain_vs_lqr_percent": 2.022416306186347,
+          "gain_vs_legacy_student_percent": -1.659759612748572
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.061709410213284334,
+          "mean_rmse": 0.0617094102132843,
+          "mean_active_fraction": 0.1022541446126729,
+          "gain_vs_lqr_percent": 1.6820241052275116,
+          "gain_vs_legacy_student_percent": -2.0129443721489464
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05978584539313308,
+          "mean_rmse": 0.05978584539313308,
+          "mean_active_fraction": 0.1524231749091777,
+          "gain_vs_lqr_percent": 4.746726862327448,
+          "gain_vs_legacy_student_percent": 1.1669354924631785
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.058452101468142066,
+          "mean_rmse": 0.05845210146814206,
+          "mean_active_fraction": 0.2290384800532771,
+          "gain_vs_lqr_percent": 6.87170265797744,
+          "gain_vs_legacy_student_percent": 3.3717717460676573
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05763308923452721,
+          "mean_rmse": 0.05763308923452723,
+          "mean_active_fraction": 0.24962444975392387,
+          "gain_vs_lqr_percent": 8.17658670667857,
+          "gain_vs_legacy_student_percent": 4.725695712268131
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.05730129819026461,
+          "mean_rmse": 0.05730129819026462,
+          "mean_active_fraction": 0.23972687798622613,
+          "gain_vs_lqr_percent": 8.705209874185186,
+          "gain_vs_legacy_student_percent": 5.274185500528193
+        }
+      }
+    },
+    "latency100": {
+      "701": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06380079922296374,
+          "mean_rmse": 0.06380079922296371,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        }
+      },
+      "802": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.062096496208624785,
+          "mean_rmse": 0.06209649620862478,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        }
+      },
+      "903": {
+        "lqr": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "legacy_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "preview_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_fixed_m004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_fixed_p004": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        },
+        "lateral_student": {
+          "episodes": 6,
+          "survived": 6,
+          "mean_penalized_rmse": 0.06297153012089893,
+          "mean_rmse": 0.06297153012089889,
+          "mean_active_fraction": 0.0,
+          "gain_vs_lqr_percent": 0.0,
+          "gain_vs_legacy_student_percent": 0.0
+        }
+      }
+    }
+  },
+  "assessments": {
+    "preview": {
+      "gate_progress_checks": {
+        "overall_gain_vs_legacy_student_at_least_one_percent": false,
+        "all_three_seed_means_better": true,
+        "minimum_two_stress_regions_with_one_percent_gain_vs_legacy": false,
+        "active_regions_no_more_than_one_percent_regression_vs_legacy": true,
+        "nominal_no_worse_than_lqr": true,
+        "no_cellwise_survival_loss_vs_lqr": true,
+        "no_cellwise_survival_loss_vs_legacy_student": true,
+        "severe_fallback_exact": true
+      },
+      "gate_progress_pass": false,
+      "learning_benefit_checks": {
+        "gain_vs_m004_at_least_one_percent": true,
+        "no_cellwise_survival_loss_vs_m004": true,
+        "gain_vs_p004_at_least_one_percent": true,
+        "no_cellwise_survival_loss_vs_p004": true
+      },
+      "learning_benefit_pass": true,
+      "eligible": false,
+      "overall_gain_vs_legacy_student_percent": 0.5798638573485155,
+      "gain_vs_same_gate_constants_percent": {
+        "m004": 1.4426298806533848,
+        "p004": 1.8574863160887767
+      },
+      "one_percent_stress_regions_vs_legacy": [],
+      "five_percent_stress_regions_vs_lqr_all_pairs_lower": [],
+      "five_percent_all_regions_vs_lqr_all_pairs_lower": [],
+      "regional_five_percent_target": false,
+      "overall_five_percent_target": false
+    },
+    "lateral": {
+      "gate_progress_checks": {
+        "overall_gain_vs_legacy_student_at_least_one_percent": true,
+        "all_three_seed_means_better": true,
+        "minimum_two_stress_regions_with_one_percent_gain_vs_legacy": true,
+        "active_regions_no_more_than_one_percent_regression_vs_legacy": true,
+        "nominal_no_worse_than_lqr": true,
+        "no_cellwise_survival_loss_vs_lqr": true,
+        "no_cellwise_survival_loss_vs_legacy_student": true,
+        "severe_fallback_exact": true
+      },
+      "gate_progress_pass": true,
+      "learning_benefit_checks": {
+        "gain_vs_m004_at_least_one_percent": false,
+        "no_cellwise_survival_loss_vs_m004": true,
+        "gain_vs_p004_at_least_one_percent": false,
+        "no_cellwise_survival_loss_vs_p004": true
+      },
+      "learning_benefit_pass": false,
+      "eligible": false,
+      "overall_gain_vs_legacy_student_percent": 2.623803455866192,
+      "gain_vs_same_gate_constants_percent": {
+        "m004": -2.508950001058321,
+        "p004": -5.055886940595609
+      },
+      "one_percent_stress_regions_vs_legacy": [
+        "tire_mismatch",
+        "low_friction",
+        "sensor_stress"
+      ],
+      "five_percent_stress_regions_vs_lqr_all_pairs_lower": [],
+      "five_percent_all_regions_vs_lqr_all_pairs_lower": [
+        "nominal",
+        "latency20"
+      ],
+      "regional_five_percent_target": false,
+      "overall_five_percent_target": false
+    }
+  },
+  "eligible_variants": [],
+  "selected_gate": null,
+  "next_action": "stop_retraining_path",
+  "severe_comparisons": [
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        0,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        1,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        15,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        20,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "sine120",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "legacy_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "preview_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_m004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_fixed_p004",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    },
+    {
+      "cell": [
+        2,
+        25,
+        "dlc220",
+        "latency100"
+      ],
+      "method": "lateral_student",
+      "hash_equal": true,
+      "scores_and_bounds_equal": true,
+      "inactive": true
+    }
+  ],
+  "source_checks": [
+    {
+      "file": "revision12/protocol.json",
+      "manifest_sha256": "9fc5b343fa8d448258bc8dfd0130739a8cbcabb48c2a69f6af22a2205caa8081",
+      "archived_sha256": "9fc5b343fa8d448258bc8dfd0130739a8cbcabb48c2a69f6af22a2205caa8081",
+      "git_commit_sha256": "9fc5b343fa8d448258bc8dfd0130739a8cbcabb48c2a69f6af22a2205caa8081",
+      "current_sha256": "9fc5b343fa8d448258bc8dfd0130739a8cbcabb48c2a69f6af22a2205caa8081",
+      "all_equal": true
+    },
+    {
+      "file": "revision12/run12.py",
+      "manifest_sha256": "d6ce2a42d3eb0adefe3d67be3f9fa4f90597878f1478c002f1d24de53f4e455c",
+      "archived_sha256": "d6ce2a42d3eb0adefe3d67be3f9fa4f90597878f1478c002f1d24de53f4e455c",
+      "git_commit_sha256": "d6ce2a42d3eb0adefe3d67be3f9fa4f90597878f1478c002f1d24de53f4e455c",
+      "current_sha256": "d6ce2a42d3eb0adefe3d67be3f9fa4f90597878f1478c002f1d24de53f4e455c",
+      "all_equal": true
+    },
+    {
+      "file": "revision12/gate12.py",
+      "manifest_sha256": "075e456915fc944e0bd830fbb21e876ef24a46994a0acd45381346192ba62717",
+      "archived_sha256": "075e456915fc944e0bd830fbb21e876ef24a46994a0acd45381346192ba62717",
+      "git_commit_sha256": "075e456915fc944e0bd830fbb21e876ef24a46994a0acd45381346192ba62717",
+      "current_sha256": "075e456915fc944e0bd830fbb21e876ef24a46994a0acd45381346192ba62717",
+      "all_equal": true
+    },
+    {
+      "file": "revision12/report12.py",
+      "manifest_sha256": "116cd66870d3ffb30ea422dae9d5ee4506fee91077afdad612ac3cbc1180489d",
+      "archived_sha256": "116cd66870d3ffb30ea422dae9d5ee4506fee91077afdad612ac3cbc1180489d",
+      "git_commit_sha256": "116cd66870d3ffb30ea422dae9d5ee4506fee91077afdad612ac3cbc1180489d",
+      "current_sha256": "116cd66870d3ffb30ea422dae9d5ee4506fee91077afdad612ac3cbc1180489d",
+      "all_equal": true
+    },
+    {
+      "file": "revision12/test_gate12.py",
+      "manifest_sha256": "0ad20d963e6985c45222e19330ae5e5109551aec53835270633977de58c017f0",
+      "archived_sha256": "0ad20d963e6985c45222e19330ae5e5109551aec53835270633977de58c017f0",
+      "git_commit_sha256": "0ad20d963e6985c45222e19330ae5e5109551aec53835270633977de58c017f0",
+      "current_sha256": "0ad20d963e6985c45222e19330ae5e5109551aec53835270633977de58c017f0",
+      "all_equal": true
+    },
+    {
+      "file": "revision12/test_report12.py",
+      "manifest_sha256": "331823a4bb04a69e201de092c748e9aeeb2d756a12f48d4d3d11daee98b2613b",
+      "archived_sha256": "331823a4bb04a69e201de092c748e9aeeb2d756a12f48d4d3d11daee98b2613b",
+      "git_commit_sha256": "331823a4bb04a69e201de092c748e9aeeb2d756a12f48d4d3d11daee98b2613b",
+      "current_sha256": "331823a4bb04a69e201de092c748e9aeeb2d756a12f48d4d3d11daee98b2613b",
+      "all_equal": true
+    },
+    {
+      "file": "revision8/bootstrap.py",
+      "manifest_sha256": "ecc8910ba6fdb105ca78c654afc6b92c8dcb5927bd30bb13bd6a431aa61c87dd",
+      "archived_sha256": "ecc8910ba6fdb105ca78c654afc6b92c8dcb5927bd30bb13bd6a431aa61c87dd",
+      "git_commit_sha256": "ecc8910ba6fdb105ca78c654afc6b92c8dcb5927bd30bb13bd6a431aa61c87dd",
+      "current_sha256": "ecc8910ba6fdb105ca78c654afc6b92c8dcb5927bd30bb13bd6a431aa61c87dd",
+      "all_equal": true
+    },
+    {
+      "file": "revision8/student.py",
+      "manifest_sha256": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+      "archived_sha256": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+      "git_commit_sha256": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+      "current_sha256": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+      "all_equal": true
+    },
+    {
+      "file": "revision8/teacher.py",
+      "manifest_sha256": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+      "archived_sha256": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+      "git_commit_sha256": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+      "current_sha256": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+      "all_equal": true
+    },
+    {
+      "file": "revision8/protocol.json",
+      "manifest_sha256": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+      "archived_sha256": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+      "git_commit_sha256": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+      "current_sha256": "6dfce8505ac3c8a2a3309fe72f559380919ebce88660131981ab8890edd10575",
+      "all_equal": true
+    },
+    {
+      "file": "revision7/kernels.py",
+      "manifest_sha256": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf",
+      "archived_sha256": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf",
+      "git_commit_sha256": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf",
+      "current_sha256": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf",
+      "all_equal": true
+    },
+    {
+      "file": "revision7/bootstrap.py",
+      "manifest_sha256": "8c0266c5fd205818e975a5c4097ee9f61b565ab47776e293c6d910d8f1b8d3db",
+      "archived_sha256": "8c0266c5fd205818e975a5c4097ee9f61b565ab47776e293c6d910d8f1b8d3db",
+      "git_commit_sha256": "8c0266c5fd205818e975a5c4097ee9f61b565ab47776e293c6d910d8f1b8d3db",
+      "current_sha256": "8c0266c5fd205818e975a5c4097ee9f61b565ab47776e293c6d910d8f1b8d3db",
+      "all_equal": true
+    },
+    {
+      "file": "revision5/execution.py",
+      "manifest_sha256": "2cf3aafc01667df32db303c5e87aa3261ee21b9ff572a119c94cc125f2587506",
+      "archived_sha256": "2cf3aafc01667df32db303c5e87aa3261ee21b9ff572a119c94cc125f2587506",
+      "git_commit_sha256": "2cf3aafc01667df32db303c5e87aa3261ee21b9ff572a119c94cc125f2587506",
+      "current_sha256": "2cf3aafc01667df32db303c5e87aa3261ee21b9ff572a119c94cc125f2587506",
+      "all_equal": true
+    },
+    {
+      "file": "revision5/bootstrap.py",
+      "manifest_sha256": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+      "archived_sha256": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+      "git_commit_sha256": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+      "current_sha256": "54ed00684135789c77052164a2995c89f3e2e07c4c00e1e37105f52a21624007",
+      "all_equal": true
+    },
+    {
+      "file": "revision2/gating.py",
+      "manifest_sha256": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+      "archived_sha256": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+      "git_commit_sha256": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+      "current_sha256": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+      "all_equal": true
+    },
+    {
+      "file": "revision2/plant.py",
+      "manifest_sha256": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+      "archived_sha256": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+      "git_commit_sha256": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+      "current_sha256": "17d9b55574c268c2fe78d6240c182c4f9e957a46dc0013a3a23b393873d603df",
+      "all_equal": true
+    },
+    {
+      "file": "revision6/protocol.json",
+      "manifest_sha256": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b",
+      "archived_sha256": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b",
+      "git_commit_sha256": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b",
+      "current_sha256": "c93fc1029cf63828af1750e09f693a105a58461e454db8ad93db9a9d6a69f73b",
+      "all_equal": true
+    },
+    {
+      "file": "core.py",
+      "manifest_sha256": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+      "archived_sha256": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+      "git_commit_sha256": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+      "current_sha256": "25f714f2c703caa11a6eafc97b309d77c2543a1d879f2fcc69c83c8f3b40e3d5",
+      "all_equal": true
+    },
+    {
+      "file": "comparison.py",
+      "manifest_sha256": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+      "archived_sha256": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+      "git_commit_sha256": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+      "current_sha256": "6a78af797acb822c9ebe3f4999632a73d3c5830421de0b76568ee3f75d65af01",
+      "all_equal": true
+    },
+    {
+      "file": "comparison-protocol.json",
+      "manifest_sha256": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+      "archived_sha256": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+      "git_commit_sha256": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+      "current_sha256": "838d5dd464478e9ed3b39d995243aac0f275bf2b090134984bcdf669860e852f",
+      "all_equal": true
+    },
+    {
+      "file": "protocol.json",
+      "manifest_sha256": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+      "archived_sha256": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+      "git_commit_sha256": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+      "current_sha256": "a4dd24038480c61f1c93ff67065d03867314993ce101e21a7b9bafd88238e78c",
+      "all_equal": true
+    }
+  ],
+  "student_checks": [
+    {
+      "seed": 701,
+      "artifact": "student.pt",
+      "manifest_sha256": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48",
+      "observed_sha256": "90f9b3173d54b0ecbe8375e00ca8658de9c767f5a12af576ba7a633e2d1b6d48",
+      "equal": true
+    },
+    {
+      "seed": 701,
+      "artifact": "normalization.npz",
+      "manifest_sha256": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "observed_sha256": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "equal": true
+    },
+    {
+      "seed": 701,
+      "artifact": "complete.json",
+      "manifest_sha256": "c9164a65bd68156beeae45862bbd1e396c17133f7edbf3bdaa37e0d81aa24a57",
+      "observed_sha256": "c9164a65bd68156beeae45862bbd1e396c17133f7edbf3bdaa37e0d81aa24a57",
+      "equal": true
+    },
+    {
+      "seed": 802,
+      "artifact": "student.pt",
+      "manifest_sha256": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f",
+      "observed_sha256": "617dc385a73f1e28e68832d67b3cd45ccbba68021140ccf6782e1f94e5297b3f",
+      "equal": true
+    },
+    {
+      "seed": 802,
+      "artifact": "normalization.npz",
+      "manifest_sha256": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "observed_sha256": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "equal": true
+    },
+    {
+      "seed": 802,
+      "artifact": "complete.json",
+      "manifest_sha256": "393492c24842b0da3c3273913ba3071c9ad0a28d903cc63a2cf454f84aaa396b",
+      "observed_sha256": "393492c24842b0da3c3273913ba3071c9ad0a28d903cc63a2cf454f84aaa396b",
+      "equal": true
+    },
+    {
+      "seed": 903,
+      "artifact": "student.pt",
+      "manifest_sha256": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa",
+      "observed_sha256": "02c4fd10d8f8fda5190c73f214e59c61a466e74a64d56445060d4a71376097fa",
+      "equal": true
+    },
+    {
+      "seed": 903,
+      "artifact": "normalization.npz",
+      "manifest_sha256": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "observed_sha256": "4248bbc849ebf7ca47cf010ce2f1ba1d07a0613e9e84157d694801f335816701",
+      "equal": true
+    },
+    {
+      "seed": 903,
+      "artifact": "complete.json",
+      "manifest_sha256": "97e22b40a732ed370112ffe8f4205dfb72a2a8ba586b7d76f0cb23d655980609",
+      "observed_sha256": "97e22b40a732ed370112ffe8f4205dfb72a2a8ba586b7d76f0cb23d655980609",
+      "equal": true
+    }
+  ],
+  "trace_checks": [
+    {
+      "region": "nominal",
+      "method": "lqr",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "legacy_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "legacy_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "legacy_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "preview_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "preview_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "preview_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "lateral_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "lateral_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "nominal",
+      "method": "lateral_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "lqr",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "legacy_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "legacy_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "legacy_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "preview_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "preview_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "preview_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "lateral_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "lateral_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "tire_mismatch",
+      "method": "lateral_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "lqr",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "legacy_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "legacy_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "legacy_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "preview_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "preview_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "preview_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "lateral_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "lateral_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "low_friction",
+      "method": "lateral_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "lqr",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "legacy_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "legacy_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "legacy_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "preview_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "preview_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "preview_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "lateral_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "lateral_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "sensor_stress",
+      "method": "lateral_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "lqr",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "legacy_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "legacy_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "legacy_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "preview_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "preview_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "preview_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "lateral_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "lateral_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency20",
+      "method": "lateral_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true
+    },
+    {
+      "region": "latency100",
+      "method": "lqr",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "legacy_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "legacy_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "legacy_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "preview_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "preview_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "preview_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "lateral_fixed_m004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "lateral_fixed_p004",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    },
+    {
+      "region": "latency100",
+      "method": "lateral_student",
+      "ticks": 1080,
+      "row_steps_match": true,
+      "rmse_matches": true,
+      "penalized_rmse_matches": true,
+      "mean_weight_matches": true,
+      "active_fraction_matches": true,
+      "all_commands_equal_baseline_and_zero_weight": true
+    }
+  ],
+  "existing_report_matches": {
+    "selected_gate": true,
+    "all_overall_means": true,
+    "all_overall_survivals": true,
+    "gate_and_learning_and_five_percent_decisions": true
+  },
+  "limitations": [
+    "Only 3 paired student/noise seeds, 3 speeds, 2 known paths and 6 known regions: descriptive development screening, not independent-domain or statistically established superiority.",
+    "All 1080 episodes survived; failed-tail penalty algebra was checked, but no failed case exercises the penalty path in this run.",
+    "18 severe-delay cells have exact logged trajectory hashes across all 10 methods (162 candidate-versus-LQR comparisons); 10 stored severe traces also have exactly equal recorded observable trajectory/command fields.",
+    "Only pair0/25m/s/dlc220 is traced (60 of 1080 episodes). Traces omit lateral velocity and yaw-rate state components used in the full trajectory digest, so a complete independent digest reconstruction from traces is impossible; this audit verifies hash equality and manifest provenance, not rerun physics.",
+    "The completion manifest declares zero training steps and reserved_split_opened=false. This audit opens no reserved data and launches no experiments; filesystem/provenance checks cannot prove that no separate process ever accessed other data.",
+    "Nominal and latency20 are not members of the frozen three-region stress target; passing 5% there cannot replace the predeclared stress requirement.",
+    "The lateral fixed positive correction is a predeclared control, not a newly learned result or a post-test deployable selection. Gate-dependent closed-loop feature history differs despite frozen student weights.",
+    "No native Webots/real-vehicle safety, formal stability, hard-real-time execution, unseen-road generalization, or SOTA comparison follows from this offline run."
+  ]
+}

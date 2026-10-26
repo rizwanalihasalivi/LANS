@@ -1,0 +1,14 @@
+test_complete_passing_grid_and_predeclared_tie (__main__.ReportContracts) ... ok
+test_five_percent_is_separate_and_requires_all_seed_region_gains (__main__.ReportContracts) ... ok
+test_incomplete_duplicate_schema_noise_and_metadata_rejected (__main__.ReportContracts) ... ok
+test_independent_progress_preservation_and_learning_guards (__main__.ReportContracts) ... ok
+test_manifest_and_archive_reject_missing_tampered_or_unsafe_sources (__main__.ReportContracts) ... ok
+test_no_progress_stops_before_any_training_or_reserved (__main__.ReportContracts) ... ok
+test_outputs_use_recorded_source_and_only_development_files (__main__.ReportContracts) ... ok
+test_penalty_horizon_physical_limits_and_severe_hash (__main__.ReportContracts) ... ok
+test_zero_reference_is_serializable_and_never_claims_improvement (__main__.ReportContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.955s
+
+OK

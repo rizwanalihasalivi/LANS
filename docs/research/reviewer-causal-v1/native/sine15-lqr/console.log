@@ -1,0 +1,34 @@
+WARNING: System below the minimal requirements.
+
+Webots has detected that your GPU vendor is 'Mesa'. A recent NVIDIA or AMD graphics adapter is highly recommended to run Webots smoothly. Webots has detected that your computer uses a slow 3D software rendering system. It is strongly recommended to install the latest graphics drivers provided by your GPU manufacturer. Webots will run much faster after the installation of the correct driver.
+
+ - Shadows have been deactivated.
+ - Anti-aliasing has been deactivated.
+ - Main 3D view global ambient occlusion has been de-activated.
+ - Texture quality has been reduced.
+
+You can try to re-activate some OpenGL features from the Webots preferences.
+WARNING: System below the minimal requirements.
+
+Webots has detected that your GPU vendor is 'Mesa'. A recent NVIDIA or AMD graphics adapter is highly recommended to run Webots smoothly. Webots has detected that your computer uses a slow 3D software rendering system. It is strongly recommended to install the latest graphics drivers provided by your GPU manufacturer. Webots will run much faster after the installation of the correct driver.
+
+ - Shadows have been deactivated.
+ - Anti-aliasing has been deactivated.
+ - Main 3D view global ambient occlusion has been de-activated.
+ - Texture quality has been reduced.
+
+You can try to re-activate some OpenGL features from the Webots preferences.
+WARNING: WARNING: System below the minimal requirements.
+
+Webots has detected that your GPU vendor is 'Mesa'. A recent NVIDIA or AMD graphics adapter is highly recommended to run Webots smoothly. Webots has detected that your computer uses a slow 3D software rendering system. It is strongly recommended to install the latest graphics drivers provided by your GPU manufacturer. Webots will run much faster after the installation of the correct driver.
+
+ - Shadows have been deactivated.
+ - Anti-aliasing has been deactivated.
+ - Main 3D view global ambient occlusion has been de-activated.
+ - Texture quality has been reduced.
+
+You can try to re-activate some OpenGL features from the Webots preferences.
+INFO: reviewer_validation: Starting controller: python3 -u reviewer_validation.py
+INFO: reviewer_validation: Terminating.
+WARNING: reviewer_validation: Forced termination (because process didn't terminate itself after 1 second).
+Warning: QProcess: Destroyed while process ("python3") is still running.

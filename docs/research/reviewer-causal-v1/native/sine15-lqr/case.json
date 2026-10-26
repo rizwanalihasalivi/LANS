@@ -1,0 +1,22 @@
+{
+  "speed": 15,
+  "path": "sine120",
+  "path_parameters": [
+    0,
+    2.5,
+    120.0,
+    0.3
+  ],
+  "delay_ms": 0,
+  "seed": 1076000015,
+  "mode": "lqr",
+  "output": "/workspace/LANS/docs/research/reviewer-causal-v1/native/sine15-lqr",
+  "duration": 16.666666666666664,
+  "noise": 1.0,
+  "sensor_delay_steps": 0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS/docs/research/reviewer-causal-v1/export/701"
+}

@@ -1,0 +1,99 @@
+{
+  "native_contract_checks_pass": true,
+  "native_interface_verification_pass": true,
+  "smoke": false,
+  "cases": [
+    {
+      "name": "dlc20-lqr",
+      "mode": "lqr",
+      "path": "dlc220",
+      "speed": 20,
+      "delay_ms": 0,
+      "survived": true,
+      "ticks": 1300,
+      "packets": 0,
+      "deadline_misses": 1299,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "rmse_m": 0.05581622287169464
+    },
+    {
+      "name": "dlc20-causal_student",
+      "mode": "causal_student",
+      "path": "dlc220",
+      "speed": 20,
+      "delay_ms": 0,
+      "survived": true,
+      "ticks": 1300,
+      "packets": 1287,
+      "deadline_misses": 1300,
+      "active_ticks": 0,
+      "stale_ticks": 199,
+      "rmse_m": 0.05581622287169464
+    },
+    {
+      "name": "sine15-lqr",
+      "mode": "lqr",
+      "path": "sine120",
+      "speed": 15,
+      "delay_ms": 0,
+      "survived": true,
+      "ticks": 1667,
+      "packets": 0,
+      "deadline_misses": 1666,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "rmse_m": 0.006262915626973584
+    },
+    {
+      "name": "sine15-causal_student",
+      "mode": "causal_student",
+      "path": "sine120",
+      "speed": 15,
+      "delay_ms": 0,
+      "survived": true,
+      "ticks": 1667,
+      "packets": 1650,
+      "deadline_misses": 1666,
+      "active_ticks": 0,
+      "stale_ticks": 89,
+      "rmse_m": 0.006262915626973584
+    },
+    {
+      "name": "dlc25_delay100-lqr",
+      "mode": "lqr",
+      "path": "dlc220",
+      "speed": 25,
+      "delay_ms": 100,
+      "survived": true,
+      "ticks": 1080,
+      "packets": 0,
+      "deadline_misses": 1079,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "rmse_m": 0.1730844572407263
+    },
+    {
+      "name": "dlc25_delay100-causal_student",
+      "mode": "causal_student",
+      "path": "dlc220",
+      "speed": 25,
+      "delay_ms": 100,
+      "survived": true,
+      "ticks": 1080,
+      "packets": 163,
+      "deadline_misses": 1079,
+      "active_ticks": 0,
+      "stale_ticks": 1076,
+      "rmse_m": 0.1730844572407263
+    }
+  ],
+  "severe_delay_pair_comparisons": [
+    {
+      "name": "dlc25_delay100-causal_student",
+      "max_physical_difference": 0.0,
+      "exact_match": true
+    }
+  ],
+  "strict_native_wall_timing_pass": false
+}

@@ -1,0 +1,22 @@
+{
+  "speed": 20,
+  "path": "dlc220",
+  "path_parameters": [
+    1,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "delay_ms": 0,
+  "seed": 1076000020,
+  "mode": "lqr",
+  "output": "/workspace/LANS/docs/research/reviewer-causal-v1/native/dlc20-lqr",
+  "duration": 13.0,
+  "noise": 1.0,
+  "sensor_delay_steps": 0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS/docs/research/reviewer-causal-v1/export/701"
+}

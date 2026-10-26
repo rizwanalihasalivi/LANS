@@ -3,3 +3,13 @@ docs/research/historical/jitter_test_results.incomplete.txt -whitespace
 
 # Keep original Monitor/logger CSV line endings in this frozen experimental record.
 integrations/webots/results/revision6-correction/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve hashed native logs and Windows bundle bytes across platform checkouts.
+docs/research/native-causal-2026-10-26/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# The executed observer source and its snapshots are hash-frozen, including EOF.
+tools/controller_review/realtime_kernels.py whitespace=blank-at-eol,space-before-tab,-blank-at-eof
+docs/research/native-causal-2026-10-26/**/realtime_kernels.py whitespace=blank-at-eol,space-before-tab,-blank-at-eof
+
+# Preserve executed reviewer diagnostic snapshots and raw CSV bytes.
+docs/research/reviewer-pilot-2026-10-26/** -text -whitespace

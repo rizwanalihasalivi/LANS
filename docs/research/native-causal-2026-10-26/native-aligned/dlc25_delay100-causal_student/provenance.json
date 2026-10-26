@@ -1,0 +1,7 @@
+{
+  "wall_elapsed_s": 53.51320457458496,
+  "world_sha256": "476a41e9310cc2fc19f6b5d9c73cbca5f8d292015f18148e3d9b37972d4de949",
+  "telemetry_sha256": "aceff3e781d80ccc12cca0fc56314ff705166111c94ea67f8a096bdf153419b9",
+  "config_sha256": "2f9a148797229866de08d031aefe217ce83e3cfb88cbe063b9ecff976f769009",
+  "mode": "native Webots R2025a realtime mode; software actuation only"
+}

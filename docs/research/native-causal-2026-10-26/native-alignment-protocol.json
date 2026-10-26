@@ -1,0 +1,8 @@
+{
+  "reason": "Original native grid retained4/6survival; sine initialworldCGy0/heading0 inconsistent with originalmap initialy0.739/heading0.124. Explicit rigid-frame correction defines an aligned map without moving the car or changing path geometry/gains/models.",
+  "change": "ReferenceFrame applies rigidtranslation/rotation after physical warmup to bothmethods; lograw worldcoordinates and maptransform",
+  "grid": "Same six development cases and models; one corrected initialization campaign, no gain/policy tuning or success retries",
+  "controller_sha256": "75e8e6c3e5693ada2be5a65b1073a3849b32dc5875e0000b7882bab6149cada8",
+  "runtime_sha256": "da0204a69331a683c3d795b83a70316289c26bd63b2dcbfd579f0212f376ccfd",
+  "final_comparison": "Remains blocked by independently failed software timing, regardless of this diagnostic outcome"
+}

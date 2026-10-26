@@ -1,0 +1,32 @@
+{
+  "lqr": {
+    "episodes": 18,
+    "survived": 18,
+    "mean_penalized_rmse_m": 0.05373321885198274,
+    "improvement_vs_lqr_pct": 0.0
+  },
+  "fixed_m004": {
+    "episodes": 18,
+    "survived": 18,
+    "mean_penalized_rmse_m": 0.05279055173942146,
+    "improvement_vs_lqr_pct": 1.7543469993078533
+  },
+  "fixed_p004": {
+    "episodes": 18,
+    "survived": 18,
+    "mean_penalized_rmse_m": 0.05298617817375729,
+    "improvement_vs_lqr_pct": 1.390277177109569
+  },
+  "scratch_100k": {
+    "episodes": 18,
+    "survived": 18,
+    "mean_penalized_rmse_m": 0.05367658949997786,
+    "improvement_vs_lqr_pct": 0.10538983745022659
+  },
+  "finetune_100k": {
+    "episodes": 18,
+    "survived": 18,
+    "mean_penalized_rmse_m": 0.051715719177418,
+    "improvement_vs_lqr_pct": 3.754659999287011
+  }
+}

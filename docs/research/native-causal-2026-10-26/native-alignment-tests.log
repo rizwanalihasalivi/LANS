@@ -1,0 +1,8 @@
+test_initial_pose_matches_map_without_moving_vehicle (__main__.CoordinateContracts) ... ok
+test_exact_training_feature_contract (__main__.NativeContracts) ... ok
+test_uses_larger_age_without_refreshing_observation (__main__.NativeContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.402s
+
+OK

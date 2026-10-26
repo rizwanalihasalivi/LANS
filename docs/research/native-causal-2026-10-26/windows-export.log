@@ -1,0 +1,23 @@
+[
+  {
+    "seed": 701,
+    "rows": 24300,
+    "action_disagreements": 0,
+    "max_logit_error": 4.76837158203125e-06,
+    "source_model_sha256": "5c860f96eae16736b6f1e879b272ef248be29db78e2d51b1d8708584248a523f"
+  },
+  {
+    "seed": 802,
+    "rows": 24300,
+    "action_disagreements": 0,
+    "max_logit_error": 4.76837158203125e-06,
+    "source_model_sha256": "b4d0574263bdd67d081c0ba59797a551b8c7a9518e4a64bc5c7041d64c947779"
+  },
+  {
+    "seed": 903,
+    "rows": 24300,
+    "action_disagreements": 0,
+    "max_logit_error": 4.76837158203125e-06,
+    "source_model_sha256": "80ded21346ded22323e71a70d60486729c4e3d753d8647a068a3eabdfbc4fa87"
+  }
+]

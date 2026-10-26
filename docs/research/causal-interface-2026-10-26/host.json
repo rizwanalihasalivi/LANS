@@ -1,0 +1,6 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "cpu_max": "400000 100000",
+  "note": "cgroup counters are per-episode deltas in validation summaries; no dedicated real-time hardware available"
+}

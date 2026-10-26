@@ -1,0 +1,39 @@
+{
+  "purpose": "Archived residual PPO checkpoint diagnostic; no training or selection",
+  "noise_base": 1046000000,
+  "pairs": [
+    0,
+    1,
+    2
+  ],
+  "speeds": [
+    20
+  ],
+  "paths": [
+    "dlc220",
+    "sine120"
+  ],
+  "scenarios": [
+    "nominal",
+    "latency20",
+    "latency100"
+  ],
+  "methods": [
+    "lqr",
+    "fixed_m004",
+    "fixed_p004",
+    "scratch_100k",
+    "finetune_100k"
+  ],
+  "episodes": 90,
+  "gate": "unchanged revision5 execution / legacy predictive gate",
+  "limits": [
+    "Historical 20-feature interface contains pending/forecast information.",
+    "Not validation of corrected causal PPO; zeroing channels would be a distribution shift.",
+    "Simulated service delays; not OS deadlines, native Webots, or hardware.",
+    "Known paths; development noise only; no reserved evaluation accessed.",
+    "No checkpoint, gate, threshold, or training selection from this pilot."
+  ],
+  "metrics": "Mean episode penalized lateral RMSE; survival; authority; steering rate; raw traces retained",
+  "next_gate": "Causal PPO training interface and matched supervisor ablations must precede new performance claims."
+}

@@ -1,0 +1,10 @@
+{
+  "world_origin_cg_m": [
+    129.24906518604962,
+    -0.00013140951733824478
+  ],
+  "rotation_rad": -4.454664226658266e-07,
+  "map_y_offset_m": 0.0,
+  "initial_map_heading_rad": 0.0,
+  "note": "Rigid coordinate alignment only; original path parameters and physical vehicle pose unchanged"
+}

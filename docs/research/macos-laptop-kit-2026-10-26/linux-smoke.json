@@ -1,0 +1,189 @@
+{
+  "trace_kind": "laptop_cpu_ipc_recorded_observations",
+  "physical_acknowledgements": false,
+  "vehicle_readiness_certified": false,
+  "benchmark_completed": true,
+  "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu": "unknown",
+  "python": "3.10.22",
+  "numpy": "1.23.5",
+  "seed": 701,
+  "model_checks": [
+    {
+      "seed": 701,
+      "rows": 512,
+      "max_logit_error": 2.86102294921875e-06,
+      "action_parity": true
+    },
+    {
+      "seed": 802,
+      "rows": 512,
+      "max_logit_error": 2.86102294921875e-06,
+      "action_parity": true
+    },
+    {
+      "seed": 903,
+      "rows": 512,
+      "max_logit_error": 2.86102294921875e-06,
+      "action_parity": true
+    }
+  ],
+  "cases": [
+    {
+      "case": "nominal",
+      "ticks": 50,
+      "delivered_packets": 49,
+      "worker_failure": null,
+      "unexpected_worker_failure": false,
+      "monitor_deadline_misses": 0,
+      "inference": {
+        "n": 49,
+        "median_ms": 0.046361,
+        "p95_ms": 0.8919021999999983,
+        "p99_ms": 1.5017577999999996,
+        "max_ms": 1.556461
+      },
+      "observation_to_receive": {
+        "n": 49,
+        "median_ms": 9.917056,
+        "p95_ms": 11.207583,
+        "p99_ms": 11.765641079999998,
+        "max_ms": 11.908983
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.1660855,
+        "p95_ms": 0.9441124499999989,
+        "p99_ms": 1.4718357099999995,
+        "max_ms": 1.607135
+      },
+      "post_worker_failure_monitor_ticks": 0
+    },
+    {
+      "case": "delay20",
+      "ticks": 50,
+      "delivered_packets": 16,
+      "worker_failure": null,
+      "unexpected_worker_failure": false,
+      "monitor_deadline_misses": 0,
+      "inference": {
+        "n": 16,
+        "median_ms": 0.046979,
+        "p95_ms": 0.059664999999999996,
+        "p99_ms": 0.0606586,
+        "max_ms": 0.060907
+      },
+      "observation_to_receive": {
+        "n": 16,
+        "median_ms": 30.0678895,
+        "p95_ms": 30.37052275,
+        "p99_ms": 30.39195655,
+        "max_ms": 30.397315
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.20208199999999998,
+        "p95_ms": 0.6122126499999999,
+        "p99_ms": 0.7954280899999994,
+        "max_ms": 0.952355
+      },
+      "post_worker_failure_monitor_ticks": 0
+    },
+    {
+      "case": "delay100",
+      "ticks": 50,
+      "delivered_packets": 4,
+      "worker_failure": null,
+      "unexpected_worker_failure": false,
+      "monitor_deadline_misses": 0,
+      "inference": {
+        "n": 4,
+        "median_ms": 0.0677815,
+        "p95_ms": 0.22422144999999993,
+        "p99_ms": 0.24571068999999995,
+        "max_ms": 0.251083
+      },
+      "observation_to_receive": {
+        "n": 4,
+        "median_ms": 110.15557749999999,
+        "p95_ms": 110.5787452,
+        "p99_ms": 110.61517624,
+        "max_ms": 110.624284
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.1283315,
+        "p95_ms": 0.6879871,
+        "p99_ms": 0.9678689099999994,
+        "max_ms": 1.099356
+      },
+      "post_worker_failure_monitor_ticks": 0
+    },
+    {
+      "case": "cpu_stress",
+      "ticks": 50,
+      "delivered_packets": 49,
+      "worker_failure": null,
+      "unexpected_worker_failure": false,
+      "monitor_deadline_misses": 1,
+      "inference": {
+        "n": 49,
+        "median_ms": 0.042673,
+        "p95_ms": 0.8152305999999997,
+        "p99_ms": 1.9454886399999969,
+        "max_ms": 2.346976
+      },
+      "observation_to_receive": {
+        "n": 49,
+        "median_ms": 9.897663,
+        "p95_ms": 11.101749599999998,
+        "p99_ms": 36.9330498799998,
+        "max_ms": 60.625067
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.2424695,
+        "p95_ms": 1.0975377499999999,
+        "p99_ms": 26.4888335099999,
+        "max_ms": 50.807926
+      },
+      "post_worker_failure_monitor_ticks": 0
+    },
+    {
+      "case": "worker_crash",
+      "ticks": 50,
+      "delivered_packets": 16,
+      "worker_failure": "[Errno 104] Connection reset by peer",
+      "unexpected_worker_failure": false,
+      "monitor_deadline_misses": 0,
+      "inference": {
+        "n": 16,
+        "median_ms": 0.043822,
+        "p95_ms": 0.196602,
+        "p99_ms": 0.24378359999999996,
+        "max_ms": 0.255579
+      },
+      "observation_to_receive": {
+        "n": 16,
+        "median_ms": 9.993344,
+        "p95_ms": 10.767171,
+        "p99_ms": 10.8883926,
+        "max_ms": 10.918698
+      },
+      "release_lateness": {
+        "n": 50,
+        "median_ms": 0.121114,
+        "p95_ms": 0.54419785,
+        "p99_ms": 0.7317059199999996,
+        "max_ms": 0.840286
+      },
+      "post_worker_failure_monitor_ticks": 33
+    }
+  ],
+  "limitations": [
+    "Recorded inputs, not live vehicle sensors; model is NumPy export of trained causal student with verified action parity.",
+    "No observer, LQR, predictive gate, plant, CAN or actuator executes here. Monitor deadlines are not full controller deadlines.",
+    "Injected worker sleep is separated from actual inference time. Windows scheduling is not a hard-real-time guarantee.",
+    "No hostname, device ID, product ID or network identifiers are collected."
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "seed": 701,
+    "recorded_dev_rows": 24300,
+    "batch_one_action_disagreements": 0,
+    "max_logit_difference": 3.814697265625e-06
+  },
+  {
+    "seed": 802,
+    "recorded_dev_rows": 24300,
+    "batch_one_action_disagreements": 0,
+    "max_logit_difference": 3.337860107421875e-06
+  },
+  {
+    "seed": 903,
+    "recorded_dev_rows": 24300,
+    "batch_one_action_disagreements": 0,
+    "max_logit_difference": 3.814697265625e-06
+  }
+]

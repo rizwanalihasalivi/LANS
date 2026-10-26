@@ -1,0 +1,2638 @@
+{
+  "episodes": [
+    {
+      "seed": 701,
+      "case": "nominal",
+      "ticks": 1300,
+      "startup_ms": 3526.644411,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 119.851897,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 7.209438,
+      "packets": 1259,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000439050999999,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.467472,
+        "p95_ms": 1.5031176499999996,
+        "p99_ms": 3.575865769999998,
+        "max_ms": 106.173903
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.159821,
+        "p95_ms": 0.7349234999999998,
+        "p99_ms": 1.825169829999998,
+        "max_ms": 94.675268
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.593476,
+        "p95_ms": 3.0627315999999976,
+        "p99_ms": 69.51490857999998,
+        "max_ms": 140.478419
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1039835,
+        "p95_ms": 1.023546799999992,
+        "p99_ms": 63.81871876999999,
+        "max_ms": 130.614298
+      },
+      "inference": {
+        "n": 1259,
+        "median_ms": 0.341311,
+        "p95_ms": 1.2916376999999997,
+        "p99_ms": 2.7097759600000044,
+        "max_ms": 67.197559
+      },
+      "request_to_delivery": {
+        "n": 1259,
+        "median_ms": 10.089708,
+        "p95_ms": 10.6379583,
+        "p99_ms": 13.245555780000013,
+        "max_ms": 185.979361
+      },
+      "request_to_worker": {
+        "n": 1259,
+        "median_ms": 0.409732,
+        "p95_ms": 1.2847558999999997,
+        "p99_ms": 2.3950706800000052,
+        "max_ms": 107.102508
+      },
+      "inference_to_delivery": {
+        "n": 1259,
+        "median_ms": 9.36091,
+        "p95_ms": 9.836343999999999,
+        "p99_ms": 12.281925760000018,
+        "max_ms": 133.449715
+      },
+      "earned_application_age": {
+        "n": 235,
+        "median_ms": 10.490957,
+        "p95_ms": 11.800683,
+        "p99_ms": 12.7261948,
+        "max_ms": 14.004648
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.465393,
+        "p95_ms": 12.675296999999999,
+        "p99_ms": 163.93680754,
+        "max_ms": 222.13779
+      },
+      "deadline_misses": 41,
+      "late_authority_violations": 0,
+      "late_release_ticks": 41,
+      "control_over_budget_ticks": 4,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.467826,
+        "p95_ms": 1.4673024999999982,
+        "p99_ms": 3.1901368099999967,
+        "max_ms": 104.938314
+      },
+      "cgroup_delta": {
+        "usage_usec": 3018034,
+        "user_usec": 2961440,
+        "system_usec": 56593,
+        "nice_usec": 0,
+        "nr_periods": 132,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1261,
+      "involuntary_switches": 13,
+      "active_ticks": 235,
+      "stale_ticks": 38,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 49,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.041827360081993045,
+      "paired_lqr_rmse": 0.04603807635430799,
+      "paired_lqr_max_command_difference": 0.03231144515792886,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.05472432273296296
+    },
+    {
+      "seed": 701,
+      "case": "delay20",
+      "ticks": 1300,
+      "startup_ms": 3253.723623,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 178.127035,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 11.112344,
+      "packets": 413,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000758594,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.39957750000000003,
+        "p95_ms": 1.8529082499999998,
+        "p99_ms": 6.3472873499999976,
+        "max_ms": 147.068439
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.1381675,
+        "p95_ms": 1.0148685499999992,
+        "p99_ms": 3.399587519999998,
+        "max_ms": 62.329477
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.564565,
+        "p95_ms": 11.689050849999955,
+        "p99_ms": 132.03147863999993,
+        "max_ms": 174.375548
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.11324400000000001,
+        "p95_ms": 8.30767939999996,
+        "p99_ms": 128.94014222,
+        "max_ms": 164.572447
+      },
+      "inference": {
+        "n": 413,
+        "median_ms": 0.679178,
+        "p95_ms": 2.185682,
+        "p99_ms": 4.444771039999998,
+        "max_ms": 56.586094
+      },
+      "request_to_delivery": {
+        "n": 413,
+        "median_ms": 30.129588,
+        "p95_ms": 31.477271799999993,
+        "p99_ms": 100.70731639999981,
+        "max_ms": 210.519654
+      },
+      "request_to_worker": {
+        "n": 413,
+        "median_ms": 0.523934,
+        "p95_ms": 2.444204999999999,
+        "p99_ms": 11.284312959999982,
+        "max_ms": 147.112818
+      },
+      "inference_to_delivery": {
+        "n": 413,
+        "median_ms": 28.921626,
+        "p95_ms": 30.1000962,
+        "p99_ms": 42.11874075999998,
+        "max_ms": 145.89739
+      },
+      "earned_application_age": {
+        "n": 12,
+        "median_ms": 44.608688,
+        "p95_ms": 49.9234266,
+        "p99_ms": 49.95151972,
+        "max_ms": 49.958543
+      },
+      "all_held_packet_ages": {
+        "n": 1297,
+        "median_ms": 40.421383,
+        "p95_ms": 170.1813776,
+        "p99_ms": 269.229645,
+        "max_ms": 301.727544
+      },
+      "deadline_misses": 67,
+      "late_authority_violations": 0,
+      "late_release_ticks": 64,
+      "control_over_budget_ticks": 8,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.39858400000000005,
+        "p95_ms": 1.8581662499999996,
+        "p99_ms": 6.350344719999998,
+        "max_ms": 147.073082
+      },
+      "cgroup_delta": {
+        "usage_usec": 3125339,
+        "user_usec": 3125340,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 133,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1236,
+      "involuntary_switches": 4,
+      "active_ticks": 12,
+      "stale_ticks": 461,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 466,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04603816468257738,
+      "paired_lqr_rmse": 0.04603807635430799,
+      "paired_lqr_max_command_difference": 0.0053900446164631445,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.05392484676691569
+    },
+    {
+      "seed": 701,
+      "case": "delay60",
+      "ticks": 1300,
+      "startup_ms": 10058.37074,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 244.261759,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 10.303271,
+      "packets": 183,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000743368,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.2721565,
+        "p95_ms": 1.393790149999999,
+        "p99_ms": 2.381645419999999,
+        "max_ms": 24.449792
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.14974500000000002,
+        "p95_ms": 0.6933975499999999,
+        "p99_ms": 1.3442150499999996,
+        "max_ms": 5.360182
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.475004,
+        "p95_ms": 1.9901284499999992,
+        "p99_ms": 35.51616317999995,
+        "max_ms": 107.750586
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1201135,
+        "p95_ms": 0.7340989499999995,
+        "p99_ms": 35.445594139999955,
+        "max_ms": 107.018121
+      },
+      "inference": {
+        "n": 183,
+        "median_ms": 0.97757,
+        "p95_ms": 3.0717325000000013,
+        "p99_ms": 4.349303660000004,
+        "max_ms": 6.257005
+      },
+      "request_to_delivery": {
+        "n": 183,
+        "median_ms": 70.166702,
+        "p95_ms": 71.678331,
+        "p99_ms": 88.83089290000031,
+        "max_ms": 138.180672
+      },
+      "request_to_worker": {
+        "n": 183,
+        "median_ms": 0.768647,
+        "p95_ms": 2.7683758000000003,
+        "p99_ms": 4.529182660000004,
+        "max_ms": 5.792073
+      },
+      "inference_to_delivery": {
+        "n": 183,
+        "median_ms": 68.321209,
+        "p95_ms": 69.6052277,
+        "p99_ms": 80.65059584000036,
+        "max_ms": 136.959768
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1293,
+        "median_ms": 100.300279,
+        "p95_ms": 130.6135102,
+        "p99_ms": 146.15459595999968,
+        "max_ms": 207.656701
+      },
+      "deadline_misses": 20,
+      "late_authority_violations": 0,
+      "late_release_ticks": 20,
+      "control_over_budget_ticks": 1,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.2729905,
+        "p95_ms": 1.396071749999999,
+        "p99_ms": 2.381504099999999,
+        "max_ms": 24.343792
+      },
+      "cgroup_delta": {
+        "usage_usec": 1430965,
+        "user_usec": 1430966,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 132,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1282,
+      "involuntary_switches": 2,
+      "active_ticks": 0,
+      "stale_ticks": 1293,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04603807635430799,
+      "paired_lqr_rmse": 0.04603807635430799,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.05392484676691569
+    },
+    {
+      "seed": 701,
+      "case": "delay100",
+      "ticks": 1300,
+      "startup_ms": 4267.64002,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 331.345565,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 21.4591,
+      "packets": 108,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.152435365,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.25229599999999996,
+        "p95_ms": 1.7771614999999994,
+        "p99_ms": 12.204202329999987,
+        "max_ms": 587.929144
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.1074555,
+        "p95_ms": 1.01070555,
+        "p99_ms": 9.452353719999994,
+        "max_ms": 85.679927
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.6686695,
+        "p95_ms": 190.42399534999998,
+        "p99_ms": 491.4942983599999,
+        "max_ms": 605.97436
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1521175,
+        "p95_ms": 180.44913689999998,
+        "p99_ms": 481.54127232999997,
+        "max_ms": 596.042528
+      },
+      "inference": {
+        "n": 108,
+        "median_ms": 1.388846,
+        "p95_ms": 5.279158199999996,
+        "p99_ms": 41.58069903999986,
+        "max_ms": 83.969918
+      },
+      "request_to_delivery": {
+        "n": 108,
+        "median_ms": 110.22245649999999,
+        "p95_ms": 140.04532354999995,
+        "p99_ms": 507.1215282599976,
+        "max_ms": 657.437634
+      },
+      "request_to_worker": {
+        "n": 108,
+        "median_ms": 1.4585065,
+        "p95_ms": 4.158993099999999,
+        "p99_ms": 9.41864636999997,
+        "max_ms": 23.276533
+      },
+      "inference_to_delivery": {
+        "n": 108,
+        "median_ms": 107.61687649999999,
+        "p95_ms": 116.98729364999998,
+        "p99_ms": 458.84214150999753,
+        "max_ms": 651.453118
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1289,
+        "median_ms": 170.182497,
+        "p95_ms": 666.942097,
+        "p99_ms": 694.24051392,
+        "max_ms": 790.192984
+      },
+      "deadline_misses": 129,
+      "late_authority_violations": 0,
+      "late_release_ticks": 123,
+      "control_over_budget_ticks": 14,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.251571,
+        "p95_ms": 1.7776255499999993,
+        "p99_ms": 12.208746919999987,
+        "max_ms": 344.619115
+      },
+      "cgroup_delta": {
+        "usage_usec": 3872003,
+        "user_usec": 3872003,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 134,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1175,
+      "involuntary_switches": 37,
+      "active_ticks": 0,
+      "stale_ticks": 1289,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04603807635430799,
+      "paired_lqr_rmse": 0.04603807635430799,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.05392484676691569
+    },
+    {
+      "seed": 701,
+      "case": "cpu_stress",
+      "ticks": 1300,
+      "startup_ms": 5754.109485,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 963.16463,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 14.190133,
+      "packets": 1267,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.003741199,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.9015895,
+        "p95_ms": 2.441874449999998,
+        "p99_ms": 11.6307852,
+        "max_ms": 41.637029
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.336269,
+        "p95_ms": 1.3040093999999998,
+        "p99_ms": 2.0770691499999994,
+        "max_ms": 25.629719
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 2.2402525,
+        "p95_ms": 8.830972649999996,
+        "p99_ms": 21.00476633,
+        "max_ms": 53.667233
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.7998565,
+        "p95_ms": 6.95333705,
+        "p99_ms": 11.309879079999984,
+        "max_ms": 43.71629
+      },
+      "inference": {
+        "n": 1267,
+        "median_ms": 0.456584,
+        "p95_ms": 1.4934803,
+        "p99_ms": 2.459037339999992,
+        "max_ms": 38.368098
+      },
+      "request_to_delivery": {
+        "n": 1267,
+        "median_ms": 10.294649,
+        "p95_ms": 17.0297237,
+        "p99_ms": 20.400124039999994,
+        "max_ms": 62.88395
+      },
+      "request_to_worker": {
+        "n": 1267,
+        "median_ms": 0.830445,
+        "p95_ms": 2.8235363000000016,
+        "p99_ms": 9.832651519999933,
+        "max_ms": 15.652025
+      },
+      "inference_to_delivery": {
+        "n": 1267,
+        "median_ms": 9.026567,
+        "p95_ms": 14.803276300000004,
+        "p99_ms": 16.319877679999998,
+        "max_ms": 25.757309
+      },
+      "earned_application_age": {
+        "n": 209,
+        "median_ms": 11.422602,
+        "p95_ms": 16.5393418,
+        "p99_ms": 18.630016839999996,
+        "max_ms": 19.615729
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 11.44561,
+        "p95_ms": 20.682031599999995,
+        "p99_ms": 27.36992715999998,
+        "max_ms": 74.134019
+      },
+      "deadline_misses": 52,
+      "late_authority_violations": 0,
+      "late_release_ticks": 17,
+      "control_over_budget_ticks": 23,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.8995775,
+        "p95_ms": 2.263295249999999,
+        "p99_ms": 3.6826373699999992,
+        "max_ms": 15.797708
+      },
+      "cgroup_delta": {
+        "usage_usec": 18762201,
+        "user_usec": 15997091,
+        "system_usec": 2765109,
+        "nice_usec": 0,
+        "nr_periods": 137,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1227,
+      "involuntary_switches": 118,
+      "active_ticks": 209,
+      "stale_ticks": 4,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 53,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04190603687577374,
+      "paired_lqr_rmse": 0.04603807635430799,
+      "paired_lqr_max_command_difference": 0.032143541710925275,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.05468607373869442
+    },
+    {
+      "seed": 701,
+      "case": "worker_crash",
+      "ticks": 1300,
+      "startup_ms": 4067.316539,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 269.527188,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 12.091502,
+      "packets": 422,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000200604,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.221527,
+        "p95_ms": 1.741049999999999,
+        "p99_ms": 13.496182899999992,
+        "max_ms": 57.348909
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.0866565,
+        "p95_ms": 0.7641983499999989,
+        "p99_ms": 7.352876449999978,
+        "max_ms": 50.907929
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.527412,
+        "p95_ms": 13.456498349999986,
+        "p99_ms": 59.08861342999999,
+        "max_ms": 103.331688
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.144333,
+        "p95_ms": 6.187335349999999,
+        "p99_ms": 52.381965859999994,
+        "max_ms": 95.582399
+      },
+      "inference": {
+        "n": 422,
+        "median_ms": 0.7291505,
+        "p95_ms": 2.0609647499999997,
+        "p99_ms": 3.495217580000016,
+        "max_ms": 59.048988
+      },
+      "request_to_delivery": {
+        "n": 422,
+        "median_ms": 10.118307999999999,
+        "p95_ms": 10.6821174,
+        "p99_ms": 12.960757870000007,
+        "max_ms": 86.930198
+      },
+      "request_to_worker": {
+        "n": 422,
+        "median_ms": 0.6230335,
+        "p95_ms": 2.038510899999999,
+        "p99_ms": 3.797366680000003,
+        "max_ms": 36.517389
+      },
+      "inference_to_delivery": {
+        "n": 422,
+        "median_ms": 8.7101785,
+        "p95_ms": 9.63104525,
+        "p99_ms": 10.335630240000006,
+        "max_ms": 15.076744
+      },
+      "earned_application_age": {
+        "n": 37,
+        "median_ms": 10.670229,
+        "p95_ms": 11.909259999999998,
+        "p99_ms": 12.3590368,
+        "max_ms": 12.410668
+      },
+      "all_held_packet_ages": {
+        "n": 435,
+        "median_ms": 10.735954,
+        "p95_ms": 13.110560499999972,
+        "p99_ms": 75.84636499999992,
+        "max_ms": 94.392023
+      },
+      "deadline_misses": 68,
+      "late_authority_violations": 0,
+      "late_release_ticks": 58,
+      "control_over_budget_ticks": 14,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.21623900000000001,
+        "p95_ms": 1.7225594999999996,
+        "p99_ms": 9.372126689999993,
+        "max_ms": 38.46959
+      },
+      "cgroup_delta": {
+        "usage_usec": 2996437,
+        "user_usec": 2844945,
+        "system_usec": 151491,
+        "nice_usec": 0,
+        "nr_periods": 130,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1231,
+      "involuntary_switches": 184,
+      "active_ticks": 37,
+      "stale_ticks": 11,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 881,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 436,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 864,
+      "survived": true,
+      "rmse": 0.043973105290225134,
+      "paired_lqr_rmse": 0.04603807635430799,
+      "paired_lqr_max_command_difference": 0.03214122335843883,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.05392484676691569
+    },
+    {
+      "seed": 802,
+      "case": "nominal",
+      "ticks": 1300,
+      "startup_ms": 4159.743089,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 311.443789,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 10.508567,
+      "packets": 1294,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000682001,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.7984184999999999,
+        "p95_ms": 1.7634024,
+        "p99_ms": 2.527996399999999,
+        "max_ms": 14.036492
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.287565,
+        "p95_ms": 1.04852355,
+        "p99_ms": 1.7763649799999996,
+        "max_ms": 13.118025
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 1.0504835,
+        "p95_ms": 2.1993013999999995,
+        "p99_ms": 4.114570959999998,
+        "max_ms": 57.594357
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1487815,
+        "p95_ms": 0.8067344999999997,
+        "p99_ms": 2.2315676199999985,
+        "max_ms": 56.205599
+      },
+      "inference": {
+        "n": 1294,
+        "median_ms": 0.6009755,
+        "p95_ms": 1.577731199999999,
+        "p99_ms": 2.312990219999999,
+        "max_ms": 4.557928
+      },
+      "request_to_delivery": {
+        "n": 1294,
+        "median_ms": 10.1207515,
+        "p95_ms": 10.911424949999999,
+        "p99_ms": 11.781022979999994,
+        "max_ms": 66.638618
+      },
+      "request_to_worker": {
+        "n": 1294,
+        "median_ms": 0.7310575,
+        "p95_ms": 1.6680759999999997,
+        "p99_ms": 2.424954119999999,
+        "max_ms": 13.959202
+      },
+      "inference_to_delivery": {
+        "n": 1294,
+        "median_ms": 8.782772999999999,
+        "p95_ms": 9.6929693,
+        "p99_ms": 10.58249471999999,
+        "max_ms": 65.279352
+      },
+      "earned_application_age": {
+        "n": 206,
+        "median_ms": 10.8035685,
+        "p95_ms": 12.0250685,
+        "p99_ms": 12.47157155,
+        "max_ms": 13.917918
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.82715,
+        "p95_ms": 11.992574399999999,
+        "p99_ms": 13.923142819999995,
+        "max_ms": 67.830865
+      },
+      "deadline_misses": 7,
+      "late_authority_violations": 0,
+      "late_release_ticks": 7,
+      "control_over_budget_ticks": 1,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.8018655,
+        "p95_ms": 1.7565368999999997,
+        "p99_ms": 2.529358159999999,
+        "max_ms": 14.040973
+      },
+      "cgroup_delta": {
+        "usage_usec": 2949439,
+        "user_usec": 2949439,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 132,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1296,
+      "involuntary_switches": 2,
+      "active_ticks": 206,
+      "stale_ticks": 4,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 8,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04262874549110534,
+      "paired_lqr_rmse": 0.047153405129628394,
+      "paired_lqr_max_command_difference": 0.03022415851366151,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.058728938732582066
+    },
+    {
+      "seed": 802,
+      "case": "delay20",
+      "ticks": 1300,
+      "startup_ms": 3754.613421,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 207.744359,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 13.179862,
+      "packets": 351,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000688506,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.2584525,
+        "p95_ms": 1.5320827999999995,
+        "p99_ms": 8.099608749999996,
+        "max_ms": 757.83107
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.0953285,
+        "p95_ms": 0.6328936999999998,
+        "p99_ms": 3.5040546699999937,
+        "max_ms": 704.295931
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.624143,
+        "p95_ms": 491.01473054999985,
+        "p99_ms": 686.3172155,
+        "max_ms": 790.141945
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.134814,
+        "p95_ms": 481.03913109999985,
+        "p99_ms": 677.18412517,
+        "max_ms": 780.217301
+      },
+      "inference": {
+        "n": 351,
+        "median_ms": 0.531017,
+        "p95_ms": 1.8428,
+        "p99_ms": 11.217538,
+        "max_ms": 142.086911
+      },
+      "request_to_delivery": {
+        "n": 351,
+        "median_ms": 30.094783,
+        "p95_ms": 36.0418505,
+        "p99_ms": 163.5276035,
+        "max_ms": 798.93619
+      },
+      "request_to_worker": {
+        "n": 351,
+        "median_ms": 0.496973,
+        "p95_ms": 2.1714035000000003,
+        "p99_ms": 27.2610215,
+        "max_ms": 110.113639
+      },
+      "inference_to_delivery": {
+        "n": 351,
+        "median_ms": 28.969901,
+        "p95_ms": 30.254953,
+        "p99_ms": 152.786539,
+        "max_ms": 798.299511
+      },
+      "earned_application_age": {
+        "n": 6,
+        "median_ms": 40.261716500000006,
+        "p95_ms": 49.408795999999995,
+        "p99_ms": 49.5684064,
+        "max_ms": 49.608309
+      },
+      "all_held_packet_ages": {
+        "n": 1297,
+        "median_ms": 41.266633,
+        "p95_ms": 835.9558758,
+        "p99_ms": 845.7531177200001,
+        "max_ms": 891.224086
+      },
+      "deadline_misses": 251,
+      "late_authority_violations": 0,
+      "late_release_ticks": 246,
+      "control_over_budget_ticks": 12,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.2587075,
+        "p95_ms": 1.5359792999999993,
+        "p99_ms": 8.44975504999996,
+        "max_ms": 757.662987
+      },
+      "cgroup_delta": {
+        "usage_usec": 4949403,
+        "user_usec": 4949403,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 132,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1052,
+      "involuntary_switches": 3,
+      "active_ticks": 6,
+      "stale_ticks": 597,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 601,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.047163203347622154,
+      "paired_lqr_rmse": 0.047153405129628394,
+      "paired_lqr_max_command_difference": 0.009302540017560047,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.058728938732582066
+    },
+    {
+      "seed": 802,
+      "case": "delay60",
+      "ticks": 1300,
+      "startup_ms": 3383.108773,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 203.813098,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 14.103588,
+      "packets": 185,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000407261,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.237508,
+        "p95_ms": 0.90490255,
+        "p99_ms": 1.57710467,
+        "max_ms": 14.938831
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.115959,
+        "p95_ms": 0.5673037,
+        "p99_ms": 0.93383531,
+        "max_ms": 11.578037
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.497006,
+        "p95_ms": 1.2987072499999999,
+        "p99_ms": 2.406377349999999,
+        "max_ms": 22.226911
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.155157,
+        "p95_ms": 0.6693492499999999,
+        "p99_ms": 1.2718508999999996,
+        "max_ms": 12.903165
+      },
+      "inference": {
+        "n": 185,
+        "median_ms": 0.667301,
+        "p95_ms": 2.122614,
+        "p99_ms": 3.765078719999997,
+        "max_ms": 4.990126
+      },
+      "request_to_delivery": {
+        "n": 185,
+        "median_ms": 70.166731,
+        "p95_ms": 70.8138558,
+        "p99_ms": 72.87564927999998,
+        "max_ms": 80.575964
+      },
+      "request_to_worker": {
+        "n": 185,
+        "median_ms": 0.685733,
+        "p95_ms": 1.5182345999999978,
+        "p99_ms": 2.9673488800000003,
+        "max_ms": 12.719664
+      },
+      "inference_to_delivery": {
+        "n": 185,
+        "median_ms": 68.764764,
+        "p95_ms": 69.5861512,
+        "p99_ms": 69.86827108,
+        "max_ms": 79.104347
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1293,
+        "median_ms": 100.222159,
+        "p95_ms": 130.38918520000001,
+        "p99_ms": 130.84951980000002,
+        "max_ms": 139.827472
+      },
+      "deadline_misses": 3,
+      "late_authority_violations": 0,
+      "late_release_ticks": 1,
+      "control_over_budget_ticks": 2,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.238141,
+        "p95_ms": 0.9061151,
+        "p99_ms": 1.5771230499999997,
+        "max_ms": 14.720954
+      },
+      "cgroup_delta": {
+        "usage_usec": 1124541,
+        "user_usec": 1124541,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 133,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1300,
+      "involuntary_switches": 1,
+      "active_ticks": 0,
+      "stale_ticks": 1293,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.047153405129628394,
+      "paired_lqr_rmse": 0.047153405129628394,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.058728938732582066
+    },
+    {
+      "seed": 802,
+      "case": "delay100",
+      "ticks": 1300,
+      "startup_ms": 3607.884695,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 288.352534,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 12.033671,
+      "packets": 113,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000772153,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.3775185,
+        "p95_ms": 1.2336085499999998,
+        "p99_ms": 2.6671532699999996,
+        "max_ms": 381.480383
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.170331,
+        "p95_ms": 0.8694473999999988,
+        "p99_ms": 1.6804309599999998,
+        "max_ms": 71.446732
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.635278,
+        "p95_ms": 7.875308199999888,
+        "p99_ms": 273.9822803599999,
+        "max_ms": 390.945398
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.148804,
+        "p95_ms": 4.069634949999945,
+        "p99_ms": 264.09650914999986,
+        "max_ms": 381.010497
+      },
+      "inference": {
+        "n": 113,
+        "median_ms": 0.839131,
+        "p95_ms": 3.6667629999999996,
+        "p99_ms": 5.089146879999996,
+        "max_ms": 8.93911
+      },
+      "request_to_delivery": {
+        "n": 113,
+        "median_ms": 110.340757,
+        "p95_ms": 120.02577279999998,
+        "p99_ms": 202.49584111999994,
+        "max_ms": 463.981972
+      },
+      "request_to_worker": {
+        "n": 113,
+        "median_ms": 1.101147,
+        "p95_ms": 2.7349824,
+        "p99_ms": 63.19185875999974,
+        "max_ms": 71.858691
+      },
+      "inference_to_delivery": {
+        "n": 113,
+        "median_ms": 108.392378,
+        "p95_ms": 110.7010584,
+        "p99_ms": 184.05960352,
+        "max_ms": 458.332094
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1289,
+        "median_ms": 169.810646,
+        "p95_ms": 259.17979759999974,
+        "p99_ms": 479.34421295999994,
+        "max_ms": 579.93778
+      },
+      "deadline_misses": 65,
+      "late_authority_violations": 0,
+      "late_release_ticks": 61,
+      "control_over_budget_ticks": 7,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.3763975,
+        "p95_ms": 1.2315413499999999,
+        "p99_ms": 2.6716480899999997,
+        "max_ms": 381.421116
+      },
+      "cgroup_delta": {
+        "usage_usec": 2238765,
+        "user_usec": 2238766,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 133,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1238,
+      "involuntary_switches": 2,
+      "active_ticks": 0,
+      "stale_ticks": 1289,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.047153405129628394,
+      "paired_lqr_rmse": 0.047153405129628394,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.058728938732582066
+    },
+    {
+      "seed": 802,
+      "case": "cpu_stress",
+      "ticks": 1300,
+      "startup_ms": 3961.325284,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 1313.030355,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 7.104719,
+      "packets": 1198,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.001826956,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.7365675,
+        "p95_ms": 2.427281,
+        "p99_ms": 10.57117504,
+        "max_ms": 172.231671
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.2885665,
+        "p95_ms": 1.1577497499999991,
+        "p99_ms": 2.366903889999999,
+        "max_ms": 103.725989
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 1.621136,
+        "p95_ms": 16.105817849999998,
+        "p99_ms": 121.26069864,
+        "max_ms": 205.899436
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.521604,
+        "p95_ms": 11.047426949999888,
+        "p99_ms": 112.95979293999999,
+        "max_ms": 201.976522
+      },
+      "inference": {
+        "n": 1198,
+        "median_ms": 0.3561565,
+        "p95_ms": 1.2312617499999987,
+        "p99_ms": 2.005131009999997,
+        "max_ms": 114.539706
+      },
+      "request_to_delivery": {
+        "n": 1198,
+        "median_ms": 10.310756999999999,
+        "p95_ms": 16.311970999999993,
+        "p99_ms": 18.90020189999998,
+        "max_ms": 340.534248
+      },
+      "request_to_worker": {
+        "n": 1198,
+        "median_ms": 0.6898234999999999,
+        "p95_ms": 3.750039149999999,
+        "p99_ms": 8.896068689999998,
+        "max_ms": 140.216207
+      },
+      "inference_to_delivery": {
+        "n": 1198,
+        "median_ms": 9.1584735,
+        "p95_ms": 15.029375749999998,
+        "p99_ms": 17.10697017,
+        "max_ms": 339.754668
+      },
+      "earned_application_age": {
+        "n": 182,
+        "median_ms": 10.8782475,
+        "p95_ms": 17.168946649999995,
+        "p99_ms": 18.77738959,
+        "max_ms": 20.759913
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 11.123369,
+        "p95_ms": 104.9514168,
+        "p99_ms": 251.4158405799995,
+        "max_ms": 348.798882
+      },
+      "deadline_misses": 100,
+      "late_authority_violations": 0,
+      "late_release_ticks": 67,
+      "control_over_budget_ticks": 15,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.7345575,
+        "p95_ms": 2.2023329,
+        "p99_ms": 3.513711649999999,
+        "max_ms": 96.615662
+      },
+      "cgroup_delta": {
+        "usage_usec": 18915183,
+        "user_usec": 18903057,
+        "system_usec": 12125,
+        "nice_usec": 0,
+        "nr_periods": 137,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1188,
+      "involuntary_switches": 98,
+      "active_ticks": 182,
+      "stale_ticks": 72,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 116,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.043207658914754754,
+      "paired_lqr_rmse": 0.047153405129628394,
+      "paired_lqr_max_command_difference": 0.03293205527713569,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.06090932067289999
+    },
+    {
+      "seed": 802,
+      "case": "worker_crash",
+      "ticks": 1300,
+      "startup_ms": 3726.947947,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 266.889922,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 13.22286,
+      "packets": 417,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000424993,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.1338515,
+        "p95_ms": 1.3819362499999999,
+        "p99_ms": 4.453008609999988,
+        "max_ms": 110.618218
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.061411,
+        "p95_ms": 0.7483612499999999,
+        "p99_ms": 2.915432139999997,
+        "max_ms": 66.574238
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.455957,
+        "p95_ms": 5.111658799999995,
+        "p99_ms": 74.37301306999996,
+        "max_ms": 137.39172
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.12027399999999999,
+        "p95_ms": 2.695220299999988,
+        "p99_ms": 67.91692239,
+        "max_ms": 131.686301
+      },
+      "inference": {
+        "n": 417,
+        "median_ms": 0.642419,
+        "p95_ms": 1.8502597999999997,
+        "p99_ms": 2.991303559999997,
+        "max_ms": 34.039432
+      },
+      "request_to_delivery": {
+        "n": 417,
+        "median_ms": 10.105528,
+        "p95_ms": 10.8962144,
+        "p99_ms": 17.10971807999988,
+        "max_ms": 108.637269
+      },
+      "request_to_worker": {
+        "n": 417,
+        "median_ms": 0.596244,
+        "p95_ms": 1.6467581999999996,
+        "p99_ms": 3.6427994399999966,
+        "max_ms": 86.137623
+      },
+      "inference_to_delivery": {
+        "n": 417,
+        "median_ms": 8.787388,
+        "p95_ms": 9.7208716,
+        "p99_ms": 10.986227719999997,
+        "max_ms": 68.224891
+      },
+      "earned_application_age": {
+        "n": 50,
+        "median_ms": 10.677865,
+        "p95_ms": 12.745973949999994,
+        "p99_ms": 25.45161858999998,
+        "max_ms": 30.24103
+      },
+      "all_held_packet_ages": {
+        "n": 435,
+        "median_ms": 10.749149,
+        "p95_ms": 20.64924249999997,
+        "p99_ms": 95.75675743999999,
+        "max_ms": 110.098003
+      },
+      "deadline_misses": 59,
+      "late_authority_violations": 0,
+      "late_release_ticks": 51,
+      "control_over_budget_ticks": 10,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.13275350000000002,
+        "p95_ms": 1.38466405,
+        "p99_ms": 4.454007579999988,
+        "max_ms": 85.066751
+      },
+      "cgroup_delta": {
+        "usage_usec": 1717921,
+        "user_usec": 1717921,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 130,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1240,
+      "involuntary_switches": 132,
+      "active_ticks": 50,
+      "stale_ticks": 17,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 884,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 436,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 864,
+      "survived": true,
+      "rmse": 0.044818887592176164,
+      "paired_lqr_rmse": 0.047153405129628394,
+      "paired_lqr_max_command_difference": 0.030223155831597383,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.058728938732582066
+    },
+    {
+      "seed": 903,
+      "case": "nominal",
+      "ticks": 1300,
+      "startup_ms": 6795.115778,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 915.220181,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 16.886185,
+      "packets": 1024,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.011471627,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.5458555,
+        "p95_ms": 2.10700975,
+        "p99_ms": 8.893209479999985,
+        "max_ms": 631.694766
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.195928,
+        "p95_ms": 1.1877784499999995,
+        "p99_ms": 4.591779319999995,
+        "max_ms": 436.01929
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 1.136354,
+        "p95_ms": 453.05414855,
+        "p99_ms": 651.24792092,
+        "max_ms": 720.161067
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.2126405,
+        "p95_ms": 444.16247429999964,
+        "p99_ms": 641.2963346099999,
+        "max_ms": 710.319935
+      },
+      "inference": {
+        "n": 1024,
+        "median_ms": 0.579657,
+        "p95_ms": 1.9911539999999988,
+        "p99_ms": 3.527067689999995,
+        "max_ms": 753.193929
+      },
+      "request_to_delivery": {
+        "n": 1024,
+        "median_ms": 10.1288165,
+        "p95_ms": 11.396163049999998,
+        "p99_ms": 47.48590134999979,
+        "max_ms": 794.907954
+      },
+      "request_to_worker": {
+        "n": 1024,
+        "median_ms": 0.5496920000000001,
+        "p95_ms": 1.9177065499999957,
+        "p99_ms": 6.059064159999998,
+        "max_ms": 629.032185
+      },
+      "inference_to_delivery": {
+        "n": 1024,
+        "median_ms": 8.879736999999999,
+        "p95_ms": 10.06607775,
+        "p99_ms": 25.269401469999966,
+        "max_ms": 277.154215
+      },
+      "earned_application_age": {
+        "n": 166,
+        "median_ms": 10.596662,
+        "p95_ms": 12.107508,
+        "p99_ms": 13.41620704999999,
+        "max_ms": 16.072916
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.845199,
+        "p95_ms": 762.9811955,
+        "p99_ms": 798.89188008,
+        "max_ms": 802.215126
+      },
+      "deadline_misses": 293,
+      "late_authority_violations": 0,
+      "late_release_ticks": 288,
+      "control_over_budget_ticks": 13,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.547911,
+        "p95_ms": 2.1099176999999996,
+        "p99_ms": 8.895447529999986,
+        "max_ms": 630.446307
+      },
+      "cgroup_delta": {
+        "usage_usec": 7069429,
+        "user_usec": 7069429,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 135,
+        "nr_throttled": 1,
+        "throttled_usec": 70161,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1010,
+      "involuntary_switches": 11,
+      "active_ticks": 166,
+      "stale_ticks": 257,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 304,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04364681629334595,
+      "paired_lqr_rmse": 0.04751994136430714,
+      "paired_lqr_max_command_difference": 0.031907463850689315,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.056232041861880314
+    },
+    {
+      "seed": 903,
+      "case": "delay20",
+      "ticks": 1300,
+      "startup_ms": 4937.955153,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 259.982356,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 17.821704,
+      "packets": 429,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000585898999999,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.372419,
+        "p95_ms": 1.4193801999999998,
+        "p99_ms": 2.458434639999998,
+        "max_ms": 30.941596
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.1361545,
+        "p95_ms": 0.6912164999999998,
+        "p99_ms": 1.3765685699999999,
+        "max_ms": 30.580562
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.6237809999999999,
+        "p95_ms": 2.202923599999997,
+        "p99_ms": 8.611940139999998,
+        "max_ms": 112.336704
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1345315,
+        "p95_ms": 1.1688827499999994,
+        "p99_ms": 4.7571222299999985,
+        "max_ms": 102.388591
+      },
+      "inference": {
+        "n": 429,
+        "median_ms": 0.529326,
+        "p95_ms": 2.311767199999999,
+        "p99_ms": 3.4050469999999975,
+        "max_ms": 4.409634
+      },
+      "request_to_delivery": {
+        "n": 429,
+        "median_ms": 30.132458,
+        "p95_ms": 31.06987,
+        "p99_ms": 34.72966571999999,
+        "max_ms": 91.866886
+      },
+      "request_to_worker": {
+        "n": 429,
+        "median_ms": 0.52356,
+        "p95_ms": 1.8637963999999998,
+        "p99_ms": 4.027812399999957,
+        "max_ms": 30.969422
+      },
+      "inference_to_delivery": {
+        "n": 429,
+        "median_ms": 28.893267,
+        "p95_ms": 29.9657062,
+        "p99_ms": 33.27530191999999,
+        "max_ms": 91.053495
+      },
+      "earned_application_age": {
+        "n": 13,
+        "median_ms": 40.300349,
+        "p95_ms": 49.6368874,
+        "p99_ms": 49.76685508,
+        "max_ms": 49.799347
+      },
+      "all_held_packet_ages": {
+        "n": 1297,
+        "median_ms": 40.383746,
+        "p95_ms": 50.8044822,
+        "p99_ms": 122.24191504,
+        "max_ms": 140.187834
+      },
+      "deadline_misses": 11,
+      "late_authority_violations": 0,
+      "late_release_ticks": 11,
+      "control_over_budget_ticks": 1,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.373155,
+        "p95_ms": 1.4326581999999992,
+        "p99_ms": 2.4592402999999976,
+        "max_ms": 30.942284
+      },
+      "cgroup_delta": {
+        "usage_usec": 1649696,
+        "user_usec": 1649697,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 133,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1290,
+      "involuntary_switches": 0,
+      "active_ticks": 13,
+      "stale_ticks": 378,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 381,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.047503501845571075,
+      "paired_lqr_rmse": 0.04751994136430714,
+      "paired_lqr_max_command_difference": 0.0087347702946345,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.04626285629017014
+    },
+    {
+      "seed": 903,
+      "case": "delay60",
+      "ticks": 1300,
+      "startup_ms": 5174.670672,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 125.559526,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 16.723075,
+      "packets": 176,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000815353,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.20310650000000002,
+        "p95_ms": 1.2950948,
+        "p99_ms": 4.00260269999999,
+        "max_ms": 391.016517
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.10470099999999999,
+        "p95_ms": 0.6030499499999997,
+        "p99_ms": 2.1193394899999993,
+        "max_ms": 186.4438
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.5452485,
+        "p95_ms": 27.713530649999992,
+        "p99_ms": 336.1314771599999,
+        "max_ms": 447.270125
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.144269,
+        "p95_ms": 19.31459679999988,
+        "p99_ms": 326.1680408499999,
+        "max_ms": 437.349731
+      },
+      "inference": {
+        "n": 176,
+        "median_ms": 0.770518,
+        "p95_ms": 2.7058852499999997,
+        "p99_ms": 5.321671,
+        "max_ms": 18.576174
+      },
+      "request_to_delivery": {
+        "n": 176,
+        "median_ms": 70.15602899999999,
+        "p95_ms": 71.90008125,
+        "p99_ms": 139.1048355,
+        "max_ms": 454.848225
+      },
+      "request_to_worker": {
+        "n": 176,
+        "median_ms": 0.7977339999999999,
+        "p95_ms": 2.4519005,
+        "p99_ms": 31.261983,
+        "max_ms": 112.929657
+      },
+      "inference_to_delivery": {
+        "n": 176,
+        "median_ms": 68.555852,
+        "p95_ms": 69.98222824999999,
+        "p99_ms": 104.388298,
+        "max_ms": 452.811326
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1293,
+        "median_ms": 100.772307,
+        "p95_ms": 192.1118461999993,
+        "p99_ms": 486.6890974,
+        "max_ms": 540.891191
+      },
+      "deadline_misses": 79,
+      "late_authority_violations": 0,
+      "late_release_ticks": 72,
+      "control_over_budget_ticks": 8,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.2034995,
+        "p95_ms": 1.299070549999999,
+        "p99_ms": 4.00412006999999,
+        "max_ms": 389.746494
+      },
+      "cgroup_delta": {
+        "usage_usec": 2214698,
+        "user_usec": 2214698,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 133,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1223,
+      "involuntary_switches": 4,
+      "active_ticks": 0,
+      "stale_ticks": 1293,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04751994136430714,
+      "paired_lqr_rmse": 0.04751994136430714,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.04626285629017014
+    },
+    {
+      "seed": 903,
+      "case": "delay100",
+      "ticks": 1300,
+      "startup_ms": 4803.78671,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 291.645487,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 30.416402,
+      "packets": 117,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000497359,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.275013,
+        "p95_ms": 1.0537285,
+        "p99_ms": 2.0393835899999995,
+        "max_ms": 45.816917
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.1065275,
+        "p95_ms": 0.7065452999999997,
+        "p99_ms": 1.30424033,
+        "max_ms": 2.54785
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.5323505,
+        "p95_ms": 1.5580176999999984,
+        "p99_ms": 2.88320711,
+        "max_ms": 57.257664
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.1560205,
+        "p95_ms": 0.8648148499999992,
+        "p99_ms": 1.6063777199999978,
+        "max_ms": 47.315669
+      },
+      "inference": {
+        "n": 117,
+        "median_ms": 0.870945,
+        "p95_ms": 2.723347199999996,
+        "p99_ms": 3.6655936000000016,
+        "max_ms": 4.110936
+      },
+      "request_to_delivery": {
+        "n": 117,
+        "median_ms": 110.24465,
+        "p95_ms": 110.9808996,
+        "p99_ms": 111.99551316,
+        "max_ms": 169.820555
+      },
+      "request_to_worker": {
+        "n": 117,
+        "median_ms": 0.956365,
+        "p95_ms": 2.3132273999999984,
+        "p99_ms": 3.3982885200000013,
+        "max_ms": 66.956682
+      },
+      "inference_to_delivery": {
+        "n": 117,
+        "median_ms": 108.287875,
+        "p95_ms": 109.3439048,
+        "p99_ms": 110.00697944000001,
+        "max_ms": 110.147933
+      },
+      "earned_application_age": null,
+      "all_held_packet_ages": {
+        "n": 1289,
+        "median_ms": 160.418568,
+        "p95_ms": 210.326713,
+        "p99_ms": 211.64468479999996,
+        "max_ms": 270.401366
+      },
+      "deadline_misses": 8,
+      "late_authority_violations": 0,
+      "late_release_ticks": 5,
+      "control_over_budget_ticks": 2,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.2712065,
+        "p95_ms": 1.0759576999999998,
+        "p99_ms": 2.039935979999999,
+        "max_ms": 45.820104
+      },
+      "cgroup_delta": {
+        "usage_usec": 1200913,
+        "user_usec": 1200913,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 133,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1294,
+      "involuntary_switches": 0,
+      "active_ticks": 0,
+      "stale_ticks": 1289,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 1300,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04751994136430714,
+      "paired_lqr_rmse": 0.04751994136430714,
+      "paired_lqr_max_command_difference": 0.0,
+      "max_actuator_rate": 0.35,
+      "max_command": 0.04626285629017014
+    },
+    {
+      "seed": 903,
+      "case": "cpu_stress",
+      "ticks": 1300,
+      "startup_ms": 5339.239446,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 907.331934,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 10.409852,
+      "packets": 1256,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.005198277,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.7607975,
+        "p95_ms": 2.5808091999999996,
+        "p99_ms": 10.10139693,
+        "max_ms": 12.835467
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.3086105,
+        "p95_ms": 1.25490365,
+        "p99_ms": 2.42137372,
+        "max_ms": 8.648911
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 1.633995,
+        "p95_ms": 9.716533799999999,
+        "p99_ms": 17.289107359999964,
+        "max_ms": 96.543325
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.42954800000000004,
+        "p95_ms": 6.669332999999996,
+        "p99_ms": 14.479020069999995,
+        "max_ms": 95.471759
+      },
+      "inference": {
+        "n": 1256,
+        "median_ms": 0.352271,
+        "p95_ms": 1.4270255,
+        "p99_ms": 2.221332750000002,
+        "max_ms": 8.426408
+      },
+      "request_to_delivery": {
+        "n": 1256,
+        "median_ms": 10.2786975,
+        "p95_ms": 16.6656545,
+        "p99_ms": 20.38869645,
+        "max_ms": 102.081727
+      },
+      "request_to_worker": {
+        "n": 1256,
+        "median_ms": 0.6892205,
+        "p95_ms": 2.9064484999999998,
+        "p99_ms": 8.99113255000001,
+        "max_ms": 12.785109
+      },
+      "inference_to_delivery": {
+        "n": 1256,
+        "median_ms": 9.277472,
+        "p95_ms": 14.833852499999999,
+        "p99_ms": 17.269655550000003,
+        "max_ms": 100.138222
+      },
+      "earned_application_age": {
+        "n": 210,
+        "median_ms": 10.7478795,
+        "p95_ms": 18.190294299999998,
+        "p99_ms": 20.366238269999997,
+        "max_ms": 20.592581
+      },
+      "all_held_packet_ages": {
+        "n": 1299,
+        "median_ms": 10.987477,
+        "p95_ms": 20.400723399999997,
+        "p99_ms": 28.2320093,
+        "max_ms": 103.456412
+      },
+      "deadline_misses": 59,
+      "late_authority_violations": 0,
+      "late_release_ticks": 23,
+      "control_over_budget_ticks": 14,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.7621605,
+        "p95_ms": 2.206393799999999,
+        "p99_ms": 3.5894517599999993,
+        "max_ms": 6.322858
+      },
+      "cgroup_delta": {
+        "usage_usec": 17299562,
+        "user_usec": 15979749,
+        "system_usec": 1319813,
+        "nice_usec": 0,
+        "nr_periods": 137,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1225,
+      "involuntary_switches": 91,
+      "active_ticks": 210,
+      "stale_ticks": 4,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 60,
+      "fallback_violations": 0,
+      "worker_failure_events": [],
+      "post_failure_ticks": 0,
+      "survived": true,
+      "rmse": 0.04289040465935985,
+      "paired_lqr_rmse": 0.04751994136430714,
+      "paired_lqr_max_command_difference": 0.031060698938956015,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.056271490066497946
+    },
+    {
+      "seed": 903,
+      "case": "worker_crash",
+      "ticks": 1300,
+      "startup_ms": 2752.592431,
+      "cyclic_gc_disabled_during_window": true,
+      "preparation_gc_ms": 340.787474,
+      "signatures_before": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "signatures_after": {
+        "measure": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+        ],
+        "lqr": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+        ],
+        "advance": [
+          "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+        ],
+        "features": [
+          "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+        ]
+      },
+      "worker_model_load_and_warmup_ms": 12.341682,
+      "packets": 417,
+      "simulated_duration_s": 13.0,
+      "wall_duration_s": 13.000218926,
+      "control": {
+        "n": 1300,
+        "median_ms": 0.211874,
+        "p95_ms": 1.32275115,
+        "p99_ms": 8.110778909999986,
+        "max_ms": 70.869198
+      },
+      "observer": {
+        "n": 1300,
+        "median_ms": 0.109824,
+        "p95_ms": 0.65539485,
+        "p99_ms": 3.56728496,
+        "max_ms": 59.706166
+      },
+      "response": {
+        "n": 1300,
+        "median_ms": 0.471906,
+        "p95_ms": 3.14966515,
+        "p99_ms": 41.08550634,
+        "max_ms": 73.144936
+      },
+      "release_lateness": {
+        "n": 1300,
+        "median_ms": 0.115382,
+        "p95_ms": 1.0903725999999978,
+        "p99_ms": 34.35442990999996,
+        "max_ms": 65.186119
+      },
+      "inference": {
+        "n": 417,
+        "median_ms": 0.506884,
+        "p95_ms": 1.2467721999999994,
+        "p99_ms": 2.079102079999997,
+        "max_ms": 15.356846
+      },
+      "request_to_delivery": {
+        "n": 417,
+        "median_ms": 10.123901,
+        "p95_ms": 10.739142999999999,
+        "p99_ms": 17.86191063999987,
+        "max_ms": 109.289985
+      },
+      "request_to_worker": {
+        "n": 417,
+        "median_ms": 0.527246,
+        "p95_ms": 1.5195013999999998,
+        "p99_ms": 3.12284343999998,
+        "max_ms": 82.046734
+      },
+      "inference_to_delivery": {
+        "n": 417,
+        "median_ms": 9.070987,
+        "p95_ms": 9.6956034,
+        "p99_ms": 11.649804199999963,
+        "max_ms": 47.868724
+      },
+      "earned_application_age": {
+        "n": 48,
+        "median_ms": 10.633999,
+        "p95_ms": 14.347306949999997,
+        "p99_ms": 18.486109660000004,
+        "max_ms": 20.407433
+      },
+      "all_held_packet_ages": {
+        "n": 434,
+        "median_ms": 10.6366075,
+        "p95_ms": 17.75028369999986,
+        "p99_ms": 90.75797867,
+        "max_ms": 111.136331
+      },
+      "deadline_misses": 46,
+      "late_authority_violations": 0,
+      "late_release_ticks": 37,
+      "control_over_budget_ticks": 12,
+      "control_cpu": {
+        "n": 1300,
+        "median_ms": 0.2088515,
+        "p95_ms": 1.3156590999999997,
+        "p99_ms": 8.062583659999985,
+        "max_ms": 50.712471
+      },
+      "cgroup_delta": {
+        "usage_usec": 1560128,
+        "user_usec": 1560128,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "nr_periods": 130,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "voluntary_switches": 1254,
+      "involuntary_switches": 46,
+      "active_ticks": 48,
+      "stale_ticks": 19,
+      "stale_authority_violations": 0,
+      "fallback_ticks": 886,
+      "fallback_violations": 0,
+      "worker_failure_events": [
+        {
+          "tick": 435,
+          "error": "[Errno 104] Connection reset by peer"
+        }
+      ],
+      "post_failure_ticks": 865,
+      "survived": true,
+      "rmse": 0.044749646571963946,
+      "paired_lqr_rmse": 0.04751994136430714,
+      "paired_lqr_max_command_difference": 0.0319062746087708,
+      "max_actuator_rate": 0.3500000000000031,
+      "max_command": 0.05620287287442303
+    }
+  ],
+  "functional_pass": true,
+  "timing_pass": false,
+  "limitations": [
+    "software plant advances in fixed 10ms steps; wall pacing and lateness measured, not continuously evolving physical hardware",
+    "cloud scheduler; fixed two-core affinity; stress is two Python busy loops, not exhaustive WCET testing",
+    "causal features now match the trained profile, but teacher labels come from archived deterministic-service TRAIN/DEV; native performance is not established",
+    "three seeds, one DLC path and 20m/s only; no claim of broad tracking superiority",
+    "software command application boundary, not physical CAN/actuator acknowledgement"
+  ]
+}

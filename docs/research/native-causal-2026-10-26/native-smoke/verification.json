@@ -1,0 +1,34 @@
+{
+  "native_interface_verification_pass": true,
+  "smoke": true,
+  "cases": [
+    {
+      "name": "dlc20_nominal-lqr",
+      "mode": "lqr",
+      "path": "dlc220",
+      "speed": 20,
+      "delay_ms": 0,
+      "ticks": 50,
+      "packets": 0,
+      "deadline_misses": 42,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "rmse_m": 0.0012228884326879338
+    },
+    {
+      "name": "dlc20_nominal-causal_student",
+      "mode": "causal_student",
+      "path": "dlc220",
+      "speed": 20,
+      "delay_ms": 0,
+      "ticks": 50,
+      "packets": 49,
+      "deadline_misses": 49,
+      "active_ticks": 0,
+      "stale_ticks": 0,
+      "rmse_m": 0.0012228884326879338
+    }
+  ],
+  "severe_delay_pair_comparisons": [],
+  "strict_native_wall_timing_pass": false
+}

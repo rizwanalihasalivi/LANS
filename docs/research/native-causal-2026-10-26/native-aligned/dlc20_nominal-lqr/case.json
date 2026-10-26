@@ -1,0 +1,22 @@
+{
+  "speed": 20,
+  "path": "dlc220",
+  "path_parameters": [
+    1,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "delay_ms": 0,
+  "seed": 985000020,
+  "mode": "lqr",
+  "output": "/workspace/lans-native-v3/native-aligned/dlc20_nominal-lqr",
+  "duration": 13.0,
+  "noise": 1.0,
+  "sensor_delay_steps": 0,
+  "gate_config": {
+    "horizon_steps": 20,
+    "relative_margin": 0.01
+  },
+  "policy": "/workspace/LANS/docs/research/causal-interface-2026-10-26/models/701"
+}

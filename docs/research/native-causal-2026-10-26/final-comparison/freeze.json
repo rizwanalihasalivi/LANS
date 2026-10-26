@@ -1,0 +1,91 @@
+{
+  "noise_base": 994000000,
+  "episodes": 432,
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "speeds": [
+    15,
+    20,
+    25
+  ],
+  "paths": {
+    "sine120": [
+      0,
+      2.5,
+      120,
+      0.3
+    ],
+    "dlc220": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "conditions": {
+    "nominal": {
+      "mu": 0.9,
+      "stiffness": 1.0,
+      "noise": 1,
+      "sensor_delay_steps": 0,
+      "service_ticks": 0
+    },
+    "tire_mismatch": {
+      "mu": 0.9,
+      "stiffness": 0.65,
+      "noise": 1,
+      "sensor_delay_steps": 0,
+      "service_ticks": 0
+    },
+    "low_friction": {
+      "mu": 0.6,
+      "stiffness": 1.0,
+      "noise": 1,
+      "sensor_delay_steps": 0,
+      "service_ticks": 0
+    },
+    "sensor_stress": {
+      "mu": 0.9,
+      "stiffness": 1.0,
+      "noise": 2,
+      "sensor_delay_steps": 1,
+      "service_ticks": 0
+    },
+    "latency20": {
+      "mu": 0.9,
+      "stiffness": 1.0,
+      "noise": 1,
+      "sensor_delay_steps": 0,
+      "service_ticks": 2
+    },
+    "latency100": {
+      "mu": 0.9,
+      "stiffness": 1.0,
+      "noise": 1,
+      "sensor_delay_steps": 0,
+      "service_ticks": 10
+    }
+  },
+  "methods": [
+    "lqr",
+    "fixed_m004",
+    "fixed_p004",
+    "causal_student"
+  ],
+  "model_sha256": {
+    "701": "5c860f96eae16736b6f1e879b272ef248be29db78e2d51b1d8708584248a523f",
+    "802": "b4d0574263bdd67d081c0ba59797a551b8c7a9518e4a64bc5c7041d64c947779",
+    "903": "80ded21346ded22323e71a70d60486729c4e3d753d8647a068a3eabdfbc4fa87"
+  },
+  "normalization_sha256": {
+    "701": "89dba0a76a93d998f8fffb8d68bfc969a851211ab59a7669526cb1c130182c7a",
+    "802": "89dba0a76a93d998f8fffb8d68bfc969a851211ab59a7669526cb1c130182c7a",
+    "903": "89dba0a76a93d998f8fffb8d68bfc969a851211ab59a7669526cb1c130182c7a"
+  },
+  "runner_sha256": "c0374d9a71806ca45397122734f3dd14c61677ed546078af0e865229642ffa79",
+  "selection": "No post-test selection, retraining or tuning; every outcome is reported. Equality at100ms is fallback, not learned gain.",
+  "scope": "common software plant; not native final comparison, hardware validation or reproduced SOTA"
+}

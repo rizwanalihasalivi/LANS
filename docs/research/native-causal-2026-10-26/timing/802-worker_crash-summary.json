@@ -1,0 +1,152 @@
+{
+  "seed": 802,
+  "case": "worker_crash",
+  "ticks": 1300,
+  "startup_ms": 2903.465853,
+  "cyclic_gc_disabled_during_window": true,
+  "preparation_gc_ms": 191.489718,
+  "signatures_before": {
+    "measure": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+    ],
+    "lqr": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+    ],
+    "advance": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+    ],
+    "features": [
+      "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+    ]
+  },
+  "signatures_after": {
+    "measure": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, Array(float64, 1, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), bool, float64)"
+    ],
+    "lqr": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, Array(float64, 2, 'C', False, aligned=True))"
+    ],
+    "advance": [
+      "(Array(float64, 1, 'C', False, aligned=True), float64, float64, float64, float64)"
+    ],
+    "features": [
+      "(Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, UniTuple(float64, 4), Array(float64, 1, 'C', False, aligned=True), int64, int64)"
+    ]
+  },
+  "worker_model_load_and_warmup_ms": 9.476797,
+  "packets": 407,
+  "simulated_duration_s": 13.0,
+  "wall_duration_s": 13.110475668,
+  "control": {
+    "n": 1300,
+    "median_ms": 0.122257,
+    "p95_ms": 1.5766282999999996,
+    "p99_ms": 9.055594459999995,
+    "max_ms": 425.898498
+  },
+  "observer": {
+    "n": 1300,
+    "median_ms": 0.051666000000000004,
+    "p95_ms": 0.7352572499999995,
+    "p99_ms": 4.3278681799999985,
+    "max_ms": 39.863802
+  },
+  "response": {
+    "n": 1300,
+    "median_ms": 0.5749645,
+    "p95_ms": 77.24210844999986,
+    "p99_ms": 316.6911298599999,
+    "max_ms": 434.153123
+  },
+  "release_lateness": {
+    "n": 1300,
+    "median_ms": 0.1110315,
+    "p95_ms": 75.52146349999997,
+    "p99_ms": 306.7061995899999,
+    "max_ms": 429.344681
+  },
+  "inference": {
+    "n": 407,
+    "median_ms": 0.493454,
+    "p95_ms": 1.2482302999999997,
+    "p99_ms": 2.47401268,
+    "max_ms": 47.449426
+  },
+  "request_to_delivery": {
+    "n": 407,
+    "median_ms": 10.132399,
+    "p95_ms": 11.051575999999999,
+    "p99_ms": 29.395629299999992,
+    "max_ms": 78.071553
+  },
+  "request_to_worker": {
+    "n": 407,
+    "median_ms": 0.579689,
+    "p95_ms": 1.6407264000000001,
+    "p99_ms": 4.52864422,
+    "max_ms": 55.738953
+  },
+  "inference_to_delivery": {
+    "n": 407,
+    "median_ms": 9.002307,
+    "p95_ms": 9.8282481,
+    "p99_ms": 12.437710019999997,
+    "max_ms": 50.663913
+  },
+  "earned_application_age": {
+    "n": 43,
+    "median_ms": 10.630531,
+    "p95_ms": 11.7807307,
+    "p99_ms": 13.279718819999996,
+    "max_ms": 14.340126
+  },
+  "all_held_packet_ages": {
+    "n": 434,
+    "median_ms": 10.673328,
+    "p95_ms": 68.55117474999999,
+    "p99_ms": 82.17963358,
+    "max_ms": 82.937018
+  },
+  "deadline_misses": 177,
+  "late_authority_violations": 0,
+  "late_release_ticks": 168,
+  "control_over_budget_ticks": 12,
+  "control_cpu": {
+    "n": 1300,
+    "median_ms": 0.1213465,
+    "p95_ms": 1.5237313,
+    "p99_ms": 8.744405829999994,
+    "max_ms": 423.409475
+  },
+  "cgroup_delta": {
+    "usage_usec": 2424236,
+    "user_usec": 2424236,
+    "system_usec": 0,
+    "nice_usec": 0,
+    "nr_periods": 131,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "voluntary_switches": 1123,
+  "involuntary_switches": 83,
+  "active_ticks": 43,
+  "stale_ticks": 30,
+  "stale_authority_violations": 0,
+  "fallback_ticks": 898,
+  "fallback_violations": 0,
+  "worker_failure_events": [
+    {
+      "tick": 435,
+      "error": "[Errno 104] Connection reset by peer"
+    }
+  ],
+  "post_failure_ticks": 865,
+  "survived": true,
+  "rmse": 0.04641964700118359,
+  "paired_lqr_rmse": 0.0490749810675093,
+  "paired_lqr_max_command_difference": 0.03018098776084497,
+  "max_actuator_rate": 0.3500000000000031,
+  "max_command": 0.058439380819267556
+}

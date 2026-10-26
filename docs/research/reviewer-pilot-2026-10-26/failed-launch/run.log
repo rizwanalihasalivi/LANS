@@ -1,0 +1,9 @@
+Fontconfig error: No writable cache directories
+Traceback (most recent call last):
+  File "/workspace/LANS/tools/controller_review/reviewer_pilot.py", line 104, in <module>
+    main()
+  File "/workspace/LANS/tools/controller_review/reviewer_pilot.py", line 71, in main
+    models[arm + '_100k'] = load_checkpoint(training, arm, pair, 100000)
+  File "/workspace/LANS/integrations/webots/research/revision9/evaluate9.py", line 62, in load_checkpoint
+    assert meta['protocol']==P and meta['steps']==steps and meta['seed']==P['rl_seeds'][pair] and meta['arm']==arm
+AssertionError

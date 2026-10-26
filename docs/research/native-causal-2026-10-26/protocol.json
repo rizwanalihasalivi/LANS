@@ -1,0 +1,16 @@
+{
+  "purpose": "User-authorized observer latency optimization, native causal integration, conditional frozen comparison and hardware acceptance tooling",
+  "parent_commit": "bde4952",
+  "models": "Frozen causal-v2 seeds701/802/903; no new training or selection",
+  "observer": "BLAS-free small matrix algebra with unchanged estimator equations; 1200 observer steps and200SPD solves parity checked",
+  "timing": "One fixed 3seed x6case x13s fresh-development campaign,noise983000000,zero10ms scheduled deadline misses required; never rebase deadlines or discard misses",
+  "native": "Regardless of timing failure, run separate development interface validation, not reserved comparison: 20m/s DLC220 nominal LQR/student; 15m/s sine120 nominal LQR/student; 25m/s DLC220100ms LQR/student. Real spawned worker, no model change. Record native wall and sim age separately, effective age=max; original stale threshold50ms. Runtime model hashes fixed before runs.",
+  "reserved": "Only if all18 optimized timing cases pass zero-miss criterion AND native interface safety tests pass: freeze code/models then open independent noise994000000 over3seeds3speeds2paths6conditions comparingLQR,fixed-.04,fixed+.04,causalstudent. If timing fails: no reserved episodes and no superiority claim.",
+  "hardware": "No attached targetvehicle, CAN devices, acknowledgements or RT privileges. Prepare read-only log acceptance checker and runbook; never synthesize hardware pass.",
+  "stop": "One optimized timing campaign, one native interface grid plus necessary smoke debugging, no retries to find favourable timing; report negative results. Real vehicle validation remains blocked without hardware.",
+  "hashes": {
+    "realtime_optimized.py": "5c06fc0aa7f1f5392a9a7f032bbcbda17632be258fb499f8a2cd712d58d6630e",
+    "realtime_kernels.py": "af016e0c6d75fed0f51aedcaaa5dae0c0b590dfea7b346d324915cc0edc96292",
+    "causal_student.py": "5da481f7a18f3b03156372431a90197b7313ae572b85e9d2700e083e57798539"
+  }
+}

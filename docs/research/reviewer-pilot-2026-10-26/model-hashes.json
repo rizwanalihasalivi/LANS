@@ -1,0 +1,8 @@
+{
+  "integrations/webots/results/revision9-finetuning/training/scratch-1701/checkpoint-100000/policy.zip": "dac51c7137624516001e22b0d58c34c84d749ddc78aae1c065eb22b079402f41",
+  "integrations/webots/results/revision9-finetuning/training/finetune-1701/checkpoint-100000/policy.zip": "78e6de500e35ecd296b67c4a39a0a3d66af27b3d31adc1501eb8cacb576dc047",
+  "integrations/webots/results/revision9-finetuning/training/scratch-1802/checkpoint-100000/policy.zip": "5571a036fda82cdaa6886cd7e938300305eca0ad835d8a6d7a4d099d147502fd",
+  "integrations/webots/results/revision9-finetuning/training/finetune-1802/checkpoint-100000/policy.zip": "5dd106fa55699ab1450e091c45e4c1e43c963a20d5a887df5a0949c9247838e8",
+  "integrations/webots/results/revision9-finetuning/training/scratch-1903/checkpoint-100000/policy.zip": "1053c2d1f4544f4e230a749a42354f777dc8d77321cde8e234f117549c47c8b9",
+  "integrations/webots/results/revision9-finetuning/training/finetune-1903/checkpoint-100000/policy.zip": "13616d1ec2b023fcb678d3eb4fc97839c5c26cfaac1d8c4ed7aa881c19f66268"
+}

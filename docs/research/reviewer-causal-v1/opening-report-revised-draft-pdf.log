@@ -1,11 +1,2 @@
 Fontconfig error: No writable cache directories
 Fontconfig error: No writable cache directories
-Error producing PDF.
-! LaTeX Error: \mathrm allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 ...ph{\{\mathrm{cmd},t\}=\operatorname{sat}}
-

@@ -259,6 +259,8 @@ Native interface verification:True; observed native wall timing:False. Resource-
 
 See the frozen protocol, raw traces, independent audits and completion-matrix.md. Reserved confirmation remains unopened when development fails.
 
+The manuscript-inspired latency-gain comparator reduces lateral RMSE by 5.640%, but increases heading RMSE by 1.428% and steering-rate RMS by 74.192%. This exceeds the predefined5% smoothness tradeoff limit. Fixed authority loses one episode under20ms service. The simple gain is a promising descriptive tracking result, not a selected balanced winner. Same-gain student/constant controls and separate native/timing validation would be needed to attribute its benefit to additional PPO learning. The proposed predictive supervisor did not retain that tracking gain; no post-result gate tuning or reserved-test opening was performed.
+
 
 # 7. Stability and claim boundaries
 

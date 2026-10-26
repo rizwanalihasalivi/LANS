@@ -1,0 +1,402 @@
+{
+  "unit": "three training/noise seed blocks; mirrors and ticks are NOT independent replicates",
+  "limitation": "n=3; descriptive t interval assumes independent approximately normal seed-block gains; no significance or broad population guarantee",
+  "methods": {
+    "finetune": {
+      "seed_mean_rmse_m": [
+        0.09058161534985518,
+        0.09082800074371435,
+        0.09044340195058503
+      ],
+      "paired_seed_gains_pct": [
+        -0.046039625219368496,
+        -0.0390042886945941,
+        -0.04680446317226794
+      ],
+      "mean_paired_gain_pct": -0.04394945902874351,
+      "sd_paired_gain_pct": 0.004299683302158706,
+      "descriptive_t95_interval_pct": [
+        -0.054630464468620826,
+        -0.033268453588866195
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.06735997086407555,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.06765588612889906,
+          "gain_vs_lqr_pct": -0.018885354028903026,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.1597582432392933,
+          "gain_vs_lqr_pct": -0.09174593866675111,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "fixed_authority": {
+      "seed_mean_rmse_m": [
+        0.13029659679673725,
+        0.08633553451720873,
+        0.08234086272926755
+      ],
+      "paired_seed_gains_pct": [
+        -43.9106427480866,
+        4.909049664054257,
+        8.916073310634104
+      ],
+      "mean_paired_gain_pct": -10.028506591132746,
+      "sd_paired_gain_pct": 29.41111052892822,
+      "descriptive_t95_interval_pct": [
+        -83.0897554032482,
+        63.032742220982705
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.12411519526302112,
+          "gain_vs_lqr_pct": -84.25660473261024,
+          "survived": 23,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.061567272080763936,
+          "gain_vs_lqr_pct": 8.982199773806464,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.1452516008872281,
+          "gain_vs_lqr_pct": 8.996956661493586,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "fixed_negative": {
+      "seed_mean_rmse_m": [
+        0.09314013812364258,
+        0.09345665779384983,
+        0.0930417182765201
+      ],
+      "paired_seed_gains_pct": [
+        -2.8718897695309087,
+        -2.9342373859639905,
+        -2.9210135241751045
+      ],
+      "mean_paired_gain_pct": -2.9090468932233344,
+      "sd_paired_gain_pct": 0.03285127868095195,
+      "descriptive_t95_interval_pct": [
+        -2.990653993476976,
+        -2.827439792969693
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.07003387519727418,
+          "gain_vs_lqr_pct": -3.9695746582109552,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.07081890823613067,
+          "gain_vs_lqr_pct": -4.69493002089972,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.164301978332007,
+          "gain_vs_lqr_pct": -2.938487172740645,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "fixed_positive": {
+      "seed_mean_rmse_m": [
+        0.09314013812364258,
+        0.09345665779384983,
+        0.0930417182765201
+      ],
+      "paired_seed_gains_pct": [
+        -2.8718897695309087,
+        -2.9342373859639905,
+        -2.9210135241751045
+      ],
+      "mean_paired_gain_pct": -2.9090468932233344,
+      "sd_paired_gain_pct": 0.03285127868095195,
+      "descriptive_t95_interval_pct": [
+        -2.990653993476976,
+        -2.827439792969693
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.07003387519727418,
+          "gain_vs_lqr_pct": -3.9695746582109552,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.07081890823613067,
+          "gain_vs_lqr_pct": -4.69493002089972,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.164301978332007,
+          "gain_vs_lqr_pct": -2.938487172740645,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "latency_gain": {
+      "seed_mean_rmse_m": [
+        0.08546627828982269,
+        0.0872281518683106,
+        0.0837120865495425
+      ],
+      "paired_seed_gains_pct": [
+        5.603773664461405,
+        3.9259106509319994,
+        7.399251094047805
+      ],
+      "mean_paired_gain_pct": 5.642978469813737,
+      "sd_paired_gain_pct": 1.7370020785877056,
+      "descriptive_t95_interval_pct": [
+        1.3280261008430312,
+        9.957930838784442
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.0673598921489708,
+          "gain_vs_lqr_pct": 0.00011685739133202115,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.061567272080763936,
+          "gain_vs_lqr_pct": 8.982199773806464,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.1452516008872281,
+          "gain_vs_lqr_pct": 8.996956661493586,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "lqr": {
+      "seed_mean_rmse_m": [
+        0.0905399311049006,
+        0.09079258774067868,
+        0.09040109020561242
+      ],
+      "paired_seed_gains_pct": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_paired_gain_pct": 0.0,
+      "sd_paired_gain_pct": 0.0,
+      "descriptive_t95_interval_pct": [
+        0.0,
+        0.0
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.06735997086407555,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.06764311148781842,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.1596118058897568,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "no_recovery": {
+      "seed_mean_rmse_m": [
+        0.0905920649558124,
+        0.0908605241841728,
+        0.09045900660774427
+      ],
+      "paired_seed_gains_pct": [
+        -0.057581058739035657,
+        -0.07482597994470727,
+        -0.06406604389407146
+      ],
+      "mean_paired_gain_pct": -0.06549102752593813,
+      "sd_paired_gain_pct": 0.00871032494289229,
+      "descriptive_t95_interval_pct": [
+        -0.08712867419899015,
+        -0.04385338085288611
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.06735997086407555,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.06766013491736764,
+          "gain_vs_lqr_pct": -0.025166538284221624,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.15983209805559126,
+          "gain_vs_lqr_pct": -0.13801746343664764,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "scratch": {
+      "seed_mean_rmse_m": [
+        0.09316164071574953,
+        0.09111498230055355,
+        0.09304543630110801
+      ],
+      "paired_seed_gains_pct": [
+        -2.895639060970108,
+        -0.35508907488758223,
+        -2.9251263336328868
+      ],
+      "mean_paired_gain_pct": -2.058618156496859,
+      "sd_paired_gain_pct": 1.4753731303398072,
+      "descriptive_t95_interval_pct": [
+        -5.723648188614943,
+        1.6064118756212244
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.06892156009130436,
+          "gain_vs_lqr_pct": -2.318274796139549,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.07036659820655554,
+          "gain_vs_lqr_pct": -4.026258785016985,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.16277799696541673,
+          "gain_vs_lqr_pct": -1.9836822583454825,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    },
+    "student": {
+      "seed_mean_rmse_m": [
+        0.0905682709973969,
+        0.0908074095421552,
+        0.09042197508565035
+      ],
+      "paired_seed_gains_pct": [
+        -0.03130098747640144,
+        -0.0163249025557639,
+        -0.02310246479376374
+      ],
+      "mean_paired_gain_pct": -0.023576118275309692,
+      "sd_paired_gain_pct": 0.007499269337940347,
+      "descriptive_t95_interval_pct": [
+        -0.04220533604896084,
+        -0.004946900501658545
+      ],
+      "regions": {
+        "delay100": {
+          "rmse_m": 0.06769659049327152,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "delay20": {
+          "rmse_m": 0.06735997086407555,
+          "gain_vs_lqr_pct": 0.0,
+          "survived": 24,
+          "episodes": 24
+        },
+        "nominal": {
+          "rmse_m": 0.06764795455341846,
+          "gain_vs_lqr_pct": -0.007159732149393852,
+          "survived": 24,
+          "episodes": 24
+        },
+        "tire": {
+          "rmse_m": 0.15969235825617106,
+          "gain_vs_lqr_pct": -0.050467674346037245,
+          "survived": 24,
+          "episodes": 24
+        }
+      }
+    }
+  }
+}

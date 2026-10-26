@@ -1,0 +1,94 @@
+{
+  "review_date": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "basis": "User-uploaded primary PDFs read locally; identifiers and version dates verified from the uploaded copies. Source URLs identify versions, not successful online retrieval. Final publisher metadata is not inferred from preprint headers.",
+  "papers": [
+    {
+      "key": "kalaria-2208",
+      "review_id": "P1",
+      "title": "Delay-aware Robust Control for Safe Autonomous Driving and Racing",
+      "authors": [
+        "Dvij Kalaria",
+        "Qin Lin",
+        "John M. Dolan"
+      ],
+      "year": 2022,
+      "source_version": "arXiv:2208.13856v1, 29 August 2022",
+      "source_url": "https://arxiv.org/abs/2208.13856v1",
+      "file_name": "2208.13856v1 (1).pdf",
+      "sha256": "af9785ff28042f9d33cb3e51be10934a61d4301c6f00b3ebd559956f63348471",
+      "size_bytes": 4517118,
+      "page_count": 12
+    },
+    {
+      "key": "tearle-2102",
+      "review_id": "P2",
+      "title": "A predictive safety filter for learning-based racing control",
+      "authors": [
+        "Ben Tearle",
+        "Kim P. Wabersich",
+        "Andrea Carron",
+        "Melanie N. Zeilinger"
+      ],
+      "year": 2021,
+      "source_version": "arXiv:2102.11907v1, 23 February 2021",
+      "source_url": "https://arxiv.org/abs/2102.11907v1",
+      "file_name": "2102.11907v1.pdf",
+      "sha256": "cc002c4333cf08efb72ebcb36de37221f82fe960dbece51a1237dbc9fb394eef",
+      "size_bytes": 1247315,
+      "page_count": 8
+    },
+    {
+      "key": "wabersich-1812",
+      "review_id": "P3",
+      "title": "A predictive safety filter for learning-based control of constrained nonlinear dynamical systems",
+      "authors": [
+        "Kim P. Wabersich",
+        "Melanie N. Zeilinger"
+      ],
+      "year": 2021,
+      "source_version": "arXiv:1812.05506v4, 17 May 2021",
+      "source_url": "https://arxiv.org/abs/1812.05506v4",
+      "file_name": "1812.05506v4.pdf",
+      "sha256": "f1604802bf91f0eb672ca04b7772eee536dfccebd4a42072456130ba74fe8f52",
+      "size_bytes": 3500753,
+      "page_count": 17
+    },
+    {
+      "key": "cano-icaps2023",
+      "review_id": "P4",
+      "title": "Safety Shielding under Delayed Observation",
+      "authors": [
+        "Filip Cano Córdoba",
+        "Alexander Palmisano",
+        "Martin Fränzle",
+        "Roderick Bloem",
+        "Bettina Könighofer"
+      ],
+      "year": 2023,
+      "source_version": "ICAPS 2023 proceedings, printed pages 80–85",
+      "file_name": "03549-ICAPS.CanoCordobaF.pdf",
+      "sha256": "49f610d86eb6ecb7dd644c12beab802eb0b45f6da695cb3dd06f10098a664c94",
+      "size_bytes": 2087006,
+      "page_count": 6
+    },
+    {
+      "key": "tabrizian-2403",
+      "review_id": "P5",
+      "title": "Delay-Aware Reinforcement Learning for Highway On-Ramp Merging under Stochastic Communication Latency",
+      "authors": [
+        "Amin Tabrizian",
+        "Zhitong Huang",
+        "Arsyi Aziz",
+        "Peng Wei"
+      ],
+      "year": 2026,
+      "source_version": "arXiv:2403.11852v5, 27 May 2026",
+      "source_url": "https://arxiv.org/abs/2403.11852v5",
+      "file_name": "2403.11852v5.pdf",
+      "sha256": "63e1556203030cd76f6bc061cc36f7233a106b78ddc5793b18ef12d3ae4dc017",
+      "size_bytes": 8076583,
+      "page_count": 11
+    }
+  ]
+}

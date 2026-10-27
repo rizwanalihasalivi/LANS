@@ -1,0 +1,13 @@
+test_40ms_three_distinct_proposals_recover (__main__.Recovery) ... ok
+test_budget_boundary_and_hard_revoke (__main__.Recovery) ... ok
+test_evidence_expires_without_distinct_response (__main__.Recovery) ... ok
+test_expiry_predictor_limits (__main__.Recovery) ... ok
+test_held_packet_cannot_count_three_times (__main__.Recovery) ... ok
+test_missing_invalid_and_cost_reset (__main__.Recovery) ... ok
+test_prediction_never_assumes_post_expiry_assistance (__main__.Recovery) ... ok
+test_stale_and_future_never_admitted (__main__.Recovery) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.170s
+
+OK

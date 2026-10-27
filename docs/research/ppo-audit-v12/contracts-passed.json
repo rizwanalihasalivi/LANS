@@ -1,0 +1,10 @@
+{
+  "suites": [
+    "new",
+    "packets-terminal",
+    "credit",
+    "recovery",
+    "causal-abi"
+  ],
+  "all_passed": true
+}

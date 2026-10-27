@@ -28,7 +28,8 @@ def main():
     run(sys.executable,ROOT/'tools/controller_review/verify_history_worker_policy.py','--run',out)
     run(sys.executable,ROOT/'tools/controller_review/finish_history5.py','--run',out)
     if a.publish:
-        run('git','add','-f','--',out.relative_to(ROOT),':(exclude)**/__pycache__/**',':(exclude)**/*.pyc')
+        files=[f.relative_to(ROOT) for f in out.rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.suffix!='.pyc']
+        run('git','add','-f','--',*files)
         changed=subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode
         if changed:run('git','commit','-m','Record verified history ablation and diagnostic Python 3.10 kit')
         run('git','-c','credential.helper=!gh auth git-credential','push','origin','reports/opening-report-2026-10-26')

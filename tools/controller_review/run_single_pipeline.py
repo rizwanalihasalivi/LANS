@@ -12,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def main():
     p=argparse.ArgumentParser();p.add_argument('--laptop-results',type=Path);p.add_argument('--publish',action='store_true');a=p.parse_args();out=ROOT/'docs/research/reviewer-pipeline-v9';out.mkdir(parents=True,exist_ok=True)
     env=os.environ.copy();env.update(OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',NUMBA_CACHE_DIR='/tmp/lans-v9-numba',MPLCONFIGDIR='/tmp/lans-v9-mpl')
-    status={};path=out/'pipeline-status.json'
+    status={name:dict(state='pending') for name in ('pipeline_contracts','prior_evidence','matched_development','admission_analysis','scientific_selection','timing','timing_replay','strict_original_10ms','portable_kit','packaging_smoke','actual_laptop','reserved_unseen','native_webots','robust_vehicle_baseline','primary_references','physical_validation','submission','evidence_seal','evidence_report')};path=out/'pipeline-status.json'
     def save():path.write_text(json.dumps(dict(stages=status,all_requirements_passed=all(v['state']=='passed' for v in status.values()),scope='Software research pipeline. Hardware/primary-source access and empirical superiority cannot be manufactured.'),indent=2)+'\n')
     def stage(name,cmd,complete=None):
         print(name,flush=True)
@@ -23,8 +23,10 @@ def main():
         except Exception as e:
             status[name]=dict(state='execution_error',error=str(e),log=name+'.log');save();return False
     py=sys.executable;helper=ROOT/'tools/controller_review'
+    if not stage('pipeline_contracts',[py,helper/'test_pipeline9.py','-v']):return 1
     if not stage('prior_evidence',[py,helper/'verify_cache8.py','--run',ROOT/'docs/research/reviewer-recovery-v8']):return 1
-    if not stage('matched_development',[py,ROOT/'tools/reviewer_v9/run9.py']):return 1
+    if not stage('matched_development',[py,helper/'resume_development9.py']):return 1
+    if not stage('admission_analysis',[py,helper/'analyze_pipeline9.py','--run',out]):return 1
     decision=json.loads((out/'decision.json').read_text());selected=decision['selected'];status['scientific_selection']=dict(state='passed' if selected else 'failed_requirement',selected=selected,screens=decision['screens']);save()
     if not stage('timing',[py,helper/'timing9.py','--run',out],out/'timing/summary.json'):return 1
     if not stage('timing_replay',[py,helper/'verify_timing9.py','--run',out]):return 1

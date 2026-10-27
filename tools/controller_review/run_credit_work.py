@@ -29,6 +29,7 @@ def main():
         run(sys.executable,ROOT/'tools/controller_review/robust_psf_contract6.py','--output',robust)
     run(sys.executable,ROOT/'tools/controller_review/verify_robust_psf_contract6.py','--run',robust)
     assert (out/'bibliography-audit.json').exists(),'Provide the supplied manuscript to audit_bibliography6.py; do not fabricate missing primary metadata'
+    run(sys.executable,ROOT/'tools/controller_review/analyze_credit6.py','--run',out)
     run(sys.executable,ROOT/'tools/controller_review/finish_credit6.py','--run',out)
     if a.publish:
         files=[str(f.relative_to(ROOT)) for f in out.rglob('*') if f.is_file() and not any(x in f.parts for x in ('__pycache__','.numba-cache','.matplotlib-cache')) and f.suffix!='.pyc']

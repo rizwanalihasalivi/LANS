@@ -1,0 +1,11 @@
+test_freshness_does_not_exponentially_suppress_valid_authority (__main__.Contracts) ... ok
+test_one_second_worker_stall_exact_local_lqr (__main__.Contracts) ... ok
+test_optimized_closed_loop_command_parity (__main__.Contracts) ... ok
+test_planner_only_observable_state_and_history (__main__.Contracts) ... ok
+test_scalar_matches_frozen_cost (__main__.Contracts) ... ok
+test_zero_service_is_next_tick_and_policy_oracles_remain_zero (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.882s
+
+OK

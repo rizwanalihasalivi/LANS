@@ -1,0 +1,42 @@
+{
+  "id": "v10-full-active-path-audit-and-20pct-feasibility",
+  "target": "NEW aspirational 20% lower penalized lateral tracking RMSE against every declared matched baseline, including the strongest nonlearned causal planner, no survival loss, heading/rate RMS <=1.05LQR and nominal tracking <=1.02LQR. Previous frozen 1% screens and all prior failures remain unchanged. This is not a guarantee or certification.",
+  "audit_scope": "Active current PPO/normalization/action/credit/reward/observation pipeline, packet lifecycle/recovery/predictor/fusion, sensing/plant/LQR, metrics/fair baseline comparison, runtime validation and orchestration. Inventory full repository source; frozen historical snapshots and retired pipelines are not silently edited or relabeled.",
+  "fixes": "Versioned strict packet ID/identity and finite request/service validation, explicit invalid-baseline fault/numerical-domain rejection; correct next-state terminal observation for time-limit value bootstrap. Valid in-domain nonterminal behavior must match v9. Keep 50ms freshness, cap.25, ramp.05, filter.3, margins and recovery unchanged.",
+  "diagnostic": "360 fresh episodes:3groups x15/25mps x2knownpaths x2mirrors x3scenarios(nominal,tire,delay20) x5sources(lqr,student_rk,ppo_rk,planner_rk,ppo_euler). All primary comparators use same new nominal RK4 numerical model and average executed actuator-rate objective. ppo_euler is an explicitly different old-predictor mechanism control, not a matched policy-only comparison.",
+  "models": "Use frozen v9 student and causal_history NumPy actors; no retraining before headroom diagnostic. No per-seed model selection. Same observations/sensing/constraints/supervisor for sources. Planner uses only available estimated state, past response EWMA, measured actuator/speed and preview; its cost/computation is additional and must be reported, not treated as a real-time free oracle.",
+  "noise_base": 1606000000,
+  "training_gate": "Do not spend another blind training budget if this causal same-authority planner cannot show balanced 20% headroom over LQR/student. Its failure is not a mathematical upper bound and does not prove all possible policies fail. Further architecture/objective changes require a separately justified protocol; do not weaken baselines or freshness to manufacture 20%. If fulfilled, freeze a separate exactly3x100k pilot protocol before running; no automatic undeclared extra training.",
+  "predictor_audit": "Compare existing Euler nominal predictor vs independently integrated nominal linear bicycle+actuator at1ms RK4, action ranking near actual admission margins. Model-vs-real-plant mismatch remains deliberate; no hidden tire parameters/future noise fed to deployed policy/gate. Integration audit is not by itself a new deployed predictor.",
+  "publication": "Preserve failing-before/passing-after tests, raw traces, finite-source/model hashes, all episodes and independent actor/gate/physical replay. Commit/push verified fixes and evidence. No unopened reserved data, device/physical readiness or full published-baseline claim.",
+  "numerical_fix": "Replace10ms semi-implicit Euler predictor with1ms RK4 of SAME nominal linear bicycle+actuator; cost actual average actuator rate per10ms, not initial instantaneous rate. Keep weights/margins/freshness/recovery/cap unchanged. Validate against independent SciPy DOP853 integration; report model change jointly with reward-rate numerical correction, not isolated effects or safety proof.",
+  "development": {
+    "speeds": [
+      15,
+      25
+    ],
+    "paths": [
+      "sine120",
+      "dlc220"
+    ],
+    "mirrors": [
+      -1,
+      1
+    ],
+    "scenarios": [
+      "nominal",
+      "tire",
+      "delay20"
+    ],
+    "sources": [
+      "lqr",
+      "student_rk",
+      "ppo_rk",
+      "planner_rk",
+      "ppo_euler"
+    ],
+    "noise_base": 1606000000,
+    "episodes": 360
+  },
+  "runtime_smoke": "After offline jobs exit:3seeds x5actual cases x1second=1500 original10ms ticks, new RK guarded runtime, unchanged1ms guard. Full input/decision/plant replay, no retry erasing misses. Diagnostic, not full qualification or target hardware."
+}

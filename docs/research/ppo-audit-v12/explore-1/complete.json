@@ -1,0 +1,12 @@
+{
+  "arm": "explore",
+  "pair": 1,
+  "additional_steps": 50000,
+  "submitted": 25925,
+  "active": 1254,
+  "checkpoint": {
+    "folder": "step-000050000",
+    "manifest_sha256": "c605eadc29e90ed5d41f5275e6b770a52d9616dc6fddbf1ab80e50cb3a367410"
+  },
+  "endpoint_eligible": true
+}

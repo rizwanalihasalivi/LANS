@@ -19,7 +19,8 @@ def main():
         with log.open('w') as f:subprocess.run(list(map(str,cmd)),cwd=cwd,env=env,stdout=f,stderr=subprocess.STDOUT,check=True)
     def publish(message):
         if not args.publish:return
-        subprocess.run(['git','add','-f',str(out.relative_to(ROOT))],cwd=ROOT,check=True)
+        relative=str(out.relative_to(ROOT))
+        subprocess.run(['git','add','-f','--',relative,':(exclude)'+relative+'/**/__pycache__/**',':(exclude)'+relative+'/**/*.pyc'],cwd=ROOT,check=True)
         subprocess.run(['git','diff','--cached','--check'],cwd=ROOT,check=True)
         if subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode:subprocess.run(['git','commit','-m',message],cwd=ROOT,check=True)
         branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()

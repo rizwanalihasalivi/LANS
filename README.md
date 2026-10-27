@@ -10,6 +10,16 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
+- **Latest deep diagnosis:** [realistic asynchronous delivery and scalar predictor](docs/research/reviewer-interface-v4/final-update.md).
+  The unchanged PPO endpoints gain2.579% over LQR, with0.51% lower heading error
+  and4.17% higher actuator-rate RMS. The roughly0.57% student-relative gain still
+  fails the frozen1% margin. All672 episodes survive; actual one-second worker
+  stall/recovery passes functional checks for all three seeds. Deadline tests
+  still fail, including the native heartbeat baseline. No candidate is promoted.
+  [Updated experimental Python3.10 kit](docs/research/reviewer-interface-v4/LANS_Interface_Python310_Kit.zip)
+  uses the fresh-within-deadline authority rule, scalar predictor and actual PPO
+  actors in a software plant; it is not vehicle deployment approval.
+  Resume with `python tools/controller_review/run_interface_work.py --publish`.
 - **Latest aligned study:** [300,000-step training and576-episode comparison](docs/research/reviewer-aligned-v3/README.md)
   passes the balanced-versus-LQR development screen:1.445% tracking gain,
   0.27% lower heading error and2.66% higher actuator-rate RMS (within5%).

@@ -1,6 +1,12 @@
 # LANS opening report
 
-Latest research evidence: [27 October2026 aligned update](../research/reviewer-aligned-v3/final-update.md).
+Latest research evidence: [27 October2026 interface/compute diagnosis](../research/reviewer-interface-v4/final-update.md).
+Realistic delivery and freshness-only authority improve the unchanged PPO to
+2.579% tracking gain over LQR with balanced heading/rate metrics. Full selection
+still fails the1% student margin; strict timing and physical validation remain
+unresolved. Worker stall/recovery is functionally verified for three seeds.
+
+Prior research evidence: [aligned update](../research/reviewer-aligned-v3/final-update.md).
 The new576-episode comparison passes the balanced-versus-LQR screen, but PPO's
 approximately0.33% gain over the student remains below the required1% margin.
 Full promotion, reserved confirmation, strict timing and actual hardware

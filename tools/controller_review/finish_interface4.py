@@ -53,6 +53,10 @@ def main():
         '## Findings and implemented corrections','',
         'The old actor inference duration, packet age and monitor deadline were different quantities but the legacy authority function penalized packet age steeply. At10ms age, the0.25 cap shrank to0.00458, even if neural inference finished quickly. The old offline nominal case could return a proposal in the same tick, unlike a periodically polled worker. The fixed comparison now enforces at least one10ms delivery interval.',
         'One predefined controller variant separates freshness eligibility from authority: a valid packet younger than50ms may receive up to0.25 authority, with the existing0.05/tick ramp,0.3s residual filter, three-good-control-tick recovery,1s nominal predictor and0.1% predicted-cost improvement test. Invalid/stale packets immediately revoke assistance. This is an empirical performance supervisor, not a formal safety certificate.',
+        r'For a valid packet, $f_t=f_{t-1}+\alpha[\operatorname{clip}(\Delta\delta_t,-0.08,0.08)-f_{t-1}]$, where $\alpha=1-e^{-0.01/0.3}$. Invalid/stale packets clear $f_t$, authority and the recovery count. Valid performance rejection keeps filter history while revoking authority.',
+        r'$$\delta_{\mathrm{cmd},t}=\operatorname{clip}\left(\delta_{\mathrm{LQR},t}+w_t f_t,-0.5,0.5\right).$$',
+        r'$$0\leq a_t<0.05\;\mathrm{s},\qquad J_0-J_1\geq\max(10^{-7},0.001J_0).$$',
+        r'After three consecutive good control ticks, $w_t=\min(0.25,w_{t-1}+0.05)$; otherwise $w_t=0$. Three control ticks need not contain three distinct worker replies. LQR always contributes: this is residual assistance, not full-command PPO/LQR switching.',
         'The predictor array/BLAS work inside its100-step recurrence was replaced by scalar equations, without fastmath or changed costs. Contracts checked2,000 randomized cost pairs and1,000 closed-loop command/state transitions against the frozen v3 implementation. The old controller remains separately available through scalar_aligned; the new authority variant is fresh_v4.',
         'Fault injection was moved out of the monitor process. Stress helpers signal readiness before measured windows. Timing now records polling, sensing/LQR, feature construction, submission, supervision and software commit separately, and rechecks freshness/deadlines after fallback handling.',
         'The existing20-channel policy also omits the internal residual-filter state. The diagnostic constructed identical policy observations with different valid internal filter states and different next commands. Reachability of that exact pair is not proved: this shows a state-alias risk, not proof that it caused the measured learning gap. Adding a causal history feature requires a new versioned model/normalizer and matched training; old oracle fields were not silently repurposed.','',
@@ -87,6 +91,9 @@ def main():
         'The downloadable kit is a software-plant research diagnostic with actual frozen PPO actors, not vehicle deployment approval. Source/model hashes, protocols, raw traces and verifiers accompany the report. Existing failed studies remain unchanged.']
     # Narrative formatting only; do not alter identifiers or mathematics in code spans.
     import re
+    references=ROOT/'docs/research/reviewer-aligned-v3/verified-references.md'
+    (out/'verified-references.md').write_text(references.read_text())
+    lines+=['','## Supplied-paper reference entries and comparison limits','',references.read_text()]
     doc='\n'.join(lines)+'\n';doc=re.sub(r'(?<=[A-UW-Za-uw-z])(?=\d)',' ',doc);doc=re.sub(r'(?<=\d)(?=[A-UW-Za-uw-zµ])',' ',doc)
     (out/'final-update.md').write_text(doc);(out/'completion-status.json').write_text(json.dumps(status,indent=2)+'\n')
     for suffix in ('docx','pdf'):
@@ -94,7 +101,7 @@ def main():
         if suffix=='pdf':cmd+=['--pdf-engine=xelatex','-V','mainfont=DejaVu Serif','-V','geometry:margin=22mm','-V','fontsize=10pt','-V','papersize=a4']
         subprocess.run(cmd,check=True,env=os.environ)
     with zipfile.ZipFile(out/'LANS_Interface_Reports.zip','w',zipfile.ZIP_DEFLATED) as z:
-        for n in ('final-update.md','final-update.docx','final-update.pdf','development-comparison.png','development-comparison.svg','development-comparison.pdf','completion-status.json','summary.json','decision.json','deep-analysis.json','episodes.csv'):
+        for n in ('final-update.md','final-update.docx','final-update.pdf','development-comparison.png','development-comparison.svg','development-comparison.pdf','completion-status.json','summary.json','decision.json','deep-analysis.json','verified-references.md','episodes.csv'):
             z.write(out/n,n)
     qa={}
     for f in out.glob('*.zip'):

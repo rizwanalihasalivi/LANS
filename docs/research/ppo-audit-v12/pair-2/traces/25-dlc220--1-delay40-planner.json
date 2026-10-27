@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "delay40",
+  "source": "planner",
+  "noise_id": 1826225130,
+  "trace": "25-dlc220--1-delay40-planner.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.07769146315292516,
+  "heading_rmse_rad": 0.02437899986592107,
+  "rate_rms_rad_s": 0.10830077676144165,
+  "active_ticks": 11,
+  "movement_rad": 0.8383777924461175,
+  "trace_sha256": "a1c362023421d4fe8de740016190baa19bd18a2cf7d8554b3f1a88bba1ad589f"
+}

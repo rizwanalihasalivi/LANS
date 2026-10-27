@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "nominal",
+  "source": "explore",
+  "noise_id": 1826225100,
+  "trace": "25-dlc220--1-nominal-explore.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.0817361930705461,
+  "heading_rmse_rad": 0.024887077032352826,
+  "rate_rms_rad_s": 0.10941412624428422,
+  "active_ticks": 92,
+  "movement_rad": 0.846354552907049,
+  "trace_sha256": "3c9c713424ac8fd050ac9b23e33c2cb36da38ca09ecfb19492c0bf3185707c52"
+}

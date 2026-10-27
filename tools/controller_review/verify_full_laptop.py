@@ -11,12 +11,15 @@ from laptop_full_controller import CausalEnv,controller,load_portable,advance,pa
 def main():
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--models',type=Path,required=True)
     args=p.parse_args();report=json.loads((args.run/'summary.json').read_text());actor=load_portable(args.models);actor.golden_check()
-    history_profile=json.loads((args.models/'manifest.json').read_text()).get('profile')=='causal_filter_history_v5'
+    declared=json.loads((args.models/'manifest.json').read_text()).get('profile')
+    compensated_profile=declared=='latency_compensated_query_v7'
+    history_profile=declared in ('causal_filter_history_v5','latency_compensated_query_v7')
     removed=[15,16,17,19] if history_profile else [14,15,16,17,19]
     count=packets_count=0
     assert {r['case'] for r in report['episodes']}==set(CASES)
     for e in report['episodes']:
-        assert (e['profile']=='fresh_history')==history_profile
+        assert (e['profile'] in ('fresh_history','delay_compensated'))==history_profile
+        assert (e['profile']=='delay_compensated')==compensated_profile
         name=e['case'];ticks=list(csv.DictReader((args.run/f'{name}-ticks.csv').open()))
         file=args.run/f'{name}-packets.csv';packets=list(csv.DictReader(file.open())) if file.exists() else []
         issued={int(r['release_ns']):r for r in ticks if r.get('submitted','True')=='True'};packet_map={int(r['seq']):r for r in packets}
@@ -41,7 +44,10 @@ def main():
             assert abs(env.baseline-baseline)<1e-12
             if int(r['release_ns']) in queries_by_observed:
                 query=np.array(json.loads(queries_by_observed[int(r['release_ns'])]['observation_json']),np.float32)
-                np.testing.assert_array_equal(query[:9],env.obs[:9])
+                physical=query
+                if compensated_profile:
+                    physical=np.array(json.loads(queries_by_observed[int(r['release_ns'])]['query_metadata_json'])['raw_observation'],np.float32)
+                np.testing.assert_array_equal(physical[:9],env.obs[:9])
                 if history_profile:assert query[14]==np.float32(np.clip(previous_filter/.08,-1.,1.))
             assert abs(command-max(-.5,min(.5,baseline+weight*float(r['filtered_residual']))))<1e-12
             seq=int(r['packet_seq'])

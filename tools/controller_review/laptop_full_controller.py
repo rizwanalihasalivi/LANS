@@ -39,6 +39,10 @@ CASES={'nominal':0.,'delay20':.02,'delay1000':1.,'cpu_stress':0.,'worker_crash':
 
 
 def controller(profile):
+    if profile=='delay_compensated':
+        sys.path.insert(0,str(ROOT/'tools/reviewer_v7'))
+        from compensation import CompensatedController
+        return CompensatedController()
     if profile in ('scalar_aligned','fresh_v4','fresh_history'):
         sys.path.insert(0,str(ROOT/'tools/reviewer_v4'))
         from interface4 import ScalarAligned,FreshController
@@ -76,13 +80,15 @@ def actor(connection,folder,seed,delay):
             while True:
                 request=connection.recv()
                 if request is None:return
-                seq,observed_ns,x=request
+                seq,observed_ns,x,*extra=request
                 entered=time.perf_counter_ns();index=int(portable.logits(model,x[None,:]).argmax(1)[0])
                 inferred=time.perf_counter_ns()
                 if delay:waiter.wait_until_ns(inferred+int(delay*1e9))
-                connection.send(('output',dict(seq=seq,observed_ns=observed_ns,entered_ns=entered,
+                message=dict(seq=seq,observed_ns=observed_ns,entered_ns=entered,
                     inferred_ns=inferred,sent_ns=time.perf_counter_ns(),residual=[-.08,-.04,0.,.04,.08][index],
-                    observation_json=json.dumps(x.tolist()))))
+                    observation_json=json.dumps(x.tolist()))
+                if extra:message['query_metadata_json']=json.dumps(extra[0])
+                connection.send(('output',message))
     except (EOFError,BrokenPipeError):pass
     except Exception as error:
         try:connection.send(('error',repr(error)))
@@ -124,7 +130,9 @@ def write_csv(file,rows):
 
 def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_base=1256000000):
     declared=json.loads((Path(models)/'manifest.json').read_text()).get('profile')
-    if (profile=='fresh_history')!=(declared=='causal_filter_history_v5'):
+    versioned={'fresh_history':'causal_filter_history_v5','delay_compensated':'latency_compensated_query_v7'}
+    if ((profile in versioned and declared!=versioned[profile]) or
+            (profile not in versioned and declared in versioned.values())):
         raise ValueError('Controller/model input ABI mismatch; history and legacy artifacts cannot be mixed')
     env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',noise_base+seed));env.reset()
     # Warm every parent numerical path outside the measured window.
@@ -170,6 +178,8 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                             if tag!='output':raise RuntimeError(message)
                             received=time.perf_counter_ns()
                             validate_response(message,pending,received)
+                            if hasattr(ctrl,'compensator'):
+                                ctrl.compensator.observe(message['seq'],(received-message['observed_ns'])/1e9)
                             message['received_ns']=received;packet=message;packets.append(message);busy=False;pending=None
                         if not worker.is_alive():raise RuntimeError('worker exited')
                     except (EOFError,OSError,RuntimeError) as error:
@@ -183,10 +193,16 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                 ctrl.previews=env.obs[6:9].astype(float)*.02
                 obs=observation(env.state,env.estimate,env.measured_speed,ctrl.previews,ctrl,(release-origin)/1e9)
                 if getattr(ctrl,'policy_history_feature',False):obs[14]=float(np.clip(ctrl.filtered/.08,-1.,1.))
+                query_meta=None
+                if hasattr(ctrl,'compensator') and not busy and not dead:
+                    obs,query_meta=ctrl.prepare_query(obs,env.estimate,env.state[5],env.measured_speed,ctrl.previews,env.gain)
                 built=time.perf_counter_ns()
                 submitted=False
                 if not busy and not dead:
-                    try:seq+=1;parent.send((seq,release,obs));busy=True;pending=(seq,release);submitted=True
+                    try:
+                        seq+=1;request=(seq,release,obs)
+                        if query_meta is not None:request=(*request,query_meta)
+                        parent.send(request);busy=True;pending=(seq,release);submitted=True
                     except (OSError,EOFError):dead=True;packet=None;ctrl.packet=None
                 submitted_at=time.perf_counter_ns()
                 decision_at=time.perf_counter_ns()
@@ -208,7 +224,7 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                 cpu_end=time.thread_time_ns()
                 old=env.state[5];env.state=advance(env.state,command,20.,.9,1.);env.tick+=1
                 y,h,_=path_values(env.state[0],env.path)
-                rows.append(dict(tick=tick,target_ns=target,release_ns=release,apply_ns=apply,
+                row=dict(tick=tick,target_ns=target,release_ns=release,apply_ns=apply,
                     observed_ns=release,command=float(command),baseline=float(baseline),weight=ctrl.weight,
                     filtered_residual=ctrl.filtered,reason=reason,packet_seq=packet['seq'] if packet else -1,
                     packet_observed_ns=packet['observed_ns'] if packet else -1,packet_age_s=age,
@@ -219,7 +235,11 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                     submit_ns=submitted_at-built,supervision_commit_ns=apply-submitted_at,
                     submitted=submitted,request_seq=seq if submitted else -1,decision_ns=decision_at,
                     decision_command=decision_command,decision_weight=decision_weight,decision_filter=decision_filter,
-                    decision_good=decision_good,good=ctrl.good,predicted_base=ctrl.last_costs[0],predicted_candidate=ctrl.last_costs[1]))
+                    decision_good=decision_good,good=ctrl.good,predicted_base=ctrl.last_costs[0],predicted_candidate=ctrl.last_costs[1])
+                if hasattr(ctrl,'compensator'):
+                    row['query_metadata_json']=json.dumps(query_meta) if submitted else ''
+                    row['query_observation_json']=json.dumps(obs.tolist()) if submitted else ''
+                rows.append(row)
     finally:
         if enabled:gc.enable()
         try:
@@ -249,7 +269,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--models',type=Path,default=ROOT/'actor')
     p.add_argument('--output',type=Path,required=True);p.add_argument('--seconds',type=float,default=13.)
     p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
-    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4','fresh_history'],default='age_filtered')
+    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated'],default='age_filtered')
     args=p.parse_args()
     if not .5<=args.seconds<=30:p.error('seconds must be0.5..30')
     args.output.mkdir(parents=True,exist_ok=False)

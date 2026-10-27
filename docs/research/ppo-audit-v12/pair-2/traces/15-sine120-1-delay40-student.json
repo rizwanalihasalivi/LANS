@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 15,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "delay40",
+  "source": "student",
+  "noise_id": 1826215030,
+  "trace": "15-sine120-1-delay40-student.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03616765946638646,
+  "heading_rmse_rad": 0.006534329960276576,
+  "rate_rms_rad_s": 0.042482941082647406,
+  "active_ticks": 24,
+  "movement_rad": 0.3912679008274128,
+  "trace_sha256": "8e4fc38cbbd3a6a9c32eb7c4be15159cd590a1214300a6eaf3b3ad3f8bb37e48"
+}

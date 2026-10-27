@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 15,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "delay20",
+  "source": "student",
+  "noise_id": 1826215120,
+  "trace": "15-dlc220-1-delay20-student.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03267364478471586,
+  "heading_rmse_rad": 0.005766575115811558,
+  "rate_rms_rad_s": 0.04334291814749513,
+  "active_ticks": 54,
+  "movement_rad": 0.45360305226921627,
+  "trace_sha256": "7093cdb002b57b2d6d3dda2eff385142a6ab6e7f253e5b20c38108d7c13cef02"
+}

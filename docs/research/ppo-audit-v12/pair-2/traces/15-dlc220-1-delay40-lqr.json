@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 15,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "delay40",
+  "source": "lqr",
+  "noise_id": 1826215130,
+  "trace": "15-dlc220-1-delay40-lqr.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03227586720285828,
+  "heading_rmse_rad": 0.005799855552913633,
+  "rate_rms_rad_s": 0.03976229163166877,
+  "active_ticks": 0,
+  "movement_rad": 0.4210564122624319,
+  "trace_sha256": "fdd2d7c57ed4c055c220d6996f2a9fa3311be73f6e2517df57ff53b5788043f3"
+}

@@ -1,0 +1,26 @@
+{
+  "nominal/accepted": {
+    "samples": 24,
+    "physical_benefit_above_01pct": 20,
+    "physical_harm_above_01pct": 3,
+    "predicted_actual_sign_disagreements": 3
+  },
+  "nominal/cost": {
+    "samples": 24,
+    "physical_benefit_above_01pct": 3,
+    "physical_harm_above_01pct": 12,
+    "predicted_actual_sign_disagreements": 11
+  },
+  "tire/accepted": {
+    "samples": 18,
+    "physical_benefit_above_01pct": 8,
+    "physical_harm_above_01pct": 4,
+    "predicted_actual_sign_disagreements": 8
+  },
+  "tire/cost": {
+    "samples": 24,
+    "physical_benefit_above_01pct": 4,
+    "physical_harm_above_01pct": 10,
+    "predicted_actual_sign_disagreements": 10
+  }
+}

@@ -34,6 +34,10 @@ CASES={'nominal':0.,'delay20':.02,'delay1000':1.,'cpu_stress':0.,'worker_crash':
 
 
 def controller(profile):
+    if profile in ('scalar_aligned','fresh_v4'):
+        sys.path.insert(0,str(ROOT/'tools/reviewer_v4'))
+        from interface4 import ScalarAligned,FreshController
+        return ScalarAligned() if profile=='scalar_aligned' else FreshController()
     if profile=='aligned':
         sys.path.insert(0,str(ROOT/'tools/reviewer_v3'))
         from aligned import AlignedController
@@ -85,6 +89,21 @@ def burn(stop):
         for _ in range(10000):value=(value*1.000001+.000001)%1.
 
 
+def prepared_burn(stop,connection):
+    connection.send('ready');connection.close();burn(stop)
+
+
+def external_crash(connection):
+    """Fault injection is not part of the monitor's control calculation."""
+    import signal
+    with DeadlineWaiter('auto') as waiter:
+        connection.send('ready');target,pid=connection.recv();waiter.wait_until_ns(target)
+        at=time.perf_counter_ns()
+        try:os.kill(pid,signal.SIGTERM);connection.send(dict(requested_ns=target,sent_ns=at,pid=pid))
+        except OSError as error:connection.send(dict(error=repr(error),requested_ns=target,sent_ns=at))
+    connection.close()
+
+
 def shutdown(process):
     process.join(timeout=.5)
     if process.is_alive():process.terminate();process.join(timeout=2)
@@ -96,8 +115,8 @@ def write_csv(file,rows):
         writer=csv.DictWriter(handle,fieldnames=rows[0],lineterminator='\n');writer.writeheader();writer.writerows(rows)
 
 
-def episode(ctx,case,seed,profile,seconds,models,out):
-    env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',1256000000+seed));env.reset()
+def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_base=1256000000):
+    env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',noise_base+seed));env.reset()
     # Warm every parent numerical path outside the measured window.
     for _ in range(40):env.step(2)
     c=controller(profile)
@@ -111,16 +130,29 @@ def episode(ctx,case,seed,profile,seconds,models,out):
     status,backend=parent.recv()
     if status!='ready':shutdown(worker);raise RuntimeError(backend)
     stop=ctx.Event();stress=None
-    if case=='cpu_stress':stress=ctx.Process(target=burn,args=(stop,));stress.start()
+    if case=='cpu_stress':
+        ready,ready_child=ctx.Pipe();stress=ctx.Process(target=prepared_burn,args=(stop,ready_child));stress.start();ready_child.close()
+        if not ready.poll(120) or ready.recv()!='ready':
+            stop.set();shutdown(stress);shutdown(worker);ready.close();parent.close()
+            raise RuntimeError('stress readiness timeout')
+        ready.close()
+    killer=None;fault=None;fault_event=None
+    if case=='worker_crash' and external_fault:
+        fault,fault_child=ctx.Pipe();killer=ctx.Process(target=external_crash,args=(fault_child,));killer.start();fault_child.close()
+        if not fault.poll(120) or fault.recv()!='ready':
+            stop.set();shutdown(killer);shutdown(worker);fault.close();parent.close()
+            raise RuntimeError('fault injector readiness timeout')
     n=round(seconds/.01);packet=None;pending=None;busy=False;dead=False;seq=0;rows=[];packets=[];errors=[]
     enabled=gc.isenabled();gc.collect();gc.disable()
     try:
         with DeadlineWaiter('auto') as waiter:
             monitor_backend=waiter.backend;origin=time.perf_counter_ns()+20_000_000
+            if killer is not None:fault.send((origin+(n//3)*10_000_000,worker.pid))
             for tick in range(n):
                 target=origin+tick*10_000_000;waiter.wait_until_ns(target)
                 release=time.perf_counter_ns()
-                if case=='worker_crash' and tick==n//3:worker.terminate()
+                cpu_start=time.thread_time_ns()
+                if case=='worker_crash' and tick==n//3 and not external_fault:worker.terminate()
                 if not dead:
                     try:
                         if parent.poll():
@@ -132,22 +164,37 @@ def episode(ctx,case,seed,profile,seconds,models,out):
                         if not worker.is_alive():raise RuntimeError('worker exited')
                     except (EOFError,OSError,RuntimeError) as error:
                         errors.append(str(error));dead=True;packet=None;busy=False
+                polled=time.perf_counter_ns()
                 env._sense()
+                sensed=time.perf_counter_ns()
                 baseline=env.baseline
                 if packet is None:ctrl.packet=None
                 else:ctrl.packet=(packet['seq'],(packet['observed_ns']-origin)/1e9,packet['residual'])
                 ctrl.previews=env.obs[6:9].astype(float)*.02
                 obs=observation(env.state,env.estimate,env.measured_speed,ctrl.previews,ctrl,(release-origin)/1e9)
+                built=time.perf_counter_ns()
+                submitted=False
                 if not busy and not dead:
-                    try:seq+=1;parent.send((seq,release,obs));busy=True;pending=(seq,release)
+                    try:seq+=1;parent.send((seq,release,obs));busy=True;pending=(seq,release);submitted=True
                     except (OSError,EOFError):dead=True;packet=None;ctrl.packet=None
-                command,reason=ctrl.choose((time.perf_counter_ns()-origin)/1e9,baseline,env.estimate,
+                submitted_at=time.perf_counter_ns()
+                decision_at=time.perf_counter_ns()
+                command,reason=ctrl.choose((decision_at-origin)/1e9,baseline,env.estimate,
                     env.state[5],env.measured_speed,env.curvature,env.gain)
+                decision_command=command;decision_weight=ctrl.weight;decision_filter=ctrl.filtered;decision_good=ctrl.good
                 apply=time.perf_counter_ns();age=None if packet is None else (apply-packet['observed_ns'])/1e9
                 miss=apply>target+10_000_000
                 if miss or (age is not None and age>=.05):
                     ctrl.filtered=0.;ctrl.weight=0.;ctrl.good=0;ctrl.last_command=baseline
                     command=baseline;reason='deadline' if miss else 'age_at_apply'
+                # Record after fallback handling; recheck at software commit.
+                commit=time.perf_counter_ns();commit_age=None if packet is None else (commit-packet['observed_ns'])/1e9
+                if commit>target+10_000_000 or (commit_age is not None and commit_age>=.05):
+                    ctrl.filtered=0.;ctrl.weight=0.;ctrl.good=0;ctrl.last_command=baseline;command=baseline
+                    reason='deadline' if commit>target+10_000_000 else 'age_at_apply'
+                    commit=time.perf_counter_ns()
+                apply=commit;age=None if packet is None else (apply-packet['observed_ns'])/1e9;miss=apply>target+10_000_000
+                cpu_end=time.thread_time_ns()
                 old=env.state[5];env.state=advance(env.state,command,20.,.9,1.);env.tick+=1
                 y,h,_=path_values(env.state[0],env.path)
                 rows.append(dict(tick=tick,target_ns=target,release_ns=release,apply_ns=apply,
@@ -156,7 +203,12 @@ def episode(ctx,case,seed,profile,seconds,models,out):
                     packet_observed_ns=packet['observed_ns'] if packet else -1,packet_age_s=age,
                     deadline_miss=miss,worker_dead=dead,error=float(env.state[1]-y),heading_error=float(env.state[2]-h),
                     actuator=float(env.state[5]),actuator_rate=float((env.state[5]-old)/.01),
-                    control_ns=apply-release,release_lateness_ns=release-target))
+                    control_ns=apply-release,release_lateness_ns=release-target,control_cpu_ns=cpu_end-cpu_start,
+                    poll_ns=polled-release,sensing_lqr_ns=sensed-polled,feature_ns=built-sensed,
+                    submit_ns=submitted_at-built,supervision_commit_ns=apply-submitted_at,
+                    submitted=submitted,request_seq=seq if submitted else -1,decision_ns=decision_at,
+                    decision_command=decision_command,decision_weight=decision_weight,decision_filter=decision_filter,
+                    decision_good=decision_good,good=ctrl.good,predicted_base=ctrl.last_costs[0],predicted_candidate=ctrl.last_costs[1]))
     finally:
         if enabled:gc.enable()
         try:
@@ -164,14 +216,18 @@ def episode(ctx,case,seed,profile,seconds,models,out):
         except (OSError,EOFError):pass
         shutdown(worker);parent.close();stop.set()
         if stress is not None:shutdown(stress)
+        if killer is not None:
+            shutdown(killer)
+            if fault.poll():fault_event=fault.recv()
+            fault.close()
     write_csv(out/f'{case}-ticks.csv',rows);write_csv(out/f'{case}-packets.csv',packets)
     violations=sum((r['worker_dead'] or r['deadline_miss'] or (r['packet_age_s'] is not None and r['packet_age_s']>=.05))
                    and (r['weight']!=0 or r['command']!=r['baseline']) for r in rows)
-    result=dict(case=case,ticks=n,seed=seed,noise_id=1256000000+seed,profile=profile,
+    result=dict(case=case,ticks=n,seed=seed,noise_id=noise_base+seed,profile=profile,
         deadline_misses=sum(r['deadline_miss'] for r in rows),fallback_violations=violations,
         nonzero_correction_ticks=sum(abs(r['command']-r['baseline'])>1e-10 for r in rows),
         survived=all(abs(r['error'])<=2.5 and abs(r['heading_error'])<=.6 for r in rows),
-        actor_packets=len(packets),intentional_failure_events=errors,monitor_timer_backend=monitor_backend,
+        actor_packets=len(packets),intentional_failure_events=errors,external_fault_event=fault_event,monitor_timer_backend=monitor_backend,
         worker_timer_backend=backend,simulated_duration_s=n*.01,
         wall_duration_s=(rows[-1]['apply_ns']-origin)/1e9+.01)
     print(case,result['deadline_misses'],'controller deadlines missed; fallback violations',violations,flush=True)
@@ -182,11 +238,11 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--models',type=Path,default=ROOT/'actor')
     p.add_argument('--output',type=Path,required=True);p.add_argument('--seconds',type=float,default=13.)
     p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
-    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned'],default='age_filtered')
+    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4'],default='age_filtered')
     args=p.parse_args()
     if not .5<=args.seconds<=30:p.error('seconds must be0.5..30')
     args.output.mkdir(parents=True,exist_ok=False)
-    rows=[episode(mp.get_context('spawn'),case,args.seed,args.profile,args.seconds,args.models,args.output) for case in CASES]
+    rows=[episode(mp.get_context('spawn'),case,args.seed,args.profile,args.seconds,args.models,args.output,external_fault=True) for case in CASES]
     result=dict(scope='Full observer/LQR/residual-supervisor/actor IPC plus fixed-step software plant; NOT native Webots, sensors/CAN or physical actuator',
         runtime=dict(python=sys.version,platform=platform.platform(),numpy=np.__version__),episodes=rows,
         functional_pass=all(r['survived'] and r['fallback_violations']==0 for r in rows),

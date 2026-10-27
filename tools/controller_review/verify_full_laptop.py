@@ -16,7 +16,7 @@ def main():
     for e in report['episodes']:
         name=e['case'];ticks=list(csv.DictReader((args.run/f'{name}-ticks.csv').open()))
         file=args.run/f'{name}-packets.csv';packets=list(csv.DictReader(file.open())) if file.exists() else []
-        issued={int(r['release_ns']):r for r in ticks};packet_map={int(r['seq']):r for r in packets}
+        issued={int(r['release_ns']):r for r in ticks if r.get('submitted','True')=='True'};packet_map={int(r['seq']):r for r in packets}
         queries_by_observed={int(r['observed_ns']):r for r in packets}
         assert len(packet_map)==len(packets)==e['actor_packets']
         for r in packets:

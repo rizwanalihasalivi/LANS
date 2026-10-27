@@ -1,0 +1,72 @@
+{
+  "lqr": {
+    "rmse_m": 0.08545725022335364,
+    "heading_rmse_rad": 0.019514866832049806,
+    "rate_rms_rad_s": 0.06883368872878741,
+    "movement_rad": 0.5583508330985916,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.08596241104131401,
+    "heading_rmse_rad": 0.019271454644776965,
+    "rate_rms_rad_s": 0.06809378321695966,
+    "movement_rad": 0.5561859557747637,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 10058,
+    "gain_vs_lqr_pct": -0.5911269279552878
+  },
+  "positive": {
+    "rmse_m": 0.08596241104131401,
+    "heading_rmse_rad": 0.019271454644776965,
+    "rate_rms_rad_s": 0.06809378321695966,
+    "movement_rad": 0.5561859557747637,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 10058,
+    "gain_vs_lqr_pct": -0.5911269279552878
+  },
+  "student_rk": {
+    "rmse_m": 0.08509071666705072,
+    "heading_rmse_rad": 0.01948236315932542,
+    "rate_rms_rad_s": 0.06893227176078756,
+    "movement_rad": 0.5609381868522333,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 4524,
+    "gain_vs_lqr_pct": 0.4289086711132595
+  },
+  "oldppo_rk": {
+    "rmse_m": 0.0851498977284713,
+    "heading_rmse_rad": 0.019476548760671297,
+    "rate_rms_rad_s": 0.06885825080971351,
+    "movement_rad": 0.5607676841930803,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 4372,
+    "gain_vs_lqr_pct": 0.35965642947676235
+  },
+  "planner_rk": {
+    "rmse_m": 0.0845810955295852,
+    "heading_rmse_rad": 0.019287099617226175,
+    "rate_rms_rad_s": 0.06733159008618518,
+    "movement_rad": 0.5450413685906118,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 31818,
+    "gain_vs_lqr_pct": 1.0252549566929559
+  },
+  "newppo_rk": {
+    "rmse_m": 0.08537387004148914,
+    "heading_rmse_rad": 0.019471312984210308,
+    "rate_rms_rad_s": 0.06878258564915185,
+    "movement_rad": 0.5601528380231546,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 4029,
+    "gain_vs_lqr_pct": 0.09756946502090802
+  }
+}

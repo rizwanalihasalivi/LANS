@@ -10,7 +10,23 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
-- **Latest active PPO audit — new 20% target:** [verified fixes and diagnostic results](docs/research/reviewer-audit-v10/README.md).
+- **Latest actual PPO training:** [three corrected-environment continuation runs and full matched results](docs/research/reviewer-training-v11/README.md).
+  The user explicitly requested training despite the prior failed heuristic
+  headroom screen. Three final endpoints add **300,000 new environment steps**,
+  retaining the previous actor/critic/optimizer/reward statistics. All 840 fresh
+  development episodes survive; 1,153,740 transitions and 281,880 neural
+  decisions independently replay, including 144 exact100ms/LQR fallback pairs.
+  On this SAME grid, new PPO gains **0.098%** over LQR, old PPO **0.360%**,
+  student **0.429%**, and the causal nonlearned planner **1.025%**. New PPO is
+  **0.263% worse than old PPO** and **0.333% worse than the student**.
+  **20% remains unmet; no new actor is promoted.** Reserved/current-actor
+  timing/native/laptop/physical claims are not inferred from these software
+  episodes. [Learning/authority diagnostics](docs/research/reviewer-training-v11/learning-diagnostics.json)
+  separate measured behavior from causal speculation.
+  [Editable Word and PDF reports](docs/research/reviewer-training-v11/LANS_New_PPO_Training_Reports.zip).
+  Resume with `python tools/reviewer_v11/run11.py --publish`; completed or
+  failed trials are preserved, and no additional training starts automatically.
+- **Prior active PPO audit — 20% target:** [verified fixes and diagnostic results](docs/research/reviewer-audit-v10/README.md).
   Terminal bootstrap observations, packet/request identity and numerical-domain
   validation are corrected in a new version. A nominal RK4 predictor uses
   average actual actuator-rate cost and matches an independent integrator.

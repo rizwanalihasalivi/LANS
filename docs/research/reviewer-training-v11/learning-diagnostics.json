@@ -1,0 +1,735 @@
+{
+  "scope": "Post-hoc descriptive development analysis, not parameter selection or new training. Entropy/argmax comparison uses the SAME new-policy visited inputs, not different trajectories.",
+  "groups": {
+    "lqr/nominal": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 32964,
+      "weight_sum": 0.0,
+      "reasons": {
+        "baseline": 32964
+      },
+      "proposal_classes": {
+        "0.0": 32964
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "negative/nominal": {
+      "ticks": 32964,
+      "active": 3399,
+      "submitted": 32964,
+      "weight_sum": 615.1500000000001,
+      "reasons": {
+        "missing": 24,
+        "cost": 27358,
+        "recovery": 2183,
+        "accepted": 3399
+      },
+      "proposal_classes": {
+        "-0.04": 32964
+      },
+      "active_fraction": 0.10311248634874408,
+      "mean_weight": 0.018661266836548965
+    },
+    "positive/nominal": {
+      "ticks": 32964,
+      "active": 3399,
+      "submitted": 32964,
+      "weight_sum": 615.15,
+      "reasons": {
+        "missing": 24,
+        "cost": 27358,
+        "recovery": 2183,
+        "accepted": 3399
+      },
+      "proposal_classes": {
+        "0.04": 32964
+      },
+      "active_fraction": 0.10311248634874408,
+      "mean_weight": 0.01866126683654896
+    },
+    "student_rk/nominal": {
+      "ticks": 32964,
+      "active": 2350,
+      "submitted": 32964,
+      "weight_sum": 414.8,
+      "reasons": {
+        "missing": 24,
+        "cost": 28916,
+        "recovery": 1674,
+        "accepted": 2350
+      },
+      "proposal_classes": {
+        "0.0": 16939,
+        "0.08": 8762,
+        "-0.08": 7237,
+        "0.04": 17,
+        "-0.04": 9
+      },
+      "active_fraction": 0.07128989200339765,
+      "mean_weight": 0.012583424341706104
+    },
+    "oldppo_rk/nominal": {
+      "ticks": 32964,
+      "active": 2235,
+      "submitted": 32964,
+      "weight_sum": 349.8000000000001,
+      "reasons": {
+        "missing": 24,
+        "cost": 28783,
+        "recovery": 1922,
+        "accepted": 2235
+      },
+      "proposal_classes": {
+        "0.0": 11070,
+        "0.08": 10826,
+        "-0.08": 10954,
+        "0.04": 83,
+        "-0.04": 31
+      },
+      "active_fraction": 0.06780123771386967,
+      "mean_weight": 0.010611576265016385
+    },
+    "planner_rk/nominal": {
+      "ticks": 32964,
+      "active": 14104,
+      "submitted": 32964,
+      "weight_sum": 3050.600000000001,
+      "reasons": {
+        "missing": 24,
+        "cost": 14342,
+        "recovery": 4494,
+        "accepted": 14104
+      },
+      "proposal_classes": {
+        "0.0": 22878,
+        "-0.08": 1889,
+        "-0.04": 3154,
+        "0.04": 3154,
+        "0.08": 1889
+      },
+      "active_fraction": 0.42786069651741293,
+      "mean_weight": 0.0925433806576872
+    },
+    "newppo_rk/nominal": {
+      "ticks": 32964,
+      "active": 1849,
+      "submitted": 32964,
+      "weight_sum": 263.25,
+      "reasons": {
+        "missing": 24,
+        "cost": 29277,
+        "recovery": 1814,
+        "accepted": 1849
+      },
+      "proposal_classes": {
+        "0.0": 9249,
+        "0.08": 10027,
+        "-0.08": 12487,
+        "0.04": 178,
+        "-0.04": 1023
+      },
+      "active_fraction": 0.056091493750758406,
+      "mean_weight": 0.007985984710593374
+    },
+    "lqr/tire": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 32964,
+      "weight_sum": 0.0,
+      "reasons": {
+        "baseline": 32964
+      },
+      "proposal_classes": {
+        "0.0": 32964
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "negative/tire": {
+      "ticks": 32964,
+      "active": 4009,
+      "submitted": 32964,
+      "weight_sum": 814.9499999999999,
+      "reasons": {
+        "missing": 24,
+        "cost": 26900,
+        "recovery": 2031,
+        "accepted": 4009
+      },
+      "proposal_classes": {
+        "-0.04": 32964
+      },
+      "active_fraction": 0.12161752214537071,
+      "mean_weight": 0.024722424463050598
+    },
+    "positive/tire": {
+      "ticks": 32964,
+      "active": 4009,
+      "submitted": 32964,
+      "weight_sum": 814.9499999999999,
+      "reasons": {
+        "missing": 24,
+        "cost": 26900,
+        "recovery": 2031,
+        "accepted": 4009
+      },
+      "proposal_classes": {
+        "0.04": 32964
+      },
+      "active_fraction": 0.12161752214537071,
+      "mean_weight": 0.024722424463050598
+    },
+    "student_rk/tire": {
+      "ticks": 32964,
+      "active": 910,
+      "submitted": 32964,
+      "weight_sum": 155.25000000000003,
+      "reasons": {
+        "missing": 24,
+        "cost": 31195,
+        "recovery": 835,
+        "accepted": 910
+      },
+      "proposal_classes": {
+        "0.0": 20110,
+        "0.08": 6998,
+        "-0.08": 5839,
+        "0.04": 16,
+        "-0.04": 1
+      },
+      "active_fraction": 0.02760587307365611,
+      "mean_weight": 0.00470968329086276
+    },
+    "oldppo_rk/tire": {
+      "ticks": 32964,
+      "active": 797,
+      "submitted": 32964,
+      "weight_sum": 124.7,
+      "reasons": {
+        "missing": 24,
+        "cost": 31292,
+        "recovery": 851,
+        "accepted": 797
+      },
+      "proposal_classes": {
+        "0.0": 14429,
+        "0.08": 8287,
+        "-0.08": 10056,
+        "0.04": 116,
+        "-0.04": 76
+      },
+      "active_fraction": 0.02417789103264167,
+      "mean_weight": 0.00378291469481859
+    },
+    "planner_rk/tire": {
+      "ticks": 32964,
+      "active": 11558,
+      "submitted": 32964,
+      "weight_sum": 2501.5,
+      "reasons": {
+        "missing": 24,
+        "cost": 17858,
+        "recovery": 3524,
+        "accepted": 11558
+      },
+      "proposal_classes": {
+        "0.0": 25132,
+        "-0.08": 1679,
+        "-0.04": 2237,
+        "0.04": 2237,
+        "0.08": 1679
+      },
+      "active_fraction": 0.3506249241596894,
+      "mean_weight": 0.07588581482829754
+    },
+    "newppo_rk/tire": {
+      "ticks": 32964,
+      "active": 957,
+      "submitted": 32964,
+      "weight_sum": 165.20000000000002,
+      "reasons": {
+        "missing": 24,
+        "cost": 31175,
+        "recovery": 808,
+        "accepted": 957
+      },
+      "proposal_classes": {
+        "0.0": 12593,
+        "0.08": 7579,
+        "-0.08": 11170,
+        "-0.04": 949,
+        "0.04": 673
+      },
+      "active_fraction": 0.029031670913724064,
+      "mean_weight": 0.005011527727217571
+    },
+    "lqr/delay20": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 16488,
+      "weight_sum": 0.0,
+      "reasons": {
+        "baseline": 32964
+      },
+      "proposal_classes": {
+        "0.0": 16488
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "negative/delay20": {
+      "ticks": 32964,
+      "active": 2503,
+      "submitted": 16488,
+      "weight_sum": 472.2499999999999,
+      "reasons": {
+        "missing": 48,
+        "cost": 27791,
+        "recovery": 2622,
+        "accepted": 2503
+      },
+      "proposal_classes": {
+        "-0.04": 16488
+      },
+      "active_fraction": 0.07593131901468268,
+      "mean_weight": 0.014326234680257247
+    },
+    "positive/delay20": {
+      "ticks": 32964,
+      "active": 2503,
+      "submitted": 16488,
+      "weight_sum": 472.2500000000001,
+      "reasons": {
+        "missing": 48,
+        "cost": 27791,
+        "recovery": 2622,
+        "accepted": 2503
+      },
+      "proposal_classes": {
+        "0.04": 16488
+      },
+      "active_fraction": 0.07593131901468268,
+      "mean_weight": 0.014326234680257253
+    },
+    "student_rk/delay20": {
+      "ticks": 32964,
+      "active": 1027,
+      "submitted": 16488,
+      "weight_sum": 142.75,
+      "reasons": {
+        "missing": 48,
+        "cost": 29797,
+        "recovery": 2092,
+        "accepted": 1027
+      },
+      "proposal_classes": {
+        "0.0": 8573,
+        "0.08": 4288,
+        "-0.08": 3624,
+        "0.04": 2,
+        "-0.04": 1
+      },
+      "active_fraction": 0.03115519961169761,
+      "mean_weight": 0.004330481737653198
+    },
+    "oldppo_rk/delay20": {
+      "ticks": 32964,
+      "active": 1068,
+      "submitted": 16488,
+      "weight_sum": 153.9,
+      "reasons": {
+        "missing": 48,
+        "cost": 29664,
+        "recovery": 2184,
+        "accepted": 1068
+      },
+      "proposal_classes": {
+        "0.0": 5900,
+        "0.08": 5523,
+        "-0.08": 4992,
+        "-0.04": 24,
+        "0.04": 49
+      },
+      "active_fraction": 0.032398980706224975,
+      "mean_weight": 0.004668729523116127
+    },
+    "planner_rk/delay20": {
+      "ticks": 32964,
+      "active": 5918,
+      "submitted": 16488,
+      "weight_sum": 1060.3999999999999,
+      "reasons": {
+        "missing": 48,
+        "cost": 19684,
+        "recovery": 7314,
+        "accepted": 5918
+      },
+      "proposal_classes": {
+        "0.0": 10268,
+        "-0.08": 1697,
+        "-0.04": 1413,
+        "0.04": 1413,
+        "0.08": 1697
+      },
+      "active_fraction": 0.179529183351535,
+      "mean_weight": 0.032168426161873556
+    },
+    "newppo_rk/delay20": {
+      "ticks": 32964,
+      "active": 952,
+      "submitted": 16488,
+      "weight_sum": 136.2,
+      "reasons": {
+        "missing": 48,
+        "cost": 30117,
+        "recovery": 1847,
+        "accepted": 952
+      },
+      "proposal_classes": {
+        "0.0": 4925,
+        "0.08": 5369,
+        "-0.08": 5746,
+        "0.04": 118,
+        "-0.04": 330
+      },
+      "active_fraction": 0.028879990292440236,
+      "mean_weight": 0.004131780123771386
+    },
+    "lqr/delay40": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 8244,
+      "weight_sum": 0.0,
+      "reasons": {
+        "baseline": 32964
+      },
+      "proposal_classes": {
+        "0.0": 8244
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "negative/delay40": {
+      "ticks": 32964,
+      "active": 147,
+      "submitted": 8244,
+      "weight_sum": 7.349999999999999,
+      "reasons": {
+        "missing": 96,
+        "cost": 7726,
+        "age": 24648,
+        "recovery": 347,
+        "accepted": 147
+      },
+      "proposal_classes": {
+        "-0.04": 8244
+      },
+      "active_fraction": 0.004459410265744449,
+      "mean_weight": 0.0002229705132872224
+    },
+    "positive/delay40": {
+      "ticks": 32964,
+      "active": 147,
+      "submitted": 8244,
+      "weight_sum": 7.349999999999999,
+      "reasons": {
+        "missing": 96,
+        "cost": 7726,
+        "age": 24648,
+        "recovery": 347,
+        "accepted": 147
+      },
+      "proposal_classes": {
+        "0.04": 8244
+      },
+      "active_fraction": 0.004459410265744449,
+      "mean_weight": 0.0002229705132872224
+    },
+    "student_rk/delay40": {
+      "ticks": 32964,
+      "active": 237,
+      "submitted": 8244,
+      "weight_sum": 11.850000000000001,
+      "reasons": {
+        "missing": 96,
+        "cost": 7386,
+        "age": 24648,
+        "recovery": 597,
+        "accepted": 237
+      },
+      "proposal_classes": {
+        "0.0": 4740,
+        "0.08": 1893,
+        "-0.08": 1611
+      },
+      "active_fraction": 0.007189661448853295,
+      "mean_weight": 0.0003594830724426648
+    },
+    "oldppo_rk/delay40": {
+      "ticks": 32964,
+      "active": 272,
+      "submitted": 8244,
+      "weight_sum": 13.600000000000001,
+      "reasons": {
+        "missing": 96,
+        "cost": 7266,
+        "age": 24648,
+        "recovery": 682,
+        "accepted": 272
+      },
+      "proposal_classes": {
+        "0.0": 3461,
+        "0.08": 2574,
+        "-0.08": 2156,
+        "0.04": 51,
+        "-0.04": 2
+      },
+      "active_fraction": 0.008251425797840068,
+      "mean_weight": 0.00041257128989200345
+    },
+    "planner_rk/delay40": {
+      "ticks": 32964,
+      "active": 238,
+      "submitted": 8244,
+      "weight_sum": 11.899999999999999,
+      "reasons": {
+        "missing": 96,
+        "cost": 7530,
+        "age": 24648,
+        "recovery": 452,
+        "accepted": 238
+      },
+      "proposal_classes": {
+        "0.0": 7030,
+        "-0.08": 607,
+        "0.08": 607
+      },
+      "active_fraction": 0.007219997573110059,
+      "mean_weight": 0.00036099987865550293
+    },
+    "newppo_rk/delay40": {
+      "ticks": 32964,
+      "active": 271,
+      "submitted": 8244,
+      "weight_sum": 13.55,
+      "reasons": {
+        "missing": 96,
+        "cost": 7251,
+        "age": 24648,
+        "recovery": 698,
+        "accepted": 271
+      },
+      "proposal_classes": {
+        "0.0": 3058,
+        "0.08": 2627,
+        "-0.08": 2388,
+        "-0.04": 71,
+        "0.04": 100
+      },
+      "active_fraction": 0.008221089673583303,
+      "mean_weight": 0.0004110544836791652
+    },
+    "lqr/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "baseline": 32964
+      },
+      "proposal_classes": {
+        "0.0": 3300
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "negative/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposal_classes": {
+        "-0.04": 3300
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "positive/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposal_classes": {
+        "0.04": 3300
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "student_rk/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposal_classes": {
+        "0.0": 3266,
+        "0.08": 34
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "oldppo_rk/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposal_classes": {
+        "0.0": 3214,
+        "0.08": 43,
+        "-0.08": 32,
+        "0.04": 11
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "planner_rk/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposal_classes": {
+        "0.0": 2526,
+        "-0.08": 384,
+        "0.08": 384,
+        "0.04": 3,
+        "-0.04": 3
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    },
+    "newppo_rk/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "weight_sum": 0.0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposal_classes": {
+        "0.0": 3194,
+        "0.08": 55,
+        "-0.08": 37,
+        "0.04": 14
+      },
+      "active_fraction": 0.0,
+      "mean_weight": 0.0
+    }
+  },
+  "physical_cost_decomposition": {
+    "lqr": {
+      "lateral": 0.04913454036336984,
+      "heading": 0.011433292717539205,
+      "actuator_rate": 0.009153156435772181,
+      "command": 9.998614744624637e-06,
+      "total_physical_cost": 0.06973098813142585
+    },
+    "negative": {
+      "lateral": 0.0503111662198845,
+      "heading": 0.011136227809159637,
+      "actuator_rate": 0.00886336970995442,
+      "command": 9.81003564080758e-06,
+      "total_physical_cost": 0.07032057377463936
+    },
+    "positive": {
+      "lateral": 0.0503111662198845,
+      "heading": 0.011136227809159637,
+      "actuator_rate": 0.00886336970995442,
+      "command": 9.81003564080758e-06,
+      "total_physical_cost": 0.07032057377463936
+    },
+    "student_rk": {
+      "lateral": 0.048790214438807294,
+      "heading": 0.011393531726036335,
+      "actuator_rate": 0.009176092479712565,
+      "command": 1.0001090427814125e-05,
+      "total_physical_cost": 0.069369839734984
+    },
+    "oldppo_rk": {
+      "lateral": 0.04887040359059583,
+      "heading": 0.011386450108626458,
+      "actuator_rate": 0.009136589985951953,
+      "command": 9.975414455400873e-06,
+      "total_physical_cost": 0.06940341909962965
+    },
+    "planner_rk": {
+      "lateral": 0.04824966602819527,
+      "heading": 0.011184441808279804,
+      "actuator_rate": 0.008674434039042332,
+      "command": 9.801346042371795e-06,
+      "total_physical_cost": 0.06811834322155977
+    },
+    "newppo_rk": {
+      "lateral": 0.0490924647076036,
+      "heading": 0.01137923735194482,
+      "actuator_rate": 0.009109041590150605,
+      "command": 9.957622824885736e-06,
+      "total_physical_cost": 0.06959070127252391
+    }
+  },
+  "matched_input_policy_comparison": {
+    "queries": 93960,
+    "old_new_argmax_agreement": 0.8693380161770966,
+    "old_entropy_mean": 0.33771573642607533,
+    "new_entropy_mean": 0.3462636910783838
+  },
+  "last_logged_training": [
+    {
+      "pair": 0,
+      "last_logged_environment_steps": 100000,
+      "last_logged_kl": 0.0002907507,
+      "last_logged_entropy": 0.15806209027767182,
+      "last_logged_explained_variance": 0.6589767336845398,
+      "scope": "SB3 progress logs are emitted before each iteration update; these are last logged diagnostics, not a recomputation of final optimizer metrics."
+    },
+    {
+      "pair": 1,
+      "last_logged_environment_steps": 100000,
+      "last_logged_kl": 0.00036772565,
+      "last_logged_entropy": 0.18114680349826812,
+      "last_logged_explained_variance": 0.9237413927912712,
+      "scope": "SB3 progress logs are emitted before each iteration update; these are last logged diagnostics, not a recomputation of final optimizer metrics."
+    },
+    {
+      "pair": 2,
+      "last_logged_environment_steps": 100000,
+      "last_logged_kl": 0.0023476135,
+      "last_logged_entropy": 0.7515632939338684,
+      "last_logged_explained_variance": 0.9844405502080917,
+      "scope": "SB3 progress logs are emitted before each iteration update; these are last logged diagnostics, not a recomputation of final optimizer metrics."
+    }
+  ],
+  "source_sha256": "657dafa49c46f5a3a39ce565e21bfc3b2687e34516327f839b4863c825122f91",
+  "verified_raw_seal_sha256": "8d64c4c3ee09d7c8ba21e5e3f56d859d8ba9d76bb253483b39ab21a2531444b4"
+}

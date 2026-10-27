@@ -1,0 +1,41 @@
+0 280 384580 93960
+1 560 769160 187920
+2 840 1153740 281880
+{
+  "episodes": 840,
+  "transitions": 1153740,
+  "submitted_actor_decisions": 281880,
+  "exact_100ms_lqr_pairs": 144,
+  "full_causal_query_gate_physical_replay": true,
+  "source_model_hashes_verified": true,
+  "ppo_gain_vs_comparators_pct": {
+    "lqr": 0.09756946502090802,
+    "negative": 0.6846492469156251,
+    "positive": 0.6846492469156251,
+    "student_rk": -0.3327664703381972,
+    "oldppo_rk": -0.26303297947820603,
+    "planner_rk": -0.9372951567252263
+  },
+  "twenty_percent_development_pass": false,
+  "reasons": [
+    "less_than20pct_vs_lqr",
+    "nonpositive_pair2_vs_lqr",
+    "less_than20pct_vs_negative",
+    "less_than20pct_vs_positive",
+    "less_than20pct_vs_student_rk",
+    "nonpositive_pair0_vs_student_rk",
+    "nonpositive_pair1_vs_student_rk",
+    "nonpositive_pair2_vs_student_rk",
+    "less_than20pct_vs_oldppo_rk",
+    "nonpositive_pair0_vs_oldppo_rk",
+    "nonpositive_pair2_vs_oldppo_rk",
+    "less_than20pct_vs_planner_rk",
+    "nonpositive_pair0_vs_planner_rk",
+    "nonpositive_pair1_vs_planner_rk",
+    "nonpositive_pair2_vs_planner_rk"
+  ],
+  "new_training_steps": 300000,
+  "full_promotion": false,
+  "reserved": "unopened; current-model timing and confirmation required if selection passes",
+  "missing_published_baselines": true
+}

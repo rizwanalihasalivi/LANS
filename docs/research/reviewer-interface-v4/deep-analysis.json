@@ -1,0 +1,161 @@
+{
+  "scope": "Post-hoc descriptive diagnosis of inspected development/software-smoke data; no new selection or reserved data",
+  "old_kit_cases": [
+    {
+      "case": "worker_crash",
+      "ticks": 300,
+      "missed": 5,
+      "already_late_at_release": 2,
+      "wall_control_over10ms": 2,
+      "median_packet_age_ms": 10.780014,
+      "median_actual_inference_ms": 0.04332,
+      "active_ticks": 7,
+      "nonzero_correction_ticks": 7
+    },
+    {
+      "case": "delay1000",
+      "ticks": 300,
+      "missed": 0,
+      "already_late_at_release": 0,
+      "wall_control_over10ms": 0,
+      "median_packet_age_ms": 1500.453331,
+      "median_actual_inference_ms": 0.0911365,
+      "active_ticks": 0,
+      "nonzero_correction_ticks": 0
+    },
+    {
+      "case": "nominal",
+      "ticks": 300,
+      "missed": 0,
+      "already_late_at_release": 0,
+      "wall_control_over10ms": 0,
+      "median_packet_age_ms": 10.533071,
+      "median_actual_inference_ms": 0.042875,
+      "active_ticks": 98,
+      "nonzero_correction_ticks": 98
+    },
+    {
+      "case": "delay20",
+      "ticks": 300,
+      "missed": 2,
+      "already_late_at_release": 1,
+      "wall_control_over10ms": 1,
+      "median_packet_age_ms": 40.403718999999995,
+      "median_actual_inference_ms": 0.053419,
+      "active_ticks": 0,
+      "nonzero_correction_ticks": 0
+    },
+    {
+      "case": "cpu_stress",
+      "ticks": 300,
+      "missed": 1,
+      "already_late_at_release": 0,
+      "wall_control_over10ms": 1,
+      "median_packet_age_ms": 10.710224,
+      "median_actual_inference_ms": 0.050281,
+      "active_ticks": 70,
+      "nonzero_correction_ticks": 70
+    }
+  ],
+  "age_gain": {
+    "0": {
+      "cap": 0.25,
+      "fraction_of_nominal_cap": 1.0
+    },
+    "5": {
+      "cap": 0.25,
+      "fraction_of_nominal_cap": 1.0
+    },
+    "10": {
+      "cap": 0.004578909722183545,
+      "fraction_of_nominal_cap": 0.01831563888873418
+    },
+    "20": {
+      "cap": 1.5360530883320525e-06,
+      "fraction_of_nominal_cap": 6.14421235332821e-06
+    },
+    "30": {
+      "cap": 5.152884056096395e-10,
+      "fraction_of_nominal_cap": 2.061153622438558e-09
+    },
+    "40": {
+      "cap": 1.7286000267350508e-13,
+      "fraction_of_nominal_cap": 6.914400106940203e-13
+    }
+  },
+  "old_v3_strata": [
+    {
+      "scenario": "nominal",
+      "lqr": 0.06701922450499578,
+      "student": 0.06392544506120287,
+      "ppo": 0.06309242105475354,
+      "ppo_gain_vs_student_pct": 1.3031180395408848
+    },
+    {
+      "scenario": "tire",
+      "lqr": 0.1589075231831085,
+      "student": 0.1579626613017289,
+      "ppo": 0.1576137454245115,
+      "ppo_gain_vs_student_pct": 0.22088503342629906
+    },
+    {
+      "scenario": "delay20",
+      "lqr": 0.06768838865738797,
+      "student": 0.06768838865738797,
+      "ppo": 0.06768838865738797,
+      "ppo_gain_vs_student_pct": 0.0
+    },
+    {
+      "scenario": "delay100",
+      "lqr": 0.06779232050666584,
+      "student": 0.06779232050666584,
+      "ppo": 0.06779232050666584,
+      "ppo_gain_vs_student_pct": 0.0
+    }
+  ],
+  "filter_state_alias": {
+    "shared_policy_observation": [
+      -0.04537956044077873,
+      0.19300521910190582,
+      0.24344398081302643,
+      -0.050707969814538956,
+      0.800000011920929,
+      0.05068754777312279,
+      -0.048972323536872864,
+      -0.04512038081884384,
+      -0.08148673176765442,
+      0.0,
+      0.6666666865348816,
+      -0.5,
+      0.10000000149011612,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.19476795196533203,
+      0.0
+    ],
+    "initial_filters": [
+      -0.06,
+      0.06
+    ],
+    "commands": [
+      -0.0973839794059153,
+      -0.09454789890350526
+    ],
+    "reasons": [
+      "cost",
+      "accepted"
+    ],
+    "interpretation": "Distinct valid internal filter states alias under20-channel observation and can yield different transitions. Reachability of this exact pair is not proved; this diagnoses lack of a guaranteed Markov state, not the measured cause of the performance gap."
+  },
+  "conclusions": [
+    "A10ms poll age is not10ms actor inference: inference, queue/service, delivery age and monitor deadline are separate.",
+    "Steep old age gain suppresses otherwise-valid commands; removing it is a new evaluated control variant, not retroactive repair of old results.",
+    "Same-tick zero-service simulation overstates freshness relative to periodic asynchronous delivery; new cases require >=1control tick.",
+    "Some misses include >10ms control work and some are already late on release; elapsed/threadCPU proxies do not establish an OS-only cause.",
+    "Two hidden filter states can share all policy features; a causal filter-history input would require a new versioned model/normalizer and matched training, never filling old oracle channels silently.",
+    "A1% relative improvement over the student remains a frozen selection rule, not a software defect that can be fixed by lowering the threshold."
+  ]
+}

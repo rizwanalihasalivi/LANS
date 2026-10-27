@@ -1,0 +1,83 @@
+{
+  "arm": "nohistory",
+  "pair": 0,
+  "seed": 4701,
+  "steps": 100000,
+  "futile": false,
+  "endpoint_eligible": true,
+  "profile": "causal_filter_history_v5",
+  "history_column_norm": 0.0,
+  "wall_seconds": 67.8274958940001,
+  "protocol": {
+    "id": "reviewer-v5-causal-filter-history-ablation",
+    "purpose": "Fix the identified filter-history policy-state omission using an explicitly versioned input, with matched additional-training ablation. This is a separate study; v4 stays frozen.",
+    "profile": "causal_filter_history_v5",
+    "interface": "20 channels;14=f_previous/0.08, a known causal controller history value at query time.15/16/17/19 remainzero. No pending output, configured service or future completion is given. No full Markov/safety theorem claimed. Old causal_query_v2 artifacts must never be silently reinterpreted.",
+    "normalization": "Reuse frozen original TRAIN statistics except new14mean0/std1 after physical scaling. This scale is declared from filter bounds, not fitted on DEV. Zero actor/critic input-column14 at initialization; bridges preserve original logits exactly for arbitrary history.",
+    "controller": "Unchanged v4 FreshController: scalar nominal1s prediction, tau0.3 filter, cap0.25 under50ms freshness,0.05ramp,3goodticks,0.1% benefit margin; next-tick-or-later simulator service. Same physical plant/noise/limits/reward.",
+    "arms": [
+      "nohistory",
+      "history"
+    ],
+    "seeds": [
+      4701,
+      4802,
+      4903
+    ],
+    "steps_each": 100000,
+    "total_additional_steps": 600000,
+    "initialization": "Exact bridged v3 100k PPO actor per pair; new critic same paired random seed with column14zero. Existing supervised pretraining and v3 training are extra budget, disclosed.",
+    "training_noise_base": 1406000000,
+    "ppo": {
+      "n_envs": 4,
+      "n_steps": 250,
+      "batch_size": 200,
+      "n_epochs": 5,
+      "learning_rate": 0.0001,
+      "clip_range": 0.1,
+      "target_kl": 0.01,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "ent_coef": 0.005,
+      "vf_coef": 0.5
+    },
+    "reward": "Executed v3 reward unchanged: lateral/heading errors, actual actuator-rate, effort and failure; no exogenous delay penalty. Same fixed10ms training transitions in both arms; actions sampled while worker busy can be ignored, a remaining credit-assignment limit disclosed.",
+    "training": "Uniform15/20/25m/s, two known paths, mirrored directions, nominal/tire/delay20/delay100; paired seeded scenario streams. No-history sees14zero; history sees actual filter value. Same architecture, budget, optimizer, reward and new0.005entropy coefficient in both arms.",
+    "futility": "At10000transitions, <=0.1% actual nonzero assistance stops that run, preserving its10000checkpoint as ineligible. Otherwise exactly100000endpoint; no checkpoint selection or extensions.",
+    "development": {
+      "speeds": [
+        15,
+        25
+      ],
+      "paths": [
+        "sine120",
+        "dlc220"
+      ],
+      "mirrors": [
+        -1,
+        1
+      ],
+      "scenarios": [
+        "nominal",
+        "tire",
+        "delay20",
+        "delay100"
+      ],
+      "sources": [
+        "lqr",
+        "negative",
+        "positive",
+        "student",
+        "v3ppo",
+        "nohistory",
+        "history"
+      ],
+      "noise_base": 1416000000,
+      "episodes": 672
+    },
+    "comparison": "All evaluation sources receive the same observable20-channel history interface. Original student/v3 PPO bridges ignore14 exactly; nohistory input-column14 must remainzero, so it also ignores history exactly. Only history training can use14. All share the same v4 supervisor and timestamps.",
+    "acceptance": "Unchanged original screen separately for each new arm: >=1% lower penalized lateral RMSE than LQR, same-supervisor student and BOTH constants; all3 student-relative group gains positive; no survival loss; nominal <=1.02LQR; overall heading/rate RMS <=1.05LQR. Endpoints eligible only after exact100k. Report history-vs-nohistory as ablation, not automatically attribute all improvements to history. If both eligible, freeze lower-RMSE endpoint arm, ties prefer nohistory; no per-seed arm mixing.",
+    "confirmation": "Keep reserved data unopened on failure. Winner requires a separately frozen corresponding-model realworker timing validation and native confirmation before any deployment/vehicle claim. Native heartbeat failures on current cloud are not fixed by adding a neural input.",
+    "stop": "Exactly two prespecified arms x3 finite pilots; no new reward/controller/hyperparameter search after outcomes, no extensions. Publish failures, all seeds, histories and model hashes. Physical/robust-reference requirements remain separate and cannot be fabricated."
+  }
+}

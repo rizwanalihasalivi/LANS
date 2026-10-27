@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "pair": 0,
+      "rows": 2000,
+      "single_row_class_disagreements": 0,
+      "max_abs_logit_error": 4.76837158203125e-06
+    },
+    {
+      "pair": 1,
+      "rows": 2000,
+      "single_row_class_disagreements": 0,
+      "max_abs_logit_error": 4.76837158203125e-06
+    },
+    {
+      "pair": 2,
+      "rows": 2000,
+      "single_row_class_disagreements": 0,
+      "max_abs_logit_error": 4.76837158203125e-06
+    }
+  ],
+  "sha256": {
+    "newppo_rk-701.npz": "fa3dc83420ca4193dc814413f27d53ca3b2a34cc1bd17210a006d8c4f7be65bc",
+    "newppo_rk-903.npz": "2c7d238387eea5e385eaec48838f61ad86d300ae180fc227bfceaa24b8532524",
+    "student_rk-802.npz": "7b9cbaccf68429ddc43d23251537149b76f9c05f2c46f509e42bc45beb504fc1",
+    "student_rk-701.npz": "405c1ebe13b20c505ff822087615cde43d70fbe5414d6e3f01c606e59c1796f1",
+    "student_rk-903.npz": "6f82b75e8dc0dfeaff38b69dda391c2285d6d803ed0eeccc633fb1dea4944852",
+    "oldppo_rk-802.npz": "f5460b69f85f47f3b84ea9d63b5e465dcb77d3cad0c66ec50b2b60999b103b5c",
+    "oldppo_rk-701.npz": "026e03a7ebff073c3d54a76adc65d9d983b4a8992f5e2b1cb39836105eb08217",
+    "newppo_rk-802.npz": "64c4932a36b1f1d4ecdf36b43a0f70e1d0b5faecd7315ba81622467cb95479ff",
+    "oldppo_rk-903.npz": "b475ffbc4590bd6c2bd7ec6ab31e23db7b7c5e81bcc5cc609943ed962df14e35"
+  }
+}

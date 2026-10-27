@@ -1,0 +1,11 @@
+test_fresh_training_namespace_and_seed (__main__.Contracts) ... ok
+test_full_continuation_state_preserved (__main__.Contracts) ... /workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/LANS/docs/research/reviewer-pipeline-v9/causal_history-0/policy.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_terminal_observation_is_updated (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 9.379s
+
+OK

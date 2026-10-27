@@ -1,0 +1,15 @@
+{
+  "pair": 0,
+  "seed": 7701,
+  "additional_steps": 100000,
+  "submitted": 55471,
+  "active": 2978,
+  "prior_updates": 500,
+  "final_updates": 1000,
+  "wall_seconds": 68.00852467599907,
+  "source_sha256": {
+    "policy.zip": "1375c2b2518dfc3556bde261b2c35cd6adb2722db78efe0b07c58e59682ad7c1",
+    "reward-normalization.pkl": "c8eac36967dd990a637aaa371d90a43626c7ef354eb09e30d232457ec94db2ec"
+  },
+  "endpoint_eligible": true
+}

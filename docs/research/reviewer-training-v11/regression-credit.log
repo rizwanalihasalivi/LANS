@@ -1,0 +1,9 @@
+test_allinvalid_preserves_actor_updates_critic (__main__.Contracts) ... ok
+test_allvalid_matches_reference_update (__main__.Contracts) ... ok
+test_busy_action_does_not_change_plant (__main__.Contracts) ... ok
+test_discarded_advantages_have_no_actor_effect (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.352s
+
+OK

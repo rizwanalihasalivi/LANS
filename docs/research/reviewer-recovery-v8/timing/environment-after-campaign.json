@@ -1,0 +1,8 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "python": "3.10.22",
+  "logical_cpus": 5,
+  "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+  "observed_after_campaign": true,
+  "limits": "Post-campaign context; do not backfill missing historical environment metadata or claim cross-campaign causal improvement."
+}

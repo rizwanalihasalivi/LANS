@@ -18,8 +18,8 @@ def main():
     count=packets_count=0
     assert {r['case'] for r in report['episodes']}==set(CASES)
     for e in report['episodes']:
-        assert (e['profile'] in ('fresh_history','delay_compensated'))==history_profile
-        assert (e['profile']=='delay_compensated')==compensated_profile
+        assert (e['profile'] in ('fresh_history','delay_compensated','recovery_raw','recovery_compensated'))==history_profile
+        assert (e['profile'] in ('delay_compensated','recovery_compensated'))==compensated_profile
         name=e['case'];ticks=list(csv.DictReader((args.run/f'{name}-ticks.csv').open()))
         file=args.run/f'{name}-packets.csv';packets=list(csv.DictReader(file.open())) if file.exists() else []
         issued={int(r['release_ns']):r for r in ticks if r.get('submitted','True')=='True'};packet_map={int(r['seq']):r for r in packets}

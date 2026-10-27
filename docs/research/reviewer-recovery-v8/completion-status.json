@@ -1,0 +1,36 @@
+{
+  "episodes": 840,
+  "transitions": 1153740,
+  "survivors": 840,
+  "selected": null,
+  "student_gain_pct": {
+    "ppo_raw": -0.029200098991144507,
+    "ppo_comp": 0.023949692327129846
+  },
+  "structural_40ms_recovery_fixed": true,
+  "current_packet_expiry_modelled": true,
+  "full_selection_pass": false,
+  "timing_guard_off": {
+    "ticks": 7500,
+    "misses": 2,
+    "functional_pass": true,
+    "observed_timing_pass": false
+  },
+  "timing_guard_on": {
+    "ticks": 7500,
+    "misses": 1,
+    "functional_pass": true,
+    "observed_timing_pass": false
+  },
+  "reserved_unopened": true,
+  "dynamic_recovery_pass": true,
+  "dynamic_ticks": 2400,
+  "dynamic_deadline_misses": 0,
+  "actual_laptop_validation": false,
+  "native_selected_confirmation": false,
+  "matched_robust_vehicle_reproduction": false,
+  "all_primary_references_verified": false,
+  "physical_validation": false,
+  "submission_ready": false,
+  "new_training_steps": 0
+}

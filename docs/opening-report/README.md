@@ -1,5 +1,14 @@
 # LANS opening report
 
+Latest method/evidence update: [bounded distinct-proposal recovery and expiry-aware prediction](../research/reviewer-recovery-v8/README.md).
+All 840 episodes and 1,153,740 transitions replay. The 40ms recovery blockage is
+removed, but compensated PPO's 0.024% student gain fails selection and the guarded
+timing campaign retains 1/7,500 misses. A separate three-seed one-second stall
+and return test passes functionally. New wording must specify distinct proposals,
+bounded inter-proposal recovery gaps and assistance only over the available
+packet lifetime; old three-control-tick/full-horizon descriptions are historical.
+No new controller is promoted or submission-ready.
+
 New experimental method addition: [explicit response-delay input compensation](../research/reviewer-delay-compensation-v7/README.md).
 The supervisor forecasts physical policy inputs over a capped causal delay
 estimate; latest-state admission and the original 50ms stale threshold remain.

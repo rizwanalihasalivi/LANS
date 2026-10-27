@@ -14,6 +14,19 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **Latest recovery/expiry study:** [full matched matrix and deadline guard](docs/research/reviewer-recovery-v8/README.md).
+  Recovery now requires three distinct qualifying proposals across bounded gaps,
+  with zero authority on stale ticks. Prediction uses only the current packet's
+  eligible lifetime, then LQR continuation. All 840 episodes survive and
+  1,153,740 transitions replay. Compensated PPO gains 0.295% over LQR and 0.024%
+  over the matching student; full selection fails. Guard timing has 1/7,500
+  original-deadline misses; the randomized unguarded arm has 2/7,500. A separate
+  one-second worker-stall/recovery test passes all three seeds with 0/2,400
+  misses. These finite windows are not WCET or vehicle certification.
+  [Updated three-actor Python 3.10 kit](docs/research/reviewer-recovery-v8/LANS_Recovery_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-recovery-v8/LANS_Recovery_Reports.zip)
+  preserve failures. Resume with
+  `python tools/controller_review/run_recovery_work.py --publish`.
 - **New experimental component:** [explicit neural-response delay compensation](docs/research/reviewer-delay-compensation-v7/README.md).
   Supervisor-owned model forecasting supplies predicted physical PPO inputs
   over a causal estimate from completed-response history. The horizon is capped

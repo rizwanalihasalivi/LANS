@@ -1,0 +1,43 @@
+{
+  "id": "v8-bounded-distinct-packet-recovery-and-compensation-comparison",
+  "recovery": "Three distinct valid/fresh/beneficial packet sequences required, not three reuses of one held packet. Immediate zero authority on EVERY stale tick. Preserve filter/recovery evidence only within50ms of last distinct qualifying decision; expire beyond50ms. Hard invalidity, missing/failed worker, cost rejection or local budget failure resets recovery evidence. No stale cutoff extension.",
+  "unchanged": "50ms freshness, cap0.25, ramp0.05, filtertau0.3,100-step nominal model, costmarginmax(1e-7,0.001J), common plant/noise/actuator and reward; v7forecast unchanged. No training.",
+  "development": {
+    "speeds": [
+      15,
+      25
+    ],
+    "paths": [
+      "sine120",
+      "dlc220"
+    ],
+    "mirrors": [
+      -1,
+      1
+    ],
+    "scenarios": [
+      "nominal",
+      "tire",
+      "delay20",
+      "delay40",
+      "delay100"
+    ],
+    "sources": [
+      "lqr",
+      "negative",
+      "positive",
+      "student_raw",
+      "ppo_raw",
+      "student_comp",
+      "ppo_comp"
+    ],
+    "noise_base": 1476000000,
+    "episodes": 840
+  },
+  "actors": "Frozen v5 nohistory PPO and original causal student bridges with14ignored. Both NumPy exports use the SAME raw/forecast physical interface, current known history and same revised recovery gate. Fixed corrections need no query forecast. All sources share sensing, noise, actuator, service and available information.",
+  "acceptance": "Unchanged >=1% lower penalized lateral RMSE than LQR, BOTH fixed controls and same-input same-gate student. Positive student gain in all3 groups; no survival loss; nominal <=1.02LQR; aggregate heading/rate <=1.05LQR. Assess raw and compensated separately, prefer lowerRMSE eligible, tiesraw. No per-seed mixing; compensation-vs-raw also reported. Prior v7 fullselection unassessed, not relabeled.",
+  "budget_guard": "Separate runtime option suppresses new forecast/query work when <1ms remains before original10ms deadline and revokes assistance instead of predictive rollout at that cutoff. Original targets never shift; late cycles remain MISSES. 1ms is a predeclared heuristic reserve, not WCET proof. Disabled in fixed-step offline comparison.",
+  "timing": "After offline research jobs exit: selected corresponding actor/profile if eligible, otherwise v5compensated platform diagnostic. Three seeds x5 worker cases x5seconds xguardoff/on=15000ticks; randomized per-seed guard order; control/helper CPU pinning, lower helper priority; native heartbeat3x500idle+3x500stress. Source/model hashes and all issued-query/gate/physical replay. No retry away misses.",
+  "stop": "One recovery design, two query arms, fixed840 fresh development episodes. No retraining/search/extensions after results. Reserved/native confirmation requires complete selection plus corresponding timing pass. Actual laptop and physical hardware cannot be fabricated; no deployment, broad novelty or stability claim from finite survival.",
+  "predictor_fix": "Candidate assistance only at the known remaining eligible control ticks of the CURRENT packet, then LQR continuation. No future neural arrivals assumed. Baseline always LQR. Full100step and zero-assistance limits independently checked. This and distinct-packet recovery form ONE prespecified causal-controller revision, not an isolated attribution of either fix."
+}

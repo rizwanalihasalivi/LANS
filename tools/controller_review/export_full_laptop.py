@@ -33,15 +33,16 @@ integrations/webots/research/revision9/bootstrap.py'''.splitlines()
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
     p.add_argument('--actor-dir',type=Path,default=ROOT/'docs/research/reviewer-causal-v1/laptop-kit')
-    p.add_argument('--profile',choices=['age_filtered','aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated'],default='age_filtered');args=p.parse_args()
-    if args.profile=='delay_compensated':
+    p.add_argument('--profile',choices=['age_filtered','aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated','recovery_raw','recovery_compensated'],default='age_filtered');args=p.parse_args()
+    if args.profile in ('delay_compensated','recovery_compensated'):
         if json.loads((args.actor_dir/'manifest.json').read_text()).get('profile')!='latency_compensated_query_v7':
             raise ValueError('Explicit compensated-query model declaration required; do not silently reinterpret old model interfaces')
     out=args.output;out.mkdir(parents=True,exist_ok=False)
-    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile in ('aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated') else [])
-    if args.profile in ('scalar_aligned','fresh_v4','fresh_history','delay_compensated'):files+=['tools/reviewer_v4/'+n for n in ('boot4.py','interface4.py','scalar_cost.py','protocol.json')]
+    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile in ('aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated','recovery_raw','recovery_compensated') else [])
+    if args.profile in ('scalar_aligned','fresh_v4','fresh_history','delay_compensated','recovery_raw','recovery_compensated'):files+=['tools/reviewer_v4/'+n for n in ('boot4.py','interface4.py','scalar_cost.py','protocol.json')]
     if args.profile=='fresh_history':files+=['tools/reviewer_v5/protocol.json']
-    if args.profile=='delay_compensated':files+=['tools/reviewer_v7/'+n for n in ('boot7.py','compensation.py','protocol.json')]
+    if args.profile in ('delay_compensated','recovery_raw','recovery_compensated'):files+=['tools/reviewer_v7/'+n for n in ('boot7.py','compensation.py','protocol.json')]
+    if args.profile in ('recovery_raw','recovery_compensated'):files+=['tools/reviewer_v8/'+n for n in ('boot8.py','recovery8.py','expiry_cost8.py','protocol.json')]
     for name in files:
         target=out/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/name,target)
     shutil.copytree(args.actor_dir,out/'actor')

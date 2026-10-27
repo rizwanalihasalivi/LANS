@@ -1,0 +1,72 @@
+{
+  "lqr": {
+    "rmse_m": 0.08569121791929823,
+    "heading_rmse_rad": 0.01953727025031682,
+    "rate_rms_rad_s": 0.06861002316596154,
+    "movement_rad": 0.5549199855457028,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.08632033877605204,
+    "heading_rmse_rad": 0.01939457711356974,
+    "rate_rms_rad_s": 0.06801379986348348,
+    "movement_rad": 0.5533052376696026,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 8108,
+    "gain_vs_lqr_pct": -0.7341719163640459
+  },
+  "positive": {
+    "rmse_m": 0.08632033877605204,
+    "heading_rmse_rad": 0.01939457711356974,
+    "rate_rms_rad_s": 0.06801379986348348,
+    "movement_rad": 0.5533052376696026,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 8108,
+    "gain_vs_lqr_pct": -0.7341719163640459
+  },
+  "student_raw": {
+    "rmse_m": 0.08547119099840776,
+    "heading_rmse_rad": 0.01951551222676898,
+    "rate_rms_rad_s": 0.06860082299652354,
+    "movement_rad": 0.5559375003854256,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3721,
+    "gain_vs_lqr_pct": 0.2567671766524393
+  },
+  "ppo_raw": {
+    "rmse_m": 0.08549614867078821,
+    "heading_rmse_rad": 0.019516601728981998,
+    "rate_rms_rad_s": 0.0686718856099375,
+    "movement_rad": 0.5570283557661901,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3360,
+    "gain_vs_lqr_pct": 0.2276420539310542
+  },
+  "student_comp": {
+    "rmse_m": 0.08545854688809515,
+    "heading_rmse_rad": 0.019513193516147897,
+    "rate_rms_rad_s": 0.06858397132637617,
+    "movement_rad": 0.5558804631823441,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3842,
+    "gain_vs_lqr_pct": 0.27152260972904685
+  },
+  "ppo_comp": {
+    "rmse_m": 0.08543807982904822,
+    "heading_rmse_rad": 0.0195073061286021,
+    "rate_rms_rad_s": 0.06863823473502761,
+    "movement_rad": 0.5570872032468193,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3717,
+    "gain_vs_lqr_pct": 0.2954072732265445
+  }
+}

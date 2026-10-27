@@ -1,0 +1,12 @@
+{
+  "signature": "95a066528bb996e9a31fc6700f02e7dc298e1257313e37e574e3a2bdf58645b4",
+  "steps": 30000,
+  "updates": 1150,
+  "python_version": "3.10.22 (main, Oct  3 2026, 01:32:06) [Clang 22.1.3 ]",
+  "numpy_version": "1.23.5",
+  "torch_version": "2.0.0+cpu",
+  "sha256": {
+    "state.pkl": "5de3a0f3f6e10426aa015a7255ea8d1cbaaf0665e9a166db0cb6400e341a8a5a",
+    "model.zip": "3e6dfca38866edc01906fa666bb077dcfdd31b8299fc6e6042d5fb670d22fad0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "profile": "recovery_compensated",
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "seconds": 8,
+  "noise_base": 1496000000,
+  "stall": "One-second post-inference wait for requests observed in [2,3)s from first request; all later requests healthy again",
+  "criteria": "Raw audits pass; actual long-delayed packet rejected; nonzero assistance exercised both before stall and after healthy return; all stale/late actions use local LQR. Any10ms miss separately fails observed timing. No physical safety guarantee.",
+  "source_hashes": {
+    "tools/controller_review/recovery_dynamic8.py": "133ee891a9f1a7896c26bbae20d791a80dcb7b1d5986cdf18b0d065920f79f6e",
+    "tools/controller_review/laptop_full_controller.py": "5b660e6e1f383694a785242e2af908ad389d78b5c575dbd08035c793cba625d7",
+    "tools/reviewer_v8/recovery8.py": "a357e1d421813586289fe1b569a0b424f42ee1635f57d7fe4fe4a6a154848cad",
+    "tools/reviewer_v8/expiry_cost8.py": "3675c3921bbd419336b6ee8866a7cbcf7a16a8ebe1a2254a2f714d0c94dc1d36",
+    "tools/reviewer_v7/compensation.py": "c84f2e6090613fcf336078d60342310aeca3fb5f0b0e1e407901b5ad843dd8ab"
+  }
+}

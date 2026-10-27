@@ -1,0 +1,27 @@
+{
+  "episodes": [
+    {
+      "case": "recover",
+      "ticks": 800,
+      "seed": 802,
+      "noise_id": 1496000802,
+      "profile": "recovery_compensated",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 30,
+      "survived": true,
+      "actor_packets": 693,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 8.0,
+      "wall_duration_s": 8.001636946,
+      "delayed_packets": 1,
+      "assisted_before": 3,
+      "assisted_after": 27,
+      "recovery_exercised": true,
+      "functional_recovery_pass": true
+    }
+  ]
+}

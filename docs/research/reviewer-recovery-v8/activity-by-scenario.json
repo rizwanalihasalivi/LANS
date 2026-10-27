@@ -1,0 +1,47 @@
+{
+  "nominal": {
+    "lqr": 0,
+    "negative": 2622,
+    "positive": 2622,
+    "student_raw": 1813,
+    "ppo_raw": 1520,
+    "student_comp": 1911,
+    "ppo_comp": 1712
+  },
+  "tire": {
+    "lqr": 0,
+    "negative": 3607,
+    "positive": 3607,
+    "student_raw": 932,
+    "ppo_raw": 770,
+    "student_comp": 893,
+    "ppo_comp": 754
+  },
+  "delay20": {
+    "lqr": 0,
+    "negative": 1726,
+    "positive": 1726,
+    "student_raw": 746,
+    "ppo_raw": 792,
+    "student_comp": 792,
+    "ppo_comp": 957
+  },
+  "delay40": {
+    "lqr": 0,
+    "negative": 153,
+    "positive": 153,
+    "student_raw": 230,
+    "ppo_raw": 278,
+    "student_comp": 246,
+    "ppo_comp": 294
+  },
+  "delay100": {
+    "lqr": 0,
+    "negative": 0,
+    "positive": 0,
+    "student_raw": 0,
+    "ppo_raw": 0,
+    "student_comp": 0,
+    "ppo_comp": 0
+  }
+}

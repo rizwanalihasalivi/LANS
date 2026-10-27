@@ -1,0 +1,9 @@
+{
+  "controller_ticks": 15000,
+  "heartbeat_ticks": 3000,
+  "query_vectors_verified": 8028,
+  "budget_decisions_skipped": 2,
+  "original_deadlines_and_gate_physics_verified": true,
+  "query_scope": "All issued compensated vectors; returned raw vectors. Nonreturned raw vectors are not independently recorded.",
+  "source_model_hashes_verified": true
+}

@@ -1,0 +1,45 @@
+0 280 384580 125280
+1 560 769160 250560
+2 840 1153740 375840
+{
+  "selected": null,
+  "screens": {
+    "ppo_raw": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs lqr",
+        "lacks1% gain vs student_raw",
+        "lacks1% gain vs negative",
+        "lacks1% gain vs positive",
+        "pair0 no student gain",
+        "pair1 no student gain",
+        "pair2 no student gain"
+      ],
+      "paired_gains_vs_student_pct": [
+        -0.006920033144974802,
+        -0.01820523355460235,
+        -0.06276152920121625
+      ]
+    },
+    "ppo_comp": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs lqr",
+        "lacks1% gain vs student_comp",
+        "pair1 no student gain"
+      ],
+      "paired_gains_vs_student_pct": [
+        0.10728150532708369,
+        -0.036841090975592294,
+        0.0013795077941081146
+      ]
+    }
+  },
+  "episodes": 840,
+  "transitions": 1153740,
+  "submitted_actor_decisions": 375840,
+  "exact_100ms_lqr_pairs": 144,
+  "full_causal_query_gate_physical_replay": true,
+  "source_model_hashes_verified": true,
+  "reserved": "unopened; corresponding-model timing still required"
+}

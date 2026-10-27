@@ -1,0 +1,32 @@
+[
+  {
+    "trace": "timing/off/seed-903/delay20-ticks.csv",
+    "tick": 9,
+    "release_lateness_ms": 0.159606,
+    "processing_ms": 11.290505,
+    "thread_cpu_ms": 11.289313,
+    "sensing_lqr_ms": 0.228815,
+    "feature_ms": 10.59681,
+    "budget_skipped": false
+  },
+  {
+    "trace": "timing/off/seed-903/delay20-ticks.csv",
+    "tick": 253,
+    "release_lateness_ms": 1.56834,
+    "processing_ms": 9.880451,
+    "thread_cpu_ms": 9.879864,
+    "sensing_lqr_ms": 6.328992,
+    "feature_ms": 0.344819,
+    "budget_skipped": false
+  },
+  {
+    "trace": "timing/on/seed-903/worker_crash-ticks.csv",
+    "tick": 148,
+    "release_lateness_ms": 9.424635,
+    "processing_ms": 9.636824,
+    "thread_cpu_ms": 9.636271,
+    "sensing_lqr_ms": 9.329011,
+    "feature_ms": 0.083005,
+    "budget_skipped": true
+  }
+]

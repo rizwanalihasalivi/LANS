@@ -14,6 +14,11 @@ import time
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[2]
+# Apply before boot/NumPy/SciPy load a BLAS runtime. Setting these later in
+# load_portable() cannot resize an already initialized BLAS thread pool.
+# Small fixed controller/actor matrices do not need nested parallel workers.
+for key in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS'):
+    os.environ[key]='1'
 os.environ.setdefault('NUMBA_CACHE_DIR',str(ROOT/'.numba-cache'))
 os.environ.setdefault('MPLCONFIGDIR',str(ROOT/'.matplotlib-cache'))
 sys.path.insert(0,str(ROOT/'tools/reviewer_followup'))

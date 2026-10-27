@@ -1,0 +1,1 @@
+{'episodes': 72, 'transitions': 93600, 'submitted_actor_queries': 28860, 'severe_delay_exact_lqr_pairs': 12, 'original_timestamps_and_unchanged_freshness': True, 'complete_query_and_controller_replay': True, 'source_model_hashes_verified': True, 'scope': 'Narrow known-path development diagnostic; no training, promotion, native/physical confirmation or deadline guarantee'}

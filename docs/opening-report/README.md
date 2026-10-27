@@ -1,5 +1,12 @@
 # LANS opening report
 
+New experimental method addition: [explicit response-delay input compensation](../research/reviewer-delay-compensation-v7/README.md).
+The supervisor forecasts physical policy inputs over a capped causal delay
+estimate; latest-state admission and the original 50ms stale threshold remain.
+This does not cancel physical sensor/communication/LQR-feedback delay. The
+72-episode diagnostic shows mixed gains; frozen-policy distribution shift,
+full selection and strict real-time requirements remain unresolved.
+
 Latest evidence: [submitted-action credit study and timing attribution](../research/reviewer-credit-v6/final-update.md).
 Six more fixed 100,000-transition pilots and 672 fresh episodes are verified.
 Submitted-only PPO gains 2.611% over LQR and 0.561% over the student; full

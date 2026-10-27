@@ -33,11 +33,15 @@ integrations/webots/research/revision9/bootstrap.py'''.splitlines()
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
     p.add_argument('--actor-dir',type=Path,default=ROOT/'docs/research/reviewer-causal-v1/laptop-kit')
-    p.add_argument('--profile',choices=['age_filtered','aligned','scalar_aligned','fresh_v4','fresh_history'],default='age_filtered');args=p.parse_args()
+    p.add_argument('--profile',choices=['age_filtered','aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated'],default='age_filtered');args=p.parse_args()
+    if args.profile=='delay_compensated':
+        if json.loads((args.actor_dir/'manifest.json').read_text()).get('profile')!='latency_compensated_query_v7':
+            raise ValueError('Explicit compensated-query model declaration required; do not silently reinterpret old model interfaces')
     out=args.output;out.mkdir(parents=True,exist_ok=False)
-    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile in ('aligned','scalar_aligned','fresh_v4','fresh_history') else [])
-    if args.profile in ('scalar_aligned','fresh_v4','fresh_history'):files+=['tools/reviewer_v4/'+n for n in ('boot4.py','interface4.py','scalar_cost.py','protocol.json')]
+    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile in ('aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated') else [])
+    if args.profile in ('scalar_aligned','fresh_v4','fresh_history','delay_compensated'):files+=['tools/reviewer_v4/'+n for n in ('boot4.py','interface4.py','scalar_cost.py','protocol.json')]
     if args.profile=='fresh_history':files+=['tools/reviewer_v5/protocol.json']
+    if args.profile=='delay_compensated':files+=['tools/reviewer_v7/'+n for n in ('boot7.py','compensation.py','protocol.json')]
     for name in files:
         target=out/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/name,target)
     shutil.copytree(args.actor_dir,out/'actor')
@@ -64,6 +68,13 @@ Any missed original10ms deadline fails observed strict timing; deadline misses r
         file=out/filename
         file.write_text(file.read_text().replace('--output laptop-results',f'--profile {args.profile} --output laptop-results')
                         .replace('fixed age_filtered residual supervisor',f'fixed {args.profile} residual supervisor'))
+    if args.profile=='delay_compensated':
+        readme=out/'README.md'
+        readme.write_text('''# Experimental explicit neural-response latency compensation
+
+The supervisor forecasts physical PPO inputs over an estimated response delay using only completed-request history. The latest-state admission gate, original timestamps and50ms stale cutoff are unchanged. Prediction horizon is capped40ms. This does not cancel sensor/transport/LQR-feedback delay or establish100Hz execution. Frozen actor weights are adapted diagnostically, not retrained or promoted. Keep the results even if compensation makes tracking worse.
+
+'''+readme.read_text())
     hashes={str(f.relative_to(out)).replace('\\','/'):hashlib.sha256(f.read_bytes()).hexdigest() for f in out.rglob('*') if f.is_file()}
     (out/'bundle-manifest.json').write_text(json.dumps(dict(sha256=hashes,scope='software-in-loop only; actual target execution pending'),indent=2)+'\n')
     archive=out.with_suffix('.zip')

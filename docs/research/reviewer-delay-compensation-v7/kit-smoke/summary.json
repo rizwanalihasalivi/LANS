@@ -1,0 +1,111 @@
+{
+  "scope": "Full observer/LQR/residual-supervisor/actor IPC plus fixed-step software plant; NOT native Webots, sensors/CAN or physical actuator",
+  "runtime": {
+    "python": "3.10.22 (main, Oct  3 2026, 01:32:06) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "numpy": "1.23.5"
+  },
+  "episodes": [
+    {
+      "case": "nominal",
+      "ticks": 50,
+      "seed": 701,
+      "noise_id": 1256000701,
+      "profile": "delay_compensated",
+      "deadline_misses": 9,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 44,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.501406872
+    },
+    {
+      "case": "delay20",
+      "ticks": 50,
+      "seed": 701,
+      "noise_id": 1256000701,
+      "profile": "delay_compensated",
+      "deadline_misses": 21,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 11,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.983636068
+    },
+    {
+      "case": "delay1000",
+      "ticks": 50,
+      "seed": 701,
+      "noise_id": 1256000701,
+      "profile": "delay_compensated",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 0,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.500352824
+    },
+    {
+      "case": "cpu_stress",
+      "ticks": 50,
+      "seed": 701,
+      "noise_id": 1256000701,
+      "profile": "delay_compensated",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 8,
+      "survived": true,
+      "actor_packets": 49,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.5012046689999999
+    },
+    {
+      "case": "worker_crash",
+      "ticks": 50,
+      "seed": 701,
+      "noise_id": 1256000701,
+      "profile": "delay_compensated",
+      "deadline_misses": 4,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 15,
+      "intentional_failure_events": [
+        "[Errno 104] Connection reset by peer"
+      ],
+      "external_fault_event": {
+        "requested_ns": 21306984946298,
+        "sent_ns": 21306985991138,
+        "pid": 27597
+      },
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 0.5,
+      "wall_duration_s": 0.500316816
+    }
+  ],
+  "functional_pass": true,
+  "observed_timing_pass": false,
+  "guaranteed_hard_realtime": false,
+  "injection": "Actual post-inference worker unavailability; recorded separately from computation duration",
+  "limits": "Plant advances in10ms simulation steps; host stalls do not continuously advance physical dynamics. Target execution must be verified on this laptop."
+}

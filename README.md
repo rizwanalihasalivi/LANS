@@ -10,6 +10,18 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
+- **New experimental component:** [explicit neural-response delay compensation](docs/research/reviewer-delay-compensation-v7/README.md).
+  Supervisor-owned model forecasting supplies predicted physical PPO inputs
+  over a causal estimate from completed-response history. The horizon is capped
+  at 40ms; original timestamps and the 50ms stale cutoff remain unchanged.
+  All 72 diagnostic episodes and 93,600 transitions replay. Tracking gain
+  versus raw PPO is +0.471% at 20ms logical service and -0.116% at 10ms;
+  40/100ms cases have no learned authority. This is approximate input
+  compensation, not physical delay cancellation or a promoted controller.
+  [Experimental Python 3.10 kit](docs/research/reviewer-delay-compensation-v7/LANS_Delay_Compensation_Python310_Kit.zip)
+  uses the explicit `delay_compensated` profile and unchanged frozen weights.
+  Earlier frozen timing studies require their recorded source snapshots/commits;
+  current v7 source must not be relabeled with their old hashes.
 - **Latest submitted-action study:** [matched credit ablation and timing attribution](docs/research/reviewer-credit-v6/final-update.md).
   Six fixed pilots add 600,000 transitions; all 672 fresh development episodes
   survive and 922,992 transitions independently replay. Submitted-only PPO gains

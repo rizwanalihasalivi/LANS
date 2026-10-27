@@ -1,0 +1,26 @@
+{
+  "explicit_model_based_input_compensation_implemented": true,
+  "default_profile_unchanged": true,
+  "forecast_horizon_cap_ms": 40,
+  "stale_cutoff_ms": 50,
+  "compensation_contracts": 8,
+  "legacy_regression_checks": 7,
+  "episodes": 72,
+  "survivors": 72,
+  "tracking_gain_vs_raw_by_service_pct": {
+    "0.01": -0.11591470946274995,
+    "0.02": 0.47113179520952286,
+    "0.04": 0.0,
+    "0.1": 0.0
+  },
+  "runtime_ticks": 1500,
+  "runtime_deadline_misses": 164,
+  "new_training_steps": 0,
+  "kit_functional_fallback_pass": true,
+  "full_selection_assessed": false,
+  "full_selection_pass": false,
+  "reserved_unopened": true,
+  "actual_laptop_run": false,
+  "physical_delay_cancellation": false,
+  "guaranteed_realtime": false
+}

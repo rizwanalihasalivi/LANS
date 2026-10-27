@@ -1,0 +1,10 @@
+{
+  "ticks": 1500,
+  "all_issued_queries_replayed": 727,
+  "completed_latency_updates_replayed": 712,
+  "deadline_misses": 164,
+  "predicted_inputs_and_actual_history_verified": true,
+  "original_timestamps_and_stale_fallback_verified": true,
+  "source_model_hashes_verified": true,
+  "scope": "Short software integration diagnostic, not strict real-time qualification or actual laptop/physical validation"
+}

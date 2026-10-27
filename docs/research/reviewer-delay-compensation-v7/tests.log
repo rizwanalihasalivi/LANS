@@ -1,0 +1,13 @@
+test_completed_history_only_no_repeated_age_updates (__main__.Contracts) ... ok
+test_envelope_failure_falls_back_to_actual_features (__main__.Contracts) ... ok
+test_independent_matrix_equations_and_fractional_step (__main__.Contracts) ... ok
+test_known_straight_kinematics (__main__.Contracts) ... ok
+test_no_freshness_reset (__main__.Contracts) ... ok
+test_predict_physics_keep_known_history_and_future_zeros (__main__.Contracts) ... ok
+test_runtime_abi_guard (__main__.Contracts) ... ok
+test_zero_horizon_identity (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.224s
+
+OK

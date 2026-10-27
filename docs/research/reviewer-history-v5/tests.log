@@ -1,0 +1,10 @@
+test_filter_alias_is_disambiguated_and_ablation_masks_it (__main__.Contracts) ... ok
+test_history_is_actual_past_filter_and_future_fields_zero (__main__.Contracts) ... ok
+test_legacy_logits_preserved_for_arbitrary_history (__main__.Contracts) ... ok
+test_realistic_delivery_and_training_namespace (__main__.Contracts) ... ok
+test_stale_response_cannot_preserve_history_or_authority (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.815s
+
+OK

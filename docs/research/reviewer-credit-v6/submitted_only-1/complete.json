@@ -1,0 +1,14 @@
+{
+  "arm": "submitted_only",
+  "pair": 1,
+  "seed": 5802,
+  "steps": 100000,
+  "submitted": 68233,
+  "discarded": 31767,
+  "actor_credit_samples": 68233,
+  "active": 11658,
+  "endpoint_eligible": true,
+  "history_column_norm": 0.0,
+  "profile": "causal_filter_history_v5",
+  "wall_seconds": 134.91252623299988
+}

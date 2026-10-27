@@ -1,0 +1,25 @@
+{
+  "source": "Wabersich/Zeilinger arXiv1812.05506v4 Eq6 without6e under uniform error Eq8, tighteningEq9/10, Algorithm2",
+  "specialization": "Independent scalar bounded-error/full-state contract; NOT authors code, numerical-example reproduction or matched LANS vehicle comparator",
+  "parameters": {
+    "A": 0.8,
+    "B": 0.2,
+    "error_bound": 0.01,
+    "horizon": 10,
+    "epsilon": 0.06,
+    "rho": 0.36,
+    "terminal_radius": 0.2,
+    "input_limit": 0.5
+  },
+  "trajectories": 30,
+  "transitions": 3000,
+  "state_or_input_violations": 0,
+  "branches": [
+    "full",
+    "shrinking",
+    "terminal"
+  ],
+  "uncertified_initial_state_rejected": true,
+  "assumptions": "V=e^2, pi=v-e, contractionrho=.36, cl=cu=1, pimax=1; compact uniform error [-.01,.01], exact full-state sensing, terminalpi=-x invariant; EPS dominates normalized state/input/terminal shifts. No online confidence map is needed for uniform-bound specialization.",
+  "limitations": "Does not supply a validated vehicle model-error confidence bound, vehicle terminal safe set, noisy-state certificate, target timing or LANS superiority. Current Gaussian sensing and nonlinear tire uncertainty do not inherit this contract."
+}

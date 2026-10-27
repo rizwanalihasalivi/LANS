@@ -1,0 +1,72 @@
+{
+  "lqr": {
+    "rmse_m": 0.09029453015023838,
+    "heading_rmse_rad": 0.02002478945545269,
+    "rate_rms_rad_s": 0.06911104134963807,
+    "movement_rad": 0.560244483739927,
+    "survived": 96,
+    "episodes": 96,
+    "active": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.08939381184876524,
+    "heading_rmse_rad": 0.019365419448578298,
+    "rate_rms_rad_s": 0.07147427105250358,
+    "movement_rad": 0.5920922925492098,
+    "survived": 96,
+    "episodes": 96,
+    "active": 20920,
+    "gain_vs_lqr_pct": 0.9975336268702617
+  },
+  "positive": {
+    "rmse_m": 0.08939381184876524,
+    "heading_rmse_rad": 0.019365419448578298,
+    "rate_rms_rad_s": 0.07147427105250358,
+    "movement_rad": 0.5920922925492098,
+    "survived": 96,
+    "episodes": 96,
+    "active": 20920,
+    "gain_vs_lqr_pct": 0.9975336268702617
+  },
+  "student": {
+    "rmse_m": 0.08847284749048202,
+    "heading_rmse_rad": 0.019963734142706,
+    "rate_rms_rad_s": 0.07125725924927036,
+    "movement_rad": 0.5850215963336274,
+    "survived": 96,
+    "episodes": 96,
+    "active": 12704,
+    "gain_vs_lqr_pct": 2.0174894943528754
+  },
+  "oldage_ppo": {
+    "rmse_m": 0.09018101120713137,
+    "heading_rmse_rad": 0.020014674161220648,
+    "rate_rms_rad_s": 0.06911164761588416,
+    "movement_rad": 0.559970825964999,
+    "survived": 96,
+    "episodes": 96,
+    "active": 22803,
+    "gain_vs_lqr_pct": 0.1257207307221342
+  },
+  "ppo": {
+    "rmse_m": 0.0879661452955475,
+    "heading_rmse_rad": 0.019922886932698572,
+    "rate_rms_rad_s": 0.07198984649871068,
+    "movement_rad": 0.5912065297777751,
+    "survived": 96,
+    "episodes": 96,
+    "active": 12384,
+    "gain_vs_lqr_pct": 2.5786554853508226
+  },
+  "planner": {
+    "rmse_m": 0.08808260059253473,
+    "heading_rmse_rad": 0.01876738490982843,
+    "rate_rms_rad_s": 0.07217194976673144,
+    "movement_rad": 0.5914272470788595,
+    "survived": 96,
+    "episodes": 96,
+    "active": 71146,
+    "gain_vs_lqr_pct": 2.4496827814744493
+  }
+}

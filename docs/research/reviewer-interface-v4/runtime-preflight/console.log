@@ -1,0 +1,6 @@
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 1 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 0 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+Saved /tmp/lans-v4-runtime-smoke/Results.zip

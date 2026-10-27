@@ -1,0 +1,137 @@
+{
+  "timing": {
+    "cpu_stress-ticks": {
+      "ticks": 300,
+      "misses": 53,
+      "already_late_at_release": 45,
+      "missed_with_processing_under_1ms": 24,
+      "release": {
+        "p50_ms": 0.367631,
+        "p99_ms": 718.4704963799999,
+        "max_ms": 735.336906
+      },
+      "processing": {
+        "p50_ms": 1.34281,
+        "p99_ms": 15.158561059999997,
+        "max_ms": 714.620787
+      },
+      "thread_cpu": {
+        "p50_ms": 1.333892,
+        "p99_ms": 15.159176489999998,
+        "max_ms": 551.384328
+      }
+    },
+    "delay1000-ticks": {
+      "ticks": 300,
+      "misses": 209,
+      "already_late_at_release": 208,
+      "missed_with_processing_under_1ms": 157,
+      "release": {
+        "p50_ms": 392.6243215,
+        "p99_ms": 1634.98000395,
+        "max_ms": 1657.977271
+      },
+      "processing": {
+        "p50_ms": 0.3129095,
+        "p99_ms": 9.797964819999514,
+        "max_ms": 1659.276576
+      },
+      "thread_cpu": {
+        "p50_ms": 0.3157685,
+        "p99_ms": 9.800042169999513,
+        "max_ms": 1260.486179
+      }
+    },
+    "delay20-ticks": {
+      "ticks": 300,
+      "misses": 3,
+      "already_late_at_release": 1,
+      "missed_with_processing_under_1ms": 0,
+      "release": {
+        "p50_ms": 0.1587495,
+        "p99_ms": 4.26758779,
+        "max_ms": 11.838646
+      },
+      "processing": {
+        "p50_ms": 0.7517645,
+        "p99_ms": 4.494459379999977,
+        "max_ms": 12.188002
+      },
+      "thread_cpu": {
+        "p50_ms": 0.736075,
+        "p99_ms": 4.49226651999998,
+        "max_ms": 12.170051
+      }
+    },
+    "nominal-ticks": {
+      "ticks": 300,
+      "misses": 5,
+      "already_late_at_release": 5,
+      "missed_with_processing_under_1ms": 3,
+      "release": {
+        "p50_ms": 0.1754325,
+        "p99_ms": 18.421254579999985,
+        "max_ms": 39.441775
+      },
+      "processing": {
+        "p50_ms": 0.9898235,
+        "p99_ms": 4.252331419999999,
+        "max_ms": 7.992871
+      },
+      "thread_cpu": {
+        "p50_ms": 0.998301,
+        "p99_ms": 4.2524978299999985,
+        "max_ms": 7.994677
+      }
+    },
+    "worker_crash-ticks": {
+      "ticks": 300,
+      "misses": 4,
+      "already_late_at_release": 2,
+      "missed_with_processing_under_1ms": 1,
+      "release": {
+        "p50_ms": 0.1664555,
+        "p99_ms": 3.3438529699999817,
+        "max_ms": 17.393404
+      },
+      "processing": {
+        "p50_ms": 0.4267115,
+        "p99_ms": 6.004650909999974,
+        "max_ms": 22.089059
+      },
+      "thread_cpu": {
+        "p50_ms": 0.42309399999999997,
+        "p99_ms": 5.461066279999995,
+        "max_ms": 19.166866
+      }
+    }
+  },
+  "recorded_development_actions": {
+    "delay100": {
+      "ticks": 10988,
+      "submitted": 1100,
+      "discarded": 9888,
+      "accepted": 0
+    },
+    "delay20": {
+      "ticks": 10988,
+      "submitted": 5496,
+      "discarded": 5492,
+      "accepted": 1968
+    },
+    "nominal": {
+      "ticks": 10988,
+      "submitted": 10988,
+      "discarded": 0,
+      "accepted": 1937
+    },
+    "tire": {
+      "ticks": 10988,
+      "submitted": 10988,
+      "discarded": 0,
+      "accepted": 1103
+    }
+  },
+  "interpretation": "Offline traces already evaluate only submitted queries; fixed-tick PPO training samples at all ticks. Discarded actions do not affect plant but add actor updates/entropy. Removing those terms is a variance/credit hypothesis, not a guarantee or proof that baseline gradients are biased. Release misses and wallCPU gaps indicate scheduler/preemption contributions; no unrecorded historical cgroup throttling is attributed to a particular episode.",
+  "unfixable_from_cloud": "No target laptop connection, hardware sensor/actuator or OS hard-real-time reservation available. No deadline threshold or reserved-data change allowed."
+}

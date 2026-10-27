@@ -1,0 +1,380 @@
+{
+  "strata": [
+    {
+      "speed": 15,
+      "scenario": "nominal",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 4.175815431560348,
+      "gain_vs_student_pct": 1.050558595014739,
+      "heading_change_pct": 1.9217929173223736,
+      "rate_change_pct": 12.29313358885944
+    },
+    {
+      "speed": 15,
+      "scenario": "nominal",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 4.093154857820391,
+      "gain_vs_student_pct": 0.9652020888819557,
+      "heading_change_pct": 1.3514686340247994,
+      "rate_change_pct": 12.433209878160234
+    },
+    {
+      "speed": 15,
+      "scenario": "tire",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 2.5071938312321573,
+      "gain_vs_student_pct": 0.545130167284269,
+      "heading_change_pct": 0.43954089596804913,
+      "rate_change_pct": 10.85193807475231
+    },
+    {
+      "speed": 15,
+      "scenario": "tire",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 2.590703692423646,
+      "gain_vs_student_pct": 0.6303206823687457,
+      "heading_change_pct": 0.4414783788257104,
+      "rate_change_pct": 10.824095964880742
+    },
+    {
+      "speed": 15,
+      "scenario": "delay20",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 4.1808071621707406,
+      "gain_vs_student_pct": 1.0543461789712993,
+      "heading_change_pct": 1.6839097321126983,
+      "rate_change_pct": 11.813607424703143
+    },
+    {
+      "speed": 15,
+      "scenario": "delay20",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 4.175109064387772,
+      "gain_vs_student_pct": 1.0484621593508603,
+      "heading_change_pct": 1.800405234649749,
+      "rate_change_pct": 11.917554391792251
+    },
+    {
+      "speed": 15,
+      "scenario": "delay100",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 0.0,
+      "gain_vs_student_pct": 0.0,
+      "heading_change_pct": 0.0,
+      "rate_change_pct": 0.0
+    },
+    {
+      "speed": 15,
+      "scenario": "delay100",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 0.0,
+      "gain_vs_student_pct": 0.0,
+      "heading_change_pct": 0.0,
+      "rate_change_pct": 0.0
+    },
+    {
+      "speed": 25,
+      "scenario": "nominal",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 5.909227530090499,
+      "gain_vs_student_pct": 0.5963336687142218,
+      "heading_change_pct": -1.8223260539531383,
+      "rate_change_pct": 4.41542262399981
+    },
+    {
+      "speed": 25,
+      "scenario": "nominal",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 6.750690198054665,
+      "gain_vs_student_pct": 1.4853100484468196,
+      "heading_change_pct": -1.5928249622042756,
+      "rate_change_pct": 4.439685184984876
+    },
+    {
+      "speed": 25,
+      "scenario": "tire",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 0.26545460017683986,
+      "gain_vs_student_pct": 0.07427914399297242,
+      "heading_change_pct": -0.32193151068014014,
+      "rate_change_pct": 1.9601831936133962
+    },
+    {
+      "speed": 25,
+      "scenario": "tire",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 0.4784036394800628,
+      "gain_vs_student_pct": 0.28763637315226687,
+      "heading_change_pct": -0.34745148283996663,
+      "rate_change_pct": 2.1066904593923796
+    },
+    {
+      "speed": 25,
+      "scenario": "delay20",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 6.139092239395538,
+      "gain_vs_student_pct": 0.48383926250303855,
+      "heading_change_pct": -1.872834568970272,
+      "rate_change_pct": 3.948619958418398
+    },
+    {
+      "speed": 25,
+      "scenario": "delay20",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 6.460087778484159,
+      "gain_vs_student_pct": 0.8241752386416668,
+      "heading_change_pct": -1.5236791909381209,
+      "rate_change_pct": 3.941397933124735
+    },
+    {
+      "speed": 25,
+      "scenario": "delay100",
+      "source": "all_actions",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 0.0,
+      "gain_vs_student_pct": 0.0,
+      "heading_change_pct": 0.0,
+      "rate_change_pct": 0.0
+    },
+    {
+      "speed": 25,
+      "scenario": "delay100",
+      "source": "submitted_only",
+      "episodes": 12,
+      "gain_vs_lqr_pct": 0.0,
+      "gain_vs_student_pct": 0.0,
+      "heading_change_pct": 0.0,
+      "rate_change_pct": 0.0
+    }
+  ],
+  "activity": {
+    "student": {
+      "ticks": 131856,
+      "submitted": 85716,
+      "reasons": {
+        "missing": 336,
+        "cost": 78089,
+        "recovery": 7869,
+        "accepted": 12838,
+        "age": 32724
+      },
+      "submitted_class_counts": {
+        "0.0": 48819,
+        "0.08": 20218,
+        "-0.08": 16625,
+        "0.04": 51,
+        "-0.04": 3
+      },
+      "limits": "Different controllers visit different physical states; these class histograms are descriptive, not matched-state causal attribution."
+    },
+    "v3ppo": {
+      "ticks": 131856,
+      "submitted": 85716,
+      "reasons": {
+        "missing": 336,
+        "cost": 77615,
+        "recovery": 8827,
+        "accepted": 12354,
+        "age": 32724
+      },
+      "submitted_class_counts": {
+        "0.0": 41330,
+        "0.08": 20930,
+        "-0.08": 23369,
+        "0.04": 87
+      },
+      "limits": "Different controllers visit different physical states; these class histograms are descriptive, not matched-state causal attribution."
+    },
+    "all_actions": {
+      "ticks": 131856,
+      "submitted": 85716,
+      "reasons": {
+        "missing": 336,
+        "cost": 74992,
+        "recovery": 9546,
+        "accepted": 14258,
+        "age": 32724
+      },
+      "submitted_class_counts": {
+        "0.0": 34069,
+        "0.08": 18418,
+        "-0.08": 32869,
+        "0.04": 227,
+        "-0.04": 133
+      },
+      "limits": "Different controllers visit different physical states; these class histograms are descriptive, not matched-state causal attribution."
+    },
+    "submitted_only": {
+      "ticks": 131856,
+      "submitted": 85716,
+      "reasons": {
+        "missing": 336,
+        "cost": 76238,
+        "recovery": 9083,
+        "accepted": 13475,
+        "age": 32724
+      },
+      "submitted_class_counts": {
+        "0.0": 33649,
+        "-0.08": 31647,
+        "0.08": 20000,
+        "0.04": 277,
+        "-0.04": 143
+      },
+      "limits": "Different controllers visit different physical states; these class histograms are descriptive, not matched-state causal attribution."
+    }
+  },
+  "timing": [
+    {
+      "seed": 701,
+      "case": "worker_crash-ticks",
+      "ticks": 500,
+      "misses": 1,
+      "already_late_at_release": 0,
+      "max_processing_ms": 10.997644,
+      "max_thread_cpu_ms": 10.977832
+    },
+    {
+      "seed": 701,
+      "case": "delay1000-ticks",
+      "ticks": 500,
+      "misses": 67,
+      "already_late_at_release": 66,
+      "max_processing_ms": 76.820156,
+      "max_thread_cpu_ms": 76.814814
+    },
+    {
+      "seed": 701,
+      "case": "nominal-ticks",
+      "ticks": 500,
+      "misses": 1,
+      "already_late_at_release": 0,
+      "max_processing_ms": 11.085435,
+      "max_thread_cpu_ms": 3.830789
+    },
+    {
+      "seed": 701,
+      "case": "delay20-ticks",
+      "ticks": 500,
+      "misses": 2,
+      "already_late_at_release": 0,
+      "max_processing_ms": 10.708971,
+      "max_thread_cpu_ms": 10.701056
+    },
+    {
+      "seed": 701,
+      "case": "cpu_stress-ticks",
+      "ticks": 500,
+      "misses": 86,
+      "already_late_at_release": 82,
+      "max_processing_ms": 176.760915,
+      "max_thread_cpu_ms": 176.669738
+    },
+    {
+      "seed": 802,
+      "case": "worker_crash-ticks",
+      "ticks": 500,
+      "misses": 0,
+      "already_late_at_release": 0,
+      "max_processing_ms": 4.278093,
+      "max_thread_cpu_ms": 4.277877
+    },
+    {
+      "seed": 802,
+      "case": "delay1000-ticks",
+      "ticks": 500,
+      "misses": 60,
+      "already_late_at_release": 59,
+      "max_processing_ms": 16.045862,
+      "max_thread_cpu_ms": 16.033979
+    },
+    {
+      "seed": 802,
+      "case": "nominal-ticks",
+      "ticks": 500,
+      "misses": 16,
+      "already_late_at_release": 13,
+      "max_processing_ms": 30.31539,
+      "max_thread_cpu_ms": 30.317314
+    },
+    {
+      "seed": 802,
+      "case": "delay20-ticks",
+      "ticks": 500,
+      "misses": 137,
+      "already_late_at_release": 132,
+      "max_processing_ms": 728.677413,
+      "max_thread_cpu_ms": 728.646635
+    },
+    {
+      "seed": 802,
+      "case": "cpu_stress-ticks",
+      "ticks": 500,
+      "misses": 275,
+      "already_late_at_release": 273,
+      "max_processing_ms": 1076.044864,
+      "max_thread_cpu_ms": 1075.751687
+    },
+    {
+      "seed": 903,
+      "case": "worker_crash-ticks",
+      "ticks": 500,
+      "misses": 2,
+      "already_late_at_release": 0,
+      "max_processing_ms": 13.636729,
+      "max_thread_cpu_ms": 13.637374
+    },
+    {
+      "seed": 903,
+      "case": "delay1000-ticks",
+      "ticks": 500,
+      "misses": 0,
+      "already_late_at_release": 0,
+      "max_processing_ms": 4.351742,
+      "max_thread_cpu_ms": 4.352618
+    },
+    {
+      "seed": 903,
+      "case": "nominal-ticks",
+      "ticks": 500,
+      "misses": 9,
+      "already_late_at_release": 7,
+      "max_processing_ms": 21.163282,
+      "max_thread_cpu_ms": 21.164067
+    },
+    {
+      "seed": 903,
+      "case": "delay20-ticks",
+      "ticks": 500,
+      "misses": 0,
+      "already_late_at_release": 0,
+      "max_processing_ms": 2.809206,
+      "max_thread_cpu_ms": 2.809596
+    },
+    {
+      "seed": 903,
+      "case": "cpu_stress-ticks",
+      "ticks": 500,
+      "misses": 1,
+      "already_late_at_release": 0,
+      "max_processing_ms": 13.156795,
+      "max_thread_cpu_ms": 13.132868
+    }
+  ],
+  "selection_unchanged": true,
+  "scope": "Post-hoc descriptive development attribution only; no effect-size significance claim with just three paired groups. Mirrored directions are not counted as independent training seeds."
+}

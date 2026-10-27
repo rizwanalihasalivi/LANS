@@ -1,0 +1,73 @@
+RESUME protocol-frozen
+RESUME causal-contract-tests
+RESUME bounded-causal-training
+RESUME ppo-worker-export
+RESUME development-verified
+RESUME actual-worker-verified
+RESUME native-interface-verified
+RESUME reviewer-response-report
+{
+  "stages": {
+    "protocol-frozen": {
+      "state": "complete"
+    },
+    "causal-contract-tests": {
+      "state": "complete"
+    },
+    "bounded-causal-training": {
+      "state": "complete"
+    },
+    "ppo-worker-export": {
+      "state": "complete"
+    },
+    "development-verified": {
+      "state": "complete"
+    },
+    "actual-worker-verified": {
+      "state": "complete"
+    },
+    "native-interface-verified": {
+      "state": "complete"
+    },
+    "reviewer-response-report": {
+      "state": "complete"
+    }
+  },
+  "external": {
+    "physical_vehicle": "unavailable: fresh physical measurements required",
+    "laptop_rerun": "pending user target-machine results",
+    "formal_safety": "not established; limited assumptions only",
+    "primary_reference_verification": "uploaded five PDFs read; publication metadata / broader search incomplete",
+    "published_algorithm_reproduction": "not implemented; no superiority claim",
+    "native_ppo": {
+      "interface_pass": true,
+      "observed_wall_timing_pass": false,
+      "scope": "PPO-export/shared supervisor native interface; no generalization or vehicle claim"
+    },
+    "hard_realtime": "FAIL: observed10ms deadline misses; no100Hz guarantee"
+  },
+  "confirmation": {
+    "state": "unopened",
+    "reason": [
+      "finetune lacks >=1% improvement vs lqr",
+      "finetune lacks >=1% improvement vs student",
+      "pair0 does not improve student",
+      "pair1 does not improve student",
+      "pair2 does not improve student"
+    ]
+  }
+}
+tools/controller_review/templates/opening-report-research-update.md:3: trailing whitespace.
++**Rizwan Ali — Supervisor: Jie Tian**  
+Traceback (most recent call last):
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 230, in <module>
+    if __name__=='__main__':main()
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 57, in main
+    publish('research: freeze resource-partition timing diagnosis and independent audits')
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 39, in publish
+    call(['git','add','-f',*paths]);call(['git','diff','--cached','--check'])
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 29, in call
+    else:subprocess.run(command,cwd=ROOT,env=env,check=True)
+  File "/workspace/.lans-python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'diff', '--cached', '--check']' returned non-zero exit status 2.

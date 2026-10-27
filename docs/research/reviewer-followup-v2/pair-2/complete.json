@@ -1,0 +1,89 @@
+{
+  "episodes": 288,
+  "protocol": {
+    "id": "causal-residual-followup-v2",
+    "purpose": "Same-gain learning attribution, smoothing and predictor-objective diagnosis; no new policy training",
+    "parent": "5ab90744ff4ec0d1f93017a894a0f4c97650026d",
+    "seeds": [
+      2701,
+      2802,
+      2903
+    ],
+    "student_seeds": [
+      701,
+      802,
+      903
+    ],
+    "noise_base": 1206000000,
+    "screen": {
+      "speeds": [
+        20
+      ],
+      "paths": [
+        "sine120",
+        "dlc220"
+      ],
+      "mirrors": [
+        -1,
+        1
+      ],
+      "scenarios": [
+        "nominal",
+        "tire",
+        "delay20",
+        "delay100"
+      ]
+    },
+    "profiles": [
+      "age_original",
+      "age_filtered",
+      "predictive_filtered",
+      "preview_filtered"
+    ],
+    "sources": [
+      "negative",
+      "positive",
+      "student",
+      "ppo"
+    ],
+    "references": [
+      "lqr",
+      "nominal_psf"
+    ],
+    "episodes": 864,
+    "filter": {
+      "tau_s": 0.1,
+      "period_s": 0.01,
+      "cap": 0.25,
+      "reset_on_invalid_or_stale": true
+    },
+    "prediction": {
+      "steps": 20,
+      "hold_steps": 5,
+      "actuator_rate_cost": 0.02,
+      "heading_cost": 0.2,
+      "yaw_rate_cost": 0.01,
+      "effort_cost": 0.001,
+      "relative_margin": 0.01,
+      "persistence_ticks": 3,
+      "authority_ramp_per_tick": 0.05
+    },
+    "changes": "Three predefined new profiles only: age-filtered cap0.25, predictive-filtered local constant curvature, predictive-filtered with same observable curvature previews. All use tau0.1s smoothing. Original age-gain is unchanged cap0.5; every profile receives identical PPO/student/fixed proposals with its own causal closed-loop history.",
+    "safety_semantics": "Unchanged50ms age rejection, sequence/finite/envelope checks and exact LQR fallback for delayed unavailable residual. Residual filter resets immediately on rejection; old information never survives stale revocation. No residual safety certificate.",
+    "nominal_psf": {
+      "paper": "Wabersich and Zeilinger arXiv1812.05506v4 section4.1 Eq5 / Algorithm1 nominal specialization",
+      "dt": 0.01,
+      "horizon": 100,
+      "terminal": "nominal constant-curvature equilibrium singleton",
+      "state_bounds": "|ey|<=1.5m, |heading_error|<=0.25rad, |actuator|<=0.5rad",
+      "input_bounds": "|u|<=0.5rad; |u-delta_before|<=0.0175rad",
+      "objective": "(u0-u_desired)^2 +1e-8 sum(ui^2)",
+      "backup": "On infeasible full horizon re-solve remaining horizon from last feasible plan; at terminal use local baseline. If both fail, empirical LQR fallback is logged, not certified safe.",
+      "outer_wrapper": "Same50ms freshness rejection; desired=baseline+0.5*PPO residual. No hidden plant parameters. Speed rounded0.1m/s and local curvature assumed constant.",
+      "limits": "Nominal linear-model specialization implemented from supplied primary equations, not authors code or uncertainty-aware Algorithm2 reproduction. Model certainty, fixed dynamics/curvature and state knowledge assumptions do not hold exactly on nonlinear/noisy plant; published safety theorem does not transfer."
+    },
+    "acceptance": "Select among THREE NEW profiles only if PPO mean penalized lateral RMSE >=1% lower than LQR AND same-profile student AND BOTH constants; all3 seed gains positive vs student; no survival loss; nominal <=1.02 LQR; headingRMSE and steeringRateRMS <=1.05 LQR. Rank eligible profiles by lateral RMSE then profile order. Original age profile is attribution reference, not a posthoc selected winner.",
+    "reserved": "Previous reserved data remain unopened. Any new confirmation must be separately frozen after development eligibility AND observed local10ms timing pass. Do not open confirmation on failure.",
+    "stop": "No training, no extra profile, gain, filter, horizon or threshold search after outcomes. Publish all failed outcomes, model/source hashes, true heading/steering and solver fallbacks. Hardware/target-laptop and global hard-real-time claims require external evidence."
+  }
+}

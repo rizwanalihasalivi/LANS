@@ -1,0 +1,12 @@
+{
+  "id":"v7-explicit-neural-response-delay-compensation",
+  "profile":"latency_compensated_query_v7",
+  "mechanism":"Supervisor-owned compensator forecasts physical policy inputs from latest estimated state to expected response time under nominal LQR continuation. Gate still evaluates received correction against latest actual estimate; original observation timestamp is retained.",
+  "latency_estimator":"Initial10ms prior; EWMA alpha0.25 of past COMPLETED response ages, each capped40ms. Update once per strictly increasing response sequence, including stale responses. No configured service, pending completion or future outcome used.",
+  "prediction":"Explicit Euler steps at most10ms, horizon at most40ms, nominal bicycle and first-order actuator tau50ms/rate0.35rad/s/angle0.5rad. Current measured speed/gain; path preview shifted by speed*horizon. Current known history14unchanged; future channels15/16/17/19zero. Forecast envelope failure uses original raw query and records reason.",
+  "unchanged":"FreshController50ms stale cutoff, cost margin, residual cap/filter/recovery and LQR baseline. No old model semantics or prior study artifacts overwritten. No physical sensor, communication or LQR-feedback delay compensation claimed.",
+  "actors":"Frozen v5 nohistory NumPy models, re-declared diagnostic input profile with unchanged weights; no training in this study. Forecast inputs may create distribution shift; no promotion/superiority claim without new evaluation.",
+  "development":{"speed":20,"paths":["dlc220"],"mirrors":[-1,1],"services_s":[0.01,0.02,0.04,0.1],"seeds":[701,802,903],"sources":["lqr","raw","compensated"],"noise_base":1456000000,"episodes":72},
+  "runtime":"Three actors x five actual worker cases x1second=1500ticks, original10ms deadlines, explicit predicted-query metadata, goldenactor/physical/history/causal estimator replay. Diagnostic only; no actual laptop/vehicle result.",
+  "stop":"One fixed compensator and matched raw-query control, no tuning/training or reserved data. Report failures and per-delay differences; do not call stale rejection itself compensation or assume forecast accuracy implies realized benefit."
+}

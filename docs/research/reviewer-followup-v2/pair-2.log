@@ -1,0 +1,16 @@
+2 sine120 -1 nominal 18
+2 sine120 -1 tire 36
+2 sine120 -1 delay20 54
+2 sine120 -1 delay100 72
+2 sine120 1 nominal 90
+2 sine120 1 tire 108
+2 sine120 1 delay20 126
+2 sine120 1 delay100 144
+2 dlc220 -1 nominal 162
+2 dlc220 -1 tire 180
+2 dlc220 -1 delay20 198
+2 dlc220 -1 delay100 216
+2 dlc220 1 nominal 234
+2 dlc220 1 tire 252
+2 dlc220 1 delay20 270
+2 dlc220 1 delay100 288

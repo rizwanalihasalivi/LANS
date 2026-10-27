@@ -14,6 +14,78 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **New experimental component:** [explicit neural-response delay compensation](docs/research/reviewer-delay-compensation-v7/README.md).
+  Supervisor-owned model forecasting supplies predicted physical PPO inputs
+  over a causal estimate from completed-response history. The horizon is capped
+  at 40ms; original timestamps and the 50ms stale cutoff remain unchanged.
+  All 72 diagnostic episodes and 93,600 transitions replay. Tracking gain
+  versus raw PPO is +0.471% at 20ms logical service and -0.116% at 10ms;
+  40/100ms cases have no learned authority. This is approximate input
+  compensation, not physical delay cancellation or a promoted controller.
+  [Experimental Python 3.10 kit](docs/research/reviewer-delay-compensation-v7/LANS_Delay_Compensation_Python310_Kit.zip)
+  uses the explicit `delay_compensated` profile and unchanged frozen weights.
+  Earlier frozen timing studies require their recorded source snapshots/commits;
+  current v7 source must not be relabeled with their old hashes.
+- **Latest submitted-action study:** [matched credit ablation and timing attribution](docs/research/reviewer-credit-v6/final-update.md).
+  Six fixed pilots add 600,000 transitions; all 672 fresh development episodes
+  survive and 922,992 transitions independently replay. Submitted-only PPO gains
+  2.611% over LQR, but just 0.561% over the student, below the frozen 1% margin.
+  No arm qualifies. The separate diagnostic misses 657/7,500 controller deadlines;
+  the native heartbeat misses 587/3,000. Functional fallback passes; reserved
+  confirmation stays unopened. A verified scalar robust-filter specialization
+  and all-32-entry bibliography audit do not constitute the matched robust
+  vehicle reproduction or complete primary-source verification.
+  [Three-actor Python 3.10 kit](docs/research/reviewer-credit-v6/LANS_Current_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-credit-v6/LANS_Credit_Reports.zip)
+  remain research diagnostics. Resume with
+  `python tools/controller_review/run_credit_work.py --publish`.
+- **Latest matched history ablation:** [600,000 additional transitions and 672 fresh episodes](docs/research/reviewer-history-v5/final-update.md).
+  The balanced no-history diagnostic gains 2.956% over LQR, with 0.52% lower
+  heading error and 4.73% higher actuator-rate RMS. Its 0.943% student-relative
+  gain misses the unchanged 1% requirement. The history variant also fails the
+  steering-rate limit. No winner is promoted; reserved tests remain unopened.
+  [Python 3.10 diagnostic kit](docs/research/reviewer-history-v5/LANS_History_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-history-v5/LANS_History_Reports.zip)
+  include the versioned causal input and ABI guards. The 1,500-tick cloud smoke
+  has 274 deadline misses; functional fallback passes. Actual laptop and physical
+  validation are pending. Resume with
+  `python tools/controller_review/run_history_work.py --publish`.
+- **Latest deep diagnosis:** [realistic asynchronous delivery and scalar predictor](docs/research/reviewer-interface-v4/final-update.md).
+  The unchanged PPO endpoints gain2.579% over LQR, with0.51% lower heading error
+  and4.17% higher actuator-rate RMS. The roughly0.57% student-relative gain still
+  fails the frozen1% margin. All672 episodes survive; actual one-second worker
+  stall/recovery passes functional checks for all three seeds. Deadline tests
+  still fail, including the native heartbeat baseline. No candidate is promoted.
+  [Updated experimental Python3.10 kit](docs/research/reviewer-interface-v4/LANS_Interface_Python310_Kit.zip)
+  uses the fresh-within-deadline authority rule, scalar predictor and actual PPO
+  actors in a software plant; it is not vehicle deployment approval.
+  Resume with `python tools/controller_review/run_interface_work.py --publish`.
+- **Latest aligned study:** [300,000-step training and576-episode comparison](docs/research/reviewer-aligned-v3/README.md)
+  passes the balanced-versus-LQR development screen:1.445% tracking gain,
+  0.27% lower heading error and2.66% higher actuator-rate RMS (within5%).
+  PPO beats the matched student by about0.33%, below the frozen1% margin;
+  full promotion fails and reserved tests remain unopened. Timing still fails.
+  [Verified report](docs/research/reviewer-aligned-v3/final-update.md) and
+  [Python3.10 full-controller kit](docs/research/reviewer-aligned-v3/LANS_Aligned_Python310_Kit.zip)
+  include actual v3 actors, exact NumPy export and replay checks.
+  [One-command reproduction and limits](tools/controller_review/README-aligned.md).
+- **Prior frozen follow-up:** [same-gain attribution and smoothing](docs/research/reviewer-followup-v2/README.md)
+  reports864 fresh development episodes. Filtered PPO gains5.79% tracking versus
+  LQR, but has27.5% higher actuator-rate RMS and trails the same-gain student.
+  Preview filtering gains0.73%; no new variant passes the frozen selection gate.
+  [Detailed update](docs/research/reviewer-followup-v2/final-research-update.md)
+  separates timing failures, nominal published-filter specialization, laptop kit
+  and physical evidence still required. Resume software stages with
+  `python tools/controller_review/run_followup_work.py --publish`.
+- [Reviewer-response causal residual campaign](tools/reviewer_campaign/README.md):
+  one-command staged PPO training, mirrored comparisons, real-worker timing and
+  native interface checks, with verified milestones pushed to the research branch.
+  [Live evidence and status](docs/research/reviewer-causal-v1/status.json) distinguish
+  completed tests from failed criteria and pending physical/reference work.
+- [Archived90-episode diagnostic](docs/research/reviewer-pilot-2026-10-26/README.md):
+  historical checkpoints only; their old input interface prevents a deployable
+  causal-policy claim. Do not mix their numerical gains with the new campaign.
+
 - [Specification](docs/research/specification-v0.1.md): research requirements; unchanged by remediation.
 - [Cloud setup](tools/cloud/README.md): dependency and environment instructions.
 - [Webots validation history](docs/research/webots-validation.md): simulation configuration, units, results and native-transfer limitations.

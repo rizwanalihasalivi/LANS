@@ -1,0 +1,9 @@
+{
+  "eligible_first_deliveries": 13632,
+  "raw_lateral_input_rmse_m": 0.002840989201866307,
+  "forecast_lateral_input_rmse_m": 0.0022185246526457924,
+  "raw_heading_input_rmse_rad": 0.0007456327789862955,
+  "forecast_heading_input_rmse_rad": 0.00023748875652865526,
+  "mean_absolute_horizon_error_ms": 0.07042253521162867,
+  "scope": "Post-hoc calibration on compensated trajectories; noisy observer estimates are comparison targets, not ground truth or an independent efficacy experiment. No parameters fitted."
+}

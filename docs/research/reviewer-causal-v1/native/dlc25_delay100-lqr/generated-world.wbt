@@ -1,0 +1,113 @@
+#VRML_SIM R2025a utf8
+EXTERNPROTO "/workspace/LANS/integrations/webots/.runtime/protos/Car.proto"
+EXTERNPROTO "/workspace/LANS/integrations/webots/.runtime/protos/VehicleWheel.proto"
+WorldInfo {
+  basicTimeStep 1
+  randomSeed 42
+  coordinateSystem "ENU"
+  contactProperties [
+    ContactProperties {
+      material1 "tire_front"
+      material2 "road"
+      coulombFriction [ 0.9 ]
+      forceDependentSlip [ 0.001325 0 ]
+      softERP 0.2
+      softCFM 0.00001
+    }
+    ContactProperties {
+      material1 "tire_rear"
+      material2 "road"
+      coulombFriction [ 0.9 ]
+      forceDependentSlip [ 0.0011562500000000002 0 ]
+      softERP 0.2
+      softCFM 0.00001
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.184 0.413 0.892 2.42
+  position 45 -55 60
+}
+Background { skyColor [ 0.8 0.85 0.9 ] }
+DirectionalLight { direction -1 1 -2 }
+DEF ROAD Solid {
+  translation 500 0 -0.1
+  children [ Shape { appearance PBRAppearance { baseColor 0.3 0.3 0.3 roughness 1 metalness 0 } geometry Box { size 1600 1000 0.2 } } ]
+  contactMaterial "road"
+  boundingObject Box { size 1600 1000 0.2 }
+}
+DEF VEHICLE Car {
+  translation 0 0 0.36
+  name "lans-validation-surrogate"
+  controller "reviewer_validation"
+  supervisor TRUE
+  window "<none>"
+  engineSound ""
+  type "propulsion"
+  engineType "electric"
+  wheelbase 2.6
+  trackFront 1.6
+  trackRear 1.6
+  minSteeringAngle -0.6
+  maxSteeringAngle 0.6
+  suspensionFrontSpringConstant 100000
+  suspensionRearSpringConstant 100000
+  suspensionFrontDampingConstant 4000
+  suspensionRearDampingConstant 4000
+  wheelsDampingConstant 5
+  extensionSlot [
+    Pose {
+      translation 1.3 0 0.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 metalness 0 roughness 0.6 } geometry Box { size 3.8 1.5 0.5 } } ]
+    }
+  ]
+  boundingObject Pose { translation 1.3 0 0.35 children [ Box { size 3.8 1.5 0.5 } ] }
+  physics Physics {
+    density -1
+    mass 1610
+    centerOfMass [ 1.40248447204969 0 0.204968944099379 ]
+    inertiaMatrix [ 1000 3500 4129.23272877847 0 0 0 ]
+  }
+  wheelFrontLeft VehicleWheel {
+    name "front left wheel"
+    wheelSide TRUE
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire_front"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 centerOfMass [ 0 0 0 ] inertiaMatrix [ 0.289333333333333 0.512 0.289333333333333 0 0 0 ] }
+  }
+  wheelFrontRight VehicleWheel {
+    name "front right wheel"
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire_front"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 centerOfMass [ 0 0 0 ] inertiaMatrix [ 0.289333333333333 0.512 0.289333333333333 0 0 0 ] }
+  }
+  wheelRearLeft VehicleWheel {
+    name "rear left wheel"
+    wheelSide TRUE
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire_rear"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 centerOfMass [ 0 0 0 ] inertiaMatrix [ 0.289333333333333 0.512 0.289333333333333 0 0 0 ] }
+  }
+  wheelRearRight VehicleWheel {
+    name "rear right wheel"
+    tireRadius 0.32
+    thickness 0.2
+    rimBeamThickness 0.12
+    rimRadius 0.2
+    contactMaterial "tire_rear"
+    tireAppearance PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 }
+    physics Physics { density -1 mass 10 centerOfMass [ 0 0 0 ] inertiaMatrix [ 0.289333333333333 0.512 0.289333333333333 0 0 0 ] }
+  }
+}

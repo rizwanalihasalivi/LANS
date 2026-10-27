@@ -1,0 +1,10 @@
+test_filter_causal_and_immediate_stale_reset (__main__.Contracts) ... ok
+test_psf_feasible_and_constraint_checked (__main__.Contracts) ... ok
+test_psf_shrinks_after_infeasible_full_horizon (__main__.Contracts) ... ok
+test_rate_predictor_mirrors (__main__.Contracts) ... ok
+test_valid_filter_history_survives_cost_rejection (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.730s
+
+OK

@@ -1,0 +1,10 @@
+test_future_or_unordered_clock_values_rejected (__main__.Packets) ... ok
+test_late_delivery_retained_for_gate_freshness_rejection (__main__.Packets) ... ok
+test_malformed_response_rejected (__main__.Packets) ... ok
+test_nonfinite_or_unbounded_residual_rejected (__main__.Packets) ... ok
+test_only_matching_original_request_accepted (__main__.Packets) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.007s
+
+OK

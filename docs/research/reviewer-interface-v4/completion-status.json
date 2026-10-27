@@ -1,0 +1,17 @@
+{
+  "development_eligible": false,
+  "ppo_tracking_gain_vs_lqr_pct": 2.5786554853508226,
+  "ppo_gain_vs_student_pct": 0.572720568295304,
+  "planner_headroom_screen_pass": false,
+  "recovery_functional_pass": true,
+  "recovery_timing_pass": false,
+  "strict_timing_pass": false,
+  "reserved": "unopened",
+  "native_selected_winner_confirmation": false,
+  "actual_laptop_validation": false,
+  "physical_vehicle_validation": false,
+  "full_robust_published_reproduction": false,
+  "submission_ready": false,
+  "new_training_steps": 0,
+  "balanced_vs_lqr_development_pass": true
+}

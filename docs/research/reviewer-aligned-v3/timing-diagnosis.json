@@ -1,0 +1,86 @@
+[
+  {
+    "study": "reviewer-followup-v2",
+    "profile": "sleep",
+    "ticks": 6000,
+    "misses": 687,
+    "already_late_at_release": 672,
+    "wall_control_over10ms": 33,
+    "thread_cpu_control_over10ms": 33,
+    "release_lateness_ms": {
+      "p99": 528.6094557500011,
+      "maximum": 770.394185
+    },
+    "wall_control_ms": {
+      "p99": 4.128159420000008,
+      "maximum": 758.975984
+    },
+    "thread_cpu_control_ms": {
+      "p99": 4.120721380000002,
+      "maximum": 758.429463
+    }
+  },
+  {
+    "study": "reviewer-followup-v2",
+    "profile": "absolute",
+    "ticks": 6000,
+    "misses": 305,
+    "already_late_at_release": 296,
+    "wall_control_over10ms": 22,
+    "thread_cpu_control_over10ms": 21,
+    "release_lateness_ms": {
+      "p99": 370.4071123100003,
+      "maximum": 620.195668
+    },
+    "wall_control_ms": {
+      "p99": 4.130153260000002,
+      "maximum": 547.197961
+    },
+    "thread_cpu_control_ms": {
+      "p99": 4.141506050000006,
+      "maximum": 547.099071
+    }
+  },
+  {
+    "study": "reviewer-aligned-v3",
+    "profile": "absolute_100us",
+    "ticks": 6000,
+    "misses": 717,
+    "already_late_at_release": 699,
+    "wall_control_over10ms": 32,
+    "thread_cpu_control_over10ms": 31,
+    "release_lateness_ms": {
+      "p99": 1810.868582560002,
+      "maximum": 2145.365547
+    },
+    "wall_control_ms": {
+      "p99": 5.090592110000003,
+      "maximum": 1681.159455
+    },
+    "thread_cpu_control_ms": {
+      "p99": 4.9749568900000165,
+      "maximum": 1366.710541
+    }
+  },
+  {
+    "study": "reviewer-aligned-v3",
+    "profile": "dedicated_spin",
+    "ticks": 6000,
+    "misses": 694,
+    "already_late_at_release": 669,
+    "wall_control_over10ms": 37,
+    "thread_cpu_control_over10ms": 36,
+    "release_lateness_ms": {
+      "p99": 1740.3027670400022,
+      "maximum": 2312.757432
+    },
+    "wall_control_ms": {
+      "p99": 6.366118630000009,
+      "maximum": 1564.384854
+    },
+    "thread_cpu_control_ms": {
+      "p99": 5.984021130000031,
+      "maximum": 1387.594681
+    }
+  }
+]

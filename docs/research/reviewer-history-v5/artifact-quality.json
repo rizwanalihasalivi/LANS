@@ -1,0 +1,8 @@
+{
+  "archive_crc_pass": true,
+  "sha256": {
+    "LANS_History_Reports.zip": "4e9541cebb6bc69e5f84bb3f3275a66dd08865d4b98645c0c640e11f9a7702fa",
+    "LANS_History_Python310_Kit.zip": "5c68b89d69325f0c51fd099ce0092d7b1ca3f168018c5e6d37fe5678c156f89e"
+  },
+  "actual_windows_macos_run": false
+}

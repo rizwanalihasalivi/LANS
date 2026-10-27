@@ -1,0 +1,26 @@
+0 192 {'student': 28572, 'oldppo': 28572, 'ppo': 28572}
+1 384 {'student': 57144, 'oldppo': 57144, 'ppo': 57144}
+2 576 {'student': 85716, 'oldppo': 85716, 'ppo': 85716}
+{
+  "eligible": false,
+  "reasons": [
+    "lacks1% gain vs student",
+    "lacks1% gain vs negative",
+    "lacks1% gain vs positive"
+  ],
+  "paired_seed_gains_vs_student_pct": [
+    0.1980124472611533,
+    0.4891022449363347,
+    0.30561707832662544
+  ],
+  "episodes": 576,
+  "transitions": 791136,
+  "submitted_queries_replayed": {
+    "student": 85716,
+    "oldppo": 85716,
+    "ppo": 85716
+  },
+  "severe_exact_pairs": 120,
+  "raw_metrics_filter_fusion_reward_model_hashes_verified": true,
+  "reserved": "unopened; corresponding selected-controller timing required separately"
+}

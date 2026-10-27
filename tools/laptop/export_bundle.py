@@ -9,12 +9,14 @@ from causal_student import load_causal,project_queries
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--model-root',type=Path,default=ROOT/'docs/research/causal-interface-2026-10-26/models')
+    a=p.parse_args()
     a.output.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
     x=project_queries(np.load(ROOT/'integrations/webots/results/revision8-student/data/dev.npz')['x'])
     indices=np.linspace(0,len(x)-1,512,dtype=int);golden=dict(x=x[indices]);checks=[]
     for seed in (701,802,903):
-        folder=ROOT/f'docs/research/causal-interface-2026-10-26/models/{seed}'
+        folder=a.model_root/str(seed)
         model=load_causal(folder);state=model.state_dict()
         data=dict(mean=state['mean'].numpy(),std=state['std'].numpy())
         for i,layer in enumerate((0,2,4)):
@@ -31,7 +33,8 @@ def main():
     np.savez_compressed(a.output/'golden.npz',**golden)
     for name in ('laptop_benchmark.py','precision_wait.py','RUN_WINDOWS.cmd','RUN_PYTHON310.cmd','README.md'):shutil.copy2(Path(__file__).parent/name,a.output/name)
     sha={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in a.output.iterdir() if p.is_file()}
-    manifest=dict(profile='causal_query_v2',export_checks=checks,sha256=sha)
+    manifest=dict(profile='causal_query_v2',export_checks=checks,sha256=sha,
+        model_provenance={str(seed):json.loads((a.model_root/str(seed)/'complete.json').read_text()) for seed in (701,802,903)})
     (a.output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(json.dumps(checks,indent=2))
 

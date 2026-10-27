@@ -1,0 +1,217 @@
+{
+  "entries": [
+    {
+      "original_number": 1,
+      "original_entry": "M. Bauder et al., \"A Simulator Study on Reaction Times and Behavior for Accident Reconstruction with V2X Warnings,\"\u00a0Sensors, vol. 24, no. 14, p. 4481, 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 2,
+      "original_entry": "J. Lee et al., \"Real-Time Guarantees for Neural Network Inference in Automotive ECUs,\"\u00a0IEEE Trans. Veh. Technol., vol. 73, no. 5, pp. 6789\u20136802, May 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 3,
+      "original_entry": "Persistence Market Research, \"Automotive Electronic Control Unit (ECU) Market,\" 2025.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 4,
+      "original_entry": "NVIDIA, \"Turing GPU Architecture,\" NVIDIA Corporation, White Paper, 2018.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Introduction ECU hardware/clock assertion requires an actual ECU datasheet; GPU white paper/driving survey is not sufficient primary evidence for that exact hardware claim."
+      ]
+    },
+    {
+      "original_number": 5,
+      "original_entry": "M. S. Kiran et al., \"Deep reinforcement learning for autonomous driving: A survey,\"\u00a0IEEE Trans. Intell. Transp. Syst., vol. 23, no. 6, pp. 4909\u20134926, Jun. 2022.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Introduction ECU hardware/clock assertion requires an actual ECU datasheet; GPU white paper/driving survey is not sufficient primary evidence for that exact hardware claim."
+      ]
+    },
+    {
+      "original_number": 6,
+      "original_entry": "B. D. O. Anderson and J. B. Moore,\u00a0Optimal Control: Linear Quadratic Methods. Prentice-Hall, 1990.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Introduction cites this LQR book for GPU power figures; the in-text evidence mapping must be replaced or the unsupported numeric claim removed."
+      ]
+    },
+    {
+      "original_number": 7,
+      "original_entry": "R. Rajamani,\u00a0Vehicle Dynamics and Control, 3rd ed. Springer, 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Do not use a generic vehicle-dynamics/model reference as evidence for neural inference WCET; require directly relevant measured/certified timing evidence."
+      ]
+    },
+    {
+      "original_number": 8,
+      "original_entry": "J. Hu et al., \"Kinematic and Dynamic Modeling of Autonomous Vehicles for Path Tracking Control,\"\u00a0IEEE Trans. Veh. Technol., vol. 73, no. 6, pp. 7890\u20137902, Jun. 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Do not use a generic vehicle-dynamics/model reference as evidence for neural inference WCET; require directly relevant measured/certified timing evidence."
+      ]
+    },
+    {
+      "original_number": 9,
+      "original_entry": "M. Bilban et al., \"Optimizing Autonomous Vehicle Performance Using Improved Proximal Policy Optimization,\"\u00a0Sensors, vol. 25, no. 6, p. 1941, 2025.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 10,
+      "original_entry": "J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, \"Proximal Policy Optimization Algorithms,\"\u00a0arXiv preprint arXiv:1707.06347, 2017.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 11,
+      "original_entry": "A. Kendall et al., \"Learning to drive in a day,\" in\u00a0Proc. IEEE Int. Conf. Robot. Autom. (ICRA), 2019, pp. 8248\u20138254.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 12,
+      "original_entry": "F. Codevilla et al., \"End-to-end driving via conditional imitation learning,\" in\u00a0Proc. IEEE Int. Conf. Robot. Autom. (ICRA), 2018, pp. 1\u20137.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 13,
+      "original_entry": "Y. Wang et al., \"Stability Analysis of LQR Controllers for Path Tracking in Autonomous Vehicles,\"\u00a0IEEE Trans. Intell. Transp. Syst., vol. 25, no. 3, pp. 2345\u20132358, Mar. 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 14,
+      "original_entry": "B. Wittenmark et al., \"Timing problems in real-time control systems,\"\u00a0Automatica, vol. 31, no. 10, pp. 1403\u20131414, 1995.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 15,
+      "original_entry": "X. Liang et al., \"CIRL: Controllable imitative reinforcement learning for vision-based self-driving,\" in\u00a0Proc. Eur. Conf. Comput. Vis. (ECCV), 2018, pp. 1\u201316.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 16,
+      "original_entry": "P. Marti et al., \"Advanced Jitter Compensation Techniques for Real-Time Control Loops,\"\u00a0Real-Time Syst., vol. 60, no. 1, pp. 89\u2013112, 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 17,
+      "original_entry": "J. P. Hespanha et al., \"A Survey of Networked Control Systems: Recent Advances and Future Directions,\"\u00a0IEEE Trans. Control Netw. Syst., vol. 11, no. 1, pp. 1\u201320, 2024.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 18,
+      "original_entry": "D. Kalaria, Q. Lin, and J. M. Dolan, \"Delay-aware robust control for safe autonomous driving,\" in\u00a0Proc. IEEE Intell. Veh. Symp. (IV), 2022, pp. 1\u20137.",
+      "status": "Replace and deduplicate using supplied Kalaria arXiv2208.13856v1",
+      "notes": [
+        "Both entries appear to refer to the same work; their IV/TCST venue claims do not match the supplied TIV masthead. Use verified version-specific title including \u201cand Racing\u201d; do not invent final volume/DOI."
+      ]
+    },
+    {
+      "original_number": 19,
+      "original_entry": "G. P. Antonio and C. Maria-Dolores, \"AIM5LA: A latency-aware deep reinforcement learning-based autonomous intersection management system for 5G communication networks,\"\u00a0Sensors, vol. 22, no. 6, p. 2217, 2022.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 20,
+      "original_entry": "Y. Hao et al., \"State jitter in cooperative adaptive cruise control platoons,\"\u00a0IEEE Trans. Veh. Technol., vol. 72, no. 4, pp. 4567\u20134579, Apr. 2023.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 21,
+      "original_entry": "L. Xiong et al., \"Learning-Augmented MPC for Autonomous Vehicle Path Tracking via Ensemble Residual Dynamics Learning,\"\u00a0Sensors, vol. 26, no. 1, p. 340, Jan. 2026.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 22,
+      "original_entry": "\u00c1. Domina and V. Tihanyi, \"Model Predictive Controller Approach for Automated Vehicle's Path Tracking,\"\u00a0Sensors, vol. 23, no. 15, p. 6862, 2023.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 23,
+      "original_entry": "Y. Chebotar et al., \"Residual reinforcement learning for robot control,\" in\u00a0Proc. IEEE Int. Conf. Robot. Autom. (ICRA), 2019, pp. 1\u20137.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Duplicate title and venue/year with different author attribution; consolidate only after original primary paper is checked."
+      ]
+    },
+    {
+      "original_number": 24,
+      "original_entry": "T. Johannink et al., \"Residual reinforcement learning for robot control,\" in\u00a0Proc. IEEE Int. Conf. Robot. Autom. (ICRA), 2019, pp. 1\u20137.",
+      "status": "Primary-source metadata verification pending",
+      "notes": [
+        "Duplicate title and venue/year with different author attribution; consolidate only after original primary paper is checked."
+      ]
+    },
+    {
+      "original_number": 25,
+      "original_entry": "W. Zhang et al., \"Networked control systems: A survey,\"\u00a0IEEE Trans. Ind. Electron., vol. 58, no. 1, pp. 123\u2013140, Jan. 2011.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 26,
+      "original_entry": "D. Kalaria et al., \"Delay-Aware Robust Control for Safe Autonomous Driving,\"\u00a0IEEE Trans. Control Syst. Technol., vol. 32, no. 1, pp. 112\u2013125, Jan. 2024.",
+      "status": "Replace and deduplicate using supplied Kalaria arXiv2208.13856v1",
+      "notes": [
+        "Both entries appear to refer to the same work; their IV/TCST venue claims do not match the supplied TIV masthead. Use verified version-specific title including \u201cand Racing\u201d; do not invent final volume/DOI."
+      ]
+    },
+    {
+      "original_number": 27,
+      "original_entry": "E. Ugur et al., \"Neuro-Symbolic Robotics,\"\u00a0TechRxiv Preprint, Jun. 2025.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 28,
+      "original_entry": "Dong, Y., Datema, T., Wassenaar, V., Van de Weg, J., Kopar, C. T., & Suleman, H. (2023, September). Comprehensive training and evaluation on deep reinforcement learning for automated driving in various simulated driving maneuvers. In\u00a02023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC)\u00a0(pp. 6165-6170). IEEE.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 29,
+      "original_entry": "J. Shaik, C. P. Vyasarayani, and A. Chatterjee, \"Linear Quadratic Regulator for Delayed Systems Using the Hamiltonian Approach and Exact Closed-Loop Poles for First-Order Systems,\"\u00a0ASME Journal of Dynamic Systems, Measurement, and Control, vol. 145, no. 7, p. 071002, May 2023.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 30,
+      "original_entry": "K. V. Ling et al., \"Model predictive control of autonomous vehicles under computation delays,\" IEEE Transactions on Intelligent Vehicles, vol. 7, no. 3, pp. 456-468, 2022.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 31,
+      "original_entry": "L. Cui, B. Pang, M. Krstic, and Z.-P. Jiang, \"Learning-based adaptive optimal control of linear time-delay systems: A value iteration approach,\" Automatica, vol. 171, p. 111944, 2025.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    },
+    {
+      "original_number": 32,
+      "original_entry": "Liu, X., Ou, J., Yan, D., Zhang, Y., & Deng, G. (2024). Path tracking control of automated vehicles based on adaptive MPC in variable scenarios. IET Intelligent Transport Systems, 18(6), 1031\u20131045.",
+      "status": "Primary-source metadata verification pending",
+      "notes": []
+    }
+  ],
+  "all32_structurally_reviewed": true,
+  "all32_primary_verified": false,
+  "verified_supplied_source_entries": 5
+}

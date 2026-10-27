@@ -1,0 +1,9 @@
+{
+  "transitions": 3000,
+  "independent_lp_projections": 2760,
+  "original_state_and_disturbance_replay": true,
+  "shrinking_clock_verified": true,
+  "terminal_invariance_verified": true,
+  "source_sha256": "7dad063a49b612de2d627d8031f567adbf63d659c0bb48934b04d97df7358294",
+  "verified_scope": "Scalar uniform-bound specialization only; no matched nonlinear-vehicle reproduction"
+}

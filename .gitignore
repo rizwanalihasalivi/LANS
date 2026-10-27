@@ -47,6 +47,8 @@ Thumbs.db
 # Local integrations and generated setup output
 .agents/skills/
 .aris/
+.numba-cache/
+.matplotlib-cache/
 !tools/cloud/webots-demo/result.json
 !research-inputs/manifest.json
 !docs/research/full-project-audit/**/*.json

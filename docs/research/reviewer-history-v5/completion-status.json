@@ -1,0 +1,20 @@
+{
+  "selected": null,
+  "packaged_diagnostic_arm": "nohistory",
+  "additional_training_steps": 600000,
+  "student_relative_gains_pct": {
+    "nohistory": 0.9433535452583075,
+    "history": 0.967057231196744
+  },
+  "full_selection_pass": false,
+  "history_state_input_available_and_verified": true,
+  "history_performance_benefit_established": false,
+  "package_functional_pass": true,
+  "package_observed_timing_pass": false,
+  "reserved": "unopened",
+  "new_selected_native_confirmation": false,
+  "actual_laptop_validation": false,
+  "physical_vehicle_validation": false,
+  "complete_robust_published_reproduction": false,
+  "submission_ready": false
+}

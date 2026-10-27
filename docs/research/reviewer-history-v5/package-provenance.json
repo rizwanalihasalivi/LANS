@@ -1,0 +1,32 @@
+{
+  "arm": "nohistory",
+  "selected": null,
+  "diagnostic_only": true,
+  "profile": "causal_filter_history_v5",
+  "model_provenance": {
+    "701": {
+      "source_sha256": "8b2abd3dc0101937030a62b0d682e2e5e4d3b149d7f07d4e696f6ec59cee6bd6",
+      "arm": "nohistory",
+      "additional_steps": 100000,
+      "source_v3_steps": 100000,
+      "history_column_norm": 0.0,
+      "research_diagnostic_only": true
+    },
+    "802": {
+      "source_sha256": "65267b48a469c5925465398291d76f2713a32474552dcb9f6702b0f5b56dd4aa",
+      "arm": "nohistory",
+      "additional_steps": 100000,
+      "source_v3_steps": 100000,
+      "history_column_norm": 0.0,
+      "research_diagnostic_only": true
+    },
+    "903": {
+      "source_sha256": "cdfc2aafaf6e717bed39ef0568ef01debe37520e78b89f1dcb7e8144e3bd6599",
+      "arm": "nohistory",
+      "additional_steps": 100000,
+      "source_v3_steps": 100000,
+      "history_column_norm": 0.0,
+      "research_diagnostic_only": true
+    }
+  }
+}

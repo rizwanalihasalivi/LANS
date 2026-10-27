@@ -107,3 +107,9 @@ The campaign's status.json and generated result tables are authoritative for
 completed/failed stages. Matching a published controller, final bibliography
 metadata, physical testing and any formal nonlinear safety guarantee remain
 explicit external/theoretical gaps. The generated manuscript is a research draft.
+
+## Current campaign outcome
+
+Development:864 episodes; eligible design:False. Fine-tuned PPO reduction versus LQR:-0.0439%. Actual-worker functional pass:True; observed timing pass:False. Native interface pass:True; native observed wall timing pass:False.
+
+These outcomes do not validate original manuscript speed/energy/safety claims. See development/README.md, reviewer-response.md and status.json for tradeoffs and remaining work.

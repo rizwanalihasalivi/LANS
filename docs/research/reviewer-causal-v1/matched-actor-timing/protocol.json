@@ -1,0 +1,17 @@
+{
+  "warmup_per_actor": 100,
+  "parity_rows_per_export": 50,
+  "input_trace": "development/pair-0/traces/15-dlc220--1-delay100-lqr.csv.gz",
+  "input_trace_sha256": "d1b53b5d563c27e83652d16b98ec886b0b1f8acb763d567c8baff4df3ae7c1d2",
+  "model_hashes": {
+    "0-scratch": "db8245494b8a2e04fd332de8f3bac91aeca6c4dddd1d3bf3b335d83a73a47315",
+    "0-finetune": "dedd3e4eef1111dfab2cde83300826fba16ee340553d796a39b264dbacfe00dd",
+    "1-scratch": "5a84928bf2981fe2e8b61d4de5a0964f9b7a5fb58167127d98325910b05d90d5",
+    "1-finetune": "9ef850466e63a79c3029bc9d95358d507424ed282622d461140cec397da2516b",
+    "2-scratch": "4ee3716deccda8fac19498f22b8c8dc2b3c6a2a79074559ae22f33ec4daed345",
+    "2-finetune": "e997501a0268683bc84a8cf1187aa22bcece0326466bb8824ef0baf9d27d630e"
+  },
+  "source_sha256": "2f760b1cf74fdc56076deee6f44b7d1ecff69e80539deceb820f0ee9475004b6",
+  "execution": "All actors share CausalStudent20-64-64-5 Torch CPU wrapper; exact PPO weight export; randomized method order, single core/thread",
+  "scope": "Warm batch1 actor computation only; excludes observer, supervisor, IPC, queue, actuator and startup. Not a full LANS latency or WCET measurement. No100Hz-as-inference assumption."
+}

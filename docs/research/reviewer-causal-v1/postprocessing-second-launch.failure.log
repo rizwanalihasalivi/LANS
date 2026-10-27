@@ -1,0 +1,140 @@
+RESUME protocol-frozen
+RESUME causal-contract-tests
+RESUME bounded-causal-training
+RESUME ppo-worker-export
+RESUME development-verified
+RESUME actual-worker-verified
+RESUME native-interface-verified
+RESUME reviewer-response-report
+{
+  "stages": {
+    "protocol-frozen": {
+      "state": "complete"
+    },
+    "causal-contract-tests": {
+      "state": "complete"
+    },
+    "bounded-causal-training": {
+      "state": "complete"
+    },
+    "ppo-worker-export": {
+      "state": "complete"
+    },
+    "development-verified": {
+      "state": "complete"
+    },
+    "actual-worker-verified": {
+      "state": "complete"
+    },
+    "native-interface-verified": {
+      "state": "complete"
+    },
+    "reviewer-response-report": {
+      "state": "complete"
+    }
+  },
+  "external": {
+    "physical_vehicle": "unavailable: fresh physical measurements required",
+    "laptop_rerun": "pending user target-machine results",
+    "formal_safety": "not established; limited assumptions only",
+    "primary_reference_verification": "uploaded five PDFs read; publication metadata / broader search incomplete",
+    "published_algorithm_reproduction": "not implemented; no superiority claim",
+    "native_ppo": {
+      "interface_pass": true,
+      "observed_wall_timing_pass": false,
+      "scope": "PPO-export/shared supervisor native interface; no generalization or vehicle claim"
+    },
+    "hard_realtime": "FAIL: observed10ms deadline misses; no100Hz guarantee"
+  },
+  "confirmation": {
+    "state": "unopened",
+    "reason": [
+      "finetune lacks >=1% improvement vs lqr",
+      "finetune lacks >=1% improvement vs student",
+      "pair0 does not improve student",
+      "pair1 does not improve student",
+      "pair2 does not improve student"
+    ]
+  }
+}
+[reports/opening-report-2026-10-26 6be653f] research: freeze resource-partition timing diagnosis and independent audits
+ 25 files changed, 2159 insertions(+), 6 deletions(-)
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-first-launch.failure.log
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-manifest.json
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/audit_campaign_linearization.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/benchmark_campaign_actors.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/realtime_campaign_partition.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/replay_campaign_proposals.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/run_reviewer_work.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/summarize_campaign_uncertainty.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/templates/opening-report-research-update.md
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/controller_review/templates/opening-report-revised-core.md
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/laptop/export_bundle.py
+ create mode 100644 docs/research/reviewer-causal-v1/postprocessing-source/tools/laptop/verify_export.py
+ create mode 100644 tools/controller_review/audit_campaign_linearization.py
+ create mode 100644 tools/controller_review/benchmark_campaign_actors.py
+ create mode 100644 tools/controller_review/realtime_campaign_partition.py
+ create mode 100644 tools/controller_review/replay_campaign_proposals.py
+ create mode 100644 tools/controller_review/run_reviewer_work.py
+ create mode 100644 tools/controller_review/summarize_campaign_uncertainty.py
+ create mode 100644 tools/controller_review/templates/opening-report-research-update.md
+ create mode 100644 tools/controller_review/templates/opening-report-revised-core.md
+To https://github.com/rizwanalihasalivi/LANS.git
+   dae2592..6be653f  reports/opening-report-2026-10-26 -> reports/opening-report-2026-10-26
+[reports/opening-report-2026-10-26 3f4c5a3] research: diagnose local controller timing with test-generated CPU load partitioned
+ 32 files changed, 2613 insertions(+)
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing-verification.log
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing.log
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-cpu_stress-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-cpu_stress-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-cpu_stress-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-delay1000-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-delay1000-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-delay1000-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-nominal-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-nominal-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/701-nominal-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-cpu_stress-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-cpu_stress-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-cpu_stress-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-delay1000-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-delay1000-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-delay1000-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-nominal-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-nominal-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/802-nominal-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-cpu_stress-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-cpu_stress-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-cpu_stress-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-delay1000-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-delay1000-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-delay1000-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-nominal-packets.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-nominal-summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/903-nominal-ticks.csv.gz
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/protocol.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/summary.json
+ create mode 100644 docs/research/reviewer-causal-v1/partition-timing/verification.json
+To https://github.com/rizwanalihasalivi/LANS.git
+   6be653f..3f4c5a3  reports/opening-report-2026-10-26 -> reports/opening-report-2026-10-26
+[reports/opening-report-2026-10-26 b73229d] research: independently replay causal PPO proposals rewards and seed-block metrics
+ 5 files changed, 922 insertions(+)
+ create mode 100644 docs/research/reviewer-causal-v1/development/descriptive-uncertainty.json
+ create mode 100644 docs/research/reviewer-causal-v1/development/proposal-reward-replay.json
+ create mode 100644 docs/research/reviewer-causal-v1/linearization.log
+ create mode 100644 docs/research/reviewer-causal-v1/proposal-reward-replay.log
+ create mode 100644 docs/research/reviewer-causal-v1/uncertainty.log
+To https://github.com/rizwanalihasalivi/LANS.git
+   3f4c5a3..b73229d  reports/opening-report-2026-10-26 -> reports/opening-report-2026-10-26
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-s9_1e7zq because the default path (/home/agent/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Fontconfig error: No writable cache directories
+Traceback (most recent call last):
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 246, in <module>
+    if __name__=='__main__':main()
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 229, in main
+    call(['pandoc',str(file),'--resource-path',str(run),'--pdf-engine=xelatex','-V','mainfont=DejaVu Serif',
+  File "/workspace/LANS/tools/controller_review/run_reviewer_work.py", line 28, in call
+    with log.open('w') as handle:subprocess.run(command,cwd=ROOT,env=env,stdout=handle,stderr=subprocess.STDOUT,check=True)
+  File "/workspace/.lans-python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['pandoc', '/workspace/LANS/docs/research/reviewer-causal-v1/opening-report-revised-draft.md', '--resource-path', '/workspace/LANS/docs/research/reviewer-causal-v1', '--pdf-engine=xelatex', '-V', 'mainfont=DejaVu Serif', '-V', 'geometry:margin=22mm', '-V', 'fontsize=10pt', '-o', '/workspace/LANS/docs/research/reviewer-causal-v1/opening-report-revised-draft.pdf']' returned non-zero exit status 43.

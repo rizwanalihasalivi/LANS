@@ -1,0 +1,52 @@
+{
+  "kind": "causal-adapter wall-paced software-in-the-loop; not native or hard real time",
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "cases": {
+    "nominal": 0.0,
+    "delay20": 0.02,
+    "delay60": 0.06,
+    "delay100": 0.1,
+    "delay1000": 1.0,
+    "cpu_stress": 0.0,
+    "worker_crash": 0.0
+  },
+  "seconds": 5.0,
+  "period_ms": 10,
+  "stale_age_ms": 50,
+  "cpus": [
+    0,
+    1
+  ],
+  "cpu": "",
+  "affinity_before": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "python": "3.10.22",
+  "feature_change": "causal_query_v2: retrained train-only standardized weights; ready delivery before query; removed14/15/16/17/19 in training and runtime",
+  "model_root": "/workspace/LANS/docs/research/reviewer-causal-v1/export",
+  "noise_base": 1086000000,
+  "acceptance": "Report every deadline miss. Functional pass requires no stale/fallback authority violations, bounded commands/rates, survival, severe-delay exact paired LQR commands, crash detection and continued ticks. Timing pass additionally requires zero 10ms response deadline misses; no hard-real-time claim.",
+  "source_hashes": {
+    "tools/controller_review/realtime_optimized.py": "5c06fc0aa7f1f5392a9a7f032bbcbda17632be258fb499f8a2cd712d58d6630e",
+    "tools/controller_review/realtime_kernels.py": "af016e0c6d75fed0f51aedcaaa5dae0c0b590dfea7b346d324915cc0edc96292",
+    "tools/controller_review/causal_student.py": "5da481f7a18f3b03156372431a90197b7313ae572b85e9d2700e083e57798539",
+    "tools/controller_review/realtime_student.py": "6b15c4b5974c0e1f8a927e0ead6bc85707a7a451736fe747b16508b712801b94",
+    "integrations/webots/research/revision8/student.py": "56348b4190abb79f369e091118ec9f4070c77eeeaeabda5e9ec1b5c3d3a47c42",
+    "integrations/webots/research/revision8/teacher.py": "f184e2759580791bcf253a05c707fe0b014e25361cb1ac190f492db11638dac3",
+    "integrations/webots/research/revision2/gating.py": "15c828c0995d83f405853f843faa1ec8df678df746d12b0526fc72bc638bc44e",
+    "integrations/webots/research/revision7/kernels.py": "d5e8b4b3e68e7df5c671da414f385e7570353bff452d8258884308975b3870bf"
+  },
+  "model_hashes": {
+    "701": "7b4f4c81c0bbfb2850800887dbf55302900ca45ce567af8130c1f28b876f2a32",
+    "802": "1d5918268928c4566325f2ef23348e77a298ad415939e6ad7d44f1c0969234fd",
+    "903": "5f02de701170a8c4237fe22cd7b2a53aec7acb66b6790464fa2c19b410f672af"
+  }
+}

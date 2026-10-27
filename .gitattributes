@@ -16,3 +16,15 @@ docs/research/reviewer-pilot-2026-10-26/** -text -whitespace
 
 # Hash-frozen campaign evidence, including raw CSV and copied source bytes.
 docs/research/reviewer-causal-v1/** -text -whitespace
+
+# Follow-up evidence is byte-frozen separately from the failed v1 campaign.
+docs/research/reviewer-followup-v2/** -text -whitespace
+
+# New aligned campaign preserves legacy source snapshots and raw evidence bytes.
+docs/research/reviewer-aligned-v3/** -text -whitespace
+
+# Interface/compute diagnosis retains immutable legacy source bytes.
+docs/research/reviewer-interface-v4/** -text -whitespace
+
+# Explicitly versioned causal-history ablation: preserve all frozen evidence.
+docs/research/reviewer-history-v5/** -text -whitespace

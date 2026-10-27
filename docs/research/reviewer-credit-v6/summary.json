@@ -1,0 +1,72 @@
+{
+  "lqr": {
+    "rmse_m": 0.09041312860955086,
+    "heading_rmse_rad": 0.020100265880929648,
+    "rate_rms_rad_s": 0.0693761271057496,
+    "movement_rad": 0.5640864408173427,
+    "survived": 96,
+    "episodes": 96,
+    "active": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.08937213755706738,
+    "heading_rmse_rad": 0.019437541081448465,
+    "rate_rms_rad_s": 0.0717057281256023,
+    "movement_rad": 0.5955082143817788,
+    "survived": 96,
+    "episodes": 96,
+    "active": 20896,
+    "gain_vs_lqr_pct": 1.15137156350269
+  },
+  "positive": {
+    "rmse_m": 0.08937213755706738,
+    "heading_rmse_rad": 0.019437541081448465,
+    "rate_rms_rad_s": 0.0717057281256023,
+    "movement_rad": 0.5955082143817788,
+    "survived": 96,
+    "episodes": 96,
+    "active": 20896,
+    "gain_vs_lqr_pct": 1.15137156350269
+  },
+  "student": {
+    "rmse_m": 0.0885494291676752,
+    "heading_rmse_rad": 0.02003842632759241,
+    "rate_rms_rad_s": 0.07155638715152003,
+    "movement_rad": 0.5891642912897228,
+    "survived": 96,
+    "episodes": 96,
+    "active": 12838,
+    "gain_vs_lqr_pct": 2.0613150662267654
+  },
+  "v3ppo": {
+    "rmse_m": 0.08809303918345483,
+    "heading_rmse_rad": 0.01999640379844438,
+    "rate_rms_rad_s": 0.07215762449298682,
+    "movement_rad": 0.5940713216399189,
+    "survived": 96,
+    "episodes": 96,
+    "active": 12354,
+    "gain_vs_lqr_pct": 2.566097934864453
+  },
+  "all_actions": {
+    "rmse_m": 0.08826937762152752,
+    "heading_rmse_rad": 0.01998205962949939,
+    "rate_rms_rad_s": 0.07247103659319461,
+    "movement_rad": 0.5940768425591882,
+    "survived": 96,
+    "episodes": 96,
+    "active": 14258,
+    "gain_vs_lqr_pct": 2.3710616157097464
+  },
+  "submitted_only": {
+    "rmse_m": 0.08805232751618669,
+    "heading_rmse_rad": 0.019998118046950744,
+    "rate_rms_rad_s": 0.07250368992897596,
+    "movement_rad": 0.59500774156944,
+    "survived": 96,
+    "episodes": 96,
+    "active": 13475,
+    "gain_vs_lqr_pct": 2.6111264256314937
+  }
+}

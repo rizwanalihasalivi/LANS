@@ -1,0 +1,50 @@
+{
+  "selected": null,
+  "profiles": {
+    "age_filtered": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs age_filtered/student",
+        "rate_rms_rad_s exceeds5% LQR tradeoff",
+        "pair1 no student gain",
+        "pair2 no student gain"
+      ],
+      "paired_seed_gains_vs_student_pct": [
+        0.19728204988763373,
+        -0.6428794324626012,
+        -0.5985165201301118
+      ]
+    },
+    "predictive_filtered": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs lqr/none",
+        "lacks1% gain vs predictive_filtered/student",
+        "pair1 no student gain",
+        "pair2 no student gain"
+      ],
+      "paired_seed_gains_vs_student_pct": [
+        5.290625576064934e-05,
+        -0.0012429241940296347,
+        -3.809300888209465e-05
+      ]
+    },
+    "preview_filtered": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs lqr/none",
+        "lacks1% gain vs preview_filtered/student",
+        "pair2 no student gain"
+      ],
+      "paired_seed_gains_vs_student_pct": [
+        0.04497479019218173,
+        0.17590405968500344,
+        -0.08926792563428915
+      ]
+    }
+  },
+  "episodes": 864,
+  "severe_exact_pairs": 204,
+  "raw_metrics_and_causal_filter_verified": true,
+  "reserved_confirmation": "unopened; independent10ms timing pass also required"
+}

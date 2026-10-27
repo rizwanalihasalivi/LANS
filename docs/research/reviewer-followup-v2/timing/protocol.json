@@ -1,0 +1,40 @@
+{
+  "kind": "A/B native absolute-wait and lower-priority worker diagnosis",
+  "profiles": [
+    "sleep",
+    "absolute"
+  ],
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "cases": {
+    "nominal": 0.0,
+    "delay1000": 1.0,
+    "cpu_stress": 0.0,
+    "worker_crash": 0.0
+  },
+  "seconds": 5.0,
+  "period_ms": 10,
+  "guard_ns": 100000,
+  "noise_base": 1246000000,
+  "cpus": [
+    0,
+    1
+  ],
+  "controller": "predeclared age_filtered; fixed old25k PPO export; no selected-winner claim",
+  "priority": "local nice0; worker nice10; two stress nice19 on worker CPU, including startup",
+  "randomization": "Each seed permutes sleep/absolute with random.Random(1731+seed); same canonical physical noise per seed",
+  "source_hashes": {
+    "tools/controller_review/realtime_followup.py": "c9a940b6f529f43a570ecb67f5eb503c58fd971fbe60277e2031a0f4b1f8cfe6",
+    "tools/controller_review/deadline_wait.c": "54fef91eeea73effdde84282df4043274b1b451795ae0002bb1f63e6ae61a5b1",
+    "tools/reviewer_followup/filtered.py": "a09f8e113f424690ff9eb60aa159845774b042d60da4181ab26246354bd16744",
+    "tools/reviewer_campaign/supervisor.py": "a745d28aac873aba8365ade9c87f647be9ac17a33d14951c5054f097854b526d",
+    "tools/controller_review/realtime_optimized.py": "5c06fc0aa7f1f5392a9a7f032bbcbda17632be258fb499f8a2cd712d58d6630e",
+    "tools/controller_review/realtime_campaign_partition.py": "e0e31b9097d9a239b28804d3bdfe9eed99a0a60c3457973ac0c800156788e091"
+  },
+  "library_sha256": "c8868e0af9f703f92b7106e468c7369c1d9973af7c3477877df23250599f35f7",
+  "clock_checks": 40,
+  "limits": "Wall-paced fixed-step software plant, finite cloud observations, no WCET or physical100Hz guarantee; any deadline miss fails observed strict timing"
+}

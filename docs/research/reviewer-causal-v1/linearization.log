@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "speed": 15,
+      "poles": [
+        [
+          -13.616242052283301,
+          0.0
+        ],
+        [
+          -2.035642161430385,
+          3.1913809937010993
+        ],
+        [
+          -2.035642161430385,
+          -3.1913809937010993
+        ],
+        [
+          -6.535024691215842,
+          2.4984001599287895
+        ],
+        [
+          -6.535024691215842,
+          -2.4984001599287895
+        ]
+      ],
+      "hurwitz": true,
+      "continuous_feedback_flow_radius_10ms": 0.9798493715663199,
+      "lyapunov_min_eigenvalue": 0.0193765750820273,
+      "lyapunov_residual_norm": 4.473670971717111e-13
+    },
+    {
+      "speed": 20,
+      "poles": [
+        [
+          -12.052254445549984,
+          0.0
+        ],
+        [
+          -6.006245175618169,
+          3.1667263172950597
+        ],
+        [
+          -6.006245175618169,
+          -3.1667263172950597
+        ],
+        [
+          -2.0017185106977573,
+          3.6304799758424227
+        ],
+        [
+          -2.0017185106977573,
+          -3.6304799758424227
+        ]
+      ],
+      "hurwitz": true,
+      "continuous_feedback_flow_radius_10ms": 0.9801818286324315,
+      "lyapunov_min_eigenvalue": 0.020445766188907335,
+      "lyapunov_residual_norm": 2.388655117680976e-12
+    },
+    {
+      "speed": 25,
+      "poles": [
+        [
+          -10.708812587864767,
+          0.0
+        ],
+        [
+          -5.822777965270423,
+          3.8487856772276796
+        ],
+        [
+          -5.822777965270423,
+          -3.8487856772276796
+        ],
+        [
+          -2.050088468069934,
+          3.7553143516144325
+        ],
+        [
+          -2.050088468069934,
+          -3.7553143516144325
+        ]
+      ],
+      "hurwitz": true,
+      "continuous_feedback_flow_radius_10ms": 0.9797078297455252,
+      "lyapunov_min_eigenvalue": 0.02121075410267393,
+      "lyapunov_residual_norm": 7.44556518818358e-12
+    }
+  ],
+  "scope": "delay-free unsaturated nominal linearization with0.05s actuator lag and continuous state feedback",
+  "exclusions": [
+    "nonlinear Fiala dynamics",
+    "sample/hold and sensor estimation",
+    "input/rate saturation",
+    "time-varying delay and switching",
+    "global safety or zero convergence with nonzero residual"
+  ]
+}

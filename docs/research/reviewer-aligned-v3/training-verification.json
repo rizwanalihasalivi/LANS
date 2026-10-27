@@ -1,0 +1,50 @@
+{
+  "total_steps": 300000,
+  "pilots": [
+    {
+      "pair": 0,
+      "seed": 3701,
+      "steps": 100000,
+      "changed_actor_tensors": [
+        "mlp_extractor.policy_net.0.weight",
+        "mlp_extractor.policy_net.0.bias",
+        "mlp_extractor.policy_net.2.weight",
+        "mlp_extractor.policy_net.2.bias",
+        "action_net.weight",
+        "action_net.bias"
+      ],
+      "frozen_observation_normalization_verified": true,
+      "endpoint_sha256": "56bb90e204f34f9ba1a78ef0925845799140cd95247cd7fe71764c42cb1cf3a7"
+    },
+    {
+      "pair": 1,
+      "seed": 3802,
+      "steps": 100000,
+      "changed_actor_tensors": [
+        "mlp_extractor.policy_net.0.weight",
+        "mlp_extractor.policy_net.0.bias",
+        "mlp_extractor.policy_net.2.weight",
+        "mlp_extractor.policy_net.2.bias",
+        "action_net.weight",
+        "action_net.bias"
+      ],
+      "frozen_observation_normalization_verified": true,
+      "endpoint_sha256": "f40032d48c268f2c7d51bcd0de1dfdf665e19d9653edd7f1c20a996d45426aa1"
+    },
+    {
+      "pair": 2,
+      "seed": 3903,
+      "steps": 100000,
+      "changed_actor_tensors": [
+        "mlp_extractor.policy_net.0.weight",
+        "mlp_extractor.policy_net.0.bias",
+        "mlp_extractor.policy_net.2.weight",
+        "mlp_extractor.policy_net.2.bias",
+        "action_net.weight",
+        "action_net.bias"
+      ],
+      "frozen_observation_normalization_verified": true,
+      "endpoint_sha256": "16dd1bb44510933f8ff326bb137079a1dd38d906203298c5b910a817f25b1bc8"
+    }
+  ]
+}

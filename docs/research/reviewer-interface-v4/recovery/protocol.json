@@ -1,0 +1,18 @@
+{
+  "profile": "fresh_v4",
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "seconds": 8,
+  "noise_base": 1396000000,
+  "stall": "One-second post-inference wait for requests observed in [2,3)s from first request; all later requests healthy again",
+  "criteria": "Raw audits pass; actual long-delayed packet rejected; nonzero assistance exercised both before stall and after healthy return; all stale/late actions use local LQR. Any10ms miss separately fails observed timing. No physical safety guarantee.",
+  "source_hashes": {
+    "tools/controller_review/recovery_interface4.py": "c0a7b7e0be8a3b49fcc794edc5d736f4242918e1cc6595b937d336b6c20d7898",
+    "tools/controller_review/laptop_full_controller.py": "693ce371446fb3e4a1ea373020376424fa87ae584fa46b1597cd3b35756d7164",
+    "tools/reviewer_v4/interface4.py": "9850be453544bd7b3b4a4f00ad8813bc900d6f5e06c7fd4ea2caa86759254f5a",
+    "tools/reviewer_v4/scalar_cost.py": "b889778aa45e7bb7c1f320e63ab522aecf7246d72d704273725574a4fbe18247"
+  }
+}

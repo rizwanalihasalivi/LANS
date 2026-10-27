@@ -1,0 +1,6 @@
+{
+  "returned_packets": 756,
+  "torch_source_action_disagreements": 0,
+  "all_three_source_hashes_verified": true,
+  "scope": "Cloud portability diagnostic; not actual laptop or selected-controller timing validation"
+}

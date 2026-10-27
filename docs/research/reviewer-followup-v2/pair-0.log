@@ -1,0 +1,17 @@
+Fontconfig error: No writable cache directories
+0 sine120 -1 nominal 18
+0 sine120 -1 tire 36
+0 sine120 -1 delay20 54
+0 sine120 -1 delay100 72
+0 sine120 1 nominal 90
+0 sine120 1 tire 108
+0 sine120 1 delay20 126
+0 sine120 1 delay100 144
+0 dlc220 -1 nominal 162
+0 dlc220 -1 tire 180
+0 dlc220 -1 delay20 198
+0 dlc220 -1 delay100 216
+0 dlc220 1 nominal 234
+0 dlc220 1 tire 252
+0 dlc220 1 delay20 270
+0 dlc220 1 delay100 288

@@ -1,0 +1,62 @@
+{
+  "lqr": {
+    "rmse_m": 0.09035186421303952,
+    "heading_rmse_rad": 0.02004963334514369,
+    "rate_rms_rad_s": 0.06923183364033912,
+    "movement_rad": 0.5625645164034158,
+    "survived": 96,
+    "episodes": 96,
+    "active": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.08976175227026595,
+    "heading_rmse_rad": 0.019592387753398166,
+    "rate_rms_rad_s": 0.07077100510468527,
+    "movement_rad": 0.5830748768482706,
+    "survived": 96,
+    "episodes": 96,
+    "active": 13981,
+    "gain_vs_lqr_pct": 0.6531264716156282
+  },
+  "positive": {
+    "rmse_m": 0.08976175227026595,
+    "heading_rmse_rad": 0.019592387753398166,
+    "rate_rms_rad_s": 0.07077100510468527,
+    "movement_rad": 0.5830748768482706,
+    "survived": 96,
+    "episodes": 96,
+    "active": 13981,
+    "gain_vs_lqr_pct": 0.6531264716156282
+  },
+  "student": {
+    "rmse_m": 0.0893422038817464,
+    "heading_rmse_rad": 0.02002141502587797,
+    "rate_rms_rad_s": 0.07063584810065106,
+    "movement_rad": 0.5780947927984468,
+    "survived": 96,
+    "episodes": 96,
+    "active": 7890,
+    "gain_vs_lqr_pct": 1.11747592602236
+  },
+  "oldppo": {
+    "rmse_m": 0.0893121850805847,
+    "heading_rmse_rad": 0.020017590425420898,
+    "rate_rms_rad_s": 0.07065192642959012,
+    "movement_rad": 0.5784484894946528,
+    "survived": 96,
+    "episodes": 96,
+    "active": 8332,
+    "gain_vs_lqr_pct": 1.1507002556177315
+  },
+  "ppo": {
+    "rmse_m": 0.08904671891082971,
+    "heading_rmse_rad": 0.019995424546120164,
+    "rate_rms_rad_s": 0.07107219836181199,
+    "movement_rad": 0.5815958574941986,
+    "survived": 96,
+    "episodes": 96,
+    "active": 7334,
+    "gain_vs_lqr_pct": 1.44451397165688
+  }
+}

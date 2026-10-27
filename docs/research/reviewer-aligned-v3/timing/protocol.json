@@ -1,0 +1,49 @@
+{
+  "profiles": [
+    "absolute_100us",
+    "dedicated_spin"
+  ],
+  "cpus": [
+    4,
+    3
+  ],
+  "worker_nice": 19,
+  "stress_nice": 19,
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "cases": {
+    "nominal": 0.0,
+    "delay1000": 1.0,
+    "cpu_stress": 0.0,
+    "worker_crash": 0.0
+  },
+  "seconds_each": 5,
+  "noise_base": 1326000000,
+  "controller": "old age_filtered diagnostic and old25k PPO export, for attribution separate from new training",
+  "order": "random.Random(2731+seed) shuffles profiles",
+  "criterion": "Any original10ms deadline miss fails observed timing; no rebasing/forgiveness. Pure native spin deliberately consumes one CPU; cloud-only diagnosis, not portable laptop default or hard real-time guarantee.",
+  "seconds": 5,
+  "source_hashes": {
+    "tools/reviewer_v3/timing3.py": "aa6f1520c457ff536811f4ed2f671c67c4c58dc429dcfc10bf6f7c376f30fcd3",
+    "tools/reviewer_v3/spin_wait.c": "c6c4d66316fdebbb5754c5c0f651f81a2af8191eb9fe88438ee6f24e81841f97",
+    "tools/reviewer_v3/protocol.json": "9d3420727b274a1119e1254484fd16bdae63aa43c667adc0e77b674fa78b1937",
+    "tools/controller_review/realtime_followup.py": "c9a940b6f529f43a570ecb67f5eb503c58fd971fbe60277e2031a0f4b1f8cfe6",
+    "tools/controller_review/realtime_optimized.py": "5c06fc0aa7f1f5392a9a7f032bbcbda17632be258fb499f8a2cd712d58d6630e",
+    "tools/controller_review/realtime_kernels.py": "af016e0c6d75fed0f51aedcaaa5dae0c0b590dfea7b346d324915cc0edc96292",
+    "tools/controller_review/causal_student.py": "5da481f7a18f3b03156372431a90197b7313ae572b85e9d2700e083e57798539",
+    "tools/reviewer_followup/filtered.py": "a09f8e113f424690ff9eb60aa159845774b042d60da4181ab26246354bd16744",
+    "tools/reviewer_campaign/supervisor.py": "a745d28aac873aba8365ade9c87f647be9ac17a33d14951c5054f097854b526d"
+  },
+  "model_root": "/workspace/LANS/docs/research/reviewer-causal-v1/export",
+  "model_hashes": {
+    "701": "7b4f4c81c0bbfb2850800887dbf55302900ca45ce567af8130c1f28b876f2a32",
+    "802": "1d5918268928c4566325f2ef23348e77a298ad415939e6ad7d44f1c0969234fd",
+    "903": "5f02de701170a8c4237fe22cd7b2a53aec7acb66b6790464fa2c19b410f672af"
+  },
+  "cgroup_cpu_max": "400000 100000",
+  "scheduler_policy": 0,
+  "interpretation": "Any miss fails observed strict10ms. Full spin consumes one CPU; host not isolated; no WCET/physical safety or laptop default claim."
+}

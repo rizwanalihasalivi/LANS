@@ -1,0 +1,65 @@
+{
+  "profile": "latency_compensated_query_v7",
+  "history_semantics": "14=known prior filtered residual/0.08;15/16/17/19zero",
+  "sha256": {
+    "golden.npz": "0a03aa2afc481ca168821c7878ed961f87808013af2f4ab47835d92cb06743d5",
+    "model-701.npz": "be908cbf6ea3cfe4fdca53882e024586391eb276aa171c85f001e95ec84c80b2",
+    "model-802.npz": "01db910a1994f26ec7269a18dd65c9fda980adf9e6c93d75f0c51e7cc2c9ed35",
+    "model-903.npz": "1f899bc47fee50498495b15dedd7506301293ff682596dc3eac28af654400f03"
+  },
+  "export_checks": [
+    {
+      "seed": 701,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "nonzero_causal_history_tested": true
+    },
+    {
+      "seed": 802,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 3.814697265625e-06,
+      "nonzero_causal_history_tested": true
+    },
+    {
+      "seed": 903,
+      "rows": 24300,
+      "action_disagreements": 0,
+      "max_logit_error": 4.76837158203125e-06,
+      "nonzero_causal_history_tested": true
+    }
+  ],
+  "model_provenance": {
+    "701": {
+      "source_sha256": "8b2abd3dc0101937030a62b0d682e2e5e4d3b149d7f07d4e696f6ec59cee6bd6",
+      "arm": "nohistory",
+      "additional_steps": 100000,
+      "source_v3_steps": 100000,
+      "history_column_norm": 0.0,
+      "research_diagnostic_only": true
+    },
+    "802": {
+      "source_sha256": "65267b48a469c5925465398291d76f2713a32474552dcb9f6702b0f5b56dd4aa",
+      "arm": "nohistory",
+      "additional_steps": 100000,
+      "source_v3_steps": 100000,
+      "history_column_norm": 0.0,
+      "research_diagnostic_only": true
+    },
+    "903": {
+      "source_sha256": "cdfc2aafaf6e717bed39ef0568ef01debe37520e78b89f1dcb7e8144e3bd6599",
+      "arm": "nohistory",
+      "additional_steps": 100000,
+      "source_v3_steps": 100000,
+      "history_column_norm": 0.0,
+      "research_diagnostic_only": true
+    }
+  },
+  "adaptation": {
+    "original_profile": "causal_filter_history_v5",
+    "weights_unchanged": true,
+    "new_training_steps": 0,
+    "scope": "Diagnostic input forecast adapter; pretrained policy not retrained on forecast-state distribution"
+  }
+}

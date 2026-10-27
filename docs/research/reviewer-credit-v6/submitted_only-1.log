@@ -1,0 +1,10 @@
+{'steps': 10000, 'submitted': 8061, 'active': 1648}
+{'steps': 20000, 'submitted': 16284, 'active': 3021}
+{'steps': 30000, 'submitted': 24579, 'active': 3799}
+{'steps': 40000, 'submitted': 31337, 'active': 4916}
+{'steps': 50000, 'submitted': 36011, 'active': 5353}
+{'steps': 60000, 'submitted': 42334, 'active': 6396}
+{'steps': 70000, 'submitted': 47737, 'active': 7532}
+{'steps': 80000, 'submitted': 54114, 'active': 8457}
+{'steps': 90000, 'submitted': 60386, 'active': 9796}
+{'steps': 100000, 'submitted': 68233, 'active': 11658}

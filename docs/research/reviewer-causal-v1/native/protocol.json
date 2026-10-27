@@ -1,0 +1,60 @@
+{
+  "kind": "Native PPO-export interface development, not performance promotion",
+  "smoke": false,
+  "source_hashes": {
+    "tools/reviewer_campaign/native.py": "590d0f1f980cf1d3b5c717c0cc5e87c4ab60b3ecec622839097b44abaac34d93",
+    "tools/reviewer_campaign/supervisor.py": "a745d28aac873aba8365ade9c87f647be9ac17a33d14951c5054f097854b526d",
+    "tools/reviewer_campaign/runtime_adapter.py": "7ff097bb95574baf84bb641e59f08a21f6dec8cfa3bd032052901e76ac73a3c0",
+    "integrations/webots/controllers/reviewer_validation/reviewer_validation.py": "dcb6f541013adb7637761f1c26e46dc27ac8a1fac43a64e7a05635212fab33fe",
+    "integrations/webots/research/causal_runtime.py": "da0204a69331a683c3d795b83a70316289c26bd63b2dcbfd579f0212f376ccfd",
+    "tools/controller_review/realtime_causal.py": "6c62ade961ea550106897ac4154ee05adc2231f026c45d8a94bd702347fba652"
+  },
+  "model_hashes": {
+    "student.pt": "7b4f4c81c0bbfb2850800887dbf55302900ca45ce567af8130c1f28b876f2a32",
+    "normalization.npz": "89dba0a76a93d998f8fffb8d68bfc969a851211ab59a7669526cb1c130182c7a",
+    "complete.json": "a04af64a3018c7aa5819317005266ddddd215e34124f3e606163af643a0f4897"
+  },
+  "policy_origin": "25k causal PPO export; causal_student mode is legacy interface label",
+  "methods": [
+    "lqr",
+    "causal_student"
+  ],
+  "definitions": [
+    [
+      "dlc20",
+      20,
+      "dlc220",
+      [
+        1,
+        0.0,
+        0.0,
+        0.0
+      ],
+      0
+    ],
+    [
+      "sine15",
+      15,
+      "sine120",
+      [
+        0,
+        2.5,
+        120.0,
+        0.3
+      ],
+      0
+    ],
+    [
+      "dlc25_delay100",
+      25,
+      "dlc220",
+      [
+        1,
+        0.0,
+        0.0,
+        0.0
+      ],
+      100
+    ]
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "0.01": {
+    "lqr": {
+      "rmse_m": 0.04655137127474474,
+      "heading_rmse_rad": 0.012601499903666222,
+      "rate_rms_rad_s": 0.06525592031231209,
+      "episodes": 6,
+      "survived": 6
+    },
+    "raw": {
+      "rmse_m": 0.04304078033976461,
+      "heading_rmse_rad": 0.012129053751916481,
+      "rate_rms_rad_s": 0.07049912546133533,
+      "episodes": 6,
+      "survived": 6
+    },
+    "compensated": {
+      "rmse_m": 0.04309067093524595,
+      "heading_rmse_rad": 0.012132041899569035,
+      "rate_rms_rad_s": 0.07067679059024823,
+      "episodes": 6,
+      "survived": 6
+    }
+  },
+  "0.02": {
+    "lqr": {
+      "rmse_m": 0.04755432507324551,
+      "heading_rmse_rad": 0.012792505633562462,
+      "rate_rms_rad_s": 0.06337188955486937,
+      "episodes": 6,
+      "survived": 6
+    },
+    "raw": {
+      "rmse_m": 0.04372470196421746,
+      "heading_rmse_rad": 0.012318456891632686,
+      "rate_rms_rad_s": 0.06858119096880187,
+      "episodes": 6,
+      "survived": 6
+    },
+    "compensated": {
+      "rmse_m": 0.04351870099090343,
+      "heading_rmse_rad": 0.012283482152575359,
+      "rate_rms_rad_s": 0.06904929886048054,
+      "episodes": 6,
+      "survived": 6
+    }
+  },
+  "0.04": {
+    "lqr": {
+      "rmse_m": 0.04689484706360168,
+      "heading_rmse_rad": 0.012688268714167438,
+      "rate_rms_rad_s": 0.06475348989568483,
+      "episodes": 6,
+      "survived": 6
+    },
+    "raw": {
+      "rmse_m": 0.04689484706360168,
+      "heading_rmse_rad": 0.012688268714167438,
+      "rate_rms_rad_s": 0.06475348989568483,
+      "episodes": 6,
+      "survived": 6
+    },
+    "compensated": {
+      "rmse_m": 0.04689484706360168,
+      "heading_rmse_rad": 0.012688268714167438,
+      "rate_rms_rad_s": 0.06475348989568483,
+      "episodes": 6,
+      "survived": 6
+    }
+  },
+  "0.1": {
+    "lqr": {
+      "rmse_m": 0.04714974580898714,
+      "heading_rmse_rad": 0.012551627745001048,
+      "rate_rms_rad_s": 0.06348989178444746,
+      "episodes": 6,
+      "survived": 6
+    },
+    "raw": {
+      "rmse_m": 0.04714974580898714,
+      "heading_rmse_rad": 0.012551627745001048,
+      "rate_rms_rad_s": 0.06348989178444746,
+      "episodes": 6,
+      "survived": 6
+    },
+    "compensated": {
+      "rmse_m": 0.04714974580898714,
+      "heading_rmse_rad": 0.012551627745001048,
+      "rate_rms_rad_s": 0.06348989178444746,
+      "episodes": 6,
+      "survived": 6
+    }
+  }
+}

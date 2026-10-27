@@ -1,0 +1,35 @@
+0 224 {'student': 28572, 'oldage_ppo': 28572, 'ppo': 28572}
+1 448 {'student': 57144, 'oldage_ppo': 57144, 'ppo': 57144}
+2 672 {'student': 85716, 'oldage_ppo': 85716, 'ppo': 85716}
+{
+  "eligible": false,
+  "reasons": [
+    "lacks1% gain vs student"
+  ],
+  "paired_seed_gains_vs_student_pct": [
+    0.3366091909126401,
+    0.7814863705825292,
+    0.600001737010003
+  ],
+  "episodes": 672,
+  "transitions": 922992,
+  "submitted_queries_replayed": {
+    "student": 85716,
+    "oldage_ppo": 85716,
+    "ppo": 85716
+  },
+  "severe_exact_pairs": 144,
+  "raw_metrics_filter_fusion_reward_model_hashes_verified": true,
+  "reserved": "unopened; corresponding selected-controller timing required separately",
+  "planner_headroom_screen_pass": false,
+  "planner_headroom_reasons": [
+    "lacks1% gain vs student"
+  ],
+  "planner_group_gains_vs_student_pct": [
+    0.580340107031263,
+    0.5958238522679626,
+    0.14403426939344488
+  ],
+  "full_observer_plant_query_replay_verified": true,
+  "planner_current_observable_state_replay_verified": true
+}

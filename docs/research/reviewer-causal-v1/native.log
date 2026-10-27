@@ -1,0 +1,6 @@
+dlc20-lqr survived True deadline misses 1299
+dlc20-causal_student survived True deadline misses 1300
+sine15-lqr survived True deadline misses 1666
+sine15-causal_student survived True deadline misses 1666
+dlc25_delay100-lqr survived True deadline misses 1079
+dlc25_delay100-causal_student survived True deadline misses 1079

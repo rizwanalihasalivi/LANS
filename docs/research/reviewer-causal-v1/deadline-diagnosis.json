@@ -1,0 +1,52 @@
+{
+  "real_worker_miss_categories": {
+    "already_late_at_release": 783,
+    "processing_ge10ms_after_timely_release": 131,
+    "combined_release_and_processing": 71
+  },
+  "native_compute_and_pacing": [
+    {
+      "case": "dlc20-lqr",
+      "median_control_wall_ms": 1.9033215,
+      "median_release_interval_ms": 20.819595,
+      "deadline_misses": 1299,
+      "ticks": 1300
+    },
+    {
+      "case": "sine15-lqr",
+      "median_control_wall_ms": 2.573882,
+      "median_release_interval_ms": 25.947768500000002,
+      "deadline_misses": 1666,
+      "ticks": 1667
+    },
+    {
+      "case": "dlc25_delay100-causal_student",
+      "median_control_wall_ms": 1.2882669999999998,
+      "median_release_interval_ms": 16.158975,
+      "deadline_misses": 1079,
+      "ticks": 1080
+    },
+    {
+      "case": "sine15-causal_student",
+      "median_control_wall_ms": 2.332199,
+      "median_release_interval_ms": 16.273808000000002,
+      "deadline_misses": 1666,
+      "ticks": 1667
+    },
+    {
+      "case": "dlc20-causal_student",
+      "median_control_wall_ms": 2.992212,
+      "median_release_interval_ms": 20.179852,
+      "deadline_misses": 1300,
+      "ticks": 1300
+    },
+    {
+      "case": "dlc25_delay100-lqr",
+      "median_control_wall_ms": 0.8466750000000001,
+      "median_release_interval_ms": 16.663618,
+      "deadline_misses": 1079,
+      "ticks": 1080
+    }
+  ],
+  "limitations": "Descriptive timing decomposition, not causal attribution of OS versus prior-loop work. Native stepping/actuation IPC is outside control-compute duration but affects release pacing."
+}

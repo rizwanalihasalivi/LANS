@@ -1,0 +1,8 @@
+{
+  "actor_queries_replayed": 514130,
+  "executed_rewards_recomputed": 1186372,
+  "batch_rounding_fallbacks": 0,
+  "causal_channels_verified": true,
+  "actor_and_reward_replay_pass": true,
+  "not_a_training_or_selection_stage": true
+}

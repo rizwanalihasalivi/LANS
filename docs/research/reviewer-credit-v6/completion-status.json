@@ -1,0 +1,22 @@
+{
+  "additional_training_steps": 600000,
+  "episodes": 672,
+  "selected": null,
+  "student_relative_gain_pct": {
+    "all_actions": 0.31626578373237235,
+    "submitted_only": 0.5613832366408777
+  },
+  "full_selection_pass": false,
+  "strict_timing_pass": false,
+  "timing_misses": 657,
+  "timing_ticks": 7500,
+  "functional_fallback_pass": true,
+  "reserved_unopened": true,
+  "actual_laptop_run": false,
+  "physical_vehicle_validation": false,
+  "robust_scalar_algorithm_contract": true,
+  "matched_robust_vehicle_reproduction": false,
+  "all32_references_structurally_reviewed": true,
+  "all32_primary_verified": false,
+  "submission_ready": false
+}

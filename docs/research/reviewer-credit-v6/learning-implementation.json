@@ -1,0 +1,10 @@
+{
+  "stable_baselines3": "2.0.0",
+  "torch": "2.0.0+cpu",
+  "numpy": "1.23.5",
+  "scipy": "1.10.1",
+  "numba": "0.57.1",
+  "generated_train_sha256": "ea7f7750b9e3d1a39ec97276e66e3c9e0ac0264fd9fce86620ff432f40827445",
+  "same_fixed_tick_gae_and_all_transition_critic": true,
+  "submitted_actor_means_rescale_relative_to_all_transition_critic": true
+}

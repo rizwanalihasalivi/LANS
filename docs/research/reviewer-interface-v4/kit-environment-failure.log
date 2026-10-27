@@ -1,0 +1,122 @@
+[reports/opening-report-2026-10-26 2956646] research: verify realistic-delivery timing heartbeat and worker stall recovery
+ 104 files changed, 37702 insertions(+)
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/protocol.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-701/recover-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-701/recover-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-701/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-701/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-802/recover-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-802/recover-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-802/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-802/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-903/recover-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-903/recover-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-903/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/seed-903/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/recovery/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/cpu_stress-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/cpu_stress-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/delay1000-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/delay1000-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/delay20-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/delay20-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/nominal-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/nominal-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/worker_crash-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-701/worker_crash-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/cpu_stress-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/cpu_stress-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/delay1000-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/delay1000-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/delay20-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/delay20-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/nominal-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/nominal-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/worker_crash-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-802/worker_crash-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/cpu_stress-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/cpu_stress-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/delay1000-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/delay1000-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/delay20-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/delay20-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/nominal-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/nominal-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/worker_crash-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/fresh_v4/seed-903/worker_crash-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/heartbeat-701-cpu_stress.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/heartbeat-701-nominal.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/heartbeat-802-cpu_stress.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/heartbeat-802-nominal.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/heartbeat-903-cpu_stress.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/heartbeat-903-nominal.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/kernel-costs.csv
+ create mode 100755 docs/research/reviewer-interface-v4/timing/native_heartbeat
+ create mode 100644 docs/research/reviewer-interface-v4/timing/protocol.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/cpu_stress-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/cpu_stress-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/delay1000-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/delay1000-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/delay20-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/delay20-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/nominal-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/nominal-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/worker_crash-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-701/worker_crash-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/cpu_stress-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/cpu_stress-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/delay1000-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/delay1000-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/delay20-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/delay20-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/nominal-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/nominal-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/worker_crash-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-802/worker_crash-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/cpu_stress-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/cpu_stress-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/delay1000-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/delay1000-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/delay20-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/delay20-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/nominal-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/nominal-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/verification.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/worker_crash-packets.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/scalar_aligned/seed-903/worker_crash-ticks.csv
+ create mode 100644 docs/research/reviewer-interface-v4/timing/source/tools/controller_review/laptop_full_controller.py
+ create mode 100644 docs/research/reviewer-interface-v4/timing/source/tools/controller_review/native_heartbeat4.c
+ create mode 100644 docs/research/reviewer-interface-v4/timing/source/tools/controller_review/timing_interface4.py
+ create mode 100644 docs/research/reviewer-interface-v4/timing/source/tools/reviewer_v4/interface4.py
+ create mode 100644 docs/research/reviewer-interface-v4/timing/source/tools/reviewer_v4/protocol.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/source/tools/reviewer_v4/scalar_cost.py
+ create mode 100644 docs/research/reviewer-interface-v4/timing/summary.json
+ create mode 100644 docs/research/reviewer-interface-v4/timing/verification.json
+To https://github.com/rizwanalihasalivi/LANS.git
+   f66952e..2956646  reports/opening-report-2026-10-26 -> reports/opening-report-2026-10-26
+Traceback (most recent call last):
+  File "/workspace/LANS/tools/controller_review/run_interface_work.py", line 51, in <module>
+    if __name__=='__main__':main()
+  File "/workspace/LANS/tools/controller_review/run_interface_work.py", line 43, in main
+    run([args.smoke_python,kit/'tools/controller_review/laptop_full_controller.py','--profile','fresh_v4','--models',kit/'actor','--seconds','1','--output',smoke],out/'kit-smoke.log',cwd=kit)
+  File "/workspace/LANS/tools/controller_review/run_interface_work.py", line 19, in run
+    with log.open('w') as f:subprocess.run(list(map(str,cmd)),cwd=cwd,env=env,stdout=f,stderr=subprocess.STDOUT,check=True)
+  File "/workspace/.lans-python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/workspace/.lans-python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/workspace/.lans-python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/lans-kit-venv/bin/python'

@@ -1,0 +1,16 @@
+{
+  "id":"reviewer-v6-submitted-action-credit",
+  "purpose":"Finite matched test of removing actor-surrogate/entropy/KL contributions from sampled actions never submitted while a worker is busy. This is a variance/credit-assignment intervention, not proof that the original policy gradient was biased.",
+  "arms":["all_actions","submitted_only"],
+  "seeds":[5701,5802,5903],
+  "steps_each":100000,
+  "total_additional_steps":600000,
+  "training_noise_base":1426000000,
+  "initialization":"Same paired v5 nohistory endpoint for both arms, including critic and optimizer; restore paired random seeds. Each source already includes v3 100k plus v5 100k PPO steps and original supervised pretraining.",
+  "interface":"Unchanged causal_filter_history_v5; input14 weights remainzero. Same v4 FreshController, reward, normalization, fixed10ms plant and minimum10ms delivery. No future completion/service information enters actor.",
+  "intervention":"Fixed-tick GAE and critic loss on ALL transitions in BOTH arms. Only actor surrogate, advantage normalization, entropy and KL use submitted mask in submitted_only; all_actions mask is allones. No minibatch resampling. Equal environment budgets; effective actor sample counts differ and must be reported.",
+  "development":{"speeds":[15,25],"paths":["sine120","dlc220"],"mirrors":[-1,1],"scenarios":["nominal","tire","delay20","delay100"],"sources":["lqr","negative","positive","student","v3ppo","all_actions","submitted_only"],"noise_base":1436000000,"episodes":672},
+  "acceptance":"Original unchanged >=1% lower penalized lateral RMSE versus LQR, student and BOTH fixed controls; positive student gains in all3 pairs; no survival loss; nominal <=1.02LQR; heading and actuator-rate RMS <=1.05LQR. Exactly100k endpoints only, no per-seed mixing. Select eligible minimumRMSE, tieall_actions.",
+  "timing":"Separately attribute original10ms misses to release lateness, processing/preemption and threadCPU. Test unchanged v5 diagnostic model, all3 actors, all5 realworker cases at5s, after untimed warmup, pinned control/helper CPUs, one process perrole, no concurrent training. Preserve fixed original targets, late/stale rejection. Native heartbeat3x500idle+3x500stress, recordcgroup snapshots; observed pass notWCET.",
+  "stop":"Only two arms x3 fixed100k endpoints; no tuning, extra checkpoints or extensions after outcomes. Timing and independent verification must pass for a selectedmodel before reserved/native confirmation. Laptop and physical hardware cannot be claimed from cloud. Existing robust-reference assumptions must not be invented."
+}

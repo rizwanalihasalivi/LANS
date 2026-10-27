@@ -11,9 +11,12 @@ from laptop_full_controller import CausalEnv,controller,load_portable,advance,pa
 def main():
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--models',type=Path,required=True)
     args=p.parse_args();report=json.loads((args.run/'summary.json').read_text());actor=load_portable(args.models);actor.golden_check()
+    history_profile=json.loads((args.models/'manifest.json').read_text()).get('profile')=='causal_filter_history_v5'
+    removed=[15,16,17,19] if history_profile else [14,15,16,17,19]
     count=packets_count=0
     assert {r['case'] for r in report['episodes']}==set(CASES)
     for e in report['episodes']:
+        assert (e['profile']=='fresh_history')==history_profile
         name=e['case'];ticks=list(csv.DictReader((args.run/f'{name}-ticks.csv').open()))
         file=args.run/f'{name}-packets.csv';packets=list(csv.DictReader(file.open())) if file.exists() else []
         issued={int(r['release_ns']):r for r in ticks if r.get('submitted','True')=='True'};packet_map={int(r['seq']):r for r in packets}
@@ -24,12 +27,12 @@ def main():
             assert times==sorted(times) and times[0] in issued
             assert times[3]-times[2]>=round(CASES[name]*1e9)
             x=np.array(json.loads(r['observation_json']),np.float32)
-            assert x.shape==(20,) and np.isfinite(x).all() and np.all(x[[14,15,16,17,19]]==0)
+            assert x.shape==(20,) and np.isfinite(x).all() and np.all(x[removed]==0)
             residual=[-.08,-.04,0.,.04,.08][actor.logits(actor.load(e['seed']),x[None,:]).argmax(1)[0]]
             assert abs(residual-float(r['residual']))<1e-12
         env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',e['noise_id']));env.reset()
         env.estimate=np.zeros(4);env.cov=np.eye(4)*.01;env.previous=np.zeros(4);env.ctrl=controller(e['profile'])
-        misses=0;active=0
+        misses=0;active=0;previous_filter=0.
         for i,r in enumerate(ticks):
             assert int(r['tick'])==i and int(r['release_ns'])<=int(r['apply_ns'])
             if i:assert int(r['target_ns'])==int(ticks[i-1]['target_ns'])+10000000
@@ -39,6 +42,7 @@ def main():
             if int(r['release_ns']) in queries_by_observed:
                 query=np.array(json.loads(queries_by_observed[int(r['release_ns'])]['observation_json']),np.float32)
                 np.testing.assert_array_equal(query[:9],env.obs[:9])
+                if history_profile:assert query[14]==np.float32(np.clip(previous_filter/.08,-1.,1.))
             assert abs(command-max(-.5,min(.5,baseline+weight*float(r['filtered_residual']))))<1e-12
             seq=int(r['packet_seq'])
             if seq>=0:
@@ -50,6 +54,7 @@ def main():
             if weight:assert age is not None and 0<=age<.05
             active+=abs(command-baseline)>1e-10
             old=env.state[5];env.state=advance(env.state,command,20.,.9,1.);env.tick+=1
+            previous_filter=float(r['filtered_residual'])
             y,h,_=path_values(env.state[0],env.path)
             for a,b in ((env.state[1]-y,float(r['error'])),(env.state[2]-h,float(r['heading_error'])),
                         (env.state[5],float(r['actuator'])),((env.state[5]-old)/.01,float(r['actuator_rate']))):assert abs(a-b)<1e-12

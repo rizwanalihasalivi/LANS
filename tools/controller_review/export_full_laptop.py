@@ -33,10 +33,11 @@ integrations/webots/research/revision9/bootstrap.py'''.splitlines()
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
     p.add_argument('--actor-dir',type=Path,default=ROOT/'docs/research/reviewer-causal-v1/laptop-kit')
-    p.add_argument('--profile',choices=['age_filtered','aligned','scalar_aligned','fresh_v4'],default='age_filtered');args=p.parse_args()
+    p.add_argument('--profile',choices=['age_filtered','aligned','scalar_aligned','fresh_v4','fresh_history'],default='age_filtered');args=p.parse_args()
     out=args.output;out.mkdir(parents=True,exist_ok=False)
-    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile in ('aligned','scalar_aligned','fresh_v4') else [])
-    if args.profile in ('scalar_aligned','fresh_v4'):files+=['tools/reviewer_v4/'+n for n in ('boot4.py','interface4.py','scalar_cost.py','protocol.json')]
+    files=FILES+(['tools/reviewer_v3/boot3.py','tools/reviewer_v3/aligned.py','tools/reviewer_v3/protocol.json'] if args.profile in ('aligned','scalar_aligned','fresh_v4','fresh_history') else [])
+    if args.profile in ('scalar_aligned','fresh_v4','fresh_history'):files+=['tools/reviewer_v4/'+n for n in ('boot4.py','interface4.py','scalar_cost.py','protocol.json')]
+    if args.profile=='fresh_history':files+=['tools/reviewer_v5/protocol.json']
     for name in files:
         target=out/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/name,target)
     shutil.copytree(args.actor_dir,out/'actor')

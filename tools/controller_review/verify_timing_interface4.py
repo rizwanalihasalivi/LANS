@@ -31,6 +31,7 @@ def main():
                     packet=packet_map.get(int(r['packet_seq']));ctrl.packet=None if packet is None else (int(packet['seq']),(int(packet['observed_ns'])-origin)/1e9,float(packet['residual']))
                     ctrl.previews=env.obs[6:9].astype(float)*.02
                     expected=observation(env.state,env.estimate,env.measured_speed,ctrl.previews,ctrl,(int(r['release_ns'])-origin)/1e9)
+                    if getattr(ctrl,'policy_history_feature',False):expected[14]=float(np.clip(ctrl.filtered/.08,-1.,1.))
                     if int(r['release_ns']) in queries:np.testing.assert_array_equal(expected,np.array(json.loads(queries[int(r['release_ns'])]['observation_json']),np.float32))
                     command,reason=ctrl.choose((int(r['decision_ns'])-origin)/1e9,env.baseline,env.estimate,env.state[5],env.measured_speed,env.curvature,env.gain)
                     for actual,key in ((command,'decision_command'),(ctrl.weight,'decision_weight'),(ctrl.filtered,'decision_filter'),(ctrl.good,'decision_good')):

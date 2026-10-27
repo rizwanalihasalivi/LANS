@@ -34,10 +34,12 @@ CASES={'nominal':0.,'delay20':.02,'delay1000':1.,'cpu_stress':0.,'worker_crash':
 
 
 def controller(profile):
-    if profile in ('scalar_aligned','fresh_v4'):
+    if profile in ('scalar_aligned','fresh_v4','fresh_history'):
         sys.path.insert(0,str(ROOT/'tools/reviewer_v4'))
         from interface4 import ScalarAligned,FreshController
-        return ScalarAligned() if profile=='scalar_aligned' else FreshController()
+        result=ScalarAligned() if profile=='scalar_aligned' else FreshController()
+        result.policy_history_feature=profile=='fresh_history'
+        return result
     if profile=='aligned':
         sys.path.insert(0,str(ROOT/'tools/reviewer_v3'))
         from aligned import AlignedController
@@ -116,6 +118,9 @@ def write_csv(file,rows):
 
 
 def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_base=1256000000):
+    declared=json.loads((Path(models)/'manifest.json').read_text()).get('profile')
+    if (profile=='fresh_history')!=(declared=='causal_filter_history_v5'):
+        raise ValueError('Controller/model input ABI mismatch; history and legacy artifacts cannot be mixed')
     env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',noise_base+seed));env.reset()
     # Warm every parent numerical path outside the measured window.
     for _ in range(40):env.step(2)
@@ -172,6 +177,7 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                 else:ctrl.packet=(packet['seq'],(packet['observed_ns']-origin)/1e9,packet['residual'])
                 ctrl.previews=env.obs[6:9].astype(float)*.02
                 obs=observation(env.state,env.estimate,env.measured_speed,ctrl.previews,ctrl,(release-origin)/1e9)
+                if getattr(ctrl,'policy_history_feature',False):obs[14]=float(np.clip(ctrl.filtered/.08,-1.,1.))
                 built=time.perf_counter_ns()
                 submitted=False
                 if not busy and not dead:
@@ -238,7 +244,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--models',type=Path,default=ROOT/'actor')
     p.add_argument('--output',type=Path,required=True);p.add_argument('--seconds',type=float,default=13.)
     p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
-    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4'],default='age_filtered')
+    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4','fresh_history'],default='age_filtered')
     args=p.parse_args()
     if not .5<=args.seconds<=30:p.error('seconds must be0.5..30')
     args.output.mkdir(parents=True,exist_ok=False)

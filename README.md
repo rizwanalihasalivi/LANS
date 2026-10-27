@@ -10,6 +10,17 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
+- **Latest matched history ablation:** [600,000 additional transitions and 672 fresh episodes](docs/research/reviewer-history-v5/final-update.md).
+  The balanced no-history diagnostic gains 2.956% over LQR, with 0.52% lower
+  heading error and 4.73% higher actuator-rate RMS. Its 0.943% student-relative
+  gain misses the unchanged 1% requirement. The history variant also fails the
+  steering-rate limit. No winner is promoted; reserved tests remain unopened.
+  [Python 3.10 diagnostic kit](docs/research/reviewer-history-v5/LANS_History_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-history-v5/LANS_History_Reports.zip)
+  include the versioned causal input and ABI guards. The 1,500-tick cloud smoke
+  has 274 deadline misses; functional fallback passes. Actual laptop and physical
+  validation are pending. Resume with
+  `python tools/controller_review/run_history_work.py --publish`.
 - **Latest deep diagnosis:** [realistic asynchronous delivery and scalar predictor](docs/research/reviewer-interface-v4/final-update.md).
   The unchanged PPO endpoints gain2.579% over LQR, with0.51% lower heading error
   and4.17% higher actuator-rate RMS. The roughly0.57% student-relative gain still

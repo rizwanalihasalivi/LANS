@@ -1,5 +1,12 @@
 # LANS opening report
 
+Latest evidence: [causal-history correction and matched training ablation](../research/reviewer-history-v5/final-update.md).
+Six fixed 100,000-transition pilots and 672 fresh development episodes are
+complete. The balanced diagnostic gains 2.956% over LQR, but its 0.943% gain over
+the student fails the frozen 1% requirement. The history variant also exceeds
+the steering-rate limit. No winner is selected; strict timing, reserved/native
+confirmation and actual hardware validation remain incomplete.
+
 Latest research evidence: [27 October2026 interface/compute diagnosis](../research/reviewer-interface-v4/final-update.md).
 Realistic delivery and freshness-only authority improve the unchanged PPO to
 2.579% tracking gain over LQR with balanced heading/rate metrics. Full selection

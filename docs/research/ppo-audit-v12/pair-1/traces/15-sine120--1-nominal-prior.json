@@ -1,0 +1,19 @@
+{
+  "pair": 1,
+  "speed": 15,
+  "path": "sine120",
+  "mirror": -1,
+  "scenario": "nominal",
+  "source": "prior",
+  "noise_id": 1826115000,
+  "trace": "15-sine120--1-nominal-prior.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03707871776702525,
+  "heading_rmse_rad": 0.006737282012792906,
+  "rate_rms_rad_s": 0.04305229603704671,
+  "active_ticks": 18,
+  "movement_rad": 0.3870308749887294,
+  "trace_sha256": "58056a14262aa2a775ab578501c529c4445a6ed7f480d6f698397c352422bcbd"
+}

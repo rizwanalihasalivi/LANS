@@ -1,0 +1,12 @@
+{
+  "source_sha256": "616beaec14503d224690afcc250a2e2a753bc97d23ee624954131d4f2b5ad37c",
+  "interval": [
+    10000,
+    20000
+  ],
+  "replayed_environment_steps": 10000,
+  "source_checkpoint_sha256": "08c2f9b93575db7fabb1d686694f75b9ac8dccf95bdcc9e0fb7450c085e9df4e",
+  "expected_checkpoint_sha256": "73aebe84c21854f632f3472aeff3d19adc9c24dc8a18a232fe7539a75a5a4a57",
+  "exact_model_optimizer_environment_queue_normalizer_rng_match": true,
+  "scope": "Separate-process replay of an actual continued-0 training interval. No new endpoint or selected evidence is created."
+}

@@ -1,0 +1,19 @@
+{
+  "pair": 1,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "nominal",
+  "source": "legacy_prior",
+  "noise_id": 1826125100,
+  "trace": "25-dlc220--1-nominal-legacy_prior.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.07549912215476459,
+  "heading_rmse_rad": 0.024131290327313048,
+  "rate_rms_rad_s": 0.10183349039555323,
+  "active_ticks": 109,
+  "movement_rad": 0.7910588377484667,
+  "trace_sha256": "83240aa15d7886b08396faad08575b4555fba2edaa837b4819d4b49054fb7327"
+}

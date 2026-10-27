@@ -1,0 +1,19 @@
+{
+  "pair": 1,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "delay20",
+  "source": "negative",
+  "noise_id": 1826125120,
+  "trace": "25-dlc220--1-delay20-negative.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.07993346985330661,
+  "heading_rmse_rad": 0.023284371161961033,
+  "rate_rms_rad_s": 0.10268163609031211,
+  "active_ticks": 204,
+  "movement_rad": 0.7855365267216392,
+  "trace_sha256": "ff54d265a4f3e297b1b87bd45418aeb3fb27c8edc379935c65b47f1917aaccc4"
+}

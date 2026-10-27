@@ -1,0 +1,19 @@
+{
+  "pair": 1,
+  "speed": 15,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "delay20",
+  "source": "oldppo",
+  "noise_id": 1826115120,
+  "trace": "15-dlc220-1-delay20-oldppo.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.032602303458741565,
+  "heading_rmse_rad": 0.005787938580581442,
+  "rate_rms_rad_s": 0.04021269318782306,
+  "active_ticks": 21,
+  "movement_rad": 0.41073307205530823,
+  "trace_sha256": "19dc22b563d6ad424d778debff83b3682cd171ed116bc838d6a5e1e19143d6d6"
+}

@@ -1,0 +1,19 @@
+{
+  "pair": 1,
+  "speed": 15,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "tire",
+  "source": "negative",
+  "noise_id": 1826115110,
+  "trace": "15-dlc220-1-tire-negative.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.05164423003593074,
+  "heading_rmse_rad": 0.009545561182475744,
+  "rate_rms_rad_s": 0.044565239906721114,
+  "active_ticks": 51,
+  "movement_rad": 0.4892382692603455,
+  "trace_sha256": "c31354319f1218da3159f118af56d1777b8f6d544063761d6f038ff8f2098a85"
+}

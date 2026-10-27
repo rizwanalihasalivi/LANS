@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "arm": "continued",
+      "pair": 0,
+      "rows": 2000,
+      "class_disagreements": 0,
+      "max_abs_error": 5.7220458984375e-06
+    },
+    {
+      "arm": "explore",
+      "pair": 0,
+      "rows": 2000,
+      "class_disagreements": 0,
+      "max_abs_error": 1.1920928955078125e-06
+    },
+    {
+      "arm": "continued",
+      "pair": 1,
+      "rows": 2000,
+      "class_disagreements": 0,
+      "max_abs_error": 3.814697265625e-06
+    },
+    {
+      "arm": "explore",
+      "pair": 1,
+      "rows": 2000,
+      "class_disagreements": 0,
+      "max_abs_error": 1.1920928955078125e-06
+    },
+    {
+      "arm": "continued",
+      "pair": 2,
+      "rows": 2000,
+      "class_disagreements": 0,
+      "max_abs_error": 5.4836273193359375e-06
+    },
+    {
+      "arm": "explore",
+      "pair": 2,
+      "rows": 2000,
+      "class_disagreements": 0,
+      "max_abs_error": 1.3113021850585938e-06
+    }
+  ],
+  "feature_schema": "causal_recovery_history_v9",
+  "controller": "forecast_rk_v12",
+  "diagnostic_only": true,
+  "sha256": {
+    "student-0.npz": "405c1ebe13b20c505ff822087615cde43d70fbe5414d6e3f01c606e59c1796f1",
+    "explore-1.npz": "a568b4dfed05b0e7fea6044608aa258260dc31b575b616ea0601038f305d68d2",
+    "prior-2.npz": "2c7d238387eea5e385eaec48838f61ad86d300ae180fc227bfceaa24b8532524",
+    "prior-1.npz": "64c4932a36b1f1d4ecdf36b43a0f70e1d0b5faecd7315ba81622467cb95479ff",
+    "explore-2.npz": "2bf6b3a294670ba5b0936ea07f9e572a8615e421437880f52726a378ee5368b0",
+    "student-2.npz": "6f82b75e8dc0dfeaff38b69dda391c2285d6d803ed0eeccc633fb1dea4944852",
+    "oldppo-2.npz": "b475ffbc4590bd6c2bd7ec6ab31e23db7b7c5e81bcc5cc609943ed962df14e35",
+    "explore-0.npz": "72e51437e0d1782eda836906dbf34ef61a514139ec0d66100c6f6cb91b4af5ca",
+    "prior-0.npz": "fa3dc83420ca4193dc814413f27d53ca3b2a34cc1bd17210a006d8c4f7be65bc",
+    "student-1.npz": "7b9cbaccf68429ddc43d23251537149b76f9c05f2c46f509e42bc45beb504fc1",
+    "oldppo-1.npz": "f5460b69f85f47f3b84ea9d63b5e465dcb77d3cad0c66ec50b2b60999b103b5c",
+    "continued-0.npz": "68393eaf7e3a99c15c8879239564bda48a2cf9ffbd9ebf8842bcbbc3e637ee9c",
+    "continued-2.npz": "970aabd3f9de09ff5bbf2c6073e4bcfb32bf5a316cbf5ccd03275ae5a619bfe2",
+    "oldppo-0.npz": "026e03a7ebff073c3d54a76adc65d9d983b4a8992f5e2b1cb39836105eb08217",
+    "continued-1.npz": "235cf932309aa6ad62c70c77502d31af5622771f2d6c14dcb6da44e9bc5971f8"
+  }
+}

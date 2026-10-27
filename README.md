@@ -10,7 +10,23 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
-- **Latest single pipeline:** [matched causal-state retraining, full replay and status](docs/research/reviewer-pipeline-v9/README.md).
+- **Latest active PPO audit — new 20% target:** [verified fixes and diagnostic results](docs/research/reviewer-audit-v10/README.md).
+  Terminal bootstrap observations, packet/request identity and numerical-domain
+  validation are corrected in a new version. A nominal RK4 predictor uses
+  average actual actuator-rate cost and matches an independent integrator.
+  All 36 core contracts pass; 360 fresh diagnostic episodes survive and
+  494,460 transitions / 247,248 neural decisions replay. On this narrower
+  nominal/tire/20ms grid, corrected PPO gains 0.379% over LQR, student 0.537%,
+  and the causal nonlearned planner 1.488%; old-predictor PPO gains 0.174%.
+  **20% is not achieved.** Frozen actors were not retrained for the new
+  numerical supervisor; no learning effect from the terminal fix is claimed.
+  Current-runtime smoke has 1/1,500 original deadline misses, with functional
+  fallback and full replay; it does not inherit v9's zero-miss timing result.
+  [Strict target checks and miss attribution](docs/research/reviewer-audit-v10-target20.json)
+  retain missing baselines and block a full-superiority claim. Resume with
+  `python tools/controller_review/run_ppo20_audit.py --publish` in the research
+  environment. Previous criteria/results remain frozen; reserved data unopened.
+- **Prior matched-training single pipeline:** [matched causal-state retraining, full replay and status](docs/research/reviewer-pipeline-v9/README.md).
   Six fixed pilots add 600,000 training steps; all 1,080 fresh development
   episodes survive and 1,483,380 transitions / 563,760 neural decisions replay.
   The new causal-history PPO gains 0.230% over LQR but is 0.034% worse than

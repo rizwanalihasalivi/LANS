@@ -1,0 +1,13 @@
+test_boolean_id_was_equal_to_integer_request (__main__.RuntimeIdentityContracts) ... ok
+test_boolean_observation_timestamp_rejected (__main__.RuntimeIdentityContracts) ... ok
+test_valid_response_preserved (__main__.RuntimeIdentityContracts) ... ok
+test_exact_boundary (__main__.TargetContracts) ... ok
+test_failure_cannot_hide (__main__.TargetContracts) ... ok
+test_less_than_required_gain (__main__.TargetContracts) ... ok
+test_nominal_regression_cannot_hide_in_aggregate (__main__.TargetContracts) ... ok
+test_unmatched_grid_rejected (__main__.TargetContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.304s
+
+OK

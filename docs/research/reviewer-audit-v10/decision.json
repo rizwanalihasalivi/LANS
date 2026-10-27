@@ -1,0 +1,19 @@
+{
+  "episodes": 360,
+  "transitions": 494460,
+  "submitted_actor_decisions": 247248,
+  "full_causal_query_gate_physical_replay": true,
+  "source_model_hashes_verified": true,
+  "ppo_gain_vs_comparators_pct": {
+    "lqr": 0.3785601231417024,
+    "student_rk": -0.15917848389164213,
+    "planner_rk": -1.12594453551631,
+    "ppo_euler": 0.20470566053629735
+  },
+  "diagnostic_twenty_percent_pass": false,
+  "causal_planner_20pct_balanced_headroom": false,
+  "new_training_steps": 0,
+  "full_promotion": false,
+  "reserved": "unopened; diagnostic is not full selection or timing confirmation",
+  "scope": "Known paths, nominal/tire/20ms logical delivery only; other baselines and latencies absent"
+}

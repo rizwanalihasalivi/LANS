@@ -1,0 +1,52 @@
+{
+  "lqr": {
+    "rmse_m": 0.09820930309221587,
+    "heading_rmse_rad": 0.02086958799440674,
+    "rate_rms_rad_s": 0.06953780915178093,
+    "movement_rad": 0.5681225013462183,
+    "episodes": 72,
+    "survived": 72,
+    "active_ticks": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "student_rk": {
+    "rmse_m": 0.09768203305424308,
+    "heading_rmse_rad": 0.020821337297780667,
+    "rate_rms_rad_s": 0.06966402579725725,
+    "movement_rad": 0.5732063017013096,
+    "episodes": 72,
+    "survived": 72,
+    "active_ticks": 4234,
+    "gain_vs_lqr_pct": 0.5368840032167754
+  },
+  "ppo_rk": {
+    "rmse_m": 0.09783752183349337,
+    "heading_rmse_rad": 0.02082546632773026,
+    "rate_rms_rad_s": 0.06967366746502754,
+    "movement_rad": 0.5740717028365142,
+    "episodes": 72,
+    "survived": 72,
+    "active_ticks": 3980,
+    "gain_vs_lqr_pct": 0.3785601231417024
+  },
+  "planner_rk": {
+    "rmse_m": 0.09674819086523535,
+    "heading_rmse_rad": 0.02047654203098078,
+    "rate_rms_rad_s": 0.06727484490204635,
+    "movement_rad": 0.5480292265481397,
+    "episodes": 72,
+    "survived": 72,
+    "active_ticks": 32122,
+    "gain_vs_lqr_pct": 1.4877533807653331
+  },
+  "ppo_euler": {
+    "rmse_m": 0.09803821160213148,
+    "heading_rmse_rad": 0.020856562438627095,
+    "rate_rms_rad_s": 0.06958661478047043,
+    "movement_rad": 0.571279180949257,
+    "episodes": 72,
+    "survived": 72,
+    "active_ticks": 3175,
+    "gain_vs_lqr_pct": 0.1742110825526777
+  }
+}

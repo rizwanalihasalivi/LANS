@@ -1,5 +1,5 @@
 {
-  "stage": "contracts",
+  "stage": "training:continued:0",
   "state": "running",
   "signature": "95a066528bb996e9a31fc6700f02e7dc298e1257313e37e574e3a2bdf58645b4",
   "resume": "/workspace/lans-venv/bin/python tools/reviewer_v12/run12.py --publish"

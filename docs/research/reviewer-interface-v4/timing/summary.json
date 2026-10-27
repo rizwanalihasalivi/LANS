@@ -1,0 +1,66 @@
+{
+  "heartbeat": [
+    {
+      "seed": 701,
+      "case": "nominal",
+      "ticks": 500,
+      "deadline_misses": 0
+    },
+    {
+      "seed": 701,
+      "case": "cpu_stress",
+      "ticks": 500,
+      "deadline_misses": 5
+    },
+    {
+      "seed": 802,
+      "case": "nominal",
+      "ticks": 500,
+      "deadline_misses": 44
+    },
+    {
+      "seed": 802,
+      "case": "cpu_stress",
+      "ticks": 500,
+      "deadline_misses": 2
+    },
+    {
+      "seed": 903,
+      "case": "nominal",
+      "ticks": 500,
+      "deadline_misses": 0
+    },
+    {
+      "seed": 903,
+      "case": "cpu_stress",
+      "ticks": 500,
+      "deadline_misses": 29
+    }
+  ],
+  "profiles": {
+    "scalar_aligned": {
+      "ticks": 7500,
+      "deadline_misses": 419,
+      "observed_timing_pass": false,
+      "functional_pass": true,
+      "nonzero_correction_ticks": 979
+    },
+    "fresh_v4": {
+      "ticks": 7500,
+      "deadline_misses": 280,
+      "observed_timing_pass": false,
+      "functional_pass": true,
+      "nonzero_correction_ticks": 602
+    }
+  },
+  "kernel": {
+    "reference": {
+      "median_ns": 13786.0,
+      "p99_ns": 385509.81000000314
+    },
+    "scalar": {
+      "median_ns": 4183.0,
+      "p99_ns": 122069.0300000002
+    }
+  }
+}

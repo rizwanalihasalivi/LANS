@@ -39,6 +39,10 @@ CASES={'nominal':0.,'delay20':.02,'delay1000':1.,'cpu_stress':0.,'worker_crash':
 
 
 def controller(profile):
+    if profile in ('recovery_raw','recovery_compensated'):
+        sys.path.insert(0,str(ROOT/'tools/reviewer_v8'))
+        from recovery8 import RecoveryController
+        return RecoveryController(compensated=profile=='recovery_compensated')
     if profile=='delay_compensated':
         sys.path.insert(0,str(ROOT/'tools/reviewer_v7'))
         from compensation import CompensatedController
@@ -128,12 +132,21 @@ def write_csv(file,rows):
         writer=csv.DictWriter(handle,fieldnames=rows[0],lineterminator='\n');writer.writeheader();writer.writerows(rows)
 
 
-def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_base=1256000000):
+def budget_due(target_ns,now_ns):return now_ns>=target_ns+9_000_000
+
+def runtime_revoke(ctrl,baseline,reason,clear=True):
+    if hasattr(ctrl,'revoke'):return ctrl.revoke(baseline,reason,clear=clear)[0]
+    ctrl.filtered=0.;ctrl.weight=0.;ctrl.good=0;ctrl.last_command=baseline
+    return baseline
+
+def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_base=1256000000,budget_guard=False):
     declared=json.loads((Path(models)/'manifest.json').read_text()).get('profile')
-    versioned={'fresh_history':'causal_filter_history_v5','delay_compensated':'latency_compensated_query_v7'}
+    versioned={'fresh_history':'causal_filter_history_v5','delay_compensated':'latency_compensated_query_v7',
+               'recovery_raw':'causal_filter_history_v5','recovery_compensated':'latency_compensated_query_v7'}
     if ((profile in versioned and declared!=versioned[profile]) or
             (profile not in versioned and declared in versioned.values())):
         raise ValueError('Controller/model input ABI mismatch; history and legacy artifacts cannot be mixed')
+    if budget_guard and profile not in ('recovery_raw','recovery_compensated'):raise ValueError('Budget guard requires explicit recovery profile')
     env=CausalEnv(mode='lqr',case=(20,'dlc220',1,'nominal',noise_base+seed));env.reset()
     # Warm every parent numerical path outside the measured window.
     for _ in range(40):env.step(2)
@@ -194,11 +207,12 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                 obs=observation(env.state,env.estimate,env.measured_speed,ctrl.previews,ctrl,(release-origin)/1e9)
                 if getattr(ctrl,'policy_history_feature',False):obs[14]=float(np.clip(ctrl.filtered/.08,-1.,1.))
                 query_meta=None
-                if hasattr(ctrl,'compensator') and not busy and not dead:
+                query_allowed=not budget_guard or not budget_due(target,time.perf_counter_ns())
+                if hasattr(ctrl,'compensator') and not busy and not dead and query_allowed:
                     obs,query_meta=ctrl.prepare_query(obs,env.estimate,env.state[5],env.measured_speed,ctrl.previews,env.gain)
                 built=time.perf_counter_ns()
                 submitted=False
-                if not busy and not dead:
+                if not busy and not dead and query_allowed and (not budget_guard or not budget_due(target,time.perf_counter_ns())):
                     try:
                         seq+=1;request=(seq,release,obs)
                         if query_meta is not None:request=(*request,query_meta)
@@ -206,19 +220,21 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                     except (OSError,EOFError):dead=True;packet=None;ctrl.packet=None
                 submitted_at=time.perf_counter_ns()
                 decision_at=time.perf_counter_ns()
-                command,reason=ctrl.choose((decision_at-origin)/1e9,baseline,env.estimate,
+                decision_skipped=budget_guard and budget_due(target,decision_at)
+                if decision_skipped:command=runtime_revoke(ctrl,baseline,'budget');reason='budget'
+                else:command,reason=ctrl.choose((decision_at-origin)/1e9,baseline,env.estimate,
                     env.state[5],env.measured_speed,env.curvature,env.gain)
                 decision_command=command;decision_weight=ctrl.weight;decision_filter=ctrl.filtered;decision_good=ctrl.good
                 apply=time.perf_counter_ns();age=None if packet is None else (apply-packet['observed_ns'])/1e9
                 miss=apply>target+10_000_000
                 if miss or (age is not None and age>=.05):
-                    ctrl.filtered=0.;ctrl.weight=0.;ctrl.good=0;ctrl.last_command=baseline
-                    command=baseline;reason='deadline' if miss else 'age_at_apply'
+                    reason='deadline' if miss else 'age_at_apply'
+                    command=runtime_revoke(ctrl,baseline,reason,clear=miss or not hasattr(ctrl,'revoke'))
                 # Record after fallback handling; recheck at software commit.
                 commit=time.perf_counter_ns();commit_age=None if packet is None else (commit-packet['observed_ns'])/1e9
                 if commit>target+10_000_000 or (commit_age is not None and commit_age>=.05):
-                    ctrl.filtered=0.;ctrl.weight=0.;ctrl.good=0;ctrl.last_command=baseline;command=baseline
                     reason='deadline' if commit>target+10_000_000 else 'age_at_apply'
+                    command=runtime_revoke(ctrl,baseline,reason,clear=commit>target+10_000_000 or not hasattr(ctrl,'revoke'))
                     commit=time.perf_counter_ns()
                 apply=commit;age=None if packet is None else (apply-packet['observed_ns'])/1e9;miss=apply>target+10_000_000
                 cpu_end=time.thread_time_ns()
@@ -239,6 +255,10 @@ def episode(ctx,case,seed,profile,seconds,models,out,external_fault=False,noise_
                 if hasattr(ctrl,'compensator'):
                     row['query_metadata_json']=json.dumps(query_meta) if submitted else ''
                     row['query_observation_json']=json.dumps(obs.tolist()) if submitted else ''
+                if profile in ('recovery_raw','recovery_compensated'):
+                    row['budget_guard']=budget_guard;row['decision_skipped']=decision_skipped
+                    row['qualified_sequence']=ctrl.last_qualified_sequence
+                    row['qualified_time_s']=ctrl.last_qualified_time
                 rows.append(row)
     finally:
         if enabled:gc.enable()
@@ -269,11 +289,12 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--models',type=Path,default=ROOT/'actor')
     p.add_argument('--output',type=Path,required=True);p.add_argument('--seconds',type=float,default=13.)
     p.add_argument('--seed',type=int,choices=[701,802,903],default=701)
-    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated'],default='age_filtered')
+    p.add_argument('--profile',choices=['age_filtered','predictive_filtered','preview_filtered','aligned','scalar_aligned','fresh_v4','fresh_history','delay_compensated','recovery_raw','recovery_compensated'],default='age_filtered')
+    p.add_argument('--budget-guard',action='store_true')
     args=p.parse_args()
     if not .5<=args.seconds<=30:p.error('seconds must be0.5..30')
     args.output.mkdir(parents=True,exist_ok=False)
-    rows=[episode(mp.get_context('spawn'),case,args.seed,args.profile,args.seconds,args.models,args.output,external_fault=True) for case in CASES]
+    rows=[episode(mp.get_context('spawn'),case,args.seed,args.profile,args.seconds,args.models,args.output,external_fault=True,budget_guard=args.budget_guard) for case in CASES]
     result=dict(scope='Full observer/LQR/residual-supervisor/actor IPC plus fixed-step software plant; NOT native Webots, sensors/CAN or physical actuator',
         runtime=dict(python=sys.version,platform=platform.platform(),numpy=np.__version__),episodes=rows,
         functional_pass=all(r['survived'] and r['fallback_violations']==0 for r in rows),

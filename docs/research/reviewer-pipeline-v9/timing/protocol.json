@@ -1,0 +1,43 @@
+{
+  "profile": "history_comp",
+  "development_selected": null,
+  "platform_diagnostic": true,
+  "models": "docs/research/reviewer-pipeline-v9/runtime-actors/legacy_history",
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "seconds": 5,
+  "cases": [
+    "nominal",
+    "delay20",
+    "delay1000",
+    "cpu_stress",
+    "worker_crash"
+  ],
+  "guards": [
+    "on"
+  ],
+  "reserve_ns": 1000000,
+  "noise_base": 1536000000,
+  "cpus": [
+    4,
+    3
+  ],
+  "hashes": {
+    "tools/controller_review/timing9.py": "00deb8849aa1605d49c347dd896651092470f0ef5e726659bebce3c000dc0628",
+    "tools/controller_review/verify_timing9.py": "7dc3eac17bd8bf33a5cdc3372919aa891531a0f8f93f48ec7dd1168452579a7d",
+    "tools/reviewer_v9/runtime9.py": "534b2afe7ccd08cf9687a928eec501ada53b7792bfe38c99a4b4d492943fdb11",
+    "tools/reviewer_v9/verify_laptop9.py": "54dd1f5f33c637e950fb9a3e8fc1f6890807f990e44f21c49938d9d22c4b720a",
+    "tools/controller_review/native_heartbeat4.c": "b4c29f99b87e53f7693e28b497d576f3b55753ad9ebbf42cc99507369af2ab32",
+    "tools/reviewer_v8/recovery8.py": "a357e1d421813586289fe1b569a0b424f42ee1635f57d7fe4fe4a6a154848cad",
+    "tools/reviewer_v8/expiry_cost8.py": "3675c3921bbd419336b6ee8866a7cbcf7a16a8ebe1a2254a2f714d0c94dc1d36",
+    "tools/reviewer_v7/compensation.py": "c84f2e6090613fcf336078d60342310aeca3fb5f0b0e1e407901b5ad843dd8ab"
+  },
+  "model_manifest_sha256": "ba01cfcb2bd8b9cd4b4d0759c9bdb3ca41fdf7426a4d40eac94e6f75240fb4f8",
+  "cgroup_before": {
+    "cpu.max": "400000 100000\n",
+    "cpu.stat": "usage_usec 2095925150\nuser_usec 2017765967\nsystem_usec 78159182\nnice_usec 59655444\nnr_periods 32445\nnr_throttled 40\nthrottled_usec 3853647\nnr_bursts 0\nburst_usec 0\n"
+  }
+}

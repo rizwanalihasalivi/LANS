@@ -1,0 +1,17 @@
+{
+  "profile": "causal_recovery_history_v9",
+  "arm": "legacy_history",
+  "new_features": "14filtermemory;15past responseEWMA;19past qualificationage;16/17zero",
+  "sha256": {
+    "golden.npz": "8c5108d38e655bfeab9cfe700527b1ce641df2164e5b3407b8d6ada9f0b31e35",
+    "model-701.npz": "7ee24dee8c157190650f5d2d0509db34fb64c3923926cc4f2ab5231d576ec096",
+    "model-802.npz": "72c1fcb78b33e62c85deaa18fb80b152dedce4a3b5f57166e1a6817293d4e461",
+    "model-903.npz": "acbb14a37008d16fa76030f43bcd10facede3e243a91354905f20b9a39d20ed2"
+  },
+  "source_policy_sha256": {
+    "701": "f0ed6117c4a036cc59fcd15b3de13702dd84af822b4dcbc31859869b40040ee1",
+    "802": "d666b0354ea4076cf88deb58795a99351bef3532cf54eb8efddfe9b682ebbd82",
+    "903": "7806d9f3974613b30b3f8d15f9db8d5aae1a90317d90548ac881c8b7f539fefe"
+  },
+  "diagnostic_only": true
+}

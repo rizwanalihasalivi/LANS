@@ -1,0 +1,92 @@
+{
+  "lqr": {
+    "rmse_m": 0.08573521893007684,
+    "heading_rmse_rad": 0.01953372502354969,
+    "rate_rms_rad_s": 0.0686637205176134,
+    "movement_rad": 0.5562084064810593,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.08634486613457344,
+    "heading_rmse_rad": 0.019391913205709488,
+    "rate_rms_rad_s": 0.06808708734416728,
+    "movement_rad": 0.5552310966395305,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 8153,
+    "gain_vs_lqr_pct": -0.7110814110054431
+  },
+  "positive": {
+    "rmse_m": 0.08634486613457344,
+    "heading_rmse_rad": 0.019391913205709488,
+    "rate_rms_rad_s": 0.06808708734416728,
+    "movement_rad": 0.5552310966395305,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 8153,
+    "gain_vs_lqr_pct": -0.7110814110054431
+  },
+  "student_raw": {
+    "rmse_m": 0.08553349454809396,
+    "heading_rmse_rad": 0.019517712960744536,
+    "rate_rms_rad_s": 0.06878328092470679,
+    "movement_rad": 0.5581786181691369,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3696,
+    "gain_vs_lqr_pct": 0.2352876501632295
+  },
+  "student_comp": {
+    "rmse_m": 0.08550942933335641,
+    "heading_rmse_rad": 0.019514360479206717,
+    "rate_rms_rad_s": 0.06876307446785729,
+    "movement_rad": 0.5581960148848076,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3796,
+    "gain_vs_lqr_pct": 0.2633568789327745
+  },
+  "old_raw": {
+    "rmse_m": 0.08551385388626817,
+    "heading_rmse_rad": 0.01950720241507039,
+    "rate_rms_rad_s": 0.06874325846141086,
+    "movement_rad": 0.5587697587364151,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3386,
+    "gain_vs_lqr_pct": 0.2581961608906669
+  },
+  "old_comp": {
+    "rmse_m": 0.08549131411949885,
+    "heading_rmse_rad": 0.019502828587352517,
+    "rate_rms_rad_s": 0.06872307578971502,
+    "movement_rad": 0.5587017040100519,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3535,
+    "gain_vs_lqr_pct": 0.2844861348950456
+  },
+  "legacy_history": {
+    "rmse_m": 0.08557411147432648,
+    "heading_rmse_rad": 0.019511529695747317,
+    "rate_rms_rad_s": 0.06867369959953203,
+    "movement_rad": 0.5579750071744417,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3588,
+    "gain_vs_lqr_pct": 0.1879128061500146
+  },
+  "causal_history": {
+    "rmse_m": 0.0855382788858137,
+    "heading_rmse_rad": 0.01950707636132106,
+    "rate_rms_rad_s": 0.0686545043452976,
+    "movement_rad": 0.5578864967553754,
+    "episodes": 120,
+    "survived": 120,
+    "active_ticks": 3536,
+    "gain_vs_lqr_pct": 0.22970728566490406
+  }
+}

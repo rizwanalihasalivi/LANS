@@ -1,0 +1,428 @@
+{
+  "scope": "Descriptive development traces only; no new parameter selection, oracle actions or reserved data",
+  "groups": {
+    "student_comp/nominal": {
+      "ticks": 32964,
+      "active": 1867,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 29435,
+        "recovery": 1638,
+        "accepted": 1867
+      },
+      "proposals": {
+        "0.0": 16981,
+        "0.08": 8766,
+        "-0.08": 7201,
+        "0.04": 13,
+        "-0.04": 3
+      },
+      "authority_sum": 289.7,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.05663754398738017,
+      "mean_authority": 0.008788375197184808
+    },
+    "old_comp/nominal": {
+      "ticks": 32964,
+      "active": 1755,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 29419,
+        "recovery": 1766,
+        "accepted": 1755
+      },
+      "proposals": {
+        "0.0": 11865,
+        "0.08": 8422,
+        "-0.08": 12672,
+        "0.04": 5
+      },
+      "authority_sum": 242.60000000000002,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.053239898070622495,
+      "mean_authority": 0.007359543744691179
+    },
+    "legacy_history/nominal": {
+      "ticks": 32964,
+      "active": 1585,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 29455,
+        "recovery": 1900,
+        "accepted": 1585
+      },
+      "proposals": {
+        "0.0": 11126,
+        "0.08": 8606,
+        "-0.08": 13166,
+        "0.04": 38,
+        "-0.04": 28
+      },
+      "authority_sum": 204.35000000000002,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.048082756946972456,
+      "mean_authority": 0.006199186991869919
+    },
+    "causal_history/nominal": {
+      "ticks": 32964,
+      "active": 1665,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 29486,
+        "recovery": 1789,
+        "accepted": 1665
+      },
+      "proposals": {
+        "0.0": 11312,
+        "0.08": 10871,
+        "-0.08": 10663,
+        "0.04": 74,
+        "-0.04": 44
+      },
+      "authority_sum": 227.10000000000002,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.05050964688751365,
+      "mean_authority": 0.006889333818711322
+    },
+    "student_comp/tire": {
+      "ticks": 32964,
+      "active": 945,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 31194,
+        "recovery": 801,
+        "accepted": 945
+      },
+      "proposals": {
+        "0.0": 19962,
+        "0.08": 7087,
+        "-0.08": 5912,
+        "0.04": 3
+      },
+      "authority_sum": 168.5,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.028667637422642882,
+      "mean_authority": 0.005111636937264895
+    },
+    "old_comp/tire": {
+      "ticks": 32964,
+      "active": 796,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 31367,
+        "recovery": 777,
+        "accepted": 796
+      },
+      "proposals": {
+        "0.0": 15332,
+        "0.08": 6741,
+        "-0.08": 10883,
+        "0.04": 4,
+        "-0.04": 4
+      },
+      "authority_sum": 129.0,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.024147554908384904,
+      "mean_authority": 0.003913360029122679
+    },
+    "legacy_history/tire": {
+      "ticks": 32964,
+      "active": 893,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 31253,
+        "recovery": 794,
+        "accepted": 893
+      },
+      "proposals": {
+        "0.0": 13684,
+        "0.08": 6945,
+        "-0.08": 12235,
+        "-0.04": 32,
+        "0.04": 68
+      },
+      "authority_sum": 151.65000000000003,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.027090158961291105,
+      "mean_authority": 0.004600473243538406
+    },
+    "causal_history/tire": {
+      "ticks": 32964,
+      "active": 795,
+      "submitted": 32964,
+      "reason": {
+        "missing": 24,
+        "cost": 31353,
+        "recovery": 792,
+        "accepted": 795
+      },
+      "proposals": {
+        "0.0": 14370,
+        "0.08": 8367,
+        "-0.08": 10057,
+        "0.04": 101,
+        "-0.04": 69
+      },
+      "authority_sum": 131.55,
+      "fresh_ticks": 32940,
+      "active_fraction": 0.02411721878412814,
+      "mean_authority": 0.00399071714597743
+    },
+    "student_comp/delay20": {
+      "ticks": 32964,
+      "active": 792,
+      "submitted": 16488,
+      "reason": {
+        "missing": 48,
+        "cost": 29888,
+        "recovery": 2236,
+        "accepted": 792
+      },
+      "proposals": {
+        "0.0": 8661,
+        "0.08": 4292,
+        "-0.08": 3529,
+        "0.04": 6
+      },
+      "authority_sum": 94.05,
+      "fresh_ticks": 32916,
+      "active_fraction": 0.024026210411357846,
+      "mean_authority": 0.002853112486348744
+    },
+    "old_comp/delay20": {
+      "ticks": 32964,
+      "active": 754,
+      "submitted": 16488,
+      "reason": {
+        "missing": 48,
+        "cost": 30098,
+        "recovery": 2064,
+        "accepted": 754
+      },
+      "proposals": {
+        "0.0": 6353,
+        "0.08": 4371,
+        "-0.08": 5750,
+        "0.04": 14
+      },
+      "authority_sum": 92.40000000000002,
+      "fresh_ticks": 32916,
+      "active_fraction": 0.022873437689600776,
+      "mean_authority": 0.0028030578813250826
+    },
+    "legacy_history/delay20": {
+      "ticks": 32964,
+      "active": 915,
+      "submitted": 16488,
+      "reason": {
+        "missing": 48,
+        "cost": 29894,
+        "recovery": 2107,
+        "accepted": 915
+      },
+      "proposals": {
+        "0.0": 6004,
+        "0.08": 4483,
+        "-0.08": 5925,
+        "0.04": 70,
+        "-0.04": 6
+      },
+      "authority_sum": 126.89999999999999,
+      "fresh_ticks": 32916,
+      "active_fraction": 0.027757553694939933,
+      "mean_authority": 0.0038496541681834725
+    },
+    "causal_history/delay20": {
+      "ticks": 32964,
+      "active": 859,
+      "submitted": 16488,
+      "reason": {
+        "missing": 48,
+        "cost": 29982,
+        "recovery": 2075,
+        "accepted": 859
+      },
+      "proposals": {
+        "0.0": 6029,
+        "0.08": 5469,
+        "-0.08": 4908,
+        "0.04": 53,
+        "-0.04": 29
+      },
+      "authority_sum": 114.45000000000002,
+      "fresh_ticks": 32916,
+      "active_fraction": 0.026058730736561096,
+      "mean_authority": 0.0034719694211867496
+    },
+    "student_comp/delay40": {
+      "ticks": 32964,
+      "active": 192,
+      "submitted": 8244,
+      "reason": {
+        "missing": 96,
+        "cost": 7347,
+        "age": 24648,
+        "recovery": 681,
+        "accepted": 192
+      },
+      "proposals": {
+        "0.0": 4823,
+        "0.08": 1870,
+        "-0.08": 1551
+      },
+      "authority_sum": 9.600000000000001,
+      "fresh_ticks": 12588,
+      "active_fraction": 0.005824535857298871,
+      "mean_authority": 0.00029122679286494363
+    },
+    "old_comp/delay40": {
+      "ticks": 32964,
+      "active": 230,
+      "submitted": 8244,
+      "reason": {
+        "missing": 96,
+        "cost": 7235,
+        "age": 24648,
+        "recovery": 755,
+        "accepted": 230
+      },
+      "proposals": {
+        "0.0": 3638,
+        "0.08": 2027,
+        "-0.08": 2570,
+        "0.04": 9
+      },
+      "authority_sum": 11.500000000000002,
+      "fresh_ticks": 12588,
+      "active_fraction": 0.00697730857905594,
+      "mean_authority": 0.00034886542895279707
+    },
+    "legacy_history/delay40": {
+      "ticks": 32964,
+      "active": 195,
+      "submitted": 8244,
+      "reason": {
+        "missing": 96,
+        "cost": 7286,
+        "age": 24648,
+        "recovery": 739,
+        "accepted": 195
+      },
+      "proposals": {
+        "0.0": 3508,
+        "0.08": 2071,
+        "-0.08": 2590,
+        "0.04": 73,
+        "-0.04": 2
+      },
+      "authority_sum": 9.750000000000002,
+      "fresh_ticks": 12588,
+      "active_fraction": 0.005915544230069166,
+      "mean_authority": 0.00029577721150345835
+    },
+    "causal_history/delay40": {
+      "ticks": 32964,
+      "active": 217,
+      "submitted": 8244,
+      "reason": {
+        "missing": 96,
+        "cost": 7221,
+        "age": 24648,
+        "recovery": 782,
+        "accepted": 217
+      },
+      "proposals": {
+        "0.0": 3540,
+        "0.08": 2448,
+        "-0.08": 2191,
+        "0.04": 62,
+        "-0.04": 3
+      },
+      "authority_sum": 10.849999999999998,
+      "fresh_ticks": 12588,
+      "active_fraction": 0.006582938963717995,
+      "mean_authority": 0.0003291469481858997
+    },
+    "student_comp/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "reason": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposals": {
+        "0.0": 3266,
+        "0.08": 34
+      },
+      "authority_sum": 0.0,
+      "fresh_ticks": 0,
+      "active_fraction": 0.0,
+      "mean_authority": 0.0
+    },
+    "old_comp/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "reason": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposals": {
+        "0.0": 3227,
+        "0.08": 43,
+        "-0.08": 28,
+        "0.04": 2
+      },
+      "authority_sum": 0.0,
+      "fresh_ticks": 0,
+      "active_fraction": 0.0,
+      "mean_authority": 0.0
+    },
+    "legacy_history/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "reason": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposals": {
+        "0.0": 3191,
+        "0.08": 40,
+        "-0.08": 51,
+        "0.04": 18
+      },
+      "authority_sum": 0.0,
+      "fresh_ticks": 0,
+      "active_fraction": 0.0,
+      "mean_authority": 0.0
+    },
+    "causal_history/delay100": {
+      "ticks": 32964,
+      "active": 0,
+      "submitted": 3300,
+      "reason": {
+        "missing": 240,
+        "age": 32724
+      },
+      "proposals": {
+        "0.0": 3214,
+        "0.08": 44,
+        "-0.08": 31,
+        "0.04": 11
+      },
+      "authority_sum": 0.0,
+      "fresh_ticks": 0,
+      "active_fraction": 0.0,
+      "mean_authority": 0.0
+    }
+  }
+}

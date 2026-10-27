@@ -1,0 +1,80 @@
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 0 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 0 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+Saved /workspace/LANS/docs/research/reviewer-pipeline-v9/kit-smoke/seed-701/Results.zip
+{
+  "ticks": 250,
+  "packets": 130,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "query_physical_features_replayed": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 0 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 0 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+Saved /workspace/LANS/docs/research/reviewer-pipeline-v9/kit-smoke/seed-802/Results.zip
+{
+  "ticks": 250,
+  "packets": 130,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "query_physical_features_replayed": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 0 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 0 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+Saved /workspace/LANS/docs/research/reviewer-pipeline-v9/kit-smoke/seed-903/Results.zip
+{
+  "ticks": 250,
+  "packets": 130,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "query_physical_features_replayed": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}
+{
+  "ticks": 250,
+  "packets": 130,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "query_physical_features_replayed": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}
+{
+  "ticks": 250,
+  "packets": 130,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "query_physical_features_replayed": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}
+{
+  "ticks": 250,
+  "packets": 130,
+  "original_deadlines_verified": true,
+  "actor_and_removed_channels_verified": true,
+  "plant_observer_lqr_replay_verified": true,
+  "query_physical_features_replayed": true,
+  "fallback_verified": true,
+  "target_platform_validation": false
+}
+{'controller_ticks': 750, 'heartbeat_ticks': 0, 'query_vectors_verified': 405, 'budget_decisions_skipped': 0, 'original_deadlines_and_gate_physics_verified': True, 'query_scope': 'All issued causal-state compensated vectors, all metadata, and every returned actor vector; expiry/recovery states replayed tick by tick.', 'source_model_hashes_verified': True}
+Saved /workspace/LANS/docs/research/reviewer-pipeline-v9/kit-smoke/Results.zip

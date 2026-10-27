@@ -1,0 +1,11 @@
+{
+  "pair": 2,
+  "arm": "causal_history",
+  "steps": 100000,
+  "submitted": 61606,
+  "actor_credit_samples": 61606,
+  "active": 2861,
+  "endpoint_eligible": true,
+  "new_history_column_norm": 0.0721815899014473,
+  "wall_seconds": 72.10634577000019
+}

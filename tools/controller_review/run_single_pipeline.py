@@ -12,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def main():
     p=argparse.ArgumentParser();p.add_argument('--laptop-results',type=Path);p.add_argument('--publish',action='store_true');a=p.parse_args();out=ROOT/'docs/research/reviewer-pipeline-v9';out.mkdir(parents=True,exist_ok=True)
     env=os.environ.copy();env.update(OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',NUMBA_CACHE_DIR='/tmp/lans-v9-numba',MPLCONFIGDIR='/tmp/lans-v9-mpl')
-    status={name:dict(state='pending') for name in ('pipeline_contracts','prior_evidence','matched_development','admission_analysis','scientific_selection','timing','timing_replay','strict_original_10ms','portable_kit','packaging_smoke','actual_laptop','reserved_unseen','native_webots','robust_vehicle_baseline','primary_references','physical_validation','submission','evidence_seal','evidence_report')};path=out/'pipeline-status.json'
+    status={name:dict(state='pending') for name in ('pipeline_contracts','prior_evidence','matched_development','admission_analysis','scientific_selection','timing','timing_replay','strict_original_10ms','portable_kit','portable_kit_audit','packaging_smoke','actual_laptop','reserved_unseen','native_webots','robust_vehicle_baseline','primary_references','physical_validation','submission','evidence_seal','evidence_report')};path=out/'pipeline-status.json'
     def save():path.write_text(json.dumps(dict(stages=status,all_requirements_passed=all(v['state']=='passed' for v in status.values()),scope='Software research pipeline. Hardware/primary-source access and empirical superiority cannot be manufactured.'),indent=2)+'\n')
     def stage(name,cmd,complete=None):
         print(name,flush=True)
@@ -32,12 +32,13 @@ def main():
     if not stage('timing_replay',[py,helper/'verify_timing9.py','--run',out]):return 1
     timing=json.loads((out/'timing/summary.json').read_text())['profiles']['on'];status['strict_original_10ms']=dict(state='passed' if timing['observed_timing_pass'] else 'failed_requirement',**timing,hard_realtime_guarantee=False);save()
     if not stage('portable_kit',[py,helper/'export_pipeline_kit9.py','--run',out],out/'LANS_Causal_Python310_Kit.zip'):return 1
+    if not stage('portable_kit_audit',[py,helper/'verify_pipeline_kit9.py','--run',out]):return 1
     kit=out/'LANS_Causal_Python310_Kit';clean=Path('/workspace/lans-target-kit-venv/bin/python')
     if not clean.exists():
         status['packaging_smoke']=dict(state='blocked',reason='Clean minimal Python3.10 interpreter unavailable; do not substitute full Torch environment');save();return 1
     if not stage('packaging_smoke',[clean,kit/'tools/controller_review/laptop_campaign9.py','--models',kit/'actor','--profile','history_comp','--budget-guard','--seconds','.5','--output',out/'kit-smoke'],out/'kit-smoke/summary.json'):return 1
     if a.laptop_results:
-        if not stage('target_import',[py,helper/'import_laptop9.py','--run',out,'--results',a.laptop_results],out/'target-laptop/import-verification.json'):return 1
+        if not stage('target_import',[py,helper/'import_laptop9.py','--run',out,'--results',a.laptop_results]):return 1
         target=json.loads((out/'target-laptop/import-verification.json').read_text());status['actual_laptop']=dict(state='passed' if target['observed_strict_timing_pass'] else 'failed_requirement',**target)
     else:status['actual_laptop']=dict(state='awaiting_external_run',instruction='Run the new Python3.10 kit on the actual Windows/macOS laptop; submit Results.zip. Cloud smoke is not target evidence.')
     allowed=selected is not None and timing['observed_timing_pass']

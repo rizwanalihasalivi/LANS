@@ -10,7 +10,24 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
-- **Latest recovery/expiry study:** [full matched matrix and deadline guard](docs/research/reviewer-recovery-v8/README.md).
+- **Latest single pipeline:** [matched causal-state retraining, full replay and status](docs/research/reviewer-pipeline-v9/README.md).
+  Six fixed pilots add 600,000 training steps; all 1,080 fresh development
+  episodes survive and 1,483,380 transitions / 563,760 neural decisions replay.
+  The new causal-history PPO gains 0.230% over LQR but is 0.034% worse than
+  the compensated student, so scientific selection still fails. The
+  predeclared diagnostic actor records **0/7,500 original 10ms deadline
+  misses**, with functional fallback and full history/query/gate replay.
+  This finite cloud result is not target-laptop or hard-real-time evidence;
+  earlier failed campaigns remain preserved. An initial one-decision float32
+  batch/single-row audit discrepancy is documented and corrected by exact
+  single-observation replay, with no episode reruns or relaxed criteria.
+  [Python 3.10 Windows/macOS kit](docs/research/reviewer-pipeline-v9/LANS_Causal_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-pipeline-v9/LANS_Pipeline_Reports.zip).
+  Run `python tools/controller_review/run_single_pipeline.py --publish` in
+  the research environment. Exit 2 explicitly retains unmet scientific or
+  external requirements; reserved/native, matched robust-vehicle reproduction,
+  primary references and physical/target evidence are not silently passed.
+- **Prior recovery/expiry study:** [full matched matrix and deadline guard](docs/research/reviewer-recovery-v8/README.md).
   Recovery now requires three distinct qualifying proposals across bounded gaps,
   with zero authority on stale ticks. Prediction uses only the current packet's
   eligible lifetime, then LQR continuation. All 840 episodes survive and

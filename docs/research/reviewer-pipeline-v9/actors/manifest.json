@@ -1,0 +1,90 @@
+{
+  "export_checks": [
+    {
+      "kind": "student",
+      "seed": 701,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "old",
+      "seed": 701,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "legacy_history",
+      "seed": 701,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "causal_history",
+      "seed": 701,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "student",
+      "seed": 802,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "old",
+      "seed": 802,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "legacy_history",
+      "seed": 802,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "causal_history",
+      "seed": 802,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "student",
+      "seed": 903,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "old",
+      "seed": 903,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "legacy_history",
+      "seed": 903,
+      "rows": 2000,
+      "class_disagreements": 0
+    },
+    {
+      "kind": "causal_history",
+      "seed": 903,
+      "rows": 2000,
+      "class_disagreements": 0
+    }
+  ],
+  "sha256": {
+    "legacy_history-701.npz": "7ee24dee8c157190650f5d2d0509db34fb64c3923926cc4f2ab5231d576ec096",
+    "legacy_history-903.npz": "acbb14a37008d16fa76030f43bcd10facede3e243a91354905f20b9a39d20ed2",
+    "old-903.npz": "66756f9d9feb2472753297100246ee1781f1c64c4412a29e06b7b2319ef6cf79",
+    "causal_history-802.npz": "f5460b69f85f47f3b84ea9d63b5e465dcb77d3cad0c66ec50b2b60999b103b5c",
+    "legacy_history-802.npz": "72c1fcb78b33e62c85deaa18fb80b152dedce4a3b5f57166e1a6817293d4e461",
+    "student-903.npz": "6f82b75e8dc0dfeaff38b69dda391c2285d6d803ed0eeccc633fb1dea4944852",
+    "student-802.npz": "7b9cbaccf68429ddc43d23251537149b76f9c05f2c46f509e42bc45beb504fc1",
+    "causal_history-701.npz": "026e03a7ebff073c3d54a76adc65d9d983b4a8992f5e2b1cb39836105eb08217",
+    "old-802.npz": "d40623cd8b980a0992804e4c5f35055bf3fc6a722d08820d0851558f9d87f6d4",
+    "causal_history-903.npz": "b475ffbc4590bd6c2bd7ec6ab31e23db7b7c5e81bcc5cc609943ed962df14e35",
+    "student-701.npz": "405c1ebe13b20c505ff822087615cde43d70fbe5414d6e3f01c606e59c1796f1",
+    "old-701.npz": "fff425639aec1cbc161044ccb5bc284492cb0be66b078f39581f7a07c40aa74c"
+  }
+}

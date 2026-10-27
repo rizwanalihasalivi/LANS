@@ -11,8 +11,19 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[2]
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--results',type=Path,required=True);a=p.parse_args();out=a.run/'target-laptop';out.mkdir(exist_ok=False)
-    if a.results.is_file():
+    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--results',type=Path,required=True);a=p.parse_args();out=a.run/'target-laptop'
+    if a.results.is_file():input_sha256=hashlib.sha256(a.results.read_bytes()).hexdigest()
+    else:
+        h=hashlib.sha256()
+        for f in sorted(a.results.rglob('*')):
+            if f.is_file() and f.suffix in ('.csv','.json'):
+                assert not f.is_symlink();h.update(str(f.relative_to(a.results)).encode());h.update(hashlib.sha256(f.read_bytes()).digest())
+        input_sha256=h.hexdigest()
+    if (out/'import-verification.json').exists():
+        assert json.loads((out/'import-verification.json').read_text())['input_sha256']==input_sha256,'Different supplied results require a new versioned import, not silent replacement'
+        existing=True
+    else:out.mkdir(exist_ok=False);existing=False
+    if not existing and a.results.is_file():
         with zipfile.ZipFile(a.results) as z:
             items=z.infolist();assert len(items)<1000 and sum(i.file_size for i in items)<200_000_000
             for item in items:
@@ -21,7 +32,7 @@ def main():
                 if item.is_dir():continue
                 assert path.suffix in ('.csv','.json')
                 dest=out.joinpath(*path.parts);dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(item))
-    else:
+    elif not existing:
         for f in a.results.rglob('*'):
             if f.is_file() and f.suffix in ('.json','.csv'):
                 assert not f.is_symlink();dest=out/f.relative_to(a.results);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(f,dest)
@@ -37,7 +48,7 @@ def main():
             rows=list(csv.DictReader((folder/(episode['case']+'-ticks.csv')).open()));assert len(rows)==1300
             ticks+=len(rows);misses+=sum(int(r['apply_ns'])>int(r['target_ns'])+10000000 for r in rows)
     subprocess.run([sys.executable,str(ROOT/'tools/controller_review/verify_timing9.py'),'--run',str(out),'--target','--models',str(models)],check=True)
-    result=dict(ticks=ticks,deadline_misses=misses,observed_strict_timing_pass=misses==0,platform=platform,source='Participant supplied raw data, independently replayed; no hardware attestation',physical_validation=False)
+    result=dict(input_sha256=input_sha256,ticks=ticks,deadline_misses=misses,observed_strict_timing_pass=misses==0,platform=platform,source='Participant supplied raw data, independently replayed; no hardware attestation',physical_validation=False)
     (out/'import-verification.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
 
 if __name__=='__main__':main()

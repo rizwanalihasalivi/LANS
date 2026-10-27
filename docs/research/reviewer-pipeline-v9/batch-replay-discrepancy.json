@@ -1,0 +1,28 @@
+{
+  "discrepancies": [
+    {
+      "pair": 1,
+      "source": "student_comp",
+      "trace": "15-dlc220-1-nominal-student_comp.npz",
+      "submitted_row": 861,
+      "batch_logits": [
+        -1.0465507507324219,
+        -1.9513559341430664,
+        1.2143292427062988,
+        0.6218123435974121,
+        1.214329481124878
+      ],
+      "single_logits": [
+        -1.0465506315231323,
+        -1.951356291770935,
+        1.2143293619155884,
+        0.6218118667602539,
+        1.2143292427062988
+      ],
+      "batch_residual": 0.08,
+      "recorded_residual": 0.0,
+      "single_residual": 0.0
+    }
+  ],
+  "explanation": "Runtime uses one input row per inference. Batch BLAS rounding near a tied logit can select another class; mandatory replay must match execution shape. Original failed verification and traces retained."
+}

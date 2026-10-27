@@ -1,0 +1,10 @@
+test_absolute_path (__main__.ImportContracts) ... ok
+test_executable_input (__main__.ImportContracts) ... ok
+test_parent_traversal (__main__.ImportContracts) ... ok
+test_symlink (__main__.ImportContracts) ... ok
+test_windows_traversal (__main__.ImportContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.183s
+
+OK

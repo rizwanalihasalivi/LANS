@@ -1,0 +1,40 @@
+{
+  "profiles": [
+    "fresh_history"
+  ],
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "cases": [
+    "nominal",
+    "delay20",
+    "delay1000",
+    "cpu_stress",
+    "worker_crash"
+  ],
+  "seconds": 5,
+  "source_hashes": {
+    "tools/controller_review/timing_credit6.py": "3d4f727e67aa147c4edf078644c956ebdd619989113c5ccf5df6e586da3bc69c",
+    "tools/controller_review/laptop_full_controller.py": "f4bc597328f7900bc0b95bd6150bae4902c4df6a7b5e525d7f3c1df7ffd75690",
+    "tools/controller_review/native_heartbeat4.c": "b4c29f99b87e53f7693e28b497d576f3b55753ad9ebbf42cc99507369af2ab32",
+    "tools/controller_review/verify_full_laptop.py": "4c272be076f4f6124a8e3f1d219704a607f0910311ffd99a795e26be84327626",
+    "tools/controller_review/verify_timing_credit6.py": "0a2fbc39c0ddd8d568bea657febc59a72541fad75d3d91edc807d9cbeee2de63",
+    "tools/reviewer_v4/interface4.py": "9850be453544bd7b3b4a4f00ad8813bc900d6f5e06c7fd4ea2caa86759254f5a",
+    "tools/reviewer_v4/scalar_cost.py": "b889778aa45e7bb7c1f320e63ab522aecf7246d72d704273725574a4fbe18247",
+    "tools/laptop/precision_wait.py": "50061f8a7abce90498b55b714abcdd4c8707b46654194a8bf528334f33d74f25"
+  },
+  "models": "docs/research/reviewer-history-v5/portable-actor",
+  "actor_manifest_sha256": "b5d28447ff6c5d356044f8325df4332e582424280bbd21dea460e5b670cf0253",
+  "cpus": [
+    4,
+    3
+  ],
+  "noise_base": 1446000000,
+  "scope": "No concurrent training/evaluation; software plant only. No retry, deadline shift, skipped-tick forgiveness or hard-real-time guarantee.",
+  "cgroup_before": {
+    "cpu.max": "400000 100000\n",
+    "cpu.stat": "usage_usec 7652865785\nuser_usec 7216934633\nsystem_usec 435931152\nnice_usec 54064478\nnr_periods 81927\nnr_throttled 2038\nthrottled_usec 259762704\nnr_bursts 0\nburst_usec 0\n"
+  }
+}

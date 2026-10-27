@@ -1,0 +1,43 @@
+0 224 {'student': 28572, 'v3ppo': 28572, 'all_actions': 28572, 'submitted_only': 28572}
+1 448 {'student': 57144, 'v3ppo': 57144, 'all_actions': 57144, 'submitted_only': 57144}
+2 672 {'student': 85716, 'v3ppo': 85716, 'all_actions': 85716, 'submitted_only': 85716}
+{
+  "selected": null,
+  "screens": {
+    "all_actions": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs student",
+        "pair2 no student gain"
+      ],
+      "paired_group_gains_vs_student_pct": [
+        0.7075342796987294,
+        0.35801308761724826,
+        -0.11625937023349575
+      ]
+    },
+    "submitted_only": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs student"
+      ],
+      "paired_group_gains_vs_student_pct": [
+        1.1825221911745287,
+        0.14237582230538504,
+        0.3625775615194171
+      ]
+    }
+  },
+  "episodes": 672,
+  "transitions": 922992,
+  "submitted_queries_replayed": {
+    "student": 85716,
+    "v3ppo": 85716,
+    "all_actions": 85716,
+    "submitted_only": 85716
+  },
+  "severe_exact_pairs": 144,
+  "full_observer_plant_query_and_causal_history_replay": true,
+  "source_and_model_hashes_verified": true,
+  "reserved": "unopened; selected corresponding-model timing must pass separately"
+}

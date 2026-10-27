@@ -1,5 +1,14 @@
 # LANS opening report
 
+Latest evidence: [submitted-action credit study and timing attribution](../research/reviewer-credit-v6/final-update.md).
+Six more fixed 100,000-transition pilots and 672 fresh episodes are verified.
+Submitted-only PPO gains 2.611% over LQR and 0.561% over the student; full
+selection fails. The separate platform diagnostic has 657/7,500 controller
+deadline misses and 587/3,000 native heartbeat misses. Functional fallback
+passes. No new winner, reserved/native confirmation or vehicle readiness is
+claimed. The original twelve reviewer concerns are explicitly tracked in the
+[response-status checklist](../research/reviewer-credit-v6/reviewer-response-status.md).
+
 Latest evidence: [causal-history correction and matched training ablation](../research/reviewer-history-v5/final-update.md).
 Six fixed 100,000-transition pilots and 672 fresh development episodes are
 complete. The balanced diagnostic gains 2.956% over LQR, but its 0.943% gain over

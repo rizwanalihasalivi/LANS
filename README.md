@@ -10,6 +10,19 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
+- **Latest submitted-action study:** [matched credit ablation and timing attribution](docs/research/reviewer-credit-v6/final-update.md).
+  Six fixed pilots add 600,000 transitions; all 672 fresh development episodes
+  survive and 922,992 transitions independently replay. Submitted-only PPO gains
+  2.611% over LQR, but just 0.561% over the student, below the frozen 1% margin.
+  No arm qualifies. The separate diagnostic misses 657/7,500 controller deadlines;
+  the native heartbeat misses 587/3,000. Functional fallback passes; reserved
+  confirmation stays unopened. A verified scalar robust-filter specialization
+  and all-32-entry bibliography audit do not constitute the matched robust
+  vehicle reproduction or complete primary-source verification.
+  [Three-actor Python 3.10 kit](docs/research/reviewer-credit-v6/LANS_Current_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-credit-v6/LANS_Credit_Reports.zip)
+  remain research diagnostics. Resume with
+  `python tools/controller_review/run_credit_work.py --publish`.
 - **Latest matched history ablation:** [600,000 additional transitions and 672 fresh episodes](docs/research/reviewer-history-v5/final-update.md).
   The balanced no-history diagnostic gains 2.956% over LQR, with 0.52% lower
   heading error and 4.73% higher actuator-rate RMS. Its 0.943% student-relative

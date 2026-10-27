@@ -1,0 +1,7 @@
+test_before_numpy_initialization (__main__.ThreadPolicy) ... ok
+test_existing_boot_already_limits_blas (__main__.ThreadPolicy) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.456s
+
+OK

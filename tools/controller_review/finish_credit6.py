@@ -12,7 +12,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);a=p.parse_args();out=a.run
     load=lambda name:json.loads((out/name).read_text())
     decision=load('decision.json');metrics=load('summary.json');timing=load('timing/summary.json');verification=load('timing/verification.json')
-    robust=load('robust-scalar-contract/verification.json');diagnosis=load('failure-diagnosis.json');bib=load('bibliography-audit.json')
+    robust=load('robust-scalar-contract/verification.json');diagnosis=load('failure-diagnosis.json');bib=load('bibliography-audit.json');smoke=load('kit-smoke/summary.json')
     assert decision['source_and_model_hashes_verified'] and verification['original_deadlines_verified'] and robust['terminal_invariance_verified']
     base=metrics['lqr'];labels={'lqr':'LQR','negative':'Fixed −0.04','positive':'Fixed +0.04','student':'Same-supervisor student','v3ppo':'Frozen v3 PPO','all_actions':'Additional PPO: all actions','submitted_only':'Additional PPO: submitted only'}
     total=sum(load(f'{arm}-{pair}/complete.json')['steps'] for arm in ('all_actions','submitted_only') for pair in range(3))
@@ -27,7 +27,7 @@ def main():
         'A separately frozen two-arm study starts both arms from the same paired v5 no-history endpoint, including critic and optimizer. Each arm receives exactly 100,000 additional transitions for each of three seeds, with fresh training and development noise namespaces. The all-actions arm retains every actor sample; submitted-only masks actor loss, advantage normalization, entropy and KL to actual submitted requests. Fixed-tick GAE, all-transition critic loss, deployed controller, reward, actuator limits and all acceptance margins are unchanged. Environment budgets match; effective actor sample counts differ and are reported below.',
         r'$$L_\pi=-\frac{\sum_i m_i\min(r_i A_i,\operatorname{clip}(r_i,1-\epsilon,1+\epsilon)A_i)}{\sum_i m_i},\quad m_i=\mathbf{1}\{\text{request submitted}\}.$$',
         'Actor/entropy/KL means and advantage normalization use valid samples. This also changes actor-loss scaling relative to the unchanged all-transition critic when the valid fraction is below one, so the intervention is not an isolated proof about variance alone. In a minibatch with no valid requests, only the critic is updated. The all-actions control sets every mask to one.',
-        r'$$r_t=-\left(\frac{e_y}{0.5}\right)^2-0.2\left(\frac{e_\varphi}{0.1}\right)^2-0.2\left(\frac{\dot\delta_a}{0.35}\right)^2-0.005\left(\frac{\delta_{\rm cmd}}{0.5}\right)^2-10\,\mathbf{1}\{\text{failure}\}.$$',
+        r'$$r_t=-\left(\frac{e_y}{0.5}\right)^2-0.2\left(\frac{e_\varphi}{0.1}\right)^2-0.2\left(\frac{\dot{\delta}_a}{0.35}\right)^2-0.005\left(\frac{\delta_{\mathrm{cmd}}}{0.5}\right)^2-10\,\mathbf{1}\{\text{failure}\}.$$',
         'The input remains causal_filter_history_v5. Coordinate 14 is known filter history and its actor weights remain exactly zero in both arms; future-completion/output/service coordinates remain zero. This is not another history-feature search. Both arms inherit v3 100k and v5 100k PPO training plus original supervised pretraining. Additional optimization cannot be attributed solely to masking.',
         'Four implementation contracts passed: all-valid update is bitwise identical to reference PPO, no-valid sample preserves actor parameters while updating critic, discarded advantages/log probabilities do not affect the actor update, and different busy-worker actions produce identical physical transitions. The generated surrogate uses checked edits to SB3 2.0.0 training code; no reserved data were used.','',
         '## Frozen fresh development comparison','',f'Completed **{total:,} additional training transitions** and **{decision["episodes"]} episodes**. These are known-path development conditions, not unseen-path confirmation.','',
@@ -42,11 +42,14 @@ def main():
     for arm in ('all_actions','submitted_only'):
         s=decision['screens'][arm];lines.append('- '+arm+': '+('; '.join(s['reasons']) or 'all development criteria passed')+'. Three paired student gains: '+', '.join(f'{v:.3f}%' for v in s['paired_group_gains_vs_student_pct'])+'.')
     lines+=['',f'Independent replay verified **{decision["transitions"]:,} transitions**, **{sum(decision["submitted_queries_replayed"].values()):,} submitted actor decisions**, every observation coordinate, actual rewards, observer/plant states, gate/filter decisions and commands. All {decision["severe_exact_pairs"]} 100ms-delay/LQR trajectory pairs matched exactly. No per-seed arm mixing or endpoint extension was used.','',
+        'The post-hoc per-condition breakdown exposes an aggregate limitation: at15m/s the submitted-only arm increases actuator-rate RMS by roughly10.8–12.4% in active nominal/tire/20ms cases, despite an overall4.51% mean increase. At25m/s nominal it gains about1.485% over the student, while tire uncertainty and delayed cases offer less additional gain. The original screen constrains the aggregate, not every speed/scenario. No uniform balanced-performance claim is made, and the post-hoc table does not change selection thresholds.',
+        'This is a fresh development grid and a new trained endpoint study, not an identical rerun of the older0.943% v5 result. The original v5 initializer was not separately reevaluated in this grid, so a cross-campaign difference cannot isolate optimizer drift from noise/model effects. Only the paired all-actions/submitted-only comparison isolates the declared intervention under this design.','',
         '## Original 10 ms timing','',
         f'The separate serialized campaign recorded **{timing["deadline_misses"]}/{timing["ticks"]} controller deadline misses**, with functional fallback **{timing["functional_pass"]}** and observed strict timing **{timing["observed_timing_pass"]}**. The native C heartbeat recorded **{sum(r["deadline_misses"] for r in timing["heartbeat"])}/{sum(r["ticks"] for r in timing["heartbeat"])} misses**. All three actor seeds and five actual worker cases were tested, with full warmup, pinned control/helper CPUs, lower helper priority and no concurrent research jobs. Source/model hashes, original unshifted 10ms targets, all causal gate observations, packet actions, fault injection and software-plant trajectories were independently replayed.',
         'Timing model provenance is in timing/protocol.json. If no new controller qualifies, this remains a platform diagnostic with the unchanged v5 actor, not selected-controller validation. Scheduler behavior remains a platform requirement; lower average inference time does not establish a 100Hz response guarantee. Zero finite misses, if observed, would also not constitute WCET certification.',
         'The local LQR, observer, IPC and supervisor still share one process. Independence from the PPO worker is not independence from local scheduling or computation stalls. Deadline fallback is recorded at a software commit marker, not at an actuator. The fixed-step plant pauses while the host stalls; survival does not establish physical continuous-time safety. No deadline is shifted, skipped or forgiven.','',
         'The portable entry point now explicitly sets one BLAS/OpenMP thread before numerical imports. Two subprocess checks with conflicting inherited thread settings verify that policy and also establish that the previous common boot already enforced the BLAS limit indirectly. This is import-order hardening, not evidence that excess BLAS threads caused the previous 274 misses or that a new speedup was achieved.','',
+        f'The new three-actor Python3.10 kit has a separate clean-environment portability smoke: {smoke["ticks"]} ticks, {smoke["deadline_misses"]} misses, functional fallback {smoke["functional_fallback_pass"]}. This is a short cloud packaging check, not the actual Windows/macOS target result or a full selected-controller qualification. The complete user command runs15 cases of13seconds each, plus warmup/replay, then writes laptop-results/Results.zip. No Torch/GPU is required.','',
         '## Robust published-filter contract and bibliography','',
         f'A separate implementation of the uniform-error specialization of Wabersich/Zeilinger arXiv:1812.05506v4 Eq.(6), Eq.(9–10), Algorithm 2 was completed for an explicitly declared scalar bounded-error/full-state plant. All **{robust["transitions"]} transitions** satisfy declared state/input bounds, and **{robust["independent_lp_projections"]} inputs** match independently solved LP optimal-input intervals. Full-horizon, shrinking-horizon and terminal branches are exercised; uncertified initial states are rejected.',
         r'$$x_{k+1}=0.8x_k+0.2u_k+w_k,\quad |w_k|\le0.01,\quad |x_k|\le1,\quad |u_k|\le0.5.$$',
@@ -57,7 +60,11 @@ def main():
         'Still required: full scientific selection if failed; target-specific original10ms timing; actual Windows/macOS laptop execution; gated reserved/native confirmation; matched robust vehicle comparator and remaining primary-source citations; connected physical sensor/communication/actuator measurements for vehicle readiness. The available cloud has no connection to the user laptop or a vehicle, so those measurements cannot be honestly marked complete.',
         'The report is an evidence draft, not a submission-ready superiority/safety paper. Claims of global convergence, neuro-symbolic novelty, vehicle readiness, energy advantage, total blind-distance improvement or 49-fold speedup remain unsupported. Repeated development campaigns and cumulative training budget must be disclosed; these finite means are not a population guarantee.',
         'Resume software work with `python tools/controller_review/run_credit_work.py --publish`. Frozen failures remain preserved; the command does not lower thresholds or manufacture hardware results.']
-    (out/'final-update.md').write_text('\n'.join(lines)+'\n')
+    blocks=[]
+    for line in lines:
+        blocks.append(line)
+        if line and not line.startswith(('|','- ')):blocks.append('')
+    (out/'final-update.md').write_text('\n'.join(blocks).rstrip()+'\n')
     status=dict(additional_training_steps=total,episodes=decision['episodes'],selected=decision['selected'],student_relative_gain_pct=gains,
         full_selection_pass=decision['selected'] is not None,strict_timing_pass=timing['observed_timing_pass'],timing_misses=timing['deadline_misses'],timing_ticks=timing['ticks'],
         functional_fallback_pass=timing['functional_pass'],reserved_unopened=True,actual_laptop_run=False,physical_vehicle_validation=False,
@@ -69,10 +76,15 @@ def main():
         if suffix=='pdf':cmd+=['--pdf-engine=xelatex','-V','mainfont=DejaVu Serif','-V','geometry:margin=22mm','-V','fontsize=10pt']
         subprocess.run(cmd,check=True)
     with zipfile.ZipFile(out/'LANS_Credit_Reports.zip','w',zipfile.ZIP_DEFLATED) as z:
-        for name in ('final-update.md','final-update.docx','final-update.pdf','completion-status.json','summary.json','decision.json','episodes.csv','failure-diagnosis.json','bibliography-audit.md','posthoc-analysis.md','posthoc-analysis.json'):
+        for name in ('final-update.md','final-update.docx','final-update.pdf','completion-status.json','summary.json','decision.json','episodes.csv','failure-diagnosis.json','bibliography-audit.md','posthoc-analysis.md','posthoc-analysis.json','reviewer-response-status.md','learning-implementation.json','generated-credit-train.py','runtime-threads-tests.log','timing/summary.json','timing/protocol.json','timing/verification.json','robust-scalar-contract/summary.json','robust-scalar-contract/verification.json'):
             z.write(out/name,name)
+        z.write(ROOT/'docs/research/reviewer-aligned-v3/verified-references.md','verified-references.md')
     with zipfile.ZipFile(out/'LANS_Credit_Reports.zip') as z:assert z.testzip() is None
-    (out/'artifact-quality.json').write_text(json.dumps(dict(archive_crc_pass=True,report_zip_sha256=hashlib.sha256((out/'LANS_Credit_Reports.zip').read_bytes()).hexdigest()),indent=2)+'\n')
+    archives={}
+    for f in out.glob('*.zip'):
+        with zipfile.ZipFile(f) as z:assert z.testzip() is None
+        archives[f.name]=hashlib.sha256(f.read_bytes()).hexdigest()
+    (out/'artifact-quality.json').write_text(json.dumps(dict(archive_crc_pass=True,sha256=archives),indent=2)+'\n')
     print(json.dumps(status,indent=2))
 
 if __name__=='__main__':main()

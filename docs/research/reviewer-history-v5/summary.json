@@ -1,0 +1,72 @@
+{
+  "lqr": {
+    "rmse_m": 0.09044932680943431,
+    "heading_rmse_rad": 0.020057263220844276,
+    "rate_rms_rad_s": 0.06910151955202541,
+    "movement_rad": 0.5615309806405575,
+    "survived": 96,
+    "episodes": 96,
+    "active": 0,
+    "gain_vs_lqr_pct": 0.0
+  },
+  "negative": {
+    "rmse_m": 0.0895182289286684,
+    "heading_rmse_rad": 0.01939457708427906,
+    "rate_rms_rad_s": 0.07133875147973097,
+    "movement_rad": 0.5928189005170266,
+    "survived": 96,
+    "episodes": 96,
+    "active": 20902,
+    "gain_vs_lqr_pct": 1.0294138316005563
+  },
+  "positive": {
+    "rmse_m": 0.0895182289286684,
+    "heading_rmse_rad": 0.01939457708427906,
+    "rate_rms_rad_s": 0.07133875147973097,
+    "movement_rad": 0.5928189005170266,
+    "survived": 96,
+    "episodes": 96,
+    "active": 20902,
+    "gain_vs_lqr_pct": 1.0294138316005563
+  },
+  "student": {
+    "rmse_m": 0.08861169896020521,
+    "heading_rmse_rad": 0.02000070902480184,
+    "rate_rms_rad_s": 0.07124666819143759,
+    "movement_rad": 0.5865143143045588,
+    "survived": 96,
+    "episodes": 96,
+    "active": 12974,
+    "gain_vs_lqr_pct": 2.031665590061005
+  },
+  "v3ppo": {
+    "rmse_m": 0.08811219934814432,
+    "heading_rmse_rad": 0.019960959396655768,
+    "rate_rms_rad_s": 0.07206471008151136,
+    "movement_rad": 0.5924529096784699,
+    "survived": 96,
+    "episodes": 96,
+    "active": 12323,
+    "gain_vs_lqr_pct": 2.583908077297281
+  },
+  "nohistory": {
+    "rmse_m": 0.0877757773565505,
+    "heading_rmse_rad": 0.019952138671266682,
+    "rate_rms_rad_s": 0.0723717792431936,
+    "movement_rad": 0.5942259507333041,
+    "survived": 96,
+    "episodes": 96,
+    "active": 13507,
+    "gain_vs_lqr_pct": 2.955853345947679
+  },
+  "history": {
+    "rmse_m": 0.08775477311772426,
+    "heading_rmse_rad": 0.019956297627115274,
+    "rate_rms_rad_s": 0.07264602758034426,
+    "movement_rad": 0.596102932454189,
+    "survived": 96,
+    "episodes": 96,
+    "active": 13280,
+    "gain_vs_lqr_pct": 2.979075452255331
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "selected": null,
+  "screens": {
+    "nohistory": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs student"
+      ],
+      "paired_group_gains_vs_student_pct": [
+        1.6962553841136652,
+        0.6185488405032302,
+        0.51675202615451
+      ]
+    },
+    "history": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs student",
+        "rate_rms_rad_s >1.05LQR"
+      ],
+      "paired_group_gains_vs_student_pct": [
+        1.250725478332304,
+        1.213610349109695,
+        0.43351344146691506
+      ]
+    }
+  },
+  "episodes": 672,
+  "transitions": 922992,
+  "submitted_queries_replayed": {
+    "student": 85716,
+    "v3ppo": 85716,
+    "nohistory": 85716,
+    "history": 85716
+  },
+  "severe_exact_pairs": 144,
+  "full_observer_plant_query_and_causal_history_replay": true,
+  "source_and_model_hashes_verified": true,
+  "reserved": "unopened; selected corresponding-model timing must pass separately"
+}

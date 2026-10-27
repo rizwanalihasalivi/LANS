@@ -22,3 +22,6 @@ docs/research/reviewer-followup-v2/** -text -whitespace
 
 # New aligned campaign preserves legacy source snapshots and raw evidence bytes.
 docs/research/reviewer-aligned-v3/** -text -whitespace
+
+# Interface/compute diagnosis retains immutable legacy source bytes.
+docs/research/reviewer-interface-v4/** -text -whitespace

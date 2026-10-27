@@ -25,3 +25,6 @@ docs/research/reviewer-aligned-v3/** -text -whitespace
 
 # Interface/compute diagnosis retains immutable legacy source bytes.
 docs/research/reviewer-interface-v4/** -text -whitespace
+
+# Explicitly versioned causal-history ablation: preserve all frozen evidence.
+docs/research/reviewer-history-v5/** -text -whitespace

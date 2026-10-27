@@ -1,0 +1,237 @@
+{
+  "scope": "All 120 frozen v11 new-PPO episodes; descriptive associations, not independent causes",
+  "prior_seal_sha256": "8d64c4c3ee09d7c8ba21e5e3f56d859d8ba9d76bb253483b39ab21a2531444b4",
+  "counts": {
+    "ticks": 164820,
+    "submitted": 93960,
+    "active": 4029
+  },
+  "scenarios": {
+    "nominal": {
+      "ticks": 32964,
+      "issued": 32964,
+      "active": 1849,
+      "reasons": {
+        "missing": 24,
+        "cost": 29277,
+        "recovery": 1814,
+        "accepted": 1849
+      },
+      "weight_sum": 263.25,
+      "abs_correction_sum": 7.6043929256227125,
+      "actions": {
+        "0.0": 9249,
+        "0.08": 10027,
+        "-0.08": 12487,
+        "0.04": 178,
+        "-0.04": 1023
+      },
+      "advantage_eligible_packets": 0,
+      "gain_vs_lqr_pct": 1.0742164698753998,
+      "active_pct": 5.60914937507584,
+      "mean_weight": 0.007985984710593374,
+      "mean_abs_correction_rad": 0.000230687808688955
+    },
+    "tire": {
+      "ticks": 32964,
+      "issued": 32964,
+      "active": 957,
+      "reasons": {
+        "missing": 24,
+        "cost": 31175,
+        "recovery": 808,
+        "accepted": 957
+      },
+      "weight_sum": 165.20000000000002,
+      "abs_correction_sum": 5.1926466220154355,
+      "actions": {
+        "0.0": 12593,
+        "0.08": 7579,
+        "-0.08": 11170,
+        "-0.04": 949,
+        "0.04": 673
+      },
+      "advantage_eligible_packets": 0,
+      "gain_vs_lqr_pct": -0.23373682634963977,
+      "active_pct": 2.9031670913724064,
+      "mean_weight": 0.005011527727217571,
+      "mean_abs_correction_rad": 0.00015752477314693106
+    },
+    "delay20": {
+      "ticks": 32964,
+      "issued": 16488,
+      "active": 952,
+      "reasons": {
+        "missing": 48,
+        "cost": 30117,
+        "recovery": 1847,
+        "accepted": 952
+      },
+      "weight_sum": 136.2,
+      "abs_correction_sum": 3.8271267171220877,
+      "actions": {
+        "0.0": 4925,
+        "0.08": 5369,
+        "-0.08": 5746,
+        "0.04": 118,
+        "-0.04": 330
+      },
+      "advantage_eligible_packets": 0,
+      "gain_vs_lqr_pct": 0.08560447692200768,
+      "active_pct": 2.887999029244024,
+      "mean_weight": 0.004131780123771386,
+      "mean_abs_correction_rad": 0.0001161001916370006
+    },
+    "delay40": {
+      "ticks": 32964,
+      "issued": 8244,
+      "active": 271,
+      "reasons": {
+        "missing": 96,
+        "cost": 7251,
+        "age": 24648,
+        "recovery": 698,
+        "accepted": 271
+      },
+      "weight_sum": 13.55,
+      "abs_correction_sum": 0.14161863389806825,
+      "actions": {
+        "0.0": 3058,
+        "0.08": 2627,
+        "-0.08": 2388,
+        "-0.04": 71,
+        "0.04": 100
+      },
+      "advantage_eligible_packets": 0,
+      "gain_vs_lqr_pct": 0.0055740753190036685,
+      "active_pct": 0.8221089673583303,
+      "mean_weight": 0.0004110544836791652,
+      "mean_abs_correction_rad": 4.296160475005104e-06
+    },
+    "delay100": {
+      "ticks": 32964,
+      "issued": 3300,
+      "active": 0,
+      "reasons": {
+        "missing": 240,
+        "age": 32724
+      },
+      "weight_sum": 0.0,
+      "abs_correction_sum": 0.0,
+      "actions": {
+        "0.0": 3194,
+        "0.08": 55,
+        "-0.08": 37,
+        "0.04": 14
+      },
+      "advantage_eligible_packets": 0,
+      "gain_vs_lqr_pct": 0.0,
+      "active_pct": 0.0,
+      "mean_weight": 0.0,
+      "mean_abs_correction_rad": 0.0
+    }
+  },
+  "deterministic_action_histogram": {
+    "2": 33019,
+    "4": 25657,
+    "0": 31828,
+    "3": 1083,
+    "1": 2373
+  },
+  "mean_entropy_nats": 0.34626367688179016,
+  "max_entropy_nats": 1.6094379124341003,
+  "mean_max_action_probability": 0.8643733859062195,
+  "fraction_max_probability_over_099": 0.40394848871860367,
+  "tanh_saturation_fraction": [
+    0.03244016735845041,
+    0.1160784841954023
+  ],
+  "error_energy": {
+    "total": 1652.284825772495,
+    "first_second": 388.72798977086245,
+    "inactive": 1624.966351642309
+  },
+  "analytic_authority": {
+    "maximum_residual_rad": 0.08,
+    "cap": 0.25,
+    "maximum_correction_rad": 0.02,
+    "recovery_weight": 0.05,
+    "filter_alpha": 0.0327838995179941,
+    "first_fresh_tick_from_zero_filter_rad": 0.00013113559807197638,
+    "stale_cutoff_s": 0.05,
+    "assistance_ticks_for_arrival_10_20_40_100_ms": [
+      4,
+      3,
+      1,
+      0
+    ],
+    "note": "First-tick magnitude is a ceiling if recovery already qualifies; startup recovery itself commands zero."
+  },
+  "credit": {
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "td_residual_gae_coeff_after_10_20_40_100_ticks": [
+      0.5414869554928257,
+      0.2932081229688893,
+      0.08597100337493932,
+      0.002167105172095432
+    ],
+    "note": "GAE discounts TD residuals; these coefficients are not a measured policy-effect fraction or proof that lambda is the cause."
+  },
+  "optimizer_last_logs": [
+    {
+      "pair": 0,
+      "last": {
+        "train/clip_fraction": "0.012189874425530434",
+        "train/explained_variance": "0.6589767336845398",
+        "train/loss": "0.003278920892626047",
+        "train/clip_range": "0.1",
+        "train/policy_gradient_loss": "-0.0006678580878380203",
+        "train/n_updates": "995",
+        "train/value_loss": "0.0022690409049391748",
+        "train/entropy_loss": "-0.15806209027767182",
+        "train/learning_rate": "0.0001",
+        "train/approx_kl": "0.0002907507"
+      }
+    },
+    {
+      "pair": 1,
+      "last": {
+        "train/learning_rate": "0.0001",
+        "train/loss": "0.028075121343135834",
+        "train/value_loss": "0.09982376962900162",
+        "train/entropy_loss": "-0.18114680349826812",
+        "train/clip_fraction": "0.007681120689958334",
+        "train/clip_range": "0.1",
+        "train/approx_kl": "0.00036772565",
+        "train/policy_gradient_loss": "-0.0005509614569913879",
+        "train/explained_variance": "0.9237413927912712",
+        "train/n_updates": "995"
+      }
+    },
+    {
+      "pair": 2,
+      "last": {
+        "train/policy_gradient_loss": "-0.003422784416132032",
+        "train/loss": "-0.005857144016772509",
+        "train/value_loss": "0.002523127752356231",
+        "train/approx_kl": "0.0023476135",
+        "train/explained_variance": "0.9844405502080917",
+        "train/clip_range": "0.1",
+        "train/clip_fraction": "0.0353125835955143",
+        "train/entropy_loss": "-0.7515632939338684",
+        "train/n_updates": "995",
+        "train/learning_rate": "0.0001"
+      }
+    }
+  ],
+  "findings": [
+    "The baseline remains the full LQR command; PPO proposes a bounded residual, not full-command driving.",
+    "The accepted actuator correction is weight times filtered residual. Mean weight is not percent driving contribution.",
+    "At 100ms the 50ms freshness contract forces exact LQR fallback. These scenarios cannot show learned tracking improvement.",
+    "Cost rejection and recovery can remove actor authority even when an action was submitted and receives policy-gradient credit.",
+    "Fixed discrete proposal magnitudes, smoothing/recovery and a strong feedback baseline restrict useful action effects.",
+    "Continued training began from a low-entropy inherited policy. This is an exploration limitation, not proof of a code defect.",
+    "The existing reward already includes executed lateral/heading/actuator-rate/steering cost; no latency reward under action control is assumed."
+  ]
+}

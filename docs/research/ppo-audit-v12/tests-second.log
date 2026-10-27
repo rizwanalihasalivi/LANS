@@ -1,0 +1,27 @@
+test_corruption_and_different_source_refused (__main__.Contracts) ... /workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpo7jis46w/step-000000008.partial-eaa8a1dc7d8d464c9c83fb2ec9250780/model.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_forecast_uses_only_declared_causal_inputs (__main__.Contracts) ... ok
+test_lqr_baseline_physically_identical_after_forecast_fix (__main__.Contracts) ... ok
+test_new_forecast_preserves_zero_horizon_and_input_arrays (__main__.Contracts) ... ok
+test_partial_save_does_not_replace_latest (__main__.Contracts) ... /workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpgpinkwtx/step-000000008.partial-af1ca2f1dfc24d7cbe1626a00fb74ac7/model.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpgpinkwtx/step-000000008/model.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_resume_same_as_uninterrupted_including_optimizer_and_environment (__main__.Contracts) ... /workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:845: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpfuphyx8j/step-000000008.partial-6fc6ddfca30447d3a2187051d94000b9/model.zip'>
+  save_to_zip_file(path, data=data, params=params_to_save, pytorch_variables=pytorch_variables)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/lans-venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py:679: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpfuphyx8j/step-000000008/model.zip'>
+  data, params, pytorch_variables = load_from_zip_file(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_timestamp_not_refreshed_and_stale_packet_no_authority (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.502s
+
+OK

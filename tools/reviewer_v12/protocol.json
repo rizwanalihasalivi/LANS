@@ -1,0 +1,26 @@
+{
+  "id": "v12-performance-audit-forecast-and-exploration",
+  "parent_commit": "79e44331f81c504bf2bd66886be3be37fe973c7c",
+  "scope": "Audit actual current pipeline, repair response forecast numerical inconsistency and interrupted-run recovery; finite development experiment. Preserve prior failed outcomes and reserved tests.",
+  "architecture": "LQR plus bounded residual, identical supervisor RK cost, 50ms freshness, .25 weight cap, .3s filter, .05 weight ramp, three-proposal recovery, .1% predicted cost margin. Same observer/plant and physical reward. Only causal response forecast uses 1ms RK4 instead of 10ms Euler.",
+  "training": {
+    "arms": ["continued", "explore"],
+    "seeds": [8701, 8802, 8903],
+    "steps_each": 50000,
+    "checkpoint_steps": 10000,
+    "noise_base": 1806000000,
+    "initialization": "Corresponding v11 final PPO, critic, optimizer and reward normalization. Fresh RNG/environment. In explore only, initial action-head weight and bias multiplied by .25 (temperature4), action-head Adam slots reset; other parameters/stats preserved. This is a predeclared exploration hypothesis, not a bug fix or an improvement claim. Same RNG/noise stream per pair across arms; later trajectories may differ.",
+    "optimizer": "Unchanged lr1e-4/entropy.005/gamma.99/lambda.95/nsteps250/4env/batch200/5epochs. Submitted-request mask retained. Exactly six final50k endpoints; total300k additional steps. No extension or best-checkpoint/per-seed mixing."
+  },
+  "development": {
+    "speeds": [15, 25], "paths": ["sine120", "dlc220"], "mirrors": [-1, 1],
+    "scenarios": ["nominal", "tire", "delay20", "delay40", "delay100"],
+    "noise_base": 1826000000,
+    "sources": ["lqr", "negative", "positive", "student", "oldppo", "prior", "legacy_prior", "planner", "continued", "explore"],
+    "episodes": 1200,
+    "comparison": "All sources except legacy_prior use corrected forecast. prior=v11 unchanged weights, oldppo=v9 unchanged weights. legacy_prior is paired v11 weights plus v11 forecast for numerical A/B. Planner uses corrected causal forecast, frozen nominal model and same gate. Both fixed corrections and LQR kept."
+  },
+  "acceptance": "Primary20% lower mean episode tracking RMSE vs LQR, fixed +/-0.04, student, oldppo, prior and causal planner; survival all; positive paired gain in each seed group vs each comparator; nominal <=1.02LQR; heading/rate RMS <=1.05LQR. Report both arms, no final winner from this audit. Published robust vehicle reproduction absent; no all-literature or deployment claim.",
+  "resume": "After every10k steps: immutable atomic snapshot of PPO/Adam, full vecenv/queue/observer/scenario state, reward normalizer including returns, counters and Python/NumPy/Torch RNG. Check signatures/checksums before restore. In-flight work after last complete snapshot is replayed. Partial episodes never become completed evidence; completed episode files individually hashed and verified on resume. --publish commits/pushes each checkpoint and each completed evaluation pair; no force push.",
+  "stop": "After both arms and full matched development/replay; failed targets remain failed. Reserved/native/laptop/physical evidence and winner timing are separate follow-up gates. No further training automatically."
+}

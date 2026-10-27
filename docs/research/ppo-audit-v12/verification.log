@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/workspace/LANS/tools/reviewer_v12/verify12.py", line 45, in main
+    assert (math.isnan(value) and math.isnan(recorded)) or abs(value-recorded) <= 1e-11, (row['trace'], tick, key)
+TypeError: numpy boolean subtract, the `-` operator, is not supported, use the bitwise_xor, the `^` operator, or the logical_xor function instead.

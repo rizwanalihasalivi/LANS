@@ -1,0 +1,6 @@
+{
+  "source_sha256": "50baa2d1f576596002aa364f779e354aec2c45d6d757e732c9bb9d10212a0603",
+  "initial_failure_preserved": "verification.log",
+  "typed_comparison_checks": 7,
+  "change": "Compare boolean/integer fields exactly; same1e-11float tolerance; original raw data/models/criteria unchanged."
+}

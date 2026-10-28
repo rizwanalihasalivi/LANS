@@ -1,7 +1,7 @@
 # Completed v12 audit
 
-Read README.md for all outcomes and limits. No final controller is promoted. Reserved tests remain unopened.
+Read README.md and semantic-review.md for outcomes and limitations. No controller is promoted; reserved tests remain unopened.
 
-Resume/verify: `/workspace/lans-venv/bin/python tools/reviewer_v12/run12.py --publish`
+Preferred cloud command: `/workspace/lans-venv/bin/python tools/controller_review/resume_ppo_audit12.py --publish`
 
-Training restores a hash-checked atomic10k-step snapshot including Adam, environment, pending packets, normalization and RNG. In-flight work after that snapshot is replayed. Completed episode traces are checkpointed individually. The finite budget is exhausted; this command does not start extra training.
+This checks the pinned software, serializes guarded runs, restores verified checkpoints and completed episodes, uses the corrected typed verifier and preserves failed trials. Add `--verify-only` for hash verification. The finite300k-step budget is exhausted; no extra training starts.

@@ -60,3 +60,34 @@ cd /workspace/LANS
 ```
 
 The same command verifies frozen inputs, loads completed training checkpoints, skips verified completed stages, resumes episode-level evaluation, verifies results and republishes the report. Exit2 means the empirical20% target failed, not that the pipeline crashed. Check RESUME.md and status.json for the last completed stage. Cloud storage alone cannot protect unpushed work after the most recent checkpoint.
+
+## Supplemental audit and guarded resume
+
+
+The initial frozen verifier stopped on NumPy boolean subtraction; `verification.log` preserves that failure.
+The corrected verifier compares boolean/integer fields exactly and keeps the same1e-11floating tolerance.
+All original episodes, models and acceptance criteria are preserved. See `verifier-repair.json` and `verification-corrected.log`.
+
+Actual checkpoint verification replays steps10,000–20,000 in a separate process and exactly matches actor/critic,
+Adam, full environment/queue, normalization and Python/NumPy/Torch RNG. This is verification work, not an extra selected endpoint.
+See `resume-replay.json`. Detailed source review is in `semantic-review.md`; software requirements are in `software-environment.json`.
+
+The preferred cloud resume command checks software versions and prevents concurrent guarded runners:
+
+```bash
+/workspace/lans-venv/bin/python tools/controller_review/resume_ppo_audit12.py --publish
+```
+
+Use `--verify-only` to check completed source/evidence hashes without training or evaluation.
+The finite training budget remains exhausted. Work since the last committed10k-step snapshot may be replayed after interruption.
+
+A separate posthoc v11 branch audit checks one packet’s planned assistance until expiry followed by LQR continuation. Its nonlinear software plant, estimator and future recorded noise differ from the nominal predictor. These are conditional diagnostic samples, not population error rates or a deployable oracle.
+
+| State group | Samples | Physical cost benefit >0.1% | Physical cost harm >0.1% |
+|---|---:|---:|---:|
+| nominal/accepted | 24 | 20 | 3 |
+| nominal/cost | 24 | 3 | 12 |
+| tire/accepted | 18 | 8 | 4 |
+| tire/cost | 24 | 4 | 10 |
+
+This supports investigating prediction/estimation mismatch jointly; it does not isolate either cause or justify bypassing the supervisor.

@@ -14,7 +14,77 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
-- **Latest recovery/expiry study:** [full matched matrix and deadline guard](docs/research/reviewer-recovery-v8/README.md).
+- **Latest performance audit and resumable experiment:** [v12 findings, fixes and matched results](docs/research/ppo-audit-v12/README.md).
+  The response-delay forecast now uses the same nominal RK4 integration as the
+  supervisor. Full model/Adam/environment/queue/normalizer/RNG checkpoints are
+  saved every 10,000 training steps; an actual 10,000-step replay matches the
+  uninterrupted run exactly. The active-path audit includes 45 passing
+  regression tests and an inventory of 2,688 Python sources/snapshots.
+  Two predeclared training arms across three seeds add **300,000 new steps**.
+  All **1,200 fresh matched episodes survive**; **1,648,200 transitions** and
+  **563,760 neural queries** replay, with **216 exact 100 ms/LQR pairs**.
+  On this SAME grid, continued PPO gains **0.008%** over LQR; the higher-exploration
+  variant is **0.113% worse**. The frozen student gains **0.405%** and the causal
+  nonlearned planner **1.013%**. Both PPO arms fail the **20%** target; no actor
+  is promoted. Numerical correction alone gives only **0.00109%** tracking
+  improvement with unchanged weights. Low admitted authority and model mismatch
+  remain research limitations; further exploration alone did not resolve them.
+  [Semantic review](docs/research/ppo-audit-v12/semantic-review.md) distinguishes
+  confirmed defects from architectural limits. A typed-verifier bug was repaired
+  without changing raw data, tolerances or selection criteria; its failure is retained.
+  Resume with `python tools/controller_review/resume_ppo_audit12.py --publish`
+  in the recorded research environment; `--verify-only` checks sealed evidence.
+  The finite budget is exhausted, and a resume starts no additional training.
+- **Prior actual PPO training:** [three corrected-environment continuation runs and full matched results](docs/research/reviewer-training-v11/README.md).
+  The user explicitly requested training despite the prior failed heuristic
+  headroom screen. Three final endpoints add **300,000 new environment steps**,
+  retaining the previous actor/critic/optimizer/reward statistics. All 840 fresh
+  development episodes survive; 1,153,740 transitions and 281,880 neural
+  decisions independently replay, including 144 exact100ms/LQR fallback pairs.
+  On this SAME grid, new PPO gains **0.098%** over LQR, old PPO **0.360%**,
+  student **0.429%**, and the causal nonlearned planner **1.025%**. New PPO is
+  **0.263% worse than old PPO** and **0.333% worse than the student**.
+  **20% remains unmet; no new actor is promoted.** Reserved/current-actor
+  timing/native/laptop/physical claims are not inferred from these software
+  episodes. [Learning/authority diagnostics](docs/research/reviewer-training-v11/learning-diagnostics.json)
+  separate measured behavior from causal speculation.
+  [Editable Word and PDF reports](docs/research/reviewer-training-v11/LANS_New_PPO_Training_Reports.zip).
+  Resume with `python tools/reviewer_v11/run11.py --publish`; completed or
+  failed trials are preserved, and no additional training starts automatically.
+- **Prior active PPO audit — 20% target:** [verified fixes and diagnostic results](docs/research/reviewer-audit-v10/README.md).
+  Terminal bootstrap observations, packet/request identity and numerical-domain
+  validation are corrected in a new version. A nominal RK4 predictor uses
+  average actual actuator-rate cost and matches an independent integrator.
+  All 36 core contracts pass; 360 fresh diagnostic episodes survive and
+  494,460 transitions / 247,248 neural decisions replay. On this narrower
+  nominal/tire/20ms grid, corrected PPO gains 0.379% over LQR, student 0.537%,
+  and the causal nonlearned planner 1.488%; old-predictor PPO gains 0.174%.
+  **20% is not achieved.** Frozen actors were not retrained for the new
+  numerical supervisor; no learning effect from the terminal fix is claimed.
+  Current-runtime smoke has 1/1,500 original deadline misses, with functional
+  fallback and full replay; it does not inherit v9's zero-miss timing result.
+  [Strict target checks and miss attribution](docs/research/reviewer-audit-v10-target20.json)
+  retain missing baselines and block a full-superiority claim. Resume with
+  `python tools/controller_review/run_ppo20_audit.py --publish` in the research
+  environment. Previous criteria/results remain frozen; reserved data unopened.
+- **Prior matched-training single pipeline:** [matched causal-state retraining, full replay and status](docs/research/reviewer-pipeline-v9/README.md).
+  Six fixed pilots add 600,000 training steps; all 1,080 fresh development
+  episodes survive and 1,483,380 transitions / 563,760 neural decisions replay.
+  The new causal-history PPO gains 0.230% over LQR but is 0.034% worse than
+  the compensated student, so scientific selection still fails. The
+  predeclared diagnostic actor records **0/7,500 original 10ms deadline
+  misses**, with functional fallback and full history/query/gate replay.
+  This finite cloud result is not target-laptop or hard-real-time evidence;
+  earlier failed campaigns remain preserved. An initial one-decision float32
+  batch/single-row audit discrepancy is documented and corrected by exact
+  single-observation replay, with no episode reruns or relaxed criteria.
+  [Python 3.10 Windows/macOS kit](docs/research/reviewer-pipeline-v9/LANS_Causal_Python310_Kit.zip)
+  and [Word/PDF evidence reports](docs/research/reviewer-pipeline-v9/LANS_Pipeline_Reports.zip).
+  Run `python tools/controller_review/run_single_pipeline.py --publish` in
+  the research environment. Exit 2 explicitly retains unmet scientific or
+  external requirements; reserved/native, matched robust-vehicle reproduction,
+  primary references and physical/target evidence are not silently passed.
+- **Prior recovery/expiry study:** [full matched matrix and deadline guard](docs/research/reviewer-recovery-v8/README.md).
   Recovery now requires three distinct qualifying proposals across bounded gaps,
   with zero authority on stale ticks. Prediction uses only the current packet's
   eligible lifetime, then LQR continuation. All 840 episodes survive and

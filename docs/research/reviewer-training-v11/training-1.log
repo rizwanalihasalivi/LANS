@@ -1,0 +1,11 @@
+{'new_steps': 10000, 'submitted': 4964, 'active': 296}
+{'new_steps': 20000, 'submitted': 12324, 'active': 859}
+{'new_steps': 30000, 'submitted': 20101, 'active': 1197}
+{'new_steps': 40000, 'submitted': 27858, 'active': 1516}
+{'new_steps': 50000, 'submitted': 33198, 'active': 1696}
+{'new_steps': 60000, 'submitted': 40088, 'active': 1953}
+{'new_steps': 70000, 'submitted': 44935, 'active': 2160}
+{'new_steps': 80000, 'submitted': 49222, 'active': 2305}
+{'new_steps': 90000, 'submitted': 53446, 'active': 2457}
+{'new_steps': 100000, 'submitted': 59045, 'active': 2709}
+{"pair": 1, "seed": 7802, "additional_steps": 100000, "submitted": 59045, "active": 2709, "prior_updates": 500, "final_updates": 1000, "wall_seconds": 68.6776610220004, "source_sha256": {"policy.zip": "0e6e01e49f36b4561fcba749b96a047a60e6fa7373285476553a250f0c839f88", "reward-normalization.pkl": "0d5008f056963bf6016353c890096a1e2ada74f6a977a90380739f7ab64e72c7"}, "endpoint_eligible": true}

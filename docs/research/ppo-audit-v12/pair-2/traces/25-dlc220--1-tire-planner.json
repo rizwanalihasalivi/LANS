@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "tire",
+  "source": "planner",
+  "noise_id": 1826225110,
+  "trace": "25-dlc220--1-tire-planner.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.17025460967595507,
+  "heading_rmse_rad": 0.03437026388968589,
+  "rate_rms_rad_s": 0.1196915138441999,
+  "active_ticks": 297,
+  "movement_rad": 0.9919456576171509,
+  "trace_sha256": "ef046269d8c719a63d4517ac0639f57afb8d958aaea0b21d6a00b782a2cc4995"
+}

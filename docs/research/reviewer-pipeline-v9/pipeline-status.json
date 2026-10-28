@@ -1,0 +1,126 @@
+{
+  "stages": {
+    "pipeline_contracts": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "prior_evidence": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "matched_development": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "admission_analysis": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "scientific_selection": {
+      "state": "failed_requirement",
+      "selected": null,
+      "screens": {
+        "legacy_history": {
+          "eligible": false,
+          "reasons": [
+            "lacks1% gain vs lqr",
+            "lacks1% gain vs student_comp",
+            "lacks1% gain vs negative",
+            "lacks1% gain vs positive",
+            "pair1 no student gain",
+            "pair2 no student gain"
+          ],
+          "paired_gains_vs_student_pct": [
+            0.13641970149351756,
+            -0.21755188239525047,
+            -0.14638033583782573
+          ]
+        },
+        "causal_history": {
+          "eligible": false,
+          "reasons": [
+            "lacks1% gain vs lqr",
+            "lacks1% gain vs student_comp",
+            "lacks1% gain vs negative",
+            "lacks1% gain vs positive",
+            "pair1 no student gain",
+            "pair2 no student gain"
+          ],
+          "paired_gains_vs_student_pct": [
+            0.1527398716710593,
+            -0.20895906771158934,
+            -0.04513580051115351
+          ]
+        }
+      }
+    },
+    "timing": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "timing_replay": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "strict_original_10ms": {
+      "state": "passed",
+      "ticks": 7500,
+      "misses": 0,
+      "functional_pass": true,
+      "observed_timing_pass": true,
+      "hard_realtime_guarantee": false
+    },
+    "portable_kit": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "portable_kit_audit": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "packaging_smoke": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "actual_laptop": {
+      "state": "awaiting_external_run",
+      "instruction": "Run the new Python3.10 kit on the actual Windows/macOS laptop; submit Results.zip. Cloud smoke is not target evidence."
+    },
+    "reserved_unseen": {
+      "state": "blocked",
+      "reason": "Requires scientific selection and corresponding-model original-deadline timing pass. Never open reserved data to tune a failed candidate."
+    },
+    "native_webots": {
+      "state": "blocked",
+      "reason": "Old student/native adapter cannot stand in for this new ABI/controller. No current-model native confirmation claimed."
+    },
+    "robust_vehicle_baseline": {
+      "state": "needs_research",
+      "reason": "Existing scalar robust filter is verified, but a matched vehicle reproduction needs a justified disturbance set, terminal safe set/backup and primary algorithm details."
+    },
+    "primary_references": {
+      "state": "awaiting_primary_source_verification",
+      "verified_primary_versions": 5,
+      "structurally_audited": 32,
+      "reason": "Structural checks and five uploaded papers do not verify the remaining primary sources or establish novelty."
+    },
+    "physical_validation": {
+      "state": "not_performed",
+      "reason": "No physical sensor, communication or actuator access; real-vehicle-readiness claims excluded."
+    },
+    "submission": {
+      "state": "draft_only",
+      "reason": "Unresolved evidence gates remain. Report the observed outcomes, not assumed superiority or hard real-time guarantees."
+    },
+    "evidence_seal": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    },
+    "evidence_report": {
+      "state": "passed",
+      "meaning": "Implementation/execution/replay completed; empirical criteria evaluated separately"
+    }
+  },
+  "all_requirements_passed": false,
+  "scope": "Software research pipeline. Hardware/primary-source access and empirical superiority cannot be manufactured."
+}

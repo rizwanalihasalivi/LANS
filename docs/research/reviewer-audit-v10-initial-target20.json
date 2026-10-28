@@ -1,0 +1,45 @@
+{
+  "matched_diagnostic_pass": false,
+  "gains_pct": {
+    "lqr": 0.3785601231417024,
+    "student_rk": -0.15917848389164213,
+    "planner_rk": -1.12594453551631,
+    "ppo_euler": 0.20470566053629735
+  },
+  "reasons": [
+    "less_than_20pct_vs_lqr",
+    "less_than_20pct_vs_student_rk",
+    "nonpositive_pair_gain_1_vs_student_rk",
+    "nonpositive_pair_gain_2_vs_student_rk",
+    "less_than_20pct_vs_planner_rk",
+    "nonpositive_pair_gain_0_vs_planner_rk",
+    "nonpositive_pair_gain_1_vs_planner_rk",
+    "nonpositive_pair_gain_2_vs_planner_rk",
+    "less_than_20pct_vs_ppo_euler"
+  ],
+  "full_twenty_percent_claim": false,
+  "missing_comparators": [
+    "both fixed residual controls in this new numerical controller grid",
+    "full matched robust published vehicle controller/MPC"
+  ],
+  "scope": "Stricter supplemental target check includes nominal and per-pair guards omitted from the narrow diagnostic boolean; it never relaxes the frozen protocol or promotes a controller.",
+  "actual_laptop": false,
+  "reserved_unopened": true,
+  "deadline_attribution": [
+    {
+      "trace": "timing/on/seed-802/cpu_stress-ticks.csv",
+      "tick": 27,
+      "release_lateness_ms": 10.341163,
+      "processing_ms": 0.531179,
+      "thread_cpu_ms": 0.527796,
+      "budget_skipped": true
+    }
+  ],
+  "deadline_interpretation": "A release already beyond10ms is a miss before current control work. Unrecorded prior-cycle post-commit work, timer wakeup and host scheduling cannot be separated by these traces; no unique root cause or hard real-time guarantee is asserted.",
+  "hashes": {
+    "tools/controller_review/check_target20.py": "ef2c2a07e02c94455a42a35bbba64fc4fa65dd044ac145b92a34ba590051a0cd",
+    "docs/research/reviewer-audit-v10/episodes.csv": "6422a16be7545ec87d88672d5014b06fb1555d991e470077c7bf0ff7136af9dd",
+    "docs/research/reviewer-audit-v10/summary.json": "471c37287f5131db1e9d0ef0961516dbb11d775c574760bcef7c2dd4c4a2b925",
+    "docs/research/reviewer-audit-v10/decision.json": "194dd546aff4bb5345cb266ddcde092e57609baa273f75eb3744ed947f82637c"
+  }
+}

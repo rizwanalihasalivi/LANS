@@ -1,0 +1,19 @@
+{
+  "pair": 2,
+  "speed": 15,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "delay20",
+  "source": "lqr",
+  "noise_id": 1826215020,
+  "trace": "15-sine120-1-delay20-lqr.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03650466790984873,
+  "heading_rmse_rad": 0.006625307031450145,
+  "rate_rms_rad_s": 0.042154012838470055,
+  "active_ticks": 0,
+  "movement_rad": 0.3832460494226102,
+  "trace_sha256": "a3426eb050c0679945255c2f96bb6f7441377f214ebac33e9359a6d4f14e7c9c"
+}

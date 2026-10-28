@@ -1,0 +1,14 @@
+test_all_fixed_candidate_outputs_still_bounded (__main__.Contracts) ... ok
+test_corruption_and_different_source_refused (__main__.Contracts) ... ok
+test_exploration_initialization_preserves_critic_and_argmax (__main__.Contracts) ... ok
+test_forecast_uses_only_declared_causal_inputs (__main__.Contracts) ... ok
+test_lqr_baseline_physically_identical_after_forecast_fix (__main__.Contracts) ... ok
+test_new_forecast_preserves_zero_horizon_and_input_arrays (__main__.Contracts) ... ok
+test_partial_save_does_not_replace_latest (__main__.Contracts) ... ok
+test_resume_same_as_uninterrupted_including_optimizer_and_environment (__main__.Contracts) ... ok
+test_timestamp_not_refreshed_and_stale_packet_no_authority (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.535s
+
+OK

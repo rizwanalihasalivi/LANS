@@ -1,0 +1,18 @@
+{
+  "target_percent": 20,
+  "diagnostic_target_pass": false,
+  "headroom_gate": false,
+  "new_training_steps": 0,
+  "contracts": 36,
+  "timing": {
+    "ticks": 1500,
+    "misses": 1,
+    "functional_pass": true,
+    "observed_timing_pass": false
+  },
+  "full_selection": false,
+  "reserved_unopened": true,
+  "submission_ready": false,
+  "actual_laptop": false,
+  "physical_validation": false
+}

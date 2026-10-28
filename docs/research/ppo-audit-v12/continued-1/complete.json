@@ -1,0 +1,12 @@
+{
+  "arm": "continued",
+  "pair": 1,
+  "additional_steps": 50000,
+  "submitted": 25925,
+  "active": 873,
+  "checkpoint": {
+    "folder": "step-000050000",
+    "manifest_sha256": "2e053be206e8694afb693879efad08dfe497a6ff0587f87066e1c25f978082a2"
+  },
+  "endpoint_eligible": true
+}

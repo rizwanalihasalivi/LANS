@@ -1,0 +1,19 @@
+{
+  "pair": 0,
+  "speed": 15,
+  "path": "sine120",
+  "mirror": -1,
+  "scenario": "nominal",
+  "source": "student",
+  "noise_id": 1826015000,
+  "trace": "15-sine120--1-nominal-student.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03617917612648863,
+  "heading_rmse_rad": 0.006651814364189787,
+  "rate_rms_rad_s": 0.04176661011859882,
+  "active_ticks": 52,
+  "movement_rad": 0.3834815450157979,
+  "trace_sha256": "8ac25429a5ad513d1430b85f994cf2210b71e355625074875a6c9f3099bc8e66"
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "Same nominal linear model; numerical integration/average-rate correction jointly assessed, not true hidden-plant accuracy or hard real-time timing",
+  "samples": 100,
+  "independent_checks": [
+    {
+      "row": 0,
+      "speed": 15.0,
+      "rk4_cost": 0.01384380339202614,
+      "independent_dop853_cost": 0.013843803404490287,
+      "absolute_error": 1.2464146034729673e-11
+    },
+    {
+      "row": 1,
+      "speed": 25.0,
+      "rk4_cost": 0.3820850112963565,
+      "independent_dop853_cost": 0.38208501128358907,
+      "absolute_error": 1.2767453760886838e-11
+    },
+    {
+      "row": 2,
+      "speed": 15.0,
+      "rk4_cost": 0.5517861688802149,
+      "independent_dop853_cost": 0.5517861688624918,
+      "absolute_error": 1.772315627590615e-11
+    },
+    {
+      "row": 3,
+      "speed": 25.0,
+      "rk4_cost": 0.21238514610352832,
+      "independent_dop853_cost": 0.21238520953090903,
+      "absolute_error": 6.34273807087471e-08
+    }
+  ],
+  "relative_cost_error_old_vs_new_median": 0.04309903500530124,
+  "relative_cost_error_p95": 0.17215166218567532,
+  "admission_disagreements": 0,
+  "kernel_ns_median": 63745.5,
+  "kernel_ns_max": 289575
+}

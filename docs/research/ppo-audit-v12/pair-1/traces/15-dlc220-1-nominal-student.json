@@ -1,0 +1,19 @@
+{
+  "pair": 1,
+  "speed": 15,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "nominal",
+  "source": "student",
+  "noise_id": 1826115100,
+  "trace": "15-dlc220-1-nominal-student.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03238675793132529,
+  "heading_rmse_rad": 0.005850656821214959,
+  "rate_rms_rad_s": 0.04245384820815646,
+  "active_ticks": 68,
+  "movement_rad": 0.4337340910596858,
+  "trace_sha256": "0cc2bc331a412e1c16c780ac65f5732e5e710d1d4905a4199c0edaa9ffacbf6c"
+}

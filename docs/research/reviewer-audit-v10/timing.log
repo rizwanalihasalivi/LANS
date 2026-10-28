@@ -1,0 +1,334 @@
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 0 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 0 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 0 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 1 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+nominal 0 controller deadlines missed; fallback violations 0
+delay20 0 controller deadlines missed; fallback violations 0
+delay1000 0 controller deadlines missed; fallback violations 0
+cpu_stress 0 controller deadlines missed; fallback violations 0
+worker_crash 0 controller deadlines missed; fallback violations 0
+{
+  "heartbeat": [],
+  "profiles": {
+    "on": {
+      "ticks": 1500,
+      "misses": 1,
+      "functional_pass": true,
+      "observed_timing_pass": false
+    }
+  },
+  "episodes": [
+    {
+      "guard": "on",
+      "case": "nominal",
+      "ticks": 100,
+      "seed": 701,
+      "noise_id": 1616000701,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 99,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001393475
+    },
+    {
+      "guard": "on",
+      "case": "delay20",
+      "ticks": 100,
+      "seed": 701,
+      "noise_id": 1616000701,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 33,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001060414
+    },
+    {
+      "guard": "on",
+      "case": "delay1000",
+      "ticks": 100,
+      "seed": 701,
+      "noise_id": 1616000701,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 0,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.00046678
+    },
+    {
+      "guard": "on",
+      "case": "cpu_stress",
+      "ticks": 100,
+      "seed": 701,
+      "noise_id": 1616000701,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 99,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.000795608
+    },
+    {
+      "guard": "on",
+      "case": "worker_crash",
+      "ticks": 100,
+      "seed": 701,
+      "noise_id": 1616000701,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 34,
+      "intentional_failure_events": [
+        "worker exited"
+      ],
+      "external_fault_event": {
+        "requested_ns": 10159354190085,
+        "sent_ns": 10159356044639,
+        "pid": 20205
+      },
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.000347803
+    },
+    {
+      "guard": "on",
+      "case": "nominal",
+      "ticks": 100,
+      "seed": 802,
+      "noise_id": 1616000802,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 99,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001064069
+    },
+    {
+      "guard": "on",
+      "case": "delay20",
+      "ticks": 100,
+      "seed": 802,
+      "noise_id": 1616000802,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 33,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001211241
+    },
+    {
+      "guard": "on",
+      "case": "delay1000",
+      "ticks": 100,
+      "seed": 802,
+      "noise_id": 1616000802,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 0,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.000495075
+    },
+    {
+      "guard": "on",
+      "case": "cpu_stress",
+      "ticks": 100,
+      "seed": 802,
+      "noise_id": 1616000802,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 1,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 98,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001039467
+    },
+    {
+      "guard": "on",
+      "case": "worker_crash",
+      "ticks": 100,
+      "seed": 802,
+      "noise_id": 1616000802,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 33,
+      "intentional_failure_events": [
+        "[Errno 104] Connection reset by peer"
+      ],
+      "external_fault_event": {
+        "requested_ns": 10167611916044,
+        "sent_ns": 10167616051431,
+        "pid": 20223
+      },
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.0004914919999999
+    },
+    {
+      "guard": "on",
+      "case": "nominal",
+      "ticks": 100,
+      "seed": 903,
+      "noise_id": 1616000903,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 99,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.0007568869999999
+    },
+    {
+      "guard": "on",
+      "case": "delay20",
+      "ticks": 100,
+      "seed": 903,
+      "noise_id": 1616000903,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 33,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001052868
+    },
+    {
+      "guard": "on",
+      "case": "delay1000",
+      "ticks": 100,
+      "seed": 903,
+      "noise_id": 1616000903,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 0,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.00043858
+    },
+    {
+      "guard": "on",
+      "case": "cpu_stress",
+      "ticks": 100,
+      "seed": 903,
+      "noise_id": 1616000903,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 99,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.001276009
+    },
+    {
+      "guard": "on",
+      "case": "worker_crash",
+      "ticks": 100,
+      "seed": 903,
+      "noise_id": 1616000903,
+      "profile": "audited_history_comp_v10",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 34,
+      "intentional_failure_events": [],
+      "external_fault_event": {
+        "requested_ns": 10176160632634,
+        "sent_ns": 10176162468757,
+        "pid": 20230
+      },
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 1.0,
+      "wall_duration_s": 1.000410607
+    }
+  ],
+  "cgroup_after": {
+    "cpu.max": "400000 100000\n",
+    "cpu.stat": "usage_usec 3126350981\nuser_usec 3020190314\nsystem_usec 106160666\nnice_usec 105448489\nnr_periods 44398\nnr_throttled 560\nthrottled_usec 55151605\nnr_bursts 0\nburst_usec 0\n"
+  },
+  "guaranteed_realtime": false
+}

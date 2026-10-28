@@ -1,0 +1,13 @@
+{
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "profile": "history_comp",
+  "model_manifest_sha256": "ba01cfcb2bd8b9cd4b4d0759c9bdb3ca41fdf7426a4d40eac94e6f75240fb4f8",
+  "models": "actor",
+  "seconds": 0.5,
+  "budget_guard": true,
+  "bundle_sha256": "3b918ce8efd047262d56550662cc8d36d57c154252639535fa23370639168472"
+}

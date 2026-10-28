@@ -1,0 +1,19 @@
+{
+  "pair": 0,
+  "speed": 25,
+  "path": "sine120",
+  "mirror": -1,
+  "scenario": "tire",
+  "source": "explore",
+  "noise_id": 1826025010,
+  "trace": "25-sine120--1-tire-explore.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.3436954513059616,
+  "heading_rmse_rad": 0.053199334190475386,
+  "rate_rms_rad_s": 0.07994150343736546,
+  "active_ticks": 0,
+  "movement_rad": 0.5522650667369973,
+  "trace_sha256": "df617f31354410c68d585afb1c11f57b56293379c7bc66d4ba6d522fc1115a32"
+}

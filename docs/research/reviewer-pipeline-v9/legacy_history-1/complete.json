@@ -1,0 +1,11 @@
+{
+  "pair": 1,
+  "arm": "legacy_history",
+  "steps": 100000,
+  "submitted": 55956,
+  "actor_credit_samples": 55956,
+  "active": 2153,
+  "endpoint_eligible": true,
+  "new_history_column_norm": 0.0,
+  "wall_seconds": 70.60405309199996
+}

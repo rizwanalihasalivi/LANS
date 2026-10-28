@@ -1,0 +1,156 @@
+Verified 0 400 549400 187920
+Verified 1 800 1098800 375840
+Verified 2 1200 1648200 563760
+{
+  "episodes": 1200,
+  "transitions": 1648200,
+  "neural_queries": 563760,
+  "exact_delay100_pairs": 216,
+  "full_replay": true,
+  "arms": {
+    "continued": {
+      "twenty_percent_pass": false,
+      "gains_pct": {
+        "lqr": 0.008239713796431847,
+        "negative": 0.5967944379831169,
+        "positive": 0.5967944379831169,
+        "student": -0.3987301636662055,
+        "oldppo": -0.3203435242270958,
+        "prior": -0.03488151953920937,
+        "planner": -1.01465643255092
+      },
+      "pair_gains_pct": {
+        "lqr": [
+          0.34456867419292436,
+          0.20549465500856456,
+          -0.5229478470160753
+        ],
+        "negative": [
+          0.8386864242370007,
+          0.8934338190652369,
+          0.06144237476010117
+        ],
+        "positive": [
+          0.8386864242370007,
+          0.8934338190652369,
+          0.06144237476010117
+        ],
+        "student": [
+          -0.08407715534446414,
+          -0.1686395853188527,
+          -0.9408179376265924
+        ],
+        "oldppo": [
+          -0.3721081639403989,
+          0.06313811655702661,
+          -0.6484756877553899
+        ],
+        "prior": [
+          -0.06418354230919299,
+          -0.029865863439693108,
+          -0.010810215407164314
+        ],
+        "planner": [
+          -0.7356266462820393,
+          -0.8415871316363788,
+          -1.464073211307837
+        ]
+      },
+      "reasons": [
+        "less_than20pct_vs_lqr",
+        "nonpositive_pair2_vs_lqr",
+        "less_than20pct_vs_negative",
+        "less_than20pct_vs_positive",
+        "less_than20pct_vs_student",
+        "nonpositive_pair0_vs_student",
+        "nonpositive_pair1_vs_student",
+        "nonpositive_pair2_vs_student",
+        "less_than20pct_vs_oldppo",
+        "nonpositive_pair0_vs_oldppo",
+        "nonpositive_pair2_vs_oldppo",
+        "less_than20pct_vs_prior",
+        "nonpositive_pair0_vs_prior",
+        "nonpositive_pair1_vs_prior",
+        "nonpositive_pair2_vs_prior",
+        "less_than20pct_vs_planner",
+        "nonpositive_pair0_vs_planner",
+        "nonpositive_pair1_vs_planner",
+        "nonpositive_pair2_vs_planner"
+      ]
+    },
+    "explore": {
+      "twenty_percent_pass": false,
+      "gains_pct": {
+        "lqr": -0.11273547402441686,
+        "negative": 0.4765313140173144,
+        "positive": 0.4765313140173144,
+        "student": -0.5201977246308109,
+        "oldppo": -0.44171624899318473,
+        "prior": -0.15590887765173367,
+        "planner": -1.1368691728767866
+      },
+      "pair_gains_pct": {
+        "lqr": [
+          0.08287908459945204,
+          0.06597236786018978,
+          -0.48501612746070233
+        ],
+        "negative": [
+          0.5782943602224089,
+          0.7548733368304417,
+          0.0991535782395192
+        ],
+        "positive": [
+          0.5782943602224089,
+          0.7548733368304417,
+          0.0991535782395192
+        ],
+        "student": [
+          -0.3468923449149841,
+          -0.30868494800861956,
+          -0.9027285373482741
+        ],
+        "oldppo": [
+          -0.6356797068318265,
+          -0.07658319868177887,
+          -0.6104966010370472
+        ],
+        "prior": [
+          -0.32694649236437723,
+          -0.16971720716012495,
+          0.02692825214524186
+        ],
+        "planner": [
+          -1.0001527683789035,
+          -0.9825733395206537,
+          -1.4257863638523105
+        ]
+      },
+      "reasons": [
+        "less_than20pct_vs_lqr",
+        "nonpositive_pair2_vs_lqr",
+        "less_than20pct_vs_negative",
+        "less_than20pct_vs_positive",
+        "less_than20pct_vs_student",
+        "nonpositive_pair0_vs_student",
+        "nonpositive_pair1_vs_student",
+        "nonpositive_pair2_vs_student",
+        "less_than20pct_vs_oldppo",
+        "nonpositive_pair0_vs_oldppo",
+        "nonpositive_pair1_vs_oldppo",
+        "nonpositive_pair2_vs_oldppo",
+        "less_than20pct_vs_prior",
+        "nonpositive_pair0_vs_prior",
+        "nonpositive_pair1_vs_prior",
+        "less_than20pct_vs_planner",
+        "nonpositive_pair0_vs_planner",
+        "nonpositive_pair1_vs_planner",
+        "nonpositive_pair2_vs_planner"
+      ]
+    }
+  },
+  "promoted": false,
+  "reserved": "unopened",
+  "missing_published_vehicle_baselines": true,
+  "scope": "Independent metrics and deterministic code replay; not an independent simulator or physical validation"
+}

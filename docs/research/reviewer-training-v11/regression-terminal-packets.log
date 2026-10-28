@@ -1,0 +1,21 @@
+test_bad_identifiers_rejected (__main__.AuditContracts) ... ok
+test_duplicate_identity_mutation_rejected (__main__.AuditContracts) ... ok
+test_freshness_cutoff_unchanged (__main__.AuditContracts) ... ok
+test_future_packets_never_assist (__main__.AuditContracts) ... ok
+test_invalid_baseline_is_explicit_control_fault (__main__.AuditContracts) ... ok
+test_invalid_service_and_timestamp (__main__.AuditContracts) ... ok
+test_malformed_packet_fail_closed (__main__.AuditContracts) ... ok
+test_numerical_domains_fail_closed (__main__.AuditContracts) ... ok
+test_old_nan_service_creates_undeliverable_pending (__main__.AuditContracts) ... ok
+test_old_nonfinite_identifier_can_retain_authority (__main__.AuditContracts) ... ok
+test_out_of_bound_request_not_silently_clipped (__main__.AuditContracts) ... ok
+test_planner_has_no_true_state_or_future_noise_input (__main__.AuditContracts) ... ok
+test_rk_actuator_matches_closed_form (__main__.AuditContracts) ... ok
+test_time_limit_returns_next_observation (__main__.AuditContracts) ... ok
+test_unchanged_packet_may_be_held (__main__.AuditContracts) ... ok
+test_valid_nonterminal_behavior_matches_previous (__main__.AuditContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.422s
+
+OK

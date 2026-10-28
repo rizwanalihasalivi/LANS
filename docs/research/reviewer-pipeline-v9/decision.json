@@ -1,0 +1,45 @@
+{
+  "selected": null,
+  "screens": {
+    "legacy_history": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs lqr",
+        "lacks1% gain vs student_comp",
+        "lacks1% gain vs negative",
+        "lacks1% gain vs positive",
+        "pair1 no student gain",
+        "pair2 no student gain"
+      ],
+      "paired_gains_vs_student_pct": [
+        0.13641970149351756,
+        -0.21755188239525047,
+        -0.14638033583782573
+      ]
+    },
+    "causal_history": {
+      "eligible": false,
+      "reasons": [
+        "lacks1% gain vs lqr",
+        "lacks1% gain vs student_comp",
+        "lacks1% gain vs negative",
+        "lacks1% gain vs positive",
+        "pair1 no student gain",
+        "pair2 no student gain"
+      ],
+      "paired_gains_vs_student_pct": [
+        0.1527398716710593,
+        -0.20895906771158934,
+        -0.04513580051115351
+      ]
+    }
+  },
+  "episodes": 1080,
+  "transitions": 1483380,
+  "submitted_actor_decisions": 563760,
+  "exact_100ms_lqr_pairs": 192,
+  "full_causal_query_gate_physical_replay": true,
+  "actor_replay_shape": "one observation per call, exactly as executed; original batch rounding discrepancy retained",
+  "source_model_hashes_verified": true,
+  "reserved": "unopened; corresponding-model timing still required"
+}

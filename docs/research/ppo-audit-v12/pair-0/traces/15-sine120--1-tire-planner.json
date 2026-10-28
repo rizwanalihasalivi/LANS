@@ -1,0 +1,19 @@
+{
+  "pair": 0,
+  "speed": 15,
+  "path": "sine120",
+  "mirror": -1,
+  "scenario": "tire",
+  "source": "planner",
+  "noise_id": 1826015010,
+  "trace": "15-sine120--1-tire-planner.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.07308526051071289,
+  "heading_rmse_rad": 0.011192290364023905,
+  "rate_rms_rad_s": 0.04124162654060137,
+  "active_ticks": 831,
+  "movement_rad": 0.37928418471215786,
+  "trace_sha256": "2ff843776247d76d4dba91c5d30ee649e76c8b40a6ed8422f8a3eb6a26d5a527"
+}

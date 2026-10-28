@@ -1,0 +1,57 @@
+{
+  "matched_diagnostic_pass": false,
+  "gains_pct": {
+    "lqr": 0.3785601231417024,
+    "student_rk": -0.15917848389164213,
+    "planner_rk": -1.12594453551631,
+    "ppo_euler": 0.20470566053629735
+  },
+  "reasons": [
+    "less_than_20pct_vs_lqr",
+    "less_than_20pct_vs_student_rk",
+    "nonpositive_pair_gain_1_vs_student_rk",
+    "nonpositive_pair_gain_2_vs_student_rk",
+    "less_than_20pct_vs_planner_rk",
+    "nonpositive_pair_gain_0_vs_planner_rk",
+    "nonpositive_pair_gain_1_vs_planner_rk",
+    "nonpositive_pair_gain_2_vs_planner_rk",
+    "less_than_20pct_vs_ppo_euler"
+  ],
+  "full_twenty_percent_claim": false,
+  "missing_comparators": [
+    "both fixed residual controls in this new numerical controller grid",
+    "full matched robust published vehicle controller/MPC"
+  ],
+  "scope": "Stricter supplemental target check includes nominal and per-pair guards omitted from the narrow diagnostic boolean; it never relaxes the frozen protocol or promotes a controller.",
+  "actual_laptop": false,
+  "reserved_unopened": true,
+  "deadline_attribution": [
+    {
+      "trace": "timing/on/seed-802/cpu_stress-ticks.csv",
+      "tick": 27,
+      "release_lateness_ms": 10.341163,
+      "processing_ms": 0.531179,
+      "thread_cpu_ms": 0.527796,
+      "budget_skipped": true
+    }
+  ],
+  "deadline_interpretation": "A release already beyond10ms is a miss before current control work. Unrecorded prior-cycle post-commit work, timer wakeup and host scheduling cannot be separated by these traces; no unique root cause or hard real-time guarantee is asserted.",
+  "actual_input_model_hashes": {
+    "actors/student-701.npz": "405c1ebe13b20c505ff822087615cde43d70fbe5414d6e3f01c606e59c1796f1",
+    "actors/causal_history-701.npz": "026e03a7ebff073c3d54a76adc65d9d983b4a8992f5e2b1cb39836105eb08217",
+    "runtime-actors/causal_history/model-701.npz": "026e03a7ebff073c3d54a76adc65d9d983b4a8992f5e2b1cb39836105eb08217",
+    "actors/student-802.npz": "7b9cbaccf68429ddc43d23251537149b76f9c05f2c46f509e42bc45beb504fc1",
+    "actors/causal_history-802.npz": "f5460b69f85f47f3b84ea9d63b5e465dcb77d3cad0c66ec50b2b60999b103b5c",
+    "runtime-actors/causal_history/model-802.npz": "f5460b69f85f47f3b84ea9d63b5e465dcb77d3cad0c66ec50b2b60999b103b5c",
+    "actors/student-903.npz": "6f82b75e8dc0dfeaff38b69dda391c2285d6d803ed0eeccc633fb1dea4944852",
+    "actors/causal_history-903.npz": "b475ffbc4590bd6c2bd7ec6ab31e23db7b7c5e81bcc5cc609943ed962df14e35",
+    "runtime-actors/causal_history/model-903.npz": "b475ffbc4590bd6c2bd7ec6ab31e23db7b7c5e81bcc5cc609943ed962df14e35"
+  },
+  "model_provenance": "Checked against immutable prior v9 evidence seal from git commit5f80922; supplemental check closes the new diagnostic manifest output-model dependency gap.",
+  "hashes": {
+    "tools/controller_review/check_target20.py": "3c1847f281133007870112c4253e5b1976bb05fb93acc3c1ca354ceaaeb69f0f",
+    "docs/research/reviewer-audit-v10/episodes.csv": "6422a16be7545ec87d88672d5014b06fb1555d991e470077c7bf0ff7136af9dd",
+    "docs/research/reviewer-audit-v10/summary.json": "471c37287f5131db1e9d0ef0961516dbb11d775c574760bcef7c2dd4c4a2b925",
+    "docs/research/reviewer-audit-v10/decision.json": "194dd546aff4bb5345cb266ddcde092e57609baa273f75eb3744ed947f82637c"
+  }
+}

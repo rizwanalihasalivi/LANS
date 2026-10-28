@@ -1,0 +1,9 @@
+{
+  "controller_ticks": 1500,
+  "heartbeat_ticks": 0,
+  "query_vectors_verified": 806,
+  "budget_decisions_skipped": 1,
+  "original_deadlines_and_gate_physics_verified": true,
+  "query_scope": "All issued causal-state compensated vectors, all metadata, and every returned actor vector; expiry/recovery states replayed tick by tick.",
+  "source_model_hashes_verified": true
+}

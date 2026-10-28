@@ -1,0 +1,8 @@
+{
+  "archive_crc_pass": true,
+  "word_xml_pass": true,
+  "sha256": {
+    "LANS_Pipeline_Reports.zip": "303e9fa095c5fde33c247413137ffa815018dc4aa9cd0e746865d9d4361fc87c",
+    "LANS_Causal_Python310_Kit.zip": "b658a0ddf38eb3e28648c7a45616fa880c65ede53daf0b2f7b01c9f7d905e47f"
+  }
+}

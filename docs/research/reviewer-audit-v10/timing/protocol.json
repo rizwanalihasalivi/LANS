@@ -1,0 +1,43 @@
+{
+  "profile": "audited_history_comp_v10",
+  "development_selected": null,
+  "platform_diagnostic": true,
+  "models": "docs/research/reviewer-pipeline-v9/runtime-actors/causal_history",
+  "seeds": [
+    701,
+    802,
+    903
+  ],
+  "seconds": 1,
+  "cases": [
+    "nominal",
+    "delay20",
+    "delay1000",
+    "cpu_stress",
+    "worker_crash"
+  ],
+  "guards": [
+    "on"
+  ],
+  "reserve_ns": 1000000,
+  "noise_base": 1616000000,
+  "cpus": [
+    4,
+    3
+  ],
+  "hashes": {
+    "tools/reviewer_v10/timing10.py": "6516849d62108c63550b1c1820a42e6b8470561b88c06c469cbb5198abfb715b",
+    "tools/reviewer_v10/verify_runtime10.py": "9b73b00c43285f30ee077e614e4b0927e3b5fdbea667a86d23e067cc64ba5bea",
+    "tools/reviewer_v10/runtime10.py": "6a64f6c1aa7f266ec006b1c3d8bf8f316149744ee688b25d0f3d7f00537a5b43",
+    "tools/reviewer_v10/verify_laptop10.py": "366638db2e9e45ab70f396fae0341f0f752f86e6b0e88908edf98163ffabdf15",
+    "tools/controller_review/native_heartbeat4.c": "b4c29f99b87e53f7693e28b497d576f3b55753ad9ebbf42cc99507369af2ab32",
+    "tools/reviewer_v8/recovery8.py": "a357e1d421813586289fe1b569a0b424f42ee1635f57d7fe4fe4a6a154848cad",
+    "tools/reviewer_v8/expiry_cost8.py": "3675c3921bbd419336b6ee8866a7cbcf7a16a8ebe1a2254a2f714d0c94dc1d36",
+    "tools/reviewer_v7/compensation.py": "c84f2e6090613fcf336078d60342310aeca3fb5f0b0e1e407901b5ad843dd8ab"
+  },
+  "model_manifest_sha256": "7868fc6e43a4edbf408881af934daee44836f4c558fa8acc73cda553563bc829",
+  "cgroup_before": {
+    "cpu.max": "400000 100000\n",
+    "cpu.stat": "usage_usec 3111268048\nuser_usec 3006300296\nsystem_usec 104967752\nnice_usec 95146961\nnr_periods 44147\nnr_throttled 560\nthrottled_usec 55151605\nnr_bursts 0\nburst_usec 0\n"
+  }
+}

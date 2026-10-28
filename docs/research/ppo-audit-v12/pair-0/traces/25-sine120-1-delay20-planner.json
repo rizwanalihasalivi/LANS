@@ -1,0 +1,19 @@
+{
+  "pair": 0,
+  "speed": 25,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "delay20",
+  "source": "planner",
+  "noise_id": 1826025020,
+  "trace": "25-sine120-1-delay20-planner.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.11833945584057227,
+  "heading_rmse_rad": 0.03332868486444054,
+  "rate_rms_rad_s": 0.0777530039912791,
+  "active_ticks": 343,
+  "movement_rad": 0.5250731811703544,
+  "trace_sha256": "5aaadd2e95b3af17bc530bac37b11540bb207e061ddceac5e6eb3f3960634cb9"
+}

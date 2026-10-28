@@ -1,0 +1,102 @@
+{
+  "episodes": [
+    {
+      "case": "nominal",
+      "ticks": 500,
+      "seed": 903,
+      "noise_id": 1536000903,
+      "profile": "history_comp",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 58,
+      "survived": true,
+      "actor_packets": 499,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 5.0,
+      "wall_duration_s": 5.00066837
+    },
+    {
+      "case": "delay20",
+      "ticks": 500,
+      "seed": 903,
+      "noise_id": 1536000903,
+      "profile": "history_comp",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 10,
+      "survived": true,
+      "actor_packets": 166,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 5.0,
+      "wall_duration_s": 5.000567374
+    },
+    {
+      "case": "delay1000",
+      "ticks": 500,
+      "seed": 903,
+      "noise_id": 1536000903,
+      "profile": "history_comp",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 0,
+      "survived": true,
+      "actor_packets": 4,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 5.0,
+      "wall_duration_s": 5.000636673
+    },
+    {
+      "case": "cpu_stress",
+      "ticks": 500,
+      "seed": 903,
+      "noise_id": 1536000903,
+      "profile": "history_comp",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 59,
+      "survived": true,
+      "actor_packets": 495,
+      "intentional_failure_events": [],
+      "external_fault_event": null,
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 5.0,
+      "wall_duration_s": 5.00078477
+    },
+    {
+      "case": "worker_crash",
+      "ticks": 500,
+      "seed": 903,
+      "noise_id": 1536000903,
+      "profile": "history_comp",
+      "deadline_misses": 0,
+      "fallback_violations": 0,
+      "nonzero_correction_ticks": 6,
+      "survived": true,
+      "actor_packets": 167,
+      "intentional_failure_events": [
+        "[Errno 104] Connection reset by peer"
+      ],
+      "external_fault_event": {
+        "requested_ns": 7922243072475,
+        "sent_ns": 7922248062774,
+        "pid": 16744
+      },
+      "monitor_timer_backend": "platform_time_sleep",
+      "worker_timer_backend": "platform_time_sleep",
+      "simulated_duration_s": 5.0,
+      "wall_duration_s": 5.000281469
+    }
+  ],
+  "functional_pass": true,
+  "observed_timing_pass": true
+}

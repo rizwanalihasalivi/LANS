@@ -1,0 +1,19 @@
+{
+  "pair": 0,
+  "speed": 25,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "nominal",
+  "source": "oldppo",
+  "noise_id": 1826025000,
+  "trace": "25-sine120-1-nominal-oldppo.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.11754201620787574,
+  "heading_rmse_rad": 0.032878907854377165,
+  "rate_rms_rad_s": 0.08323228209516463,
+  "active_ticks": 208,
+  "movement_rad": 0.5930304395620122,
+  "trace_sha256": "774dbd11461d0812c686e6e656e02a6ddfda02cf023b8520f9707a897072fed1"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "pair": 0,
+    "rows": 512,
+    "class_disagreements": 0,
+    "max_abs_logit_error": 0.0
+  },
+  {
+    "pair": 1,
+    "rows": 512,
+    "class_disagreements": 0,
+    "max_abs_logit_error": 0.0
+  },
+  {
+    "pair": 2,
+    "rows": 512,
+    "class_disagreements": 0,
+    "max_abs_logit_error": 0.0
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "profile": "causal_recovery_history_v9",
+  "arm": "causal_history",
+  "new_features": "14filtermemory;15past responseEWMA;19past qualificationage;16/17zero",
+  "sha256": {
+    "golden.npz": "537fe5999f7733c2ab14c4af5078377515c8061b9213845e03e8c9add62eee35",
+    "model-701.npz": "026e03a7ebff073c3d54a76adc65d9d983b4a8992f5e2b1cb39836105eb08217",
+    "model-802.npz": "f5460b69f85f47f3b84ea9d63b5e465dcb77d3cad0c66ec50b2b60999b103b5c",
+    "model-903.npz": "b475ffbc4590bd6c2bd7ec6ab31e23db7b7c5e81bcc5cc609943ed962df14e35"
+  },
+  "source_policy_sha256": {
+    "701": "1375c2b2518dfc3556bde261b2c35cd6adb2722db78efe0b07c58e59682ad7c1",
+    "802": "0e6e01e49f36b4561fcba749b96a047a60e6fa7373285476553a250f0c839f88",
+    "903": "e6ce2f9ef44413d8c705d8648902122e65762bcb3007daafea3ddacd440025c5"
+  },
+  "diagnostic_only": true
+}

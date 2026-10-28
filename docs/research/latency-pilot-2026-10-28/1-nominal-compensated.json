@@ -1,0 +1,14 @@
+{
+  "mirror": 1,
+  "profile": "nominal",
+  "source": "compensated",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.061648363871103055,
+  "heading_rmse_rad": 0.016620494161820803,
+  "rate_rms_rad_s": 0.057923962279225055,
+  "active_ticks": 79,
+  "movement_rad": 0.44040769186612577,
+  "trace_sha256": "d68429bcaadb12e88c46d2ba19dc71d656959767454772af403b29f4ed66e713"
+}

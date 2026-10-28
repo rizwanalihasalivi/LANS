@@ -1,0 +1,98 @@
+[
+  {
+    "profile": "nominal",
+    "source": "lqr",
+    "tracking_gain_pct": 0.0,
+    "rate_change_pct": 0.0,
+    "survived": 2,
+    "active_ticks": 0
+  },
+  {
+    "profile": "nominal",
+    "source": "raw",
+    "tracking_gain_pct": 0.47993833975733535,
+    "rate_change_pct": 0.8046950015810683,
+    "survived": 2,
+    "active_ticks": 138
+  },
+  {
+    "profile": "nominal",
+    "source": "compensated",
+    "tracking_gain_pct": 0.48899215443798383,
+    "rate_change_pct": 0.82650421341246,
+    "survived": 2,
+    "active_ticks": 143
+  },
+  {
+    "profile": "nominal",
+    "source": "student",
+    "tracking_gain_pct": 0.6642775349287589,
+    "rate_change_pct": 0.6034060068371927,
+    "survived": 2,
+    "active_ticks": 132
+  },
+  {
+    "profile": "variable",
+    "source": "lqr",
+    "tracking_gain_pct": 0.0,
+    "rate_change_pct": 0.0,
+    "survived": 2,
+    "active_ticks": 0
+  },
+  {
+    "profile": "variable",
+    "source": "raw",
+    "tracking_gain_pct": 0.22869784380389335,
+    "rate_change_pct": 0.25699968749850477,
+    "survived": 2,
+    "active_ticks": 65
+  },
+  {
+    "profile": "variable",
+    "source": "compensated",
+    "tracking_gain_pct": 0.2291873193024485,
+    "rate_change_pct": 0.24487408524032084,
+    "survived": 2,
+    "active_ticks": 71
+  },
+  {
+    "profile": "variable",
+    "source": "student",
+    "tracking_gain_pct": 0.3810703504269042,
+    "rate_change_pct": 0.07489874225972137,
+    "survived": 2,
+    "active_ticks": 69
+  },
+  {
+    "profile": "stall",
+    "source": "lqr",
+    "tracking_gain_pct": 0.0,
+    "rate_change_pct": 0.0,
+    "survived": 2,
+    "active_ticks": 0
+  },
+  {
+    "profile": "stall",
+    "source": "raw",
+    "tracking_gain_pct": 0.2131683590522515,
+    "rate_change_pct": 0.27304728986763394,
+    "survived": 2,
+    "active_ticks": 61
+  },
+  {
+    "profile": "stall",
+    "source": "compensated",
+    "tracking_gain_pct": 0.192685593607822,
+    "rate_change_pct": 0.20370220093781644,
+    "survived": 2,
+    "active_ticks": 59
+  },
+  {
+    "profile": "stall",
+    "source": "student",
+    "tracking_gain_pct": 0.2387909866152782,
+    "rate_change_pct": 0.11644506890287065,
+    "survived": 2,
+    "active_ticks": 59
+  }
+]

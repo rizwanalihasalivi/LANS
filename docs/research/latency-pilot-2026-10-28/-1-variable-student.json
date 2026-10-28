@@ -1,0 +1,14 @@
+{
+  "mirror": -1,
+  "profile": "variable",
+  "source": "student",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.0615563603543687,
+  "heading_rmse_rad": 0.016682192010915656,
+  "rate_rms_rad_s": 0.05752860827861738,
+  "active_ticks": 43,
+  "movement_rad": 0.4371892328904611,
+  "trace_sha256": "b4a0ecf30ba2107a190d061fd5d78dd2a49ff174a56e9c45b89152d0fbfc49bc"
+}

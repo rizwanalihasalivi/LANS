@@ -1,0 +1,26 @@
+{
+  "scope": "Development software-plant pilot; no retraining, no CPU timing or actuator command delay claims",
+  "speed": 20,
+  "paths": [
+    "sine120"
+  ],
+  "mirrors": [
+    -1,
+    1
+  ],
+  "profiles": [
+    "nominal",
+    "variable",
+    "stall"
+  ],
+  "sources": [
+    "lqr",
+    "raw",
+    "compensated",
+    "student"
+  ],
+  "noise_base": 1986102800,
+  "actor_pair": 0,
+  "ppo": "v12 prior-0",
+  "freshness_s": 0.05
+}

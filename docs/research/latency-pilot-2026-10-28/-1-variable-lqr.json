@@ -1,0 +1,14 @@
+{
+  "mirror": -1,
+  "profile": "variable",
+  "source": "lqr",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.06192410642049554,
+  "heading_rmse_rad": 0.016662777914331607,
+  "rate_rms_rad_s": 0.057478294301591674,
+  "active_ticks": 0,
+  "movement_rad": 0.43135224069562533,
+  "trace_sha256": "94ab935ddb3115c0b58d902dcf9e9288269ea6242f2aa9b12e710091c1eb96d7"
+}

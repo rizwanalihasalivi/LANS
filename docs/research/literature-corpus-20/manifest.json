@@ -4,139 +4,159 @@
     "size_bytes": 3199127,
     "filename": "1-s2.0-S0952197624020293-main.pdf",
     "sha256": "194d99c72ff76f9ae0647240bd6558fead5a62323d3f7e2ad9791c80d42b2bc5",
-    "pages": 13
+    "pages": 13,
+    "title_label": "Path planning via reinforcement learning with closed-loop motion control and field tests"
   },
   {
     "id": "P02",
     "size_bytes": 6951985,
     "filename": "1-s2.0-S0957417426010250-main.pdf",
     "sha256": "012df5c9a4a6e7ab37ca472d58a229323e30a4ba4c09baaa325eec64e90f3ca2",
-    "pages": 12
+    "pages": 12,
+    "title_label": "A smooth reinforcement learning method for trajectory tracking and collision avoidance of wheeled vehicle"
   },
   {
     "id": "P03",
     "size_bytes": 2703004,
     "filename": "1-s2.0-S1367578823000743-main.pdf",
     "sha256": "0a6f9c0592e49ef5d971f5975ddc4586132a1f279af044fb9c3b36f964aabd02",
-    "pages": 13
+    "pages": 13,
+    "title_label": "Lateral control for autonomous vehicles: A comparative evaluation"
   },
   {
     "id": "P04",
     "size_bytes": 3500753,
     "filename": "1812.05506v4.pdf",
     "sha256": "f1604802bf91f0eb672ca04b7772eee536dfccebd4a42072456130ba74fe8f52",
-    "pages": 17
+    "pages": 17,
+    "title_label": "A predictive safety filter for learning-based control of constrained nonlinear dynamical systems (preprint)"
   },
   {
     "id": "P05",
     "size_bytes": 1247315,
     "filename": "2102.11907v1.pdf",
     "sha256": "cc002c4333cf08efb72ebcb36de37221f82fe960dbece51a1237dbc9fb394eef",
-    "pages": 8
+    "pages": 8,
+    "title_label": "A predictive safety filter for learning-based racing control"
   },
   {
     "id": "P06",
     "size_bytes": 3131295,
     "filename": "Hybrid_Path_Tracking_Control_for_Autonomous_Trucks_Integrating_Pure_Pursuit_and_Deep_Reinforcement_Learning_With_Adaptive_Look-Ahead_Mechanism.pdf",
     "sha256": "e2221f9db3ac2cf727b3a13740b145ba731818cf5329e176c7719a258e2c9cf2",
-    "pages": 15
+    "pages": 15,
+    "title_label": "Hybrid Path Tracking Control for Autonomous Trucks"
   },
   {
     "id": "P07",
     "size_bytes": 1097513,
     "filename": "2109.13446v1.pdf",
     "sha256": "758b6a736375f7e1a66bc8e68609cf9100ffbd1d85203128004399416c4e7e4c",
-    "pages": 7
+    "pages": 7,
+    "title_label": "Runtime Safety Assurance for Learning-enabled Control of Autonomous Driving Vehicles (Simplex-Drive)"
   },
   {
     "id": "P08",
     "size_bytes": 16826742,
     "filename": "1-s2.0-S0005109821001175-main.pdf",
     "sha256": "76355d863df43dfc209b9585267dd203b684bbe834c51a7b4dd9a5f5632a9cf0",
-    "pages": 13
+    "pages": 13,
+    "title_label": "A predictive safety filter for learning-based control of constrained nonlinear dynamical systems (publisher)"
   },
   {
     "id": "P09",
     "size_bytes": 4517118,
     "filename": "2208.13856v1 (1).pdf",
     "sha256": "af9785ff28042f9d33cb3e51be10934a61d4301c6f00b3ebd559956f63348471",
-    "pages": 12
+    "pages": 12,
+    "title_label": "Delay-aware Robust Control for Safe Autonomous Driving and Racing"
   },
   {
     "id": "P10",
     "size_bytes": 818240,
     "filename": "2610.08112v1.pdf",
     "sha256": "54c299b6858e736510ea44d8e9d195e3866a2554aad91cc6f8daa5b0180c0f81",
-    "pages": 22
+    "pages": 22,
+    "title_label": "Closing the Regenerative-Energy Gap in Learned Path Following"
   },
   {
     "id": "P11",
     "size_bytes": 2087006,
     "filename": "03549-ICAPS.CanoCordobaF.pdf",
     "sha256": "49f610d86eb6ecb7dd644c12beab802eb0b45f6da695cb3dd06f10098a664c94",
-    "pages": 6
+    "pages": 6,
+    "title_label": "Safety Shielding under Delayed Observation"
   },
   {
     "id": "P12",
     "size_bytes": 8076583,
     "filename": "2403.11852v5.pdf",
     "sha256": "63e1556203030cd76f6bc061cc36f7233a106b78ddc5793b18ef12d3ae4dc017",
-    "pages": 11
+    "pages": 11,
+    "title_label": "Delay-Aware Reinforcement Learning for Highway On-Ramp Merging under Stochastic Communication Latency"
   },
   {
     "id": "P13",
     "size_bytes": 3167197,
     "filename": "Adaptive_Path-Tracking_Controller_Embedded_With_Reinforcement_Learning_and_Preview_Model_for_Autonomous_Driving.pdf",
     "sha256": "2f1e10f81c37cb64663c1f0010d75e8d3f9647bd68fec2eb50b1e7e34a728be3",
-    "pages": 15
+    "pages": 15,
+    "title_label": "Adaptive Path-Tracking Controller Embedded With Reinforcement Learning and Preview Model"
   },
   {
     "id": "P14",
     "size_bytes": 5694726,
     "filename": "electronics-14-03588.pdf",
     "sha256": "b0ca971e08d59bb39a49dee550377a3b2962c908123447ca1b64a03b97e0e039",
-    "pages": 16
+    "pages": 16,
+    "title_label": "Smooth and Robust Path-Tracking Control for Automated Vehicles"
   },
   {
     "id": "P15",
     "size_bytes": 3597541,
     "filename": "Adversarial-Training-Based_Robust_Reinforcement_Learning_Control_for_Autonomous_Vehicle_Trajectory_Tracking.pdf",
     "sha256": "1ebda8a026ea405fd254c5bb030fee6924b3e4d45c558c377daf242a47fc72d0",
-    "pages": 22
+    "pages": 22,
+    "title_label": "Adversarial-Training-Based Robust Reinforcement Learning Control for Autonomous Vehicle Trajectory Tracking"
   },
   {
     "id": "P16",
     "size_bytes": 1120283,
     "filename": "LIPIcs.ECRTS.2021.15.pdf",
     "sha256": "5787ef9985c4c7f26cbda6ce29e522fe28b323057f369a2f575ad6b3a3a50166",
-    "pages": 23
+    "pages": 23,
+    "title_label": "Stability and Performance Analysis of Control Systems Subject to Bursts of Deadline Misses"
   },
   {
     "id": "P17",
     "size_bytes": 11317394,
     "filename": "actuators-13-00508.pdf",
     "sha256": "15a1147572c3a18bf3b216dcae24eb67a2dd519638fb21a33f1f421b47bb03a7",
-    "pages": 18
+    "pages": 18,
+    "title_label": "A Robust Path Tracking Controller for Autonomous Mobility with Control Delay Compensation Using Backstepping Control"
   },
   {
     "id": "P18",
     "size_bytes": 3218831,
     "filename": "sensors-22-07881-v2.pdf",
     "sha256": "fc50ac0565842424afcf8909e007b96a008cd7a5c82a29e794b736b62a9747c3",
-    "pages": 12
+    "pages": 12,
+    "title_label": "Path-Tracking Control Strategy of Unmanned Vehicle Based on DDPG Algorithm"
   },
   {
     "id": "P19",
     "size_bytes": 12924428,
     "filename": "machines-14-00560-v2.pdf",
     "sha256": "d9a3c17093775d772f798fd3f00bdc657b5c27e2ed2072582ed299bbd80c569b",
-    "pages": 27
+    "pages": 27,
+    "title_label": "Safety-Filtered Residual Reinforcement Learning over Model Predictive Control for Friction-Aware Autonomous Vehicle Platooning"
   },
   {
     "id": "P20",
     "size_bytes": 4517118,
     "filename": "Reference Conference Format Paper.pdf",
     "sha256": "af9785ff28042f9d33cb3e51be10934a61d4301c6f00b3ebd559956f63348471",
-    "pages": 12
+    "pages": 12,
+    "title_label": "Delay-aware Robust Control for Safe Autonomous Driving and Racing (duplicate)"
   }
 ]

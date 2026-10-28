@@ -1,0 +1,21 @@
+{
+  "pair": 2,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "nominal",
+  "method": "budget_negative",
+  "noise_id": 1926225100,
+  "trace": "25-dlc220--1-nominal-budget_negative.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.12239050436643518,
+  "heading_rmse_rad": 0.027559543033098193,
+  "rate_rms_rad_s": 0.11293291960123675,
+  "movement_rad": 0.9117729710601096,
+  "active_ticks": 1080,
+  "saturated_ticks": 6,
+  "projected_ticks": 213,
+  "trace_sha256": "b7424a90d98ca7c7d46489df309b355e59ee79dacb6986a877017d8f305b6db7"
+}

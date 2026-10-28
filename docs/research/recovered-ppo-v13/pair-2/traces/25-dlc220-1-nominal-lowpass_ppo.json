@@ -1,0 +1,21 @@
+{
+  "pair": 2,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "nominal",
+  "method": "lowpass_ppo",
+  "noise_id": 1926225100,
+  "trace": "25-dlc220-1-nominal-lowpass_ppo.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.06293518810489737,
+  "heading_rmse_rad": 0.023683905047050497,
+  "rate_rms_rad_s": 0.12895840049696053,
+  "movement_rad": 1.0222185691680548,
+  "active_ticks": 1079,
+  "saturated_ticks": 31,
+  "projected_ticks": 0,
+  "trace_sha256": "9adcfcee6188c9027053e363dd2d4e48d34277187bae8b8ae81b4ea9d78cb43e"
+}

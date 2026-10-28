@@ -1,0 +1,21 @@
+{
+  "pair": 2,
+  "speed": 20,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "nominal",
+  "method": "lqr",
+  "noise_id": 1926220000,
+  "trace": "20-sine120-1-nominal-lqr.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.05979372967104143,
+  "heading_rmse_rad": 0.016435849019157872,
+  "rate_rms_rad_s": 0.057456001448815436,
+  "movement_rad": 0.4333449253673859,
+  "active_ticks": 0,
+  "saturated_ticks": 16,
+  "projected_ticks": 0,
+  "trace_sha256": "fb838ac275d9461f193ba775c95bed02e2b0324cca4cc70cee07cc6a9c3670a4"
+}

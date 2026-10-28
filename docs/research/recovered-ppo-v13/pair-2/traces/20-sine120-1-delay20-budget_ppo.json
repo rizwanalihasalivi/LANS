@@ -1,0 +1,21 @@
+{
+  "pair": 2,
+  "speed": 20,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "delay20",
+  "method": "budget_ppo",
+  "noise_id": 1926220030,
+  "trace": "20-sine120-1-delay20-budget_ppo.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.05943253965438943,
+  "heading_rmse_rad": 0.016394910628816206,
+  "rate_rms_rad_s": 0.05824275057793733,
+  "movement_rad": 0.4296048786060752,
+  "active_ticks": 382,
+  "saturated_ticks": 16,
+  "projected_ticks": 0,
+  "trace_sha256": "c4963fcf45791348f4080e5ef38fad77044654b8aa378797394c9c40a1bc4fd1"
+}

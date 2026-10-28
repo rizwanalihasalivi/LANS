@@ -1,0 +1,21 @@
+{
+  "pair": 2,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "tire",
+  "method": "lowpass_student",
+  "noise_id": 1926225110,
+  "trace": "25-dlc220-1-tire-lowpass_student.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.17494574956963604,
+  "heading_rmse_rad": 0.039294077176871486,
+  "rate_rms_rad_s": 0.15733198219121106,
+  "movement_rad": 1.190311450692673,
+  "active_ticks": 1017,
+  "saturated_ticks": 83,
+  "projected_ticks": 0,
+  "trace_sha256": "bb321dcd329353edce89e663f7633630b544cf00a341490cee90b3a4d7622c06"
+}

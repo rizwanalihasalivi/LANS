@@ -1,0 +1,1508 @@
+{
+  "overall": {
+    "lqr": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.0799363717912342,
+      "heading_rmse_rad": 0.018489779993146417,
+      "rate_rms_rad_s": 0.06618493083764458,
+      "movement_rad": 0.5406132403445031,
+      "active_fraction": 0.0,
+      "saturation_fraction": 0.009307305823243555,
+      "gain_vs_lqr_pct": 0.0,
+      "heading_change_pct": 0.0,
+      "rate_change_pct": 0.0
+    },
+    "original_ppo": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.07765757348286362,
+      "heading_rmse_rad": 0.019063217028282453,
+      "rate_rms_rad_s": 0.10731950031471663,
+      "movement_rad": 0.9789860574620671,
+      "active_fraction": 0.26886994481508936,
+      "saturation_fraction": 0.09082447903797052,
+      "gain_vs_lqr_pct": 2.85076524904333,
+      "heading_change_pct": 3.1013729495353193,
+      "rate_change_pct": 62.150959374691354
+    },
+    "original_student": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.07666171923356377,
+      "heading_rmse_rad": 0.01902785855205396,
+      "rate_rms_rad_s": 0.10819434727552657,
+      "movement_rad": 0.9901795247428146,
+      "active_fraction": 0.2708796639486039,
+      "saturation_fraction": 0.09190758586607363,
+      "gain_vs_lqr_pct": 4.096573917843893,
+      "heading_change_pct": 2.910140407873918,
+      "rate_change_pct": 63.472781350989834
+    },
+    "oldfiltered_ppo": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.07727337855428533,
+      "heading_rmse_rad": 0.018378670559845104,
+      "rate_rms_rad_s": 0.08017574779851813,
+      "movement_rad": 0.7204110178859932,
+      "active_fraction": 0.6144798616258957,
+      "saturation_fraction": 0.01089696071163825,
+      "gain_vs_lqr_pct": 3.3313911768520943,
+      "heading_change_pct": -0.6009235012125469,
+      "rate_change_pct": 21.138976476675374
+    },
+    "lowpass_ppo": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.07541671334498175,
+      "heading_rmse_rad": 0.018678028947504866,
+      "rate_rms_rad_s": 0.0827584159245786,
+      "movement_rad": 0.7222091199182191,
+      "active_fraction": 0.5564821678609669,
+      "saturation_fraction": 0.015295280454657771,
+      "gain_vs_lqr_pct": 5.65407003717433,
+      "heading_change_pct": 1.018124360745376,
+      "rate_change_pct": 25.04117610637038
+    },
+    "lowpass_student": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.07527097495344878,
+      "heading_rmse_rad": 0.018723576475936084,
+      "rate_rms_rad_s": 0.08305241313107278,
+      "movement_rad": 0.7265920904706977,
+      "active_fraction": 0.5705172555802652,
+      "saturation_fraction": 0.015435301869697719,
+      "gain_vs_lqr_pct": 5.836388033684836,
+      "heading_change_pct": 1.2644633028425778,
+      "rate_change_pct": 25.485381762814097
+    },
+    "budget_ppo": {
+      "episodes": 180,
+      "survived": 179,
+      "rmse_m": 0.08269320534437616,
+      "heading_rmse_rad": 0.01953194198979417,
+      "rate_rms_rad_s": 0.08360824732710058,
+      "movement_rad": 0.7336849380973777,
+      "active_fraction": 0.5736797414716988,
+      "saturation_fraction": 0.016120921336828742,
+      "gain_vs_lqr_pct": -3.4487849415305583,
+      "heading_change_pct": 5.636421834300087,
+      "rate_change_pct": 26.32520162663068
+    },
+    "budget_student": {
+      "episodes": 180,
+      "survived": 179,
+      "rmse_m": 0.083050332475693,
+      "heading_rmse_rad": 0.019578919453697715,
+      "rate_rms_rad_s": 0.08414468658544803,
+      "movement_rad": 0.7420333218588107,
+      "active_fraction": 0.5998771250561803,
+      "saturation_fraction": 0.01587065969000878,
+      "gain_vs_lqr_pct": -3.895549190788117,
+      "heading_change_pct": 5.890494429652526,
+      "rate_change_pct": 27.135717330973353
+    },
+    "budget_negative": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.09787829651348968,
+      "heading_rmse_rad": 0.018847822440908418,
+      "rate_rms_rad_s": 0.06677057935797766,
+      "movement_rad": 0.5457264976123747,
+      "active_fraction": 0.699728193723746,
+      "saturation_fraction": 0.009101391977596573,
+      "gain_vs_lqr_pct": -22.445257797180872,
+      "heading_change_pct": 1.9364343323431399,
+      "rate_change_pct": 0.8848668615665689
+    },
+    "budget_positive": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.09787829651348968,
+      "heading_rmse_rad": 0.018847822440908418,
+      "rate_rms_rad_s": 0.06677057935797766,
+      "movement_rad": 0.5457264976123747,
+      "active_fraction": 0.699728193723746,
+      "saturation_fraction": 0.009101391977596573,
+      "gain_vs_lqr_pct": -22.445257797180872,
+      "heading_change_pct": 1.9364343323431399,
+      "rate_change_pct": 0.8848668615665689
+    },
+    "budget_legacy": {
+      "episodes": 180,
+      "survived": 179,
+      "rmse_m": 0.08461589791213943,
+      "heading_rmse_rad": 0.019192020376114345,
+      "rate_rms_rad_s": 0.08033220571328314,
+      "movement_rad": 0.69368073671962,
+      "active_fraction": 0.5511987960500546,
+      "saturation_fraction": 0.014208258601851279,
+      "gain_vs_lqr_pct": -5.854063695968725,
+      "heading_change_pct": 3.7979920974085424,
+      "rate_change_pct": 21.375371548461143
+    },
+    "budget_physical": {
+      "episodes": 180,
+      "survived": 180,
+      "rmse_m": 0.07813556884306538,
+      "heading_rmse_rad": 0.018851423756914693,
+      "rate_rms_rad_s": 0.07465637525794658,
+      "movement_rad": 0.6337944915067667,
+      "active_fraction": 0.5141709908574252,
+      "saturation_fraction": 0.01146940120253686,
+      "gain_vs_lqr_pct": 2.2527954519525606,
+      "heading_change_pct": 1.9559116652676511,
+      "rate_change_pct": 12.79965743423217
+    }
+  },
+  "by_scenario": {
+    "nominal": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06224893136499623,
+        "heading_rmse_rad": 0.016601639338716778,
+        "rate_rms_rad_s": 0.06500853359227282,
+        "movement_rad": 0.5250904039683117,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.00914257474672597
+      },
+      "original_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06031283909622181,
+        "heading_rmse_rad": 0.017684740191536368,
+        "rate_rms_rad_s": 0.17065408394012616,
+        "movement_rad": 1.6823898671821274,
+        "active_fraction": 0.320463717980397,
+        "saturation_fraction": 0.21946297669055267
+      },
+      "original_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06137118850237898,
+        "heading_rmse_rad": 0.01893223925627704,
+        "rate_rms_rad_s": 0.1732565402657846,
+        "movement_rad": 1.7283818019728545,
+        "active_fraction": 0.3358660736347912,
+        "saturation_fraction": 0.22749361667078494
+      },
+      "oldfiltered_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.0568982998113588,
+        "heading_rmse_rad": 0.01618204599855857,
+        "rate_rms_rad_s": 0.10424755193699467,
+        "movement_rad": 1.0325965011679643,
+        "active_fraction": 0.9551931471872168,
+        "saturation_fraction": 0.013631496581830162
+      },
+      "lowpass_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.055264692978128964,
+        "heading_rmse_rad": 0.017002292350533018,
+        "rate_rms_rad_s": 0.11161339420275365,
+        "movement_rad": 1.0518602205204104,
+        "active_fraction": 0.7037929330368174,
+        "saturation_fraction": 0.02512148916893172
+      },
+      "lowpass_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.055070089617575785,
+        "heading_rmse_rad": 0.017097178808073613,
+        "rate_rms_rad_s": 0.11140173408004046,
+        "movement_rad": 1.0517401144268252,
+        "active_fraction": 0.7241784037558685,
+        "saturation_fraction": 0.025471542706531587
+      },
+      "budget_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.05695543905953077,
+        "heading_rmse_rad": 0.017972108118732094,
+        "rate_rms_rad_s": 0.11117613772002916,
+        "movement_rad": 1.0708534846437159,
+        "active_fraction": 0.7773041759327898,
+        "saturation_fraction": 0.022547566098344452
+      },
+      "budget_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.056965646185272854,
+        "heading_rmse_rad": 0.018072536616038595,
+        "rate_rms_rad_s": 0.1115570226370946,
+        "movement_rad": 1.0815499596914493,
+        "active_fraction": 0.8107239930812948,
+        "saturation_fraction": 0.02279466271312083
+      },
+      "budget_negative": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.1160961679582168,
+        "heading_rmse_rad": 0.01740682190226935,
+        "rate_rms_rad_s": 0.06597385372770474,
+        "movement_rad": 0.5404340540322784,
+        "active_fraction": 1.0,
+        "saturation_fraction": 0.00858660736347912
+      },
+      "budget_positive": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.1160961679582168,
+        "heading_rmse_rad": 0.01740682190226935,
+        "rate_rms_rad_s": 0.06597385372770474,
+        "movement_rad": 0.5404340540322784,
+        "active_fraction": 1.0,
+        "saturation_fraction": 0.00858660736347912
+      },
+      "budget_legacy": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.058877410256221764,
+        "heading_rmse_rad": 0.01733565276333114,
+        "rate_rms_rad_s": 0.10218087036850193,
+        "movement_rad": 0.9492245774658179,
+        "active_fraction": 0.7071493287208632,
+        "saturation_fraction": 0.01906762210691047
+      },
+      "budget_physical": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.059617736680323025,
+        "heading_rmse_rad": 0.0175000442180319,
+        "rate_rms_rad_s": 0.08677122067864133,
+        "movement_rad": 0.7819261226835332,
+        "active_fraction": 0.6194300304752491,
+        "saturation_fraction": 0.012437196277077671
+      }
+    },
+    "tire": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.1487443453371202,
+        "heading_rmse_rad": 0.02600731914972995,
+        "rate_rms_rad_s": 0.0711041869530197,
+        "movement_rad": 0.6036015749013203,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009760316283666914
+      },
+      "original_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.13981181402671947,
+        "heading_rmse_rad": 0.027859319645752598,
+        "rate_rms_rad_s": 0.17052300917294927,
+        "movement_rad": 1.625708013762739,
+        "active_fraction": 0.3130508195371057,
+        "saturation_fraction": 0.2069434148752162
+      },
+      "original_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.13376344845228702,
+        "heading_rmse_rad": 0.026433823225330437,
+        "rate_rms_rad_s": 0.1722741187082528,
+        "movement_rad": 1.635061627469404,
+        "active_fraction": 0.32118441644016144,
+        "saturation_fraction": 0.20432830903549953
+      },
+      "oldfiltered_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.14105248540059087,
+        "heading_rmse_rad": 0.025901487918577503,
+        "rate_rms_rad_s": 0.10173678068002937,
+        "movement_rad": 0.9935549296784301,
+        "active_fraction": 0.9283213903302858,
+        "saturation_fraction": 0.0131990775059715
+      },
+      "lowpass_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.13365197774866527,
+        "heading_rmse_rad": 0.026601956689610278,
+        "rate_rms_rad_s": 0.10723780178106965,
+        "movement_rad": 0.9824938415400802,
+        "active_fraction": 0.7687381599538753,
+        "saturation_fraction": 0.02370068363396755
+      },
+      "lowpass_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.1331067790734837,
+        "heading_rmse_rad": 0.026733499221894698,
+        "rate_rms_rad_s": 0.10891459108647981,
+        "movement_rad": 1.0044425884380694,
+        "active_fraction": 0.8240054361255251,
+        "saturation_fraction": 0.024050737171567416
+      },
+      "budget_ppo": {
+        "episodes": 36,
+        "survived": 35,
+        "rmse_m": 0.16802784401235518,
+        "heading_rmse_rad": 0.02985604449052913,
+        "rate_rms_rad_s": 0.11219786289732706,
+        "movement_rad": 1.0338111355242463,
+        "active_fraction": 0.7822040208488459,
+        "saturation_fraction": 0.03046661702655746
+      },
+      "budget_student": {
+        "episodes": 36,
+        "survived": 35,
+        "rmse_m": 0.16979983487309094,
+        "heading_rmse_rad": 0.029990243242085646,
+        "rate_rms_rad_s": 0.11448548307232533,
+        "movement_rad": 1.0643343190059582,
+        "active_fraction": 0.8859883564340025,
+        "saturation_fraction": 0.02898460645990014
+      },
+      "budget_negative": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.18455742655090646,
+        "heading_rmse_rad": 0.026961227924433447,
+        "rate_rms_rad_s": 0.07332045397209982,
+        "movement_rad": 0.6290530536051825,
+        "active_fraction": 1.0,
+        "saturation_fraction": 0.009327897207808253
+      },
+      "budget_positive": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.18455742655090646,
+        "heading_rmse_rad": 0.026961227924433447,
+        "rate_rms_rad_s": 0.07332045397209982,
+        "movement_rad": 0.6290530536051825,
+        "active_fraction": 1.0,
+        "saturation_fraction": 0.009327897207808253
+      },
+      "budget_legacy": {
+        "episodes": 36,
+        "survived": 35,
+        "rmse_m": 0.17571377711122108,
+        "heading_rmse_rad": 0.028793451465277148,
+        "rate_rms_rad_s": 0.10484899536658102,
+        "movement_rad": 0.9576328272151603,
+        "active_fraction": 0.6982746121502102,
+        "saturation_fraction": 0.02437912964228754
+      },
+      "budget_physical": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.1425645019615681,
+        "heading_rmse_rad": 0.02692523827789583,
+        "rate_rms_rad_s": 0.09188250471380152,
+        "movement_rad": 0.8251747314756152,
+        "active_fraction": 0.6078782637344535,
+        "saturation_fraction": 0.017255580265217032
+      }
+    },
+    "poll10": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06252265078270361,
+        "heading_rmse_rad": 0.016593199993052928,
+        "rate_rms_rad_s": 0.06484430020567077,
+        "movement_rad": 0.5227016240850583,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009348488592372951
+      },
+      "original_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.061997378018528504,
+        "heading_rmse_rad": 0.01652529576775169,
+        "rate_rms_rad_s": 0.065452708548711,
+        "movement_rad": 0.5351583937759671,
+        "active_fraction": 0.4784820031298905,
+        "saturation_fraction": 0.009430854130631744
+      },
+      "original_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.062008120732369124,
+        "heading_rmse_rad": 0.016526500372568056,
+        "rate_rms_rad_s": 0.0654733748758946,
+        "movement_rad": 0.5357801813526618,
+        "active_fraction": 0.4690099662301293,
+        "saturation_fraction": 0.009430854130631744
+      },
+      "oldfiltered_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06225022404075013,
+        "heading_rmse_rad": 0.016563082663381953,
+        "rate_rms_rad_s": 0.06492676019911228,
+        "movement_rad": 0.5242308361788554,
+        "active_fraction": 0.8478708508360102,
+        "saturation_fraction": 0.00936907997693765
+      },
+      "lowpass_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06200105842967495,
+        "heading_rmse_rad": 0.01653916387743035,
+        "rate_rms_rad_s": 0.06497323199678545,
+        "movement_rad": 0.5250186386779818,
+        "active_fraction": 0.9217939214232765,
+        "saturation_fraction": 0.00936907997693765
+      },
+      "lowpass_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.062012166321818434,
+        "heading_rmse_rad": 0.016540472227926515,
+        "rate_rms_rad_s": 0.06497808806535631,
+        "movement_rad": 0.5251048212059747,
+        "active_fraction": 0.919302363890948,
+        "saturation_fraction": 0.00936907997693765
+      },
+      "budget_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06231690596685956,
+        "heading_rmse_rad": 0.01658482550827578,
+        "rate_rms_rad_s": 0.06469958435264998,
+        "movement_rad": 0.5120871911105963,
+        "active_fraction": 0.9217321472695824,
+        "saturation_fraction": 0.00936907997693765
+      },
+      "budget_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06232034145154724,
+        "heading_rmse_rad": 0.01658508527729704,
+        "rate_rms_rad_s": 0.06471327480723553,
+        "movement_rad": 0.5126094216925481,
+        "active_fraction": 0.9193229552755128,
+        "saturation_fraction": 0.00936907997693765
+      },
+      "budget_negative": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06257195659586941,
+        "heading_rmse_rad": 0.01662432089413052,
+        "rate_rms_rad_s": 0.06459095571989826,
+        "movement_rad": 0.5074727933670262,
+        "active_fraction": 0.9992587101556709,
+        "saturation_fraction": 0.009307305823243555
+      },
+      "budget_positive": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06257195659586941,
+        "heading_rmse_rad": 0.01662432089413052,
+        "rate_rms_rad_s": 0.06459095571989826,
+        "movement_rad": 0.5074727933670262,
+        "active_fraction": 0.9992587101556709,
+        "saturation_fraction": 0.009307305823243555
+      },
+      "budget_legacy": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06232246501492551,
+        "heading_rmse_rad": 0.016584266811158613,
+        "rate_rms_rad_s": 0.06466351225709571,
+        "movement_rad": 0.5098734615456946,
+        "active_fraction": 0.9411498229140928,
+        "saturation_fraction": 0.00936907997693765
+      },
+      "budget_physical": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06232976655675187,
+        "heading_rmse_rad": 0.016585104757987645,
+        "rate_rms_rad_s": 0.06466050055295929,
+        "movement_rad": 0.5101987515167563,
+        "active_fraction": 0.9376698789226587,
+        "saturation_fraction": 0.00936907997693765
+      }
+    },
+    "delay20": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310737945961567,
+        "heading_rmse_rad": 0.016640114155802365,
+        "rate_rms_rad_s": 0.06505993376562583,
+        "movement_rad": 0.528305082737404,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "original_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310728426111305,
+        "heading_rmse_rad": 0.01664010220794155,
+        "rate_rms_rad_s": 0.06506000024016295,
+        "movement_rad": 0.5283064965590809,
+        "active_fraction": 0.2323531834280537,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "original_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.0631072864690485,
+        "heading_rmse_rad": 0.016640102577664212,
+        "rate_rms_rad_s": 0.06506000285606707,
+        "movement_rad": 0.5283064968887308,
+        "active_fraction": 0.22833786343793758,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "oldfiltered_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310733150699156,
+        "heading_rmse_rad": 0.01664010889027744,
+        "rate_rms_rad_s": 0.06505994650482058,
+        "movement_rad": 0.5283053063742948,
+        "active_fraction": 0.34101391977596573,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "lowpass_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.0631072855567043,
+        "heading_rmse_rad": 0.01664010449152062,
+        "rate_rms_rad_s": 0.06505995197065043,
+        "movement_rad": 0.5283053828222016,
+        "active_fraction": 0.3880858248908657,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "lowpass_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310728774263073,
+        "heading_rmse_rad": 0.016640104793355544,
+        "rate_rms_rad_s": 0.06505995275185356,
+        "movement_rad": 0.5283054122521978,
+        "active_fraction": 0.38510007412898445,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "budget_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310728567140003,
+        "heading_rmse_rad": 0.016640104503003794,
+        "rate_rms_rad_s": 0.0650599519938629,
+        "movement_rad": 0.5283053631779082,
+        "active_fraction": 0.3880858248908657,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "budget_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310728785681875,
+        "heading_rmse_rad": 0.01664010480463724,
+        "rate_rms_rad_s": 0.0650599527389509,
+        "movement_rad": 0.5283053928736763,
+        "active_fraction": 0.38510007412898445,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "budget_negative": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310737945072054,
+        "heading_rmse_rad": 0.016640114155278714,
+        "rate_rms_rad_s": 0.06505993369855173,
+        "movement_rad": 0.528305071026965,
+        "active_fraction": 0.49938225846305906,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "budget_positive": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310737945072054,
+        "heading_rmse_rad": 0.016640114155278714,
+        "rate_rms_rad_s": 0.06505993369855173,
+        "movement_rad": 0.528305071026965,
+        "active_fraction": 0.49938225846305906,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "budget_legacy": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310728516659356,
+        "heading_rmse_rad": 0.016640103512374757,
+        "rate_rms_rad_s": 0.06505995090260328,
+        "movement_rad": 0.5283053013410063,
+        "active_fraction": 0.4102833374516102,
+        "saturation_fraction": 0.009101391977596573
+      },
+      "budget_physical": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06310728700494866,
+        "heading_rmse_rad": 0.016640104202228036,
+        "rate_rms_rad_s": 0.065059950672697,
+        "movement_rad": 0.5283053358275075,
+        "active_fraction": 0.40587678115476483,
+        "saturation_fraction": 0.009101391977596573
+      }
+    },
+    "delay100": {
+      "lqr": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "original_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "original_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "oldfiltered_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "lowpass_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "lowpass_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "budget_ppo": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "budget_student": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "budget_negative": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "budget_positive": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "budget_legacy": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      },
+      "budget_physical": {
+        "episodes": 36,
+        "survived": 36,
+        "rmse_m": 0.06305855201173524,
+        "heading_rmse_rad": 0.016606627328430056,
+        "rate_rms_rad_s": 0.06490769967163378,
+        "movement_rad": 0.5233675160304214,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009183757515855366
+      }
+    }
+  },
+  "by_pair": {
+    "0": {
+      "lqr": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0799669604524344,
+        "heading_rmse_rad": 0.01847657486903068,
+        "rate_rms_rad_s": 0.06602353755676428,
+        "movement_rad": 0.5391868325583792,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009216703731158883
+      },
+      "original_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0782704088722092,
+        "heading_rmse_rad": 0.01875430407830977,
+        "rate_rms_rad_s": 0.1250345699756594,
+        "movement_rad": 1.220893002672415,
+        "active_fraction": 0.329330368173956,
+        "saturation_fraction": 0.13785520138374105
+      },
+      "original_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07913272057775439,
+        "heading_rmse_rad": 0.019495405889947002,
+        "rate_rms_rad_s": 0.12664707446088902,
+        "movement_rad": 1.25433905577651,
+        "active_fraction": 0.3440573264146281,
+        "saturation_fraction": 0.14309364961700025
+      },
+      "oldfiltered_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07667808238808335,
+        "heading_rmse_rad": 0.018209702425743747,
+        "rate_rms_rad_s": 0.08526356237284537,
+        "movement_rad": 0.7892006190385454,
+        "active_fraction": 0.6195947615517667,
+        "saturation_fraction": 0.010921670373115889
+      },
+      "lowpass_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07415071894739604,
+        "heading_rmse_rad": 0.018312385346893455,
+        "rate_rms_rad_s": 0.09181422569468492,
+        "movement_rad": 0.8568412562810017,
+        "active_fraction": 0.6618112181863108,
+        "saturation_fraction": 0.015072893501359031
+      },
+      "lowpass_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0743035232322189,
+        "heading_rmse_rad": 0.018421074031769197,
+        "rate_rms_rad_s": 0.09197175306561546,
+        "movement_rad": 0.8604532463046299,
+        "active_fraction": 0.6613417346182358,
+        "saturation_fraction": 0.01572769953051643
+      },
+      "budget_ppo": {
+        "episodes": 60,
+        "survived": 59,
+        "rmse_m": 0.0947330235410804,
+        "heading_rmse_rad": 0.020651617167973552,
+        "rate_rms_rad_s": 0.09527965941430191,
+        "movement_rad": 0.8864994780309935,
+        "active_fraction": 0.6592091571279917,
+        "saturation_fraction": 0.022719389524800553
+      },
+      "budget_student": {
+        "episodes": 60,
+        "survived": 59,
+        "rmse_m": 0.0963904388577122,
+        "heading_rmse_rad": 0.020764528439716802,
+        "rate_rms_rad_s": 0.09550355575929993,
+        "movement_rad": 0.8869700849246938,
+        "active_fraction": 0.6592512679339806,
+        "saturation_fraction": 0.02230819785970264
+      },
+      "budget_negative": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.09779542731916108,
+        "heading_rmse_rad": 0.018858230602255485,
+        "rate_rms_rad_s": 0.06668820628588647,
+        "movement_rad": 0.5447588063247146,
+        "active_fraction": 0.699728193723746,
+        "saturation_fraction": 0.0090313812700766
+      },
+      "budget_positive": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.09779542731916108,
+        "heading_rmse_rad": 0.018858230602255485,
+        "rate_rms_rad_s": 0.06668820628588647,
+        "movement_rad": 0.5447588063247146,
+        "active_fraction": 0.699728193723746,
+        "saturation_fraction": 0.0090313812700766
+      },
+      "budget_legacy": {
+        "episodes": 60,
+        "survived": 59,
+        "rmse_m": 0.09616883004686344,
+        "heading_rmse_rad": 0.020166489297358387,
+        "rate_rms_rad_s": 0.0967692396886926,
+        "movement_rad": 0.8992744544013133,
+        "active_fraction": 0.667546959270969,
+        "saturation_fraction": 0.020259128386336867
+      },
+      "budget_physical": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07641978383625274,
+        "heading_rmse_rad": 0.019195297116631316,
+        "rate_rms_rad_s": 0.08258033985050423,
+        "movement_rad": 0.7426837614953011,
+        "active_fraction": 0.6586854460093897,
+        "saturation_fraction": 0.01300963676797628
+      }
+    },
+    "1": {
+      "lqr": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0801339769186863,
+        "heading_rmse_rad": 0.01851926495279645,
+        "rate_rms_rad_s": 0.06610746421934972,
+        "movement_rad": 0.5410181833116299,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009290832715591796
+      },
+      "original_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07787363916877503,
+        "heading_rmse_rad": 0.01877326719663631,
+        "rate_rms_rad_s": 0.0757762777354192,
+        "movement_rad": 0.6025237871770358,
+        "active_fraction": 0.1561527057079318,
+        "saturation_fraction": 0.022955275512725477
+      },
+      "original_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07739099398858565,
+        "heading_rmse_rad": 0.018730738612531644,
+        "rate_rms_rad_s": 0.0779254427174508,
+        "movement_rad": 0.6151693418051065,
+        "active_fraction": 0.1552260934025204,
+        "saturation_fraction": 0.024820854954287125
+      },
+      "oldfiltered_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07844969970786961,
+        "heading_rmse_rad": 0.01866116148449965,
+        "rate_rms_rad_s": 0.0733332048378594,
+        "movement_rad": 0.6265286480987696,
+        "active_fraction": 0.5896219421793921,
+        "saturation_fraction": 0.010513960958734865
+      },
+      "lowpass_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07802157719045542,
+        "heading_rmse_rad": 0.018780952095937026,
+        "rate_rms_rad_s": 0.07151712002308055,
+        "movement_rad": 0.5729108428144027,
+        "active_fraction": 0.37181863108475416,
+        "saturation_fraction": 0.013627378304917222
+      },
+      "lowpass_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07767404424690359,
+        "heading_rmse_rad": 0.018784558827033983,
+        "rate_rms_rad_s": 0.07185161109324562,
+        "movement_rad": 0.5762394990544003,
+        "active_fraction": 0.42036076105757353,
+        "saturation_fraction": 0.01354089448974549
+      },
+      "budget_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07832231798677333,
+        "heading_rmse_rad": 0.018804498848097605,
+        "rate_rms_rad_s": 0.07050066342779429,
+        "movement_rad": 0.5768424060983087,
+        "active_fraction": 0.4125030887076847,
+        "saturation_fraction": 0.010612799604645416
+      },
+      "budget_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0777121585434824,
+        "heading_rmse_rad": 0.018801391984823133,
+        "rate_rms_rad_s": 0.07141522685421452,
+        "movement_rad": 0.5872470665075505,
+        "active_fraction": 0.4811341734618236,
+        "saturation_fraction": 0.010662218927600692
+      },
+      "budget_negative": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0980810779537897,
+        "heading_rmse_rad": 0.01885334063552454,
+        "rate_rms_rad_s": 0.06656139218394248,
+        "movement_rad": 0.5452783559984661,
+        "active_fraction": 0.699728193723746,
+        "saturation_fraction": 0.00914257474672597
+      },
+      "budget_positive": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0980810779537897,
+        "heading_rmse_rad": 0.01885334063552454,
+        "rate_rms_rad_s": 0.06656139218394248,
+        "movement_rad": 0.5452783559984661,
+        "active_fraction": 0.699728193723746,
+        "saturation_fraction": 0.00914257474672597
+      },
+      "budget_legacy": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07997800925935535,
+        "heading_rmse_rad": 0.018645352508243694,
+        "rate_rms_rad_s": 0.06868361413074174,
+        "movement_rad": 0.5583360518603786,
+        "active_fraction": 0.37693353101062516,
+        "saturation_fraction": 0.010266864343958487
+      },
+      "budget_physical": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.08020141690153837,
+        "heading_rmse_rad": 0.018599890604388346,
+        "rate_rms_rad_s": 0.06672549672562948,
+        "movement_rad": 0.5436866491777738,
+        "active_fraction": 0.3026439337781072,
+        "saturation_fraction": 0.009303187546330615
+      }
+    },
+    "2": {
+      "lqr": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07970817800258187,
+        "heading_rmse_rad": 0.018473500157612118,
+        "rate_rms_rad_s": 0.06642379073681974,
+        "movement_rad": 0.5416347051635003,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009414381022979985
+      },
+      "original_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0768286724076066,
+        "heading_rmse_rad": 0.01966207980990127,
+        "rate_rms_rad_s": 0.12114765323307128,
+        "movement_rad": 1.1135413825367506,
+        "active_fraction": 0.3211267605633803,
+        "saturation_fraction": 0.11166296021744503
+      },
+      "original_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07346144313435128,
+        "heading_rmse_rad": 0.018857431153683237,
+        "rate_rms_rad_s": 0.12001052464823987,
+        "movement_rad": 1.1010301766468271,
+        "active_fraction": 0.3133555720286632,
+        "saturation_fraction": 0.10780825302693353
+      },
+      "oldfiltered_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.076692353566903,
+        "heading_rmse_rad": 0.018265147769291914,
+        "rate_rms_rad_s": 0.08193047618484962,
+        "movement_rad": 0.7455037865206645,
+        "active_fraction": 0.6342228811465283,
+        "saturation_fraction": 0.011255250803063999
+      },
+      "lowpass_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07407784389709379,
+        "heading_rmse_rad": 0.018940749399684112,
+        "rate_rms_rad_s": 0.08494390205597029,
+        "movement_rad": 0.736875260659253,
+        "active_fraction": 0.635816654311836,
+        "saturation_fraction": 0.01718556955769706
+      },
+      "lowpass_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07383535738122386,
+        "heading_rmse_rad": 0.018965096569005076,
+        "rate_rms_rad_s": 0.08533387523435727,
+        "movement_rad": 0.7430835260530628,
+        "active_fraction": 0.6298492710649864,
+        "saturation_fraction": 0.017037311588831233
+      },
+      "budget_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07502427450527474,
+        "heading_rmse_rad": 0.019139709953311358,
+        "rate_rms_rad_s": 0.08504441913920552,
+        "movement_rad": 0.7377129301628307,
+        "active_fraction": 0.6495552260934025,
+        "saturation_fraction": 0.015048183839881393
+      },
+      "budget_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07504840002588441,
+        "heading_rmse_rad": 0.019170837936553213,
+        "rate_rms_rad_s": 0.08551527714282964,
+        "movement_rad": 0.7518828141441879,
+        "active_fraction": 0.6594638003459352,
+        "saturation_fraction": 0.014665184086978008
+      },
+      "budget_negative": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.09775838426751828,
+        "heading_rmse_rad": 0.01883189608494523,
+        "rate_rms_rad_s": 0.06706213960410404,
+        "movement_rad": 0.5471423305139435,
+        "active_fraction": 0.699728193723746,
+        "saturation_fraction": 0.009130219915987151
+      },
+      "budget_positive": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.09775838426751828,
+        "heading_rmse_rad": 0.01883189608494523,
+        "rate_rms_rad_s": 0.06706213960410404,
+        "movement_rad": 0.5471423305139435,
+        "active_fraction": 0.699728193723746,
+        "saturation_fraction": 0.009130219915987151
+      },
+      "budget_legacy": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07770085443019951,
+        "heading_rmse_rad": 0.01876421932274095,
+        "rate_rms_rad_s": 0.07554376332041508,
+        "movement_rad": 0.6234317038971684,
+        "active_fraction": 0.6095255744996294,
+        "saturation_fraction": 0.01212008895478132
+      },
+      "budget_physical": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.07778550579140506,
+        "heading_rmse_rad": 0.018759083549724418,
+        "rate_rms_rad_s": 0.07466328919770603,
+        "movement_rad": 0.6150130638472253,
+        "active_fraction": 0.5811835927847788,
+        "saturation_fraction": 0.012095379293303682
+      }
+    }
+  },
+  "by_speed": {
+    "15": {
+      "lqr": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.04008354812443237,
+        "heading_rmse_rad": 0.007098678293225557,
+        "rate_rms_rad_s": 0.04200732599076935,
+        "movement_rad": 0.4113289649695936,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.005498900219956008
+      },
+      "original_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.03686489092686486,
+        "heading_rmse_rad": 0.007231327902778862,
+        "rate_rms_rad_s": 0.08630563091645388,
+        "movement_rad": 0.9563165106602569,
+        "active_fraction": 0.3091981603679264,
+        "saturation_fraction": 0.08117376524695061
+      },
+      "original_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.036682867448614195,
+        "heading_rmse_rad": 0.007236331785444695,
+        "rate_rms_rad_s": 0.08941821597085144,
+        "movement_rad": 1.0069633452826434,
+        "active_fraction": 0.3209358128374325,
+        "saturation_fraction": 0.08873225354929014
+      },
+      "oldfiltered_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.03687725679777222,
+        "heading_rmse_rad": 0.007078897767822056,
+        "rate_rms_rad_s": 0.06108775451627316,
+        "movement_rad": 0.68643541669267,
+        "active_fraction": 0.653369326134773,
+        "saturation_fraction": 0.00616876624675065
+      },
+      "lowpass_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.036750835610873236,
+        "heading_rmse_rad": 0.007428510424409091,
+        "rate_rms_rad_s": 0.06082467433552387,
+        "movement_rad": 0.6576628716640522,
+        "active_fraction": 0.5523395320935813,
+        "saturation_fraction": 0.007648470305938813
+      },
+      "lowpass_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.03665512503253766,
+        "heading_rmse_rad": 0.007493428614558219,
+        "rate_rms_rad_s": 0.0611449945297018,
+        "movement_rad": 0.6643668850058455,
+        "active_fraction": 0.5700059988002399,
+        "saturation_fraction": 0.007758448310337933
+      },
+      "budget_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.03738894436767428,
+        "heading_rmse_rad": 0.008025178912755039,
+        "rate_rms_rad_s": 0.06469905632648137,
+        "movement_rad": 0.7080548170366139,
+        "active_fraction": 0.5874725054989002,
+        "saturation_fraction": 0.008328334333133373
+      },
+      "budget_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.037183421865307674,
+        "heading_rmse_rad": 0.008078088075606317,
+        "rate_rms_rad_s": 0.06600852165030527,
+        "movement_rad": 0.7306303492281794,
+        "active_fraction": 0.6161467706458709,
+        "saturation_fraction": 0.008288342331533693
+      },
+      "budget_negative": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06466425303647504,
+        "heading_rmse_rad": 0.007221691804986836,
+        "rate_rms_rad_s": 0.041649784764624186,
+        "movement_rad": 0.4058331456738909,
+        "active_fraction": 0.6998200359928014,
+        "saturation_fraction": 0.005338932213557288
+      },
+      "budget_positive": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06466425303647504,
+        "heading_rmse_rad": 0.007221691804986836,
+        "rate_rms_rad_s": 0.041649784764624186,
+        "movement_rad": 0.4058331456738909,
+        "active_fraction": 0.6998200359928014,
+        "saturation_fraction": 0.005338932213557288
+      },
+      "budget_legacy": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0384072165146766,
+        "heading_rmse_rad": 0.007749083880441307,
+        "rate_rms_rad_s": 0.060331838113908354,
+        "movement_rad": 0.6485750929984121,
+        "active_fraction": 0.544631073785243,
+        "saturation_fraction": 0.00636872625474905
+      },
+      "budget_physical": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.03867278696526098,
+        "heading_rmse_rad": 0.007713690933205333,
+        "rate_rms_rad_s": 0.05247667068426411,
+        "movement_rad": 0.5498795879946999,
+        "active_fraction": 0.5039092181563687,
+        "saturation_fraction": 0.005618876224755049
+      }
+    },
+    "20": {
+      "lqr": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06828243557769235,
+        "heading_rmse_rad": 0.01631368178782114,
+        "rate_rms_rad_s": 0.06135861845426361,
+        "movement_rad": 0.5117534050750076,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.009333333333333334
+      },
+      "original_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06367966197398582,
+        "heading_rmse_rad": 0.01617912020032393,
+        "rate_rms_rad_s": 0.10276517969320613,
+        "movement_rad": 0.9330370204059807,
+        "active_fraction": 0.25283333333333335,
+        "saturation_fraction": 0.0893974358974359
+      },
+      "original_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06346673855328495,
+        "heading_rmse_rad": 0.016229578730513117,
+        "rate_rms_rad_s": 0.10367346040135753,
+        "movement_rad": 0.9398718712414018,
+        "active_fraction": 0.2513205128205128,
+        "saturation_fraction": 0.08880769230769231
+      },
+      "oldfiltered_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06484059465143882,
+        "heading_rmse_rad": 0.015992841362713173,
+        "rate_rms_rad_s": 0.075589063835373,
+        "movement_rad": 0.6771320048542462,
+        "active_fraction": 0.6114358974358974,
+        "saturation_fraction": 0.010461538461538461
+      },
+      "lowpass_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06325639195541526,
+        "heading_rmse_rad": 0.016292603191055258,
+        "rate_rms_rad_s": 0.07696518353448599,
+        "movement_rad": 0.6703633920813457,
+        "active_fraction": 0.5523846153846154,
+        "saturation_fraction": 0.013846153846153847
+      },
+      "lowpass_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06294381347705341,
+        "heading_rmse_rad": 0.016318436795300807,
+        "rate_rms_rad_s": 0.07759424664398006,
+        "movement_rad": 0.6783118949197108,
+        "active_fraction": 0.569448717948718,
+        "saturation_fraction": 0.014371794871794873
+      },
+      "budget_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06432918058816688,
+        "heading_rmse_rad": 0.01654871542450794,
+        "rate_rms_rad_s": 0.07688563531601367,
+        "movement_rad": 0.6660392085853513,
+        "active_fraction": 0.5590128205128205,
+        "saturation_fraction": 0.01391025641025641
+      },
+      "budget_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0639228938681942,
+        "heading_rmse_rad": 0.016539942871321926,
+        "rate_rms_rad_s": 0.07720925740188844,
+        "movement_rad": 0.6719496198096556,
+        "active_fraction": 0.5905769230769231,
+        "saturation_fraction": 0.013384615384615385
+      },
+      "budget_negative": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.08663176811254263,
+        "heading_rmse_rad": 0.016468525998418897,
+        "rate_rms_rad_s": 0.061101236277114064,
+        "movement_rad": 0.5085026626491899,
+        "active_fraction": 0.6996923076923077,
+        "saturation_fraction": 0.009038461538461539
+      },
+      "budget_positive": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.08663176811254263,
+        "heading_rmse_rad": 0.016468525998418897,
+        "rate_rms_rad_s": 0.061101236277114064,
+        "movement_rad": 0.5085026626491899,
+        "active_fraction": 0.6996923076923077,
+        "saturation_fraction": 0.009038461538461539
+      },
+      "budget_legacy": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.0657879939609438,
+        "heading_rmse_rad": 0.01639461935290121,
+        "rate_rms_rad_s": 0.07415561908261385,
+        "movement_rad": 0.6384111473031256,
+        "active_fraction": 0.5428076923076923,
+        "saturation_fraction": 0.01214102564102564
+      },
+      "budget_physical": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.06541684571143219,
+        "heading_rmse_rad": 0.01644960029080162,
+        "rate_rms_rad_s": 0.06931484602435245,
+        "movement_rad": 0.5880226297853139,
+        "active_fraction": 0.5107179487179487,
+        "saturation_fraction": 0.010666666666666666
+      }
+    },
+    "25": {
+      "lqr": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.13144313167157784,
+        "heading_rmse_rad": 0.032056979898392554,
+        "rate_rms_rad_s": 0.09518884806790079,
+        "movement_rad": 0.6987573509889082,
+        "active_fraction": 0.0,
+        "saturation_fraction": 0.015154320987654322
+      },
+      "original_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.13242816754774014,
+        "heading_rmse_rad": 0.03377920298174456,
+        "rate_rms_rad_s": 0.13288769033448986,
+        "movement_rad": 1.047604641319964,
+        "active_fraction": 0.22592592592592592,
+        "saturation_fraction": 0.10743827160493827
+      },
+      "original_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.12983555169879218,
+        "heading_rmse_rad": 0.03361766514020407,
+        "rate_rms_rad_s": 0.13149136545437073,
+        "movement_rad": 1.0237033577043984,
+        "active_fraction": 0.2171604938271605,
+        "saturation_fraction": 0.10054012345679013
+      },
+      "oldfiltered_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.13010228421364495,
+        "heading_rmse_rad": 0.032064272549000086,
+        "rate_rms_rad_s": 0.10385042504390823,
+        "movement_rad": 0.7976656321110633,
+        "active_fraction": 0.5581172839506173,
+        "saturation_fraction": 0.018719135802469134
+      },
+      "lowpass_ppo": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.12624291246865676,
+        "heading_rmse_rad": 0.03231297322705024,
+        "rate_rms_rad_s": 0.11048538990372592,
+        "movement_rad": 0.8386010960092594,
+        "active_fraction": 0.5678086419753087,
+        "saturation_fraction": 0.028842592592592593
+      },
+      "lowpass_student": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.1262139863507553,
+        "heading_rmse_rad": 0.03235886401794923,
+        "rate_rms_rad_s": 0.11041799821953649,
+        "movement_rad": 0.8370974914865368,
+        "active_fraction": 0.5725925925925925,
+        "saturation_fraction": 0.028564814814814814
+      },
+      "budget_ppo": {
+        "episodes": 60,
+        "survived": 59,
+        "rmse_m": 0.14636149107728733,
+        "heading_rmse_rad": 0.034021931632119536,
+        "rate_rms_rad_s": 0.10924005033880668,
+        "movement_rad": 0.8269607886701679,
+        "active_fraction": 0.570032825467608,
+        "saturation_fraction": 0.030859036293818903
+      },
+      "budget_student": {
+        "episodes": 60,
+        "survived": 59,
+        "rmse_m": 0.14804468169357712,
+        "heading_rmse_rad": 0.034118727414164905,
+        "rate_rms_rad_s": 0.10921628070415038,
+        "movement_rad": 0.8235199965385971,
+        "active_fraction": 0.5858952296792397,
+        "saturation_fraction": 0.03063423406663256
+      },
+      "budget_negative": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.1423388683914514,
+        "heading_rmse_rad": 0.03285324951931952,
+        "rate_rms_rad_s": 0.09756071703219474,
+        "movement_rad": 0.7228436845140435,
+        "active_fraction": 0.6996296296296296,
+        "saturation_fraction": 0.014984567901234569
+      },
+      "budget_positive": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.1423388683914514,
+        "heading_rmse_rad": 0.03285324951931952,
+        "rate_rms_rad_s": 0.09756071703219474,
+        "movement_rad": 0.7228436845140435,
+        "active_fraction": 0.6996296296296296,
+        "saturation_fraction": 0.014984567901234569
+      },
+      "budget_legacy": {
+        "episodes": 60,
+        "survived": 59,
+        "rmse_m": 0.14965248326079789,
+        "heading_rmse_rad": 0.033432357895000514,
+        "rate_rms_rad_s": 0.10650915994332721,
+        "movement_rad": 0.7940559698573225,
+        "active_fraction": 0.5715260017050299,
+        "saturation_fraction": 0.028861505076338837
+      },
+      "budget_physical": {
+        "episodes": 60,
+        "survived": 60,
+        "rmse_m": 0.130317073852503,
+        "heading_rmse_rad": 0.03239098004673713,
+        "rate_rms_rad_s": 0.10217760906522319,
+        "movement_rad": 0.7634812567402862,
+        "active_fraction": 0.5341666666666667,
+        "saturation_fraction": 0.02146604938271605
+      }
+    }
+  }
+}

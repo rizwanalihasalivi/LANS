@@ -1,0 +1,59 @@
+{
+  "budget_ppo": {
+    "gains_pct": {
+      "lqr": -3.4487849415305583,
+      "budget_student": 0.4300128857658292,
+      "budget_negative": 15.514257715979662,
+      "budget_positive": 15.514257715979662
+    },
+    "checks": {
+      "tracking": false,
+      "heading": false,
+      "rate": false,
+      "survival": false,
+      "nominal": true,
+      "paired_student": false,
+      "exact_100ms_fallback": true
+    },
+    "full_screen_pass": false,
+    "twenty_percent_pass": false
+  },
+  "budget_legacy": {
+    "gains_pct": {
+      "lqr": -5.854063695968725,
+      "budget_student": -1.8850802757528262,
+      "budget_negative": 13.549887026816432,
+      "budget_positive": 13.549887026816432
+    },
+    "checks": {
+      "tracking": false,
+      "heading": true,
+      "rate": false,
+      "survival": false,
+      "nominal": true,
+      "paired_student": false,
+      "exact_100ms_fallback": true
+    },
+    "full_screen_pass": false,
+    "twenty_percent_pass": false
+  },
+  "budget_physical": {
+    "gains_pct": {
+      "lqr": 2.2527954519525606,
+      "budget_student": 5.917813314071996,
+      "budget_negative": 20.170689901313654,
+      "budget_positive": 20.170689901313654
+    },
+    "checks": {
+      "tracking": true,
+      "heading": true,
+      "rate": false,
+      "survival": true,
+      "nominal": true,
+      "paired_student": false,
+      "exact_100ms_fallback": true
+    },
+    "full_screen_pass": false,
+    "twenty_percent_pass": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "episodes": 2160,
+  "transitions": 2913042,
+  "neural_queries": 1572762,
+  "exact_fallback_pairs": 396,
+  "full_replay": true,
+  "independent_metric_recomputation": true,
+  "torch_actor_checks": true
+}

@@ -1,0 +1,11 @@
+{
+  "arm": "physical",
+  "pair": 2,
+  "additional_steps": 100000,
+  "submitted": 65650,
+  "active": 61888,
+  "checkpoint": {
+    "folder": "step-000100000",
+    "manifest_sha256": "6d4835487638b532ede6868d6f1640e88408eaf263ea9c470c184c6591904e64"
+  }
+}

@@ -10,7 +10,28 @@ The [full project audit and corrections](docs/research/full-project-audit/README
 
 ## Current evidence and entry points
 
-- **Latest actual PPO training:** [three corrected-environment continuation runs and full matched results](docs/research/reviewer-training-v11/README.md).
+- **Latest performance audit and resumable experiment:** [v12 findings, fixes and matched results](docs/research/ppo-audit-v12/README.md).
+  The response-delay forecast now uses the same nominal RK4 integration as the
+  supervisor. Full model/Adam/environment/queue/normalizer/RNG checkpoints are
+  saved every 10,000 training steps; an actual 10,000-step replay matches the
+  uninterrupted run exactly. The active-path audit includes 45 passing
+  regression tests and an inventory of 2,688 Python sources/snapshots.
+  Two predeclared training arms across three seeds add **300,000 new steps**.
+  All **1,200 fresh matched episodes survive**; **1,648,200 transitions** and
+  **563,760 neural queries** replay, with **216 exact 100 ms/LQR pairs**.
+  On this SAME grid, continued PPO gains **0.008%** over LQR; the higher-exploration
+  variant is **0.113% worse**. The frozen student gains **0.405%** and the causal
+  nonlearned planner **1.013%**. Both PPO arms fail the **20%** target; no actor
+  is promoted. Numerical correction alone gives only **0.00109%** tracking
+  improvement with unchanged weights. Low admitted authority and model mismatch
+  remain research limitations; further exploration alone did not resolve them.
+  [Semantic review](docs/research/ppo-audit-v12/semantic-review.md) distinguishes
+  confirmed defects from architectural limits. A typed-verifier bug was repaired
+  without changing raw data, tolerances or selection criteria; its failure is retained.
+  Resume with `python tools/controller_review/resume_ppo_audit12.py --publish`
+  in the recorded research environment; `--verify-only` checks sealed evidence.
+  The finite budget is exhausted, and a resume starts no additional training.
+- **Prior actual PPO training:** [three corrected-environment continuation runs and full matched results](docs/research/reviewer-training-v11/README.md).
   The user explicitly requested training despite the prior failed heuristic
   headroom screen. Three final endpoints add **300,000 new environment steps**,
   retaining the previous actor/critic/optimizer/reward statistics. All 840 fresh

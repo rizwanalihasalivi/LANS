@@ -1,0 +1,11 @@
+{
+  "arm": "legacy",
+  "pair": 1,
+  "additional_steps": 100000,
+  "submitted": 67018,
+  "active": 47429,
+  "checkpoint": {
+    "folder": "step-000100000",
+    "manifest_sha256": "5f6d6256498648a772b5df78dee60147a84a40f10ea6322f38804c5820b9e0b9"
+  }
+}

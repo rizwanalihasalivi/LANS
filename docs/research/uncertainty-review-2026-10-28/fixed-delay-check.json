@@ -1,0 +1,169 @@
+{
+  "scope": "Independent arithmetic for exact, fixed, known integer input delay and full-state linear predictor. Not a full LANS validation.",
+  "source": "Numeric parameters transcribed from user-pasted Doubao conversation; original scripts unavailable.",
+  "A": [
+    [
+      1.0,
+      0.25
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "B": [
+    [
+      0.0
+    ],
+    [
+      0.09615384615384615
+    ]
+  ],
+  "K": [
+    [
+      0.073804225,
+      0.352473025
+    ]
+  ],
+  "no_delay_eigenvalues": [
+    [
+      0.9830541814903847,
+      0.03856137003631536
+    ],
+    [
+      0.9830541814903847,
+      -0.03856137003631536
+    ]
+  ],
+  "spectral_radius": 0.9838101966359201,
+  "checks": [
+    {
+      "delay_ticks": 1,
+      "coordinate_identity_error": 0.0,
+      "max_relative_characteristic_identity_error": 1.5689993092482994e-16
+    },
+    {
+      "delay_ticks": 2,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 1.6313678003182752e-16
+    },
+    {
+      "delay_ticks": 3,
+      "coordinate_identity_error": 1.3877787807814457e-17,
+      "max_relative_characteristic_identity_error": 2.398810921614014e-16
+    },
+    {
+      "delay_ticks": 4,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 4.751558021918075e-16
+    },
+    {
+      "delay_ticks": 5,
+      "coordinate_identity_error": 1.3877787807814457e-17,
+      "max_relative_characteristic_identity_error": 5.395738446481909e-16
+    },
+    {
+      "delay_ticks": 6,
+      "coordinate_identity_error": 1.3877787807814457e-17,
+      "max_relative_characteristic_identity_error": 6.739538171131848e-16
+    },
+    {
+      "delay_ticks": 7,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 7.004776332026075e-16
+    },
+    {
+      "delay_ticks": 8,
+      "coordinate_identity_error": 1.3877787807814457e-17,
+      "max_relative_characteristic_identity_error": 9.625293393578023e-16
+    },
+    {
+      "delay_ticks": 9,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 1.1266261777655308e-15
+    },
+    {
+      "delay_ticks": 10,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 1.2337747319736066e-15
+    },
+    {
+      "delay_ticks": 11,
+      "coordinate_identity_error": 1.3877787807814457e-17,
+      "max_relative_characteristic_identity_error": 1.5516645533990445e-15
+    },
+    {
+      "delay_ticks": 12,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 1.2130221334224552e-15
+    },
+    {
+      "delay_ticks": 13,
+      "coordinate_identity_error": 1.3877787807814457e-17,
+      "max_relative_characteristic_identity_error": 1.3829452347585072e-15
+    },
+    {
+      "delay_ticks": 14,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 1.3186822987598808e-15
+    },
+    {
+      "delay_ticks": 15,
+      "coordinate_identity_error": 5.551115123125783e-17,
+      "max_relative_characteristic_identity_error": 1.7255566371749907e-15
+    },
+    {
+      "delay_ticks": 16,
+      "coordinate_identity_error": 5.551115123125783e-17,
+      "max_relative_characteristic_identity_error": 1.9872533505783304e-15
+    },
+    {
+      "delay_ticks": 17,
+      "coordinate_identity_error": 1.1102230246251565e-16,
+      "max_relative_characteristic_identity_error": 2.054070349170821e-15
+    },
+    {
+      "delay_ticks": 18,
+      "coordinate_identity_error": 5.551115123125783e-17,
+      "max_relative_characteristic_identity_error": 2.3948627807774216e-15
+    },
+    {
+      "delay_ticks": 19,
+      "coordinate_identity_error": 5.551115123125783e-17,
+      "max_relative_characteristic_identity_error": 2.58035371936252e-15
+    },
+    {
+      "delay_ticks": 20,
+      "coordinate_identity_error": 5.551115123125783e-17,
+      "max_relative_characteristic_identity_error": 2.500688687799193e-15
+    }
+  ],
+  "max_coordinate_error": 1.1102230246251565e-16,
+  "max_characteristic_relative_error": 2.58035371936252e-15,
+  "lag_from_beta_0_1175_s": 0.08000224635127591,
+  "small_angle_kinematic_example": {
+    "delta_rad": 0.01,
+    "speed_m_s": 25.0,
+    "length_m": 2.6,
+    "yaw_rate_rad_s": 0.09615384615384615,
+    "lateral_acceleration_m_s2": 2.4038461538461537,
+    "limitation": "Illustrative kinematic approximation, not measured LANS contribution or nonlinear tire prediction."
+  },
+  "switching_counterexample": {
+    "mode_radii": [
+      0.5,
+      0.5
+    ],
+    "two_step_product_radius": 4.48606797749979,
+    "limitation": "Generic mathematical counterexample, not a simulated LANS failure."
+  },
+  "not_checked": [
+    "Doubao original theorem derivation files",
+    "actuator-augmented gain and matrices",
+    "ISS constants1279/3028",
+    "platoon theorem or simulations",
+    "time-varying delay",
+    "saturation/rate limiting/nonlinear vehicle",
+    "RTOS/WCET/schedulability or physical safety"
+  ]
+}

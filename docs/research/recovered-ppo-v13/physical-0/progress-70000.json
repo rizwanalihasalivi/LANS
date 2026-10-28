@@ -1,0 +1,20 @@
+{
+  "arm": "physical",
+  "pair": 0,
+  "additional_steps": 70000,
+  "submitted": 46293,
+  "active": 43729,
+  "optimizer": {
+    "train/learning_rate": 0.0001,
+    "train/entropy_loss": -0.3185351014137268,
+    "train/policy_gradient_loss": -0.001322578474440803,
+    "train/value_loss": 0.05089254677295685,
+    "train/approx_kl": 0.002084587002173066,
+    "train/clip_fraction": 0.035695123858749865,
+    "train/loss": 0.024128004908561707,
+    "train/explained_variance": 0.8744081556797028,
+    "train/n_updates": 475.0,
+    "train/clip_range": 0.1
+  },
+  "snapshot": "checkpoints/step-000070000"
+}

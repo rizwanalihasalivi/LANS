@@ -1,0 +1,21 @@
+{
+  "pair": 0,
+  "speed": 20,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "poll10",
+  "method": "oldfiltered_ppo",
+  "noise_id": 1926020020,
+  "trace": "20-sine120-1-poll10-oldfiltered_ppo.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.05835680119642889,
+  "heading_rmse_rad": 0.016393623996737185,
+  "rate_rms_rad_s": 0.05920517005172669,
+  "movement_rad": 0.4476382421371218,
+  "active_ticks": 901,
+  "saturated_ticks": 17,
+  "projected_ticks": 0,
+  "trace_sha256": "a48cf34673b377b9fe1dbbd2e22bc7f2bdd6ac46437a202bd5ef32b355f8f734"
+}

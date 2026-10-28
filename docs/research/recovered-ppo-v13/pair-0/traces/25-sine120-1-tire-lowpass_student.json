@@ -1,0 +1,21 @@
+{
+  "pair": 0,
+  "speed": 25,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "tire",
+  "method": "lowpass_student",
+  "noise_id": 1926025010,
+  "trace": "25-sine120-1-tire-lowpass_student.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.33205050912800005,
+  "heading_rmse_rad": 0.05245249399385886,
+  "rate_rms_rad_s": 0.09085789817256741,
+  "movement_rad": 0.664359007579264,
+  "active_ticks": 1079,
+  "saturated_ticks": 27,
+  "projected_ticks": 0,
+  "trace_sha256": "02f66e09ea4c10099948609a9447b923b14a45e37d0cc0dc96883830e51854dc"
+}

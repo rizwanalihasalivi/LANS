@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 20,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "poll10",
+  "method": "lowpass_student",
+  "noise_id": 1926120020,
+  "trace": "20-sine120-1-poll10-lowpass_student.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.059470524555322285,
+  "heading_rmse_rad": 0.01658616326642115,
+  "rate_rms_rad_s": 0.05685805574309108,
+  "movement_rad": 0.44197166497111035,
+  "active_ticks": 1077,
+  "saturated_ticks": 16,
+  "projected_ticks": 0,
+  "trace_sha256": "f7f39fda95c79073b4dde990b19508dd548fde4d944d2044d9127f0f70942356"
+}

@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "tire",
+  "method": "original_student",
+  "noise_id": 1926125110,
+  "trace": "25-dlc220--1-tire-original_student.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.15766692153363496,
+  "heading_rmse_rad": 0.03977717711740599,
+  "rate_rms_rad_s": 0.18884397746364945,
+  "movement_rad": 1.5136512381632041,
+  "active_ticks": 186,
+  "saturated_ticks": 184,
+  "projected_ticks": 0,
+  "trace_sha256": "f135e5fad8bf5c6b273e7c34d73cefa8a44bb4f64e6d8a1d94cd62fff2ad4ef4"
+}

@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 15,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "poll10",
+  "method": "budget_legacy",
+  "noise_id": 1926115120,
+  "trace": "15-dlc220--1-poll10-budget_legacy.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.032679607731310845,
+  "heading_rmse_rad": 0.005934326382028919,
+  "rate_rms_rad_s": 0.04034098718943103,
+  "movement_rad": 0.39221698712764796,
+  "active_ticks": 1665,
+  "saturated_ticks": 8,
+  "projected_ticks": 796,
+  "trace_sha256": "5e8ab84a9e4f8ea5531e2daad9626ebf242e726cea32247359066a04ff8726d6"
+}

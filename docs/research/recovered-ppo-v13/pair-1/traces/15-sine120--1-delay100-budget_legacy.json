@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 15,
+  "path": "sine120",
+  "mirror": -1,
+  "scenario": "delay100",
+  "method": "budget_legacy",
+  "noise_id": 1926115040,
+  "trace": "15-sine120--1-delay100-budget_legacy.npz",
+  "steps": 1667,
+  "scheduled": 1667,
+  "survived": true,
+  "rmse_m": 0.03644434523826093,
+  "heading_rmse_rad": 0.006726605937491064,
+  "rate_rms_rad_s": 0.041236734383249846,
+  "movement_rad": 0.38366415416410876,
+  "active_ticks": 0,
+  "saturated_ticks": 11,
+  "projected_ticks": 0,
+  "trace_sha256": "7d62f952580c7c78ffa5bed3729948b1552fa05c4407332765f34dd96c13b2c9"
+}

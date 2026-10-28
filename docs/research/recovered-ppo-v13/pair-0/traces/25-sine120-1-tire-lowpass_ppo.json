@@ -1,0 +1,21 @@
+{
+  "pair": 0,
+  "speed": 25,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "tire",
+  "method": "lowpass_ppo",
+  "noise_id": 1926025010,
+  "trace": "25-sine120-1-tire-lowpass_ppo.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.33072190672799306,
+  "heading_rmse_rad": 0.052347140755662075,
+  "rate_rms_rad_s": 0.08988500750376342,
+  "movement_rad": 0.6543957071528681,
+  "active_ticks": 1079,
+  "saturated_ticks": 27,
+  "projected_ticks": 0,
+  "trace_sha256": "3ef45e0a1d83267f2499e46aa903915cbc7dba1963a3ffad0db515072d0b2685"
+}

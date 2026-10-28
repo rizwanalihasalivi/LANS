@@ -1,0 +1,21 @@
+{
+  "pair": 0,
+  "speed": 25,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "tire",
+  "method": "budget_negative",
+  "noise_id": 1926025010,
+  "trace": "25-sine120-1-tire-budget_negative.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.34999416588989035,
+  "heading_rmse_rad": 0.053759028346123096,
+  "rate_rms_rad_s": 0.08615950082057751,
+  "movement_rad": 0.5964978899874731,
+  "active_ticks": 1080,
+  "saturated_ticks": 26,
+  "projected_ticks": 10,
+  "trace_sha256": "dba261af736bfa97f9db675baa03e39e888287c468b31e5ef6b4cdeb48256f75"
+}

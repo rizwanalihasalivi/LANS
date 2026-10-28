@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 25,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "tire",
+  "method": "lowpass_ppo",
+  "noise_id": 1926125110,
+  "trace": "25-dlc220-1-tire-lowpass_ppo.npz",
+  "steps": 1080,
+  "scheduled": 1080,
+  "survived": true,
+  "rmse_m": 0.17198635907919377,
+  "heading_rmse_rad": 0.040670522820258306,
+  "rate_rms_rad_s": 0.1525455649199469,
+  "movement_rad": 1.2317420844223816,
+  "active_ticks": 972,
+  "saturated_ticks": 37,
+  "projected_ticks": 0,
+  "trace_sha256": "20a832955b1609b2efc1f39f90e54616b71faf8694948f5915395b0b693b7eab"
+}

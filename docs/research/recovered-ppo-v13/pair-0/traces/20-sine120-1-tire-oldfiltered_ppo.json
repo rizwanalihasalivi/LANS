@@ -1,0 +1,21 @@
+{
+  "pair": 0,
+  "speed": 20,
+  "path": "sine120",
+  "mirror": 1,
+  "scenario": "tire",
+  "method": "oldfiltered_ppo",
+  "noise_id": 1926020010,
+  "trace": "20-sine120-1-tire-oldfiltered_ppo.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.1476445011680953,
+  "heading_rmse_rad": 0.025727247186492296,
+  "rate_rms_rad_s": 0.07302632566605634,
+  "movement_rad": 0.6523077034316508,
+  "active_ticks": 971,
+  "saturated_ticks": 17,
+  "projected_ticks": 0,
+  "trace_sha256": "fe09021f8ecc46781171a1266ac5eadd8642d2703ebd2405cab722b3832d3eb4"
+}

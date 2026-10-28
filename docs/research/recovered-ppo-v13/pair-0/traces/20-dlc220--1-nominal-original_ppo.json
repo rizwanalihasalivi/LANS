@@ -1,0 +1,21 @@
+{
+  "pair": 0,
+  "speed": 20,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "nominal",
+  "method": "original_ppo",
+  "noise_id": 1926020100,
+  "trace": "20-dlc220--1-nominal-original_ppo.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.03485176948577968,
+  "heading_rmse_rad": 0.011979000617889172,
+  "rate_rms_rad_s": 0.2683083563935132,
+  "movement_rad": 2.975896555384487,
+  "active_ticks": 865,
+  "saturated_ticks": 658,
+  "projected_ticks": 0,
+  "trace_sha256": "23157ba013143eb8c4b4f1b0274328ca16726c8db8761a55584e72fc5f8f4e12"
+}

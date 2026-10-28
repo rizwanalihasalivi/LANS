@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 20,
+  "path": "dlc220",
+  "mirror": -1,
+  "scenario": "delay100",
+  "method": "lowpass_student",
+  "noise_id": 1926120140,
+  "trace": "20-dlc220--1-delay100-lowpass_student.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.0463456328848612,
+  "heading_rmse_rad": 0.012493412552265274,
+  "rate_rms_rad_s": 0.06376871189478123,
+  "movement_rad": 0.5604822938765576,
+  "active_ticks": 0,
+  "saturated_ticks": 9,
+  "projected_ticks": 0,
+  "trace_sha256": "9a4bc920677182eadf728f60f5cc2a058947cad10ef0ebbf5ad2a0300320bc51"
+}

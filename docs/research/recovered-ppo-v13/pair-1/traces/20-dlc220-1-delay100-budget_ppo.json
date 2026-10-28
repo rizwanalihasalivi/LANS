@@ -1,0 +1,21 @@
+{
+  "pair": 1,
+  "speed": 20,
+  "path": "dlc220",
+  "mirror": 1,
+  "scenario": "delay100",
+  "method": "budget_ppo",
+  "noise_id": 1926120140,
+  "trace": "20-dlc220-1-delay100-budget_ppo.npz",
+  "steps": 1300,
+  "scheduled": 1300,
+  "survived": true,
+  "rmse_m": 0.0463456328848612,
+  "heading_rmse_rad": 0.012493412552265274,
+  "rate_rms_rad_s": 0.06376871189478123,
+  "movement_rad": 0.5604822938765576,
+  "active_ticks": 0,
+  "saturated_ticks": 9,
+  "projected_ticks": 0,
+  "trace_sha256": "b4e8c9baea177048e103e971ab7514d911b07d874b21cb1a92aa6694868d9b0a"
+}

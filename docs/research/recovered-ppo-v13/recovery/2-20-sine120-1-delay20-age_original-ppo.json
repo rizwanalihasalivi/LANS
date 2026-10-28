@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-sine120-1-delay20-age_original-ppo",
+  "source": "ppo",
+  "scenario": "delay20",
+  "steps": 1300,
+  "rmse_m": 0.05919482607958146,
+  "heading_rmse_rad": 0.01643955539647756,
+  "rate_rms_rad_s": 0.057891207303908086,
+  "saturated_ticks": 16,
+  "correction_jump_energy": 2.0885409102237744e-11,
+  "maximum_correction_jump": 2.457684941332066e-07,
+  "action_switches": 14,
+  "requests": 650,
+  "trace_sha256": "fbfd1099ce077e53c41e33da403835c4840f410d1212b3fdf7ed065cf1bae2e7"
+}

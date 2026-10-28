@@ -1,0 +1,16 @@
+{
+  "pair": 1,
+  "name": "20-dlc220-1-delay100-age_original-student",
+  "source": "student",
+  "scenario": "delay100",
+  "steps": 1300,
+  "rmse_m": 0.047275387388626744,
+  "heading_rmse_rad": 0.01269639688388928,
+  "rate_rms_rad_s": 0.06571867660928543,
+  "saturated_ticks": 8,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 130,
+  "trace_sha256": "228005173deecf5324c14d75730fcf71d27a1c88f506c67f5edb9f4ac4d7e505"
+}

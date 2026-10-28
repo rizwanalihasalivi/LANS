@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-sine120-1-nominal-age_original-student",
+  "source": "student",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.050376442492121934,
+  "heading_rmse_rad": 0.016704050505481263,
+  "rate_rms_rad_s": 0.23623112287875983,
+  "saturated_ticks": 468,
+  "correction_jump_energy": 0.2148,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 128,
+  "requests": 1300,
+  "trace_sha256": "64046bffccde92f3e5e274f9759c43ad48468257c831336c6d887f8e9a792800"
+}

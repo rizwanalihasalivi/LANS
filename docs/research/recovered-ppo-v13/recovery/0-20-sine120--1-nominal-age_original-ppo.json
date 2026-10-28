@@ -1,0 +1,16 @@
+{
+  "pair": 0,
+  "name": "20-sine120--1-nominal-age_original-ppo",
+  "source": "ppo",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.049137049978795456,
+  "heading_rmse_rad": 0.017353755544141827,
+  "rate_rms_rad_s": 0.22927047867869912,
+  "saturated_ticks": 465,
+  "correction_jump_energy": 0.10320000000000001,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 69,
+  "requests": 1300,
+  "trace_sha256": "7e37241332284bd60394d00f67aa0b4ddc2f57a7bde6afa1cdae3a4ef3e138bf"
+}

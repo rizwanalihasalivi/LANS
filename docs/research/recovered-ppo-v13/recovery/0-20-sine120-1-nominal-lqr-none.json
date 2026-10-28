@@ -1,0 +1,16 @@
+{
+  "pair": 0,
+  "name": "20-sine120-1-nominal-lqr-none",
+  "source": "none",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.06006462291879029,
+  "heading_rmse_rad": 0.016505900849696085,
+  "rate_rms_rad_s": 0.0573816494528516,
+  "saturated_ticks": 16,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 1300,
+  "trace_sha256": "b70bd43f543e718257f68a2dd233aa840eb3cb6e9f72ae4dbcd03e1f9ebf39c7"
+}

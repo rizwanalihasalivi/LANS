@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-sine120-1-tire-age_original-ppo",
+  "source": "ppo",
+  "scenario": "tire",
+  "steps": 1300,
+  "rmse_m": 0.11831650969129798,
+  "heading_rmse_rad": 0.02586096439917757,
+  "rate_rms_rad_s": 0.25835856269260266,
+  "saturated_ticks": 607,
+  "correction_jump_energy": 0.4424,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 170,
+  "requests": 1300,
+  "trace_sha256": "f2b1b6c1abcb3f44e19c645c4418cbabd890eef913e2607759ac375e8f7c7e44"
+}

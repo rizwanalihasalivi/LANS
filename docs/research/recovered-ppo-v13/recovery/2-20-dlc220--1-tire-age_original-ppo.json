@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-dlc220--1-tire-age_original-ppo",
+  "source": "ppo",
+  "scenario": "tire",
+  "steps": 1300,
+  "rmse_m": 0.07856527366114328,
+  "heading_rmse_rad": 0.018934348523982732,
+  "rate_rms_rad_s": 0.17782987664541855,
+  "saturated_ticks": 251,
+  "correction_jump_energy": 0.1904,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 72,
+  "requests": 1300,
+  "trace_sha256": "6a7392a8cf20cdc17219ab916dcc0378ffe57a2897af0c878e00a0b1c81573b1"
+}

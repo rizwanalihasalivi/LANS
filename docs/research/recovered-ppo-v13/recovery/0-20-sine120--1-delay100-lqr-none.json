@@ -1,0 +1,16 @@
+{
+  "pair": 0,
+  "name": "20-sine120--1-delay100-lqr-none",
+  "source": "none",
+  "scenario": "delay100",
+  "steps": 1300,
+  "rmse_m": 0.060368853315575996,
+  "heading_rmse_rad": 0.016585986941901342,
+  "rate_rms_rad_s": 0.05697877143600893,
+  "saturated_ticks": 16,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 130,
+  "trace_sha256": "9b462eec262106cceb837b530f8f8ced78f8f443a3430dc32c59db238aa836f0"
+}

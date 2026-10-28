@@ -1,0 +1,16 @@
+{
+  "pair": 0,
+  "name": "20-dlc220-1-tire-age_original-student",
+  "source": "student",
+  "scenario": "tire",
+  "steps": 1300,
+  "rmse_m": 0.07989644600081776,
+  "heading_rmse_rad": 0.017395210007795005,
+  "rate_rms_rad_s": 0.21376298159699364,
+  "saturated_ticks": 390,
+  "correction_jump_energy": 0.11280000000000001,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 72,
+  "requests": 1300,
+  "trace_sha256": "65981f906d92946a6f61419bcc905ef3cf0cb72a498e0e3ceafd052e1ac320f4"
+}

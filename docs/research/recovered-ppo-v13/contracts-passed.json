@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "suites": [
+    "v13-physical-rate-bridge-resume",
+    "v6-submitted-credit"
+  ],
+  "logs": {
+    "contracts.log": "4577b9f3b3dd3ea7e897b25c7f2f8b7fd1d342325150f5163d113ac007d1b022",
+    "contracts-credit.log": "75698537644e191c046705d5465cbd7feed6644b9f21b23829cb29b2788623d0"
+  }
+}

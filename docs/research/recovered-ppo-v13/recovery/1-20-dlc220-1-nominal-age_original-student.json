@@ -1,0 +1,16 @@
+{
+  "pair": 1,
+  "name": "20-dlc220-1-nominal-age_original-student",
+  "source": "student",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.04338623411525991,
+  "heading_rmse_rad": 0.013696681027891013,
+  "rate_rms_rad_s": 0.09162790751961461,
+  "saturated_ticks": 51,
+  "correction_jump_energy": 0.0064,
+  "maximum_correction_jump": 0.04,
+  "action_switches": 4,
+  "requests": 1300,
+  "trace_sha256": "77f00bad8792ef0589d8084d619a5d3aca36d2275f166b578f54a8b4e4c5d39e"
+}

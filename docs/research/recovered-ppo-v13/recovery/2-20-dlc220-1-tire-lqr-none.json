@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-dlc220-1-tire-lqr-none",
+  "source": "none",
+  "scenario": "tire",
+  "steps": 1300,
+  "rmse_m": 0.09728473574223694,
+  "heading_rmse_rad": 0.019664075459083084,
+  "rate_rms_rad_s": 0.07151119383714442,
+  "saturated_ticks": 8,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 1300,
+  "trace_sha256": "a9c1512811f8b1a201096a2c653ef9be5b994a49c37d017fc5e91bafbaeef7c2"
+}

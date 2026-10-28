@@ -1,0 +1,16 @@
+{
+  "pair": 0,
+  "name": "20-dlc220--1-delay20-age_original-ppo",
+  "source": "ppo",
+  "scenario": "delay20",
+  "steps": 1300,
+  "rmse_m": 0.0470533625239699,
+  "heading_rmse_rad": 0.012514596825568547,
+  "rate_rms_rad_s": 0.06502371934491513,
+  "saturated_ticks": 8,
+  "correction_jump_energy": 4.35841797933104e-11,
+  "maximum_correction_jump": 2.4585094027815627e-07,
+  "action_switches": 58,
+  "requests": 650,
+  "trace_sha256": "6dba1aaf7b690d1fbb6922fbea938ed86588b3a6a88afcb42bc1d9129575ed70"
+}

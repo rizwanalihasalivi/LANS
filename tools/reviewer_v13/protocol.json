@@ -1,0 +1,31 @@
+{
+  "id": "v13-recover-7.685-and-control-executed-steering-rate",
+  "parent_commit": "e3a52f49930fcc3dc1ce7426dde6ea5edeec1cc8",
+  "scope": "Targeted development experiment on all three historical PPO actors; no replacement of earlier evidence or reserved evaluation.",
+  "hypotheses": [
+    "Categorical residual steps at high zero-delay authority increase executed steering activity; isolate smoothing then a local nominal actuator-rate projection.",
+    "The historical PPO was trained under predictive admission but evaluated under latency gain. Retrain within the exact new deployed wrapper.",
+    "Command increments in the legacy reward are not the reported actuator-rate RMS. Compare legacy reward against an executed-rate reward with otherwise identical training."
+  ],
+  "controller": {"filter_tau_s": 0.15, "weight_cap": 0.5, "age_cutoff_s": 0.05, "gain": "0.5 exp(-0.8 max(0,age_ms-5))", "rate_budget": "one-tick nominal absolute actuator rate <= min(0.35,1.02*same-state LQR predicted absolute rate); project along baseline-to-smoothed-candidate segment", "limits": "Local nominal projection is not a global RMS or robust safety guarantee. Preserve current-state LQR, immediate invalid/stale revocation, original physical plant and sensor noise."},
+  "training": {
+    "arms": ["legacy", "physical"], "seeds": [9701, 9802, 9903],
+    "steps_each": 100000, "checkpoint_steps": 10000, "noise_base": 1906000000,
+    "initialization": "Corresponding historical finetune endpoint. Lossless zero-column bridge for actor AND critic on formerly zero observation channel14; channel14 now available filtered residual. Other parameters, Adam and reward statistics preserved. Reset only changed first-layer bias/column Adam slots. Fresh matched RNG/environment.",
+    "profile": "budget", "credit": "Only submitted requests receive actor credit; fixed-tick GAE and critic remain unchanged.",
+    "legacy_reward": "Original lateral/heading/command effort/command-increment reward.",
+    "physical_reward": "Negative (ey/.5)^2 + .2*(heading/.1)^2 + .2*(executed actuator rate/.35)^2 + .005*(command/.5)^2; additional -10 on failure.",
+    "optimizer": "lr1e-4, entropy0, gamma.99, lambda.95, nsteps250, 4env, batch200, 5epochs, clip.1, targetKL.01. No extension, intermediate-checkpoint selection, or mixed-seed winner.",
+    "distribution": "Original three speeds, two development paths, both mirrors; nominal zero-service/tire/delay20/delay100. poll10 is an additional development diagnostic, not a training case."
+  },
+  "development": {
+    "speeds": [15, 20, 25], "paths": ["sine120", "dlc220"], "mirrors": [-1, 1],
+    "scenarios": ["nominal", "tire", "poll10", "delay20", "delay100"], "noise_base": 1926000000,
+    "methods": ["lqr", "original_ppo", "original_student", "oldfiltered_ppo", "lowpass_ppo", "lowpass_student", "budget_ppo", "budget_student", "budget_negative", "budget_positive", "budget_legacy", "budget_physical"],
+    "episodes": 2160,
+    "comparability": "All methods share physical sensing, path, actuator, noise ID and episode length. Nominal zero-service is a synchronous simulation case, not measured real-worker latency. All models use the causal bridge; no future completion time enters observations."
+  },
+  "acceptance": {"tracking_gain_min_pct": 1.0, "heading_ratio_max": 1.05, "rate_ratio_max": 1.05, "nominal_tracking_ratio_max": 1.02, "comparators": ["lqr", "budget_student", "budget_negative", "budget_positive"], "requirements": ">=1% aggregate tracking gain against every comparator; positive per-pair gain against student; all episodes survive; exact100ms LQR fallback; nominal per-pair tracking <=1.02LQR; heading and rate <=1.05LQR. User20% aspirational target reported separately against all four comparators. No all-scenario-best claim from aggregate pass."},
+  "resume": "Atomic full training state every10k and each complete episode with hashes. Final100k endpoints only. Single runner verifies frozen inputs and resumes remaining steps; publish milestones to existing branch.",
+  "stop": "Report both training arms and all wrappers even when requirements fail. No automatic new tuning, reserved tests, deployment or physical readiness claims."
+}

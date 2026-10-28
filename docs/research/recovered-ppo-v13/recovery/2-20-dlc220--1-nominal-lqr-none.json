@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-dlc220--1-nominal-lqr-none",
+  "source": "none",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.04838855815715098,
+  "heading_rmse_rad": 0.01292879269867744,
+  "rate_rms_rad_s": 0.06478929632297209,
+  "saturated_ticks": 9,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 1300,
+  "trace_sha256": "04c12c0891fa7c9ae213129620554e4cb7db01b1de03160bf91c889859681b24"
+}

@@ -1,0 +1,46 @@
+recovered 0 48 62400
+recovered 1 96 124800
+recovered 2 144 187200
+{
+  "episodes": 144,
+  "transitions": 187200,
+  "neural_queries": 81120,
+  "all_actors_and_episodes_reproduced": true,
+  "diagnostics": {
+    "none": {
+      "episodes": 48,
+      "rmse_m": 0.07148601159155472,
+      "rate_rms_rad_s": 0.061775429196538896,
+      "saturation_pct": 0.9551282051282052,
+      "correction_jump_energy": 0.0,
+      "maximum_correction_jump": 0.0,
+      "action_switch_fraction": 0.0
+    },
+    "ppo": {
+      "episodes": 48,
+      "rmse_m": 0.06599242194255588,
+      "rate_rms_rad_s": 0.11323287124259308,
+      "saturation_pct": 10.871794871794872,
+      "correction_jump_energy": 2.815200000392494,
+      "maximum_correction_jump": 0.08000000000000002,
+      "action_switch_fraction": 0.046548323471400394,
+      "gain_vs_lqr_pct": 7.684845645589011,
+      "rate_change_vs_lqr_pct": 83.29758726943366
+    },
+    "student": {
+      "episodes": 48,
+      "rmse_m": 0.06568573145829885,
+      "rate_rms_rad_s": 0.1138153034419069,
+      "saturation_pct": 10.780448717948717,
+      "correction_jump_energy": 2.5228000003800655,
+      "maximum_correction_jump": 0.06000000000000001,
+      "action_switch_fraction": 0.04652366863905325
+    }
+  },
+  "same_ppo_inputs": {
+    "same_input_queries": 40560,
+    "different_actions": 1507
+  },
+  "source_sha256": "84dc0f92e97e40c63f30fa14560368dee50ae4575e0a157df6fb972a87d1a72f",
+  "limits": "Original20m/s grid, aggregate tracking gain; no balanced winner. Action drift/switch counts are descriptive; no sole-cause claim."
+}

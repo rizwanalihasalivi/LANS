@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-sine120-1-tire-age_original-student",
+  "source": "student",
+  "scenario": "tire",
+  "steps": 1300,
+  "rmse_m": 0.11926944848013722,
+  "heading_rmse_rad": 0.02604242340354243,
+  "rate_rms_rad_s": 0.2544389723420419,
+  "saturated_ticks": 570,
+  "correction_jump_energy": 0.3504,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 132,
+  "requests": 1300,
+  "trace_sha256": "79880c460e8dd9a389af8dc24e59763320623f31c8049903b3d40c3cb0ed1b85"
+}

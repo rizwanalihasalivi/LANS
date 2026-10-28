@@ -1,0 +1,16 @@
+{
+  "pair": 0,
+  "name": "20-dlc220-1-nominal-age_original-ppo",
+  "source": "ppo",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.03824755819764601,
+  "heading_rmse_rad": 0.010934030478271961,
+  "rate_rms_rad_s": 0.2570167338247425,
+  "saturated_ticks": 597,
+  "correction_jump_energy": 0.1616,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 106,
+  "requests": 1300,
+  "trace_sha256": "e5725633e95c327baf8054246944ac2fc72dff2767a503a905498886fb304104"
+}

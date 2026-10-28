@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-dlc220--1-nominal-age_original-ppo",
+  "source": "ppo",
+  "scenario": "nominal",
+  "steps": 1300,
+  "rmse_m": 0.03723992465861129,
+  "heading_rmse_rad": 0.012876993368434172,
+  "rate_rms_rad_s": 0.16839943794100365,
+  "saturated_ticks": 208,
+  "correction_jump_energy": 0.0888,
+  "maximum_correction_jump": 0.06000000000000001,
+  "action_switches": 56,
+  "requests": 1300,
+  "trace_sha256": "994bbcba9abc479719ec3d54a36c42b2df2f1c2918f6170825f3b80afca5f04b"
+}

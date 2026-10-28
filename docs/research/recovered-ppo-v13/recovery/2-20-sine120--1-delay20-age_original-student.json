@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-sine120--1-delay20-age_original-student",
+  "source": "student",
+  "scenario": "delay20",
+  "steps": 1300,
+  "rmse_m": 0.059194817788283935,
+  "heading_rmse_rad": 0.016439555328307903,
+  "rate_rms_rad_s": 0.05789124402616296,
+  "saturated_ticks": 16,
+  "correction_jump_energy": 2.1609829763040962e-11,
+  "maximum_correction_jump": 2.457684941392646e-07,
+  "action_switches": 18,
+  "requests": 650,
+  "trace_sha256": "31955edbe4c61052540e54bc731d5d38510f23c594545dc3b3546a3cb6568096"
+}

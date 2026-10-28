@@ -1,0 +1,16 @@
+{
+  "pair": 1,
+  "name": "20-sine120-1-tire-lqr-none",
+  "source": "none",
+  "scenario": "tire",
+  "steps": 1300,
+  "rmse_m": 0.15228010081440715,
+  "heading_rmse_rad": 0.026311143675748667,
+  "rate_rms_rad_s": 0.05665415203467295,
+  "saturated_ticks": 17,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 1300,
+  "trace_sha256": "2c2e3f14e34444e020cf7c16825e93e1fddb27a424a78ff42d4a59b47a01bcbe"
+}

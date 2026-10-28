@@ -1,0 +1,16 @@
+{
+  "pair": 2,
+  "name": "20-dlc220-1-delay20-lqr-none",
+  "source": "none",
+  "scenario": "delay20",
+  "steps": 1300,
+  "rmse_m": 0.04747162667762334,
+  "heading_rmse_rad": 0.012993326176790124,
+  "rate_rms_rad_s": 0.063046895346935,
+  "saturated_ticks": 7,
+  "correction_jump_energy": 0.0,
+  "maximum_correction_jump": 0.0,
+  "action_switches": 0,
+  "requests": 650,
+  "trace_sha256": "84277a6b28914e2ee8bd27e442d6d508b1221479288086b5e9c76899e91c31b2"
+}

@@ -1,0 +1,19 @@
+test_actuator_matches_independent_integrator (__main__.Contracts) ... ok
+test_bridged_actors_ignore_new_history_and_preserve_old_logits (__main__.Contracts) ... ok
+test_exact_training_resume_on_new_environment (__main__.Contracts) ... ok
+test_historical_baseline_and_original_plant_unchanged (__main__.Contracts) ... ok
+test_identity_mutation_rejected (__main__.Contracts) ... ok
+test_new_history_contains_only_available_filter (__main__.Contracts) ... ok
+test_project_is_mirror_symmetric (__main__.Contracts) ... ok
+test_projection_local_budget_and_segment (__main__.Contracts) ... ok
+test_queue_original_time_and_one_inflight (__main__.Contracts) ... ok
+test_rejected_future_id_does_not_poison_recovery (__main__.Contracts) ... ok
+test_reward_uses_actual_actuator_rate_and_terminal_next_obs (__main__.Contracts) ... ok
+test_small_complete_evidence_pipeline_and_corruption_rejection (__main__.Contracts) ... ok
+test_stale_invalid_and_future_revoke_immediately (__main__.Contracts) ... ok
+test_train_bridge_preserves_actor_and_critic (__main__.Contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.993s
+
+OK

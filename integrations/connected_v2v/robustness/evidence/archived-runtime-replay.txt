@@ -1,0 +1,57 @@
+Representative frozen-source replay after applying the prior-pinned converter supplement:
+{
+  "python": {
+    "passed": true,
+    "ticks": 640,
+    "sensor_input_replay": true,
+    "control_replay": true,
+    "shared_bicycle_replay": true
+  },
+  "native": {
+    "passed": true,
+    "collisions": 0,
+    "bound_violations": 0,
+    "stale_source_ticks": 0,
+    "blind_brake_violations": 0,
+    "corridor_ticks": 0,
+    "ticks": 700,
+    "progress_m": 362.30716120751214,
+    "acquired_intruder_ticks": 117,
+    "recovered_leader_ticks": 241,
+    "return_delay_s": -6.661338147750939e-16,
+    "return_censored": false,
+    "spacing_rms_on_correct_target_m": 55.02654221325973,
+    "min_inlane_gap_m": 15.769241914561087,
+    "stopped_ticks": 7,
+    "events": {
+      "departure_unconfirmed": 41,
+      "acquired": 1,
+      "unchanged": 576,
+      "nearby_stopping_guard": 76,
+      "cut_in": 1,
+      "release_blocked": 4,
+      "positive_exit_release": 1
+    },
+    "sensor_sources": {
+      "none": 17,
+      "radar": 661,
+      "v2v": 22
+    },
+    "case": "dense_curved",
+    "speed": 12.0,
+    "seed": 3001,
+    "native_samples": 5600,
+    "vehicles": 8,
+    "raw_sha256": {
+      "leader": "30e7a53342cbb1b0b9fbecec04813cf55760732a6cdbf972752cf4756889f89c",
+      "follower": "dac06c95c9b6c6c8b3d07a6b510e11e7a0bc13ef9767bdc055be5d41f05b53e8",
+      "intruder": "309d6eeaf33adaea7831f2a015249e59dc2534c446901c02202f06f21dc98189",
+      "adjacent-0": "9330ca8c541f5bcf65a50dc1e2883c64c51d22c3fe564f07eac4144802522f3a",
+      "adjacent-1": "6b3fb9c0f9d6b36704554cce333359d74775644bb4ef15304ed9fafa97eac2cb",
+      "adjacent-2": "a846045607a66aecc33118801835de015088eee439423866378c7b08f343284f",
+      "adjacent-3": "6ff499a82938aa8e027a8153650c6c19dfa313dea7ae9db6171efc85cd6833b4",
+      "adjacent-4": "d08091583b3bed095b5fde8a022d5eacf2d4b5a6194e29d4c4689b1f978747fe"
+    },
+    "scope": "native physical curved/two-lane road; fallible anonymous perception, no real-world guarantee"
+  }
+}

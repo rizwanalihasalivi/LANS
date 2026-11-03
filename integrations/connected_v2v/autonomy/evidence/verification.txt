@@ -1,0 +1,14 @@
+All three archives passed CRC and per-file SHA-256 checks.
+Extracted standalone stdlib audit:
+{
+  "python": {
+    "passed": true,
+    "episodes": 40,
+    "ego_ticks": 16000
+  },
+  "native": {
+    "passed": true,
+    "episodes": 12,
+    "native_samples": 21600
+  }
+}

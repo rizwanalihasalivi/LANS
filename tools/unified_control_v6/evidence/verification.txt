@@ -1,0 +1,15 @@
+training-calibration.zip SHA256, CRC and member manifest: PASS
+formal-python-campaign.zip SHA256, CRC and member manifest: PASS
+component-raw-results.zip SHA256, CRC and member manifest: PASS
+functional-and-execution.zip SHA256, CRC and member manifest: PASS
+3319 archive members verified
+2140 parallel intermediate content aliases verified; no duplicate trial counts
+
+Calibration: all 448 episodes, physical replay and fixed selector PASS
+Formal regression-development 160 episodes verified
+Formal regression-stress 120 episodes verified
+Formal development 352 episodes verified
+Formal stress 120 episodes verified
+Ablations: all 384 planned episodes, including failed variants, PASS integrity
+VERIFIED 1584 canonical episodes, 226953 saved ticks; duplicate parallel intermediates are not extra trials
+Original promotion gate: FAIL ['gain_vs_lqr_below_5.0_percent']

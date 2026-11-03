@@ -14,6 +14,14 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **Latest integrated proposal experiments:** [v6 execution and raw evidence](tools/unified_control_v6/README.md).
+  Fresh three-seed hybrid gain is **1.131% over optimized nominal control**, with
+  a positive clustered 95% interval; gain over calibrated LQR is **4.827%**, below
+  the unchanged 5% gate. The 12-second component cohort has **0/64 full-system
+  failures**; removing traffic expiry gives 14 collision episodes, and removing
+  interaction supervision gives 47. Original timing misses and all failed
+  experiments remain recorded. Final promotion/Webots are incomplete. No thesis
+  draft, figure or presentation table was generated in this phase.
 - **Integrated corridor repair:** [v5 results and remaining gates](tools/unified_control_v5/RESULTS.md).
   The original development failures fall from **19/96 to 0/96**, and original
   communication-stress failures from **14/72 to 0/72**. Fresh hybrid runs also

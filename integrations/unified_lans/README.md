@@ -1,5 +1,12 @@
 # Unified LANS simulation pipeline v1
 
+**Later extended testing:** the [Python-first campaign results](../../tools/unified_improvement/RESULTS.md)
+record 98,304 new training steps and 832 longer development/stress episodes.
+The optimized-branch hybrid gains 29.7% versus LQR on its fresh grid, but corridor
+failures and the stronger deterministic comparison prevent promotion. The
+three-second integration checks below remain historical smoke evidence; they
+must not be interpreted as full scientific or Webots validation.
+
 This package implements the integrated opening-report architecture in one control
 loop: an LQR baseline, bounded deterministic and PPO steering corrections,
 application-time prediction, timestamped V2V state, risk supervision, common-cost

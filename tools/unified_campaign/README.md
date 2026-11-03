@@ -75,7 +75,7 @@ export TF_CPP_MIN_LOG_LEVEL=2 MPLCONFIGDIR=/workspace/lans-setup/mpl
 export NUMBA_CACHE_DIR=/workspace/lans-setup/numba
 /workspace/lans-venv/bin/python -m pytest tests integrations/unified_lans/tests \
   tools/unified_campaign/test_campaign.py -q
-/workspace/lans-venv/bin/python -m tools.unified_campaign.campaign all \
+/workspace/lans-venv/bin/python -m tools.unified_improvement.run_python --version 2 \
   --output results/python-campaign-v2
 ```
 
@@ -93,3 +93,8 @@ NumPy 1.23.5 / SciPy 1.10.1 pins when installing it. No new secrets, paid resour
 or model APIs are needed. Historical LANS-RISK amendment computation uses its
 separate Python 3.12 environment and frozen runner; those results must be
 reported separately from this integrated bicycle pipeline.
+
+The frozen original runner is preserved for provenance. Its first audit found
+two omitted imports (`Command`, `math`); the supported launcher above supplies
+those imports to the verifier without changing recorded episodes, tolerances or
+selection rules. Original failure/retry logs remain in the evidence bundle.

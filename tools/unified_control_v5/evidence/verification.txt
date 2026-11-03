@@ -1,0 +1,7 @@
+training-calibration-and-probes.zip SHA256, CRC and member manifest: PASS
+v4-confirmation.zip SHA256, CRC and member manifest: PASS
+v5-confirmation.zip SHA256, CRC and member manifest: PASS
+live-diagnostics-and-logs.zip SHA256, CRC and member manifest: PASS
+3887 archive members verified
+v4: 752 episodes/90240 ticks verified; safety PASS, promotion FAIL
+v5: 752 episodes/90240 ticks verified; safety PASS, promotion FAIL

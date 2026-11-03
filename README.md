@@ -14,6 +14,12 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **Integrated corridor repair:** [v5 results and remaining gates](tools/unified_control_v5/RESULTS.md).
+  The original development failures fall from **19/96 to 0/96**, and original
+  communication-stress failures from **14/72 to 0/72**. Fresh hybrid runs also
+  have zero observed collisions/corridor failures. Hybrid mean RMSE now beats
+  the shared optimized reference, but the unchanged statistical promotion gate
+  still fails; reserved and final Webots validation remain unrun.
 - **Latest performance audit and resumable experiment:** [v12 findings, fixes and matched results](docs/research/ppo-audit-v12/README.md).
   The response-delay forecast now uses the same nominal RK4 integration as the
   supervisor. Full model/Adam/environment/queue/normalizer/RNG checkpoints are

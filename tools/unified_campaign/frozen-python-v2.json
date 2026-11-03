@@ -1,0 +1,95 @@
+{
+  "protocol": {
+    "version": 2,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "steps_per_seed": 32768,
+    "seconds": 6.0,
+    "cases_per_stage": 32,
+    "modes": [
+      "lqr",
+      "fixed",
+      "deterministic",
+      "optimized",
+      "ppo",
+      "hybrid"
+    ],
+    "service_s": 0.05,
+    "stages": [
+      "development",
+      "robustness",
+      "reserved_only_if_development_passes",
+      "wall_worker_only_if_development_passes",
+      "webots_only_if_all_python_gates_pass"
+    ],
+    "gains": {
+      "ky": 0.04,
+      "kpsi": 0.0
+    },
+    "optimized_grid": [
+      -0.08,
+      -0.04,
+      0.0,
+      0.04,
+      0.08
+    ],
+    "gate": {
+      "lqr_gain_percent": 5.0,
+      "optimized_gain_percent": 1.0,
+      "lower_ci_gain_positive": true,
+      "each_actor_gain_positive": true,
+      "max_heading_increase_percent": 10.0,
+      "max_rate_increase_percent": 10.0,
+      "min_progress_ratio": 0.99,
+      "failures": 0,
+      "misses": 0
+    },
+    "bootstrap": {
+      "seed": 640001,
+      "draws": 5000,
+      "clusters": "scenario-speed; mirror/stiffness and actors averaged within cluster"
+    },
+    "selection": "all final-endpoint hybrid actors evaluated; no best-seed or best-checkpoint selection",
+    "no_parameter_search_after_development": true,
+    "no_paid_services": true,
+    "interpretation": "finite development campaign; logical-clock trials cannot establish real-time timing"
+  },
+  "source_hashes": {
+    "controllers/lqr_controller.py": "71554b17ec101e8921ec212e91ac96d18ca9b132d929db655c51ad2f1323c507",
+    "integrations/unified_lans/__init__.py": "a2656c42a0ab436e0e4946a30f239dbfb671c7b843c65626435b15762a789edf",
+    "integrations/unified_lans/__main__.py": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be",
+    "integrations/unified_lans/controller.py": "c12f07d91140d6281cb50adae12f4d6e8ad1fe81d8bc37d88034d5aa93a9a565",
+    "integrations/unified_lans/inference.py": "e28a59fb32dbf4d4f8735958b0b1792d1f207d022141035a028a840d6b757130",
+    "integrations/unified_lans/learning.py": "a3b7e9baa1c3fe207b8e3637f62974f43d1af20ec20bfbff63cfe11ebcf38ac3",
+    "integrations/unified_lans/physics.py": "ad72cf3e5c9eafd098f3eb40e3229427c7e52fe663264199663c4d1a9e9aa0f1",
+    "integrations/unified_lans/run.py": "6fc17cefac56ceac7c7b57c4bce3757bc679dc9a76cce22567389a449de230db",
+    "integrations/unified_lans/simulation.py": "e8156a429e2e7f0ac096fcad7142dc4dd119166fcf0924f51f8db455df02b223",
+    "integrations/unified_lans/traffic.py": "e8d79bd3f2461e4980fb5357b71017ddbeed762778e80e4b08d897df3320e1df",
+    "integrations/unified_lans/verify.py": "b6979d43cd96f85c1579d3f0ce2092f6b9874384ace20fc1602157d9c44c01a1",
+    "models/bicycle_model.py": "36cedaaf83543b8b0ca97416a865dccd38f8e36477301b80f9362d9d5eced073",
+    "tools/unified_campaign/__init__.py": "b5a3279ecd1257fd1c56b553af25487dd166132dd923331f5d4f655cfaac6a8e",
+    "tools/unified_campaign/campaign.py": "d4b212b4c075842bc2b63ab16a8c2c3995c562fb6ba7b49824b4301da9a06899",
+    "tools/unified_campaign/study.py": "04f03e8d9ab4363bfa4cb81f887bcfb55a11b118b8b2fe6dc333432c5756da83",
+    "tools/unified_campaign/test_campaign.py": "bc2a189570b0d6057c2ea4007a53e77004af03eba2e7507d7886a3bbe606778e"
+  },
+  "config": {
+    "dt": 0.05,
+    "steering_limit": 0.5,
+    "steering_rate": 0.6,
+    "residual_limit": 0.08,
+    "max_accel": 2.5,
+    "max_brake": 6.0,
+    "ego_ttl": 0.2,
+    "traffic_ttl": 0.4,
+    "proposal_ttl": 0.15,
+    "horizon": 0.5,
+    "vehicle_radius": 2.3,
+    "buffer": 0.5,
+    "uncertainty_rate": 0.6
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.10.22"
+}

@@ -22,11 +22,16 @@ def deterministic(state, route, gains):
 
 
 class Pipeline:
-    def __init__(self, route, scenario='following', cfg=None, delay=0., gains=(.02,.02), mode='hybrid'):
+    def __init__(self, route, scenario='following', cfg=None, delay=0., gains=(.02,.02), mode='hybrid',
+                 clock=None, target_speed=12., deterministic_grid=()):
         self.cfg=cfg or Config();self.route=route
         if not math.isfinite(delay) or delay<0 or abs(delay/self.cfg.dt-round(delay/self.cfg.dt))>1e-8:
             raise ValueError('command delay must be a nonnegative multiple of dt')
         if mode not in ('lqr','fixed','deterministic','ppo','hybrid'):raise ValueError('invalid mode')
+        if not math.isfinite(target_speed) or target_speed<=0:raise ValueError('positive target speed required')
+        if any(not math.isfinite(x) or abs(x)>self.cfg.residual_limit for x in deterministic_grid):
+            raise ValueError('deterministic grid exceeds residual authority')
+        self.clock=clock or time.monotonic;self.target_speed=target_speed;self.deterministic_grid=tuple(deterministic_grid)
         self.delay=delay;self.gains=gains;self.mode=mode
         self.inbox=Inbox();self.supervisor=Supervisor(self.cfg,scenario)
         self.expected=set();self.history=[];self.pending=[]
@@ -34,7 +39,7 @@ class Pipeline:
         self.last_sequence=-1;self.last_query=-math.inf;self.latency=.0
 
     def accept(self, proposal, now, wall_now=None):
-        wall_now=time.monotonic() if wall_now is None else wall_now
+        wall_now=self.clock() if wall_now is None else wall_now
         valid=(type(proposal.sequence) is int and proposal.sequence>self.last_sequence
                and np.isfinite([proposal.observed_s,proposal.submitted_s,proposal.residual,proposal.wall_observed]).all()
                and 0<=proposal.observed_s<=proposal.submitted_s<=now+1e-9
@@ -111,7 +116,7 @@ class Pipeline:
             state='DANGER';reason='ego_missing_or_stale';risk=None;source='hold_brake'
         else:
             risk=self.supervisor.assess(z,self.inbox,self.expected,now,now+self.delay)
-            nominal=float(np.clip((12.-z[3])*.8,-cfg.max_brake,cfg.max_accel))
+            nominal=float(np.clip((self.target_speed-z[3])*.8,-cfg.max_brake,cfg.max_accel))
             accel=self.supervisor.acceleration(nominal,risk)
             lqr=baseline(z,self.route)
             command=constrain(Command(lqr,accel),self.issued,cfg)
@@ -119,7 +124,9 @@ class Pipeline:
             if self.mode=='fixed':candidates['fixed']=(.02,cfg.horizon)
             if self.mode in ('deterministic','hybrid'):
                 candidates['deterministic']=(deterministic(z,self.route,self.gains),cfg.horizon)
-            p=self.proposal;wall=time.monotonic()
+                for residual in self.deterministic_grid:
+                    candidates[f'optimized_{residual:+.3f}']=(residual,cfg.horizon)
+            p=self.proposal;wall=self.clock()
             fresh=(p is not None and now+self.delay-p.observed_s<cfg.proposal_ttl-1e-9
                    and 0<=wall-p.wall_observed and wall+self.delay-p.wall_observed<cfg.proposal_ttl-1e-9)
             if self.mode in ('ppo','hybrid') and fresh and not worker_failed:
@@ -142,7 +149,7 @@ class Pipeline:
             if not eligible.get(source,False):
                 command=constrain(Command(lqr,-cfg.max_brake),self.issued,cfg)
                 source='lqr';selected=0.;reason='no_feasible_prediction'
-            if source=='ppo' and time.monotonic()+self.delay-p.wall_observed>=cfg.proposal_ttl:
+            if source=='ppo' and self.clock()+self.delay-p.wall_observed>=cfg.proposal_ttl:
                 command=constrain(Command(lqr,accel),self.issued,cfg)
                 source='lqr';selected=0.;reason='proposal_expired_before_issue'
             state=risk.state
@@ -152,7 +159,7 @@ class Pipeline:
                     clearance=risk.clearance if risk else math.inf,traffic_age=risk.max_age if risk else 0.,
                     missing=list(risk.missing) if risk else [],ego_age=now-self.inbox.latest['ego'].observed_s if 'ego' in self.inbox.latest else None,
                     proposal_age=now+self.delay-self.proposal.observed_s if self.proposal else None,
-                    proposal_wall_age=time.monotonic()+self.delay-self.proposal.wall_observed if self.proposal else None,
+                    proposal_wall_age=self.clock()+self.delay-self.proposal.wall_observed if self.proposal else None,
                     issued_steering=command.steering,issued_accel=command.accel,
                     control_ms=1000*(time.perf_counter()-start))
 

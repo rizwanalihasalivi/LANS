@@ -14,12 +14,24 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **Latest integrated controller:** [v8 execution and verified raw evidence](tools/unified_control_v8/README.md).
+  The shared conflict-timing bug is corrected, and causal early identification
+  wins the fixed training comparison. Fresh whole-run gain is **5.186% over LQR**
+  and **1.074% over optimized nominal control**, passing the original development
+  gate. All 336 hybrid safety runs pass; 100 focused tests and 1,431 simulation
+  episodes replay. The requested 30% target remains unmet; one of 1,080 actual
+  worker ticks misses 50 ms. Final reserved/formal runtime/Webots remain unopened.
+  Heading/rate trade-offs and all seven comparisons are retained in the evidence.
+- **Prior causal controller study:** [v7 execution and raw evidence](tools/unified_control_v7/README.md).
+  All 1,936 unique simulations and 18 functional checks verify. The old tracking
+  winner gains 4.562% over LQR; the conic alternative has three progress failures
+  despite zero observed timing misses. Both outcomes remain preserved.
 - **Requested 30% target:** [raw offline headroom diagnostics](tools/thirty_percent/README.md).
   The target is not achieved. Privileged offline plans find 9.343% gain while
   retaining original quality limits; a tracking-focused 18.429% gain violates
   those limits. These are not online hybrid/PPO results or a global impossibility
   proof. The verified online controller and its earlier outcomes remain unchanged.
-- **Latest integrated proposal experiments:** [v6 execution and raw evidence](tools/unified_control_v6/README.md).
+- **Prior integrated proposal experiments:** [v6 execution and raw evidence](tools/unified_control_v6/README.md).
   Fresh three-seed hybrid gain is **1.131% over optimized nominal control**, with
   a positive clustered 95% interval; gain over calibrated LQR is **4.827%**, below
   the unchanged 5% gate. The 12-second component cohort has **0/64 full-system

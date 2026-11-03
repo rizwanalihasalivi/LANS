@@ -1,0 +1,39 @@
+All ZIPs passed CRC, per-member SHA-256 and outer SHA-256 checks.
+Extracted standalone stdlib audit:
+{
+  "development": {
+    "python": {
+      "passed": true,
+      "episodes": 72,
+      "ego_ticks": 46080,
+      "peer_evidence_samples": 14924
+    },
+    "native": {
+      "passed": true,
+      "workflow_passed": true,
+      "gate_failures": [],
+      "episodes": 12,
+      "native_samples": 39200,
+      "peer_evidence_samples": 856,
+      "original_byte_relays": 11543
+    }
+  },
+  "validation": {
+    "python": {
+      "passed": true,
+      "episodes": 240,
+      "ego_ticks": 153600,
+      "peer_evidence_samples": 50880
+    },
+    "native": {
+      "passed": true,
+      "workflow_passed": true,
+      "gate_failures": [],
+      "episodes": 36,
+      "native_samples": 117600,
+      "peer_evidence_samples": 2682,
+      "original_byte_relays": 34642
+    }
+  }
+}
+Reproducibility supplement CRC/member/outer SHA-256 passed. Representative extracted Python and native frozen-source control/physics replays passed. Shared converter matches the prior published source freeze and c7089f3d.

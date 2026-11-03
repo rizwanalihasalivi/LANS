@@ -1,5 +1,8 @@
 # Recovery and independent-sensing results — 3 November 2026
 
+Subsequent separate stage: [formation recovery v3 and native adapter correction](../formation/RESULTS.md).
+The v2 controller, protocol and result body below remain unchanged.
+
 The one frozen candidate passed all predeclared development and held-out checks.
 It bridges V2V loss using independently fresh local range/range-rate sensing.
 This is additional sensing and validated source arbitration, **not a PPO gain**,

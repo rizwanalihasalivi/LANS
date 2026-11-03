@@ -1,5 +1,7 @@
 # Connected-V2V development validation — 3 November 2026
 
+Latest separate study: [formation recovery v3 and native adapter correction](formation/RESULTS.md).
+
 Subsequent separate experiment: [independent local sensing and recovery v2](recovery/RESULTS.md).
 The v1 development results below remain unchanged.
 

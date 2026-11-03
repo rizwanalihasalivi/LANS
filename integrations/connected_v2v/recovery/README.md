@@ -1,5 +1,8 @@
 # Independent range fallback and V2V recovery v2
 
+Subsequent separate stage: [formation recovery v3](../formation/RESULTS.md).
+The v2 controller, protocol and evidence remain unchanged.
+
 [Executed results](RESULTS.md) · [Predeclared protocol](PROTOCOL.md) · [Figure](evidence/recovery-v2.png)
 
 This version adds independent local range/range-rate evidence to bridge V2V

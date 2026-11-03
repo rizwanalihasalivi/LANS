@@ -1,5 +1,7 @@
 # Connected V2V vehicles
 
+Latest formation stage: [faster recovery and native speed-adapter correction v3](formation/RESULTS.md).
+
 Latest separate study: [fresh local range fallback and held-out recovery results](recovery/RESULTS.md).
 It preserves the v1 source/evidence below and adds matched radar-ACC/V2V ablations.
 

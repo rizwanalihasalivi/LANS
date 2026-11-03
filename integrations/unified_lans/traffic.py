@@ -64,7 +64,9 @@ def conflict_time(ego, other, radius):
     if te<0 or tn<0:return math.inf
     de,dn = radius/max(.1,np.linalg.norm(ve)),radius/max(.1,np.linalg.norm(vn))
     if max(te-de,tn-dn)>min(te+de,tn+dn):return math.inf
-    return float(max(0.,min(te-de,tn-dn)))
+    # The overlap starts when BOTH expanded occupancy intervals have begun.
+    # The earlier individual start can falsely report an immediate conflict.
+    return float(max(0.,max(te-de,tn-dn)))
 
 
 @dataclass

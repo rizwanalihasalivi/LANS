@@ -1,5 +1,11 @@
 # Connected V2V vehicles
 
+Latest hardware-free safety study: [conditional longitudinal proof and thesis](conditional_safety/RESULTS.md).
+Its exact 1-D reference shield has an explicit sensing/braking/coverage contract;
+it does not retroactively certify the existing 2-D controller or a physical vehicle.
+
+Broader observation-driven validation: [curved/dense traffic and radio operating limits](robustness/RESULTS.md).
+
 Latest formation stage: [faster recovery and native speed-adapter correction v3](formation/RESULTS.md).
 
 Latest separate study: [fresh local range fallback and held-out recovery results](recovery/RESULTS.md).

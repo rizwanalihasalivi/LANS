@@ -1,0 +1,12 @@
+# Integrated controller/campaign runtime; Python 3.10.
+# The recorded run used the CPU build of torch 2.0.0.
+numpy==1.23.5
+scipy==1.10.1
+torch==2.0.0
+stable-baselines3==2.0.0
+gymnasium==0.28.1
+numba==0.60.0
+llvmlite==0.43.0
+osqp==0.6.3
+qdldl==0.1.9.post1
+pytest==7.3.1

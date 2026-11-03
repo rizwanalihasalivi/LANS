@@ -14,6 +14,11 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **Requested 30% target:** [raw offline headroom diagnostics](tools/thirty_percent/README.md).
+  The target is not achieved. Privileged offline plans find 9.343% gain while
+  retaining original quality limits; a tracking-focused 18.429% gain violates
+  those limits. These are not online hybrid/PPO results or a global impossibility
+  proof. The verified online controller and its earlier outcomes remain unchanged.
 - **Latest integrated proposal experiments:** [v6 execution and raw evidence](tools/unified_control_v6/README.md).
   Fresh three-seed hybrid gain is **1.131% over optimized nominal control**, with
   a positive clustered 95% interval; gain over calibrated LQR is **4.827%**, below

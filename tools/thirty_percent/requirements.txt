@@ -1,0 +1,2 @@
+# Added without changing existing NumPy/SciPy/OSQP pins.
+clarabel==0.9.0

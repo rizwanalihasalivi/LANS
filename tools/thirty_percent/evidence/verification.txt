@@ -1,0 +1,6 @@
+Outer SHA256, all 430 member hashes/sizes and ZIP CRCs PASS
+
+Local diagnostic: all 64 solves, 128 candidate/fallback traces, source hashes and bootstrap metrics verified
+Joint conic diagnostic: all 64 final traces and both actual-quality outcomes verified
+192 diagnostic traces, 23040 steps checked; same 32 observed fixtures, not independent new traffic trials
+30% tracking target: NOT ACHIEVED. No offline result promoted as causal hybrid/PPO validation.

@@ -1,5 +1,8 @@
 # Connected-V2V development validation — 3 November 2026
 
+Subsequent separate experiment: [independent local sensing and recovery v2](recovery/RESULTS.md).
+The v1 development results below remain unchanged.
+
 Base: `60f7ecde47df70deaa3ee93d072f4fe5d53a9479`. All new code is isolated in
 `integrations/connected_v2v/`. Existing unified controller/campaign source and
 historical result files were not edited. No PPO training or reserved campaign

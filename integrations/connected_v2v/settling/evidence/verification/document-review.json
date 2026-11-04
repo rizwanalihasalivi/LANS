@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "pdf_pages": 26,
+  "paper": "A4",
+  "visually_inspected_pdf_pages": [
+    1,
+    13,
+    17,
+    18,
+    19
+  ],
+  "visually_inspected_report_figures": [
+    "python-formation-trace",
+    "webots-formation-trace",
+    "tail-spacing-coverage"
+  ],
+  "docx_editable_omml_equations": 89,
+  "docx_tables": 2,
+  "docx_media": 3,
+  "unfilled_template_tokens": false,
+  "replacement_characters_in_pdf_text": 0,
+  "scope": "Document/figure review after generation; no controller or experiment changes",
+  "sha256": {
+    "LANS_V2V_Formation_Conditional_Safety_Thesis.md": "23d5455b1e3accf7c6aafa1e99188353a05f4db31100e2a20db0e04ddfd07a89",
+    "LANS_V2V_Formation_Conditional_Safety_Thesis.pdf": "5db1057f1bcd718b5e8006a84e878bfcf29e33656122c2f932817ef9abec12b1",
+    "LANS_V2V_Formation_Conditional_Safety_Thesis.docx": "61888da3e7dc075b358ff0aea20a8cb0c5f8a09d7bb4d633452ab18dea38a272"
+  }
+}

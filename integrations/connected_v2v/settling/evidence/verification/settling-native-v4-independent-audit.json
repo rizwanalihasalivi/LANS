@@ -1,0 +1,18 @@
+{
+  "development": {
+    "passed": true,
+    "episodes": 48,
+    "tail_spacing_rms_max_m": 0.13206375900976308,
+    "tail_spacing_max_abs_m": 0.20981352144631948,
+    "settling_delay_max_s": 29.900000000000002,
+    "stable_return_censored": 0
+  },
+  "validation": {
+    "passed": true,
+    "episodes": 80,
+    "tail_spacing_rms_max_m": 0.09755204413663925,
+    "tail_spacing_max_abs_m": 0.20708983598243513,
+    "settling_delay_max_s": 28.150000000000002,
+    "stable_return_censored": 0
+  }
+}

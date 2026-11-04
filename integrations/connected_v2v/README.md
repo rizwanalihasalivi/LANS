@@ -1,6 +1,12 @@
 # Connected V2V vehicles
 
-Latest hardware-free safety study: [conditional longitudinal proof and thesis](conditional_safety/RESULTS.md).
+Latest formation completion: [spacing, 150 m limits, stable association and 2-D trace evidence](settling/RESULTS.md)
+and [updated PDF/Word thesis](../../docs/thesis/lans-v2v-completion-v1/README.md).
+The broader proof certifies completed trajectories under explicit bounds; it is
+not prospective full-controller invariance. Failed histories remain preserved.
+Final comparative benchmarking remains on hold.
+
+Earlier hardware-free safety study: [conditional longitudinal proof and thesis](conditional_safety/RESULTS.md).
 Its exact 1-D reference shield has an explicit sensing/braking/coverage contract;
 it does not retroactively certify the existing 2-D controller or a physical vehicle.
 

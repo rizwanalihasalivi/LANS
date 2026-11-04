@@ -1,0 +1,2 @@
+# Only the SMT obligation checker needs this; the shield/auditor use the stdlib.
+z3-solver==4.13.3.0

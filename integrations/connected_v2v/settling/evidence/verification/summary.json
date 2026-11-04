@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "integrity": {
+    "passed": true,
+    "archives": 161,
+    "ordinary_members": 13032
+  },
+  "witnesses": [
+    {
+      "family": "python",
+      "stage": "development",
+      "episodes": 96,
+      "pair_intervals": 1663200,
+      "passed": true
+    },
+    {
+      "family": "python",
+      "stage": "validation",
+      "episodes": 240,
+      "pair_intervals": 4158000,
+      "passed": true
+    },
+    {
+      "family": "native",
+      "stage": "development",
+      "episodes": 48,
+      "pair_intervals": 831600,
+      "passed": true
+    },
+    {
+      "family": "native",
+      "stage": "validation",
+      "episodes": 80,
+      "pair_intervals": 1386000,
+      "passed": true
+    }
+  ],
+  "isolated_source_replays": 4,
+  "scope": "extracted bytes, independent audits, all strict integer witnesses, and four source-only control/geometry replays; native physics is not rerun"
+}

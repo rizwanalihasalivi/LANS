@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "command": [
+    "/workspace/lans-venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "integrations/connected_v2v"
+  ],
+  "seconds": 26.982607126235962,
+  "reason": "Final documentation and release helper edits after the earlier full suite; scientific execution source unchanged.",
+  "tests_passed": 187
+}

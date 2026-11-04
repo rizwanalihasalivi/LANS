@@ -1,0 +1,24 @@
+All nine ZIP archives passed CRC, member SHA-256 and outer SHA-256 checks.
+Verified ordinary members: 1009
+Extracted standalone stdlib audit (no controller/plant/NumPy/Z3 imports):
+{
+  "development": {
+    "passed": true,
+    "episodes": 72,
+    "ticks": 57600,
+    "minimum_continuous_gap_m": 2.000204812940913,
+    "maximum_spacing_rms_m": 291.0426609467614,
+    "maximum_stopped_s": 30.25
+  },
+  "validation": {
+    "passed": true,
+    "episodes": 240,
+    "ticks": 192000,
+    "minimum_continuous_gap_m": 2.0000224264971727,
+    "maximum_spacing_rms_m": 292.2065263614662,
+    "maximum_stopped_s": 30.35
+  }
+}
+Two isolated frozen-source fresh episode replays matched complete original summaries and raw trace bytes.
+Final PDF/Word/Markdown match archived bytes; PDF 24 A4 pages; Word 65 editable math objects and two tables.
+Source hashes unchanged since development freeze; original 2-D runtime remains unchanged.

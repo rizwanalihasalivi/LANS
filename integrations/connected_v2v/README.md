@@ -1,5 +1,17 @@
 # Connected V2V vehicles
 
+Latest formation completion: [spacing, 150 m limits, stable association and 2-D trace evidence](settling/RESULTS.md)
+and [updated PDF/Word thesis](../../docs/thesis/lans-v2v-completion-v1/README.md).
+The broader proof certifies completed trajectories under explicit bounds; it is
+not prospective full-controller invariance. Failed histories remain preserved.
+Final comparative benchmarking remains on hold.
+
+Earlier hardware-free safety study: [conditional longitudinal proof and thesis](conditional_safety/RESULTS.md).
+Its exact 1-D reference shield has an explicit sensing/braking/coverage contract;
+it does not retroactively certify the existing 2-D controller or a physical vehicle.
+
+Broader observation-driven validation: [curved/dense traffic and radio operating limits](robustness/RESULTS.md).
+
 Latest formation stage: [faster recovery and native speed-adapter correction v3](formation/RESULTS.md).
 
 Latest separate study: [fresh local range fallback and held-out recovery results](recovery/RESULTS.md).

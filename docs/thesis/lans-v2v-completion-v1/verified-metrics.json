@@ -1,0 +1,168 @@
+{
+  "fresh": {
+    "Python": {
+      "episodes": 240,
+      "tail_spacing_rms_max_m": 0.03539605824683166,
+      "tail_max_abs_error_m": 0.08366132810051319,
+      "settling_delay_max_s": 18.700000000000006,
+      "whole_window_conditional_rms_max_m": 41.45759978923969,
+      "maximum_stopped_s": 1.7000000000000002,
+      "censored_stable_return": 0,
+      "whole_window_unconditional_head_rms_max_m": 51.82655492336036,
+      "post_exit_unconditional_head_rms_max_m": 41.17434050263502,
+      "post_exit_max_nominal_head_gap_m": 128.01968823677615
+    },
+    "Webots": {
+      "episodes": 80,
+      "tail_spacing_rms_max_m": 0.09755204413663925,
+      "tail_max_abs_error_m": 0.20708983598243513,
+      "settling_delay_max_s": 28.150000000000002,
+      "whole_window_conditional_rms_max_m": 48.219360499956316,
+      "maximum_stopped_s": 3.6500000000000004,
+      "censored_stable_return": 0,
+      "whole_window_unconditional_head_rms_max_m": 55.452198649945686,
+      "post_exit_unconditional_head_rms_max_m": 49.59944206586354,
+      "post_exit_max_nominal_head_gap_m": 133.5943757542049
+    }
+  },
+  "certificates": {
+    "Python": {
+      "episodes": 336,
+      "intervals": 470400,
+      "pair_intervals": 5821200,
+      "minimum_clearance_lower_m": 0.00030566148786607326
+    },
+    "Webots": {
+      "episodes": 128,
+      "intervals": 179200,
+      "pair_intervals": 2217600,
+      "minimum_clearance_lower_m": 0.0001896259160844283,
+      "motion_samples": 4368000,
+      "max_sampled_planar_speed_m_s": 16.03761940790274,
+      "max_sampled_coordinate_accel_m_s2": 11.520181863640637,
+      "max_sampled_yaw_rad_s": 0.25007169618517794,
+      "max_sampled_bridge_deviation_m": 0.0014352504128396504,
+      "max_requested_measured_accel_difference_m_s2": 6.5797293186958585
+    }
+  },
+  "original150_regression": {
+    "passed": true,
+    "classification": "EXPOSED_OLD_FAILURE_REGRESSION_NOT_FRESH",
+    "new_70s_result": {
+      "passed": true,
+      "collisions": 0,
+      "bound_violations": 0,
+      "stale_source_ticks": 0,
+      "blind_brake_violations": 0,
+      "corridor_ticks": 0,
+      "ticks": 1400,
+      "progress_m": 754.8083808502998,
+      "acquired_intruder_ticks": 90,
+      "recovered_leader_ticks": 941,
+      "return_delay_s": -6.661338147750939e-16,
+      "return_censored": false,
+      "spacing_rms_on_correct_target_m": 47.18800710565963,
+      "min_inlane_gap_m": 20.379807978386133,
+      "stopped_ticks": 42,
+      "events": {
+        "departure_unconfirmed": 79,
+        "acquired": 1,
+        "unchanged": 1314,
+        "cut_in": 1,
+        "release_blocked": 4,
+        "positive_exit_release": 1
+      },
+      "sensor_sources": {
+        "none": 69,
+        "v2v": 705,
+        "radar": 626
+      },
+      "original_gate_passed": true,
+      "stable_return_2s_s": 0.0,
+      "stable_return_censored": false,
+      "longest_correct_run_s": 47.050000000000004,
+      "tail_spacing_rms_m": 0.045683836441943904,
+      "tail_spacing_max_abs_m": 0.09670861004881459,
+      "tail_speed_rms_m_s": 0.028127629248097273,
+      "tail_correct_fraction": 1.0,
+      "tail_leader_cruise_rms_m_s": 0.006005249457719094,
+      "settling_delay_2s_s": 27.500000000000004,
+      "case": "noisy_nonconnected",
+      "speed": 12.0,
+      "seed": 2003,
+      "native_samples": 4200,
+      "vehicles": 3,
+      "raw_sha256": {
+        "leader": "24e04dcd78e62d1c2a4a67ed80663c5f371ca754430abff864c9c284dfbe89b8",
+        "follower": "ead7d5c40cb6e44ffc5fd586bf0f6ab08ec677333a22d663c10faffffc566543",
+        "intruder": "604f74b05c029efe589d8626a7eafe84dbc8903621731e60532a0d5b3446c5f0"
+      },
+      "motion_sha256": {
+        "leader": "b862fb254fe15b87da0ed6dd1bb5a6d6255d62bd3c108be9be22e10ced571441",
+        "follower": "4e4a54cad230410fbf2ecf96f06b3eb9618b5b86ae4fb0ec30b89e43fa864626",
+        "intruder": "fa5b6e92622795e5d9719f013c66c9e7424c8b46ae999e1ceab8448c00ad27ba"
+      },
+      "scope": "native physical curved/two-lane road; fallible anonymous perception, no real-world guarantee"
+    },
+    "independent_audit": {
+      "passed": true,
+      "samples": 4200,
+      "relays": 984
+    },
+    "continuous_certificate": {
+      "passed": true,
+      "intervals": 1400,
+      "pair_intervals": 4200,
+      "minimum_projection_margin_m": 0.001719,
+      "minimum_euclidean_clearance_lower_m": 0.001718996562006876,
+      "uncertified_pair_intervals": [],
+      "witness_sha256": "6aee22586a59516622d899bdb5ae52c991a479b72285073725b74b60cac50844",
+      "native_refinement": {
+        "leader": {
+          "motion_samples": 7000,
+          "max_sampled_coordinate_accel_m_s2": 5.145673389776855,
+          "max_sampled_yaw_rad_s": 0.012859326698144487,
+          "max_sampled_bridge_deviation_m": 0.0010463628947832149,
+          "max_sampled_planar_speed_m_s": 12.011198404444613,
+          "qualified_speed_cap_m_s": 12.0,
+          "max_requested_vs_measured_accel_difference_m_s2": 1.8136124142957826
+        },
+        "follower": {
+          "motion_samples": 7000,
+          "max_sampled_coordinate_accel_m_s2": 5.99045977267746,
+          "max_sampled_yaw_rad_s": 0.027648224942084784,
+          "max_sampled_bridge_deviation_m": 0.0012023204750448713,
+          "max_sampled_planar_speed_m_s": 16.01621834359208,
+          "qualified_speed_cap_m_s": 16.0,
+          "max_requested_vs_measured_accel_difference_m_s2": 6.309379826647974
+        },
+        "intruder": {
+          "motion_samples": 7000,
+          "max_sampled_coordinate_accel_m_s2": 5.137817603898086,
+          "max_sampled_yaw_rad_s": 0.15690120854420989,
+          "max_sampled_bridge_deviation_m": 0.0010349308481778507,
+          "max_sampled_planar_speed_m_s": 10.011070739985637,
+          "qualified_speed_cap_m_s": 12.0,
+          "max_requested_vs_measured_accel_difference_m_s2": 1.4728445564659338
+        }
+      },
+      "contract": {
+        "coordinate_acceleration_bound_m_s2": "20",
+        "yaw_rate_bound_rad_s": "2",
+        "endpoint_coordinate_error_m": "1/50",
+        "body_half_length_m": "13/5",
+        "body_half_width_m": "11/10"
+      },
+      "scope": "a posteriori finite continuous 2-D trace certificate under stated bounds; not prospective full-controller invariance"
+    },
+    "original_35s_prefix": {
+      "ticks": 700,
+      "stable_return_2s_s": 0.0,
+      "stable_return_censored": false,
+      "longest_correct_run_s": 12.05,
+      "recovered_leader_ticks": 241,
+      "collisions": 0
+    },
+    "note": "New architecture and70s horizon. Original35s result remains failed; no matched causal percentage is inferred."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "isolated_interpreter": true,
+  "runtime_loaded_from_extracted_source": true,
+  "replays": {
+    "adversarial_nominal-16-5003": {
+      "passed": true,
+      "trace_byte_identical": true,
+      "trace_sha256": "26c383a85adbedcd7a27e616d6953438261cd8d70e5b1b77c94869f64e046e7a"
+    },
+    "dual_blackout-16-5003": {
+      "passed": true,
+      "trace_byte_identical": true,
+      "trace_sha256": "36b1ad465dd3c65b5b58f2fcd9ec15b842db24f1534112e538d4f011731b228d"
+    }
+  }
+}

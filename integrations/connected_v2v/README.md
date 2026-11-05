@@ -1,5 +1,9 @@
 # Connected V2V vehicles
 
+Current source: [post-release V2V audit and fixes](AUDIT.md), with a separate
+[regression protocol](AUDIT_PROTOCOL.md). Published results below describe their
+frozen source revisions; they do not automatically validate later audit changes.
+
 Latest formation completion: [spacing, 150 m limits, stable association and 2-D trace evidence](settling/RESULTS.md)
 and [updated PDF/Word thesis](../../docs/thesis/lans-v2v-completion-v1/README.md).
 The broader proof certifies completed trajectories under explicit bounds; it is

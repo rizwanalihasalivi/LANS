@@ -73,7 +73,7 @@ def verify(output):
         now = row['time_s']
         node.observe_local(row['state'], now, now)
         for event in row['radio']:
-            assert node.receive(event['message'].encode(), now) == event['accepted']
+            assert node.receive(event['message'].encode('utf-8', errors='surrogateescape'), now) == event['accepted']
             receipts += 1
         if row['scan'] is not None:
             scan = decode_scan(row['scan'])

@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "archives": 10,
+  "ordinary_members": 1218
+}

@@ -82,19 +82,51 @@ def pack(output,roots,thesis):
 
 def verify(output,extract=None):
     output=Path(output);destination=Path(extract) if extract else None
+    inventory=json.loads((output/'inventory.json').read_text())
+    if not isinstance(inventory,list) or not inventory:
+        raise ValueError('nonempty archive inventory required')
+    declared={}
+    for entry in inventory:
+        name=entry['archive']
+        if (not isinstance(name,str) or not name.endswith('.zip') or Path(name).name!=name
+                or '\\' in name or name in declared):
+            raise ValueError('unique local archive filenames required')
+        if (type(entry['bytes']) is not int or not 0<entry['bytes']<LIMIT
+                or type(entry['members']) is not int or entry['members']<1):
+            raise ValueError('positive bounded archive size and member count required')
+        declared[name]=entry
+    checksums={}
+    for line in (output/'SHA256SUMS').read_text().splitlines():
+        fields=line.split('  ')
+        if len(fields)!=2 or fields[1] in checksums:
+            raise ValueError('unique complete archive checksum entries required')
+        digest,name=fields;checksums[name]=digest
+    if checksums!={name:entry['sha256'] for name,entry in declared.items()}:
+        raise ValueError('checksum list differs from archive inventory')
+    if {p.name for p in output.glob('*.zip')}!=set(declared):
+        raise ValueError('missing or undeclared archive files')
     if destination:destination.mkdir(parents=True,exist_ok=False)
     members=set();archives=0
-    for line in (output/'SHA256SUMS').read_text().splitlines():
-        digest,name=line.split('  ');path=output/name
-        assert sha(path)==digest and path.stat().st_size<LIMIT
+    for name,entry in declared.items():
+        path=output/name
+        if sha(path)!=entry['sha256'] or path.stat().st_size!=entry['bytes']:
+            raise ValueError('archive digest/size differs from inventory: '+name)
         with zipfile.ZipFile(path) as z:
-            assert z.testzip() is None
+            if z.testzip() is not None:raise ValueError('archive CRC failure: '+name)
+            names=z.namelist()
+            if len(names)!=len(set(names)):raise ValueError('duplicate ZIP member')
             manifest=json.loads(z.read('MEMBER-SHA256.json'))
-            assert set(z.namelist())==set(manifest)|{'MEMBER-SHA256.json'}
+            if (not isinstance(manifest,dict) or not manifest or len(manifest)!=entry['members']
+                    or set(names)!=set(manifest)|{'MEMBER-SHA256.json'}):
+                raise ValueError('incomplete archive member manifest')
             for member,expected in manifest.items():
-                assert member not in members and not Path(member).is_absolute() and '..' not in Path(member).parts
+                relative=Path(member)
+                if (member in members or relative.is_absolute() or '..' in relative.parts
+                        or not relative.parts or '\\' in member or relative.as_posix()!=member):
+                    raise ValueError('duplicate or unsafe member path')
                 members.add(member);data=z.read(member)
-                assert len(data)==expected['bytes'] and hashlib.sha256(data).hexdigest()==expected['sha256']
+                if len(data)!=expected['bytes'] or hashlib.sha256(data).hexdigest()!=expected['sha256']:
+                    raise ValueError('member digest/size mismatch: '+member)
                 if destination:
                     p=destination/member;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
         archives+=1

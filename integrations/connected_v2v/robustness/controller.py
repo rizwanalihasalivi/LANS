@@ -10,6 +10,8 @@ from .perception import decode_peer_scan
 
 
 class RobustFollower(AutonomousFollower):
+    TRACK_MEMORY_S = 2.
+
     def __init__(self, endpoint, **kwargs):
         super().__init__(endpoint, **kwargs)
         self.exit_target = None
@@ -31,7 +33,13 @@ class RobustFollower(AutonomousFollower):
         if previous is not None:valid &= scan.sequence>previous.sequence and scan.observed_s>=previous.observed_s
         if valid:
             pose=extrapolate(peer.state,scan.observed_s-peer.observed_s)
-            valid=np.linalg.norm(pose[:2]-scan.ego_state[:2])<=2. and np.linalg.norm(velocity(pose)-velocity(scan.ego_state))<=2.
+            # Velocity agreement cannot constrain orientation at a stop. Check
+            # the independently received orientation at the scan's own stamp.
+            heading=peer.state[2]+peer.state[5]*(scan.observed_s-peer.observed_s)
+            heading_error=math.atan2(math.sin(heading-scan.ego_state[2]),math.cos(heading-scan.ego_state[2]))
+            valid=(np.linalg.norm(pose[:2]-scan.ego_state[:2])<=2.
+                   and np.linalg.norm(velocity(pose)-velocity(scan.ego_state))<=2.
+                   and abs(heading_error)<=.2)
         if not valid:
             self.peer_scan_rejections+=1;return False
         self.peer_scans[observer]=scan
@@ -78,6 +86,7 @@ class RobustFollower(AutonomousFollower):
                                              or scan.observed_s < self.scan.observed_s)):
             self.rejected_scans += 1
             return False
+        self._prune_tracks(scan.observed_s, now)
         proposed, fault = [], False
         for detection in scan.detections:
             angle = scan.ego_state[2]+detection.azimuth_rad
@@ -118,7 +127,7 @@ class RobustFollower(AutonomousFollower):
             if old is None and len(self.tracks) >= self.endpoint.max_peers:
                 fault = True
                 continue
-            name = old.name if old else f'track-{len(self.tracks)+1}'
+            name = old.name if old else self._new_track_name()
             dt = scan.observed_s-old.observed_s if old else 0.
             rate = max(-5., min(5., (d-old.d)/dt)) if dt>1e-9 else 0.
             lateral = .25*rate+.75*old.lateral if old and dt <= .3 else rate

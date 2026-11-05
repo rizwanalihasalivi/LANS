@@ -68,12 +68,17 @@ class AutonomousFollower:
     A farther target also needs positive departure evidence on three frames.
     A newly observed closer obstacle takes effect immediately.
     """
+    TRACK_MEMORY_S = .5
+
     def __init__(self, endpoint, *, road=None, speed=12.):
         self.endpoint, self.road = endpoint, road or Road()
-        self.local = V2VEndpoint(endpoint.vehicle_id, max_peers=endpoint.max_peers)
+        # This inbox uses private peer-/track- aliases, not wire identities.
+        # A legitimate wire ID such as "peer-1" must not look like following self.
+        self.local = V2VEndpoint('selector-local', max_peers=endpoint.max_peers)
         self.follower = FormationFollower(self.local, following=following_for('damped', speed))
         self.scan = None
         self.tracks = {}
+        self._track_serial = 0
         self.active = []
         self.aliases = {}
         self.selected = None
@@ -92,6 +97,30 @@ class AutonomousFollower:
         self.now = max(self.now, now)
         return now
 
+    def _prune_tracks(self, observed_s, now):
+        """Retire expired association memory without releasing a missing target.
+
+        Radio replay state belongs to the endpoint and is never removed here.
+        Scan replay state is global, so retired anonymous aliases cannot admit
+        an old scan. Fresh measurements alone may allocate a new, unique alias.
+        """
+        self.tracks = {name: track for name, track in self.tracks.items()
+                       if observed_s-track.observed_s <= self.TRACK_MEMORY_S+1e-9
+                       or self.selected in (name, track.alias)}
+        live = {track.alias for track in self.tracks.values()} | {self.selected, 'ego'}
+        self.local.inbox.latest = {name: packet for name, packet in self.local.inbox.latest.items()
+                                   if name in live or name in self.aliases.values()}
+        # Only this selector feeds this cache, after global scan replay checks.
+        # Expired, unselected packets cannot be used for following on a retarget.
+        self.follower.radar = {name: obs for name, obs in self.follower.radar.items()
+                              if name == self.selected or now-obs.observed_s <= RADAR_TTL+1e-9}
+
+    def _new_track_name(self):
+        self._track_serial += 1
+        while f'track-{self._track_serial}' in self.tracks:
+            self._track_serial += 1
+        return f'track-{self._track_serial}'
+
     def observe_scan(self, scan, now):
         now = self._time(now)
         if not isinstance(scan, Scan):
@@ -101,6 +130,7 @@ class AutonomousFollower:
                                              or scan.observed_s < self.scan.observed_s)):
             self.rejected_scans += 1
             return False
+        self._prune_tracks(scan.observed_s, now)
         proposed = []
         fault = False
         for detection in scan.detections:
@@ -137,7 +167,7 @@ class AutonomousFollower:
             if old is None and len(self.tracks) >= self.endpoint.max_peers:
                 fault = True
                 continue
-            name = old.name if old else f'track-{len(self.tracks)+1}'
+            name = old.name if old else self._new_track_name()
             dt = scan.observed_s-old.observed_s if old else 0.
             lateral = (d-old.d)/dt if dt > 1e-9 else 0.
             track = Track(name, scan.observed_s, s, d, speed, lateral,

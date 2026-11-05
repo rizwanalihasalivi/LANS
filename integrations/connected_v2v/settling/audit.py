@@ -74,7 +74,8 @@ def score(data,R,speed,native=False):
                 following_target=info['selected_target'];following_count=0;following_stamp=None
                 admitted_stamps=set()
             stamp=info['selected_observed_s']
-            if observed_cutin and fresh and not info['selection_brake'] and stamp!=following_stamp:
+            if (observed_cutin and fresh and not info['selection_brake']
+                    and (following_stamp is None or stamp>following_stamp)):
                 following_count=min(3,following_count+1);following_stamp=stamp
                 admitted_stamps.add(stamp)
             assert info['confirmed_following_frames']==following_count

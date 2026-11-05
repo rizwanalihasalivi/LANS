@@ -132,12 +132,12 @@ def main(driver):
                 for _ in range(copies):
                     due=now+max(0.,.05+float(radio_rng.uniform(-.025,.025)));serial+=1
                     heapq.heappush(radio_queue,(due,serial,payload))
-                    incoming.append(dict(serial=serial,due_s=due,message=payload.decode()))
+                    incoming.append(dict(serial=serial,due_s=due,message=payload.decode('utf-8',errors='surrogateescape')))
             while radio_queue and radio_queue[0][0]<=now+1e-9:
                 due,event,payload=heapq.heappop(radio_queue)
                 kind='range_scan' if is_peer_scan(payload) else 'beacon'
                 accepted=(follower.observe_peer_scan(payload,now) if follower is not None else False) if kind=='range_scan' else node.receive(payload,now)
-                radio.append(dict(serial=event,message=payload.decode(),accepted=accepted,kind=kind))
+                radio.append(dict(serial=event,message=payload.decode('utf-8',errors='surrogateescape'),accepted=accepted,kind=kind))
                 if accepted and kind=='beacon':pending.add(payload)
             if sample%2==0 and (name=='follower' or name in config['connected']):
                 payload=node.publish(state,now,now)

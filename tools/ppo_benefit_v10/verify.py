@@ -121,7 +121,7 @@ def evaluation(directory='evaluation',expected=864):
             collisions=sum(r['collision'] for r in rows),ppo_ticks=sum(r['source']=='ppo' for r in rows),
             ppo_evaluated=sum('ppo' in r['eligible'] for r in rows))
         for name,value in recomputed.items():equal(record[name],value)
-        if abs(case['delay']-.1)<1e-10:
+        if abs(case['delay']-.1)<1e-10 and record['mode']!='lqr':
             # Fixed 50 ms service + 100 ms queue reaches the strict TTL. Every
             # neural/teacher path must exactly retain the analytical commands.
             reference_path=DATA/f'evaluation/{case["id"]:03d}-adaptive-0.jsonl'

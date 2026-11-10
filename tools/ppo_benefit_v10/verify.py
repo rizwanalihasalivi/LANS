@@ -89,10 +89,12 @@ def training_trace(path,expected=None,dataset=None):
     return dict(steps=rows,failures=failures,ppo_ticks=ppo,trace_sha256=sha(path))
 
 
-def evaluation():
-    out=DATA/'evaluation';p=check_sources(out)
-    for record in p['policies'].values():assert sha(ROOT/record['path'])==record['sha256']
-    records=json.loads((out/'summary.json').read_text());assert len(records)==864
+def evaluation(directory='evaluation',expected=864):
+    out=DATA/directory;p=check_sources(out)
+    for key,record in p['policies'].items():
+        if isinstance(record,dict):assert sha(ROOT/record['path'])==record['sha256']
+        else:assert sha(DATA/f'{p.get("policy_directory","policies-anchor")}/seed-{key}/policy.zip')==record
+    records=json.loads((out/'summary.json').read_text());assert len(records)==expected
     lookup={};ticks=0
     for record in records:
         case=record['case'];key=(case['id'],record['mode'],record['seed']);assert key not in lookup;lookup[key]=record
@@ -120,7 +122,14 @@ def evaluation():
             ppo_evaluated=sum('ppo' in r['eligible'] for r in rows))
         for name,value in recomputed.items():equal(record[name],value)
         ticks+=n
+    result=dict(episodes=expected,ticks=ticks,failures={mode:sum(r['failed'] for r in records if r['mode']==mode) for mode in {r['mode'] for r in records}})
     assessment=json.loads((out/'assessment.json').read_text())
+    if expected==216:
+        assert set(lookup)=={(case['id'],'ppo',seed) for case in p['cases'] for seed in (42,43,44)}
+        reference=json.loads((DATA/'evaluation/summary.json').read_text())
+        assert p['reference_summary_sha256']==sha(DATA/'evaluation/summary.json')
+        records=[r for r in reference if r['mode']!='ppo']+records
+        lookup={(r['case']['id'],r['mode'],r['seed']):r for r in records}
     # Independently rebuild every paired stratum distribution and confidence interval.
     for mode in ('lqr','adaptive','teacher','old','bc'):
         clusters={}
@@ -132,14 +141,40 @@ def evaluation():
         gain=float(100*(1-avg[1]/avg[0]));equal(assessment['comparisons'][mode]['gain_percent'],gain)
         draws=np.random.default_rng(991124).integers(36,size=(5000,36));samples=values[draws].mean(axis=1)
         equal(assessment['comparisons'][mode]['ci95_percent'],np.quantile(100*(1-samples[:,1]/samples[:,0]),[.025,.975]).tolist())
-    return dict(episodes=864,ticks=ticks,failures={mode:sum(r['failed'] for r in records if r['mode']==mode) for mode in p['modes']},
-        compared_gains={k:v['gain_percent'] for k,v in assessment['comparisons'].items()})
+    for mode in ('lqr','adaptive','teacher','old','bc','ppo'):
+        rr=[r for r in records if r['mode']==mode]
+        for metric in ('rmse_m','heading_rms','rate_rms','progress_m'):
+            equal(assessment['metrics'][mode][metric],float(np.mean([r[metric] for r in rr])))
+    reasons=[]
+    for seed in (42,43,44):
+        pp=[lookup[(case['id'],'ppo',seed)] for case in p['cases']];base=[lookup[(case['id'],'lqr',0)] for case in p['cases']]
+        if any(r['failed'] for r in pp):reasons.append(f'actor_{seed}_failure')
+        if any(r['progress_m']<.99*b['progress_m'] for r,b in zip(pp,base)):reasons.append(f'actor_{seed}_progress')
+        for metric in ('heading_rms','rate_rms'):
+            if np.mean([r[metric] for r in pp])>1.1*np.mean([r[metric] for r in base]):reasons.append(f'actor_{seed}_{metric}')
+    for mode in ('adaptive','old'):
+        if assessment['comparisons'][mode]['ci95_percent'][0]<=0:reasons.append('confidence_'+mode)
+    equal(assessment['reasons'],reasons);assert assessment['primary_success']==(not reasons)
+    assert assessment['ppo_finetuning_positive']==(assessment['comparisons']['bc']['ci95_percent'][0]>0)
+    if expected==216:
+        original={(r['case']['id'],r['seed']):r for r in reference if r['mode']=='ppo'};groups={}
+        for case in p['cases']:
+            i=case['id'];groups.setdefault((case['scenario'],case['speed'],case['delay']),[]).append([
+                np.mean([original[(i,s)]['rmse_m'] for s in (42,43,44)]),np.mean([lookup[(i,'ppo',s)]['rmse_m'] for s in (42,43,44)])])
+        pairs=np.asarray([np.mean(v,axis=0) for v in groups.values()]);avg=pairs.mean(axis=0)
+        draws=np.random.default_rng(991124).integers(36,size=(5000,36));samples=pairs[draws].mean(axis=1)
+        equal(assessment['comparisons']['unregularized_ppo']['gain_percent'],float(100*(1-avg[1]/avg[0])))
+        equal(assessment['comparisons']['unregularized_ppo']['ci95_percent'],np.quantile(100*(1-samples[:,1]/samples[:,0]),[.025,.975]).tolist())
+    result['compared_gains']={k:v['gain_percent'] for k,v in assessment['comparisons'].items()}
+    return result
 
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--training-only',action='store_true');args=parser.parse_args()
+    anchor_complete=(DATA/'policies-anchor/summary.json').exists()
     before={str(Path(__file__).relative_to(ROOT)):sha(Path(__file__))}
     for path in DATA.rglob('*'):
+        if not anchor_complete and 'policies-anchor' in path.relative_to(DATA).parts:continue
         if path.is_file() and path.name!='verification.json' and '__pycache__' not in path.parts:
             before[str(path.relative_to(ROOT))]=sha(path)
             if path.name=='protocol.json':
@@ -162,6 +197,29 @@ def main():
         assert empty.exists() and empty.stat().st_size==0
     report=dict(teacher=teacher_result,training=policies,interrupted_rollouts=interrupted)
     if not args.training_only:report['evaluation']=evaluation()
+    if anchor_complete:
+        anchored=[]
+        for seed in (42,43,44):
+            folder=DATA/f'policies-anchor/seed-{seed}';p=check_sources(folder);m=json.loads((folder/'manifest.json').read_text())
+            assert m['steps']==16384 and sha(folder/'policy.zip')==m['policy_sha256']
+            assert p['source_policy_sha256']==sha(DATA/f'policies/seed-{seed}/bc-policy.zip')
+            losses=json.loads((folder/'anchor-loss.json').read_text());assert len(losses)==m['anchor_steps']==1280
+            assert all(math.isfinite(x) and x>=0 for x in losses)
+            r=training_trace(folder/'training.jsonl',16384);assert r['trace_sha256']==m['trace_sha256']
+            anchored.append(dict(seed=seed,**r));print('VERIFIED ANCHORED PPO',seed,flush=True)
+        report['anchored_training']=anchored
+        if not args.training_only:report['anchored_evaluation']=evaluation('anchor-evaluation',216)
+        controls=[]
+        for seed in (42,43,44):
+            folder=DATA/f'policies-continued-bc/seed-{seed}';p=check_sources(folder);m=json.loads((folder/'manifest.json').read_text())
+            assert m['supervised_only'] and m['steps']==0 and m['supervised_updates']==1280
+            assert sha(folder/'policy.zip')==m['policy_sha256']
+            assert p['source_policy_sha256']==sha(DATA/f'policies/seed-{seed}/bc-policy.zip')
+            losses=json.loads((folder/'loss.json').read_text());assert len(losses)==1280 and all(math.isfinite(x) and x>=0 for x in losses)
+            controls.append(dict(seed=seed,supervised_updates=1280,ppo_steps=0))
+        report['continued_bc_training']=controls
+        if not args.training_only:report['continued_bc_evaluation']=evaluation('continued-bc-evaluation',216)
+    else:report['pending_arms']=['teacher_anchored_ppo']
     for name,digest in before.items():assert sha(ROOT/name)==digest,('Audit input changed',name)
     report.update(stages=dict(report),verifier_sha256=sha(Path(__file__)),input_hashes=before,
         all_requested_checks_passed=True,all_requested_stages_verified=True,

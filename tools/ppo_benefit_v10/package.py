@@ -18,6 +18,9 @@ def main():
     report=json.loads((DATA/'verification.json').read_text())
     assert report['all_requested_checks_passed'] and report['evaluation']['episodes']==864
     assert sum(p['steps'] for p in report['training'])==49152
+    assert report['anchored_evaluation']['episodes']==216
+    assert report['continued_bc_evaluation']['episodes']==216
+    assert sum(p['steps'] for p in report['anchored_training'])==49152
     for name,digest in report['input_hashes'].items():assert sha(ROOT/name)==digest,('Input changed since audit',name)
     assert report['verifier_sha256']==sha(Path(__file__).parent/'verify.py')
     logs=DATA/'execution-logs';logs.mkdir(exist_ok=True)

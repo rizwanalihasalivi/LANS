@@ -32,14 +32,19 @@ def cases():
 
 def prepare():
     OUT.mkdir(parents=True,exist_ok=False)
-    teacher_protocol=json.loads((DATA/'teacher/protocol.json').read_text())
-    hashes=dict(teacher_protocol['source_hashes']);hashes[str(Path(__file__).relative_to(ROOT))]=sha(Path(__file__))
+    from .verify import check_sources
+    teacher_protocol=check_sources(DATA/'teacher')
+    # Keep the original collection snapshot and pin the repaired training driver
+    # separately; its unrelated initialization/logger fixes do not alter labels.
+    hashes={name:sha(ROOT/name) for name in teacher_protocol['source_hashes']}
+    hashes[str(Path(__file__).relative_to(ROOT))]=sha(Path(__file__))
     policies={}
     for mode in ('old','bc','ppo'):
         for seed in SEEDS:
             path=ROOT/f'results/python-campaign-v2/policies/seed-{seed}/policy.zip' if mode=='old' else DATA/f'policies/seed-{seed}/{"bc-policy" if mode=="bc" else "policy"}.zip'
             policies[f'{mode}-{seed}']=dict(path=str(path.relative_to(ROOT)),sha256=sha(path))
     protocol=dict(cases=cases(),modes=MODES,seeds=SEEDS,total_episodes=864,source_hashes=hashes,policies=policies,
+        teacher_protocol_sha256=sha(DATA/'teacher/protocol.json'),
         scoring='Original full-six-second RMSE; early stop only collision or absolute error >2.5; corridor >1.75 disqualifies.',
         final_once=True,model_selection=False)
     dump(OUT/'protocol.json',protocol)

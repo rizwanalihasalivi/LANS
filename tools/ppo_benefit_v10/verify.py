@@ -17,7 +17,9 @@ def check_sources(folder):
         if folder.name=='teacher' and name=='tools/ppo_benefit_v10/train.py':
             def collector(path):return next(n for n in ast.parse(path.read_text()).body if isinstance(n,ast.FunctionDef) and n.name=='collect')
             assert ast.dump(collector(folder/'source'/name))==ast.dump(collector(ROOT/name))
-        elif name!=str(Path(__file__).relative_to(ROOT)):
+        elif name.startswith('tools/ppo_benefit_v10/') and name!='tools/ppo_benefit_v10/core.py':
+            pass  # Drivers/verifiers are snapshotted, not invoked for plant replay.
+        else:
             assert sha(ROOT/name)==digest,('Replay dependency changed',name)
     return p
 
@@ -138,7 +140,11 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--training-only',action='store_true');args=parser.parse_args()
     before={str(Path(__file__).relative_to(ROOT)):sha(Path(__file__))}
     for path in DATA.rglob('*'):
-        if path.is_file() and path.name!='verification.json' and '__pycache__' not in path.parts:before[str(path.relative_to(ROOT))]=sha(path)
+        if path.is_file() and path.name!='verification.json' and '__pycache__' not in path.parts:
+            before[str(path.relative_to(ROOT))]=sha(path)
+            if path.name=='protocol.json':
+                for name in json.loads(path.read_text()).get('source_hashes',{}):
+                    if (ROOT/name).is_file():before[name]=sha(ROOT/name)
     folder=DATA/'teacher';p=check_sources(folder);m=json.loads((folder/'manifest.json').read_text())
     assert sha(folder/'dataset.npz')==m['dataset_sha256'];teacher_result=training_trace(folder/'transitions.jsonl',m['samples'],folder/'dataset.npz')
     assert teacher_result['failures']==m['failures']

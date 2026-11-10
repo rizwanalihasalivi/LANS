@@ -121,6 +121,14 @@ def evaluation(directory='evaluation',expected=864):
             collisions=sum(r['collision'] for r in rows),ppo_ticks=sum(r['source']=='ppo' for r in rows),
             ppo_evaluated=sum('ppo' in r['eligible'] for r in rows))
         for name,value in recomputed.items():equal(record[name],value)
+        if abs(case['delay']-.1)<1e-10:
+            # Fixed 50 ms service + 100 ms queue reaches the strict TTL. Every
+            # neural/teacher path must exactly retain the analytical commands.
+            reference_path=DATA/f'evaluation/{case["id"]:03d}-adaptive-0.jsonl'
+            reference_rows=[json.loads(line) for line in reference_path.open()]
+            assert not any(r['source']=='ppo' for r in rows)
+            np.testing.assert_allclose([[r['applied_steering'],r['applied_accel']] for r in rows],
+                [[r['applied_steering'],r['applied_accel']] for r in reference_rows],rtol=0,atol=1e-12)
         ticks+=n
     result=dict(episodes=expected,ticks=ticks,failures={mode:sum(r['failed'] for r in records if r['mode']==mode) for mode in {r['mode'] for r in records}})
     assessment=json.loads((out/'assessment.json').read_text())

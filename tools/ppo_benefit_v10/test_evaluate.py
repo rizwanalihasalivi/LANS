@@ -22,3 +22,28 @@ def test_training_and_prospective_pipeline_have_identical_delayed_commands(delay
 
 def test_paired_statistics_reject_incomplete_actor_coverage():
     with pytest.raises((AssertionError,KeyError)):evaluate.assess([dict(case=dict(id=0),mode='ppo',seed=42)])
+
+
+def paired_records():
+    rows=[]
+    errors={'lqr':1.2,'adaptive':1.,'teacher':.6,'old':.8,'bc':.7,'ppo':.5}
+    for i in range(2):
+        for mode in evaluate.MODES:
+            for seed in (evaluate.SEEDS if mode in ('old','bc','ppo') else [0]):
+                rows.append(dict(case=dict(id=i,scenario='following',speed=8.,delay=0.),mode=mode,seed=seed,
+                    rmse_m=errors[mode],heading_rms=.01,rate_rms=.02,progress_m=60.,failed=False,ppo_ticks=10))
+    return rows
+
+
+def test_paired_gain_separates_finetuning_from_initialization_and_all_reference_target():
+    result=evaluate.assess(paired_records())
+    assert result['primary_success'] and result['ppo_finetuning_positive']
+    assert result['comparisons']['old']['gain_percent']==pytest.approx(37.5)
+    assert result['comparisons']['bc']['gain_percent']==pytest.approx(100*(1-.5/.7))
+    assert not result['requested_30']  # Direct teacher is less than 30% behind.
+
+
+def test_one_actor_failure_blocks_good_average_performance():
+    rows=paired_records();next(r for r in rows if r['mode']=='ppo' and r['seed']==44)['failed']=True
+    result=evaluate.assess(rows)
+    assert not result['primary_success'] and 'actor_44_failure' in result['reasons']

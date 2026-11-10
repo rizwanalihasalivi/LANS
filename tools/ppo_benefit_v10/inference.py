@@ -64,7 +64,7 @@ class AsyncPolicy:
         except Empty:
             if not self.process.is_alive():self.failed=True;self.error='worker exited'
             return None
-        if kind!='proposal' or self.request is None or (payload.sequence,payload.observed_s,payload.submitted_s,payload.wall_observed)!=self.request:
+        if kind!='proposal' or not isinstance(payload,Proposal) or self.request is None or (payload.sequence,payload.observed_s,payload.submitted_s,payload.wall_observed)!=self.request:
             self.failed=True;self.error=str(payload);self.request=None;return None
         self.request=None;return payload
     def close(self):

@@ -39,3 +39,11 @@ def test_contract_hash_and_feature_validation(tmp_path):
     record['contract']=CONTRACT;record['policy_sha256']='0'*64
     (folder/'manifest.json').write_text(json.dumps(record))
     with pytest.raises(ValueError,match='hash'):load_policy(folder)
+
+
+def test_malformed_worker_response_marks_failure_without_escaping_owner():
+    from queue import Queue
+    worker=AsyncPolicy.__new__(AsyncPolicy);worker.closed=False;worker.failed=False;worker.error=''
+    worker.outgoing=Queue();worker.request=(1,0.,0.,1.)
+    worker.outgoing.put(('proposal',object()))
+    assert worker.poll() is None and worker.failed and worker.request is None

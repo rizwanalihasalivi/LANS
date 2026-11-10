@@ -58,7 +58,11 @@ def support_upper(theta,nx,ny):
 
 def certificate(a0,a1,b0,b1,h):
     """Pose triples x,y,heading; return an exact integer separating witness."""
-    h=F(str(h));aa=[tuple(F(str(v)) for v in z) for z in (a0,a1)]
+    if isinstance(h,bool):raise ValueError('positive finite duration required')
+    h=F(str(h))
+    if h<=0:raise ValueError('positive finite duration required')
+    if any(len(z)!=3 for z in (a0,a1,b0,b1)):raise ValueError('pose triples required')
+    aa=[tuple(F(str(v)) for v in z) for z in (a0,a1)]
     bb=[tuple(F(str(v)) for v in z) for z in (b0,b1)]
     # Trigonometry here chooses a rational direction only. Any nonzero rational
     # direction is valid; safety calculations below use interval/exact arithmetic.

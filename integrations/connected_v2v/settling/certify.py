@@ -30,7 +30,9 @@ def native_refinement(path,spec,traces):
         assert abs(data[0]['time_s']-.01)<1e-8 and abs(data[-1]['time_s']-spec['seconds'])<1e-8
         max_acc=max_yaw=max_bridge=max_command_error=max_planar_speed=0.
         speed_bound=traces[name][0].get('native_speed_cap_m_s')
-        for before,after in zip(data,data[1:]):
+        # Generated worlds start at rest; include their first 10 ms interval.
+        start_motion=dict(time_s=0.,velocity=[0.,0.,0.],heading=heading,yaw_rate=0.)
+        for before,after in zip([start_motion,*data[:-1]],data):
             dt=after['time_s']-before['time_s'];assert abs(dt-.01)<1e-8
             acceleration=max(abs(after['velocity'][i]-before['velocity'][i])/dt for i in (0,1))
             yaw=abs(angle_delta(after['heading'],before['heading']))/dt
@@ -57,10 +59,13 @@ def native_refinement(path,spec,traces):
                 chord=(1-f)*q0['state'][axis]+f*q1['state'][axis]
                 error=abs(z['position'][axis]-chord);max_bridge=max(max_bridge,error)
                 assert error<=float(A)*h*h/8+2*float(POSE)+1e-8,(name,'native bridge',t,error)
+        for sample in traces[name]:
+            rpy=sample['pose']['rpy']
+            assert len(rpy)==3 and all(math.isfinite(v) for v in rpy),'finite body pose required'
+            assert max(abs(rpy[0]),abs(rpy[1]))<=.15,'planar-body pose qualification'
         for a,b in zip(traces[name],traces[name][1:]):
             dt=b['time_s']-a['time_s']
             max_command_error=max(max_command_error,abs((b['state'][3]-a['state'][3])/dt-a['command']['accel']))
-            assert max(abs(a['pose']['rpy'][0]),abs(a['pose']['rpy'][1]))<=.15,'planar-body pose qualification'
         first=data[0]
         assert max(abs(first['position'][k]-initial[name][k]) for k in (0,1))<=float(POSE)+.5*float(A)*.01**2
         reports[name]=dict(motion_samples=len(data),max_sampled_coordinate_accel_m_s2=max_acc,

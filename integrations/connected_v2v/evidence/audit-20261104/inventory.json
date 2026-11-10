@@ -1,0 +1,62 @@
+[
+  {
+    "archive": "audit-001.zip",
+    "bytes": 31138772,
+    "sha256": "bc841898e8adfec76fa78d7431a756df6f2ddc6cbd70241c524b54dc96350ddb",
+    "members": 124
+  },
+  {
+    "archive": "audit-002.zip",
+    "bytes": 28883110,
+    "sha256": "7bb69e8caa82f74682869ac5b8a79374c516d61016f5aa89a7d128ef8595d7ee",
+    "members": 88
+  },
+  {
+    "archive": "audit-003.zip",
+    "bytes": 30278793,
+    "sha256": "f2de5f49b22090909c701e97728ad317f0d2d7b0d339c6db134d04ba27c37af2",
+    "members": 114
+  },
+  {
+    "archive": "audit-004.zip",
+    "bytes": 29851355,
+    "sha256": "d3696135375ebb2538817fab1a1ab6faf1214bffb752be8066590e0665034add",
+    "members": 112
+  },
+  {
+    "archive": "audit-005.zip",
+    "bytes": 29664125,
+    "sha256": "741e0c14b8c77fceba4b034c9535e71d662532bca47975cb258f78ae932aad48",
+    "members": 97
+  },
+  {
+    "archive": "audit-006.zip",
+    "bytes": 29730662,
+    "sha256": "cb0e23628f53c5b1c4ef52f60011ca64bd9305b7268f564d6ac37c44136be082",
+    "members": 107
+  },
+  {
+    "archive": "audit-007.zip",
+    "bytes": 28584884,
+    "sha256": "76c7494e6f08c342b129e57d7499f148e7695d0cd10734f6d1e462b7265a0680",
+    "members": 93
+  },
+  {
+    "archive": "audit-008.zip",
+    "bytes": 19696567,
+    "sha256": "0d895fbe31ade88328bac9b784aac46e83ee90452819bfa6604809c4f315392a",
+    "members": 147
+  },
+  {
+    "archive": "audit-009.zip",
+    "bytes": 16707998,
+    "sha256": "9b63dd32fd33bb876dde79d64d0b7dfd7c5ca1a8ef20df394fbebb200b639984",
+    "members": 121
+  },
+  {
+    "archive": "audit-010.zip",
+    "bytes": 12533700,
+    "sha256": "5fb5643c1b9416341952c80c63bf7fd8fe52da01b89151f203a7b4346d8acbaa",
+    "members": 215
+  }
+]

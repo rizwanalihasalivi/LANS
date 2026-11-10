@@ -83,7 +83,7 @@ def verify(output):
     for row in traces['leader']:
         now=row['time_s']
         for event in row['radio']:
-            if event.get('kind')=='beacon':assert leader_node.receive(event['message'].encode(),now)==event['accepted']
+            if event.get('kind')=='beacon':assert leader_node.receive(event['message'].encode('utf-8', errors='surrogateescape'),now)==event['accepted']
         goal,pace=pace_goal(leader_node,row['state'],now,road,spec['speed'])
         assert row['decision']['npc_speed_m_s']==goal
         assert all(row['decision'][k]==v for k,v in pace.items())
@@ -95,7 +95,7 @@ def verify(output):
     for i,row in enumerate(traces['follower']):
         now=row['time_s'];node.observe_local(row['state'],now,now)
         for event in row['radio_incoming']:
-            raw=event['message'].encode()
+            raw=event['message'].encode('utf-8', errors='surrogateescape')
             if is_peer_scan(raw):
                 observer,scan=decode_peer_scan(raw);assert observer in spec['connected']
                 source=traces[observer][round(scan.observed_s/.05)-1]
@@ -108,7 +108,7 @@ def verify(output):
         for event in row['radio']:
             incoming=pending_radio.pop(event['serial'])
             assert incoming['message']==event['message'] and now-.05-1e-9<incoming['due_s']<=now+1e-9
-            raw=event['message'].encode()
+            raw=event['message'].encode('utf-8', errors='surrogateescape')
             if is_peer_scan(raw):assert control.observe_peer_scan(raw,now)==event['accepted']
             else:assert node.receive(raw,now)==event['accepted']
         assert all(e['due_s']>now+1e-9 for e in pending_radio.values())

@@ -74,7 +74,7 @@ def verify_native(output):
             node.observe_local(row['state'],now,now)
             while event_index<len(events) and events[event_index]['received_s']<=now+1e-9:
                 event=events[event_index];assert event['received_s']==now
-                assert node.receive(event['message'].encode(),now)==event['accepted'];event_index+=1
+                assert node.receive(event['message'].encode('utf-8', errors='surrogateescape'),now)==event['accepted'];event_index+=1
             if row['radar'] is not None:
                 assert not (record['case'] in ('radar_blackout','dual_blackout') and name=='follower-1' and 5.<=now<6.5)
                 observation=RangeObservation(**row['radar']);assert observation.observed_s==now

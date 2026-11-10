@@ -56,7 +56,7 @@ def main(driver):
             while receiver.getQueueLength():
                 payload = receiver.getBytes()
                 accepted = endpoint.receive(payload, now)
-                receipts.write(json.dumps(dict(received_s=now, message=payload.decode('utf-8'), accepted=accepted))+'\n')
+                receipts.write(json.dumps(dict(received_s=now, message=payload.decode('utf-8', errors='surrogateescape'), accepted=accepted))+'\n')
                 receiver.nextPacket(); received += 1
             if samples % 2 == 0:
                 payload = endpoint.publish(state, now, now)

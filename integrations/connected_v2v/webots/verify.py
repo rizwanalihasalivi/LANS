@@ -35,7 +35,7 @@ def verify(output):
             while event_index < len(events) and events[event_index]['received_s'] <= now+1e-9:
                 event = events[event_index]
                 assert event['received_s'] == now
-                payload = event['message'].encode('utf-8')
+                payload = event['message'].encode('utf-8', errors='surrogateescape')
                 beacon = decode_beacon(payload)
                 assert beacon.vehicle_id != name
                 assert endpoint.receive(payload, now) == event['accepted']

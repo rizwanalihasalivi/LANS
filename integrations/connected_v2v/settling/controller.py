@@ -180,12 +180,20 @@ class SettlingFollower(RobustFollower,LaneSelector):
         self.unknown_since=None
         self.recovering=False
         self.settle_ticks=0
+        self.settle_since=None
+        self.last_settle_observation=None
         self.cooperative_anchors={}
         self.entry_observations={}
         self.following_confirmations=0
         self.following_target=None
         self.following_stamp=None
         self.cutin_observed=False
+
+    def _prune_tracks(self,observed_s,now):
+        super()._prune_tracks(observed_s,now)
+        self.entry_observations={name:value for name,value in self.entry_observations.items() if name in self.tracks}
+        live={t.alias for t in self.tracks.values()}|{self.selected}
+        self.cooperative_anchors={name:value for name,value in self.cooperative_anchors.items() if name in live}
 
     @staticmethod
     def _in_lane(s,d,lateral,ego_s):
@@ -236,9 +244,9 @@ class SettlingFollower(RobustFollower,LaneSelector):
         used_recovery=self.recovering
         command,info=super().decide(now)
         if info['selection_event']=='positive_exit_release':
-            self.recovering=True;self.settle_ticks=0
+            self.recovering=True;self.settle_ticks=0;self.settle_since=None
         elif info['selection_event']=='cut_in':
-            self.recovering=False;self.settle_ticks=0
+            self.recovering=False;self.settle_ticks=0;self.settle_since=None
         fresh=info['sensor_source'] in ('radar','v2v') and info['selected_observed_s'] is not None
         if info['selection_event']=='cut_in':
             self.cutin_observed=True
@@ -246,23 +254,35 @@ class SettlingFollower(RobustFollower,LaneSelector):
             self.following_target=self.selected
             self.following_confirmations=0
             self.following_stamp=None
-        if self.cutin_observed and fresh and not info['selection_brake'] and info['selected_observed_s'] != self.following_stamp:
+        if (self.cutin_observed and fresh and not info['selection_brake']
+                and (self.following_stamp is None or info['selected_observed_s'] > self.following_stamp)):
             self.following_confirmations=min(3,self.following_confirmations+1)
             self.following_stamp=info['selected_observed_s']
         ego=self.endpoint.inbox.latest.get('ego')
         packet=self.follower.effective.inbox.latest.get(self.selected)
         settled=False
-        if fresh and ego is not None and packet is not None and info['target_gap_m'] is not None:
+        if fresh and not info['selection_brake'] and ego is not None and packet is not None and info['target_gap_m'] is not None:
             speed=self.road.canonical(ego.state)[2]
             settled=abs(info['target_gap_m']-6.-1.2*speed)<=2. and abs(packet.state[3]-speed)<=.5
-        self.settle_ticks=self.settle_ticks+1 if settled else 0
-        if self.settle_ticks>=40:self.recovering=False
+        # A repeated call is not another control interval, and a missing interval
+        # cannot supply stability evidence. Require two elapsed seconds.
+        previous=self.last_settle_observation
+        if not settled:
+            self.settle_ticks=0;self.settle_since=None
+        elif previous is None or now-previous>self.follower.cfg.dt+1e-9 or self.settle_since is None:
+            self.settle_ticks=1;self.settle_since=now
+        elif now>previous+1e-9:
+            self.settle_ticks+=1
+        self.last_settle_observation=now
+        settled_duration=0. if self.settle_since is None else now-self.settle_since
+        if settled_duration>=2.-1e-9:self.recovering=False
         if fresh:self.unknown_since=None
         elif self.unknown_since is None:self.unknown_since=now
         unavailable=0. if self.unknown_since is None else now-self.unknown_since
         info.update(connectivity_mode=('observed' if fresh else 'knowledge_unavailable'),
             knowledge_unavailable_s=unavailable,radio_range_m=150.,
             formation_mode='recovering' if self.recovering else 'following',settled_ticks=self.settle_ticks,
+            settled_duration_s=settled_duration,
             formation_mode_used='recovering' if used_recovery else 'following',
             selected_radio_id=next((name for name,alias in self.aliases.items() if alias==self.selected),None),
             cooperative_anchor_observed_s=self.cooperative_anchors.get(self.selected,(None,)*5)[4],

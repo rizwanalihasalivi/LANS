@@ -89,7 +89,9 @@ def main(driver):
             while receiver.getQueueLength():
                 payload = receiver.getBytes()
                 accepted = node.receive(payload, now)
-                receipts.append(dict(message=payload.decode(), accepted=accepted))
+                # JSON escapes surrogate bytes; malformed datagrams remain
+                # losslessly replayable and cannot crash receipt logging.
+                receipts.append(dict(message=payload.decode('utf-8', errors='surrogateescape'), accepted=accepted))
                 receiver.nextPacket()
             if samples % 2 == 0:
                 payload = node.publish(state, now, now)

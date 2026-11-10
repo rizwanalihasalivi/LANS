@@ -14,6 +14,12 @@ The preceding [predictor/objective ablation](integrations/webots/results/revisio
 
 ## Current evidence and entry points
 
+- **Latest validation continuation:** [v9 audited Python, runtime and native evidence](tools/unified_control_v9/README.md).
+  All 3,440 calibration/evaluation episodes, 49,152 new training steps, 20 actual-worker
+  checks and 16 native transfer episodes are retained. The strict-quality candidate
+  is not promoted: final LQR-relative RMSE gain is only 0.0653%, and the old hybrid
+  performs better. Training crossing failures and one native scheduled-cycle miss
+  remain explicit. The requested 30% and full-framework validation remain unmet.
 - **Latest integrated controller:** [v8 execution and verified raw evidence](tools/unified_control_v8/README.md).
   The shared conflict-timing bug is corrected, and causal early identification
   wins the fixed training comparison. Fresh whole-run gain is **5.186% over LQR**

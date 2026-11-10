@@ -1,0 +1,8 @@
+# Additional pinned dependencies for this experiment, on top of LANS's Python stack.
+numba==0.60.0
+llvmlite==0.43.0
+clarabel==0.9.0
+osqp==0.6.3
+qdldl==0.1.9.post1
+# Required by legacy thread-policy tests; installed after measured cohorts finished.
+threadpoolctl==3.6.0

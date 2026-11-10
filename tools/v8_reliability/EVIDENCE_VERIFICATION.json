@@ -1,0 +1,9 @@
+{
+  "all_outer_member_crc_and_reconstructed_hashes_verified": true,
+  "archives": 32,
+  "seal_sha256": "ed700ba59e3f73aef02e1c22f9a55635cd780c5965806cc2929de768aa9afe51",
+  "sha256sums_sha256": "f869ff4f71e08d420ee725affebe4a6b921b3ca51331ddc84bcb8d2ee7b43cb9",
+  "source_bytes": 1313779361,
+  "source_files": 10971,
+  "zip_members": 10971
+}

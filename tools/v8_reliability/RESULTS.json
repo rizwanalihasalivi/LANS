@@ -1,0 +1,366 @@
+{
+  "controller_revision": 2,
+  "policies_changed": false,
+  "training_steps": 0,
+  "original_v8_verified_development_result_preserved": true,
+  "v1_final": {
+    "original_gate_passed": false,
+    "reasons": [
+      "mean_gain_lqr",
+      "actor_42_progress"
+    ],
+    "comparisons": {
+      "adaptive": {
+        "gain_percent": 0.035987614269494816,
+        "ci95_percent": [
+          -0.0019491243364405662,
+          0.08149126770657156
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0001906451393243,
+        "rate_ratio": 1.0009457514022801,
+        "minimum_progress_ratio": 0.9797689158886406
+      },
+      "cbf": {
+        "gain_percent": 3.9605127538583473,
+        "ci95_percent": [
+          3.1112986554704407,
+          4.67211085385188
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0941430132636918,
+        "rate_ratio": 1.0429162719480145,
+        "minimum_progress_ratio": 0.9797689544085395
+      },
+      "deterministic": {
+        "gain_percent": 3.8223754629324813,
+        "ci95_percent": [
+          3.0103853990308003,
+          4.546246295430614
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0914946029976178,
+        "rate_ratio": 1.041300001174469,
+        "minimum_progress_ratio": 0.9797689501403647
+      },
+      "fixed": {
+        "gain_percent": 3.9632952911193065,
+        "ci95_percent": [
+          3.114255054135948,
+          4.6749220047047375
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.094193897028036,
+        "rate_ratio": 1.0427924937105382,
+        "minimum_progress_ratio": 0.9797689510035248
+      },
+      "lqr": {
+        "gain_percent": 3.9632952911193065,
+        "ci95_percent": [
+          3.114255054135948,
+          4.6749220047047375
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.094193897028036,
+        "rate_ratio": 1.0427924937105382,
+        "minimum_progress_ratio": 0.9797689510035248
+      },
+      "optimized": {
+        "gain_percent": 1.1263035356457785,
+        "ci95_percent": [
+          0.654152903177708,
+          1.5775397400938074
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0255406087831576,
+        "rate_ratio": 1.0226759717855916,
+        "minimum_progress_ratio": 0.9797689158886406
+      },
+      "v8_adaptive": {
+        "gain_percent": 0.1269802469577308,
+        "ci95_percent": [
+          -0.21123466339535213,
+          0.47654655743787205
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.004613947510488,
+        "rate_ratio": 1.0107563839328424,
+        "minimum_progress_ratio": 0.9537309290903077
+      },
+      "v8_common": {
+        "gain_percent": 0.029832552878705787,
+        "ci95_percent": [
+          -0.29187238847539043,
+          0.3673064603804084
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0075930895632705,
+        "rate_ratio": 1.0097559608008626,
+        "minimum_progress_ratio": 0.9797689155551725
+      },
+      "v8_original": {
+        "gain_percent": 0.08803893893835069,
+        "ci95_percent": [
+          -0.2555146985298751,
+          0.4416659775658754
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0041132260868806,
+        "rate_ratio": 1.0099398105936148,
+        "minimum_progress_ratio": 0.9537309433851824
+      }
+    }
+  },
+  "v2_final": {
+    "original_gate_passed": false,
+    "reasons": [
+      "mean_gain_lqr",
+      "actor_42_progress"
+    ],
+    "comparisons": {
+      "adaptive": {
+        "gain_percent": -0.002963935362099157,
+        "ci95_percent": [
+          -0.0255685673471312,
+          0.015746935862000475
+        ],
+        "clusters": 16,
+        "heading_ratio": 0.999454948802114,
+        "rate_ratio": 1.000406571370477,
+        "minimum_progress_ratio": 0.987031462384247
+      },
+      "cbf": {
+        "gain_percent": 3.8624556294245993,
+        "ci95_percent": [
+          2.7950715038266747,
+          4.919131646611653
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0822053780548442,
+        "rate_ratio": 1.0353735300793878,
+        "minimum_progress_ratio": 0.9870307579416245
+      },
+      "deterministic": {
+        "gain_percent": 3.368633149489886,
+        "ci95_percent": [
+          2.379388581435164,
+          4.400959540891407
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0729967554166464,
+        "rate_ratio": 1.0323930488531499,
+        "minimum_progress_ratio": 0.9870307500640572
+      },
+      "fixed": {
+        "gain_percent": 3.859893639774137,
+        "ci95_percent": [
+          2.7909605734315077,
+          4.914566125888479
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0822536014409163,
+        "rate_ratio": 1.0340176065226356,
+        "minimum_progress_ratio": 0.9870307541662646
+      },
+      "lqr": {
+        "gain_percent": 3.865060132236553,
+        "ci95_percent": [
+          2.797847789002924,
+          4.921760690253778
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0822531689609398,
+        "rate_ratio": 1.0352220960434124,
+        "minimum_progress_ratio": 0.9870307541662646
+      },
+      "optimized": {
+        "gain_percent": 1.1643551598654933,
+        "ci95_percent": [
+          0.7084430619061103,
+          1.6740813059914847
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0180794903661976,
+        "rate_ratio": 1.0246283186807874,
+        "minimum_progress_ratio": 0.9870307500640572
+      },
+      "v8_adaptive": {
+        "gain_percent": -0.12683741341532606,
+        "ci95_percent": [
+          -0.5180715263188929,
+          0.25173440498939204
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.009011317393296,
+        "rate_ratio": 1.007322175767163,
+        "minimum_progress_ratio": 0.926243526929179
+      },
+      "v8_common": {
+        "gain_percent": 0.0319600136604703,
+        "ci95_percent": [
+          -0.29999379974496587,
+          0.3379460889682042
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0053659136194928,
+        "rate_ratio": 1.008654711631725,
+        "minimum_progress_ratio": 0.991316769820355
+      },
+      "v8_original": {
+        "gain_percent": -0.15266508245350696,
+        "ci95_percent": [
+          -0.5409796633177788,
+          0.2248045558055207
+        ],
+        "clusters": 16,
+        "heading_ratio": 1.0085061770063126,
+        "rate_ratio": 1.006867841930428,
+        "minimum_progress_ratio": 0.9262435279234679
+      }
+    }
+  },
+  "exposed_regression_development": {
+    "completed": true,
+    "episodes": 54,
+    "current_failure_count": 0,
+    "current_minimum_progress_ratio": 0.9995481557518334,
+    "current_collisions": 0,
+    "exposed_progress_case_ratios": {
+      "42": 1.00000011086597,
+      "43": 0.9999999892700757,
+      "44": 1.0000000031793308
+    },
+    "development_pass": true
+  },
+  "v2_finite_python_safety": {
+    "current_python_safety_pass": true,
+    "current_hybrid_episodes": 264,
+    "current_hybrid_failures": 0,
+    "current_hybrid_collision_ticks": 0,
+    "current_hybrid_recourse_ticks": 282,
+    "current_hybrid_uncertified_recourse_ticks": 0,
+    "original_v8_failures": 0,
+    "policies_changed": false,
+    "scope": "Finite six-second cases, 50ms collision samples, not universal safety or a substitute for scientific quality/progress gates."
+  },
+  "native": {
+    "lqr": {
+      "episodes": 4,
+      "ticks": 960,
+      "incomplete_runs": 0,
+      "corridor_ticks": 0,
+      "response_misses": 1,
+      "local_complete_cycle_misses": 10,
+      "scheduled_response_misses": 15,
+      "scheduled_complete_cycle_misses": 28,
+      "response_max_ms": 50.063501999829896,
+      "response_owner_cpu_max_ms": 18.758612999999702,
+      "complete_cycle_max_ms": 234.93931099801557,
+      "native_physics_max_ms": 216.58207799919182,
+      "trace_write_max_ms": 4.517195000516949,
+      "max_measured_center_steering_rate": 0.59385834228666,
+      "rmse_m": 0.06281102284037916,
+      "heading_rms_rad": 0.008380390565564517,
+      "steering_rate_rms": 0.08180664436268459,
+      "minimum_lqr_progress_ratio": 1.0
+    },
+    "original_v8": {
+      "episodes": 12,
+      "ticks": 2880,
+      "incomplete_runs": 0,
+      "corridor_ticks": 0,
+      "response_misses": 119,
+      "local_complete_cycle_misses": 413,
+      "scheduled_response_misses": 788,
+      "scheduled_complete_cycle_misses": 927,
+      "response_max_ms": 5763.2360349998635,
+      "response_owner_cpu_max_ms": 4805.518245,
+      "complete_cycle_max_ms": 10052.796910000325,
+      "native_physics_max_ms": 7170.9513230016455,
+      "trace_write_max_ms": 104.17197300193948,
+      "max_measured_center_steering_rate": 0.5940701804864403,
+      "rmse_m": 0.06146926158751203,
+      "heading_rms_rad": 0.008951174961162423,
+      "steering_rate_rms": 0.07479807132171494,
+      "minimum_lqr_progress_ratio": 0.9995633502353475
+    },
+    "current_v2": {
+      "episodes": 12,
+      "ticks": 2880,
+      "incomplete_runs": 0,
+      "corridor_ticks": 0,
+      "response_misses": 12,
+      "local_complete_cycle_misses": 159,
+      "scheduled_response_misses": 215,
+      "scheduled_complete_cycle_misses": 304,
+      "response_max_ms": 141.0629769998195,
+      "response_owner_cpu_max_ms": 140.7317509999997,
+      "complete_cycle_max_ms": 271.3900359995023,
+      "native_physics_max_ms": 245.512466000946,
+      "trace_write_max_ms": 8.49956200181623,
+      "max_measured_center_steering_rate": 0.5940701804864403,
+      "rmse_m": 0.06180915232386191,
+      "heading_rms_rad": 0.008782807036953725,
+      "steering_rate_rms": 0.07449839170733362,
+      "minimum_lqr_progress_ratio": 0.9995633502353475,
+      "heading_ratio_to_lqr": 1.0480188206314345,
+      "rate_ratio_to_lqr": 0.9106643144663129
+    },
+    "startup_failures_retained": 1,
+    "scope": "Four road/speed cells with three frozen actors; single ideal-sensor car, actual 1ms Webots physics, no native traffic/collision or WCET claim."
+  },
+  "actual_workers": {
+    "old": {
+      "episodes": 12,
+      "ticks": 1440,
+      "functional_failures": 0,
+      "response_misses": 29,
+      "scheduled_response_misses": 72,
+      "local_complete_cycle_misses": 34,
+      "scheduled_complete_cycle_misses": 75,
+      "response_max_ms": 227.57777199876728,
+      "complete_cycle_max_ms": 228.37249000076554
+    },
+    "new": {
+      "episodes": 14,
+      "ticks": 1680,
+      "functional_failures": 0,
+      "response_misses": 6,
+      "scheduled_response_misses": 15,
+      "local_complete_cycle_misses": 6,
+      "scheduled_complete_cycle_misses": 16,
+      "response_max_ms": 122.58126199958497,
+      "complete_cycle_max_ms": 124.09304000175325
+    },
+    "new_matched_only": {
+      "episodes": 12,
+      "ticks": 1440,
+      "functional_failures": 0,
+      "response_misses": 3,
+      "scheduled_response_misses": 8,
+      "local_complete_cycle_misses": 3,
+      "scheduled_complete_cycle_misses": 9,
+      "response_max_ms": 101.119507002295,
+      "complete_cycle_max_ms": 104.01335799906519
+    },
+    "startup_failures_retained": 1,
+    "scope": "Twelve matched conditions per role plus two current-owner planner fault checks; counts are engineering observations, not independent traffic seeds or WCET."
+  },
+  "production_promotion": false,
+  "outstanding_measured_gates": [
+    "mean_gain_lqr",
+    "actor_42_progress",
+    "all_heading_and_rate_metrics_improve_over_lqr",
+    "strict_native_50ms_timing_gate",
+    "strict_actual_worker_50ms_timing_gate"
+  ],
+  "publication_scope": {
+    "closest_method": "LANS-model CBF mechanism adaptation with explicit source audit",
+    "full_original_paper_reproduction": false,
+    "universal_novelty_claim": false,
+    "universal_safety_proof": false,
+    "full_native_traffic_validation": false
+  },
+  "separate_agent_scope": "PPO incremental benefit, policy/reward/features/training; no such changes made here",
+  "ledger_semantics": "Audits establish recorded-data consistency. Failed scientific, progress, quality and timing gates remain failed; no promotion or universal proof follows from zero sampled collisions."
+}

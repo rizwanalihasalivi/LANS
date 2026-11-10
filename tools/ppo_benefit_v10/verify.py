@@ -210,13 +210,25 @@ def main():
         report['anchored_training']=anchored
         if not args.training_only:report['anchored_evaluation']=evaluation('anchor-evaluation',216)
         controls=[]
+        import torch
+        from stable_baselines3 import PPO
+        torch.set_num_threads(1);dataset=np.load(DATA/'teacher/dataset.npz')
+        train_obs=torch.tensor(dataset['observations']);train_actions=torch.tensor(dataset['actions']);train_weights=torch.tensor(dataset['weights'])
         for seed in (42,43,44):
             folder=DATA/f'policies-continued-bc/seed-{seed}';p=check_sources(folder);m=json.loads((folder/'manifest.json').read_text())
             assert m['supervised_only'] and m['steps']==0 and m['supervised_updates']==1280
             assert sha(folder/'policy.zip')==m['policy_sha256']
             assert p['source_policy_sha256']==sha(DATA/f'policies/seed-{seed}/bc-policy.zip')
             losses=json.loads((folder/'loss.json').read_text());assert len(losses)==1280 and all(math.isfinite(x) and x>=0 for x in losses)
-            controls.append(dict(seed=seed,supervised_updates=1280,ppo_steps=0))
+            replay=PPO.load(DATA/f'policies/seed-{seed}/bc-policy.zip',device='cpu');generator=np.random.default_rng(9000+seed)
+            for step_index in range(1280):
+                indices=generator.integers(len(train_obs),size=128);mean=replay.policy.get_distribution(train_obs[indices]).distribution.mean
+                loss=.5*(train_weights[indices]*(mean-train_actions[indices]).square().mean(dim=1)).mean()
+                equal(losses[step_index],float(loss.detach()))
+                replay.policy.optimizer.zero_grad();loss.backward();torch.nn.utils.clip_grad_norm_(replay.policy.parameters(),.5);replay.policy.optimizer.step()
+            saved=PPO.load(folder/'policy.zip',device='cpu')
+            for name,value in replay.policy.state_dict().items():torch.testing.assert_close(saved.policy.state_dict()[name],value,rtol=0,atol=0)
+            controls.append(dict(seed=seed,supervised_updates=1280,ppo_steps=0,weights_reproduced_exactly=True))
         report['continued_bc_training']=controls
         if not args.training_only:report['continued_bc_evaluation']=evaluation('continued-bc-evaluation',216)
     else:report['pending_arms']=['teacher_anchored_ppo']

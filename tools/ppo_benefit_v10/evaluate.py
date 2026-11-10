@@ -131,6 +131,9 @@ def assess(records):
         pp=[lookup[(i,'ppo',seed)] for i in ids];base=[lookup[(i,'lqr',0)] for i in ids]
         actors[str(seed)]=dict(ppo_ticks=sum(r['ppo_ticks'] for r in pp),failures=sum(r['failed'] for r in pp),
             mean_rmse_m=float(np.mean([r['rmse_m'] for r in pp])),
+            gain_vs_adaptive_percent=float(100*(1-np.mean([r['rmse_m'] for r in pp])/metrics['adaptive']['rmse_m'])),
+            gain_vs_old_same_seed_percent=float(100*(1-np.mean([r['rmse_m'] for r in pp])/np.mean([lookup[(i,'old',seed)]['rmse_m'] for i in ids]))),
+            gain_vs_bc_same_seed_percent=float(100*(1-np.mean([r['rmse_m'] for r in pp])/np.mean([lookup[(i,'bc',seed)]['rmse_m'] for i in ids]))),
             minimum_lqr_progress_ratio=min(r['progress_m']/b['progress_m'] for r,b in zip(pp,base)))
         if any(r['failed'] for r in pp):reasons.append(f'actor_{seed}_failure')
         if any(r['progress_m']<.99*b['progress_m'] for r,b in zip(pp,base)):reasons.append(f'actor_{seed}_progress')
@@ -140,6 +143,8 @@ def assess(records):
         if comparisons[ref]['ci95_percent'][0]<=0:reasons.append('confidence_'+ref)
     return dict(metrics=metrics,comparisons=comparisons,actors=actors,primary_success=not reasons,reasons=reasons,
         ppo_finetuning_positive=comparisons['bc']['ci95_percent'][0]>0,
+        descriptive_old_gain_vs_adaptive_percent=100*(1-metrics['old']['rmse_m']/metrics['adaptive']['rmse_m']),
+        descriptive_bc_gain_vs_adaptive_percent=100*(1-metrics['bc']['rmse_m']/metrics['adaptive']['rmse_m']),
         requested_30=not reasons and all(r['gain_percent']>=30 for r in comparisons.values()),
         failures={m:sum(r['failed'] for r in records if r['mode']==m) for m in MODES},
         selection={m:sum(r['ppo_ticks'] for r in records if r['mode']==m) for m in MODES})

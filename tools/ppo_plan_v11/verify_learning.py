@@ -185,6 +185,11 @@ def evaluate_record(meta):
             else:prior=PlanProposal(i+1,now,now,now,tuple(label))
         previous=c.applied
     n=len(rows);assert n==meta['ticks'] and meta['expected_ticks']==120
+    if case['delay']==.1 and mode!='lqr':
+        reference_rows=[json.loads(line) for line in (OUT/f'{case["id"]:03d}-adaptive-0.jsonl').open()]
+        assert not any(r['source'] in ('ppo','ppo_plan') for r in rows)
+        np.testing.assert_allclose([[r['issued_steering'],r['issued_accel'],r['applied_steering'],r['applied_accel']] for r in rows],
+            [[r['issued_steering'],r['issued_accel'],r['applied_steering'],r['applied_accel']] for r in reference_rows],rtol=0,atol=1e-12)
     values=dict(failed=n<120 or any(r['collision'] or r['corridor_exceeded'] for r in rows),
         rmse_m=math.sqrt((sum(r['error']**2 for r in rows)+(120-n)*6.25)/120),
         heading_rms=float(np.sqrt(np.mean([r['heading_error']**2 for r in rows]))),

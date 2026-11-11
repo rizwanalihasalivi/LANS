@@ -62,6 +62,9 @@ stage on this cohort. It is **0.029108%, not 10%**. The 4.464324% comparison wit
 LQR includes the analytical adaptive/MPC contribution and must not be attributed
 entirely to PPO. The 0.167957% adaptive comparison crosses zero and does not
 establish reliable superiority over the strong nonlearned controller.
+The absolute BC difference is approximately **0.000024018 m (0.024 mm)**;
+statistical detectability here does not establish practical significance under
+sensor noise or native simulation.
 
 The original sequence arm was 0.084299% worse than adaptive/MPC and 0.223499%
 worse than its BC initialization. The correction repairs that observed
@@ -72,10 +75,11 @@ degradation, but does not establish a large new controller advantage.
 All 1080 prospective episodes record **zero collisions and zero corridor
 failures**. This is evidence on the tested cohort, not universal safety.
 
-The corrected hybrid's mean heading RMS is 0.013559075, versus LQR's
-0.012315989: **10.093267% higher**. Actor 44 fails the registered 110% mean
+The corrected hybrid's mean heading RMS is 0.013559075 rad, versus LQR's
+0.012315989 rad: **10.093267% higher**. Actor 44 fails the registered 110% mean
 heading threshold. Steering-rate RMS is 0.096944823 versus LQR's 0.093839979:
-**3.308659% higher**. Therefore the candidate does not dominate LQR in every
+**3.308659% higher** (both in rad/s). Therefore the candidate does not dominate
+LQR in every
 metric, even though its steering-rate threshold passes.
 
 Each corrected actor fails the per-case 99%-of-LQR progress condition. The
@@ -113,6 +117,16 @@ The conditional prefix relaxation is retained as a diagnostic, with a
 26.482693% optimistic maximum gain on opened training fixtures. It assumes
 zero error after an unmodifiable prefix and is neither attained performance
 nor a proof that ten percent is feasible or impossible under all real guards.
+
+The completed independent audit **passed**: all 196608 PPO transitions and
+complete analytical reward shadows, 1080 comparison episodes / 129600 ticks,
+8454 admitted training plans and 4788 admitted comparison plans were replayed.
+The separate probe replay passed 192 episodes and 550 admitted plans. Focused
+functional checks finished **17/17 passing**. Training itself included
+**3/1/4 terminated failures** for seeds 42/43/44 in each arm (eight per arm);
+these are retained in full and are distinct from the zero failures observed on
+the prospective comparison cohort. Audit success does not make those training
+failures or failed promotion criteria disappear.
 
 Further progress requires more than citing the larger optimizer count: PPO's
 additional whole-run benefit must survive the strong analytical and BC controls,

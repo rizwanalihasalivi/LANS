@@ -3,7 +3,7 @@ import math
 import numpy as np
 from scipy.linalg import solve_continuous_are
 from models.bicycle_model import VEHICLE_PARAMS,get_error_state_model
-from integrations.unified_lans.physics import Command,advance,constrain,errors
+from integrations.unified_lans.physics import Command,advance,constrain,errors,clip_scalar
 from integrations.unified_lans.controller import Pipeline
 from integrations.unified_lans.traffic import Supervisor,extrapolate
 from .kernels import rollout,step
@@ -32,7 +32,7 @@ class ScheduledLQR:
         vy=(p['lr']*v-p['m']*p['lf']*v**3/(l*p['Cr']))*k
         target=np.array([0.,0.,-vy/v,0.])
         feedforward=(l+p['m']/l*(p['lr']/p['Cf']-p['lf']/p['Cr'])*v*v)*k
-        return float(np.clip(feedforward-gain(scheduled,self.penalty,self.stiffness)@(e-target),-.5,.5))
+        return float(clip_scalar(feedforward-gain(scheduled,self.penalty,self.stiffness)@(e-target),-.5,.5))
 
 
 class StopSupervisor(Supervisor):
@@ -92,11 +92,11 @@ class Controller(Pipeline):
         estimate=self._id_grid[index]
         if 0<index<len(losses)-1:
             left,middle,right=losses[index-1:index+2];curvature=left-2*middle+right
-            if curvature>1e-16:estimate+=.025*float(np.clip(.5*(left-right)/curvature,-1,1))
-        self.stiffness_estimate=float(np.clip(estimate,.7,1.3))
+            if curvature>1e-16:estimate+=.025*float(clip_scalar(.5*(left-right)/curvature,-1,1))
+        self.stiffness_estimate=float(clip_scalar(estimate,.7,1.3))
         compatible=self._id_grid[losses<=losses.min()+1e-8]
         self.stiffness_uncertainty=max(.025,float(np.max(abs(compatible-self.stiffness_estimate)))) if self._id_steps>=6 else .3
-        self.feedback_stiffness=float(np.clip(round(self.stiffness_estimate*20)/20,.7,1.3))
+        self.feedback_stiffness=float(clip_scalar(round(self.stiffness_estimate*20)/20,.7,1.3))
         self.baseline_fn.stiffness=self.feedback_stiffness
         self._gains=gain_table(self.baseline_fn.penalty,self.feedback_stiffness)
 
@@ -160,7 +160,7 @@ class Controller(Pipeline):
                 if risk.state!='DANGER':
                     plan=self.planner.plan(z,self.route,self.issued.steering,self.cfg,self.feedback_stiffness,self.baseline_fn.penalty)
                     if plan is not None:
-                        residual=float(np.clip(plan[0]-self.baseline_fn(z,self.route),-self.cfg.residual_limit,self.cfg.residual_limit))
+                        residual=float(clip_scalar(plan[0]-self.baseline_fn(z,self.route),-self.cfg.residual_limit,self.cfg.residual_limit))
                         if abs(residual)>1e-10:
                             self._plan=plan;self._plan_residual=residual
                             self.deterministic_grid=tuple(self._base_grid)+(residual,)

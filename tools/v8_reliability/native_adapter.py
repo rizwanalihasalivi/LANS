@@ -8,7 +8,7 @@ from dataclasses import asdict
 from pathlib import Path
 import json,math,time,resource
 import numpy as np
-from integrations.unified_lans.physics import Config,Command,errors
+from integrations.unified_lans.physics import Config,Command,errors,clip_scalar
 from integrations.unified_lans.traffic import Packet
 from integrations.unified_lans.inference import AsyncPPO,sha
 from integrations.unified_lans.run import clean
@@ -47,7 +47,22 @@ def measured_state(node,left,right):
     return state,float(steering)
 
 
-def native_main(driver,case):
+def physical_steps(driver,left,right,command,cruise_target,actuator,previous_measured,substeps,physics_dt):
+    """Unchanged1ms sensor/actuator sequence, reusable by equivalent backends."""
+    max_measured_rate=0.;max_actuator_rate=0.
+    for _ in range(substeps):
+        old=actuator
+        actuator=float(clip_scalar(command.steering,actuator-.59*physics_dt,actuator+.59*physics_dt))
+        max_actuator_rate=max(max_actuator_rate,abs(actuator-old)/physics_dt)
+        driver.setSteeringAngle(-actuator);driver.setCruisingSpeed(cruise_target*3.6)
+        if driver.step()==-1:raise RuntimeError('native simulator stopped within measured episode')
+        measured=-(left.getValue()+right.getValue())/2
+        max_measured_rate=max(max_measured_rate,abs(measured-previous_measured)/physics_dt)
+        previous_measured=measured
+    return actuator,previous_measured,max_actuator_rate,max_measured_rate
+
+
+def native_main(driver,case,advance_physics=physical_steps):
     out=Path(case['output']);out.mkdir(parents=True,exist_ok=True)
     cfg=Config(horizon=2.);physics_dt=driver.getBasicTimeStep()/1000
     substeps=round(cfg.dt/physics_dt)
@@ -133,18 +148,11 @@ def native_main(driver,case):
                 while controller.pending and controller.pending[0][0]<=now+1e-9:
                     _,controller.applied=controller.pending.pop(0)
                 command=controller.applied
-                cruise_target=float(np.clip(before[3]+command.accel*cfg.dt,0.,case['speed']))
-                max_measured_rate=0.;max_actuator_rate=0.;actuator_before=actuator
+                cruise_target=float(clip_scalar(before[3]+command.accel*cfg.dt,0.,case['speed']))
+                actuator_before=actuator
                 physics_start=time.perf_counter()
-                for _ in range(substeps):
-                    old=actuator
-                    actuator=float(np.clip(command.steering,actuator-.59*physics_dt,actuator+.59*physics_dt))
-                    max_actuator_rate=max(max_actuator_rate,abs(actuator-old)/physics_dt)
-                    driver.setSteeringAngle(-actuator);driver.setCruisingSpeed(cruise_target*3.6)
-                    if driver.step()==-1:raise RuntimeError('native simulator stopped within measured episode')
-                    measured=-(left.getValue()+right.getValue())/2
-                    max_measured_rate=max(max_measured_rate,abs(measured-previous_measured)/physics_dt)
-                    previous_measured=measured
+                actuator,previous_measured,max_actuator_rate,max_measured_rate=advance_physics(
+                    driver,left,right,command,cruise_target,actuator,previous_measured,substeps,physics_dt)
                 physics_wall_ms=1000*(time.perf_counter()-physics_start)
                 controller.history.append((now,now+cfg.dt,command))
                 controller.history=[h for h in controller.history if h[1]>=now-2*cfg.ego_ttl]

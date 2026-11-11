@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import math
 import time
 import numpy as np
-from .physics import Command, Config, advance, baseline, constrain, errors
+from .physics import Command, Config, advance, baseline, constrain, errors,clip_scalar
 from .traffic import Inbox, Supervisor, extrapolate
 
 
@@ -18,7 +18,7 @@ class Proposal:
 
 def deterministic(state, route, gains):
     e,_ = errors(state,route)
-    return float(np.clip(-gains[0]*e[0]-gains[1]*e[2],-.08,.08))
+    return float(clip_scalar(-gains[0]*e[0]-gains[1]*e[2],-.08,.08))
 
 
 class Pipeline:
@@ -117,7 +117,7 @@ class Pipeline:
             state='DANGER';reason='ego_missing_or_stale';risk=None;source='hold_brake'
         else:
             risk=self.supervisor.assess(z,self.inbox,self.expected,now,now+self.delay)
-            nominal=float(np.clip((self.target_speed-z[3])*.8,-cfg.max_brake,cfg.max_accel))
+            nominal=float(clip_scalar((self.target_speed-z[3])*.8,-cfg.max_brake,cfg.max_accel))
             accel=self.supervisor.acceleration(nominal,risk)
             lqr=self.baseline_fn(z,self.route)
             command=constrain(Command(lqr,accel),self.issued,cfg)

@@ -74,13 +74,19 @@ def baseline(state, route):
     return _lqr(max(2., round(float(state[3])*2)/2))(e,k)
 
 
+def clip_scalar(value, lower, upper):
+    """Scalar clipping without NumPy array dispatch; preserve NaN propagation."""
+    if value!=value or lower!=lower or upper!=upper:return float('nan')
+    return min(upper,max(lower,value))
+
+
 def constrain(command, previous, cfg, interval=None):
-    if not np.isfinite([command.steering,command.accel]).all():
+    if not math.isfinite(command.steering) or not math.isfinite(command.accel):
         raise ValueError('nonfinite command')
     delta = cfg.steering_rate*(cfg.dt if interval is None else interval)
-    steer = np.clip(command.steering, previous.steering-delta, previous.steering+delta)
-    return Command(float(np.clip(steer,-cfg.steering_limit,cfg.steering_limit)),
-                   float(np.clip(command.accel,-cfg.max_brake,cfg.max_accel)))
+    steer = clip_scalar(command.steering, previous.steering-delta, previous.steering+delta)
+    return Command(float(clip_scalar(steer,-cfg.steering_limit,cfg.steering_limit)),
+                   float(clip_scalar(command.accel,-cfg.max_brake,cfg.max_accel)))
 
 
 def advance(state, command, duration, stiffness=1.):

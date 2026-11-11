@@ -36,9 +36,11 @@ cohort is diagnostic and never pooled into this new result.
 `verify.py` replays every physical transition, complete analytical reward
 shadow, causal feature, reward component, admitted three-model plan and
 deterministic evaluation action. Seed-level audit caches pin input and source
-hashes so a later independent evaluation-stage correction does not require
-silently skipping or repeating unaffected training checks. A passing replay
-does not imply the ten-percent performance and quality gates passed.
+hashes. The default command physically replays all transitions even when a
+matching prior seed proof exists. The explicit `--reuse-training-audit` option
+can resume an unchanged audit using matching seed proofs; its log identifies
+every reuse. Changes to pinned sources invalidate them. A passing replay does
+not imply the ten-percent performance and quality gates passed.
 
 In a clean clone with recorded Python 3.10 dependencies, restore the v10 and
 v11 evidence at the repository root before replaying this study. Archives can

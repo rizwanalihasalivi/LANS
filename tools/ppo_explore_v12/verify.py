@@ -98,19 +98,23 @@ def training_worker(seed,limit=None):
         independently_audited_plans=selected,failures=failures,shadow_controller_replayed=True)
 
 
-def training_stage(seed):
+def training_stage(seed,reuse=False):
     folder=DATA/f'policies/seed-{seed}';p=sources(folder)
     inputs={str(path.relative_to(ROOT)):sha(path) for path in folder.rglob('*') if path.is_file() and '__pycache__' not in path.parts}
     for name in p['source_hashes']:inputs[name]=sha(ROOT/name)
     inputs[str(Path(__file__).relative_to(ROOT))]=sha(__file__)
     cache=DATA/f'audits/training-{seed}-{sha(__file__)[:12]}.json'
+    cached=None
     if cache.exists():
         cached=json.loads(cache.read_text());assert cached['input_hashes']==inputs
         assert cached['passed'] and cached['report']['steps']==65536
-        print('SOURCE-PINNED TRAINING AUDIT REUSED',seed,flush=True);return cached['report']
+        if reuse:
+            print('SOURCE-PINNED TRAINING AUDIT REUSED',seed,flush=True);return cached['report']
     result=training_worker(seed)
     for name,digest in inputs.items():assert sha(ROOT/name)==digest,('Training audit input changed',name)
-    cache.parent.mkdir(exist_ok=True);dump(cache,dict(passed=True,input_hashes=inputs,report=result))
+    if cached is not None:equal(cached['report'],result)
+    else:
+        cache.parent.mkdir(exist_ok=True);dump(cache,dict(passed=True,input_hashes=inputs,report=result))
     return result
 
 
@@ -160,7 +164,11 @@ def statistics(records,assessment,p):
 
 def main():
     import torch
+    import argparse
     from .evaluate import cases
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--reuse-training-audit',action='store_true',help='Reuse exact source/input-pinned seed proofs instead of physically replaying them again')
+    args=parser.parse_args()
     torch.set_num_threads(1);out=DATA/'evaluation';p=sources(out)
     assert p['cases']==cases() and p['bootstrap_seed']==2134124 and p['episodes']==1008
     records=json.loads((out/'summary.json').read_text());assert len(records)==1008
@@ -172,7 +180,7 @@ def main():
                 for name in json.loads(path.read_text()).get('source_hashes',{}):inputs[name]=sha(ROOT/name)
     for record in p['policies'].values():assert sha(ROOT/record['path'])==record['sha256'];inputs[record['path']]=record['sha256']
     with ProcessPoolExecutor(max_workers=3,mp_context=mp.get_context('spawn')) as pool:
-        training=[f.result() for f in as_completed([pool.submit(training_stage,s) for s in SEEDS])]
+        training=[f.result() for f in as_completed([pool.submit(training_stage,s,args.reuse_training_audit) for s in SEEDS])]
     for path in (DATA/'audits').glob('*.json'):inputs[str(path.relative_to(ROOT))]=sha(path)
     print('VERIFIED ALL 196608 EXPLORATION PPO AND SHADOW TRANSITIONS',flush=True);audited=[]
     for record in records:assert record['case']==p['cases'][record['case']['id']]

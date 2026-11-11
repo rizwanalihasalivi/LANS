@@ -76,10 +76,28 @@ def admitted(c,row,now,prior,previous):
     assert candidate[:,1].min()>=-1e-12 and row['sequence_cost']<row['sequence_reference_cost']-1e-8
 
 
-def training_worker(seed):
-    folder=DATA/f'policies/seed-{seed}';p=sources(folder);m=json.loads((folder/'manifest.json').read_text())
-    assert m['steps']==32768 and sha(folder/'policy.zip')==m['policy_sha256'] and sha(folder/'bc-policy.zip')==m['bc_policy_sha256']
+def training_worker(seed,variant='policies',limit=None):
+    import torch
+    torch.set_num_threads(1)
+    folder=DATA/f'{variant}/seed-{seed}';p=sources(folder);m=json.loads((folder/'manifest.json').read_text())
+    assert m['steps']==32768 and sha(folder/'policy.zip')==m['policy_sha256']
+    if variant=='policies':assert sha(folder/'bc-policy.zip')==m['bc_policy_sha256']
+    else:assert sha(DATA/f'policies/seed-{seed}/bc-policy.zip')==m['source_bc_sha256']
     assert p['seed']==m['seed']==seed and p['contract']==m['contract']==CONTRACT
+    from stable_baselines3 import PPO
+    from .damped import optimizer_steps
+    model=PPO.load(folder/'policy.zip',device='cpu')
+    updates=optimizer_steps(model)
+    assert model.num_timesteps==32768
+    if variant=='policies-damped':
+        assert updates==m['optimizer_steps'] and model._n_updates==m['sb3_epoch_counter']
+        declaration=json.loads((DATA/'policies-damped/declaration.json').read_text())
+        assert declaration['original_assessment_not_available']
+        assert declaration['protocol_sha256']==p['declaration_sha256']==sha(Path(__file__).parent/'DAMPED_PROTOCOL.md')
+        assert p['actor_step_factor']==.01
+    else:
+        # The historical field is SB3's epoch counter, not Adam's update count.
+        assert model._n_updates==m['actual_ppo_updates']
     path=folder/'training.jsonl';assert sha(path)==m['trace_sha256']
     episode=-1;count=0;selected=0;failures=0;prior=None;rng=np.random.default_rng(seed)
     for line in path.open():
@@ -128,12 +146,14 @@ def training_worker(seed):
         equal(row['actual_cost'],ac);equal(row['shadow_cost'],sc);equal(row['actual_reward'],reward);equal(row['reward'],reward+bonus)
         assert row['terminated']==fail and row['truncated']==(tick==119 and not fail)
         previous=c.applied;shadow_previous=shadow.applied;count+=1;failures+=fail
-    assert count==32768
-    return dict(seed=seed,steps=count,independently_audited_plans=selected,failures=failures,shadow_controller_replayed=True)
+        if limit is not None and count>=limit:break
+    assert count==(32768 if limit is None else limit)
+    return dict(seed=seed,variant=variant,steps=count,adam_optimizer_steps=updates,sb3_epoch_counter=model._n_updates,
+        independently_audited_plans=selected,failures=failures,shadow_controller_replayed=True)
 
 
-def evaluate_record(meta):
-    from .evaluate import OUT
+def evaluate_record(meta,directory='evaluation'):
+    OUT=DATA/directory
     case=meta['case'];mode=meta['mode'];seed=meta['seed'];path=OUT/f'{case["id"]:03d}-{mode}-{seed}.jsonl'
     assert sha(path)==meta['raw_sha256'] and meta['protocol_sha256']==sha(OUT/'protocol.json')
     equal(json.loads(path.with_suffix('.json').read_text()),meta)
@@ -164,7 +184,7 @@ def evaluate_record(meta):
             if mode!='teacher':
                 import torch
                 from stable_baselines3 import PPO
-                torch.set_num_threads(1);key=(mode,seed)
+                torch.set_num_threads(1);key=(directory,mode,seed)
                 if key not in _MODELS:
                     policies=json.loads((OUT/'protocol.json').read_text())['policies'];record=policies[f'{mode}-{seed}']
                     assert sha(ROOT/record['path'])==record['sha256'];_MODELS[key]=PPO.load(ROOT/record['path'],device='cpu')
@@ -186,7 +206,7 @@ def evaluate_record(meta):
         previous=c.applied
     n=len(rows);assert n==meta['ticks'] and meta['expected_ticks']==120
     if case['delay']==.1 and mode!='lqr':
-        reference_rows=[json.loads(line) for line in (OUT/f'{case["id"]:03d}-adaptive-0.jsonl').open()]
+        reference_rows=[json.loads(line) for line in (DATA/'evaluation'/f'{case["id"]:03d}-adaptive-0.jsonl').open()]
         assert not any(r['source'] in ('ppo','ppo_plan') for r in rows)
         np.testing.assert_allclose([[r['issued_steering'],r['issued_accel'],r['applied_steering'],r['applied_accel']] for r in rows],
             [[r['issued_steering'],r['issued_accel'],r['applied_steering'],r['applied_accel']] for r in reference_rows],rtol=0,atol=1e-12)
@@ -199,35 +219,9 @@ def evaluate_record(meta):
     return dict(ticks=n,independently_audited_plans=selected)
 
 
-def main():
-    import torch
-    torch.set_num_threads(1)
-    input_hashes={str(Path(__file__).relative_to(ROOT)):sha(__file__)}
-    for path in DATA.rglob('*'):
-        if path.is_file() and path!=DATA/'verification.json' and '__pycache__' not in path.parts:
-            input_hashes[str(path.relative_to(ROOT))]=sha(path)
-            if path.name=='protocol.json':
-                for name in json.loads(path.read_text()).get('source_hashes',{}):
-                    if (ROOT/name).is_file():input_hashes[name]=sha(ROOT/name)
-    dataset=DATA/'dataset';p=sources(dataset);m=json.loads((dataset/'manifest.json').read_text())
-    assert sha(dataset/'dataset.npz')==m['dataset_sha256'];data=np.load(dataset/'dataset.npz');offset=0
-    for case in json.loads((DATA/'probe/protocol.json').read_text())['cases']:
-        path=DATA/f'probe/{case["id"]:03d}-sequence_teacher.jsonl';assert sha(path)==p['inputs'][str(path.relative_to(ROOT))]
-        rows=[json.loads(line) for line in path.read_text().splitlines()];values=reconstruct(case,rows)
-        np.testing.assert_array_equal(data['observations'][offset:offset+len(rows)],values)
-        np.testing.assert_array_equal(data['actions'][offset:offset+len(rows)],np.asarray([r['label'] for r in rows],np.float32));offset+=len(rows)
-    assert offset==m['samples']==7680
-    with ProcessPoolExecutor(max_workers=3,mp_context=mp.get_context('spawn')) as pool:
-        training=[f.result() for f in as_completed([pool.submit(training_worker,s) for s in (42,43,44)])]
-    print('VERIFIED ALL 98304 PPO AND SHADOW TRANSITIONS',flush=True)
-    out=DATA/'evaluation';p=sources(out);records=json.loads((out/'summary.json').read_text());assert len(records)==864
-    for record in records:assert record['case']==p['cases'][record['case']['id']]
-    for record in p['policies'].values():assert sha(ROOT/record['path'])==record['sha256']
-    for record in p['policies'].values():input_hashes[record['path']]=sha(ROOT/record['path'])
-    with ProcessPoolExecutor(max_workers=3,mp_context=mp.get_context('spawn')) as pool:
-        audited=[f.result() for f in as_completed([pool.submit(evaluate_record,r) for r in records])]
-    # Paired arithmetic is independently rebuilt from the raw-verified per-case scores.
-    assessment=json.loads((out/'assessment.json').read_text());lookup={(r['case']['id'],r['mode'],r['seed']):r for r in records}
+def check_assessment(records,assessment,p):
+    """Independent paired arithmetic from raw-verified per-case scores."""
+    lookup={(r['case']['id'],r['mode'],r['seed']):r for r in records}
     assert len(lookup)==864
     for mode in ('lqr','adaptive','teacher','scalar','bc'):
         groups={}
@@ -255,12 +249,69 @@ def main():
         if assessment['comparisons'][mode]['ci95_percent'][0]<=0:reasons.append('confidence_'+mode)
     equal(assessment['reasons'],reasons);assert assessment['requested_10_passed']==(not reasons)
     assert assessment['adaptive_ci_lower_at_least_10']==(assessment['comparisons']['adaptive']['ci95_percent'][0]>=10)
+
+
+def check_original_comparison(original,corrected,value,cases):
+    old={(r['case']['id'],r['seed']):r for r in original if r['mode']=='ppo'}
+    new={(r['case']['id'],r['seed']):r for r in corrected};groups={}
+    assert len(old)==len(new)==216
+    for case in cases:
+        i=case['id'];groups.setdefault((case['scenario'],case['speed'],case['delay']),[]).append([
+            np.mean([old[(i,s)]['rmse_m'] for s in (42,43,44)]),np.mean([new[(i,s)]['rmse_m'] for s in (42,43,44)])])
+    pairs=np.asarray([np.mean(v,axis=0) for v in groups.values()]);mean=pairs.mean(axis=0)
+    draw=np.random.default_rng(2134114).integers(36,size=(5000,36));sample=pairs[draw].mean(axis=1)
+    assert value['clusters']==36
+    equal(value['gain_percent'],100*(1-mean[1]/mean[0]))
+    equal(value['ci95_percent'],np.quantile(100*(1-sample[:,1]/sample[:,0]),[.025,.975]).tolist())
+
+
+def main():
+    import torch
+    torch.set_num_threads(1)
+    if not (DATA/'damped-evaluation/assessment.json').exists():
+        print('Combined audit deferred until both registered PPO arms and evaluations finish; no successful audit report written.',flush=True)
+        return
+    from .verify import main as verify_probe
+    verify_probe()
+    input_hashes={str(Path(__file__).relative_to(ROOT)):sha(__file__)}
+    for path in DATA.rglob('*'):
+        if path.is_file() and path!=DATA/'verification.json' and '__pycache__' not in path.parts:
+            input_hashes[str(path.relative_to(ROOT))]=sha(path)
+            if path.name=='protocol.json':
+                for name in json.loads(path.read_text()).get('source_hashes',{}):
+                    if (ROOT/name).is_file():input_hashes[name]=sha(ROOT/name)
+    dataset=DATA/'dataset';p=sources(dataset);m=json.loads((dataset/'manifest.json').read_text())
+    assert sha(dataset/'dataset.npz')==m['dataset_sha256'];data=np.load(dataset/'dataset.npz');offset=0
+    for case in json.loads((DATA/'probe/protocol.json').read_text())['cases']:
+        path=DATA/f'probe/{case["id"]:03d}-sequence_teacher.jsonl';assert sha(path)==p['inputs'][str(path.relative_to(ROOT))]
+        rows=[json.loads(line) for line in path.read_text().splitlines()];values=reconstruct(case,rows)
+        np.testing.assert_array_equal(data['observations'][offset:offset+len(rows)],values)
+        np.testing.assert_array_equal(data['actions'][offset:offset+len(rows)],np.asarray([r['label'] for r in rows],np.float32));offset+=len(rows)
+    assert offset==m['samples']==7680
+    with ProcessPoolExecutor(max_workers=3,mp_context=mp.get_context('spawn')) as pool:
+        training=[f.result() for f in as_completed([pool.submit(training_worker,s,variant)
+            for variant in ('policies','policies-damped') for s in (42,43,44)])]
+    print('VERIFIED ALL 196608 PPO AND SHADOW TRANSITIONS',flush=True)
+    out=DATA/'evaluation';p=sources(out);records=json.loads((out/'summary.json').read_text());assert len(records)==864
+    damp=DATA/'damped-evaluation';dp=sources(damp);corrected=json.loads((damp/'summary.json').read_text());assert len(corrected)==216
+    assert dp['cases']==p['cases'] and dp['reference_summary_sha256']==sha(out/'summary.json')
+    assert dp['declaration_sha256']==sha(DATA/'policies-damped/declaration.json')
+    for record in records+corrected:assert record['case']==p['cases'][record['case']['id']]
+    for record in list(p['policies'].values())+list(dp['policies'].values()):
+        assert sha(ROOT/record['path'])==record['sha256'];input_hashes[record['path']]=record['sha256']
+    with ProcessPoolExecutor(max_workers=3,mp_context=mp.get_context('spawn')) as pool:
+        audited=[f.result() for f in as_completed([pool.submit(evaluate_record,r,directory)
+            for directory,rr in (('evaluation',records),('damped-evaluation',corrected)) for r in rr])]
+    original_assessment=json.loads((out/'assessment.json').read_text());corrected_assessment=json.loads((damp/'assessment.json').read_text())
+    check_assessment(records,original_assessment,p)
+    check_assessment([r for r in records if r['mode']!='ppo']+corrected,corrected_assessment,p)
+    check_original_comparison(records,corrected,corrected_assessment['comparisons']['original_sequence_ppo'],p['cases'])
     for name,digest in input_hashes.items():assert sha(ROOT/name)==digest,('Audit input changed',name)
-    report=dict(passed=True,teacher_samples=7680,training=sorted(training,key=lambda r:r['seed']),evaluation_episodes=864,
+    report=dict(passed=True,teacher_samples=7680,training=sorted(training,key=lambda r:(r['variant'],r['seed'])),evaluation_episodes=1080,
         evaluation_ticks=sum(r['ticks'] for r in audited),independently_audited_eval_plans=sum(r['independently_audited_plans'] for r in audited),
         source_sha256=sha(__file__),verifier_sha256=sha(__file__),input_hashes=input_hashes,
-        stages=dict(training_steps=98304,probe_episodes=192,evaluation_episodes=864),all_requested_stages_verified=True,
-        assessment_sha256=sha(out/'assessment.json'),
+        stages=dict(training_steps=196608,probe_episodes=192,evaluation_episodes=1080),all_requested_stages_verified=True,
+        assessment_sha256={'original':sha(out/'assessment.json'),'damped':sha(damp/'assessment.json')},
         limitation='Actor optimizer trajectories not rerun; actual physics, complete analytical reward shadows and all admitted sequence guards are replayed. Shaping is recomputed from frozen causal model code.')
     dump(DATA/'verification.json',report);print(json.dumps(report),flush=True)
 

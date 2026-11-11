@@ -8,11 +8,11 @@ from integrations.unified_lans.traffic import Packet,velocity
 from integrations.unified_lans.simulation import move_npcs,truth_metrics
 from integrations.unified_lans.inference import sha
 from tools.unified_control_v8.control import Controller as Base
-from tools.unified_control_v9.learning import setup
+from tools.unified_control_v9.learning import setup,training_case
 from tools.unified_control_v9.verify import equal
 from tools.ppo_benefit_v10.core import PARAMS,observation as scalar_features
 from .control import Controller,PlanProposal
-from .learning import ROOT,DATA,features,shaping,reconstruct
+from .learning import ROOT,DATA,CONTRACT,features,shaping,reconstruct
 from .probe import dump
 from .verify import plan_python
 
@@ -77,12 +77,14 @@ def admitted(c,row,now,prior,previous):
 def training_worker(seed):
     folder=DATA/f'policies/seed-{seed}';p=sources(folder);m=json.loads((folder/'manifest.json').read_text())
     assert m['steps']==32768 and sha(folder/'policy.zip')==m['policy_sha256'] and sha(folder/'bc-policy.zip')==m['bc_policy_sha256']
+    assert p['seed']==m['seed']==seed and p['contract']==m['contract']==CONTRACT
     path=folder/'training.jsonl';assert sha(path)==m['trace_sha256']
-    episode=-1;count=0;selected=0;failures=0;prior=None
+    episode=-1;count=0;selected=0;failures=0;prior=None;rng=np.random.default_rng(seed)
     for line in path.open():
         row=json.loads(line);case=row['case'];now=row['time_s'];tick=row['tick']
         if row['episode_id']!=episode:
-            assert tick==0;episode=row['episode_id']
+            assert tick==0 and row['episode_id']==episode+1;episode=row['episode_id']
+            assert case==training_case(rng),'Training RNG/case sequence changed'
             c,clock,state,npcs,_=setup(case,'deterministic',Controller,PARAMS,grid=True)
             shadow,sclock,sego,_,_=setup(case,'deterministic',Base,PARAMS,grid=True)
             prior=None;last=np.zeros(8);sequence=0;previous=Command();shadow_previous=Command()
@@ -188,6 +190,7 @@ def main():
         training=[f.result() for f in as_completed([pool.submit(training_worker,s) for s in (42,43,44)])]
     print('VERIFIED ALL 98304 PPO AND SHADOW TRANSITIONS',flush=True)
     out=DATA/'evaluation';p=sources(out);records=json.loads((out/'summary.json').read_text());assert len(records)==864
+    for record in records:assert record['case']==p['cases'][record['case']['id']]
     for record in p['policies'].values():assert sha(ROOT/record['path'])==record['sha256']
     with ProcessPoolExecutor(max_workers=3,mp_context=mp.get_context('spawn')) as pool:
         audited=[f.result() for f in as_completed([pool.submit(evaluate_record,r) for r in records])]
@@ -204,6 +207,22 @@ def main():
         draw=np.random.default_rng(2134114).integers(36,size=(5000,36));samples=pairs[draw].mean(axis=1)
         equal(assessment['comparisons'][mode]['gain_percent'],100*(1-mean[1]/mean[0]))
         equal(assessment['comparisons'][mode]['ci95_percent'],np.quantile(100*(1-samples[:,1]/samples[:,0]),[.025,.975]).tolist())
+    for mode in p['modes']:
+        group=[r for r in records if r['mode']==mode]
+        for metric in ('rmse_m','heading_rms','rate_rms','progress_m'):
+            equal(assessment['metrics'][mode][metric],float(np.mean([r[metric] for r in group])))
+    reasons=[]
+    for seed in (42,43,44):
+        pp=[lookup[(case['id'],'ppo',seed)] for case in p['cases']];base=[lookup[(case['id'],'lqr',0)] for case in p['cases']]
+        if any(r['failed'] for r in pp):reasons.append(f'actor_{seed}_failure')
+        if any(r['progress_m']<.99*b['progress_m'] for r,b in zip(pp,base)):reasons.append(f'actor_{seed}_progress')
+        for metric in ('heading_rms','rate_rms'):
+            if np.mean([r[metric] for r in pp])>1.1*np.mean([r[metric] for r in base]):reasons.append(f'actor_{seed}_{metric}')
+    if assessment['comparisons']['adaptive']['gain_percent']<10:reasons.append('requested_10_mean_gain')
+    for mode in ('adaptive','scalar','bc'):
+        if assessment['comparisons'][mode]['ci95_percent'][0]<=0:reasons.append('confidence_'+mode)
+    equal(assessment['reasons'],reasons);assert assessment['requested_10_passed']==(not reasons)
+    assert assessment['adaptive_ci_lower_at_least_10']==(assessment['comparisons']['adaptive']['ci95_percent'][0]>=10)
     report=dict(passed=True,teacher_samples=7680,training=sorted(training,key=lambda r:r['seed']),evaluation_episodes=864,
         evaluation_ticks=sum(r['ticks'] for r in audited),independently_audited_eval_plans=sum(r['independently_audited_plans'] for r in audited),
         source_sha256=sha(__file__),assessment_sha256=sha(out/'assessment.json'),

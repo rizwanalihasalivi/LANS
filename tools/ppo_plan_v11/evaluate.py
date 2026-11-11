@@ -126,6 +126,7 @@ def assess(records):
     for mode in ('adaptive','scalar','bc'):
         if comparisons[mode]['ci95_percent'][0]<=0:reasons.append('confidence_'+mode)
     return dict(metrics=metrics,comparisons=comparisons,actors=actors,requested_10_passed=not reasons,reasons=reasons,
+        adaptive_ci_lower_at_least_10=comparisons['adaptive']['ci95_percent'][0]>=10,
         failures={m:sum(r['failed'] for r in records if r['mode']==m) for m in MODES})
 
 

@@ -1,0 +1,209 @@
+{
+  "all_four_resolved": false,
+  "original_policies_changed": false,
+  "fresh_final_cases_opened": false,
+  "default_controller_candidate_promoted": false,
+  "progress": {
+    "status": "development_pass_only",
+    "selected": {
+      "frequency": 3.0,
+      "failures": 0,
+      "minimum_progress_ratio": 0.9996111803412716,
+      "projection_infeasible_ticks": 264,
+      "mean_accel_jump": 0.15040683754536596
+    },
+    "independent_full_python_episodes": 1242
+  },
+  "tracking_quality": {
+    "status": "joint_target_not_met",
+    "aligned_scores": [
+      {
+        "arm": "lqr",
+        "ratios": {
+          "rmse_m": 1.0,
+          "heading_rms": 1.0,
+          "rate_rms": 1.0
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 1.0,
+        "eligible": true,
+        "tracking_pass": false
+      },
+      {
+        "arm": "prior",
+        "ratios": {
+          "rmse_m": 0.9664022844811749,
+          "heading_rms": 1.0788198529328699,
+          "rate_rms": 1.0269600783416715
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994244345639341,
+        "eligible": false,
+        "tracking_pass": false
+      },
+      {
+        "arm": "aligned-w0-cap1",
+        "ratios": {
+          "rmse_m": 0.997770402207502,
+          "heading_rms": 0.9992646092601589,
+          "rate_rms": 1.001908178672253
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994258676136057,
+        "eligible": false,
+        "tracking_pass": false
+      },
+      {
+        "arm": "aligned-w0-cap1.075",
+        "ratios": {
+          "rmse_m": 0.9679624648749935,
+          "heading_rms": 1.0754517649739972,
+          "rate_rms": 1.0167991324869878
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994258676136057,
+        "eligible": false,
+        "tracking_pass": false
+      },
+      {
+        "arm": "aligned-w0.5-cap1",
+        "ratios": {
+          "rmse_m": 0.9971970837093126,
+          "heading_rms": 0.9957320665246245,
+          "rate_rms": 0.9992663084242238
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994245905641653,
+        "eligible": true,
+        "tracking_pass": false
+      },
+      {
+        "arm": "aligned-w0.5-cap1.075",
+        "ratios": {
+          "rmse_m": 0.9675361187185312,
+          "heading_rms": 1.0733107377684379,
+          "rate_rms": 1.0158630739141399
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994245905641653,
+        "eligible": false,
+        "tracking_pass": false
+      },
+      {
+        "arm": "aligned-w1-cap1",
+        "ratios": {
+          "rmse_m": 0.9984611622841929,
+          "heading_rms": 0.9921670082145415,
+          "rate_rms": 0.9972952662656611
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994244345639341,
+        "eligible": true,
+        "tracking_pass": false
+      },
+      {
+        "arm": "aligned-w1-cap1.075",
+        "ratios": {
+          "rmse_m": 0.9684308167753051,
+          "heading_rms": 1.0689562465680549,
+          "rate_rms": 1.0131495850860073
+        },
+        "failures": 0,
+        "minimum_progress_ratio": 0.9994244345639341,
+        "eligible": false,
+        "tracking_pass": false
+      }
+    ],
+    "scope": "64 historical training fixtures, no new untouched final validation; quality-tight arms have too little tracking gain"
+  },
+  "timing": {
+    "status": "strict_50ms_not_met",
+    "audited_native": [
+      {
+        "passed": true,
+        "cohort": "native-phase-diagnostics-v1",
+        "episodes": 2,
+        "ticks": 480,
+        "recorded_functional_pass": true,
+        "response_misses": 16,
+        "scheduled_cycle_misses": 83,
+        "strict_timing_pass": false,
+        "scope": "independent raw/frame/time/sample-coverage/metric consistency; exposed single-vehicle transfer only; profiling cohorts include instrumentation overhead; no independent rigid-body re-integration or WCET proof"
+      },
+      {
+        "passed": true,
+        "cohort": "native-ablation-v1",
+        "episodes": 8,
+        "ticks": 1920,
+        "recorded_functional_pass": true,
+        "response_misses": 9,
+        "scheduled_cycle_misses": 314,
+        "strict_timing_pass": false,
+        "scope": "independent raw/frame/time/sample-coverage/metric consistency; exposed single-vehicle transfer only; profiling cohorts include instrumentation overhead; no independent rigid-body re-integration or WCET proof"
+      },
+      {
+        "passed": true,
+        "cohort": "native-loop-development-v1",
+        "episodes": 6,
+        "ticks": 1440,
+        "recorded_functional_pass": true,
+        "response_misses": 11,
+        "scheduled_cycle_misses": 652,
+        "strict_timing_pass": false,
+        "scope": "independent raw/frame/time/sample-coverage/metric consistency; exposed single-vehicle transfer only; profiling cohorts include instrumentation overhead; no independent rigid-body re-integration or WCET proof"
+      },
+      {
+        "passed": true,
+        "cohort": "native-hotspot-v1",
+        "episodes": 2,
+        "ticks": 1200,
+        "recorded_functional_pass": true,
+        "response_misses": 3,
+        "scheduled_cycle_misses": 38,
+        "strict_timing_pass": false,
+        "scope": "independent raw/frame/time/sample-coverage/metric consistency; exposed single-vehicle transfer only; profiling cohorts include instrumentation overhead; no independent rigid-body re-integration or WCET proof"
+      },
+      {
+        "passed": true,
+        "cohort": "native-scalar-v1",
+        "episodes": 2,
+        "ticks": 1200,
+        "recorded_functional_pass": true,
+        "response_misses": 2,
+        "scheduled_cycle_misses": 79,
+        "strict_timing_pass": false,
+        "scope": "independent raw/frame/time/sample-coverage/metric consistency; exposed single-vehicle transfer only; profiling cohorts include instrumentation overhead; no independent rigid-body re-integration or WCET proof"
+      },
+      {
+        "passed": true,
+        "cohort": "native-scalar-minimized-v1",
+        "episodes": 2,
+        "ticks": 1200,
+        "recorded_functional_pass": true,
+        "response_misses": 1,
+        "scheduled_cycle_misses": 34,
+        "strict_timing_pass": false,
+        "scope": "independent raw/frame/time/sample-coverage/metric consistency; exposed single-vehicle transfer only; profiling cohorts include instrumentation overhead; no independent rigid-body re-integration or WCET proof"
+      }
+    ],
+    "scope": "all22 exposed single-vehicle Webots experiments; retain profiling overhead and all misses; no WCET guarantee"
+  },
+  "tests": {
+    "relevant_core": 149,
+    "additional_archive_checks": 2,
+    "passed": true
+  },
+  "changes": {
+    "shared_scalar_operations": "finite command-equivalent arithmetic, NaN propagation/rejection",
+    "RK4": "allocation-free inner operations with frozen-equation equivalence tests",
+    "asynchronous_planning": "committed-prefix application forecast, no timestamp renewal or150msTTL change",
+    "native_loop": "optional equivalent C API call loop, every1msstep retained"
+  },
+  "limits": [
+    "No successful replacement promoted",
+    "No mathematical impossibility claim",
+    "No native traffic or real-world safety claim",
+    "No PPO training or novelty/publication claim"
+  ],
+  "scientific_status": "Development work and evidence preserved; 5%tracking, quality and timing must jointly pass before fresh final validation"
+}

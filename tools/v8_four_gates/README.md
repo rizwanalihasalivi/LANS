@@ -6,6 +6,14 @@ observed strict50ms response/full-cycle misses. Fresh final evaluation stays
 closed while development misses these joint requirements. No PPO policy,
 reward, training schedule or17-feature contract is changed here.
 
+The default controller keeps its existing law. New controller candidates remain
+experimental; only command-equivalent scalar operations and the reusable native
+step interface affect shared code. `RESULTS.json` records all open gates. The
+aligned512-record calibration's quality-eligible half-feedback arm gives0.280%
+RMSE gain, heading0.996 and steering-rate0.999 of LQR; it misses5%. The original
+case-progress regressions pass in development, but require independent component
+validation. There is no successful replacement/fresh-final result to announce.
+
 `longitudinal.py` replaces discontinuous acceleration selection with a bounded
 scalar barrier projection using received information. The7 exposed regression
 fixtures, all current comparators and3 original actors produced154 development
@@ -43,3 +51,10 @@ evidence. Read each recorded plan/source snapshot before reproducing a campaign.
 Independent audits reconstruct scalar dynamics, wire arrivals, FIFO and scores;
 native audits check recorded frame/timing/sample consistency. Failed gates and
 interrupted attempts remain part of the evidence.
+
+The sealed archive contains9,582 files (638,201,227 raw bytes) in13 bounded ZIPs.
+Run `python -m tools.v8_four_gates.seal --verify` to check its exact inventory.
+The relevant control suite passed149 tests, and2 separate archive-integrity
+checks passed. All1,242 full Python development episodes and22 native experiments
+passed their independent record/dynamics checks; scientific gate failures are
+retained separately from record-integrity success.

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "archives": 13,
+  "files": 9582,
+  "raw_bytes": 638201227,
+  "archive_bytes": 104816214,
+  "scope": "byte/coverage/CRC verification, not scientific gate acceptance"
+}

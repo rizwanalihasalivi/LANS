@@ -95,6 +95,17 @@ in every metric. The new PPO proposal is selected on 330 recorded ticks versus
 1682 for corrected v11; larger training effort does not guarantee more authority
 or a larger whole-run benefit.
 
+`authority.py` counts the recorded owner reasons without reinterpreting rejected
+plans as independently certified. On 0/50 ms fixtures, v12 has 16312 scored
+proposals: **15951 recorded predicted-guard rejections**, 31 that do not beat
+analytical cost, and only 330 selected plans. The corresponding guard-rejection
+counts are 14551 for v11 and 14643 for initial BC. On 100 ms fixtures all 8421
+recorded ticks per learned role are unscored and none selects PPO. Broader
+exploration repaired neither proposal feasibility nor the expired-action path.
+Learning proposals that satisfy the existing guards is a remaining research
+problem; lowering those guards would change the qualification claim. These
+diagnostic counts are preserved in `diagnostics/recorded-authority.json`.
+
 ## Verification, recovery and claim limits
 
 The registered protocol and all source preceded new training and fresh-case

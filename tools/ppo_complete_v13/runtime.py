@@ -287,7 +287,7 @@ def profile(cases,output,*,policy=None,mode='adaptive',controller_kwargs=None,st
         # These synthetic packets never enter the measured traces or scores.
         for case in cases:
             warm,clock,state,npcs,net=setup(case,'lqr' if mode=='lqr' else 'deterministic',controller_class(),kwargs,grid=mode!='lqr')
-            for i in range(3):
+            for i in range(40):
                 now=i*.05;clock.now=now;net.emit(now,state,npcs,warm.inbox)
                 ctx=warm.prepare(now);warm.score_candidate(ctx,np.zeros(8))
                 warm.score_candidate(ctx,np.full(8,.1));warm.finish(ctx)

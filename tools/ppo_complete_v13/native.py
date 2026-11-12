@@ -1,6 +1,6 @@
 """Isolated native Webots launchers; readiness is separate from final transfer."""
 from pathlib import Path
-import argparse,json,math,os,shutil,subprocess,time
+import argparse,hashlib,json,math,os,shutil,subprocess,time
 from .runtime import sha
 
 ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).parent
@@ -64,7 +64,7 @@ def readiness(output):
     print(json.dumps(result),flush=True);return result
 
 
-def prepare_episode(output,fixture,mode,policy=None,role='opened_development_bridge'):
+def prepare_episode(output,fixture,mode,policy=None,role='opened_development_bridge',*,scene_calibration=None,warmup_only=False):
     """Build a fresh physical world without running/opening any other fixtures."""
     import numpy as np
     from tools.unified_control_v9.learning import setup
@@ -90,13 +90,25 @@ def prepare_episode(output,fixture,mode,policy=None,role='opened_development_bri
     prefix=prefix.replace('forceDependentSlip [ 0 0 ] # REAR_SLIP',f'forceDependentSlip [ {rear:.16g} {rear:.16g} ] # REAR_SLIP')
     car=car.replace('  engineType "electric"','  engineType "electric"\n  engineMaxPower 100000\n  brakeCoefficient 1000')
     car=car.replace('  wheelsDampingConstant 5','  wheelsDampingConstant 0.2')
+    scene=None
+    if scene_calibration is not None:
+        scene_calibration=Path(scene_calibration).resolve()
+        scene=json.loads((scene_calibration/'scene-state.json').read_text())
+        expected=hashlib.sha256(json.dumps(fixture,sort_keys=True).encode()).hexdigest()
+        assert scene['fixture_sha256']==expected and scene['warmup_only']
+        from tools.unified_control_v9.native_adapter import Frame
+        calibrated_frame=Frame(np.asarray(scene['ego_native']),c.route,fixture['lateral'],fixture['heading'])
     ego=car.replace('controller "publication_v9"','controller "v13_native"')
     world=prefix+'DEF VEHICLE Car {'+ego;npc_defs={}
     for i,(name,state) in enumerate(npcs.items()):
         defname='NPC_'+str(i);npc_defs[name]=defname
         angle=float(state[2]-heading-fixture['heading'])
         body=car.replace('controller "publication_v9"','controller "v13_npc"')
-        body=body.replace('translation 0 0 0.36',f'translation {-100-20*i} {100+30*i} 0.36\n  rotation 0 0 1 {angle:.16g}',1)
+        translation=np.array([-100.-20*i,100.+30*i])
+        if scene is not None:
+            target=calibrated_frame.origin+calibrated_frame.rotation.T@(state[:2]-calibrated_frame.offset)
+            translation+=target-np.asarray(scene['npc_native'][name])[:2]
+        body=body.replace('translation 0 0 0.36',f'translation {translation[0]:.16g} {translation[1]:.16g} 0.36\n  rotation 0 0 1 {angle:.16g}',1)
         body=body.replace('name "lans-validation-surrogate"',f'name "{name}"',1)
         world+='\nDEF '+defname+' Car {'+body
     for name,module in [('v13_native','driver'),('v13_npc','npc')]:
@@ -105,38 +117,58 @@ def prepare_episode(output,fixture,mode,policy=None,role='opened_development_bri
     worldpath=project/'worlds/episode.wbt';worldpath.write_text(world)
     case=dict(fixture,output=str(output),mode=mode,role=role,route_kind=route_kind,
         policy=None if policy is None else str(policy),controller_kwargs=CONTROLLER_KWARGS,
+        warmup_only=warmup_only,scene_calibration=None if scene_calibration is None else str(scene_calibration),
+        fixture_sha256=hashlib.sha256(json.dumps(fixture,sort_keys=True).encode()).hexdigest(),
         initial_ego=initial.tolist(),initial_npcs={n:z.tolist() for n,z in npcs.items()},npc_defs=npc_defs)
     dump(output/'case.json',case)
     files=[Path(__file__),HERE/'native_adapter.py',HERE/'actuation.py',HERE/'native_assets/driver.py',HERE/'native_assets/npc.py',
         HERE/'runtime.py',HERE/'learning.py',HERE/'plans.py',HERE/'safety.py',source,calibration,ROOT/'tools/cloud/run-webots.sh']
     files.extend((ROOT/'integrations/unified_lans').glob('*.py'))
+    files.extend(ROOT/n for n in ('tools/unified_campaign/study.py','tools/unified_control_v9/native_adapter.py',
+        'tools/unified_control_v9/learning.py','tools/ppo_benefit_v10/core.py','models/bicycle_model.py','controllers/lqr_controller.py'))
     for version in range(4,9):files.extend((ROOT/f'tools/unified_control_v{version}').glob('*.py'))
     hashes={str(p.relative_to(ROOT)):sha(p) for p in files}
     for p in files:
         target=output/'source'/p.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
     model_hash=None if policy is None else sha(policy/('bc-policy.zip' if mode=='bc' else 'policy.zip'))
+    if policy is not None:shutil.copyfile(policy/'manifest.json',output/'policy-manifest.json')
     dump(output/'protocol.json',dict(case_sha256=sha(output/'case.json'),source_hashes=hashes,protos=protos,
-        world_sha256=sha(worldpath),policy_sha256=model_hash,role=role,physics_step_s=.001,controller_step_s=.05,
+        world_sha256=sha(worldpath),policy_sha256=model_hash,
+        policy_manifest_sha256=None if policy is None else sha(output/'policy-manifest.json'),
+        role=role,physics_step_s=.001,controller_step_s=.05,
+        scene_calibration_sha256=None if scene is None else sha(scene_calibration/'scene-state.json'),
         native_ego_physics=True,native_traffic_physics=True,traffic_state_integrated_in_python=False,
         collision_geometry='Original2.3m circles evaluated on actual1ms native poses; mesh contact is separate',
-        physical_initialization='10s physical warmup; fixed ego map transform and single traffic translation before measurement; no subsequent state writes',
+        physical_initialization='10s physical warmup; initial world positions from a separate policy-free measured displacement; fixed ego map transform; no pose/velocity/force writes',
         torque_actuator_calibration_sha256=sha(ROOT/'results/ppo-complete-v13/native-actuator-calibration-v3/verification.json'),
         physical_vehicle=dict(total_mass_kg=1650.,wheel_damping=.2,engine_power_w=100000,brake_coefficient=1000,
             front_fds=front,rear_fds=rear),fairness='Same vehicle/initialization/tire law for every matched method; actual stiffness is hidden from controller'))
     return output,worldpath
 
 
-def episode(output,fixture,mode,policy=None,role='opened_development_bridge'):
-    output,world=prepare_episode(output,fixture,mode,policy,role)
+def launch_prepared(output,world):
     env=os.environ.copy();env.update(LANS_ROOT=str(ROOT),LANS_NATIVE_CASE=str(output/'case.json'),
         OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1',TF_CPP_MIN_LOG_LEVEL='2')
     start=time.monotonic()
     with (output/'console.log').open('w') as log:
         run_process(['bash',str(ROOT/'tools/cloud/run-webots.sh'),'--stdout','--stderr','--batch','--mode=fast','--no-rendering',str(world)],env,log,180.)
-    result=json.loads((output/'summary.json').read_text())
-    dump(output/'provenance.json',dict(protocol_sha256=sha(output/'protocol.json'),raw_sha256=sha(output/'ticks.jsonl'),
+    result=json.loads((output/'summary.json').read_text());raw=output/('scene-state.json' if result.get('warmup_only') else 'ticks.jsonl')
+    dump(output/'provenance.json',dict(protocol_sha256=sha(output/'protocol.json'),raw_sha256=sha(raw),
         summary_sha256=sha(output/'summary.json'),elapsed_wall_s=time.monotonic()-start,policy_sha256=json.loads((output/'protocol.json').read_text())['policy_sha256']))
     print(json.dumps(result),flush=True);return result
+
+
+def episode(output,fixture,mode,policy=None,role='opened_development_bridge',*,scene_calibration=None):
+    output=Path(output).resolve()
+    scene_calibration=Path(scene_calibration).resolve() if scene_calibration is not None else output.with_name(output.name+'-scene-calibration')
+    if not scene_calibration.exists():
+        calibration,world=prepare_episode(scene_calibration,fixture,'lqr',role='policy_free_native_initial_scene_calibration',warmup_only=True)
+        launch_prepared(calibration,world)
+    calibration_protocol=json.loads((scene_calibration/'protocol.json').read_text())
+    for name,digest in calibration_protocol['source_hashes'].items():
+        assert sha(ROOT/name)==digest and sha(scene_calibration/'source'/name)==digest,('Scene calibration source changed',name)
+    output,world=prepare_episode(output,fixture,mode,policy,role,scene_calibration=scene_calibration)
+    return launch_prepared(output,world)
 
 
 def main():

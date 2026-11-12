@@ -8,7 +8,7 @@ from .runtime import sha
 ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).parent
 
 
-def run(output,lookaheads=(.05,.2,1.),speeds=(8.,12.,16.,17.25),duration=1.5):
+def run(output,lookaheads=(.05,.2,1.),speeds=(8.,12.,16.,17.25),duration=1.5,method='cruise_lookahead'):
     output=Path(output).resolve();output.mkdir(parents=True,exist_ok=False)
     project=output/'project';(project/'worlds').mkdir(parents=True);protos=copy_protos(project)
     controller=project/'controllers/v13_calibration';controller.mkdir(parents=True)
@@ -17,15 +17,21 @@ def run(output,lookaheads=(.05,.2,1.),speeds=(8.,12.,16.,17.25),duration=1.5):
     source=ROOT/'integrations/webots/worlds/publication_v9.wbt'
     world=source.read_text().replace('../.runtime/protos','../protos').replace('controller "publication_v9"','controller "v13_calibration"')
     world=world.replace('  engineType "electric"','  engineType "electric"\n  engineMaxPower 100000')
+    if method=='torque_pi':
+        world=world.replace('  engineMaxPower 100000','  engineMaxPower 100000\n  brakeCoefficient 1000')
+        world=world.replace('  wheelsDampingConstant 5','  wheelsDampingConstant 0.2')
     worldpath=project/'worlds/calibration.wbt';worldpath.write_text(world)
     cases=[dict(initial_speed_m_s=v,requested_accel_m_s2=a,lookahead_s=t)
         for t in lookaheads for v in speeds for a in (2.5,-6.)]
     files=[Path(__file__),HERE/'actuation.py',HERE/'native_assets/calibration_controller.py',source,ROOT/'tools/cloud/run-webots.sh']
-    protocol=dict(role='policy_free_actuator_calibration_before_final_native',webots='R2025a',cases=cases,duration_s=duration,
+    protocol=dict(role='policy_free_actuator_calibration_before_final_native',webots='R2025a',cases=cases,duration_s=duration,actuation_method=method,
         native_engine_max_power_w=100000,native_max_speed_m_s=50.,native_nominal_mass_kg=1650.,
+        engine_model_used=method=='torque_pi',brake_coefficient_nm=1000 if method=='torque_pi' else 700,
+        wheel_joint_damping=.2 if method=='torque_pi' else 5.,
+        damping_rationale='D=.2 bounds four-wheel viscous coast loss below .1m/s2 at20m/s:4*D*v/(1650*.32^2)=.094697. Frozen policy-free matching of the acceleration-command plant; same for every controller.',
         power_rationale='m*a*v=1650*2.5*20=82500W before drivetrain losses;100kW chosen before any final policy outcome, shared by every controller.',
         source_sha256={str(p.relative_to(ROOT)):sha(p) for p in files},protos=protos,world_sha256=sha(worldpath),
-        physical_actuation='Webots Driver cruise speed; no pose/velocity/force overwrites or Python integration',
+        physical_actuation=('Webots Driver electric-engine TORQUE and four-wheel mechanical brakes' if method=='torque_pi' else 'Webots Driver velocity-motor SPEED mode; engine power is not used in this mode')+'; no pose/velocity/force overwrites or Python integration',
         selection='One global lookahead by mean settled acceleration RMSE across all conditions; no policy or case53 selection.')
     (output/'protocol.json').write_text(json.dumps(protocol,indent=2,allow_nan=False)+'\n')
     for p in files:
@@ -49,7 +55,8 @@ def run(output,lookaheads=(.05,.2,1.),speeds=(8.,12.,16.,17.25),duration=1.5):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',required=True,type=Path)
     p.add_argument('--lookaheads',type=float,nargs='+',default=[.05,.2,1.]);p.add_argument('--speeds',type=float,nargs='+',default=[8.,12.,16.,17.25]);p.add_argument('--duration',type=float,default=1.5)
-    a=p.parse_args();run(a.output,tuple(a.lookaheads),tuple(a.speeds),a.duration)
+    p.add_argument('--method',choices=['cruise_lookahead','torque_pi'],default='cruise_lookahead')
+    a=p.parse_args();run(a.output,tuple(a.lookaheads),tuple(a.speeds),a.duration,a.method)
 
 
 if __name__=='__main__':main()

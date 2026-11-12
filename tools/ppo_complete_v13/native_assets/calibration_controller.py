@@ -2,7 +2,7 @@
 import json,math,os,traceback
 from pathlib import Path
 import numpy as np
-from tools.ppo_complete_v13.actuation import LongitudinalActuator,measured_forward_speed
+from tools.ppo_complete_v13.actuation import LongitudinalActuator,TorqueActuator,measured_forward_speed
 
 
 def main(driver):
@@ -20,7 +20,8 @@ def main(driver):
             v=measured_forward_speed(node);warm+=1
             stable=stable+1 if abs(v-target)<.08 else 0
             if warm>=1000 and stable>=200:break
-        initial=measured_forward_speed(node);t0=driver.getTime();actuator=LongitudinalActuator(lookahead_s=case['lookahead_s'])
+        initial=measured_forward_speed(node);t0=driver.getTime()
+        actuator=TorqueActuator() if p.get('actuation_method')=='torque_pi' else LongitudinalActuator(lookahead_s=case['lookahead_s'])
         rows=[];path=out/f'condition-{index:03d}.jsonl'
         with path.open('x') as stream:
             for tick in range(round(p['duration_s']/dt)):

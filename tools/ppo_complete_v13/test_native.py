@@ -1,5 +1,5 @@
 """Native bridge geometry and isolated-world contracts without opening holdouts."""
-import json,math,runpy
+import hashlib,json,math,re,runpy
 from types import SimpleNamespace
 import numpy as np
 import pytest
@@ -78,3 +78,65 @@ def test_world_builder_keeps_physics_identical_across_matched_methods(tmp_path,m
     second=make_controller(changed,'adaptive')
     assert first.stiffness_estimate==second.stiffness_estimate==1.
     assert first.stiffness_uncertainty==second.stiffness_uncertainty
+
+
+def synthetic_scene(tmp_path,case):
+    """Semantic measured-displacement fixture, not actual native evidence."""
+    calibration,_=prepare_episode(tmp_path/'scene',case,'lqr',warmup_only=True)
+    data=json.loads((calibration/'case.json').read_text())
+    # Translation invariance is checked using arbitrary finite warmup drift,
+    # not a copy of the implementation's map transform or ideal NPC integrator.
+    ego=np.array([111.3,-.17,.003,11.98,-.00002,.000001]);npcs={}
+    _,h,_=StudyRoute(data['route_kind'],case['mirror'],case['phase'],case['amplitude']).geometry(0.)
+    for i,(name,state) in enumerate(data['initial_npcs'].items()):
+        angle=state[2]-h-case['heading'];old=np.array([-100.-20*i,100.+30*i])
+        displacement=np.array([math.cos(angle),math.sin(angle)])*state[3]*10+np.array([.013,-.027])
+        cg=old+displacement+1.4*np.array([math.cos(angle+.00001),math.sin(angle+.00001)])
+        npcs[name]=[*cg,angle+.00001,state[3]-.012,0.000003,.000001]
+    scene=dict(warmup_only=True,fixture_sha256=hashlib.sha256(json.dumps(case,sort_keys=True).encode()).hexdigest(),
+        ego_native=ego.tolist(),npc_native=npcs)
+    (calibration/'scene-state.json').write_text(json.dumps(scene))
+    return calibration,scene,data
+
+
+@pytest.mark.parametrize('scenario',['following','merge','crossing','curved'])
+@pytest.mark.parametrize('mirror',[-1,1])
+def test_measured_scene_sets_initial_world_positions_for_correct_warm_end_scene(tmp_path,scenario,mirror):
+    case=fixture(scenario,mirror);calibration,scene,base=synthetic_scene(tmp_path,case)
+    lqr,wl=prepare_episode(tmp_path/'lqr',case,'lqr',scene_calibration=calibration,warmup_only=False)
+    adaptive,wa=prepare_episode(tmp_path/'adaptive',case,'adaptive',scene_calibration=calibration,warmup_only=False)
+    # Same policy-free scene and physical world for both matched controllers.
+    assert wl.read_bytes()==wa.read_bytes()
+    a=json.loads((lqr/'case.json').read_text());b=json.loads((adaptive/'case.json').read_text())
+    assert not a['warmup_only'] and not b['warmup_only']
+    assert a['scene_calibration']==b['scene_calibration']==str(calibration)
+    for out in (lqr,adaptive):
+        protocol=json.loads((out/'protocol.json').read_text())
+        assert protocol['scene_calibration_sha256']==sha(calibration/'scene-state.json')
+        assert protocol['physical_initialization'].endswith('no pose/velocity/force writes')
+    route=StudyRoute(base['route_kind'],mirror,case['phase'],case['amplitude']);y,h,_=route.geometry(0.)
+    alpha=h+case['heading']-scene['ego_native'][2];cosine,sine=math.cos(alpha),math.sin(alpha)
+    origin=np.asarray(scene['ego_native'][:2]);world=wa.read_text()
+    for i,(name,state) in enumerate(base['initial_npcs'].items()):
+        match=re.search(r'DEF '+re.escape(base['npc_defs'][name])+r' Car \{\s*translation ([^\n]+)\n\s*rotation ([^\n]+)',world)
+        assert match is not None
+        translation=np.array([float(v) for v in match.group(1).split()]);rotation=[float(v) for v in match.group(2).split()]
+        assert translation[2]==.36 and rotation[:3]==[0.,0.,1.]
+        assert rotation[3]==pytest.approx(state[2]-h-case['heading'])
+        # A homogeneous plane preserves measured warmup displacement when the
+        # initial car translation changes. Apply that displacement independently,
+        # then rotate into the ego map and require the exact requested NPC point.
+        old_spawn=np.array([-100.-20*i,100.+30*i])
+        world_warm_end=translation[:2]+np.asarray(scene['npc_native'][name][:2])-old_spawn
+        delta=world_warm_end-origin
+        map_warm_end=np.array([cosine*delta[0]-sine*delta[1],sine*delta[0]+cosine*delta[1]+y+case['lateral']])
+        assert map_warm_end==pytest.approx(state[:2],abs=1e-11)
+
+
+def test_scene_calibration_rejects_fixture_mismatch_and_non_calibration_input(tmp_path):
+    case=fixture();calibration,scene,_=synthetic_scene(tmp_path,case)
+    with pytest.raises(AssertionError):
+        prepare_episode(tmp_path/'wrong-fixture',dict(case,mirror=1),'adaptive',scene_calibration=calibration)
+    scene['warmup_only']=False;(calibration/'scene-state.json').write_text(json.dumps(scene))
+    with pytest.raises(AssertionError):
+        prepare_episode(tmp_path/'not-calibration',case,'adaptive',scene_calibration=calibration)

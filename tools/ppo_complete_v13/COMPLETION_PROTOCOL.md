@@ -18,8 +18,8 @@ This is observed host timing with a separately integrated Python vehicle;
 it is neither native physics nor a worst-case execution-time certificate.
 
 Native transfer uses24 fixed final fixtures, covering all four scenarios,
-three speeds and two mirrors, with replica0. For zero-based scenario indexs,
-speed indexv and mirror indexm, select delay indexd=(s+v)%3 and case
+three speeds and two mirrors, with replica0. For zero-based scenario index s,
+speed index v and mirror index m, select delay index d=(s+v)%3 and case
 ID=s*36+v*12+d*4+m*2. Run LQR, adaptive/MPC and all three frozen PPO policies
 on each fixture, in that fixed order:120 episodes and14400 expected owner
 intervals /720000 expected1ms physical samples. This is representative transfer
@@ -29,7 +29,13 @@ final fixtures or all scenario/speed/delay combinations.
 Every native role uses the identical physical vehicle, tires, actuator mapping,
 scene initialization and independently moving physical traffic. Policy-free
 actuator calibration and independent raw calibration audit must pass before
-launch. No measured-mission ego/traffic pose or velocity writes, direct body
+launch. Each selected fixture gets one common policy-free10s physical SPEED
+warmup calibration. Its measured displacement determines fixed initial world
+translations so all five roles warm physically into the same initial scene;
+reuse the immutable calibration and its source/world/fixture hashes for every
+role. Require initial ego/NPC speed errors<=.1m/s and verified synchronized
+positions; no pose teleport is used for this final campaign.
+No measured-mission ego/traffic pose or velocity writes, direct body
 forces, or Python truth integration are allowed. Independent native verification
 checks the frozen source/provenance, original2.3m circle collision geometry and
 1.75m corridor at every1ms physical sample, physical input FIFO, measured

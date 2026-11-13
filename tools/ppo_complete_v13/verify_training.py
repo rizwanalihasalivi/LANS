@@ -39,11 +39,25 @@ def read(path):
     return json.loads(Path(path).read_text())
 
 
+def numpy_json(value):
+    """Losslessly normalize supported NumPy evidence values to JSON types."""
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, np.generic):
+        item = value.item()
+        # Some extended NumPy types have no ordinary Python scalar. Refuse
+        # those instead of recursing or silently stringifying audit evidence.
+        if isinstance(item, np.generic):
+            raise TypeError(f'Unsupported NumPy JSON scalar: {type(value).__name__}')
+        return item
+    raise TypeError(f'Unsupported JSON evidence value: {type(value).__name__}')
+
+
 def write(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.pending')
-    temporary.write_text(json.dumps(value, indent=2, allow_nan=False)+'\n')
+    temporary.write_text(json.dumps(value, indent=2, allow_nan=False, default=numpy_json)+'\n')
     temporary.replace(path)
 
 

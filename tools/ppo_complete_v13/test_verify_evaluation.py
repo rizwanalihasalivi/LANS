@@ -144,3 +144,31 @@ def test_training_seed_proof_promotes_raw_input_pins_into_parent_audit(tmp_path,
     raw.write_text('changed after the completed seed audit\n')
     with pytest.raises(AssertionError, match='Training proof input changed'):
         verify_training.proof_inputs(proof)
+
+
+def test_nested_numpy_checkpoint_and_optimizer_report_writes_exact_json_scalars(tmp_path):
+    path = tmp_path/'training-proof.json'
+    value = dict(passed=np.bool_(True), report=dict(
+        checkpoints=[dict(environment_steps=np.int64(65536), actor_steps=np.int32(5040),
+            unchanged=np.bool_(False))],
+        supervised_controls=dict(actor_unchanged=np.bool_(True),
+            reserved_steps=np.array([0, 0], np.int64), losses=np.array([.5, .25], np.float32))))
+    verify_training.write(path, value)
+    actual = verify_training.read(path)
+    assert actual == dict(passed=True, report=dict(
+        checkpoints=[dict(environment_steps=65536, actor_steps=5040, unchanged=False)],
+        supervised_controls=dict(actor_unchanged=True, reserved_steps=[0, 0], losses=[.5, .25])))
+    assert type(actual['passed']) is bool
+    assert type(actual['report']['checkpoints'][0]['environment_steps']) is int
+    assert not path.with_suffix('.pending').exists()
+
+
+@pytest.mark.parametrize('bad', [np.float32('nan'), np.float64('inf'),
+    np.array([1., float('-inf')]), np.array([np.float32('nan')])])
+def test_numpy_serialization_keeps_strict_nonfinite_rejection_and_prior_proof(tmp_path, bad):
+    path = tmp_path/'proof.json'
+    verify_training.write(path, dict(passed=True))
+    previous = path.read_bytes()
+    with pytest.raises(ValueError, match='Out of range float'):
+        verify_training.write(path, dict(passed=True, metric=bad))
+    assert path.read_bytes() == previous

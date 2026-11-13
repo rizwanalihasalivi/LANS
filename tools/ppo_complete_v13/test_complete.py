@@ -7,6 +7,29 @@ import pytest
 from . import complete, evaluate, verify_calibration
 
 
+def test_timing_isolates_other_numerical_leaders_but_allows_its_own_auditor(monkeypatch):
+    from pathlib import Path as RealPath
+    from types import SimpleNamespace
+    own=12340
+    commands={
+        own:['python','-m','tools.ppo_complete_v13.verify','--reuse'],
+        own+1:['python','-m','tools.ppo_complete_v13.verify_evaluation','final'],
+        own+2:['python','-m','unrelated.application'],
+        own+3:['python','-m','tools.ppo_complete_v13.train','learn'],
+        own+4:['python','-m','tools.ppo_complete_v13.complete','native'],
+        own+5:['python','-m','tools.ppo_opportunity_v14.pilot'],
+    }
+    class Process:
+        def __init__(self,pid):self.name=str(pid)
+        def __truediv__(self,name):
+            assert name=='cmdline'
+            return SimpleNamespace(read_bytes=lambda:b'\0'.join(x.encode() for x in commands[int(self.name)]))
+    tree=SimpleNamespace(iterdir=lambda:[Process(pid) for pid in commands])
+    monkeypatch.setattr(complete,'Path',lambda value:tree if value=='/proc' else RealPath(value))
+    monkeypatch.setattr(complete.os,'getpid',lambda:own)
+    assert complete.active_training()==[own+1,own+3,own+4,own+5]
+
+
 def all_cases(draws):
     return evaluate.draw_cases(np.random.default_rng(99120), draws, 'synthetic_completion_unit_test')
 

@@ -54,6 +54,7 @@ def active_training():
         train = b'tools.ppo_complete_v13.train' in arguments and any(a in (b'learn', b'continued') for a in arguments)
         numerical = any(('tools.ppo_complete_v13.'+name).encode() in arguments for name in
             ('evaluate','verify_training','verify_evaluation','verify','native','headroom'))
+        numerical |= any(a.startswith(b'tools.ppo_opportunity_v14') for a in arguments)
         mission = b'tools.ppo_complete_v13.complete' in arguments and any(a in (b'runtime',b'native') for a in arguments)
         if train or numerical or mission:
             found.append(int(process.name))

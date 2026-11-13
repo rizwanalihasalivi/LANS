@@ -38,10 +38,12 @@ def fresh_write(path, value):
 
 
 def active_training():
-    """Detect this experiment's active Python training leader without logging args."""
+    """Detect competing V13 numerical leaders without logging process arguments."""
     found = []
     for process in Path('/proc').iterdir():
         if not process.name.isdigit():
+            continue
+        if int(process.name)==os.getpid():
             continue
         try:
             arguments = (process/'cmdline').read_bytes().split(b'\0')
@@ -49,8 +51,11 @@ def active_training():
             continue
         if not arguments or not Path(os.fsdecode(arguments[0])).name.startswith('python'):
             continue
-        marker = b'tools.ppo_complete_v13.train'
-        if marker in arguments and any(a in (b'learn', b'continued') for a in arguments):
+        train = b'tools.ppo_complete_v13.train' in arguments and any(a in (b'learn', b'continued') for a in arguments)
+        numerical = any(('tools.ppo_complete_v13.'+name).encode() in arguments for name in
+            ('evaluate','verify_training','verify_evaluation','verify','native','headroom'))
+        mission = b'tools.ppo_complete_v13.complete' in arguments and any(a in (b'runtime',b'native') for a in arguments)
+        if train or numerical or mission:
             found.append(int(process.name))
     return found
 
@@ -92,7 +97,7 @@ def select_cases(cases, kind):
 
 
 def frozen_inputs():
-    assert not active_training(), 'formal observed timing cannot overlap V13 learning'
+    assert not active_training(), 'formal observed timing cannot overlap V13 learning or numerical audits'
     policies = evaluate.frozen_policies()
     inputs = {}
     stages = {}
@@ -136,7 +141,7 @@ def source_snapshot(out):
 
 
 def check_freeze(protocol, out):
-    assert not active_training(), 'V13 learning appeared during formal completion'
+    assert not active_training(), 'competing V13 numerical work appeared during formal completion'
     for name, digest in protocol['source_hashes'].items():
         assert runtime.sha(ROOT/name) == runtime.sha(out/'source'/name) == digest, ('completion executable changed', name)
     for name, digest in protocol['input_hashes'].items():

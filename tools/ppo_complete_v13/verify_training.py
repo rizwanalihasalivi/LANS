@@ -53,7 +53,12 @@ def equal(actual, expected, label='', atol=2e-10):
         for key, value in expected.items():
             equal(actual[key], value, f'{label}.{key}', atol)
     elif isinstance(expected, (list, tuple, np.ndarray)):
-        np.testing.assert_allclose(actual, expected, rtol=0, atol=atol, err_msg=label)
+        if isinstance(expected, np.ndarray) and expected.dtype.kind in 'biufc' or all(isinstance(v, (int, float, np.number, bool)) for v in expected):
+            np.testing.assert_allclose(actual, expected, rtol=0, atol=atol, err_msg=label)
+        else:
+            assert len(actual) == len(expected), label
+            for index, (a, b) in enumerate(zip(actual, expected)):
+                equal(a, b, f'{label}[{index}]', atol)
     elif isinstance(expected, (bool, np.bool_)) or expected is None or isinstance(expected, str):
         assert actual == expected, (label, actual, expected)
     elif math.isinf(float(expected)):
@@ -552,10 +557,27 @@ def audit_dataset():
         input_teacher_failures=metadata['source_teacher_failures'], all_teacher_frames_preserved=True)
 
 
+def proof_inputs(path):
+    """Promote a verified seed proof's raw/model/source pins into the top audit.
+
+    Hashing only the proof JSON would leave its externally referenced training
+    trace unchecked between the completed audit and evidence sealing.
+    """
+    proof = read(path)
+    assert proof['passed'] and proof['input_hashes']
+    inputs = dict(proof['input_hashes'])
+    for name, expected in inputs.items():
+        assert digest(ROOT/name) == expected, ('Training proof input changed', name)
+    inputs[str(Path(path).relative_to(ROOT))] = digest(path)
+    return inputs
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--replay-controllers', action='store_true', help='Also recompute every complete causal query and original guard decision')
     parser.add_argument('--reuse', action='store_true', help='Reuse only matching exact source/input-pinned seed proofs')
+    parser.add_argument('--workers', type=int, choices=(1, 2, 3), default=3,
+        help='Independent seed audit processes; use1 while other numerical experiments run')
     args = parser.parse_args()
     dataset = audit_dataset()
     summaries = read(DATA/'policies/summary.json')
@@ -565,7 +587,7 @@ def main():
         assert row == read(DATA/f'policies/seed-{row["seed"]}/manifest.json')
     for row in continued:
         assert row == read(DATA/f'continued-bc/seed-{row["seed"]}/manifest.json')
-    with ProcessPoolExecutor(max_workers=3, mp_context=mp.get_context('spawn')) as pool:
+    with ProcessPoolExecutor(max_workers=args.workers, mp_context=mp.get_context('spawn')) as pool:
         results = [future.result() for future in as_completed([
             pool.submit(audit_seed, seed, args.replay_controllers, args.reuse) for seed in SEEDS])]
     results.sort(key=lambda result: result['seed'])
@@ -573,6 +595,11 @@ def main():
         DATA/'policies/declaration.json', DATA/'policies/summary.json', DATA/'continued-bc/summary.json',
         DATA/'dataset/protocol.json', DATA/'dataset/manifest.json', DATA/'dataset/dataset.npz',
         *(DATA/f'audits/training-seed-{seed}-{digest(__file__)[:12]}-controllers-{int(args.replay_controllers)}.json' for seed in SEEDS))}
+    for seed in SEEDS:
+        path = DATA/f'audits/training-seed-{seed}-{digest(__file__)[:12]}-controllers-{int(args.replay_controllers)}.json'
+        for name, expected in proof_inputs(path).items():
+            assert audit_inputs.get(name, expected) == expected, ('Conflicting seed proof inputs', name)
+            audit_inputs[name] = expected
     report = dict(passed=True, seeds=results, dataset=dataset, training_steps=sum(r['steps'] for r in results),
         all_failures_preserved=sum(r['training']['failures'] for r in results),
         full_controller_query_guard_replayed=args.replay_controllers,

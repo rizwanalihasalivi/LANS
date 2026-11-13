@@ -9,11 +9,12 @@ import argparse,json,subprocess,sys,time
 from .learning import ROOT,DATA
 from .runtime import sha
 
-STAGES=('continued','validation','final','runtime','native','qualify','audit','package')
+STAGES=('continued','validation','final','audit_python','runtime','native','qualify','audit','package')
 COMMANDS={
     'continued':('train','continued'),
     'validation':('evaluate','validation'),
     'final':('evaluate','final'),
+    'audit_python':('audit_python',),
     'runtime':('complete','runtime'),
     'native':('complete','native'),
     'qualify':('complete','assess'),
@@ -46,6 +47,14 @@ def completed(stage):
         assert not s['execution_errors'], 'An incomplete measured campaign cannot be silently retried'
         assert s['assessment']==read(out/'assessment.json')==complete.assess_stage(s['records'],p)
         assert s['assessment']['complete']
+        return True
+    if stage=='audit_python':
+        reports=[DATA/'training-verification.json',DATA/'validation/independent-verification.json',DATA/'final/independent-verification.json']
+        if not all(p.exists() for p in reports):return False
+        for path in reports:
+            record=read(path)
+            assert record['passed']
+            for name,digest in record['input_hashes'].items():assert sha(ROOT/name)==digest
         return True
     if stage=='qualify':
         path=DATA/'completion/qualification.json'
